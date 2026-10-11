@@ -1,4 +1,6 @@
 data/*
 .venv/
-outputs/
+outputs/*
+!outputs/04_risk_exploration/
+outputs/04_risk_exploration/*.parquet
 __pycache__/

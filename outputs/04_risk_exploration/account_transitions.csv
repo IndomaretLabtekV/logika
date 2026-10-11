@@ -1,0 +1,9 @@
+target,from_state,to_state,month_pairs,customers
+0,deficit,deficit,53811,19421
+0,deficit,surplus,71288,30251
+0,surplus,deficit,75848,31244
+0,surplus,surplus,407570,41352
+1,deficit,deficit,8757,3394
+1,deficit,surplus,12409,5236
+1,surplus,deficit,13894,5563
+1,surplus,surplus,66815,6947

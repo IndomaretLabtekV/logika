@@ -1,0 +1,7 @@
+account_present,repayment_present,prior_present,split,n,rate
+false,false,false,test,9000,
+false,false,false,train,21000,0.11719047619047619
+true,false,true,test,1155,
+true,false,true,train,2688,0.15513392857142858
+true,true,true,test,19845,
+true,true,true,train,46312,0.14313784764207982

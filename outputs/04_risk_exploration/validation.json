@@ -1,0 +1,18 @@
+{
+  "status": "passed",
+  "checks": [
+    "strict event cutoff",
+    "bureau availability at cutoff",
+    "complete month at cutoff",
+    "future payment snapshot quarantined",
+    "missing month breaks lag adjacency",
+    "short windows do not fabricate income changes",
+    "order totals deduplicated",
+    "cancelled spending excluded",
+    "category weights from item totals",
+    "absent source remains distinct from observed zero",
+    "all candidate features invariant to target mutation",
+    "full data grain, split sizes and unlabeled test preserved"
+  ],
+  "count": 12
+}

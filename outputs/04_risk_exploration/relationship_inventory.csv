@@ -1,0 +1,5 @@
+relation,edges,source_nodes,destination_nodes
+customer -> category,608454,100000,7
+customer -> fictional region,100000,100000,5
+customer -> originated loan,159323,66519,159323
+loan -> installment,1361341,155901,1361341

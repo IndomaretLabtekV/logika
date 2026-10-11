@@ -1,0 +1,10 @@
+check_name,rows_checked,flagged
+account cutoff violation,1084418,0
+account ledger residual != 0,1084418,0
+account low balance days outside month,1084418,0
+adjacent account continuity residual > 1,1014418,0
+ecommerce spend exceeds same account outflow,1084418,0
+less than 180 days since first observed commerce event,100000,4415
+missing account months inside observed span,70000,0
+multi-provider debt sum exceeds maximum,100000,81228
+stale account latest month lag > 1,70000,0

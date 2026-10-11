@@ -1,0 +1,3 @@
+split,applications,target_rate,account_coverage,repayment_coverage,six_month_change_coverage,bureau_change_coverage,lag1_coverage
+test,30000,,0.7,0.6615,0.7,0.6930333333333333,0.7
+train,70000,0.13581428571428572,0.7,0.6616,0.7,0.6924428571428571,0.7

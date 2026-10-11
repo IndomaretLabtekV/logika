@@ -1,0 +1,84 @@
+{
+  "python": "3.12.13",
+  "duckdb": "1.5.6",
+  "rows": 100000,
+  "candidate_features": 124,
+  "sources": [
+    {
+      "file": "data/train_applications.csv",
+      "sha256": "b60df5704bcd3713314a31c5382db22f41d38971bd76906b15f45a38edff509b",
+      "bytes": 8218128
+    },
+    {
+      "file": "data/test_applications.csv",
+      "sha256": "113f6ee4ff15e4c8bf14fb9a85fc399b906d1c569f6a715675a5814da2e02dfe",
+      "bytes": 3462500
+    },
+    {
+      "file": "data/customer_profiles.csv",
+      "sha256": "bcffa8c5558e81d9b359d2785345af218c459704f1c416b1ecbbe3a0ccf73f5d",
+      "bytes": 6415774
+    },
+    {
+      "file": "data/previous_applications.csv",
+      "sha256": "faa0bc4552afee73cf58481234a94834bf0b786a195cbb979883c15642c39560",
+      "bytes": 26688010
+    },
+    {
+      "file": "data/repayment_history.csv",
+      "sha256": "b0b00e18de2c05233653b3627bc7f9d679644e84c56680284766d71c5e279877",
+      "bytes": 159687932
+    },
+    {
+      "file": "data/account_behavior.csv",
+      "sha256": "2f46be03496583b0231591194e13bea7593e87323056dfead6b9b19c48871924",
+      "bytes": 99958562
+    },
+    {
+      "file": "data/bureau_observations.csv",
+      "sha256": "e37b8a76fe4f97ee6f1fd78ab26ffb0e78e464714f77d961062e03d757d057a0",
+      "bytes": 114740593
+    },
+    {
+      "file": "data/ecommerce_transactions.csv",
+      "sha256": "495b3859f2146f87e7f8a383b308770af3d48342e3e1acdb45d7f1bed2bab742",
+      "bytes": 528846939
+    }
+  ],
+  "code": [
+    {
+      "file": "eda/risk_exploration/build.py",
+      "sha256": "05c4502c7051250034707be0b8a54e6cebe480c9ced4321f17643897bbca1099"
+    },
+    {
+      "file": "eda/risk_exploration/diagnose.py",
+      "sha256": "26b86cb19ac112007bbd633459a9583cbe1fdd8f845ca64adc92e7ab8fa36e47"
+    },
+    {
+      "file": "eda/risk_exploration/diagnostics.sql",
+      "sha256": "c28f49935e60bb3f545781ee602b022ad926e1abf9400e1926f8367682ddcd5f"
+    },
+    {
+      "file": "eda/risk_exploration/plot.py",
+      "sha256": "d9484a1657e785c3498d24065a5bf01ed4ccfcebf91e9333aacd1b03fc82a8ef"
+    },
+    {
+      "file": "eda/risk_exploration/sql/01_timelines.sql",
+      "sha256": "9ed618f6b1d514fecb09d88bd8b777adfb8012c45f8c89ba69f24f19e84df371"
+    },
+    {
+      "file": "eda/risk_exploration/sql/02_commerce.sql",
+      "sha256": "83a91f800d19547cfe53a33e89b11da62a3696d96cbd0b6ac53644914ac29c75"
+    },
+    {
+      "file": "eda/risk_exploration/sql/03_contracts.sql",
+      "sha256": "956ba8c15c69dff713d2dc4bf61bd5dd39be0a470501b4f96ef1d3d6b2546cec"
+    },
+    {
+      "file": "eda/risk_exploration/validate.py",
+      "sha256": "0ca26c9fb5a44a8c4b172f2252b5d611b5f57e59a9f85870ed8ca2453da8e22a"
+    }
+  ],
+  "timezone": "Asia/Jakarta naive local timestamps",
+  "labels_used_for_features": false
+}

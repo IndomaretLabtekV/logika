@@ -1,0 +1,9 @@
+check_name,flagged
+account customer-month duplicate,0
+inconsistent order attributes,0
+order total does not reconcile to item sum,0
+originated loan ID duplicate,0
+previous application ID duplicate,0
+repayment installment ID duplicate,0
+repayment max DPD below current DPD,0
+repayment without matching owned approved loan,0
