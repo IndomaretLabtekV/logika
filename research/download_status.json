@@ -1,0 +1,137 @@
+[
+  {
+    "id": "catboost_2018",
+    "status": "downloaded",
+    "file": "catboost_2018.pdf",
+    "bytes": 723079,
+    "sha256": "e682f177e24106a1c48a0dbba1d752a806526bd7ea85bd97e12bec07a2ed955b"
+  },
+  {
+    "id": "credit_foundation_2026",
+    "status": "downloaded",
+    "file": "credit_foundation_2026.pdf",
+    "bytes": 517402,
+    "sha256": "3575c332ba11c969e220f7d7e86e1b948fd33aeb38e8e8f0aaf521a749428491"
+  },
+  {
+    "id": "credit_multitable_ieee_2026",
+    "status": "unavailable",
+    "source": "https://ieeexplore.ieee.org/abstract/document/11636508/",
+    "errors": [
+      "https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=11636508: response was not a PDF"
+    ]
+  },
+  {
+    "id": "credit_two_timestamps_2021",
+    "status": "unavailable",
+    "source": "https://doi.org/10.1016/j.asoc.2021.107672",
+    "errors": [
+      "https://www.sciencedirect.com/science/article/pii/S1568494621005937/pdfft?isDTMRedir=true&download=true: curl: (22) The requested URL returned error: 403"
+    ]
+  },
+  {
+    "id": "deep_feature_synthesis_2015",
+    "status": "downloaded",
+    "file": "deep_feature_synthesis_2015.pdf",
+    "bytes": 4515927,
+    "sha256": "826b818e0085e6923060a75e960aa3259d641b4b9c338e1096d3374620f78de2"
+  },
+  {
+    "id": "lightgbm_2017",
+    "status": "downloaded",
+    "file": "lightgbm_2017.pdf",
+    "bytes": 366352,
+    "sha256": "32ddfe0c7a8e1acb87c97cff904a16e0a556a8d79ebfecf772159843e736affc"
+  },
+  {
+    "id": "limix_2025",
+    "status": "downloaded",
+    "file": "limix_2025.pdf",
+    "bytes": 5338262,
+    "sha256": "268e1cb80b6aaa6344b2eba9c0ef793f74652bb101a4fc06e1cae857a8b7350e"
+  },
+  {
+    "id": "limix_2_2026",
+    "status": "downloaded",
+    "file": "limix_2_2026.pdf",
+    "bytes": 3678538,
+    "sha256": "81cac82427da6f6b935b53099aa6b29577a9775c2ad94bd5ba513d5df544232f"
+  },
+  {
+    "id": "limix_2m_2026",
+    "status": "downloaded",
+    "file": "limix_2m_2026.pdf",
+    "bytes": 2392026,
+    "sha256": "a17aed501f6613f07b202582c1308b30c0b0f32db82efb8c100c967e8d96e4e9"
+  },
+  {
+    "id": "tabarena_2025",
+    "status": "downloaded",
+    "file": "tabarena_2025.pdf",
+    "bytes": 1964941,
+    "sha256": "8853fd1a1eb09ee7c25bf6f48a194a8e718103774d39af5bcc402b2c41a735e5"
+  },
+  {
+    "id": "tabicl_2025",
+    "status": "downloaded",
+    "file": "tabicl_2025.pdf",
+    "bytes": 4066189,
+    "sha256": "22b3b112d8e2875edc4e1054073f354dc139594f1d2bfe38754592d49d96bc3e"
+  },
+  {
+    "id": "tabm_2025",
+    "status": "downloaded",
+    "file": "tabm_2025.pdf",
+    "bytes": 1322161,
+    "sha256": "a6988aa10d726e99c706dc92856c5a07f4e3f9fa854d08c8f854f06dc83ea34f"
+  },
+  {
+    "id": "tabpfn_2_5_2025",
+    "status": "downloaded",
+    "file": "tabpfn_2_5_2025.pdf",
+    "bytes": 3964623,
+    "sha256": "21f3cb0e28e587aef164a79a8ada9e942da51b052f55e6f366d5744a8b97f90f"
+  },
+  {
+    "id": "tabpfn_3_2026",
+    "status": "downloaded",
+    "file": "tabpfn_3_2026.pdf",
+    "bytes": 6826374,
+    "sha256": "68825024d264813f2f094769cbfac5ad9e887883472a50f0c73e1558c6ac4bc7"
+  },
+  {
+    "id": "tabpfn_3_5_2026",
+    "status": "downloaded",
+    "file": "tabpfn_3_5_2026.pdf",
+    "bytes": 2324964,
+    "sha256": "b72ca80ea1bfeeba2f66dc0a2ca695bb16ed7a50b3780a5c5483e8172700c786"
+  },
+  {
+    "id": "tabpfn_v2_2025",
+    "status": "downloaded",
+    "file": "tabpfn_v2_2025.pdf",
+    "bytes": 16957699,
+    "sha256": "6b5ce3dba2ef7454ad0868ad733a64b4ac89bcd98307773fad1e0e977caaa013"
+  },
+  {
+    "id": "tabred_2024",
+    "status": "downloaded",
+    "file": "tabred_2024.pdf",
+    "bytes": 3016316,
+    "sha256": "8aebc851f8e4ebacbb646f1edcacba2718c8f853af3931c748b9040604722f94"
+  },
+  {
+    "id": "trees_tabular_2022",
+    "status": "downloaded",
+    "file": "trees_tabular_2022.pdf",
+    "bytes": 26436552,
+    "sha256": "3baeb241e4f50981deb6e8e81f29192b1a84f1abde990d5fe8df4e594d993d6f"
+  },
+  {
+    "id": "xgboost_2016",
+    "status": "downloaded",
+    "file": "xgboost_2016.pdf",
+    "bytes": 944793,
+    "sha256": "52bc282c922a239134ee4d6f4367c58bf920a9bdd53acbb3b2aa3342e2bb7214"
+  }
+]

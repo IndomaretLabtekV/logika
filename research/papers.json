@@ -1,0 +1,179 @@
+[
+  {
+    "id": "lightgbm_2017",
+    "title": "LightGBM: A Highly Efficient Gradient Boosting Decision Tree",
+    "year": 2017,
+    "file": "lightgbm_2017.pdf",
+    "source": "https://papers.neurips.cc/paper_files/paper/2017/hash/6449f44a102fde848669bdd9eb6b76fa-Abstract.html",
+    "urls": ["https://proceedings.neurips.cc/paper_files/paper/2017/file/6449f44a102fde848669bdd9eb6b76fa-Paper.pdf"],
+    "relevance": "LightGBM algorithm and efficiency baseline"
+  },
+  {
+    "id": "xgboost_2016",
+    "title": "XGBoost: A Scalable Tree Boosting System",
+    "year": 2016,
+    "file": "xgboost_2016.pdf",
+    "source": "https://arxiv.org/abs/1603.02754",
+    "urls": ["https://arxiv.org/pdf/1603.02754"],
+    "relevance": "XGBoost baseline and sparse or missing feature handling"
+  },
+  {
+    "id": "catboost_2018",
+    "title": "CatBoost: unbiased boosting with categorical features",
+    "year": 2018,
+    "file": "catboost_2018.pdf",
+    "source": "https://arxiv.org/abs/1706.09516",
+    "urls": ["https://arxiv.org/pdf/1706.09516"],
+    "relevance": "Ordered boosting and categorical treatment"
+  },
+  {
+    "id": "trees_tabular_2022",
+    "title": "Why do tree-based models still outperform deep learning on tabular data?",
+    "year": 2022,
+    "file": "trees_tabular_2022.pdf",
+    "source": "https://arxiv.org/abs/2207.08815",
+    "urls": ["https://arxiv.org/pdf/2207.08815"],
+    "relevance": "Method-family choice for medium tabular datasets"
+  },
+  {
+    "id": "tabred_2024",
+    "title": "TabReD: Analyzing Pitfalls and Filling the Gaps in Tabular Deep Learning Benchmarks",
+    "year": 2024,
+    "file": "tabred_2024.pdf",
+    "source": "https://arxiv.org/abs/2406.19380",
+    "urls": ["https://arxiv.org/pdf/2406.19380"],
+    "relevance": "Time-split validation and feature-engineered industrial tables"
+  },
+  {
+    "id": "tabarena_2025",
+    "title": "TabArena: A Living Benchmark for Machine Learning on Tabular Data",
+    "year": 2025,
+    "file": "tabarena_2025.pdf",
+    "source": "https://arxiv.org/abs/2506.16791",
+    "urls": ["https://arxiv.org/pdf/2506.16791"],
+    "relevance": "Fair method comparisons across tabular workloads"
+  },
+  {
+    "id": "credit_foundation_2026",
+    "title": "Foundation Models for Credit Risk Prediction: A Game Changer?",
+    "year": 2026,
+    "file": "credit_foundation_2026.pdf",
+    "source": "https://arxiv.org/abs/2605.18147",
+    "urls": ["https://arxiv.org/pdf/2605.18147"],
+    "relevance": "Closest credit-risk benchmark, including KS and GBDT comparisons"
+  },
+  {
+    "id": "tabm_2025",
+    "title": "TabM: Advancing Tabular Deep Learning with Parameter-Efficient Ensembling",
+    "year": 2025,
+    "file": "tabm_2025.pdf",
+    "source": "https://arxiv.org/abs/2410.24210",
+    "urls": ["https://arxiv.org/pdf/2410.24210"],
+    "relevance": "Later neural baseline trained only on competition data"
+  },
+  {
+    "id": "tabicl_2025",
+    "title": "TabICL: A Tabular Foundation Model for In-Context Learning on Large Data",
+    "year": 2025,
+    "file": "tabicl_2025.pdf",
+    "source": "https://arxiv.org/abs/2502.05564",
+    "urls": ["https://arxiv.org/pdf/2502.05564"],
+    "relevance": "Leading mean KS model in a multi-dataset credit-risk benchmark"
+  },
+  {
+    "id": "tabpfn_v2_2025",
+    "title": "Accurate predictions on small data with a tabular foundation model",
+    "year": 2025,
+    "file": "tabpfn_v2_2025.pdf",
+    "source": "https://www.nature.com/articles/s41586-024-08328-6",
+    "urls": [
+      "https://www.nature.com/articles/s41586-024-08328-6.pdf",
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC11711098/pdf/"
+    ],
+    "relevance": "Original published TabPFN v2 result and scale limit"
+  },
+  {
+    "id": "tabpfn_2_5_2025",
+    "title": "TabPFN-2.5: Advancing the State of the Art in Tabular Foundation Models",
+    "year": 2025,
+    "file": "tabpfn_2_5_2025.pdf",
+    "source": "https://arxiv.org/abs/2511.08667",
+    "urls": ["https://arxiv.org/pdf/2511.08667"],
+    "relevance": "Intermediate TabPFN scale and benchmark context"
+  },
+  {
+    "id": "tabpfn_3_2026",
+    "title": "TabPFN-3: Technical Report",
+    "year": 2026,
+    "file": "tabpfn_3_2026.pdf",
+    "source": "https://arxiv.org/abs/2605.13986",
+    "urls": ["https://arxiv.org/pdf/2605.13986"],
+    "relevance": "Current family scaling toward larger tables"
+  },
+  {
+    "id": "tabpfn_3_5_2026",
+    "title": "TabPFN-3.5: Technical Report",
+    "year": 2026,
+    "file": "tabpfn_3_5_2026.pdf",
+    "source": "https://arxiv.org/abs/2609.17895",
+    "urls": ["https://arxiv.org/pdf/2609.17895"],
+    "relevance": "Recent foundation-model comparison with temporal and grouped splits"
+  },
+  {
+    "id": "limix_2025",
+    "title": "LimiX: Unleashing Structured-Data Modeling Capability for Generalist Intelligence",
+    "year": 2025,
+    "file": "limix_2025.pdf",
+    "source": "https://arxiv.org/abs/2509.03505",
+    "urls": ["https://arxiv.org/pdf/2509.03505"],
+    "relevance": "First LimiX family technical report"
+  },
+  {
+    "id": "limix_2_2026",
+    "title": "LimiX-2: A Contextual Mechanism Network Towards General Structured-Data Intelligence",
+    "year": 2026,
+    "file": "limix_2_2026.pdf",
+    "source": "https://arxiv.org/abs/2609.17488",
+    "urls": ["https://arxiv.org/pdf/2609.17488"],
+    "relevance": "User-prioritized recent tabular foundation model"
+  },
+  {
+    "id": "limix_2m_2026",
+    "title": "LimiX-2M: Mitigating Low-Rank Collapse and Attention Bottlenecks in Tabular Foundation Models",
+    "year": 2026,
+    "file": "limix_2m_2026.pdf",
+    "source": "https://arxiv.org/abs/2606.04485",
+    "urls": ["https://arxiv.org/pdf/2606.04485"],
+    "relevance": "Smaller LimiX-family option for limited GPU memory"
+  },
+  {
+    "id": "deep_feature_synthesis_2015",
+    "title": "Deep Feature Synthesis: Towards Automating Data Science Endeavors",
+    "year": 2015,
+    "file": "deep_feature_synthesis_2015.pdf",
+    "source": "https://dai.lids.mit.edu/wp-content/uploads/2017/10/DSAA_DSM_2015.pdf",
+    "urls": [
+      "https://groups.csail.mit.edu/EVO-DesignOpt/groupWebSite/uploads/Site/DSAA_DSM_2015.pdf",
+      "https://dai.lids.mit.edu/wp-content/uploads/2017/10/DSAA_DSM_2015.pdf"
+    ],
+    "relevance": "Feature aggregation over related tables, with cutoff safeguards required here"
+  },
+  {
+    "id": "credit_two_timestamps_2021",
+    "title": "Credit risk modeling on data with two timestamps in peer-to-peer lending by gradient boosting",
+    "year": 2021,
+    "file": "credit_two_timestamps_2021.pdf",
+    "source": "https://doi.org/10.1016/j.asoc.2021.107672",
+    "urls": ["https://www.sciencedirect.com/science/article/pii/S1568494621005937/pdfft?isDTMRedir=true&download=true"],
+    "relevance": "Credit-specific comparison of random and time-ordered validation"
+  },
+  {
+    "id": "credit_multitable_ieee_2026",
+    "title": "Explainable AI-Based Credit Default Risk Modeling on Multi-Table Data",
+    "year": 2026,
+    "file": "credit_multitable_ieee_2026.pdf",
+    "source": "https://ieeexplore.ieee.org/abstract/document/11636508/",
+    "urls": ["https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=11636508"],
+    "relevance": "Credit-risk feature aggregation from multiple linked tables"
+  }
+]
