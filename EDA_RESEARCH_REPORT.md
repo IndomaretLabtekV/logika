@@ -1,6 +1,6 @@
 # LOGIKA UI 2026 credit risk: EDA and research brief
 
-Prepared 11 October 2026. The work uses only the supplied competition CSVs for data analysis. No predictive model was fitted or run.
+Prepared 11 October 2026 as the first-pass EDA and research brief. It uses only the supplied competition CSVs for data analysis. Three predictive models were run later in the saved Kaggle result notebooks under `notebooks/0-initial-iteration/`; see the repository [agent guide](README.md) and [extended risk EDA](RISK_EXPLORATION_REPORT.md) for the current state.
 
 ## Problem and data
 
@@ -91,4 +91,4 @@ KS is invariant to a strictly increasing transformation of scores, so probabilit
 
 ## Boundary of this work
 
-No model was trained, no validation score was produced, no test labels were inferred, and no submission file was created. The report's reported data quantities come from the generated CSV/JSON files; paper results are attributed to their authors. The largest remaining unknowns are held-out KS, model ranking on this dataset, the feasibility of full LimiX-2/TabPFN-3.5 inference on 8 GB VRAM, and competition permission for pretrained weights.
+At the time this first-pass report was prepared, no model had been trained. Subsequent saved notebook runs report held-out OOF and retrospective scores, final training, and creation of test submission files; those artifacts are indexed in the repository [agent guide](README.md). No official public/private leaderboard score is recorded here. The report's EDA quantities come from its generated CSV/JSON files; paper results are attributed to their authors. The later expanded EDA and its candidate feature plan are in `RISK_EXPLORATION_REPORT.md`.

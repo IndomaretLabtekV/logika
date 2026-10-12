@@ -30,12 +30,13 @@ All three notebooks are standalone. They **do not** import the included builder 
 - Retrospective January–September -> October–December 2025 stress test is separate from the five-fold comparison.
 - Full training on 70,000 rows with median selected iteration count, then validated 30,000-row submission in the exact `application_id,default_probability` format.
 
-## Local validation performed
+## Recorded execution and validation
 
 - All three `.ipynb` files passed `nbformat.validate`, and every ordinary code cell was syntactically compiled.
 - All three model-specific training/prediction adapters passed a local synthetic-data training test, including early stopping, categorical handling, missing values and predicted-probability production, using LightGBM 4.6.0, XGBoost 3.1.3 and CatBoost 1.2.8.
-- **Not executed on the original committee CSVs:** The supplied archive contains precomputed reference Parquet files but not the nine raw competition CSVs, and this local environment could not install DuckDB due restricted network access. Consequently no real model KS, feature-parity result or genuine test submission has been claimed. Running on Kaggle with the supplied competition CSVs is still required.
+- The tracked `lightgbm-result.ipynb`, `xgboost-result.ipynb`, and `catboost-result.ipynb` record completed Kaggle executions against the mounted competition CSVs, including real five-fold metrics, the retrospective time stress check, final fit, and a submission preview. They report pooled OOF KS of 0.48172, 0.47903, and 0.47899, respectively, with the same fold-manifest digest. These are local validation results inside the notebook outputs, not public or private leaderboard results.
+- The original archive-based local limitation above no longer describes the current repository: all committee CSVs are now available under `data/`. The saved runs establish the recorded Kaggle experiment; rerunning in the current local environment is a separate execution.
 
 ## Source files
 
-Notebook builders live under `notebooks/build_common.py` and `notebooks/build_0*.py`. They embed the SQL features from `eda/02_preprocess.py` **at build time**. To regenerate from the packaged source, run the three builders from the repository root with `python notebooks/build_01_lightgbm.py`, etc. The generated notebook **does not** require these files at runtime.
+Notebook builders live in this folder's `notebooks/build_common.py` and `notebooks/build_0*.py`. They embed the SQL features from `eda/02_preprocess.py` **at build time**. To regenerate from the packaged source, run `python notebooks/0-initial-iteration/notebooks/build_01_lightgbm.py` and the matching XGBoost/CatBoost builders from the repository root. The generated notebook **does not** require these files at runtime. Regeneration creates source notebooks without the saved execution outputs; keep the `*-result.ipynb` files when the recorded metrics matter.
