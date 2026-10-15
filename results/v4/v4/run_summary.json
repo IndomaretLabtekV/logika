@@ -1,0 +1,16 @@
+{
+  "selected": "baseline",
+  "OOF_KS": 0.5114068357000261,
+  "OOF_AUC": 0.837616223664805,
+  "rows": 30000,
+  "elapsed_minutes": 57.52185859043333,
+  "main_submission": "/kaggle/working/submission.csv",
+  "public_KS": null,
+  "private_KS": null,
+  "training_seeds": [
+    42,
+    7
+  ],
+  "fold_seed": 42,
+  "n_folds": 5
+}

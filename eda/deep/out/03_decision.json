@@ -1,0 +1,21 @@
+{
+  "candidate_count": 289,
+  "new_count": 79,
+  "new_FDR_replicated": [],
+  "discovery_shortlist": [
+    "dx_ec_spend_112_224",
+    "dx_ec_count_7_28",
+    "dx_ec_top_basket_share28",
+    "dx_ec_excess_z28",
+    "dx_ec_quantity28",
+    "dx_ec_excess28",
+    "dx_ec_kernel_56",
+    "dx_rp_loan_late_std",
+    "dx_ec_cancel_56_112",
+    "dx_ec_log_rate_ratio28",
+    "dx_ec_kernel_excess_56",
+    "dx_ac_log_income_1_3"
+  ],
+  "limitation": "Association conditional on coarse v3 risk bins is not incremental model KS; all labels already influenced historical EDA and model selection.",
+  "decision": "Keep candidates separate. A fold-safe remote model ablation is required before promotion."
+}

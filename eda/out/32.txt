@@ -1,0 +1,24 @@
+(a) input (70000, 210) -> output (70000, 239): 210 numeric kept, 0 constant dropped ([]), 29 missing-indicator groups
+    finite train/test: True / True  dtype float32
+(b) max |KS(raw) - KS(prepared)| over non-missing rows: 0.00e+00
+(c) per-column mean over observed rows: median +0.002, range [-0.08, +0.08]; std median 0.982, range [0.56, 1.00]
+    rp_frac_dpd1     share of zeros 0.20 -> zero maps to -1.278 (middle of tie block = -1.278)
+    ec_orders_7d     share of zeros 0.60 -> zero maps to -0.523 (middle of tie block = -0.523)
+    rp_n_dpd90       share of zeros 0.80 -> zero maps to -0.250 (middle of tie block = -0.250)
+    ec2_cancel_28    share of zeros 0.87 -> zero maps to -0.166 (middle of tie block = -0.166)
+(d) max PSI train->test after transform: 0.00116 (raw max ~0.0012)
+(e) missing-indicator groups (first member, size, missing share, bad rate when missing):
+    ac_avgbal_b                cols= 61 missing=0.300 bad|missing=0.117 bad|present=0.144
+    rp_active_inst             cols= 23 missing=0.338 bad|missing=0.121 bad|present=0.143
+    ob_amt_90d                 cols= 12 missing=0.335 bad|missing=0.121 bad|present=0.143
+    rp_days_since_delinq       cols=  5 missing=0.471 bad|missing=0.098 bad|present=0.170
+    bc_score_max               cols=  3 missing=0.003 bad|missing=0.131 bad|present=0.136
+    bh_last_score              cols=  3 missing=0.300 bad|missing=0.117 bad|present=0.144
+    bp_delinq_b                cols=  3 missing=0.182 bad|missing=0.135 bad|present=0.136
+    bp_delinq_c                cols=  3 missing=0.178 bad|missing=0.139 bad|present=0.135
+    bc_util_max                cols=  2 missing=0.523 bad|missing=0.136 bad|present=0.136
+    bz_newest                  cols=  2 missing=0.001 bad|missing=0.082 bad|present=0.136
+(f) thin-file row 1: raw {'rp_frac_dpd1': nan, 'ec_accel_30d': 2.0, 'bc_score_mean': 644.667, 'ac_out_in_delta': nan}
+    prepared {'rp_frac_dpd1': 0.0, 'ec_accel_30d': 0.86, 'bc_score_mean': -0.461, 'ac_out_in_delta': 0.0}  indicators on: 16/29
+(f) history row 0: raw {'rp_frac_dpd1': 0.333, 'ec_accel_30d': 2.279, 'bc_score_mean': 620.5, 'ac_out_in_delta': -0.073}
+    prepared {'rp_frac_dpd1': 0.206, 'ec_accel_30d': 0.984, 'bc_score_mean': -0.946, 'ac_out_in_delta': -0.436}  indicators on: 7/29

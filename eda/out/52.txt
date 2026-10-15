@@ -1,0 +1,42 @@
+(a) DFS vs v5 residual (noise chi2 p95=1.55, dKS p95=+0.0016); above noise on both: 2 of 301
+shape: (8, 5)
+┌─────────────────────────────────┬────────┬─────────┬────────┬────────┐
+│ feature                         ┆ ks     ┆ chi2_df ┆ lift   ┆ dKS_cf │
+│ ---                             ┆ ---    ┆ ---     ┆ ---    ┆ ---    │
+│ str                             ┆ f64    ┆ f64     ┆ f64    ┆ f64    │
+╞═════════════════════════════════╪════════╪═════════╪════════╪════════╡
+│ dfs_bureau__revolving_credit_l… ┆ 0.0129 ┆ 3.9075  ┆ 0.0512 ┆ 0.0001 │
+│ dfs_prev__term_months__min      ┆ 0.0476 ┆ 3.6139  ┆ 0.0327 ┆ 0.0003 │
+│ dfs_prev__term_months__last     ┆ 0.0566 ┆ 3.5824  ┆ 0.0447 ┆ 0.0007 │
+│ dfs_cut_month                   ┆ 0.0151 ┆ 3.0799  ┆ 0.1155 ┆ 0.0017 │
+│ dfs_acct__income_like_credits_… ┆ 0.0589 ┆ 2.4368  ┆ 0.0733 ┆ 0.0011 │
+│ dfs_loan__dpd_mean__std         ┆ 0.1763 ┆ 2.4142  ┆ 0.0945 ┆ 0.0016 │
+│ dfs_inst__amount_due__sum       ┆ 0.0478 ┆ 2.2076  ┆ 0.0874 ┆ 0.0009 │
+│ dfs_inst__amount_due__mean      ┆ 0.0425 ┆ 2.1512  ┆ 0.0998 ┆ 0.0001 │
+└─────────────────────────────────┴────────┴─────────┴────────┴────────┘
+
+(b) price-premium interactions (noise p95 1.14)
+shape: (17, 4)
+┌─────────┬─────────────────────────┬─────────────────┬────────────┐
+│ f1      ┆ f2                      ┆ raw_interaction ┆ left_by_v5 │
+│ ---     ┆ ---                     ┆ ---             ┆ ---        │
+│ str     ┆ str                     ┆ f64             ┆ f64        │
+╞═════════╪═════════════════════════╪═════════════════╪════════════╡
+│ pp_mean ┆ annual_interest_rate    ┆ 2.932           ┆ 1.182      │
+│ pp_90   ┆ ec_orders_30d           ┆ 7.447           ┆ 1.109      │
+│ pp_mean ┆ sv_maxdpd_mean_late     ┆ 11.702          ┆ 1.105      │
+│ pp_mean ┆ declared_monthly_income ┆ 1.023           ┆ 0.944      │
+│ pp_90   ┆ ac_out_in_delta         ┆ 2.071           ┆ 0.926      │
+│ pp_mean ┆ rp_frac_dpd1            ┆ 15.499          ┆ 0.921      │
+│ pp_mean ┆ ac_out_in_delta         ┆ 1.863           ┆ 0.816      │
+│ pp_90   ┆ dec_month               ┆ 0.894           ┆ 0.721      │
+│ pp_90   ┆ sv_maxdpd_mean_late     ┆ 7.486           ┆ 0.662      │
+│ pp_90   ┆ rp_frac_dpd1            ┆ 10.464          ┆ 0.606      │
+│ pp_mean ┆ pp_90                   ┆ 5.345           ┆ 0.604      │
+│ pp_mean ┆ dec_month               ┆ 0.898           ┆ 0.594      │
+│ pp_mean ┆ bc_score_mean           ┆ 1.886           ┆ 0.565      │
+│ pp_90   ┆ declared_monthly_income ┆ 0.687           ┆ 0.554      │
+│ pp_90   ┆ bc_score_mean           ┆ 1.665           ┆ 0.551      │
+│ pp_mean ┆ ec_orders_30d           ┆ 1.549           ┆ 0.536      │
+│ pp_90   ┆ annual_interest_rate    ┆ 1.841           ┆ 0.398      │
+└─────────┴─────────────────────────┴─────────────────┴────────────┘

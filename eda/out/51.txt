@@ -1,0 +1,49 @@
+noise vs v5: chi2/df p95=2.24  dKS p95=+0.0014
+shape: (39, 7)
+┌──────────────────────────────┬───────┬────────┬─────────┬────────┬──────────┬─────────────┐
+│ feature                      ┆ table ┆ ks     ┆ chi2_df ┆ dKS_cf ┆ coverage ┆ above_noise │
+│ ---                          ┆ ---   ┆ ---    ┆ ---     ┆ ---    ┆ ---      ┆ ---         │
+│ str                          ┆ str   ┆ f64    ┆ f64     ┆ f64    ┆ f64      ┆ bool        │
+╞══════════════════════════════╪═══════╪════════╪═════════╪════════╪══════════╪═════════════╡
+│ hd_pv_term_last              ┆ pv    ┆ 0.0562 ┆ 3.4556  ┆ 0.0007 ┆ 0.7000   ┆ false       │
+│ hd_ec_payday                 ┆ ec    ┆ 0.0171 ┆ 1.9563  ┆ 0.0002 ┆ 1.0000   ┆ false       │
+│ hd_app_round_m               ┆ app   ┆ 0.0012 ┆ 1.6316  ┆ 0.0001 ┆ 1.0000   ┆ false       │
+│ hd_bu_active_vs_inq          ┆ bu    ┆ 0.0513 ┆ 1.5361  ┆ 0.0008 ┆ 1.0000   ┆ false       │
+│ hd_ec_hour_sd                ┆ ec    ┆ 0.0082 ┆ 1.3882  ┆ 0.0001 ┆ 1.0000   ┆ false       │
+│ hd_pv_gap_min                ┆ pv    ┆ 0.0583 ┆ 1.3736  ┆ 0.0011 ┆ 0.5945   ┆ false       │
+│ hd_app_hour                  ┆ app   ┆ 0.0070 ┆ 1.3314  ┆ 0.0000 ┆ 1.0000   ┆ false       │
+│ hd_acc_path_skew             ┆ acc   ┆ 0.0537 ┆ 1.3166  ┆ 0.0009 ┆ 0.7000   ┆ false       │
+│ hd_pv_lag_mean               ┆ pv    ┆ 0.0519 ┆ 1.2994  ┆ 0.0008 ┆ 0.7000   ┆ false       │
+│ hd_rp_pay_late_dom           ┆ rp    ┆ 0.0407 ┆ 1.1934  ┆ 0.0014 ┆ 0.6610   ┆ false       │
+│ hd_pv_hour_mean              ┆ pv    ┆ 0.0491 ┆ 1.1819  ┆ 0.0007 ┆ 0.7000   ┆ false       │
+│ hd_pv_gap_median             ┆ pv    ┆ 0.0572 ┆ 1.1121  ┆ 0.0001 ┆ 0.5945   ┆ false       │
+│ hd_ec_z_cancelled_minus_done ┆ ec    ┆ 0.0167 ┆ 1.0881  ┆ 0.0003 ┆ 0.8075   ┆ false       │
+│ hd_pv_lag_max                ┆ pv    ┆ 0.0505 ┆ 1.0529  ┆ 0.0004 ┆ 0.7000   ┆ false       │
+│ hd_ec_multi_cat              ┆ ec    ┆ 0.0052 ┆ 1.0012  ┆ 0.0000 ┆ 1.0000   ┆ false       │
+│ hd_acc_nonincome_cv          ┆ acc   ┆ 0.0481 ┆ 0.9983  ┆ 0.0012 ┆ 0.7000   ┆ false       │
+│ hd_ec_month_start            ┆ ec    ┆ 0.0142 ┆ 0.9660  ┆ 0.0004 ┆ 1.0000   ┆ false       │
+│ hd_dec_hour                  ┆ dec   ┆ 0.0092 ┆ 0.8850  ┆ 0.0008 ┆ 1.0000   ┆ false       │
+│ hd_ec_z_cod                  ┆ ec    ┆ 0.2612 ┆ 0.8352  ┆ 0.0013 ┆ 0.6908   ┆ false       │
+│ hd_rp_pay_hour               ┆ rp    ┆ 0.0408 ┆ 0.8230  ┆ 0.0005 ┆ 0.6610   ┆ false       │
+│ hd_ec_weekend                ┆ ec    ┆ 0.0055 ┆ 0.8191  ┆ 0.0005 ┆ 1.0000   ┆ false       │
+│ hd_ec_z_credit               ┆ ec    ┆ 0.0549 ┆ 0.8133  ┆ 0.0001 ┆ 0.1857   ┆ false       │
+│ hd_acc_inflow_cv             ┆ acc   ┆ 0.0503 ┆ 0.8027  ┆ 0.0001 ┆ 0.7000   ┆ false       │
+│ hd_acc_dip_max               ┆ acc   ┆ 0.0606 ┆ 0.7414  ┆ 0.0008 ┆ 0.7000   ┆ false       │
+│ hd_rp_due_dom                ┆ rp    ┆ 0.0421 ┆ 0.7280  ┆ 0.0015 ┆ 0.6616   ┆ false       │
+│ hd_pv_night                  ┆ pv    ┆ 0.0476 ┆ 0.6634  ┆ 0.0007 ┆ 0.7000   ┆ false       │
+│ hd_rp_partial_depth          ┆ rp    ┆ 0.2336 ┆ 0.6400  ┆ 0.0002 ┆ 0.2289   ┆ false       │
+│ hd_bu_delay_sel_max          ┆ bu    ┆ 0.0108 ┆ 0.5490  ┆ 0.0004 ┆ 1.0000   ┆ false       │
+│ hd_ec_hour_mean              ┆ ec    ┆ 0.0076 ┆ 0.5291  ┆ 0.0000 ┆ 1.0000   ┆ false       │
+│ hd_ec_cod_share              ┆ ec    ┆ 0.0789 ┆ 0.5176  ┆ 0.0007 ┆ 1.0000   ┆ false       │
+│ hd_acc_dip                   ┆ acc   ┆ 0.0579 ┆ 0.5161  ┆ 0.0007 ┆ 0.7000   ┆ false       │
+│ hd_acc_turnover              ┆ acc   ┆ 0.0578 ┆ 0.3948  ┆ 0.0002 ┆ 0.7000   ┆ false       │
+│ hd_app_dom                   ┆ app   ┆ 0.0053 ┆ 0.3824  ┆ 0.0004 ┆ 1.0000   ┆ false       │
+│ hd_bu_delay_mean             ┆ bu    ┆ 0.0174 ┆ 0.3651  ┆ 0.0010 ┆ 1.0000   ┆ false       │
+│ hd_ec_items_sd               ┆ ec    ┆ 0.0118 ┆ 0.3155  ┆ 0.0008 ┆ 1.0000   ┆ false       │
+│ hd_rp_pay_night              ┆ rp    ┆ 0.0399 ┆ 0.2265  ┆ 0.0004 ┆ 0.6610   ┆ false       │
+│ hd_pv_round_share            ┆ pv    ┆ 0.0497 ┆ 0.0852  ┆ 0.0001 ┆ 0.7000   ┆ false       │
+│ hd_bu_score_null_share       ┆ bu    ┆ 0.0157 ┆ 0.0385  ┆ 0.0008 ┆ 1.0000   ┆ false       │
+│ hd_ec_cc_share               ┆ ec    ┆ 0.0077 ┆ 0.0310  ┆ 0.0000 ┆ 1.0000   ┆ false       │
+└──────────────────────────────┴───────┴────────┴─────────┴────────┴──────────┴─────────────┘
+
+above noise on both tests: 0 of 39

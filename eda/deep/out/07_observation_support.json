@@ -1,0 +1,7 @@
+{
+  "account_customers": 49000,
+  "customers_with_12_complete_months": 36660,
+  "median_ecommerce_oldest_event_days": 441.0940972222222,
+  "fraction_oldest_event_at_least_365": 0.6221714285714286,
+  "oldest_event_is_observation_start": false
+}

@@ -1,0 +1,6 @@
+  var = nanvar(a, axis=axis, dtype=dtype, out=out, ddof=ddof,
+candidate pool: 1228
+K=  5: real bundle held-out gain +0.0008 (halves +0.0009 +0.0007); noise bundles mean +0.0012 max +0.0023
+K= 20: real bundle held-out gain +0.0002 (halves +0.0011 -0.0008); noise bundles mean +0.0009 max +0.0023
+K= 60: real bundle held-out gain -0.0016 (halves +0.0010 -0.0042); noise bundles mean -0.0002 max +0.0015
+top-20 chosen on half 1: ['own:bc_stale_mean', 'own:bc_delay_mean', 'ratio:bp_out_b/ac_outflow_mean', 'dfs:rel_153', 'dfs:rel_157', 'dfs:rel_161', 'ratio:bp_out_a/ac_outflow_mean', 'ratio:income_per_head/cf_minbal_l3', 'dfs:rel_236', 'dfs:rel_053', 'own:ac_inflow_mean', 'dfs:rel_080', 'own:income_verif_ratio', 'ratio:declared_monthly_income/ac_income_mean', 'ratio:ac_income_std/pv_appr_sum', 'ratio:bh_last_outstanding/ec_spend_30d', 'dfs:rel_145', 'dfs:rel_117', 'ratio:bc_outstanding_max/ac_income_std', 'own:pv_appr_sum']

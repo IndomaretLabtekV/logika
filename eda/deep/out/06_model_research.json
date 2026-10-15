@@ -1,0 +1,21 @@
+{
+  "models_run": 0,
+  "notebook_runs": 0,
+  "TabPFN_Rel": "DFS + TabPFN-3.5; benchmark temporal task API does not directly match random customer split with provided labels. See relational/schema.json before remote adapter work.",
+  "TabPFN_3_5": "V3 full 56k context still behind trees; compare all/family-balanced/top100 features before adding context tricks.",
+  "Causilo": "Native mixed-type/NaN handling and optional KV cache. Preserve context and log actual context rows; old capped run is not a full-context benchmark.",
+  "EXAONE": "21M parameters do not imply tiny context memory. CUDA memory planner supports an explicit byte budget; benchmark same fold/context remotely.",
+  "Mitra_v2": "Published fine-tuning recipe differs from stock AutoGluon defaults; record recipe and folds. No local model execution.",
+  "RT_Plurel": "Relational system benchmark result is not plug-and-play proof for this snapshot dataset; defer until cutoff adapter passes.",
+  "rule_status": "External datasets are prohibited; supplied rules do not explicitly settle every pretrained-weight/API policy. Do not upload competition rows to hosted APIs without authorization.",
+  "sources": {
+    "TabPFN_Rel": "https://github.com/PriorLabs/tabpfn-rel",
+    "RPI": "https://github.com/PriorLabs/relarena/blob/main/docs/predictive-task.md",
+    "TabPFN": "https://github.com/PriorLabs/TabPFN",
+    "Causilo": "https://github.com/nums-ai/causilo",
+    "EXAONE": "https://github.com/LGAI-Research/EXAONE-Tabular",
+    "Mitra_v2": "https://huggingface.co/autogluon/mitra-classifier-2",
+    "RT_Plurel": "https://github.com/PriorLabs/relarena"
+  },
+  "verified_date": "2026-10-13"
+}

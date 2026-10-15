@@ -1,0 +1,13 @@
+scorecard KS (equal weights): 0.4116
+  without bc_score_mean          KS=0.4105
+  without rp_frac_dpd1           KS=0.3766
+  without ec_accel_30d           KS=0.3612
+  without annual_interest_rate   KS=0.4155
+  without rp_cur_dpd_max         KS=0.3984
+  without ac_out_in_delta        KS=0.4083
+  without debt_to_income         KS=0.4301
+  without ec_aov                 KS=0.3875
+  without pv_rej_rate            KS=0.4192
+public=30%: KS_pub sd=0.0127  |pub-priv| p50=0.0107 p95=0.0323
+public=50%: KS_pub sd=0.0090  |pub-priv| p50=0.0102 p95=0.0269
+wrote submissions/00_scorecard_baseline.csv

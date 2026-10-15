@@ -1,0 +1,15 @@
+{
+  "submission_KS": 0.527025186311824,
+  "submission_AUC": 0.8471662873363532,
+  "max_csv_reconstruction_error": 4.440892098500626e-16,
+  "augmented_weight": 0.5483333333333336,
+  "public_reported": 0.56145,
+  "top_public_reported": 0.57493,
+  "missing_predictions": [
+    "exaone",
+    "realmlp",
+    "tabicl",
+    "tabm_p"
+  ],
+  "warning": "CSV decomposition recovers existing coefficients without target labels. It does not establish how weights were selected or which later session wrote the CSV."
+}

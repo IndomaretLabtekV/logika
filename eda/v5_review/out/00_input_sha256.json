@@ -1,0 +1,13 @@
+{
+  "notebook/v5.ipynb": "d63a5591069a32e86d509f7b90bc55c04d03ce1dafbf28ebf1aaa1653c1ef470",
+  "data_pq/features.parquet": "39fead8441b169751d93489f9240c69ada4f4ff57c4b1a0e86f3d84e1acff676",
+  "results/v5/submission.csv": "7a0be0000082a55295c3484076ee34a3e49d97ae9a5467e6485f87d764837414",
+  "results/v5/oof_cat.npy": "2730b21406affd3547d3407ef8e433fb80384d45c55a16bc752905b5efe0cb80",
+  "results/v5/oof_cat_s.npy": "e113d2fc4c55c8f56794098b3a04443c96c68c145485bdf420f0ee3f261fe059",
+  "results/v5/oof_lgb.npy": "e5d57c25e763e6881b301d6a1ea5f5e0514a9b996249d38af72abed46c4d646e",
+  "results/v5/oof_lgb_s.npy": "c67e7e246bcd9f791d236e12e9b92a66936e6990a45dd1a8457a493dfa9c769e",
+  "results/v5/oof_tabm.npy": "ddef7885784d42d1c89ce72f5a35911c8e6158a9c30e67a1092f732c21913e46",
+  "results/v5/oof_tabpfn_rel.npy": "954e1f0b82fe3e89894ba64f3bab3d1249028c62077e4f038d56e1a9d4c183c2",
+  "results/v5/oof_xgb.npy": "b3cf5df19c07322518680e9b94454989261f55edc8c9e530a956feb7d7ed7a1e",
+  "results/v5/oof_xgb_s.npy": "e5a40a339f69d7bf842a53dafaadaaa4e8c03ae129dd092a86260e1173c7d368"
+}

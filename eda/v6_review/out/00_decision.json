@@ -1,0 +1,12 @@
+{
+  "v5_KS": 0.5274237034912834,
+  "v6_KS": 0.5283339046270717,
+  "delta": 0.0009102011357883244,
+  "paired_bootstrap_95": [
+    -0.0015958313899773811,
+    0.003048854386042708
+  ],
+  "v6_public_reported": 0.56123,
+  "v5_public_reported": null,
+  "warning": "Selected blends, repeated label use and fixed saved models: resampling does not include model-selection/retraining uncertainty."
+}

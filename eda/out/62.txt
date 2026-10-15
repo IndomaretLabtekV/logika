@@ -1,0 +1,24 @@
+v6 KS 0.5283; noise chi2/df p95=1.32 dKS p95=+0.0022
+shape: (12, 5)
+┌────────────────────────┬─────────┬──────────┬────────┬───────┐
+│ candidate              ┆ chi2_df ┆ max_lift ┆ dKS_cf ┆ above │
+│ ---                    ┆ ---     ┆ ---      ┆ ---    ┆ ---   │
+│ str                    ┆ f64     ┆ f64      ┆ f64    ┆ bool  │
+╞════════════════════════╪═════════╪══════════╪════════╪═══════╡
+│ seg_dec_month          ┆ 3.6578  ┆ 0.1224   ┆ 0.0028 ┆ true  │
+│ dis_tabm_minus_tabpfn  ┆ 0.9390  ┆ 0.0700   ┆ 0.0018 ┆ false │
+│ seg_purpose            ┆ 0.4609  ┆ 0.0138   ┆ 0.0011 ┆ false │
+│ dis_tabpfn_minus_trees ┆ 1.8654  ┆ 0.0582   ┆ 0.0011 ┆ false │
+│ dis_tabm_minus_trees   ┆ 0.8771  ┆ 0.0563   ┆ 0.0010 ┆ false │
+│ dis_lgb_minus_cat      ┆ 1.4198  ┆ 0.0581   ┆ 0.0009 ┆ false │
+│ dis_model_sd           ┆ 1.0428  ┆ 0.0666   ┆ 0.0008 ┆ false │
+│ seg_n_reports          ┆ 1.3146  ┆ 0.0595   ┆ 0.0007 ┆ false │
+│ seg_region             ┆ 0.7321  ┆ 0.0228   ┆ 0.0005 ┆ false │
+│ seg_has_history        ┆ 0.0024  ┆ 0.0007   ┆ 0.0004 ┆ false │
+│ seg_employment         ┆ 3.0045  ┆ 0.0378   ┆ 0.0004 ┆ false │
+│ seg_rate_tier          ┆ 1.5703  ┆ 0.0206   ┆ 0.0003 ┆ false │
+└────────────────────────┴─────────┴──────────┴────────┴───────┘
+segment-recalibrated by seg_has_history : KS 0.5268 (global-only recalibration 0.5261)
+segment-recalibrated by seg_dec_month   : KS 0.5215 (global-only recalibration 0.5261)
+segment-recalibrated by seg_employment  : KS 0.5243 (global-only recalibration 0.5261)
+segment-recalibrated by seg_rate_tier   : KS 0.5260 (global-only recalibration 0.5261)

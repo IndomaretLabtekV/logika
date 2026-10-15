@@ -1,0 +1,7 @@
+{
+  "notebook/v8.ipynb": "7503020027c3db0ce29840e65abefee6d4aace1b10843354e3f2f9e7fa9f1728",
+  "results/v8/v8_run.ipynb": "de0479d65d635b92980e05d335c9a1b7fa012b9f54bc109a9e0a12827f37cb66",
+  "results/v8/submission.csv": "a879691805b20ae45f119fb83f84128b9e251cf5300cdb7fed9fb93597d185f2",
+  "data_pq/hist_labels.parquet": "b75c1639352c23d7c74280d7498a87018811c2646f1d6fc04ac06691612a98d4",
+  "data_pq/hist_feats.parquet": "e0ff96d70229fd67bb4af8d246eaa98e8a114e2b460fbd7b44d81a6aa848072c"
+}

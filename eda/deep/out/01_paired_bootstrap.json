@@ -1,0 +1,10 @@
+{
+  "v3_KS": 0.5142272154523133,
+  "v2_KS": 0.5134737729852269,
+  "observed_delta": 0.0007534424670864182,
+  "paired_bootstrap_CI95": [
+    -0.002116381392868388,
+    0.004060569248811186
+  ],
+  "limitation": "Fixed selected predictions; does not account for retraining or adaptive feature/model selection."
+}

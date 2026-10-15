@@ -1,0 +1,14 @@
+noise vs v3: chi2/df p95=1.94  dKS p95=+0.0016
+
+candidate                    KS     chi2/df   dKS vs v3
+rl_req_by_term             0.0537     0.44  +0.0010
+rl_inst_by_term            0.0471     1.09  +0.0009
+rl_bureau_out              0.1059     1.13  +0.0006
+rl_bureau_limit            0.0067     1.64  +0.0009
+rl_amount_due              0.0423     1.17  +0.0007
+rl_outflows                0.0592     0.83  +0.0004
+rl_income                  0.0489     0.80  -0.0004
+rl_order_by_items          0.2415     4.50  +0.0012
+rl_order_by_pm             0.2339     2.79  +0.0010
+rl_loan_by_purpose         0.0557     0.64  +0.0013
+rl_income_by_job_region    0.0238     1.43  +0.0015

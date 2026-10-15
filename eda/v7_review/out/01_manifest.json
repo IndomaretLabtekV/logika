@@ -1,0 +1,4 @@
+{
+  "no_weight_optimization": true,
+  "warning": "Threshold is cross-half; model/feature/blend selection already used these labels. These are diagnostics, not new untouched validation. Ranking scores are not calibrated probabilities."
+}

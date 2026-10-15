@@ -1,0 +1,27 @@
+{
+  "selected": "baseline",
+  "challenger_minus_baseline": -0.00013112517570657012,
+  "paired_fixed_prediction_CI95": [
+    -0.0015877902334727578,
+    0.0017114582744800959
+  ],
+  "fold_deltas": [
+    -0.0017373327943814854,
+    0.003575577759131532,
+    0.0012850758378221139,
+    0.0024024792967491937,
+    0.0020732368100052634
+  ],
+  "segment_deltas": {
+    "0": 0.00020504343731786445,
+    "1": 0.00020945990736831455
+  },
+  "family_weights": {
+    "lgb": 0.4,
+    "tabm": 0.45,
+    "xgb": 0.1,
+    "cat": 0.05
+  },
+  "challenger_combined_fraction": 0.5,
+  "interpretation": "Conservative OOF selection heuristic, not an unbiased post-selection estimate or private-KS guarantee."
+}

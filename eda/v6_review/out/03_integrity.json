@@ -1,0 +1,15 @@
+{
+  "account_rows": 1084418,
+  "account_key_duplicate_rows": 0,
+  "account_balance_identity_failures": 0,
+  "minimum_balance_zero_share": 0.08140587854498911,
+  "minimum_balance_negative_rows": 0,
+  "profile_duplicate_content_rows": 0,
+  "feature_duplicate_content_rows": 0,
+  "item_duplicate_key_rows": 0,
+  "repeated_item_content_rows": 2388,
+  "order_total_mismatch_rows": 0,
+  "order_inconsistent_owner_rows": 0,
+  "order_inconsistent_total_rows": 0,
+  "naive_spending_inflation": 1.739704447803106
+}

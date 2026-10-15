@@ -1,0 +1,7 @@
+{
+  "reference_fit": "Diagnostic training customers only; cumulative observations strictly before query calendar month",
+  "diagnostic_seed": 20261014,
+  "folds": 5,
+  "self_checks": "reference recomputation, validation perturbation, future perturbation passed",
+  "caveat": "Standalone diagnostic folds are not sklearn folds used by v5. Refit references inside actual future model folds."
+}

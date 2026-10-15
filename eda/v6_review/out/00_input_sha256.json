@@ -1,0 +1,14 @@
+{
+  "notebook/v6.ipynb": "4468674425ea1877bf7cff8b7019c65b7f62f5787edb407db630affd672a619b",
+  "data_pq/features.parquet": "b5cf94d5640a25eb04e721267c71a6ea746e4dd6783436e120eb4824a3c23925",
+  "results/v6/submission.csv": "719456d7613970af0c4a4c0f0cc8c91575000c9d3d1a08f5da2db616fb88194b",
+  "results/v6/oof_cat.npy": "759546c65b5a98e0887b0994062d82f61c0e177bbe28dfdaab566e17fa68be80",
+  "results/v6/oof_cat_s.npy": "5d094eabd8ebf6f30be78fc3d0074563d6845a7127f0aa1b653359bc23fd7163",
+  "results/v6/oof_lgb.npy": "76a378e0c2699760a06ec4e851e6420141149b990e8e9298b0b5eff60ff1d3fa",
+  "results/v6/oof_lgb_s.npy": "2e0e7d63183f09e0e231977fde67ce80b8daab59e32489cbb098c6089b0e6fb7",
+  "results/v6/oof_tabm.npy": "de8028cd27ee078b0eae5aeb8f7e8554514ee8d956f3e637acaba699d9e4d0e1",
+  "results/v6/oof_tabm_p.npy": "ef06c3dc7fd51d3f035d7dbac2fe776ce6ff4194f4b40ee5267bc9bd13a924a5",
+  "results/v6/oof_tabpfn.npy": "dabf263ea5860d3c3564703ba6d158e03633cc94be63e2ebe9a03594271e0f2d",
+  "results/v6/oof_xgb.npy": "ce18260f9e28d515db768357592f985509f0d9c913570355c957111512bb5db2",
+  "results/v6/oof_xgb_s.npy": "5997494e4b08f3a575ed85c0ebfcbb3fcb64b3d811e974c016c590d17b20c4b5"
+}

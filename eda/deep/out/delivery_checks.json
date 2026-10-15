@@ -1,0 +1,88 @@
+{
+  "preprocessor_self_checks": "passed",
+  "arrays": {
+    "nn_fold0.npz": {
+      "X_train": [
+        55999,
+        348
+      ],
+      "X_valid": [
+        14001,
+        348
+      ],
+      "X_test": [
+        30000,
+        348
+      ],
+      "cat_train": [
+        55999,
+        4
+      ],
+      "cat_valid": [
+        14001,
+        4
+      ],
+      "cat_test": [
+        30000,
+        4
+      ],
+      "y_train": [
+        55999
+      ],
+      "y_valid": [
+        14001
+      ],
+      "train_ids": [
+        55999
+      ],
+      "valid_ids": [
+        14001
+      ],
+      "test_ids": [
+        30000
+      ]
+    },
+    "nn_fold0_semantic.npz": {
+      "X_train": [
+        55999,
+        348
+      ],
+      "X_valid": [
+        14001,
+        348
+      ],
+      "X_test": [
+        30000,
+        348
+      ],
+      "cat_train": [
+        55999,
+        5
+      ],
+      "cat_valid": [
+        14001,
+        5
+      ],
+      "cat_test": [
+        30000,
+        5
+      ],
+      "y_train": [
+        55999
+      ],
+      "y_valid": [
+        14001
+      ],
+      "train_ids": [
+        55999
+      ],
+      "valid_ids": [
+        14001
+      ],
+      "test_ids": [
+        30000
+      ]
+    }
+  },
+  "model_execution": false
+}

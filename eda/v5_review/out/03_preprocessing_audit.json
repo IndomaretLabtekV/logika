@@ -1,0 +1,22 @@
+{
+  "global_shape": [
+    100000,
+    266
+  ],
+  "fold_step_shape": [
+    100000,
+    266
+  ],
+  "corrected_shape": [
+    100000,
+    377
+  ],
+  "numeric_validation_abs_difference_median": 0.0012514851987361908,
+  "numeric_validation_abs_difference_p99": 0.009711011312901974,
+  "original_probe_context_positive": 815,
+  "original_probe_query_positive": 0,
+  "corrected_probe_context_positive": 407,
+  "corrected_probe_query_positive": 407,
+  "unknown_category_values": 0,
+  "preprocessing_only": "Numbers in this audit isolate the numeric-transform change on v5 inputs. The NPZ export additionally replaces global pp columns with fold0 past-only price features; see 03_integrated_manifest."
+}

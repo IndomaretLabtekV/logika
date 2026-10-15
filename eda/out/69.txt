@@ -1,0 +1,20 @@
+observed KS 0.5283; KS if calibrated v6 p were the truth: 0.5277 +- 0.0046
+-> errors are consistent with Bernoulli noise around our p
+expected KS of a model whose log-odds spread is scaled (truth = that model):
+shape: (6, 3)
+┌─────────────┬─────────────┬────────────┐
+│ logit_scale ┆ expected_KS ┆ sd_logodds │
+│ ---         ┆ ---         ┆ ---        │
+│ f64         ┆ f64         ┆ f64        │
+╞═════════════╪═════════════╪════════════╡
+│ 1.0000      ┆ 0.5289      ┆ 1.9025     │
+│ 1.0500      ┆ 0.5452      ┆ 1.9977     │
+│ 1.1000      ┆ 0.5622      ┆ 2.0928     │
+│ 1.2000      ┆ 0.5900      ┆ 2.2831     │
+│ 1.3000      ┆ 0.6193      ┆ 2.4733     │
+│ 1.5000      ┆ 0.6707      ┆ 2.8538     │
+└─────────────┴─────────────┴────────────┘
+truth spread x1.15, team noise sd 0.80 (team-to-team corr 0.88), public 30%: top-of-20 teams (best of 10 subs) minus an equal team: mean +0.0254 [p10 +0.0146, p90 +0.0362]
+truth spread x1.15, team noise sd 0.80 (team-to-team corr 0.88), public 50%: top-of-20 teams (best of 10 subs) minus an equal team: mean +0.0169 [p10 +0.0102, p90 +0.0248]
+truth spread x1.3, team noise sd 1.20 (team-to-team corr 0.81), public 30%: top-of-20 teams (best of 10 subs) minus an equal team: mean +0.0282 [p10 +0.0139, p90 +0.0407]
+truth spread x1.3, team noise sd 1.20 (team-to-team corr 0.81), public 50%: top-of-20 teams (best of 10 subs) minus an equal team: mean +0.0207 [p10 +0.0103, p90 +0.0301]

@@ -1,0 +1,64 @@
+  print(t.group_by(lag_b=pl.col("lag_h").cut([6, 24, 48, 96])).agg(n=pl.len(), bad=pl.col("target").mean()).sort("lag_b"))
+=== 1) annuity math
+selected apps: installment - annuity (min, median, max) (0.0003559049218893051, 0.5001779524609447, 0.9999619089066982)
+selected installment != annuity (|d|>2 IDR)             [0] n=70,000 bad=0.136
+previous approved: installment - annuity (0.00021821260452270508, 0.5010730404173955, 0.9999619089066982)
+loan_amount granularity: mod 100k == 0: 1.0
+
+=== 2) previous applications
+any approved < requested                                [False] n=25,378 bad=0.146  [True] n=23,622 bad=0.142
+selected application_id present in previous_applications: 0
+decision mix: [('approved', 159323), ('cancelled', 18392), ('rejected', 24269)]
+prev term_months: [(6, 67175), (12, 67785), (18, 67024)]
+prev apps decided after selected cutoff: 0
+
+=== 3) repayment
+paid > due: 0  partial (0<paid<due): 27069  zero paid: 31714
+any partial payment                                     [0] n=32,513 bad=0.089  [1] n=13,799 bad=0.270
+any payment before due date                             [None] n=44 bad=0.386  [0] n=46,268 bad=0.143
+days paid early (paid rows) quantiles: (-152.0, -61.0, 0.0, 0.0, 0.0)
+dpd>max_dpd rows: 0
+repayment loans not in previous_applications: 0
+approved loans: expected-observed installment count: [(-1.0, 1846), (0.0, 156900), (1.0, 577)]
+approved loan missing >=2 expected installments         [0] n=46,565 bad=0.143
+approved loan with no repayment rows                    [0] n=44,198 bad=0.141  [1] n=2,367 bad=0.191
+
+=== 4) account identities
+closing != opening+in-out: 0  opening != prev closing: 0  month gaps>31d: 0
+negative balances: min_balance<0: 0  closing<0: 0
+income_like > inflows: 0  min>avg: 0
+any balance-identity break                              [0] n=49,000 bad=0.144
+any month with zero income credits                      [0] n=49,000 bad=0.144
+months per customer: [(8, 4390), (9, 4413), (10, 4409), (11, 4375), (12, 4395), (13, 4375), (14, 4321), (15, 4432), (16, 4314), (17, 4334), (18, 4367), (19, 4284), (20, 4436), (21, 4445), (22, 4322), (23, 4388)]
+
+=== 5) bureau
+delay (available-report) days quantiles: (0.0, 12.0, 60.0, 108.0, 120.0)
+utilization null & limit>0: 0  util != bal/limit: 0
+revolving balance > outstanding: 0
+providers in selected pull: [(1, 3254), (2, 29404), (3, 67342)]
+
+=== 6) application timing
+decision seconds all zero: True  lag_h quantiles: (0.20027777777777778, 0.8330555555555555, 9.555833333333334, 78.03694444444444, 119.9975)
+shape: (5, 3)
+┌───────────┬───────┬──────────┐
+│ lag_b     ┆ n     ┆ bad      │
+│ ---       ┆ ---   ┆ ---      │
+│ enum      ┆ u32   ┆ f64      │
+╞═══════════╪═══════╪══════════╡
+│ (-inf, 6] ┆ 31398 ┆ 0.136091 │
+│ (6, 24]   ┆ 18406 ┆ 0.136966 │
+│ (24, 48]  ┆ 8177  ┆ 0.134524 │
+│ (48, 96]  ┆ 7964  ┆ 0.132471 │
+│ (96, inf] ┆ 4055  ┆ 0.137608 │
+└───────────┴───────┴──────────┘
+shape: (4, 3)
+┌─────┬───────┬──────────┐
+│ dh  ┆ n     ┆ bad      │
+│ --- ┆ ---   ┆ ---      │
+│ i8  ┆ u32   ┆ f64      │
+╞═════╪═══════╪══════════╡
+│ 8   ┆ 21518 ┆ 0.133284 │
+│ 12  ┆ 21673 ┆ 0.138975 │
+│ 16  ┆ 21516 ┆ 0.136828 │
+│ 20  ┆ 5293  ┆ 0.129038 │
+└─────┴───────┴──────────┘

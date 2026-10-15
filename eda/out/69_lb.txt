@@ -1,0 +1,6 @@
+truth spread x1.05, team noise sd 0.32 (team-to-team corr 0.97), public 30%: top-of-20 teams (best of 10 subs) minus an equal team: mean +0.0151 [p10 +0.0085, p90 +0.0212]
+truth spread x1.05, team noise sd 0.32 (team-to-team corr 0.97), public 50%: top-of-20 teams (best of 10 subs) minus an equal team: mean +0.0123 [p10 +0.0080, p90 +0.0173]
+truth spread x1.15, team noise sd 0.75 (team-to-team corr 0.89), public 30%: top-of-20 teams (best of 10 subs) minus an equal team: mean +0.0232 [p10 +0.0148, p90 +0.0324]
+truth spread x1.15, team noise sd 0.75 (team-to-team corr 0.89), public 50%: top-of-20 teams (best of 10 subs) minus an equal team: mean +0.0163 [p10 +0.0057, p90 +0.0249]
+truth spread x1.3, team noise sd 1.27 (team-to-team corr 0.79), public 30%: top-of-20 teams (best of 10 subs) minus an equal team: mean +0.0263 [p10 +0.0116, p90 +0.0399]
+truth spread x1.3, team noise sd 1.27 (team-to-team corr 0.79), public 50%: top-of-20 teams (best of 10 subs) minus an equal team: mean +0.0213 [p10 +0.0090, p90 +0.0353]

@@ -1,0 +1,15 @@
+feature,population,coverage
+annual_interest_rate,selected,1.0
+annual_interest_rate,historical,1.0
+bc_score_mean,selected,0.9974857142857143
+bc_score_mean,historical,0.9972093706396417
+pp_mean,selected,1.0
+pp_mean,historical,0.3114856429463171
+ec_accel_30d,selected,1.0
+ec_accel_30d,historical,0.3115835597659788
+dti_declared,selected,1.0
+dti_declared,historical,1.0
+age,selected,1.0
+age,historical,1.0
+rp_frac_dpd1,selected,0.6616
+rp_frac_dpd1,historical,0.32788671023965144

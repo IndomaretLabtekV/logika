@@ -1,0 +1,8 @@
+{
+  "all_observed_values_unchanged": true,
+  "nonfinite_outputs": 0,
+  "fit_customers": 55999,
+  "validation_or_test_new_missing_columns": 0,
+  "duplicate_raw_predictor_rows": 0,
+  "train_test_customer_overlap": 0
+}

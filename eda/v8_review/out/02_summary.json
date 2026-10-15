@@ -1,0 +1,13 @@
+{
+  "historical_rows": 81702,
+  "unique_historical_customers": 50510,
+  "main_customers": 70000,
+  "test_customers": 30000,
+  "group_manifest_seed": 81015,
+  "strict_fold0_train": 45652,
+  "validation_customer": 11537,
+  "test_customer": 24513,
+  "unknown_historical_purpose": 81702,
+  "historical_duplicate_application_ids": 0,
+  "warning": "V8 adds all history rows in each fold, including histories of validation and test customers. These are not selected-loan target labels, but the evaluation is transductive rather than unseen-customer training. Compare protocols explicitly."
+}

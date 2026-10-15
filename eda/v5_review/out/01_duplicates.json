@@ -1,0 +1,10 @@
+{
+  "item_rows": 4359817,
+  "orders": 2986855,
+  "repeated_item_content_rows": 2388,
+  "order_total_inflation_if_summed_over_items": 1.739704447803106,
+  "order_total_vs_item_sum_mismatch": 0,
+  "profile_exact_duplicates_excluding_id": 0,
+  "feature_exact_duplicates_excluding_ids": 0,
+  "train_test_customer_overlap": 0
+}

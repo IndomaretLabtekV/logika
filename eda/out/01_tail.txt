@@ -1,0 +1,15 @@
+└───────┴─────────┴───────┴──────────────────┘
+
+bureau rows on selected app: 264088  on previous apps: 533475
+bureau(selected) available after decision: 0  report after decision: 0 of 264088
+bureau rows per selected app by split:
+ shape: (2, 3)
+┌───────┬──────────┬─────┐
+│ split ┆ mean     ┆ max │
+│ ---   ┆ ---      ┆ --- │
+│ str   ┆ f64      ┆ u32 │
+╞═══════╪══════════╪═════╡
+│ train ┆ 2.639686 ┆ 3   │
+│ test  ┆ 2.643667 ┆ 3   │
+└───────┴──────────┴─────┘
+prev apps with application_datetime > selected decision: 0

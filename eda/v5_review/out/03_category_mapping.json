@@ -1,0 +1,26 @@
+{
+  "loan_purpose": {
+    "education": 1,
+    "home_improvement": 2,
+    "household": 3,
+    "medical": 4,
+    "working_capital": 5
+  },
+  "region": {
+    "Region_A": 1,
+    "Region_B": 2,
+    "Region_C": 3,
+    "Region_D": 4,
+    "Region_E": 5
+  },
+  "employment_type": {
+    "salaried": 1,
+    "self_employed": 2,
+    "variable_income": 3
+  },
+  "housing_status": {
+    "family": 1,
+    "owned": 2,
+    "rented": 3
+  }
+}

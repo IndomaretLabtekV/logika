@@ -1,0 +1,10 @@
+dup item rows: 2388 orders affected: 1194
+orders where sum(item_total) != order_total: 0 | of which contain dup rows: 0
+order-level fields constant within order: (1, 1, 1, 1)
+KS of application_id hex prefix vs target: 0.0066
+KS of customer_id hex prefix vs target: 0.0086
+KS of decision_datetime vs target: 0.0181
+profile twins: 0 cross-split: 0
+exact duplicated full feature rows: 0
+L1 nearest-train distance  test->train  p1/p50: [0.1265 0.3064] | train->train p1/p50: [0.1258 0.303 ]
+top univariate KS (anything >0.6 would smell like leakage): [('rp_frac_dpd1', 0.318), ('ec_accel_30d', 0.309), ('rp_maxdpd_mean', 0.309), ('rp_frac_dpd30', 0.306), ('ec_accel_90d', 0.302)]

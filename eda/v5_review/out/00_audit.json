@@ -1,0 +1,19 @@
+{
+  "n_train": 70000,
+  "positives": 9507,
+  "n_test": 30000,
+  "delta_v5_v3": 0.013196488038970111,
+  "conditional_paired_bootstrap_95": [
+    0.00781691521408863,
+    0.018032358341292177
+  ],
+  "selected_minus_fixed20_conditional_95": [
+    -0.0006318368250778247,
+    0.00420511957957543
+  ],
+  "exaone_original_probe_context_bad": 815,
+  "exaone_original_probe_query_bad": 0,
+  "cache_features": 232,
+  "cache_has_pp_median": false,
+  "note": "Blend weights and features already selected on these labels; bootstrap excludes selection/retraining uncertainty."
+}

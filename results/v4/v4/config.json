@@ -1,0 +1,89 @@
+{
+  "SEED": 42,
+  "FOLD_SEED": 42,
+  "SEEDS": [
+    42,
+    7
+  ],
+  "N_FOLDS": 5,
+  "DATA_DIR": null,
+  "OUTPUT_DIR": "/kaggle/working/v4",
+  "NUM_THREADS": 2,
+  "N_ROUNDS": 8000,
+  "EARLY_STOP": 200,
+  "LGB_PARAMS": {
+    "objective": "binary",
+    "metric": "auc",
+    "learning_rate": 0.02,
+    "num_leaves": 31,
+    "min_child_samples": 100,
+    "feature_fraction": 0.5,
+    "bagging_fraction": 0.8,
+    "bagging_freq": 1,
+    "lambda_l2": 5.0,
+    "verbosity": -1,
+    "num_threads": 2,
+    "deterministic": true,
+    "force_col_wise": true
+  },
+  "XGB_PARAMS": {
+    "objective": "binary:logistic",
+    "eval_metric": "auc",
+    "eta": 0.02,
+    "max_depth": 5,
+    "min_child_weight": 5,
+    "subsample": 0.8,
+    "colsample_bytree": 0.5,
+    "reg_lambda": 5.0,
+    "tree_method": "hist",
+    "nthread": 2
+  },
+  "CAT_PARAMS": {
+    "iterations": 8000,
+    "learning_rate": 0.03,
+    "depth": 6,
+    "l2_leaf_reg": 5.0,
+    "loss_function": "Logloss",
+    "eval_metric": "AUC",
+    "task_type": "GPU",
+    "thread_count": 2,
+    "gpu_ram_part": 0.8,
+    "od_type": "Iter",
+    "od_wait": 200,
+    "use_best_model": true,
+    "allow_writing_files": false,
+    "verbose": false
+  },
+  "TABM_EPOCHS": 60,
+  "TABM_PATIENCE": 8,
+  "TABM_BATCH": 256,
+  "TABM_PRED_BATCH": 1024,
+  "TABM_BINS": 48,
+  "TABM_WIDTH": 512,
+  "TABM_K": 32,
+  "TABM_LR": 0.002,
+  "TABM_WD": 0.0003,
+  "TABM_FOLD_MINUTES": 10,
+  "ROUND_DECIMALS": 8,
+  "SPEND_WINDOW": [
+    112,
+    224
+  ],
+  "FAMILY_WEIGHTS": {
+    "lgb": 0.4,
+    "tabm": 0.45,
+    "xgb": 0.1,
+    "cat": 0.05
+  },
+  "BOOTSTRAPS": 1000,
+  "MIN_GAIN": 0.001,
+  "MIN_POSITIVE_FOLDS": 4,
+  "MAX_SEGMENT_DROP": 0.003,
+  "PUBLIC_SHARES": [
+    0.1,
+    0.3,
+    0.5
+  ],
+  "SIMULATIONS": 300,
+  "SAVE_MODELS": true
+}

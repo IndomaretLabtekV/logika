@@ -1,0 +1,57 @@
+19 v5 features; matrix (100000, 238)
+(a) independent recomputation on 300 customers:
+    pp_mean            match 1.000
+    pp_done            match 1.000
+    pp_cat_groceries   match 1.000
+    pp_qty_item_90     match 1.000
+    dec_month          match 1.000
+(b) features moved by future e-commerce/repayment rows (incl. a 1e9 groceries item that would shift the category reference): none of 231
+(c) pairs inside v5 with |rho|>0.9: [('pp_mean', 'pp_median', np.float64(0.948)), ('pp_mean', 'pp_trim', np.float64(0.991)), ('pp_mean', 'pp_done', np.float64(0.993)), ('pp_median', 'pp_trim', np.float64(0.964)), ('pp_median', 'pp_done', np.float64(0.941)), ('pp_trim', 'pp_done', np.float64(0.984))]
+(d) residual test vs v3 blend:
+    dec_month          KS=0.0151 chi2=  5.58 dKS=+0.0018
+    pp_mean            KS=0.3684 chi2= 25.11 dKS=+0.0061
+    pp_median          KS=0.3493 chi2= 23.16 dKS=+0.0052
+    pp_trim            KS=0.3666 chi2= 25.53 dKS=+0.0076
+    pp_done            KS=0.3653 chi2= 23.16 dKS=+0.0079
+    pp_min             KS=0.2342 chi2= 18.82 dKS=+0.0051
+    pp_max             KS=0.2323 chi2=  4.31 dKS=+0.0011
+    pp_30              KS=0.3150 chi2= 13.98 dKS=+0.0033
+    pp_90              KS=0.3270 chi2= 22.01 dKS=+0.0054
+    pp_old             KS=0.2853 chi2= 12.08 dKS=+0.0031
+    pp_qty_item        KS=0.0073 chi2=  4.62 dKS=+0.0011
+    pp_qty_item_90     KS=0.1250 chi2=  3.91 dKS=+0.0007
+    pp_cat_groceries   KS=0.2858 chi2= 11.41 dKS=+0.0024
+    pp_cat_fashion     KS=0.2464 chi2=  9.63 dKS=+0.0037
+    pp_cat_electronics KS=0.1522 chi2=  4.66 dKS=+0.0013
+    pp_cat_home        KS=0.2130 chi2=  8.82 dKS=+0.0033
+    pp_cat_health      KS=0.1964 chi2=  9.00 dKS=+0.0024
+    pp_cat_education   KS=0.1754 chi2=  6.19 dKS=-0.0001
+    pp_cat_personal_care KS=0.2315 chi2=  6.60 dKS=+0.0025
+
+=== 46_v5: univariate KS vs target, drift train->test
+shape: (19, 6)
+┌──────────────────────┬───────────┬──────────┬───────────┬──────────┬──────────────────┐
+│ feature              ┆ ks_target ┆ psi_test ┆ cov_train ┆ cov_test ┆ ks_train_vs_test │
+│ ---                  ┆ ---       ┆ ---      ┆ ---       ┆ ---      ┆ ---              │
+│ str                  ┆ f64       ┆ f64      ┆ f64       ┆ f64      ┆ f64              │
+╞══════════════════════╪═══════════╪══════════╪═══════════╪══════════╪══════════════════╡
+│ pp_mean              ┆ 0.3684    ┆ 0.0003   ┆ 1.0000    ┆ 1.0000   ┆ 0.0035           │
+│ pp_trim              ┆ 0.3666    ┆ 0.0003   ┆ 1.0000    ┆ 1.0000   ┆ 0.0046           │
+│ pp_done              ┆ 0.3653    ┆ 0.0004   ┆ 1.0000    ┆ 1.0000   ┆ 0.0036           │
+│ pp_median            ┆ 0.3493    ┆ 0.0004   ┆ 1.0000    ┆ 1.0000   ┆ 0.0050           │
+│ pp_90                ┆ 0.3270    ┆ 0.0005   ┆ 0.9555    ┆ 0.9552   ┆ 0.0065           │
+│ pp_30                ┆ 0.3150    ┆ 0.0006   ┆ 0.7430    ┆ 0.7431   ┆ 0.0076           │
+│ pp_cat_groceries     ┆ 0.2858    ┆ 0.0005   ┆ 0.9908    ┆ 0.9915   ┆ 0.0061           │
+│ pp_old               ┆ 0.2853    ┆ 0.0006   ┆ 0.9452    ┆ 0.9452   ┆ 0.0059           │
+│ pp_cat_fashion       ┆ 0.2464    ┆ 0.0003   ┆ 0.9555    ┆ 0.9549   ┆ 0.0068           │
+│ pp_min               ┆ 0.2342    ┆ 0.0006   ┆ 1.0000    ┆ 1.0000   ┆ 0.0054           │
+│ pp_max               ┆ 0.2323    ┆ 0.0005   ┆ 1.0000    ┆ 1.0000   ┆ 0.0061           │
+│ pp_cat_personal_care ┆ 0.2315    ┆ 0.0006   ┆ 0.9403    ┆ 0.9373   ┆ 0.0078           │
+│ pp_cat_home          ┆ 0.2130    ┆ 0.0006   ┆ 0.9012    ┆ 0.9040   ┆ 0.0061           │
+│ pp_cat_health        ┆ 0.1964    ┆ 0.0001   ┆ 0.8456    ┆ 0.8455   ┆ 0.0034           │
+│ pp_cat_education     ┆ 0.1754    ┆ 0.0004   ┆ 0.7894    ┆ 0.7912   ┆ 0.0045           │
+│ pp_cat_electronics   ┆ 0.1522    ┆ 0.0001   ┆ 0.7125    ┆ 0.7132   ┆ 0.0029           │
+│ pp_qty_item_90       ┆ 0.1250    ┆ 0.0008   ┆ 0.9555    ┆ 0.9552   ┆ 0.0055           │
+│ dec_month            ┆ 0.0151    ┆ 0.0006   ┆ 1.0000    ┆ 1.0000   ┆ 0.0058           │
+│ pp_qty_item          ┆ 0.0073    ┆ 0.0005   ┆ 1.0000    ┆ 1.0000   ┆ 0.0070           │
+└──────────────────────┴───────────┴──────────┴───────────┴──────────┴──────────────────┘

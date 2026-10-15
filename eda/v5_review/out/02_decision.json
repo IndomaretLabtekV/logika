@@ -1,0 +1,8 @@
+{
+  "tested": 62,
+  "new_candidates": 29,
+  "replicated_new": [],
+  "replicated_existing": [],
+  "replicated_negative_controls": [],
+  "caution": "Exploratory: the v5 scores/features were selected using these labels. Coarse score strata do not remove all confounding. No fresh holdout, no promised KS gain."
+}

@@ -1,0 +1,72 @@
+highly redundant pairs (|rho|>0.95):
+  rp_frac_dpd1           rp_maxdpd_mean         rho=0.982
+  rp_frac_dpd1           rp_late_mean           rho=0.968
+  ec_accel_30d           ec_orders_30d          rho=0.959
+  rp_maxdpd_mean         rp_frac_dpd30          rho=0.967
+  rp_maxdpd_mean         rp_late_mean           rho=0.987
+  rp_frac_dpd30          rp_late_mean           rho=0.968
+  rp_maxdpd_max          rp_late_max            rho=0.983
+  rp_frac_dpd1_6m        rp_late_mean_6m        rho=0.953
+  bc_score_mean          bc_score_max           rho=0.973
+  bc_score_mean          bc_score_min           rho=0.973
+  rp_n_dpd30             rp_n_dpd1              rho=0.974
+  rp_paid_ratio          rp_unpaid_amt          rho=-0.984
+  rp_paid_ratio          rp_n_unpaid            rho=-0.980
+  rp_paid_ratio          rp_cur_dpd_max         rho=-0.966
+  rp_unpaid_amt          rp_n_unpaid            rho=0.985
+  rp_unpaid_amt          rp_cur_dpd_max         rho=0.971
+  rp_n_unpaid            rp_cur_dpd_max         rho=0.984
+  bh_score_mean          bh_score_min           rho=0.960
+shape: (45, 3)
+┌──────────────────────┬────────┬──────────────────────┐
+│ feature              ┆ ks     ┆ ks_within_score_bins │
+│ ---                  ┆ ---    ┆ ---                  │
+│ str                  ┆ f64    ┆ f64                  │
+╞══════════════════════╪════════╪══════════════════════╡
+│ ec_accel_30d         ┆ 0.3090 ┆ 0.3363               │
+│ ec_accel_90d         ┆ 0.3019 ┆ 0.3291               │
+│ ec_spend_30d         ┆ 0.2912 ┆ 0.3205               │
+│ ec_spend_90d         ┆ 0.2858 ┆ 0.3138               │
+│ ec_orders_14d        ┆ 0.2911 ┆ 0.3127               │
+│ ec_orders_30d        ┆ 0.2884 ┆ 0.3096               │
+│ ec_orders_60d        ┆ 0.2839 ┆ 0.3075               │
+│ ec_recency_d         ┆ 0.2813 ┆ 0.3058               │
+│ ec_spend_90d_ratio   ┆ 0.2728 ┆ 0.2998               │
+│ rp_frac_dpd1         ┆ 0.3183 ┆ 0.2960               │
+│ ec_orders_7d         ┆ 0.2774 ┆ 0.2960               │
+│ rp_maxdpd_mean       ┆ 0.3086 ┆ 0.2867               │
+│ ec_orders_90d        ┆ 0.2632 ┆ 0.2837               │
+│ rp_frac_dpd30        ┆ 0.3060 ┆ 0.2817               │
+│ rp_late_mean         ┆ 0.2982 ┆ 0.2768               │
+│ rp_maxdpd_max        ┆ 0.2744 ┆ 0.2498               │
+│ rp_frac_dpd1_6m      ┆ 0.2689 ┆ 0.2482               │
+│ rp_maxdpd_last3      ┆ 0.2617 ┆ 0.2418               │
+│ rp_maxdpd_12m        ┆ 0.2712 ┆ 0.2403               │
+│ rp_n_dpd60           ┆ 0.2652 ┆ 0.2378               │
+│ rp_late_max          ┆ 0.2613 ┆ 0.2374               │
+│ rp_n_dpd30           ┆ 0.2461 ┆ 0.2282               │
+│ rp_n_dpd1            ┆ 0.2378 ┆ 0.2238               │
+│ rp_paid_ratio        ┆ 0.2350 ┆ 0.2204               │
+│ ec_aov               ┆ 0.1941 ┆ 0.2195               │
+│ rp_maxdpd_6m         ┆ 0.2440 ┆ 0.2190               │
+│ rp_unpaid_amt        ┆ 0.2334 ┆ 0.2180               │
+│ rp_cur_dpd_max       ┆ 0.2319 ┆ 0.2165               │
+│ rp_n_unpaid          ┆ 0.2332 ┆ 0.2159               │
+│ rp_late_mean_6m      ┆ 0.2291 ┆ 0.2135               │
+│ rp_days_since_delinq ┆ 0.2158 ┆ 0.2099               │
+│ rp_n_dpd90           ┆ 0.2364 ┆ 0.1988               │
+│ ec_spend_per_month   ┆ 0.1640 ┆ 0.1847               │
+│ bh_score_min         ┆ 0.1972 ┆ 0.0682               │
+│ bh_last_score        ┆ 0.1932 ┆ 0.0672               │
+│ pv_rate_mean         ┆ 0.1571 ┆ 0.0640               │
+│ bh_score_mean        ┆ 0.1985 ┆ 0.0624               │
+│ bc_score_mean        ┆ 0.2525 ┆ 0.0619               │
+│ pv_rate_last         ┆ 0.1503 ┆ 0.0598               │
+│ annual_interest_rate ┆ 0.2301 ┆ 0.0578               │
+│ bc_score_min         ┆ 0.2453 ┆ 0.0487               │
+│ bp_score_a           ┆ 0.2306 ┆ 0.0482               │
+│ bp_score_c           ┆ 0.1860 ┆ 0.0449               │
+│ bc_score_max         ┆ 0.2471 ┆ 0.0440               │
+│ bp_score_b           ┆ 0.1829 ┆ 0.0437               │
+└──────────────────────┴────────┴──────────────────────┘
+thin-file n=21000 bad=0.117; top KS: [('ec_accel_30d', 0.345), ('ec_spend_30d', 0.333), ('ec_accel_90d', 0.332), ('ec_orders_14d', 0.323), ('ec_orders_30d', 0.322), ('ec_spend_90d', 0.32), ('ec_recency_d', 0.312), ('ec_orders_60d', 0.307), ('ec_spend_90d_ratio', 0.3), ('ec_orders_7d', 0.298), ('ec_orders_90d', 0.288), ('bc_score_mean', 0.244), ('bc_score_max', 0.242), ('bc_score_min', 0.239), ('ec_aov', 0.222)]

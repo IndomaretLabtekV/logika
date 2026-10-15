@@ -1,0 +1,12 @@
+{
+  "orders": 2986855,
+  "completed_spend_correct": 1280526569000,
+  "naive_spend": 2227626045000,
+  "naive_overcount_factor": 1.7396172003987525,
+  "identical_non_id_item_rows": 2388,
+  "damaged_orders_if_content_dedup": 1194,
+  "full_feature_duplicate_groups": 0,
+  "full_feature_cross_split_groups": 0,
+  "profile_cross_split_groups": 0,
+  "action": "Deduplicate repeated order_total at order grain; keep distinct order_item_id rows."
+}

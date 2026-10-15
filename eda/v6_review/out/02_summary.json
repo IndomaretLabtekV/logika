@@ -1,0 +1,12 @@
+{
+  "diagnostic_seed": 20261014,
+  "validation_rows": 14001,
+  "v6_univariate_KS": 0.38258056626939213,
+  "fold_local_univariate_KS": 0.3826632177281904,
+  "rank_correlation": 0.9999983780516585,
+  "median_abs_change": 0.0011086908671284479,
+  "p99_abs_change": 0.002608190666663679,
+  "held_customer_perturbation_passed": true,
+  "independent_reference_check_passed": true,
+  "warning": "This is feature KS, not model validation. Diagnostic folds differ from notebook sklearn folds; recompute inside actual model folds."
+}

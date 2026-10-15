@@ -1,0 +1,9 @@
+{
+  "historical_rows": 81702,
+  "earlier_due_snapshot_pairs": 141710,
+  "ambiguous_payment_pairs": 13513,
+  "historical_rows_with_ambiguity": 8026,
+  "profile_time_travel_rows": 81702,
+  "current_occupation_shorter_than_lookback": 10913,
+  "warning": "Final allocation after T does not prove zero payments before T. Current income/employment/dependents/housing are not dated historical measurements. This is an identifiability problem, not proof that every historical row is wrong."
+}

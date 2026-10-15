@@ -1,0 +1,5 @@
+view,history,numeric_features,categorical_features,mean_numeric_coverage,price_features,recent_burst_features
+v5_DFS_selection_reproduced_on_diagnostic_fold,0,100,4,0.36558285714285715,0,0
+v5_DFS_selection_reproduced_on_diagnostic_fold,1,100,4,0.9411404081632653,0,0
+proposed_hand_plus_DFS,0,100,4,0.5611952380952381,16,3
+proposed_hand_plus_DFS,1,100,4,0.9176740816326531,16,3

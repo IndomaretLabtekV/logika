@@ -1,0 +1,8 @@
+{
+  "rows": 100000,
+  "features": 15,
+  "duplicate_installment_ids": 0,
+  "train_test_customer_overlap": 0,
+  "missing_exposure_kept_null": true,
+  "warning": "Candidates only. No new-model validation KS; conditional tests reuse selected OOF and are exploratory."
+}

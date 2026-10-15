@@ -1,0 +1,9 @@
+table,rows,columns,duplicate_keys,orphan_customers,post_cutoff_rows
+train_applications,70000,10,0,0,0
+test_applications,30000,9,0,0,0
+customer_profiles,100000,8,0,0,0
+previous_applications,201984,11,0,0,0
+repayment_history,1361341,9,0,0,0
+account_behavior,1084418,10,0,0,0
+bureau_observations,797563,14,0,0,0
+ecommerce_transactions,4359817,10,0,0,0

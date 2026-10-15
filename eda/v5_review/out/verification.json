@@ -1,0 +1,62 @@
+{
+  "status": "passed",
+  "analysis_scripts": 6,
+  "python_files": 9,
+  "plots": 6,
+  "notebook_and_input_hashes_unchanged": true,
+  "samples_per_class": [
+    {
+      "target": 0,
+      "len": 30
+    },
+    {
+      "target": 1,
+      "len": 30
+    }
+  ],
+  "integrated_numeric_shape": [
+    100000,
+    391
+  ],
+  "raw_fm_shape": [
+    100000,
+    107
+  ],
+  "effective_threads": {
+    "POLARS_MAX_THREADS": "4",
+    "OMP_NUM_THREADS": "2",
+    "OPENBLAS_NUM_THREADS": "1"
+  },
+  "versions": {
+    "python": "3.13.16",
+    "numpy": "2.5.4",
+    "pandas": "3.0.6",
+    "polars": "2.0.0",
+    "scipy": "1.18.1",
+    "matplotlib": "3.11.2",
+    "pyarrow": "26.0.0"
+  },
+  "source_sha256": {
+    "shared.py": "01fe2da5122ff60b3af2f50c7e8ec1af17b680678426f4ee1f5d79f1de19a0be",
+    "00_saved_predictions.py": "ac8d8c2591e9292406b09a4a81254deb1ebd1af769c0fd2ef1145f6f1206e1ac",
+    "01_price_preprocessing.py": "90b1f902ba3a983e01587eb377a98014e435b03dc7d56625148df05ed9267bc8",
+    "02_residual_screen.py": "8dea0e46c69b317f8acbc996bc3ffdf0246bdc1a08fdb24430b924a515c5fa91",
+    "preprocess.py": "a6b5351d0ea73daed5854685668ea87cdb4753e62eb9affa70a5b640af4cc58c",
+    "03_numeric_preprocessing.py": "6e45cb4c1bac042d0d3cb96486c76e6b28bb37ac1c244bfcdff662d2fe6736d7",
+    "04_feature_views.py": "29c79a14582284e0d656bfbd6ddee5812b5ffdb5361fef0e577dd9003636da9a",
+    "run.py": "edac8eb5a986c2ef015840e2d73b60993330a8cee63896bc52b1050190e07d14",
+    "05_drift_and_timing.py": "c86f52c38a4ae75a074e088299bcbb5c6e829abd03d74fa8c389f7329e23196e"
+  },
+  "outputs_MiB": 180.19,
+  "checks": [
+    "syntax",
+    "no model-library imports in new scripts",
+    "input hashes",
+    "all six successful analyses",
+    "plots",
+    "both-class examples",
+    "NPZ IDs/shapes/finiteness",
+    "raw FM view and exact 100-column EXAONE budget",
+    "local report links"
+  ]
+}

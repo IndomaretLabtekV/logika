@@ -1,0 +1,17 @@
+v5 blend reproduced: OOF KS 0.5274 (notebook 0.5274)
+reference size per decision month: min rows per category 183175 | first months:
+shape: (3, 4)
+┌─────────────────────┬────────┬─────────┬────────┐
+│ dm                  ┆ n      ┆ mu      ┆ sd     │
+│ ---                 ┆ ---    ┆ ---     ┆ ---    │
+│ datetime[μs]        ┆ u32    ┆ f64     ┆ f64    │
+╞═════════════════════╪════════╪═════════╪════════╡
+│ 2025-01-01 00:00:00 ┆ 687383 ┆ 10.9265 ┆ 0.683  │
+│ 2025-02-01 00:00:00 ┆ 758449 ┆ 10.9303 ┆ 0.6848 │
+│ 2025-03-01 00:00:00 ┆ 818562 ┆ 10.9338 ┆ 0.6863 │
+└─────────────────────┴────────┴─────────┴────────┘
+
+v5 pp_mean equals the global reference here: max |diff| 0.00e+00
+  glob  KS=0.3684  Spearman vs global=1.00000  residual vs v5: chi2=0.59 dKS=+0.0001
+  safe  KS=0.3689  Spearman vs global=0.99919  residual vs v5: chi2=1.03 dKS=-0.0001
+  Spearman safe (this script) vs Astra per-fold 'safe_price_mean': 1.00000

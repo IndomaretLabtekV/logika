@@ -1,0 +1,6 @@
+{
+  "injected_rows": 10,
+  "all_before_own_customer_cutoff": true,
+  "old_global_reference_max_mean_change": 9.841108934338649e-05,
+  "early_safe_reference_max_z_change": 0.0
+}

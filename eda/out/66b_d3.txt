@@ -1,0 +1,61 @@
+depth 3: 307 native DFS columns, 100000 rows
+  cutoff check d2__customers.COUNT(installments)        vs rp_n_inst    : equal 1.0000, native>ours 0.0000, native<ours 0.0000
+  cutoff check d2__customers.COUNT(prev_apps)           vs pv_n         : equal 1.0000, native>ours 0.0000, native<ours 0.0000
+  cutoff check d2__customers.COUNT(orders)              vs ec_n_orders  : equal 1.0000, native>ours 0.0000, native<ours 0.0000
+  cutoff check d2__customers.COUNT(bureau)              vs bc_n_reports : equal 0.3000, native>ours 0.7000, native<ours 0.0000
+family-wise noise: chi2/df 2.93  dKS +0.0044
+shape: (15, 7)
+┌────────────────────────────────────────┬────────┬────────┬────────┬────────┬────────┬────────────┐
+│ dfs_name                               ┆ ks     ┆ chi_h1 ┆ chi_h2 ┆ dks_h1 ┆ dks_h2 ┆ replicates │
+│ ---                                    ┆ ---    ┆ ---    ┆ ---    ┆ ---    ┆ ---    ┆ ---        │
+│ str                                    ┆ f64    ┆ f64    ┆ f64    ┆ f64    ┆ f64    ┆ bool       │
+╞════════════════════════════════════════╪════════╪════════╪════════╪════════╪════════╪════════════╡
+│ d2_customers_MEAN_orders_transaction_d ┆ 0.1593 ┆ 0.8777 ┆ 1.4857 ┆ 0.0021 ┆ 0.0016 ┆ false      │
+│ atetime_epochtime_diff                 ┆        ┆        ┆        ┆        ┆        ┆            │
+│ d3_customers_MEAN_orders_MAX_items_tra ┆ 0.1593 ┆ 0.8777 ┆ 1.4857 ┆ 0.0021 ┆ 0.0016 ┆ false      │
+│ nsaction_datetime_epochtime_diff       ┆        ┆        ┆        ┆        ┆        ┆            │
+│ d3_customers_MEAN_orders_MEAN_items_tr ┆ 0.1593 ┆ 0.8777 ┆ 1.4857 ┆ 0.0021 ┆ 0.0016 ┆ false      │
+│ ansaction_datetime_epochtime_dif…      ┆        ┆        ┆        ┆        ┆        ┆            │
+│ d3_customers_MEAN_orders_MIN_items_tra ┆ 0.1593 ┆ 0.8777 ┆ 1.4857 ┆ 0.0021 ┆ 0.0016 ┆ false      │
+│ nsaction_datetime_epochtime_diff       ┆        ┆        ┆        ┆        ┆        ┆            │
+│ d2__customers.MAX(bureau.active_accoun ┆ 0.0795 ┆ 0.8271 ┆ 0.8640 ┆ 0.0015 ┆ 0.0016 ┆ false      │
+│ ts)                                    ┆        ┆        ┆        ┆        ┆        ┆            │
+│ d2__customers.MEAN(prev_apps.requested ┆ 0.0551 ┆ 0.6320 ┆ 0.9374 ┆ 0.0014 ┆ 0.0016 ┆ false      │
+│ _amount)                               ┆        ┆        ┆        ┆        ┆        ┆            │
+│ d2__customers.STD(installments.amount_ ┆ 0.0449 ┆ 0.6593 ┆ 1.6326 ┆ 0.0019 ┆ 0.0013 ┆ false      │
+│ due)                                   ┆        ┆        ┆        ┆        ┆        ┆            │
+│ d2__customers.MAX(account_months.minim ┆ 0.0504 ┆ 0.7159 ┆ 2.2566 ┆ 0.0017 ┆ 0.0013 ┆ false      │
+│ um_balance)                            ┆        ┆        ┆        ┆        ┆        ┆            │
+│ d3__customers.STD(loans.MIN(installmen ┆ 0.0381 ┆ 0.4346 ┆ 2.0255 ┆ 0.0027 ┆ 0.0013 ┆ false      │
+│ ts.amount_paid))                       ┆        ┆        ┆        ┆        ┆        ┆            │
+│ d3__customers.MEAN(orders.MEAN(items.i ┆ 0.1920 ┆ 0.5382 ┆ 0.3588 ┆ 0.0020 ┆ 0.0013 ┆ false      │
+│ tem_total))                            ┆        ┆        ┆        ┆        ┆        ┆            │
+│ d2__customers.MIN(installments.amount_ ┆ 0.0433 ┆ 0.9988 ┆ 0.9732 ┆ 0.0016 ┆ 0.0012 ┆ false      │
+│ due)                                   ┆        ┆        ┆        ┆        ┆        ┆            │
+│ d3__customers.MIN(loans.MAX(installmen ┆ 0.0433 ┆ 1.0329 ┆ 0.9809 ┆ 0.0016 ┆ 0.0012 ┆ false      │
+│ ts.amount_due))                        ┆        ┆        ┆        ┆        ┆        ┆            │
+│ d3__customers.MIN(loans.MEAN(installme ┆ 0.0433 ┆ 0.9988 ┆ 0.9732 ┆ 0.0016 ┆ 0.0012 ┆ false      │
+│ nts.amount_due))                       ┆        ┆        ┆        ┆        ┆        ┆            │
+│ d3__customers.MIN(installments.loans.s ┆ 0.0433 ┆ 1.0329 ┆ 0.9809 ┆ 0.0016 ┆ 0.0012 ┆ false      │
+│ cheduled_monthly_installment)          ┆        ┆        ┆        ┆        ┆        ┆            │
+│ d2__customers.MAX(prev_apps.requested_ ┆ 0.0632 ┆ 0.8066 ┆ 1.7464 ┆ 0.0012 ┆ 0.0013 ┆ false      │
+│ amount)                                ┆        ┆        ┆        ┆        ┆        ┆            │
+└────────────────────────────────────────┴────────┴────────┴────────┴────────┴────────┴────────────┘
+strongest native columns by univariate KS:
+shape: (8, 2)
+┌────────────────────────────────────────────────────────────────────────┬────────┐
+│ dfs_name                                                               ┆ ks     │
+│ ---                                                                    ┆ ---    │
+│ str                                                                    ┆ f64    │
+╞════════════════════════════════════════════════════════════════════════╪════════╡
+│ d2__customers.MEAN(installments.max_days_past_due)                     ┆ 0.3086 │
+│ d3__customers.MEAN(loans.MEAN(installments.max_days_past_due))         ┆ 0.3052 │
+│ d3__customers.MEAN(loans.STD(installments.max_days_past_due))          ┆ 0.2927 │
+│ d3__customers.MEAN(loans.MAX(installments.max_days_past_due))          ┆ 0.2916 │
+│ d3__customers.MAX(loans.MEAN(installments.max_days_past_due))          ┆ 0.2875 │
+│ d2__customers.STD(installments.max_days_past_due)                      ┆ 0.2852 │
+│ d2_customers_MAX_orders_transaction_datetime_epochtime_diff            ┆ 0.2813 │
+│ d3_customers_MAX_orders_MEAN_items_transaction_datetime_epochtime_diff ┆ 0.2813 │
+└────────────────────────────────────────────────────────────────────────┴────────┘
+replicated above family-wise noise: 0 of 297
+best native univariate KS 0.3086 vs best hand feature (pp_mean etc.) 0.3689

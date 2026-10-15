@@ -1,0 +1,68 @@
+(a) DFS view (100000, 307) built in 1.6s; one row per application: True
+    301 numeric + 4 categorical; inf columns []; all-null []; constant ['dfs_item__quantity__min']
+(b) independent recomputation on 200 customers with history:
+    dfs_inst__max_days_past_due__mean             match 1.000
+    dfs_loan__dpd_max__mean                       match 1.000
+    dfs_order__count                              match 1.000
+    dfs_order__order_total__sum                   match 1.000
+    dfs_item__product_category__share_health      match 1.000
+    dfs_bureau__score__max                        match 1.000
+    dfs_pull__score_mean__std                     match 1.000
+    dfs_prev__decision__share_rejected            match 1.000
+    dfs_prev__requested_amount__last              match 1.000
+    dfs_acct__low_balance_days__sum               match 1.000
+(c) features moved by injected future rows: none (of 301)
+v3 chosen-blend OOF KS reproduced locally: 0.5142 (notebook 0.5142)
+(d) max PSI train->test over DFS view: 0.00107
+(e) DFS view: 35% of features are near-copies (|rho|>0.95) of a hand-made feature
+    best univariate KS per DFS family vs best hand-made in the same table:
+shape: (18, 4)
+┌──────────────────────────────┬─────┬─────────┬──────────────────────────────────────┐
+│ family                       ┆ n   ┆ best_ks ┆ best                                 │
+│ ---                          ┆ --- ┆ ---     ┆ ---                                  │
+│ str                          ┆ u32 ┆ f64     ┆ str                                  │
+╞══════════════════════════════╪═════╪═════════╪══════════════════════════════════════╡
+│ dfs_inst                     ┆ 31  ┆ 0.3086  ┆ dfs_inst__max_days_past_due__mean    │
+│ dfs_loan                     ┆ 21  ┆ 0.3052  ┆ dfs_loan__dpd_mean__mean             │
+│ dfs_item                     ┆ 25  ┆ 0.2813  ┆ dfs_item__days_since_last            │
+│ dfs_order                    ┆ 33  ┆ 0.2813  ┆ dfs_order__days_since_last           │
+│ dfs_pull                     ┆ 17  ┆ 0.2540  ┆ dfs_pull__score_mean__min            │
+│ dfs_bureau                   ┆ 63  ┆ 0.2490  ┆ dfs_bureau__score__min               │
+│ annual_interest_rate         ┆ 1   ┆ 0.2301  ┆ annual_interest_rate                 │
+│ dfs_prev                     ┆ 42  ┆ 0.1571  ┆ dfs_prev__annual_interest_rate__mean │
+│ dfs_acct                     ┆ 59  ┆ 0.1144  ┆ dfs_acct__outflows__last             │
+│ proposed_monthly_installment ┆ 1   ┆ 0.0613  ┆ proposed_monthly_installment         │
+│ loan_amount                  ┆ 1   ┆ 0.0556  ┆ loan_amount                          │
+│ declared_monthly_income      ┆ 1   ┆ 0.0236  ┆ declared_monthly_income              │
+│ dfs_cut_month                ┆ 1   ┆ 0.0151  ┆ dfs_cut_month                        │
+│ dependents                   ┆ 1   ┆ 0.0134  ┆ dependents                           │
+│ employment_tenure_months     ┆ 1   ┆ 0.0124  ┆ employment_tenure_months             │
+│ age                          ┆ 1   ┆ 0.0106  ┆ age                                  │
+│ dfs_cut_hour                 ┆ 1   ┆ 0.0071  ┆ dfs_cut_hour                         │
+│ dfs_cut_dow                  ┆ 1   ┆ 0.0051  ┆ dfs_cut_dow                          │
+└──────────────────────────────┴─────┴─────────┴──────────────────────────────────────┘
+(f) residual vs v3 blend (noise: chi2/df p95=1.33, dKS p95=+0.0016)
+shape: (15, 7)
+┌──────────────────────────────┬───────────────┬────────┬────────┬──────────────┬─────────┬────────┐
+│ feature                      ┆ family        ┆ ks     ┆ psi    ┆ max_rho_hand ┆ chi2_df ┆ dKS_cf │
+│ ---                          ┆ ---           ┆ ---    ┆ ---    ┆ ---          ┆ ---     ┆ ---    │
+│ str                          ┆ str           ┆ f64    ┆ f64    ┆ f64          ┆ f64     ┆ f64    │
+╞══════════════════════════════╪═══════════════╪════════╪════════╪══════════════╪═════════╪════════╡
+│ dfs_item__quantity__max      ┆ dfs_item      ┆ 0.0085 ┆ 0.0001 ┆ 0.2961       ┆ 11.1078 ┆ 0.0005 │
+│ dfs_order__qty__max          ┆ dfs_order     ┆ 0.0076 ┆ 0.0001 ┆ 0.3028       ┆ 9.5915  ┆ 0.0014 │
+│ dfs_order__qty__mean         ┆ dfs_order     ┆ 0.0073 ┆ 0.0006 ┆ 0.1985       ┆ 8.8166  ┆ 0.0025 │
+│ dfs_item__item_total__min    ┆ dfs_item      ┆ 0.1993 ┆ 0.0006 ┆ 0.3193       ┆ 8.8139  ┆ 0.0031 │
+│ dfs_order__order_total__min  ┆ dfs_order     ┆ 0.1736 ┆ 0.0004 ┆ 0.3290       ┆ 5.7082  ┆ 0.0027 │
+│ dfs_order__qty__std          ┆ dfs_order     ┆ 0.0087 ┆ 0.0004 ┆ 0.1099       ┆ 5.7001  ┆ 0.0020 │
+│ dfs_cut_month                ┆ dfs_cut_month ┆ 0.0151 ┆ 0.0006 ┆ 0.0262       ┆ 5.5774  ┆ 0.0018 │
+│ dfs_order__n_items__mean     ┆ dfs_order     ┆ 0.0148 ┆ 0.0005 ┆ 0.2883       ┆ 5.0057  ┆ 0.0018 │
+│ dfs_item__quantity__mean     ┆ dfs_item      ┆ 0.0073 ┆ 0.0005 ┆ 0.2228       ┆ 4.6188  ┆ 0.0011 │
+│ dfs_item__quantity__std      ┆ dfs_item      ┆ 0.0147 ┆ 0.0005 ┆ 0.1497       ┆ 4.6171  ┆ 0.0024 │
+│ dfs_order__n_items__last     ┆ dfs_order     ┆ 0.0056 ┆ 0.0000 ┆ 0.6855       ┆ 3.6719  ┆ 0.0010 │
+│ dfs_order__qty__sum          ┆ dfs_order     ┆ 0.0167 ┆ 0.0003 ┆ 0.9563       ┆ 3.4482  ┆ 0.0016 │
+│ dfs_item__quantity__sum      ┆ dfs_item      ┆ 0.0167 ┆ 0.0003 ┆ 0.9563       ┆ 3.4482  ┆ 0.0016 │
+│ dfs_bureau__revolving_credit ┆ dfs_bureau    ┆ 0.0129 ┆ 0.0001 ┆ 0.4657       ┆ 3.4252  ┆ 0.0006 │
+│ _limit__min                  ┆               ┆        ┆        ┆              ┆         ┆        │
+│ dfs_order__qty__last         ┆ dfs_order     ┆ 0.0059 ┆ 0.0001 ┆ 0.5153       ┆ 2.9061  ┆ 0.0007 │
+└──────────────────────────────┴───────────────┴────────┴────────┴──────────────┴─────────┴────────┘
+    DFS features above noise on both chi2 and dKS: 13 of 301

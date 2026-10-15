@@ -1,0 +1,33 @@
+{
+  "raw_numeric_columns": 240,
+  "exported_numeric_shape": [
+    100000,
+    391
+  ],
+  "masks": 151,
+  "categories": 4,
+  "replaced_global_price_columns": [
+    "pp_mean",
+    "pp_trim",
+    "pp_done",
+    "pp_min",
+    "pp_max",
+    "pp_30",
+    "pp_90",
+    "pp_old",
+    "pp_qty_item",
+    "pp_qty_item_90",
+    "pp_cat_groceries",
+    "pp_cat_fashion",
+    "pp_cat_electronics",
+    "pp_cat_home",
+    "pp_cat_health",
+    "pp_cat_education",
+    "pp_cat_personal_care"
+  ],
+  "reference": "01_price_fold0.parquet",
+  "fold_seed": 20261014,
+  "fit_fold_rule": "diagnostic_fold != 0; training applications only",
+  "model_validation_KS": null,
+  "status": "Integrated price + numeric preprocessing, tested but no model evaluated"
+}

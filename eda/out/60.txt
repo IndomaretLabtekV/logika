@@ -1,0 +1,22 @@
+full OOF KS v5 0.5274  v6 0.5283  diff +0.0009
+public share 30% (9000 rows): KS bias +0.0024  sd 0.0116  sd(v6-v5) 0.0026  P(v6<v5) 0.36
+public share 50% (15000 rows): KS bias +0.0008  sd 0.0092  sd(v6-v5) 0.0021  P(v6<v5) 0.30
+public - OOF per version: {'v1': 0.0259, 'v2': 0.0285, 'v3': 0.0312, 'v5': 0.0341, 'v6': 0.0329} mean +0.0305 sd 0.0030
+top-1 0.57184 -> OOF-equivalent ~0.5413 (gap to v6 +0.0130)
+test Spearman v5-v6 0.9984; |rank change| p50 0.0086 p95 0.0328
+OOF  Spearman v5-v6 0.9978; |rank change| p50 0.0103 p95 0.0395
+OOF rows with top-10% rank moves: n=6997 bad-rate 0.058; moved up & bad 0.067, moved down & bad 0.049 (base 0.136)
+month  1: n= 5778  v6 0.5254  v5 0.5216  diff +0.0038
+month  2: n= 5898  v6 0.5314  v5 0.5252  diff +0.0063
+month  3: n= 5809  v6 0.5143  v5 0.5144  diff -0.0001
+month  4: n= 5910  v6 0.5723  v5 0.5665  diff +0.0058
+month  5: n= 5864  v6 0.5502  v5 0.5443  diff +0.0059
+month  6: n= 5776  v6 0.5284  v5 0.5288  diff -0.0004
+month  7: n= 5739  v6 0.5609  v5 0.5616  diff -0.0007
+month  8: n= 5809  v6 0.5324  v5 0.5317  diff +0.0007
+month  9: n= 5830  v6 0.5001  v5 0.4994  diff +0.0007
+month 10: n= 5854  v6 0.5486  v5 0.5494  diff -0.0008
+month 11: n= 5821  v6 0.5263  v5 0.5254  diff +0.0009
+month 12: n= 5912  v6 0.5149  v5 0.5115  diff +0.0034
+thin    : n=21000 v6 0.4994 v5 0.5004
+history : n=49000 v6 0.5371 v5 0.5355

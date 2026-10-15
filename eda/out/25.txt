@@ -1,0 +1,46 @@
+null (random bins) chi2/df p95 = 1.21
+
+=== strongest raw interactions (logit scale, chi2/df of non-additive part)
+shape: (15, 4)
+┌──────────────────────┬──────────────────────┬────────────────┬──────────────────┐
+│ f1                   ┆ f2                   ┆ inter_chi2_raw ┆ inter_chi2_vs_v1 │
+│ ---                  ┆ ---                  ┆ ---            ┆ ---              │
+│ str                  ┆ str                  ┆ f64            ┆ f64              │
+╞══════════════════════╪══════════════════════╪════════════════╪══════════════════╡
+│ rp_frac_dpd1         ┆ ec_orders_30d        ┆ 17.162         ┆ 1.015            │
+│ ec_orders_30d        ┆ rp_cur_dpd_max       ┆ 9.771          ┆ 0.395            │
+│ rp_frac_dpd1         ┆ ec_aov               ┆ 8.014          ┆ 0.585            │
+│ rp_frac_dpd1         ┆ bc_score_mean        ┆ 7.054          ┆ 0.923            │
+│ annual_interest_rate ┆ ac_lowdays_delta     ┆ 5.334          ┆ 0.705            │
+│ rp_cur_dpd_max       ┆ ec_aov               ┆ 5.113          ┆ 0.632            │
+│ annual_interest_rate ┆ pv_rej_rate          ┆ 4.274          ┆ 1.301            │
+│ rp_frac_dpd1         ┆ annual_interest_rate ┆ 3.992          ┆ 0.775            │
+│ bc_score_mean        ┆ rp_cur_dpd_max       ┆ 3.185          ┆ 0.816            │
+│ ec_aov               ┆ ac_lowdays_delta     ┆ 3.170          ┆ 0.988            │
+│ pv_rej_rate          ┆ ec_aov               ┆ 2.858          ┆ 1.239            │
+│ ac_out_in_delta      ┆ rp_cur_dpd_max       ┆ 2.792          ┆ 0.417            │
+│ annual_interest_rate ┆ bh_score_delta       ┆ 2.616          ┆ 0.341            │
+│ ec_orders_30d        ┆ ac_lowdays_delta     ┆ 2.521          ┆ 0.324            │
+│ rp_cur_dpd_max       ┆ bh_score_delta       ┆ 2.444          ┆ 1.059            │
+└──────────────────────┴──────────────────────┴────────────────┴──────────────────┘
+
+=== interactions left in v1 residual
+shape: (10, 4)
+┌─────────────────────────┬──────────────────────────┬────────────────┬──────────────────┐
+│ f1                      ┆ f2                       ┆ inter_chi2_raw ┆ inter_chi2_vs_v1 │
+│ ---                     ┆ ---                      ┆ ---            ┆ ---              │
+│ str                     ┆ str                      ┆ f64            ┆ f64              │
+╞═════════════════════════╪══════════════════════════╪════════════════╪══════════════════╡
+│ rp_frac_dpd1            ┆ age                      ┆ 1.975          ┆ 1.758            │
+│ ec_orders_30d           ┆ age                      ┆ 1.321          ┆ 1.582            │
+│ annual_interest_rate    ┆ employment_tenure_months ┆ 2.130          ┆ 1.578            │
+│ dti_declared            ┆ ec_aov                   ┆ 1.566          ┆ 1.570            │
+│ ac_lowdays_delta        ┆ employment_tenure_months ┆ 2.094          ┆ 1.343            │
+│ declared_monthly_income ┆ ec_aov                   ┆ 1.566          ┆ 1.320            │
+│ ec_orders_30d           ┆ annual_interest_rate     ┆ 0.461          ┆ 1.315            │
+│ annual_interest_rate    ┆ pv_rej_rate              ┆ 4.274          ┆ 1.301            │
+│ pv_rej_rate             ┆ ec_aov                   ┆ 2.858          ┆ 1.239            │
+│ bc_score_mean           ┆ age                      ┆ 1.656          ┆ 1.183            │
+└─────────────────────────┴──────────────────────────┴────────────────┴──────────────────┘
+
+share of pairs with raw interaction chi2/df > 2: 0.22; median raw=1.19, median vs v1=0.67

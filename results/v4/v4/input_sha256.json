@@ -1,0 +1,11 @@
+{
+  "account_behavior.csv": "2f46be03496583b0231591194e13bea7593e87323056dfead6b9b19c48871924",
+  "bureau_observations.csv": "e37b8a76fe4f97ee6f1fd78ab26ffb0e78e464714f77d961062e03d757d057a0",
+  "customer_profiles.csv": "bcffa8c5558e81d9b359d2785345af218c459704f1c416b1ecbbe3a0ccf73f5d",
+  "ecommerce_transactions.csv": "495b3859f2146f87e7f8a383b308770af3d48342e3e1acdb45d7f1bed2bab742",
+  "previous_applications.csv": "faa0bc4552afee73cf58481234a94834bf0b786a195cbb979883c15642c39560",
+  "repayment_history.csv": "b0b00e18de2c05233653b3627bc7f9d679644e84c56680284766d71c5e279877",
+  "sample_submission.csv": "e1d1c105de6bc0906025366f9839e5f97e19f8efb2167e6cb5fef710ad91679d",
+  "test_applications.csv": "113f6ee4ff15e4c8bf14fb9a85fc399b906d1c569f6a715675a5814da2e02dfe",
+  "train_applications.csv": "b60df5704bcd3713314a31c5382db22f41d38971bd76906b15f45a38edff509b"
+}

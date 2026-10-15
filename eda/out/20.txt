@@ -1,0 +1,83 @@
+/home/rian/Projects/logika/eda/20_oof_error_analysis.py:25: DeprecationWarning: `qcut` is deprecated; use `bin_quantiles` or `bin_ranks` instead
+  amt_q=pl.col("loan_amount").qcut(4, labels=["q1", "q2", "q3", "q4"]),
+/home/rian/Projects/logika/eda/20_oof_error_analysis.py:27: DeprecationWarning: `qcut` is deprecated; use `bin_quantiles` or `bin_ranks` instead
+  ec_act=pl.col("ec_orders_90d").qcut(4, labels=["q1", "q2", "q3", "q4"], allow_duplicates=True),
+v1 GBDT rank-blend OOF KS=0.5051  calibrated-p KS=0.5041  mean p=0.1358 vs y=0.1358
+noise feature: chi2/df p95=1.19  dKS p95=+0.0018
+
+=== segment KS of v1 (n, bad rate, KS)
+has_history            0:n=21000,br=0.117,KS=0.476  1:n=49000,br=0.144,KS=0.517
+employment_type        salaried:n=33473,br=0.132,KS=0.507  self_employed:n=20987,br=0.138,KS=0.501  variable_income:n=15540,br=0.140,KS=0.512
+loan_purpose           education:n=13901,br=0.136,KS=0.515  home_improvement:n=14143,br=0.135,KS=0.498  household:n=14006,br=0.138,KS=0.520  medical:n=13999,br=0.136,KS=0.496  working_capital:n=13951,br=0.133,KS=0.511
+region                 Region_A:n=13978,br=0.136,KS=0.499  Region_B:n=13951,br=0.136,KS=0.500  Region_C:n=13855,br=0.135,KS=0.504  Region_D:n=14042,br=0.143,KS=0.524  Region_E:n=14174,br=0.129,KS=0.514
+housing_status         family:n=20400,br=0.134,KS=0.500  owned:n=19500,br=0.137,KS=0.503  rented:n=30100,br=0.136,KS=0.515
+annual_interest_rate   0.16:n=12560,br=0.055,KS=0.502  0.2:n=29800,br=0.106,KS=0.474  0.24:n=22358,br=0.178,KS=0.451  0.28:n=4938,br=0.304,KS=0.473  0.32:n=344,br=0.503,KS=0.518
+age_b                  20:n=12844,br=0.139,KS=0.515  30:n=18633,br=0.134,KS=0.496  40:n=18345,br=0.138,KS=0.510  50:n=18329,br=0.135,KS=0.514  60:n=1849,br=0.117,KS=0.515
+amt_q                  q1:n=17745,br=0.117,KS=0.523  q2:n=17370,br=0.131,KS=0.506  q3:n=17473,br=0.141,KS=0.512  q4:n=17412,br=0.155,KS=0.488
+ec_act                 q1:n=20517,br=0.054,KS=0.499  q2:n=18314,br=0.110,KS=0.457  q3:n=14123,br=0.158,KS=0.466  q4:n=17046,br=0.244,KS=0.428
+n_scored               1:n=4778,br=0.135,KS=0.533  2:n=25251,br=0.135,KS=0.512  3:n=39795,br=0.136,KS=0.501
+dependents             0:n=14009,br=0.144,KS=0.524  1:n=18999,br=0.135,KS=0.494  2:n=19605,br=0.133,KS=0.505  3:n=12454,br=0.133,KS=0.509  4:n=4933,br=0.134,KS=0.514
+
+=== v1 features: residual left on the table (top 25 by chi2/df)
+shape: (25, 5)
+┌──────────────────────┬────────┬─────────┬──────────┬─────────┐
+│ feature              ┆ ks     ┆ chi2_df ┆ max_lift ┆ dKS_cf  │
+│ ---                  ┆ ---    ┆ ---     ┆ ---      ┆ ---     │
+│ str                  ┆ f64    ┆ f64     ┆ f64      ┆ f64     │
+╞══════════════════════╪════════╪═════════╪══════════╪═════════╡
+│ bh_delinq_max        ┆ 0.0808 ┆ 3.2680  ┆ 0.0541   ┆ 0.0006  │
+│ bp_delinq_a          ┆ 0.0301 ┆ 2.6443  ┆ 0.0280   ┆ 0.0000  │
+│ ec_orders_7d         ┆ 0.2774 ┆ 2.3817  ┆ 0.0225   ┆ 0.0011  │
+│ bc_delinq_max        ┆ 0.0522 ┆ 2.3670  ┆ 0.0150   ┆ 0.0002  │
+│ bc_delinq_sum        ┆ 0.0522 ┆ 2.3670  ┆ 0.0150   ┆ 0.0002  │
+│ pv_rej_365d          ┆ 0.0575 ┆ 1.8737  ┆ 0.0262   ┆ 0.0005  │
+│ pv_n_canc            ┆ 0.0481 ┆ 1.8055  ┆ 0.0251   ┆ 0.0007  │
+│ ec_orders_30d        ┆ 0.2884 ┆ 1.7418  ┆ 0.0399   ┆ 0.0020  │
+│ bc_stale_mean        ┆ 0.0092 ┆ 1.7056  ┆ 0.0720   ┆ 0.0009  │
+│ ac_last_close        ┆ 0.0503 ┆ 1.5427  ┆ 0.0868   ┆ 0.0003  │
+│ ec_spend_90d         ┆ 0.2858 ┆ 1.4547  ┆ 0.0714   ┆ -0.0002 │
+│ pv_last_decision_rej ┆ 0.0476 ┆ 1.4413  ┆ 0.0264   ┆ 0.0000  │
+│ ac_outflow_mean      ┆ 0.0651 ┆ 1.3911  ┆ 0.0561   ┆ 0.0017  │
+│ rp_n_loans           ┆ 0.0414 ┆ 1.3816  ┆ 0.0296   ┆ 0.0013  │
+│ pv_amt_vs_max        ┆ 0.0572 ┆ 1.3770  ┆ 0.0614   ┆ 0.0017  │
+│ ac_income_min        ┆ 0.0515 ┆ 1.3555  ┆ 0.0699   ┆ 0.0001  │
+│ bc_delay_mean        ┆ 0.0088 ┆ 1.3279  ┆ 0.0516   ┆ 0.0003  │
+│ ac_close_slope       ┆ 0.0501 ┆ 1.3242  ┆ 0.0564   ┆ 0.0007  │
+│ bp_out_a             ┆ 0.1087 ┆ 1.3054  ┆ 0.0440   ┆ 0.0007  │
+│ annual_interest_rate ┆ 0.2301 ┆ 1.2442  ┆ 0.0189   ┆ 0.0001  │
+│ bc_n_reports         ┆ 0.0054 ┆ 1.2152  ┆ 0.0529   ┆ 0.0004  │
+│ bh_inq_mean          ┆ 0.0954 ┆ 1.1952  ┆ 0.0809   ┆ 0.0010  │
+│ bh_score_mean        ┆ 0.1985 ┆ 1.1676  ┆ 0.0715   ┆ 0.0007  │
+│ age                  ┆ 0.0106 ┆ 1.1676  ┆ 0.0481   ┆ 0.0006  │
+│ pv_n_rej             ┆ 0.0851 ┆ 1.1645  ┆ 0.0138   ┆ 0.0005  │
+└──────────────────────┴────────┴─────────┴──────────┴─────────┘
+
+missed bads (bottom-half score): 993 of 9507 bads (10.4%)
+=== what separates missed bads from goods with the same (low) v1 score
+shape: (20, 4)
+┌────────────────────┬────────────────┬───────────────┬───────────────────┐
+│ feature            ┆ median_diff_sd ┆ nan_rate_diff ┆ ks_missed_vs_good │
+│ ---                ┆ ---            ┆ ---           ┆ ---               │
+│ str                ┆ f64            ┆ f64           ┆ f64               │
+╞════════════════════╪════════════════╪═══════════════╪═══════════════════╡
+│ rp_frac_dpd30      ┆ 0.4198         ┆ 0.0096        ┆ 0.1139            │
+│ bc_score_mean      ┆ -0.2762        ┆ -0.0015       ┆ 0.1098            │
+│ rp_maxdpd_mean     ┆ 0.3844         ┆ 0.0096        ┆ 0.1079            │
+│ rp_frac_dpd1       ┆ 0.4776         ┆ 0.0096        ┆ 0.1077            │
+│ bc_score_min       ┆ -0.2445        ┆ -0.0015       ┆ 0.1065            │
+│ rp_late_mean       ┆ 0.3849         ┆ 0.0095        ┆ 0.1062            │
+│ ec_accel_90d       ┆ 0.1918         ┆ 0.0000        ┆ 0.1058            │
+│ bc_score_max       ┆ -0.2349        ┆ -0.0015       ┆ 0.1051            │
+│ bp_score_a         ┆ -0.2266        ┆ -0.0131       ┆ 0.1011            │
+│ ec_accel_30d       ┆ 0.1620         ┆ 0.0000        ┆ 0.0996            │
+│ ec_spend_90d       ┆ 0.1679         ┆ 0.0000        ┆ 0.0972            │
+│ ec_recency_d       ┆ -0.1724        ┆ 0.0000        ┆ 0.0970            │
+│ ec_aov             ┆ 0.1808         ┆ 0.0000        ┆ 0.0929            │
+│ bp_score_b         ┆ -0.2660        ┆ -0.0154       ┆ 0.0910            │
+│ ec_spend_90d_ratio ┆ 0.2114         ┆ 0.0000        ┆ 0.0892            │
+│ ec_spend_30d       ┆ 0.1039         ┆ 0.0000        ┆ 0.0885            │
+│ ec_orders_90d      ┆ 0.0000         ┆ 0.0000        ┆ 0.0884            │
+│ bh_score_min       ┆ -0.2765        ┆ 0.0063        ┆ 0.0875            │
+│ ec_orders_60d      ┆ 0.3706         ┆ 0.0000        ┆ 0.0863            │
+│ bh_score_mean      ┆ -0.2661        ┆ 0.0063        ┆ 0.0842            │
+└────────────────────┴────────────────┴───────────────┴───────────────────┘

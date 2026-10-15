@@ -1,0 +1,50 @@
+/home/rian/Projects/logika/eda/61_row_level_mil.py:28: DeprecationWarning: `qcut` is deprecated; use `bin_quantiles` or `bin_ranks` instead
+  qcut = lambda c, k: pl.col(c).qcut(k, labels=[str(i) for i in range(k)], allow_duplicates=True)  # noqa: E731
+/home/rian/Projects/logika/eda/61_row_level_mil.py:47: DeprecationWarning: `cut` is deprecated; use `bin_intervals` instead
+  tables["rp"] = r.select("customer_id", sig(pl.col("max_days_past_due").cut([0, 29, 59, 89]), pl.col("paid").cut([0, 0.999, 1.001]),
+/home/rian/Projects/logika/eda/61_row_level_mil.py:53: DeprecationWarning: `cut` is deprecated; use `bin_intervals` instead
+  tables["ac"] = a.select("customer_id", sig(pl.col("low_balance_days").cut([0, 5, 15]), qcut("net", 5), qcut("inc_share", 4),
+/home/rian/Projects/logika/eda/61_row_level_mil.py:58: DeprecationWarning: `cut` is deprecated; use `bin_intervals` instead
+  pl.col("delinquent_accounts_last_12m").clip(0, 2), pl.col("inquiries_last_6m").cut([0, 2])))
+/home/rian/Projects/logika/eda/61_row_level_mil.py:62: DeprecationWarning: `cut` is deprecated; use `bin_intervals` instead
+  tables["pv"] = v.select("customer_id", sig(pl.col("decision"), qcut("annual_interest_rate", 5), qcut("req", 5), pl.col("term_months").cut([6, 12]), pl.col("d") <= 180))
+noise vs v6: chi2/df p95=1.71  dKS p95=+0.0019
+ec_price: 4,359,817 rows, 1600 signatures
+ec_noprice: 4,359,817 rows, 1120 signatures
+rp: 1,361,341 rows, 175 signatures
+ac: 1,084,418 rows, 236 signatures
+bu: 797,563 rows, 1769 signatures
+pv: 201,984 rows, 150 signatures
+shape: (25, 6)
+┌───────────────┬────────┬─────────┬─────────┬──────────┬───────┐
+│ feature       ┆ ks     ┆ chi2_df ┆ dKS_cf  ┆ coverage ┆ above │
+│ ---           ┆ ---    ┆ ---     ┆ ---     ┆ ---      ┆ ---   │
+│ str           ┆ f64    ┆ f64     ┆ f64     ┆ f64      ┆ bool  │
+╞═══════════════╪════════╪═════════╪═════════╪══════════╪═══════╡
+│ ec_noprice_mx ┆ 0.2261 ┆ 1.2114  ┆ 0.0026  ┆ 1.0000   ┆ false │
+│ pv_m          ┆ 0.1702 ┆ 1.6874  ┆ 0.0019  ┆ 0.7000   ┆ false │
+│ ec_noprice_mn ┆ 0.0692 ┆ 2.8347  ┆ 0.0019  ┆ 1.0000   ┆ false │
+│ bu_mx         ┆ 0.2374 ┆ 1.4497  ┆ 0.0017  ┆ 1.0000   ┆ false │
+│ bu_mn         ┆ 0.2071 ┆ 0.7730  ┆ 0.0015  ┆ 1.0000   ┆ false │
+│ ac_m          ┆ 0.1116 ┆ 0.6620  ┆ 0.0014  ┆ 0.7000   ┆ false │
+│ ec_price_mx   ┆ 0.3027 ┆ 1.2810  ┆ 0.0013  ┆ 1.0000   ┆ false │
+│ ac_mx         ┆ 0.1024 ┆ 1.0536  ┆ 0.0012  ┆ 0.7000   ┆ false │
+│ ac_mn         ┆ 0.0846 ┆ 0.8327  ┆ 0.0012  ┆ 0.7000   ┆ false │
+│ pv_mx         ┆ 0.1680 ┆ 1.3605  ┆ 0.0011  ┆ 0.7000   ┆ false │
+│ ec_price_mn   ┆ 0.2091 ┆ 0.8524  ┆ 0.0009  ┆ 1.0000   ┆ false │
+│ ec_price_s    ┆ 0.3537 ┆ 1.2561  ┆ 0.0008  ┆ 1.0000   ┆ false │
+│ rp_mx         ┆ 0.2852 ┆ 0.0997  ┆ 0.0006  ┆ 0.6616   ┆ false │
+│ rp_s          ┆ 0.3289 ┆ 1.0364  ┆ 0.0006  ┆ 0.6616   ┆ false │
+│ bu_m          ┆ 0.2431 ┆ 0.4883  ┆ 0.0005  ┆ 1.0000   ┆ false │
+│ rp_m          ┆ 0.3329 ┆ 0.2288  ┆ 0.0005  ┆ 0.6616   ┆ false │
+│ ec_noprice_s  ┆ 0.2339 ┆ 1.3842  ┆ 0.0005  ┆ 1.0000   ┆ false │
+│ ALL_sum       ┆ 0.4665 ┆ 0.8613  ┆ 0.0003  ┆ 1.0000   ┆ false │
+│ ac_s          ┆ 0.1115 ┆ 0.3141  ┆ 0.0003  ┆ 0.7000   ┆ false │
+│ rp_mn         ┆ 0.1016 ┆ 0.7760  ┆ 0.0003  ┆ 0.6616   ┆ false │
+│ pv_s          ┆ 0.1702 ┆ 0.7512  ┆ 0.0002  ┆ 0.7000   ┆ false │
+│ pv_mn         ┆ 0.1312 ┆ 1.5132  ┆ 0.0000  ┆ 0.7000   ┆ false │
+│ bu_s          ┆ 0.2434 ┆ 0.4771  ┆ 0.0000  ┆ 1.0000   ┆ false │
+│ ec_noprice_m  ┆ 0.2369 ┆ 0.6358  ┆ -0.0001 ┆ 1.0000   ┆ false │
+│ ec_price_m    ┆ 0.3575 ┆ 0.8203  ┆ -0.0004 ┆ 1.0000   ┆ false │
+└───────────────┴────────┴─────────┴─────────┴──────────┴───────┘
+v6 blend KS 0.5253 ; NB-all-tables score alone KS 0.4665

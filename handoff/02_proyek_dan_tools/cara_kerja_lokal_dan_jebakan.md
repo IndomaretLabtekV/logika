@@ -1,0 +1,44 @@
+# Cara kerja lokal dan jebakan teknis
+
+## Environment
+- `.venv`: Python 3.13, polars 2.0.0, numpy, scipy, dan matplotlib. **Tidak ada sklearn.** Untuk clustering pakai `scipy.cluster.vq.kmeans2`, untuk logistic regression pakai Newton numpy.
+- `.venv-rel`: Python 3.12 berisi tabpfn-rel, relarena-core[dfs], dan relbench, **tanpa torch**. Hanya untuk featurizer DFS native (`eda/66a`).
+- Jalankan script EDA dengan `cd eda && ../.venv/bin/python NN_nama.py`. Output masuk ke `eda/out/`.
+- Clone repo eksternal (EXAONE-Tabular, tabpfn-rel) dulu ada di scratchpad sesi lama. Kemungkinan sudah hilang.
+
+## Dry run notebook (wajib setiap kali notebook diubah)
+```
+cd notebook && ../.venv/bin/python build_notebook.py          # tulis v9.ipynb
+../.venv/bin/python dryrun_stub.py v9.ipynb                    # semua model di-stub, KS yang tercetak tidak bermakna
+rm -rf ../output_v9 ../output                                  # bersihkan
+```
+- Stub mencakup torch, lightgbm, xgboost, catboost, sklearn, tabpfn, tabm, exaone, Causilo, RealMLP, dan (opsional) TabICL. Stub juga menguji guard deadline dan `run_fm` paralel.
+- Kalau menambah model baru, tambahkan juga stub-nya di `dryrun_stub.py`.
+
+## Jebakan yang pernah kena
+- **`ls` di shell user di-alias dengan `--icons`.** Pakai `command ls` atau `/bin/ls`.
+- **Jangan `pkill -f` pola yang muncul di command line sendiri**, karena shell sendiri ikut terbunuh.
+- Polars 2.0: `Expr.describe` tidak ada (pakai `Series.describe`); nama kolom `len` bentrok (pakai `n`); `qcut` deprecated.
+- **Tie timestamp bikin sort nondeterministik.** Ada 170 order dan 94 laporan bureau dengan timestamp kembar, dan `due_date` kembar antar pinjaman paralel. Selalu sort dengan tiebreak ID: `("report_datetime","bureau_observation_id")`, `("application_datetime","application_id")`, `("due_date","loan_id")`.
+- **Leak test butuh toleransi float**, dan harus menyertakan `previous_applications` (nama kolom `decision_datetime` bentrok).
+- Stub torch merusak scipy kalau scipy di-import belakangan. Import `scipy.stats` sebelum stub dan sediakan `torch.Tensor`.
+- File `.npy` di `results/v1`–`v6` **tidak membawa ID**. Urutannya sama dengan urutan train di notebook. v1 diselaraskan lewat `data_pq/v1_train_order.parquet`. Sejak v7 sudah ada `oof_all.parquet` dan `train_ids.npy`.
+- `cudf-polars` di Kaggle mengeluh soal polars 2.0. Itu cuma warning karena kita tidak memakai cudf.
+- Fold KS rata-rata **lebih tinggi** daripada pooled OOF KS (sekitar +0.003), karena KS dimaksimalkan per subset. Selalu laporkan **pooled OOF KS** sebagai angka utama.
+
+## Fakta Kaggle (dari log run)
+- Python 3.13.15, torch 2.11.0+cu128, 2× Tesla T4 15 GB, polars bisa di-pin ke 2.0.0.
+- Sesi maksimal 12 jam. Notebook memakai `DEADLINE = 12h − 45 menit` dan `minutes_left()` yang dicek sebelum setiap fold.
+- Secret yang dipakai: `HF_TOKEN` dan `TABPFN_TOKEN` (TabPFN-3.5 gated, lisensi harus di-accept di HF).
+- Data ada di `/kaggle/input/competitions/data-science-competition-logika-ui-2026` dan dicari otomatis lewat `rglob('train_applications.csv')`.
+- Waktu yang terukur di T4x2:
+
+| Model | Waktu |
+|---|---|
+| Trees (6 varian × 3 seed × 5 fold) | sekitar 30–35 menit |
+| TabM | sekitar 10 menit per seed |
+| TabM periodic (tabm_p) | sekitar 17 menit per seed |
+| RealMLP | sekitar 35 menit per seed |
+| TabPFN-3.5 (konteks penuh 56k, 104 fitur, 2 GPU paralel) | sekitar 14 menit |
+| Causilo | sekitar 17 menit |
+| Total v9 | sekitar 4 jam |

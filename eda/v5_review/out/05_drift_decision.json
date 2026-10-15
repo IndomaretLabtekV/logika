@@ -1,0 +1,17 @@
+{
+  "max_feature_train_test_KS": 0.010404761904761917,
+  "max_PSI": 0.0011588760058924457,
+  "features_drift_FDR005": [],
+  "thin_train": 0.3,
+  "thin_test": 0.3,
+  "train_date_min": "2025-01-01 08:00:00",
+  "train_date_max": "2025-12-28 20:59:00",
+  "test_date_min": "2025-01-01 08:07:00",
+  "test_date_max": "2025-12-28 20:52:00",
+  "caveats": [
+    "Aggregate covariate similarity cannot guarantee public/private equality.",
+    "OOF is held-out prediction; test is a fold ensemble, so raw prediction variance is not directly comparable.",
+    "Repayment DPD values are cutoff snapshots, not values available on their old due dates.",
+    "Month-sliced random OOF is not a forward-time holdout."
+  ]
+}

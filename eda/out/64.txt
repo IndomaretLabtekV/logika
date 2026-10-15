@@ -1,0 +1,17 @@
+noise (20 bins) chi2/df p95=1.62 dKS p95=+0.0019
+bad rate vs v6-expected per decision week: sd(O-E) = 0.010051318201121732  binomial sd expected ~ 0.009497297076084488
+shape: (8, 5)
+┌───────────────────────────┬─────────┬──────────┬────────┬───────┐
+│ candidate                 ┆ chi2_df ┆ max_lift ┆ dKS_cf ┆ above │
+│ ---                       ┆ ---     ┆ ---      ┆ ---    ┆ ---   │
+│ str                       ┆ f64     ┆ f64      ┆ f64    ┆ bool  │
+╞═══════════════════════════╪═════════╪══════════╪════════╪═══════╡
+│ doy                       ┆ 1.8971  ┆ 0.1439   ┆ 0.0017 ┆ false │
+│ week                      ┆ 1.6549  ┆ 0.1161   ┆ 0.0016 ┆ false │
+│ dom                       ┆ 1.4093  ┆ 0.1112   ┆ 0.0010 ┆ false │
+│ weekday                   ┆ 0.5179  ┆ 0.0233   ┆ 0.0011 ┆ false │
+│ dec_hour                  ┆ 1.1870  ┆ 0.0606   ┆ 0.0027 ┆ false │
+│ bimonth_x_employment_type ┆ 1.7922  ┆ 0.0903   ┆ 0.0015 ┆ false │
+│ bimonth_x_region          ┆ 1.2966  ┆ 0.0847   ┆ 0.0019 ┆ false │
+│ bimonth_x_has_history     ┆ 2.1519  ┆ 0.0784   ┆ 0.0013 ┆ false │
+└───────────────────────────┴─────────┴──────────┴────────┴───────┘

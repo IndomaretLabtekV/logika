@@ -1,0 +1,32 @@
+{
+  "01_price_preprocessing": {
+    "seconds": 8.310247176999837,
+    "exit_code": 0,
+    "cumulative_child_max_rss_MiB": 3689.71484375
+  },
+  "02_residual_screen": {
+    "seconds": 6.150145296000119,
+    "exit_code": 0,
+    "cumulative_child_max_rss_MiB": 3689.71484375
+  },
+  "03_numeric_preprocessing": {
+    "seconds": 20.793472737999764,
+    "exit_code": 0,
+    "cumulative_child_max_rss_MiB": 2163.19921875
+  },
+  "04_feature_views": {
+    "seconds": 21.98446958400018,
+    "exit_code": 0,
+    "cumulative_child_max_rss_MiB": 3689.71484375
+  },
+  "00_saved_predictions": {
+    "seconds": 62.76188002500021,
+    "exit_code": 0,
+    "cumulative_child_max_rss_MiB": 918.546875
+  },
+  "05_drift_and_timing": {
+    "seconds": 4.625315932999911,
+    "exit_code": 0,
+    "cumulative_child_max_rss_MiB": 3689.71484375
+  }
+}

@@ -1,0 +1,140 @@
+04_transform_validation (3150, 7)
+shape: (16, 7)
+┌──────┬──────┬──────────────────┬──────────────────┬─────────────────┬──────────┬─────────────────┐
+│ fold ┆ mode ┆ feature          ┆ validation_KS_ra ┆ validation_KS_a ┆ delta    ┆ distinct_values │
+│ ---  ┆ ---  ┆ ---              ┆ w_observed       ┆ fter_observed   ┆ ---      ┆ _lost           │
+│ i64  ┆ str  ┆ str              ┆ ---              ┆ ---             ┆ f64      ┆ ---             │
+│      ┆      ┆                  ┆ f64              ┆ f64             ┆          ┆ i64             │
+╞══════╪══════╪══════════════════╪══════════════════╪═════════════════╪══════════╪═════════════════╡
+│ 0    ┆ step ┆ ac_avgbal_b      ┆ 0.02198          ┆ 0.02198         ┆ 0.00000  ┆ 1956            │
+│ 0    ┆ step ┆ ac_avgbal_l3     ┆ 0.02214          ┆ 0.02214         ┆ 0.00000  ┆ 1892            │
+│ 0    ┆ step ┆ ac_avgbal_mean   ┆ 0.01782          ┆ 0.01782         ┆ 0.00000  ┆ 2023            │
+│ 0    ┆ step ┆ ac_bal_delta     ┆ 0.07054          ┆ 0.07054         ┆ 0.00000  ┆ 1899            │
+│ 0    ┆ step ┆ ac_bal_trend     ┆ 0.06171          ┆ 0.06159         ┆ -0.00012 ┆ 1845            │
+│ 0    ┆ step ┆ ac_close_slope   ┆ 0.03166          ┆ 0.03166         ┆ 0.00000  ┆ 1959            │
+│ 0    ┆ step ┆ ac_frac_zero_min ┆ 0.01396          ┆ 0.01396         ┆ 0.00000  ┆ 0               │
+│ 0    ┆ step ┆ ac_income_cv     ┆ 0.05264          ┆ 0.05264         ┆ 0.00000  ┆ 2001            │
+│ 0    ┆ step ┆ ac_income_l3     ┆ 0.02484          ┆ 0.02484         ┆ 0.00000  ┆ 1990            │
+│ 0    ┆ step ┆ ac_income_mean   ┆ 0.01470          ┆ 0.01470         ┆ 0.00000  ┆ 1978            │
+│ 0    ┆ step ┆ ac_income_min    ┆ 0.02123          ┆ 0.02123         ┆ 0.00000  ┆ 1887            │
+│ 0    ┆ step ┆ ac_income_std    ┆ 0.03339          ┆ 0.03339         ┆ 0.00000  ┆ 1983            │
+│ 0    ┆ step ┆ ac_income_trend  ┆ 0.02059          ┆ 0.02059         ┆ 0.00000  ┆ 1978            │
+│ 0    ┆ step ┆ ac_inflow_mean   ┆ 0.02829          ┆ 0.02829         ┆ 0.00000  ┆ 1926            │
+│ 0    ┆ step ┆ ac_last_close    ┆ 0.03401          ┆ 0.03401         ┆ 0.00000  ┆ 1915            │
+│ 0    ┆ step ┆ ac_lowdays_b     ┆ 0.02090          ┆ 0.02090         ┆ 0.00000  ┆ 1               │
+└──────┴──────┴──────────────────┴──────────────────┴─────────────────┴──────────┴─────────────────┘
+04_missing_mask_audit (5, 6)
+shape: (5, 6)
+┌──────┬─────────────────┬─────────────────┬──────────────────┬──────────────────┬─────────────────┐
+│ fold ┆ missing_columns ┆ fit_mask_groups ┆ divergent_groups ┆ new_missing_colu ┆ new_missing_col │
+│ ---  ┆ ---             ┆ ---             ┆ _validation_or_t ┆ mns_validation   ┆ umns_test       │
+│ i64  ┆ i64             ┆ i64             ┆ est              ┆ ---              ┆ ---             │
+│      ┆                 ┆                 ┆ ---              ┆ i64              ┆ i64             │
+│      ┆                 ┆                 ┆ i64              ┆                  ┆                 │
+╞══════╪═════════════════╪═════════════════╪══════════════════╪══════════════════╪═════════════════╡
+│ 0    ┆ 138             ┆ 29              ┆ 0                ┆ 0                ┆ 0               │
+│ 1    ┆ 138             ┆ 29              ┆ 0                ┆ 0                ┆ 0               │
+│ 2    ┆ 138             ┆ 29              ┆ 0                ┆ 0                ┆ 0               │
+│ 3    ┆ 138             ┆ 29              ┆ 0                ┆ 0                ┆ 0               │
+│ 4    ┆ 138             ┆ 29              ┆ 0                ┆ 0                ┆ 0               │
+└──────┴─────────────────┴─────────────────┴──────────────────┴──────────────────┴─────────────────┘
+04_transform_summary (3, 4)
+shape: (3, 4)
+┌──────────────┬───────────────────┬──────────────────────┬─────────────────┐
+│ mode         ┆ max_abs_KS_change ┆ median_abs_KS_change ┆ max_values_lost │
+│ ---          ┆ ---               ┆ ---                  ┆ ---             │
+│ str          ┆ f64               ┆ f64                  ┆ i64             │
+╞══════════════╪═══════════════════╪══════════════════════╪═════════════════╡
+│ interpolated ┆ 0.00000           ┆ 0.00000              ┆ 352             │
+│ robust       ┆ 0.03286           ┆ 0.00000              ┆ 1396            │
+│ step         ┆ 0.00050           ┆ 0.00000              ┆ 2870            │
+└──────────────┴───────────────────┴──────────────────────┴─────────────────┘
+04_preprocessing_manifest {"numeric_columns": ["ac_avgbal_b", "ac_avgbal_l3", "ac_avgbal_mean", "ac_bal_delta", "ac_bal_trend", "ac_close_slope", "ac_frac_zero_min", "ac_income_cv", "ac_income_l3", "ac_income_mean", "ac_income_min", "ac_income_std", "ac_income_trend", "ac_inflow_mean", "ac_last_close", "ac_lowdays_b", "ac_lowdays_delta", "ac_lowdays_l3", "ac_lowdays_max", "ac_lowdays_mean", "ac_minbal_mean", "ac_minbal_min", "ac_n_months", "ac_net_flow_mean", "ac_out_in_b", "ac_out_in_delta", "ac_out_in_l1", "ac_out_in_l3", "ac_out_in_ratio", "ac_outflow_mean", "age", "annual_interest_rate", "app_dow", "app_hour", "bc_active_max", "bc_delay_mean", "bc_delinq_max", "bc_delinq_sum", "bc_inq_max", "bc_inq_mean", "bc_n_reports", "bc_n_scored", "bc_outstanding_max", "bc_revbal_max", "bc_revlimit_max", "bc_score_max", "bc_score_mean", "bc_score_min", "bc_score_std", "bc_stale_max", "bc_stale_mean", "bc_util_max", "bc_util_mean", "bh_delinq_max", "bh_inq_mean", "bh_last_outstanding", "bh_last_score", "bh_n_pulls", "bh_outstanding_delta", "bh_pulls_180d", "bh_score_delta", "bh_score_mean", "bh_score_min", "bp_delinq_a", "bp_delinq_b", "bp_delinq_c", "bp_inq_a", "bp_inq_b", "bp_inq_c", "bp_out_a", "bp_out_b", "bp_out_c", "bp_score_a", "bp_score_b", "bp_score_c", "bp_util_a", "bp_util_b", "bp_util_c", "bz_active_trend", "bz_delinq_all_mean", "bz_inq_external", "bz_newest", "bz_range", "bz_trend", "cf_free_min", "cf_inst_to_free", "cf_inst_to_minbal", "cf_minbal_l3", "cf_nonincome_l3", "cf_nonincome_share", "cf_out_l3", "cf_out_to_inc_l3", "debt_to_income", "decision_lag_h", "declared_monthly_income", "dependents", "dti_declared", "dti_total", "dti_verified", "ec2_aov_shift", "ec2_base", "ec2_cancel_28", "ec2_ewm28_exc", "ec2_ewm56_rel", "ec2_ewm7_rel", "ec2_gap_min_28", "ec2_items_per_order_28", "ec2_night_share_90", "ec_accel_30d", "ec_accel_90d", "ec_aov", "ec_base_wk", "ec_cancel_90d", "ec_cancel_rate", "ec_cat_education", "ec_cat_electronics", "ec_cat_fashion", "ec_cat_groceries", "ec_cat_health", "ec_cat_home", "ec_cat_personal_care", "ec_n_orders", "ec_orders_14d", "ec_orders_30d", "ec_orders_60d", "ec_orders_7d", "ec_orders_90d", "ec_pm_COD", "ec_pm_bank_transfer", "ec_pm_credit_card", "ec_pm_debit_card", "ec_pm_e_wallet", "ec_recency_d", "ec_spend", "ec_spend_30d", "ec_spend_90d", "ec_spend_90d_ratio", "ec_spend_per_month", "ec_tenure_d", "ecspend_to_income", "employment_tenure_months", "has_history", "income_per_head", "income_verif_ratio", "inst_to_avgbal", "loan_amount", "lti_declared", "ob_amt_90d", "ob_amt_vs_last", "ob_days_since_appr", "ob_remaining", "ob_term_mean", "proposed_monthly_installment", "pv_amt_vs_max", "pv_appr_max", "pv_appr_ratio", "pv_appr_sum", "pv_days_since_first", "pv_days_since_last", "pv_last_decision_rej", "pv_n", "pv_n_180d", "pv_n_90d", "pv_n_appr", "pv_n_canc", "pv_n_rej", "pv_rate_delta", "pv_rate_last", "pv_rate_max", "pv_rate_mean", "pv_rej_365d", "pv_rej_rate", "pv_req_mean", "rp_active_inst", "rp_cur_dpd_max", "rp_days_since_delinq", "rp_days_since_due", "rp_frac_dpd1", "rp_frac_dpd1_6m", "rp_frac_dpd30", "rp_late_max", "rp_late_mean", "rp_late_mean_6m", "rp_maxdpd_12m", "rp_maxdpd_6m", "rp_maxdpd_last3", "rp_maxdpd_max", "rp_maxdpd_mean", "rp_n_active", "rp_n_dpd1", "rp_n_dpd30", "rp_n_dpd60", "rp_n_dpd90", "rp_n_inst", "rp_n_loans", "rp_n_unpaid", "rp_paid_ratio", "rp_remaining_oblig", "rp_unpaid_amt", "rq_first_inst_late", "rq_frac_1_29", "rq_lastloan_late", "rq_lastloan_maxdpd", "rq_late_trend", "rq_streak_max", "sv_late_d_mean", "sv_maxdpd_mean_late", "sv_share30_of_late", "sv_unpaid_of_late", "tenure_over_age"], "missing_indicator_columns": ["ac_avgbal_b", "ac_avgbal_l3", "ac_avgbal_mean", "ac_bal_delta", "ac_bal_trend", "ac_close_slope", "ac_frac_zero_min", "ac_income_cv", "ac_income_l3", "ac_income_mean", "ac_income_min", "ac_income_std", "ac_income_trend", "ac_inflow_mean", "ac_last_close", "ac_lowdays_b", "ac_lowdays_delta", "ac_lowdays_l3", "ac_lowdays_max", "ac_lowdays_mean", "ac_minbal_mean", "ac_minbal_min", "ac_n_months", "ac_net_flow_mean", "ac_out_in_b", "ac_out_in_delta", "ac_out_in_l1", "ac_out_in_l3", "ac_out_in_ratio", "ac_outflow_mean", "bc_score_max", "bc_score_mean", "bc_score_min", "bc_score_std", "bc_util_max", "bc_util_mean", "bh_delinq_max", "bh_inq_mean", "bh_last_outstanding", "bh_last_score", "bh_n_pulls", "bh_outstanding_delta", "bh_pulls_180d", "bh_score_delta", "bh_score_mean", "bh_score_min", "bp_delinq_b", "bp_delinq_c", "bp_inq_b", "bp_inq_c", "bp_out_b", "bp_out_c", "bp_score_a", "bp_score_b", "bp_score_c", "bp_util_a", "bp_util_b", "bp_util_c", "bz_active_trend", "bz_newest", "bz_range", "bz_trend", "cf_free_min", "cf_inst_to_free", "cf_inst_to_minbal", "cf_minbal_l3", "cf_nonincome_l3", "cf_nonincome_share", "cf_out_l3", "cf_out_to_inc_l3", "dti_verified", "ec2_aov_shift", "ec2_gap_min_28", "ec2_items_per_order_28", "ec2_night_share_90", "income_verif_ratio", "inst_to_avgbal", "ob_amt_90d", "ob_amt_vs_last", "ob_days_since_appr", "ob_remaining", "ob_term_mean", "pv_amt_vs_max", "pv_appr_max", "pv_appr_ratio", "pv_appr_sum", "pv_days_since_first", "pv_days_since_last", "pv_last_decision_rej", "pv_n", "pv_n_180d", "pv_n_90d", "pv_n_appr", "pv_n_canc", "pv_n_rej", "pv_rate_delta", "pv_rate_last", "pv_rate_max", "pv_rate_mean", "pv_rej_365d", "pv_rej_rate", "pv_req_mean", "rp_active_inst", "rp_cur_dpd_max", "rp_days_since_delinq", "rp_days_since_due", "rp_frac_dpd1", "rp_frac_dpd1_6m", "rp_frac_dpd30", "rp_late_max", "rp_late_mean", "rp_late_mean_6m", "rp_maxdpd_12m", "rp_maxdpd_6m", "rp_maxdpd_last3", "rp_maxdpd_max", "rp_maxdpd_mean", "rp_n_active", "rp_n_dpd1", "rp_n_dpd30", "rp_n_dpd60", "rp_n_dpd90", "rp_n_inst", "rp_n_loans", "rp_n_unpaid", "rp_paid_ratio", "rp_remaining_oblig", "rp_unpaid_amt", "rq_first_inst_late", "rq_frac_1_29", "rq_lastloan_late", "rq_lastloan_maxdpd", "rq_late_trend", "rq_streak_max", "sv_late_d_mean", "sv_maxdpd_mean_late", "sv_share30_of_late", "sv_unpaid_of_late"], "categorical_vocab": {"loan_purpose": {"education": 1, "home_improvement": 2, "household": 3, "medical": 4, "working_capital": 5}, "region": {"Region_A": 1, "Region_B": 2, "Region_C": 3, "Region_D": 4, "Region_E": 5}, "employment_type": {"salaried": 1, "self_employed": 2, "variable_income": 3}, "housing_status": {"family": 1, "owned": 2, "rented": 3}}, "fit_rows": 55999, "validation_rows": 14001, "output_numeric_width": 348, "mode": "interpolated", "note": "Only fold 0 arrays exported to limit laptop disk/RAM. Refit NumericPreprocessor on each training fold; never reuse across folds.", "model_KS_after_preprocessing": null, "reason": "No model was trained or run. KS checks above test transform preservation on observed validation values only."}
+04_class_samples_before_after (12, 15)
+shape: (12, 15)
+┌─────┬────────┬───────┬───────┬───────┬───────┬───┬───────┬───────┬───────┬───────┬───────┬───────┐
+│ app ┆ target ┆ has_h ┆ rp_fr ┆ rp_fr ┆ rp_fr ┆ … ┆ bc_sc ┆ bc_sc ┆ bc_sc ┆ ac_ou ┆ ac_ou ┆ ac_ou │
+│ lic ┆ ---    ┆ istor ┆ ac_dp ┆ ac_dp ┆ ac_dp ┆   ┆ ore_m ┆ ore_m ┆ ore_m ┆ t_in_ ┆ t_in_ ┆ t_in_ │
+│ ati ┆ i64    ┆ y     ┆ d1_ra ┆ d1_tr ┆ d1_mi ┆   ┆ ean_r ┆ ean_t ┆ ean_m ┆ delta ┆ delta ┆ delta │
+│ on_ ┆        ┆ ---   ┆ w     ┆ ansfo ┆ ssing ┆   ┆ aw    ┆ ransf ┆ issin ┆ _raw  ┆ _tran ┆ _miss │
+│ id  ┆        ┆ i64   ┆ ---   ┆ rmed  ┆ ---   ┆   ┆ ---   ┆ ormed ┆ g     ┆ ---   ┆ sform ┆ ing   │
+│ --- ┆        ┆       ┆ f64   ┆ ---   ┆ bool  ┆   ┆ f64   ┆ ---   ┆ ---   ┆ f64   ┆ ed    ┆ ---   │
+│ str ┆        ┆       ┆       ┆ f64   ┆       ┆   ┆       ┆ f64   ┆ bool  ┆       ┆ ---   ┆ bool  │
+│     ┆        ┆       ┆       ┆       ┆       ┆   ┆       ┆       ┆       ┆       ┆ f64   ┆       │
+╞═════╪════════╪═══════╪═══════╪═══════╪═══════╪═══╪═══════╪═══════╪═══════╪═══════╪═══════╪═══════╡
+│ A_0 ┆ 0      ┆ 0     ┆ NaN   ┆ 0.000 ┆ true  ┆ … ┆ 644.6 ┆ -0.45 ┆ false ┆ NaN   ┆ 0.000 ┆ true  │
+│ 62a ┆        ┆       ┆       ┆ 00    ┆       ┆   ┆ 6667  ┆ 974   ┆       ┆       ┆ 00    ┆       │
+│ 340 ┆        ┆       ┆       ┆       ┆       ┆   ┆       ┆       ┆       ┆       ┆       ┆       │
+│ ac8 ┆        ┆       ┆       ┆       ┆       ┆   ┆       ┆       ┆       ┆       ┆       ┆       │
+│ 976 ┆        ┆       ┆       ┆       ┆       ┆   ┆       ┆       ┆       ┆       ┆       ┆       │
+│ ccf ┆        ┆       ┆       ┆       ┆       ┆   ┆       ┆       ┆       ┆       ┆       ┆       │
+│ A_4 ┆ 0      ┆ 0     ┆ NaN   ┆ 0.000 ┆ true  ┆ … ┆ 727.0 ┆ 1.157 ┆ false ┆ NaN   ┆ 0.000 ┆ true  │
+│ c03 ┆        ┆       ┆       ┆ 00    ┆       ┆   ┆ 0000  ┆ 20    ┆       ┆       ┆ 00    ┆       │
+│ d80 ┆        ┆       ┆       ┆       ┆       ┆   ┆       ┆       ┆       ┆       ┆       ┆       │
+│ 258 ┆        ┆       ┆       ┆       ┆       ┆   ┆       ┆       ┆       ┆       ┆       ┆       │
+│ 717 ┆        ┆       ┆       ┆       ┆       ┆   ┆       ┆       ┆       ┆       ┆       ┆       │
+│ 839 ┆        ┆       ┆       ┆       ┆       ┆   ┆       ┆       ┆       ┆       ┆       ┆       │
+│ A_5 ┆ 0      ┆ 0     ┆ NaN   ┆ 0.000 ┆ true  ┆ … ┆ 580.0 ┆ -1.76 ┆ false ┆ NaN   ┆ 0.000 ┆ true  │
+│ 716 ┆        ┆       ┆       ┆ 00    ┆       ┆   ┆ 0000  ┆ 238   ┆       ┆       ┆ 00    ┆       │
+│ 1f2 ┆        ┆       ┆       ┆       ┆       ┆   ┆       ┆       ┆       ┆       ┆       ┆       │
+│ ebb ┆        ┆       ┆       ┆       ┆       ┆   ┆       ┆       ┆       ┆       ┆       ┆       │
+│ 877 ┆        ┆       ┆       ┆       ┆       ┆   ┆       ┆       ┆       ┆       ┆       ┆       │
+│ fef ┆        ┆       ┆       ┆       ┆       ┆   ┆       ┆       ┆       ┆       ┆       ┆       │
+│ A_6 ┆ 0      ┆ 1     ┆ 0.333 ┆ 0.204 ┆ false ┆ … ┆ 620.5 ┆ -0.94 ┆ false ┆ -0.07 ┆ -0.43 ┆ false │
+│ 83e ┆        ┆       ┆ 33    ┆ 36    ┆       ┆   ┆ 0000  ┆ 529   ┆       ┆ 305   ┆ 598   ┆       │
+│ 78e ┆        ┆       ┆       ┆       ┆       ┆   ┆       ┆       ┆       ┆       ┆       ┆       │
+│ b3a ┆        ┆       ┆       ┆       ┆       ┆   ┆       ┆       ┆       ┆       ┆       ┆       │
+│ c9d ┆        ┆       ┆       ┆       ┆       ┆   ┆       ┆       ┆       ┆       ┆       ┆       │
+│ e85 ┆        ┆       ┆       ┆       ┆       ┆   ┆       ┆       ┆       ┆       ┆       ┆       │
+│ A_7 ┆ 0      ┆ 1     ┆ 0.733 ┆ 1.190 ┆ false ┆ … ┆ 628.6 ┆ -0.78 ┆ false ┆ 0.747 ┆ 1.794 ┆ false │
+│ 20b ┆        ┆       ┆ 33    ┆ 66    ┆       ┆   ┆ 6667  ┆ 062   ┆       ┆ 14    ┆ 71    ┆       │
+│ f3e ┆        ┆       ┆       ┆       ┆       ┆   ┆       ┆       ┆       ┆       ┆       ┆       │
+│ 5b5 ┆        ┆       ┆       ┆       ┆       ┆   ┆       ┆       ┆       ┆       ┆       ┆       │
+│ 45c ┆        ┆       ┆       ┆       ┆       ┆   ┆       ┆       ┆       ┆       ┆       ┆       │
+│ b95 ┆        ┆       ┆       ┆       ┆       ┆   ┆       ┆       ┆       ┆       ┆       ┆       │
+│ A_7 ┆ 0      ┆ 1     ┆ 0.166 ┆ -0.30 ┆ false ┆ … ┆ 560.3 ┆ -2.18 ┆ false ┆ -0.25 ┆ -1.04 ┆ false │
+│ 957 ┆        ┆       ┆ 67    ┆ 179   ┆       ┆   ┆ 3333  ┆ 818   ┆       ┆ 228   ┆ 507   ┆       │
+│ bbc ┆        ┆       ┆       ┆       ┆       ┆   ┆       ┆       ┆       ┆       ┆       ┆       │
+│ 73f ┆        ┆       ┆       ┆       ┆       ┆   ┆       ┆       ┆       ┆       ┆       ┆       │
+│ f14 ┆        ┆       ┆       ┆       ┆       ┆   ┆       ┆       ┆       ┆       ┆       ┆       │
+│ d5e ┆        ┆       ┆       ┆       ┆       ┆   ┆       ┆       ┆       ┆       ┆       ┆       │
+│ A_e ┆ 1      ┆ 0     ┆ NaN   ┆ 0.000 ┆ true  ┆ … ┆ 715.5 ┆ 0.930 ┆ false ┆ NaN   ┆ 0.000 ┆ true  │
+│ 1c9 ┆        ┆       ┆       ┆ 00    ┆       ┆   ┆ 0000  ┆ 63    ┆       ┆       ┆ 00    ┆       │
+│ 3db ┆        ┆       ┆       ┆       ┆       ┆   ┆       ┆       ┆       ┆       ┆       ┆       │
+│ dca ┆        ┆       ┆       ┆       ┆       ┆   ┆       ┆       ┆       ┆       ┆       ┆       │
+│ c79 ┆        ┆       ┆       ┆       ┆       ┆   ┆       ┆       ┆       ┆       ┆       ┆       │
+│ a90 ┆        ┆       ┆       ┆       ┆       ┆   ┆       ┆       ┆       ┆       ┆       ┆       │
+│ A_6 ┆ 1      ┆ 0     ┆ NaN   ┆ 0.000 ┆ true  ┆ … ┆ 651.0 ┆ -0.33 ┆ false ┆ NaN   ┆ 0.000 ┆ true  │
+│ cb3 ┆        ┆       ┆       ┆ 00    ┆       ┆   ┆ 0000  ┆ 466   ┆       ┆       ┆ 00    ┆       │
+│ 9eb ┆        ┆       ┆       ┆       ┆       ┆   ┆       ┆       ┆       ┆       ┆       ┆       │
+│ 9c9 ┆        ┆       ┆       ┆       ┆       ┆   ┆       ┆       ┆       ┆       ┆       ┆       │
+│ a40 ┆        ┆       ┆       ┆       ┆       ┆   ┆       ┆       ┆       ┆       ┆       ┆       │
+│ dbd ┆        ┆       ┆       ┆       ┆       ┆   ┆       ┆       ┆       ┆       ┆       ┆       │
+│ A_a ┆ 1      ┆ 0     ┆ NaN   ┆ 0.000 ┆ true  ┆ … ┆ 667.0 ┆ -0.01 ┆ false ┆ NaN   ┆ 0.000 ┆ true  │
+│ 825 ┆        ┆       ┆       ┆ 00    ┆       ┆   ┆ 0000  ┆ 893   ┆       ┆       ┆ 00    ┆       │
+│ c38 ┆        ┆       ┆       ┆       ┆       ┆   ┆       ┆       ┆       ┆       ┆       ┆       │
+│ dbf ┆        ┆       ┆       ┆       ┆       ┆   ┆       ┆       ┆       ┆       ┆       ┆       │
+│ 41d ┆        ┆       ┆       ┆       ┆       ┆   ┆       ┆       ┆       ┆       ┆       ┆       │
+│ ee9 ┆        ┆       ┆       ┆       ┆       ┆   ┆       ┆       ┆       ┆       ┆       ┆       │
+│ A_8 ┆ 1      ┆ 1     ┆ 0.050 ┆ -0.75 ┆ false ┆ … ┆ 635.3 ┆ -0.64 ┆ false ┆ 0.199 ┆ 0.565 ┆ false │
+│ d40 ┆        ┆       ┆ 00    ┆ 246   ┆       ┆   ┆ 3333  ┆ 791   ┆       ┆ 78    ┆ 82    ┆       │
+│ 397 ┆        ┆       ┆       ┆       ┆       ┆   ┆       ┆       ┆       ┆       ┆       ┆       │
+│ 4ea ┆        ┆       ┆       ┆       ┆       ┆   ┆       ┆       ┆       ┆       ┆       ┆       │
+│ 698 ┆        ┆       ┆       ┆       ┆       ┆   ┆       ┆       ┆       ┆       ┆       ┆       │
+│ 001 ┆        ┆       ┆       ┆       ┆       ┆   ┆       ┆       ┆       ┆       ┆       ┆       │
+│ A_0 ┆ 1      ┆ 1     ┆ NaN   ┆ 0.000 ┆ true  ┆ … ┆ 702.0 ┆ 0.668 ┆ false ┆ 0.030 ┆ -0.02 ┆ false │
+│ d1c ┆        ┆       ┆       ┆ 00    ┆       ┆   ┆ 0000  ┆ 47    ┆       ┆ 29    ┆ 481   ┆       │
+│ d31 ┆        ┆       ┆       ┆       ┆       ┆   ┆       ┆       ┆       ┆       ┆       ┆       │
+│ c85 ┆        ┆       ┆       ┆       ┆       ┆   ┆       ┆       ┆       ┆       ┆       ┆       │
+│ 7d9 ┆        ┆       ┆       ┆       ┆       ┆   ┆       ┆       ┆       ┆       ┆       ┆       │
+│ ef3 ┆        ┆       ┆       ┆       ┆       ┆   ┆       ┆       ┆       ┆       ┆       ┆       │
+│ A_a ┆ 1      ┆ 1     ┆ 1.000 ┆ 2.237 ┆ false ┆ … ┆ 628.0 ┆ -0.79 ┆ false ┆ 0.345 ┆ 0.965 ┆ false │
+│ 51e ┆        ┆       ┆ 00    ┆ 31    ┆       ┆   ┆ 0000  ┆ 476   ┆       ┆ 99    ┆ 21    ┆       │
+│ d8f ┆        ┆       ┆       ┆       ┆       ┆   ┆       ┆       ┆       ┆       ┆       ┆       │
+│ ca8 ┆        ┆       ┆       ┆       ┆       ┆   ┆       ┆       ┆       ┆       ┆       ┆       │
+│ 6ae ┆        ┆       ┆       ┆       ┆       ┆   ┆       ┆       ┆       ┆       ┆       ┆       │
+│ 68a ┆        ┆       ┆       ┆       ┆       ┆   ┆       ┆       ┆       ┆       ┆       ┆       │
+└─────┴────────┴───────┴───────┴───────┴───────┴───┴───────┴───────┴───────┴───────┴───────┴───────┘
+FIGURE eda/deep/out/04_before_after_by_class.png
+FIGURE eda/deep/out/04_class_sample_heatmap.png
+Preprocessing verified structurally; improvement in trained-model KS is UNKNOWN.

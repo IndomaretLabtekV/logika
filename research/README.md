@@ -1,6 +1,8 @@
 # Research papers for LOGIKA UI 2026 credit risk
 
-This is a curated local library for the contest's multi-table, point-in-time credit-risk task. The PDFs support method selection and notebook design; they are not training data and must not be joined to competition records. The [EDA and research report](../EDA_RESEARCH_REPORT.md) connects these papers to the measured dataset.
+This is a curated local library for the contest's multi-table, point-in-time credit-risk task. The PDFs support method selection and notebook design; they are not training data and must not be joined to competition records. The [EDA and research report](../docs/reports/EDA_RESEARCH_REPORT.md) connects these papers to the measured dataset.
+
+PDF tidak di-commit (lihat `.gitignore`); unduh ulang dengan `python research/download_papers.py`.
 
 `papers.json` records titles, source pages, download URLs, and relevance. `download_status.json` records the outcome, file size, and SHA-256 digest for each PDF. Run `python research/download_papers.py` from the repository root to retry downloads and refresh the status file. The script checks for a PDF header before accepting a file.
 

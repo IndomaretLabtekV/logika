@@ -1,0 +1,13 @@
+{
+  "notebook/v1.ipynb": "b91c5cbb1289155d1a8e3fcb1b42fa4d9f7e90ace9dfe0ef1ce9819a74d6e5e7",
+  "notebook/v2.ipynb": "c1b236409fa9db7518990d709dabf3652dbd2a89fe4c39596f7d2c356c12fe0d",
+  "notebook/v3.ipynb": "42f6e77a26e2021c645bea68506826547ec4b5e747665af50ec48103da48e97f",
+  "notebook/v4.ipynb": "b063c674371c33549f70222ebd3d1580dd77ecfdc38462a5debb9f682523dbe3",
+  "notebook/v5.ipynb": "d63a5591069a32e86d509f7b90bc55c04d03ce1dafbf28ebf1aaa1653c1ef470",
+  "notebook/v6.ipynb": "4468674425ea1877bf7cff8b7019c65b7f62f5787edb407db630affd672a619b",
+  "notebook/v7.ipynb": "1693fdadc3bd05ca2fdf4fb58bbe4f9dcb01cc6041f620fc9b4d2f43cd1bfede",
+  "results/v7/oof_all.parquet": "11a80722ba0ad39a00791a29dfb367de1223fba8d5f109c4090b024814480cdb",
+  "results/v7/test_all.parquet": "da385d722f59d51f40d971797900f3599e3b116e72e1a4c31f2617cdb00d30e2",
+  "results/v7/submission.csv": "e7792004f42e8f43c1f737181c9cfd98234d499ead23ccaf56a9687149e9c88a",
+  "data_pq/features.parquet": "b5cf94d5640a25eb04e721267c71a6ea746e4dd6783436e120eb4824a3c23925"
+}

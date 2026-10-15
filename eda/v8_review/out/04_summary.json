@@ -1,0 +1,6 @@
+{
+  "candidates": 30,
+  "replicating_after_joint_BH": 0,
+  "features_with_more_bins": 22,
+  "warning": "A test unable to distinguish predictor levels is uninformative. Corrected non-significance is not proof of no signal; conditioning is coarse and labels/OOF already used in selection."
+}

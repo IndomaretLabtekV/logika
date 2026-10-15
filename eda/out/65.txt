@@ -1,0 +1,52 @@
+family-wise noise (max of 200 random, per half): chi2/df 4.49  dKS +0.0035
+A) 38 money features -> 703 log-ratios
+B) top-30 features by KS -> 435 interaction grids
+shape: (25, 9)
+┌───────┬───────────────────────────┬────────┬────────┬───┬────────┬────────┬────────────┬─────────┐
+│ kind  ┆ candidate                 ┆ ks     ┆ chi_h1 ┆ … ┆ dks_h1 ┆ dks_h2 ┆ replicates ┆ dks_min │
+│ ---   ┆ ---                       ┆ ---    ┆ ---    ┆   ┆ ---    ┆ ---    ┆ ---        ┆ ---     │
+│ str   ┆ str                       ┆ f64    ┆ f64    ┆   ┆ f64    ┆ f64    ┆ bool       ┆ f64     │
+╞═══════╪═══════════════════════════╪════════╪════════╪═══╪════════╪════════╪════════════╪═════════╡
+│ ratio ┆ ac_income_mean/ec_aov     ┆ 0.1091 ┆ 2.6792 ┆ … ┆ 0.0042 ┆ 0.0029 ┆ false      ┆ 0.0029  │
+│ grid  ┆ ec_spend_30d x            ┆ NaN    ┆ 0.9513 ┆ … ┆ 0.0028 ┆ 0.0036 ┆ false      ┆ 0.0028  │
+│       ┆ rp_maxdpd_12m             ┆        ┆        ┆   ┆        ┆        ┆            ┆         │
+│ grid  ┆ ec_spend_30d x rp_n_dpd60 ┆ NaN    ┆ 0.9702 ┆ … ┆ 0.0026 ┆ 0.0025 ┆ false      ┆ 0.0025  │
+│ ratio ┆ ac_income_min/ac_minbal_m ┆ 0.0494 ┆ 0.7672 ┆ … ┆ 0.0027 ┆ 0.0022 ┆ false      ┆ 0.0022  │
+│       ┆ ean                       ┆        ┆        ┆   ┆        ┆        ┆            ┆         │
+│ ratio ┆ ec_spend_per_month/cf_out ┆ 0.0726 ┆ 0.6714 ┆ … ┆ 0.0024 ┆ 0.0021 ┆ false      ┆ 0.0021  │
+│       ┆ _l3                       ┆        ┆        ┆   ┆        ┆        ┆            ┆         │
+│ grid  ┆ ec_accel_90d x            ┆ NaN    ┆ 1.1776 ┆ … ┆ 0.0021 ┆ 0.0021 ┆ false      ┆ 0.0021  │
+│       ┆ ec2_gap_min_28            ┆        ┆        ┆   ┆        ┆        ┆            ┆         │
+│ ratio ┆ ac_outflow_mean/ec_spend_ ┆ 0.2202 ┆ 1.6269 ┆ … ┆ 0.0025 ┆ 0.0020 ┆ false      ┆ 0.0020  │
+│       ┆ 30d                       ┆        ┆        ┆   ┆        ┆        ┆            ┆         │
+│ ratio ┆ ac_income_std/ec_spend    ┆ 0.0811 ┆ 1.6484 ┆ … ┆ 0.0020 ┆ 0.0031 ┆ false      ┆ 0.0020  │
+│ ratio ┆ bp_out_b/bp_out_c         ┆ 0.0169 ┆ 0.5892 ┆ … ┆ 0.0027 ┆ 0.0019 ┆ false      ┆ 0.0019  │
+│ ratio ┆ pv_appr_max/ob_remaining  ┆ 0.0856 ┆ 2.0116 ┆ … ┆ 0.0029 ┆ 0.0019 ┆ false      ┆ 0.0019  │
+│ grid  ┆ pp_done x rp_maxdpd_mean  ┆ NaN    ┆ 1.1004 ┆ … ┆ 0.0024 ┆ 0.0018 ┆ false      ┆ 0.0018  │
+│ ratio ┆ bp_out_a/ec_spend_30d     ┆ 0.1848 ┆ 1.0045 ┆ … ┆ 0.0018 ┆ 0.0033 ┆ false      ┆ 0.0018  │
+│ ratio ┆ bh_last_outstanding/ac_in ┆ 0.0835 ┆ 1.4199 ┆ … ┆ 0.0018 ┆ 0.0018 ┆ false      ┆ 0.0018  │
+│       ┆ come_std                  ┆        ┆        ┆   ┆        ┆        ┆            ┆         │
+│ ratio ┆ rp_unpaid_amt/ac_outflow_ ┆ 0.2334 ┆ 0.6510 ┆ … ┆ 0.0018 ┆ 0.0019 ┆ false      ┆ 0.0018  │
+│       ┆ mean                      ┆        ┆        ┆   ┆        ┆        ┆            ┆         │
+│ ratio ┆ bc_revbal_max/ob_remainin ┆ 0.0646 ┆ 0.8975 ┆ … ┆ 0.0018 ┆ 0.0018 ┆ false      ┆ 0.0018  │
+│       ┆ g                         ┆        ┆        ┆   ┆        ┆        ┆            ┆         │
+│ grid  ┆ pp_trim x rp_late_mean    ┆ NaN    ┆ 0.9112 ┆ … ┆ 0.0019 ┆ 0.0018 ┆ false      ┆ 0.0018  │
+│ grid  ┆ ec_orders_30d x           ┆ NaN    ┆ 0.9971 ┆ … ┆ 0.0027 ┆ 0.0017 ┆ false      ┆ 0.0017  │
+│       ┆ ec_spend_90d              ┆        ┆        ┆   ┆        ┆        ┆            ┆         │
+│ ratio ┆ rp_active_inst/ac_last_cl ┆ 0.0722 ┆ 0.4830 ┆ … ┆ 0.0022 ┆ 0.0017 ┆ false      ┆ 0.0017  │
+│       ┆ ose                       ┆        ┆        ┆   ┆        ┆        ┆            ┆         │
+│ ratio ┆ declared_monthly_income/e ┆ 0.2484 ┆ 0.4761 ┆ … ┆ 0.0024 ┆ 0.0017 ┆ false      ┆ 0.0017  │
+│       ┆ c_spend_90d               ┆        ┆        ┆   ┆        ┆        ┆            ┆         │
+│ ratio ┆ bc_revlimit_max/pv_appr_m ┆ 0.0450 ┆ 0.7015 ┆ … ┆ 0.0016 ┆ 0.0017 ┆ false      ┆ 0.0016  │
+│       ┆ ax                        ┆        ┆        ┆   ┆        ┆        ┆            ┆         │
+│ ratio ┆ income_per_head/pv_appr_m ┆ 0.0451 ┆ 0.7933 ┆ … ┆ 0.0018 ┆ 0.0016 ┆ false      ┆ 0.0016  │
+│       ┆ ax                        ┆        ┆        ┆   ┆        ┆        ┆            ┆         │
+│ ratio ┆ declared_monthly_income/r ┆ 0.0629 ┆ 0.9439 ┆ … ┆ 0.0016 ┆ 0.0040 ┆ false      ┆ 0.0016  │
+│       ┆ p_active_inst             ┆        ┆        ┆   ┆        ┆        ┆            ┆         │
+│ ratio ┆ ac_avgbal_l3/ec_spend_per ┆ 0.0876 ┆ 0.8327 ┆ … ┆ 0.0017 ┆ 0.0016 ┆ false      ┆ 0.0016  │
+│       ┆ _month                    ┆        ┆        ┆   ┆        ┆        ┆            ┆         │
+│ ratio ┆ ec_spend_per_month/cf_min ┆ 0.0851 ┆ 0.7001 ┆ … ┆ 0.0025 ┆ 0.0015 ┆ false      ┆ 0.0015  │
+│       ┆ bal_l3                    ┆        ┆        ┆   ┆        ┆        ┆            ┆         │
+│ ratio ┆ ec_spend/cf_out_l3        ┆ 0.0672 ┆ 1.1968 ┆ … ┆ 0.0015 ┆ 0.0028 ┆ false      ┆ 0.0015  │
+└───────┴───────────────────────────┴────────┴────────┴───┴────────┴────────┴────────────┴─────────┘
+replicated hits: 0 of 1138

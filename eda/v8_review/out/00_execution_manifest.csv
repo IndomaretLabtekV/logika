@@ -1,0 +1,90 @@
+file,cell,execution_count,has_outputs,first_line
+notebook/v8.ipynb,11,,False,!nvidia-smi
+notebook/v8.ipynb,13,,False,%pip install -q polars==2.0.0 lightgbm xgboost catboost tabpfn tabm rtdl_num_embeddings scikit-learn pyarrow
+notebook/v8.ipynb,15,,False,import copy
+notebook/v8.ipynb,17,,False,def seed_everything(seed: int = 42):
+notebook/v8.ipynb,19,,False,def find_data_dir():
+notebook/v8.ipynb,21,,False,if UserSecretsClient is not None and CFG._ON_KAGGLE:
+notebook/v8.ipynb,23,,False,"TABLES = ['train_applications', 'test_applications', 'customer_profiles', 'previous_applications',"
+notebook/v8.ipynb,27,,False,"def ks_score(y, s):"
+notebook/v8.ipynb,29,,False,"tr_raw, te_raw = T['train_applications'], T['test_applications']"
+notebook/v8.ipynb,32,,False,pricing = (tr_raw.group_by('annual_interest_rate')
+notebook/v8.ipynb,35,,False,"o = (T['ecommerce_transactions'].join(tr_raw.select('customer_id', 'decision_datetime', 'target'), on='customer_id')"
+notebook/v8.ipynb,38,,False,"rp = (T['repayment_history'].join(tr_raw.select('customer_id', 'target'), on='customer_id')"
+notebook/v8.ipynb,41,,False,"e = (T['ecommerce_transactions'].join(tr_raw.select('customer_id', 'decision_datetime', 'target'), on='customer_id')"
+notebook/v8.ipynb,44,,False,"split = pl.concat([tr_raw.select('customer_id', split=pl.lit('train')), te_raw.select('customer_id', split=pl.lit('test'))])"
+notebook/v8.ipynb,48,,False,DAY_US = 86_400_000_000
+notebook/v8.ipynb,49,,False,hist_lab = hist_labels(T)
+notebook/v8.ipynb,54,,False,DAY = 86400.0
+notebook/v8.ipynb,55,,False,t0 = time.time()
+notebook/v8.ipynb,57,,False,"apps_all = pl.concat([T['train_applications'], T['test_applications']], how='diagonal_relaxed').select('customer_id', cut='decision_datetime')"
+notebook/v8.ipynb,59,,False,"ID_COLS  = ['application_id', 'customer_id', 'decision_datetime', 'target', 'is_train']"
+notebook/v8.ipynb,62,,False,"def logit_lines(ax, a, b, q=5):"
+notebook/v8.ipynb,65,,False,t0 = time.time()
+notebook/v8.ipynb,67,,False,"def ks_obs(yy, x):"
+notebook/v8.ipynb,71,,False,X_tr = tr_f.select(FEATURES).to_pandas()
+notebook/v8.ipynb,74,,False,"def run_gbdt(name, fit_predict, seeds=None, save=True):"
+notebook/v8.ipynb,76,,False,LGB_MODELS = []
+notebook/v8.ipynb,78,,False,if CFG.USE_LGB:
+notebook/v8.ipynb,80,,False,if LGB_MODELS:
+notebook/v8.ipynb,82,,False,"D_TE = {False: xgb.DMatrix(X_te, enable_categorical=True), True: xgb.DMatrix(XA_TE, enable_categorical=True)}"
+notebook/v8.ipynb,84,,False,def as_str(df):
+notebook/v8.ipynb,86,,False,"def paired(a, b, n_boot=300):"
+notebook/v8.ipynb,91,,False,"VIEWS = {'hand': (X_tr, X_te, NUM_COLS, CAT_COLS)}"
+notebook/v8.ipynb,93,,False,"def nn_prep(train: np.ndarray, test: np.ndarray):"
+notebook/v8.ipynb,94,,False,"A_TR, A_TE = X_tr[NUM_COLS].to_numpy(dtype=float), X_te[NUM_COLS].to_numpy(dtype=float)"
+notebook/v8.ipynb,95,,False,DEV = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
+notebook/v8.ipynb,97,,False,"def make_tabpfn(cat_idx, device):"
+notebook/v8.ipynb,99,,False,class CausiloModel:
+notebook/v8.ipynb,101,,False,unit_rank = lambda p: rankdata(p) / len(p)
+notebook/v8.ipynb,103,,False,class TabICLModel:
+notebook/v8.ipynb,105,,False,"def realmlp_frames(tri, rest):"
+notebook/v8.ipynb,107,,False,if TABM_OK:
+notebook/v8.ipynb,109,,False,class EXAONEModel:
+notebook/v8.ipynb,113,,False,names = list(RESULTS)
+notebook/v8.ipynb,115,,False,"fk = [ks_score(y[v], blend_oof[v]) for _, v in folds(CFG.SEED)]"
+notebook/v8.ipynb,119,,False,def to_unit(p):
+results/v8/v8_run.ipynb,11,1.0,True,!nvidia-smi
+results/v8/v8_run.ipynb,13,2.0,True,%pip install -q polars==2.0.0 lightgbm xgboost catboost tabpfn tabm rtdl_num_embeddings scikit-learn pyarrow
+results/v8/v8_run.ipynb,15,3.0,True,import copy
+results/v8/v8_run.ipynb,17,4.0,False,def seed_everything(seed: int = 42):
+results/v8/v8_run.ipynb,19,5.0,True,def find_data_dir():
+results/v8/v8_run.ipynb,21,6.0,True,if UserSecretsClient is not None and CFG._ON_KAGGLE:
+results/v8/v8_run.ipynb,23,7.0,True,"TABLES = ['train_applications', 'test_applications', 'customer_profiles', 'previous_applications',"
+results/v8/v8_run.ipynb,27,8.0,False,"def ks_score(y, s):"
+results/v8/v8_run.ipynb,29,9.0,True,"tr_raw, te_raw = T['train_applications'], T['test_applications']"
+results/v8/v8_run.ipynb,32,10.0,True,pricing = (tr_raw.group_by('annual_interest_rate')
+results/v8/v8_run.ipynb,35,11.0,True,"o = (T['ecommerce_transactions'].join(tr_raw.select('customer_id', 'decision_datetime', 'target'), on='customer_id')"
+results/v8/v8_run.ipynb,38,12.0,True,"rp = (T['repayment_history'].join(tr_raw.select('customer_id', 'target'), on='customer_id')"
+results/v8/v8_run.ipynb,41,13.0,True,"e = (T['ecommerce_transactions'].join(tr_raw.select('customer_id', 'decision_datetime', 'target'), on='customer_id')"
+results/v8/v8_run.ipynb,44,14.0,True,"split = pl.concat([tr_raw.select('customer_id', split=pl.lit('train')), te_raw.select('customer_id', split=pl.lit('test'))])"
+results/v8/v8_run.ipynb,48,15.0,False,DAY_US = 86_400_000_000
+results/v8/v8_run.ipynb,49,16.0,True,hist_lab = hist_labels(T)
+results/v8/v8_run.ipynb,54,17.0,False,DAY = 86400.0
+results/v8/v8_run.ipynb,55,18.0,True,t0 = time.time()
+results/v8/v8_run.ipynb,57,19.0,True,"apps_all = pl.concat([T['train_applications'], T['test_applications']], how='diagonal_relaxed').select('customer_id', cut='decision_datetime')"
+results/v8/v8_run.ipynb,59,20.0,True,"ID_COLS  = ['application_id', 'customer_id', 'decision_datetime', 'target', 'is_train']"
+results/v8/v8_run.ipynb,62,21.0,True,"def logit_lines(ax, a, b, q=5):"
+results/v8/v8_run.ipynb,65,22.0,True,t0 = time.time()
+results/v8/v8_run.ipynb,67,23.0,True,"def ks_obs(yy, x):"
+results/v8/v8_run.ipynb,71,24.0,True,X_tr = tr_f.select(FEATURES).to_pandas()
+results/v8/v8_run.ipynb,74,25.0,False,"def run_gbdt(name, fit_predict, seeds=None, save=True):"
+results/v8/v8_run.ipynb,76,26.0,True,LGB_MODELS = []
+results/v8/v8_run.ipynb,78,27.0,True,if CFG.USE_LGB:
+results/v8/v8_run.ipynb,80,28.0,True,if LGB_MODELS:
+results/v8/v8_run.ipynb,82,29.0,True,"D_TE = {False: xgb.DMatrix(X_te, enable_categorical=True), True: xgb.DMatrix(XA_TE, enable_categorical=True)}"
+results/v8/v8_run.ipynb,84,30.0,True,def as_str(df):
+results/v8/v8_run.ipynb,86,31.0,True,"def paired(a, b, n_boot=300):"
+results/v8/v8_run.ipynb,91,32.0,False,"VIEWS = {'hand': (X_tr, X_te, NUM_COLS, CAT_COLS)}"
+results/v8/v8_run.ipynb,93,33.0,False,"def nn_prep(train: np.ndarray, test: np.ndarray):"
+results/v8/v8_run.ipynb,94,34.0,True,"A_TR, A_TE = X_tr[NUM_COLS].to_numpy(dtype=float), X_te[NUM_COLS].to_numpy(dtype=float)"
+results/v8/v8_run.ipynb,95,35.0,True,DEV = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
+results/v8/v8_run.ipynb,97,36.0,True,"def make_tabpfn(cat_idx, device):"
+results/v8/v8_run.ipynb,99,37.0,True,class CausiloModel:
+results/v8/v8_run.ipynb,101,38.0,True,class TabICLModel:
+results/v8/v8_run.ipynb,103,,False,"def realmlp_frames(tri, rest):"
+results/v8/v8_run.ipynb,105,,False,if TABM_OK:
+results/v8/v8_run.ipynb,107,,False,class EXAONEModel:
+results/v8/v8_run.ipynb,111,,False,names = list(RESULTS)
+results/v8/v8_run.ipynb,113,,False,"fk = [ks_score(y[v], blend_oof[v]) for _, v in folds(CFG.SEED)]"
+results/v8/v8_run.ipynb,117,,False,def to_unit(p):

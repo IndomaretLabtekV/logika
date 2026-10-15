@@ -1,0 +1,5 @@
+candidate,conditioning,part,chi2,df,p,n
+dx_ec_spend_112_224,risk30+history,discovery,24.688778459439234,5,0.00015999448031795295,35001
+dx_ec_spend_112_224,risk30+history,confirmation,13.689450294708605,5,0.017707179813679537,34999
+dx_ec_spend_112_224,risk30+history+observed_span_quintile,discovery,26.18203702120314,5,0.0000822663731659558,35001
+dx_ec_spend_112_224,risk30+history+observed_span_quintile,confirmation,13.82332641831561,5,0.016771485898595447,34999

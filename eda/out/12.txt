@@ -1,0 +1,7 @@
+rp_frac_dpd1     match 1.000
+ec_orders_30d    match 1.000
+ec_spend         match 1.000
+bc_score_mean    match 1.000
+ac_out_in_l3     match 1.000
+pv_n_rej         match 1.000
+features changed by injected future rows: none -> cutoff filtering works

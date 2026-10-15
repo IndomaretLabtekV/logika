@@ -1,0 +1,12 @@
+applications (100000, 9)
+customers (100000, 9)
+previous_applications (201984, 11)
+loans (159323, 6)
+repayment_snapshots (1361341, 10)
+all_application_keys (301984, 3)
+bureau (797563, 14)
+account_months (1084418, 12)
+orders (2986855, 6)
+order_items (4359817, 6)
+05_relational_checks {"entities": 100000, "tables": 10, "foreign_keys_checked": 12, "target_columns_in_predictor_tables": 0, "order_item_money_conserved": true, "not_tested": "TabPFN-Rel integration, model inference and per-query temporal masking; require remote validation.", "sources": ["https://github.com/PriorLabs/tabpfn-rel", "https://github.com/PriorLabs/relarena/blob/main/docs/predictive-task.md"]}
+FIGURE eda/deep/out/05_relational_schema.png

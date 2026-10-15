@@ -1,0 +1,12 @@
+{
+  "entities": 100000,
+  "tables": 10,
+  "foreign_keys_checked": 12,
+  "target_columns_in_predictor_tables": 0,
+  "order_item_money_conserved": true,
+  "not_tested": "TabPFN-Rel integration, model inference and per-query temporal masking; require remote validation.",
+  "sources": [
+    "https://github.com/PriorLabs/tabpfn-rel",
+    "https://github.com/PriorLabs/relarena/blob/main/docs/predictive-task.md"
+  ]
+}

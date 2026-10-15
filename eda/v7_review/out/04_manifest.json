@@ -1,0 +1,4 @@
+{
+  "seed42_fold_reconstruction_matches_notebook": true,
+  "warning": "Fold-normalized scores are a diagnostic only. Saved test predictions are already averaged across folds; cannot reproduce matching test transformation. Blend averages multiple seeds, so seed-42 groups are not pure model folds for the blend."
+}

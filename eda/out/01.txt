@@ -1,0 +1,106 @@
+target rate: 0.13581428571428572 n_pos: 9507
+customers overlap train/test: 0
+shape: (12, 5)
+┌─────────┬─────────┬────────┬────────────┬───────────┐
+│ ym      ┆ n_train ┆ n_test ┆ rate_train ┆ rate_test │
+│ ---     ┆ ---     ┆ ---    ┆ ---        ┆ ---       │
+│ str     ┆ u32     ┆ u32    ┆ f64        ┆ f64       │
+╞═════════╪═════════╪════════╪════════════╪═══════════╡
+│ 2025-01 ┆ 5778    ┆ 2610   ┆ 0.142956   ┆ null      │
+│ 2025-02 ┆ 5898    ┆ 2477   ┆ 0.147338   ┆ null      │
+│ 2025-03 ┆ 5809    ┆ 2580   ┆ 0.138406   ┆ null      │
+│ 2025-04 ┆ 5910    ┆ 2459   ┆ 0.130795   ┆ null      │
+│ 2025-05 ┆ 5864    ┆ 2439   ┆ 0.120055   ┆ null      │
+│ …       ┆ …       ┆ …      ┆ …          ┆ …         │
+│ 2025-08 ┆ 5809    ┆ 2496   ┆ 0.136168   ┆ null      │
+│ 2025-09 ┆ 5830    ┆ 2485   ┆ 0.126587   ┆ null      │
+│ 2025-10 ┆ 5854    ┆ 2482   ┆ 0.140417   ┆ null      │
+│ 2025-11 ┆ 5821    ┆ 2535   ┆ 0.143618   ┆ null      │
+│ 2025-12 ┆ 5912    ┆ 2446   ┆ 0.139039   ┆ null      │
+└─────────┴─────────┴────────┴────────────┴───────────┘
+decision lag hours by split:
+ shape: (2, 4)
+┌───────┬───────────┬──────┬─────┐
+│ split ┆ mean      ┆ med  ┆ max │
+│ ---   ┆ ---       ┆ ---  ┆ --- │
+│ str   ┆ f64       ┆ f64  ┆ i64 │
+╞═══════╪═══════════╪══════╪═════╡
+│ test  ┆ 22.571533 ┆ 10.0 ┆ 119 │
+│ train ┆ 22.156243 ┆ 9.0  ┆ 119 │
+└───────┴───────────┴──────┴─────┘
+
+previous_applications:
+ shape: (2, 4)
+┌───────┬────────┬───────┬──────────────────┐
+│ split ┆ rows   ┆ custs ┆ post_cutoff_rows │
+│ ---   ┆ ---    ┆ ---   ┆ ---              │
+│ str   ┆ u32    ┆ u32   ┆ u32              │
+╞═══════╪════════╪═══════╪══════════════════╡
+│ test  ┆ 60529  ┆ 21000 ┆ 0                │
+│ train ┆ 141455 ┆ 49000 ┆ 0                │
+└───────┴────────┴───────┴──────────────────┘
+
+repayment_history:
+ shape: (2, 4)
+┌───────┬────────┬───────┬──────────────────┐
+│ split ┆ rows   ┆ custs ┆ post_cutoff_rows │
+│ ---   ┆ ---    ┆ ---   ┆ ---              │
+│ str   ┆ u32    ┆ u32   ┆ u32              │
+╞═══════╪════════╪═══════╪══════════════════╡
+│ train ┆ 952493 ┆ 46312 ┆ 0                │
+│ test  ┆ 408848 ┆ 19845 ┆ 0                │
+└───────┴────────┴───────┴──────────────────┘
+
+account_behavior:
+ shape: (2, 4)
+┌───────┬────────┬───────┬──────────────────┐
+│ split ┆ rows   ┆ custs ┆ post_cutoff_rows │
+│ ---   ┆ ---    ┆ ---   ┆ ---              │
+│ str   ┆ u32    ┆ u32   ┆ u32              │
+╞═══════╪════════╪═══════╪══════════════════╡
+│ test  ┆ 325026 ┆ 21000 ┆ 0                │
+│ train ┆ 759392 ┆ 49000 ┆ 0                │
+└───────┴────────┴───────┴──────────────────┘
+
+bureau_observations:
+ shape: (2, 4)
+┌───────┬────────┬───────┬──────────────────┐
+│ split ┆ rows   ┆ custs ┆ post_cutoff_rows │
+│ ---   ┆ ---    ┆ ---   ┆ ---              │
+│ str   ┆ u32    ┆ u32   ┆ u32              │
+╞═══════╪════════╪═══════╪══════════════════╡
+│ test  ┆ 239363 ┆ 30000 ┆ 0                │
+│ train ┆ 558200 ┆ 70000 ┆ 0                │
+└───────┴────────┴───────┴──────────────────┘
+
+ecommerce_transactions:
+ shape: (2, 4)
+┌───────┬─────────┬───────┬──────────────────┐
+│ split ┆ rows    ┆ custs ┆ post_cutoff_rows │
+│ ---   ┆ ---     ┆ ---   ┆ ---              │
+│ str   ┆ u32     ┆ u32   ┆ u32              │
+╞═══════╪═════════╪═══════╪══════════════════╡
+│ test  ┆ 1310186 ┆ 30000 ┆ 0                │
+│ train ┆ 3049631 ┆ 70000 ┆ 0                │
+└───────┴─────────┴───────┴──────────────────┘
+
+bureau rows on selected app: 264088  on previous apps: 533475
+bureau(selected) available after decision: 0  report after decision: 0 of 264088
+Traceback (most recent call last):
+  File "/home/rian/Projects/logika/eda/01_keys_target_time.py", line 55, in <module>
+    print("bureau rows per selected app by split:\n", bj.group_by("split", "application_id").len().group_by("split").agg(pl.col("len").mean(), pl.col("len").max()))
+                                                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/rian/Projects/logika/.venv/lib/python3.13/site-packages/polars/dataframe/group_by.py", line 375, in agg
+    ._collect_eager(optimizations=QueryOptFlags._eager())
+     ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/rian/Projects/logika/.venv/lib/python3.13/site-packages/polars/lazyframe/frame.py", line 1947, in _collect_eager
+    return _eager_engine().collect(
+           ~~~~~~~~~~~~~~~~~~~~~~~^
+        self, optimizations=optimizations, background=False
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/rian/Projects/logika/.venv/lib/python3.13/site-packages/polars/lazyframe/engine.py", line 408, in collect
+    return wrap_df(ldf.collect(self.name, callback))
+                   ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+polars.exceptions.DuplicateError: column with name 'len' has more than one occurrence

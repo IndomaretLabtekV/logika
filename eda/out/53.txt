@@ -1,0 +1,5 @@
+(a) independent recomputation of pp_mean (reference rebuilt from rows before the decision month): match 1.000
+(b1) rows 1h after 2,000 random customers' cutoffs: non-price features of anyone moved: none (price features of customers deciding in a later month may move: those rows are in their past)
+(b2) same test for 2,000 December customers (their rows can be in nobody's past): features moved: none
+(b3) rows after every application's cutoff: features moved: none
+(c) safe pp_mean: KS 0.3689 (v5 global 0.3684); residual vs v5 chi2=1.03 dKS=-0.0001 -> same information as v5

@@ -1,0 +1,7 @@
+{
+  "rows": 100000,
+  "predictors": 9,
+  "replicating_candidates": 0,
+  "missing_rates_kept_null": true,
+  "warning": "Features known at selected cutoff using provided past-loan proxy; no historical income/state reconstruction and no additional training rows. New-model validation KS remains unknown. Screening is exploratory after repeated label use."
+}

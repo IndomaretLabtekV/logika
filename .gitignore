@@ -1,6 +1,37 @@
-data/*
+# environments
 .venv/
+.venv-rel/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# competition data (not redistributable) and local caches rebuilt by eda/common.py
+data/
+data_pq/
+
+# local dry-run outputs
+output/
+output_v*/
+catboost_info/
+
+# large derived artefacts, regenerable by the scripts that wrote them
+eda/deep/out/relational/
+eda/deep/out/preprocessed/
+eda/*/out/*.parquet
+eda/*/out/*.npz
+!eda/v8_review/out/*.parquet
+results/v4/v4/features_*.parquet
+
+# baseline DuckDB EDA outputs (only the risk exploration tables/figures are kept)
 outputs/*
 !outputs/04_risk_exploration/
 outputs/04_risk_exploration/*.parquet
-__pycache__/
+
+# research PDFs, re-download with research/download_papers.py
+research/papers/
+
+# model weights
+*.pt
+*.pkl
+*.cbm
+*.ubj

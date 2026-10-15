@@ -1,0 +1,4 @@
+mode,max_abs_KS_change,median_abs_KS_change,max_values_lost
+interpolated,0.0,0.0,352
+robust,0.032861054887486696,0.0,1396
+step,0.0005006884466141059,0.0,2870

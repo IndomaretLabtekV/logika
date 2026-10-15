@@ -1,0 +1,7 @@
+{
+  "reference_fold_seed": 71015,
+  "reference_excludes_fold": 0,
+  "reference_fit_customers": 55999,
+  "rows": 100000,
+  "warning": "Split-half disagreement includes real within-customer heterogeneity, not just noise. Fixed shrinkage strength 10 is a hypothesis, not an optimized posterior. Refit reference in each actual model fold."
+}

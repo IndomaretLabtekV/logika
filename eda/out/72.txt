@@ -1,0 +1,24 @@
+noise vs v6: chi2/df p95=1.60 dKS p95=+0.0022
+rp_bigram: 952,493 rows, 54 signatures
+rp_trigram: 952,493 rows, 121 signatures
+ac_bigram: 759,392 rows, 1530 signatures
+ec_bigram: 2,089,421 rows, 522 signatures
+shape: (12, 5)
+┌───────────────┬────────┬─────────┬─────────┬───────┐
+│ feature       ┆ ks     ┆ chi2_df ┆ dKS_cf  ┆ above │
+│ ---           ┆ ---    ┆ ---     ┆ ---     ┆ ---   │
+│ str           ┆ f64    ┆ f64     ┆ f64     ┆ bool  │
+╞═══════════════╪════════╪═════════╪═════════╪═══════╡
+│ rp_trigram_s  ┆ 0.3231 ┆ 1.3315  ┆ 0.0008  ┆ false │
+│ rp_bigram_s   ┆ 0.3241 ┆ 1.2902  ┆ 0.0007  ┆ false │
+│ rp_bigram_m   ┆ 0.3264 ┆ 0.7714  ┆ 0.0007  ┆ false │
+│ rp_trigram_m  ┆ 0.3231 ┆ 1.1413  ┆ 0.0005  ┆ false │
+│ ec_bigram_s   ┆ 0.3724 ┆ 1.9150  ┆ 0.0005  ┆ false │
+│ ac_bigram_m   ┆ 0.1022 ┆ 0.6453  ┆ 0.0004  ┆ false │
+│ ac_bigram_s   ┆ 0.1030 ┆ 0.7122  ┆ 0.0003  ┆ false │
+│ ac_bigram_mx  ┆ 0.0901 ┆ 1.2167  ┆ 0.0000  ┆ false │
+│ rp_trigram_mx ┆ 0.2726 ┆ 1.1260  ┆ -0.0001 ┆ false │
+│ ec_bigram_m   ┆ 0.3745 ┆ 0.7143  ┆ -0.0001 ┆ false │
+│ rp_bigram_mx  ┆ 0.2884 ┆ 1.8678  ┆ -0.0002 ┆ false │
+│ ec_bigram_mx  ┆ 0.3283 ┆ 0.6818  ┆ -0.0007 ┆ false │
+└───────────────┴────────┴─────────┴─────────┴───────┘

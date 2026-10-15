@@ -1,0 +1,89 @@
+39 v2 features: ['bz_trend', 'bz_range', 'bz_newest', 'bz_delinq_all_mean', 'bz_active_trend', 'bz_inq_external', 'ob_term_mean', 'ob_days_since_appr', 'ob_amt_90d', 'ob_remaining', 'ob_amt_vs_last', 'rq_first_inst_late', 'rq_first_inst_dpd', 'rq_frac_1_29', 'rq_late_trend', 'sv_maxdpd_mean_late', 'sv_late_d_mean', 'sv_share30_of_late', 'sv_unpaid_of_late', 'rq_streak_max', 'rq_lastloan_late', 'rq_lastloan_maxdpd', 'cf_nonincome_share', 'cf_nonincome_l3', 'cf_out_l3', 'cf_free_min', 'cf_minbal_l3', 'cf_inst_to_free', 'cf_out_to_inc_l3', 'cf_inst_to_minbal', 'ec2_base', 'ec2_cancel_28', 'ec2_night_share_90', 'ec2_items_per_order_28', 'ec2_gap_min_28', 'ec2_aov_shift', 'ec2_ewm7_rel', 'ec2_ewm28_exc', 'ec2_ewm56_rel']
+
+(a) independent recomputation
+  rq_first_inst_late     match 1.000
+  sv_maxdpd_mean_late    match 1.000
+  rq_streak_max          match 1.000
+  cf_nonincome_share     match 1.000
+  ec2_cancel_28          match 1.000
+  ec2_night_share_90     match 1.000
+  ob_days_since_appr     match 1.000
+  bz_newest              match 1.000
+  bz_inq_external        match 1.000
+
+(b) features changed by injected future rows: none -> cutoff filtering works for all 213 columns
+
+=== 27_v2: candidates vs v1 residual (noise: chi2/df p95~1.2, dKS p95~+0.002)
+shape: (39, 7)
+┌────────────────────────┬────────┬─────────┬────────┬────────┬────────┬────────────┐
+│ feature                ┆ ks     ┆ chi2_df ┆ dKS_cf ┆ cov    ┆ psi    ┆ max_rho_v1 │
+│ ---                    ┆ ---    ┆ ---     ┆ ---    ┆ ---    ┆ ---    ┆ ---        │
+│ str                    ┆ f64    ┆ f64     ┆ f64    ┆ f64    ┆ f64    ┆ f64        │
+╞════════════════════════╪════════╪═════════╪════════╪════════╪════════╪════════════╡
+│ rq_first_inst_late     ┆ 0.2251 ┆ 4.1917  ┆ 0.0011 ┆ 0.6616 ┆ 0.0000 ┆ 1.0000     │
+│ bz_delinq_all_mean     ┆ 0.0801 ┆ 3.9686  ┆ 0.0009 ┆ 1.0000 ┆ 0.0002 ┆ 1.0000     │
+│ rq_lastloan_maxdpd     ┆ 0.2097 ┆ 3.0457  ┆ 0.0013 ┆ 0.6616 ┆ 0.0002 ┆ 1.0000     │
+│ rq_streak_max          ┆ 0.2415 ┆ 3.0291  ┆ 0.0006 ┆ 0.5285 ┆ 0.0007 ┆ 1.0000     │
+│ cf_nonincome_share     ┆ 0.0478 ┆ 2.8419  ┆ 0.0014 ┆ 0.7000 ┆ 0.0004 ┆ 1.0000     │
+│ sv_maxdpd_mean_late    ┆ 0.2680 ┆ 2.4367  ┆ 0.0022 ┆ 0.5285 ┆ 0.0005 ┆ 1.0000     │
+│ ob_term_mean           ┆ 0.0501 ┆ 2.4073  ┆ 0.0011 ┆ 0.6652 ┆ 0.0002 ┆ 1.0000     │
+│ ec2_cancel_28          ┆ 0.0867 ┆ 2.3541  ┆ 0.0007 ┆ 1.0000 ┆ 0.0001 ┆ 1.0000     │
+│ rq_first_inst_dpd      ┆ 0.2230 ┆ 2.3145  ┆ 0.0010 ┆ 0.6616 ┆ 0.0002 ┆ 1.0000     │
+│ ob_amt_90d             ┆ 0.0485 ┆ 2.2944  ┆ 0.0002 ┆ 0.6652 ┆ 0.0000 ┆ 1.0000     │
+│ bz_range               ┆ 0.0579 ┆ 1.9165  ┆ 0.0009 ┆ 0.9991 ┆ 0.0004 ┆ 1.0000     │
+│ bz_newest              ┆ 0.2386 ┆ 1.9147  ┆ 0.0007 ┆ 0.9991 ┆ 0.0004 ┆ 1.0000     │
+│ rq_lastloan_late       ┆ 0.2571 ┆ 1.8671  ┆ 0.0008 ┆ 0.6616 ┆ 0.0001 ┆ 1.0000     │
+│ sv_late_d_mean         ┆ 0.2622 ┆ 1.8475  ┆ 0.0008 ┆ 0.5127 ┆ 0.0005 ┆ 1.0000     │
+│ ec2_base               ┆ 0.1691 ┆ 1.8327  ┆ 0.0008 ┆ 1.0000 ┆ 0.0004 ┆ 1.0000     │
+│ ec2_night_share_90     ┆ 0.1574 ┆ 1.7745  ┆ 0.0011 ┆ 0.9555 ┆ 0.0003 ┆ 1.0000     │
+│ sv_share30_of_late     ┆ 0.2097 ┆ 1.7491  ┆ 0.0016 ┆ 0.5285 ┆ 0.0001 ┆ 0.9802     │
+│ ob_remaining           ┆ 0.0863 ┆ 1.7138  ┆ 0.0005 ┆ 0.6652 ┆ 0.0003 ┆ 1.0000     │
+│ bz_active_trend        ┆ 0.0481 ┆ 1.6783  ┆ 0.0006 ┆ 0.7000 ┆ 0.0002 ┆ 1.0000     │
+│ ec2_ewm7_rel           ┆ 0.3041 ┆ 1.6684  ┆ 0.0013 ┆ 1.0000 ┆ 0.0004 ┆ 1.0000     │
+│ ec2_items_per_order_28 ┆ 0.2342 ┆ 1.6105  ┆ 0.0010 ┆ 0.7263 ┆ 0.0004 ┆ 1.0000     │
+│ cf_out_l3              ┆ 0.1148 ┆ 1.6100  ┆ 0.0017 ┆ 0.7000 ┆ 0.0002 ┆ 1.0000     │
+│ bz_inq_external        ┆ 0.0308 ┆ 1.5607  ┆ 0.0008 ┆ 1.0000 ┆ 0.0006 ┆ 1.0000     │
+│ rq_frac_1_29           ┆ 0.1812 ┆ 1.5155  ┆ 0.0029 ┆ 0.6616 ┆ 0.0000 ┆ 1.0000     │
+│ cf_free_min            ┆ 0.0779 ┆ 1.5098  ┆ 0.0012 ┆ 0.7000 ┆ 0.0003 ┆ 1.0000     │
+│ ec2_ewm28_exc          ┆ 0.3099 ┆ 1.4449  ┆ 0.0011 ┆ 1.0000 ┆ 0.0006 ┆ 1.0000     │
+│ ob_days_since_appr     ┆ 0.0632 ┆ 1.4193  ┆ 0.0011 ┆ 0.6652 ┆ 0.0002 ┆ 1.0000     │
+│ cf_nonincome_l3        ┆ 0.0477 ┆ 1.4107  ┆ 0.0018 ┆ 0.7000 ┆ 0.0003 ┆ 1.0000     │
+│ ec2_ewm56_rel          ┆ 0.3084 ┆ 1.3902  ┆ 0.0013 ┆ 1.0000 ┆ 0.0003 ┆ 1.0000     │
+│ ec2_aov_shift          ┆ 0.2085 ┆ 1.2772  ┆ 0.0010 ┆ 0.6656 ┆ 0.0004 ┆ 1.0000     │
+│ bz_trend               ┆ 0.0803 ┆ 1.1537  ┆ 0.0024 ┆ 0.9771 ┆ 0.0005 ┆ 1.0000     │
+│ ec2_gap_min_28         ┆ 0.2827 ┆ 1.0695  ┆ 0.0015 ┆ 0.5242 ┆ 0.0003 ┆ 1.0000     │
+│ cf_out_to_inc_l3       ┆ 0.1033 ┆ 1.0354  ┆ 0.0013 ┆ 0.7000 ┆ 0.0004 ┆ 1.0000     │
+│ rq_late_trend          ┆ 0.1009 ┆ 1.0134  ┆ 0.0012 ┆ 0.6108 ┆ 0.0007 ┆ 1.0000     │
+│ ob_amt_vs_last         ┆ 0.0451 ┆ 0.9620  ┆ 0.0017 ┆ 0.6652 ┆ 0.0002 ┆ 1.0000     │
+│ cf_inst_to_free        ┆ 0.1102 ┆ 0.9143  ┆ 0.0018 ┆ 0.7000 ┆ 0.0004 ┆ 1.0000     │
+│ cf_inst_to_minbal      ┆ 0.0676 ┆ 0.8668  ┆ 0.0012 ┆ 0.7000 ┆ 0.0004 ┆ 1.0000     │
+│ sv_unpaid_of_late      ┆ 0.2319 ┆ 0.7936  ┆ 0.0005 ┆ 0.5285 ┆ 0.0001 ┆ 0.9811     │
+│ cf_minbal_l3           ┆ 0.0495 ┆ 0.7357  ┆ 0.0014 ┆ 0.7000 ┆ 0.0008 ┆ 1.0000     │
+└────────────────────────┴────────┴─────────┴────────┴────────┴────────┴────────────┘
+
+v2 pairs with |rho|>0.9: [('rq_first_inst_late', 'rq_first_inst_dpd', np.float64(0.9878404355247156)), ('sv_maxdpd_mean_late', 'sv_late_d_mean', np.float64(0.9410432878873971)), ('rq_lastloan_late', 'rq_lastloan_maxdpd', np.float64(0.9041819638810759)), ('ec2_ewm28_exc', 'ec2_ewm56_rel', np.float64(0.9438137391284992))]
+
+=== 27_v2: univariate KS vs target, drift train->test
+shape: (16, 6)
+┌─────────────────────┬───────────┬──────────┬───────────┬──────────┬──────────────────┐
+│ feature             ┆ ks_target ┆ psi_test ┆ cov_train ┆ cov_test ┆ ks_train_vs_test │
+│ ---                 ┆ ---       ┆ ---      ┆ ---       ┆ ---      ┆ ---              │
+│ str                 ┆ f64       ┆ f64      ┆ f64       ┆ f64      ┆ f64              │
+╞═════════════════════╪═══════════╪══════════╪═══════════╪══════════╪══════════════════╡
+│ sv_maxdpd_mean_late ┆ 0.2680    ┆ 0.0005   ┆ 0.5285    ┆ 0.5299   ┆ 0.0036           │
+│ sv_late_d_mean      ┆ 0.2622    ┆ 0.0005   ┆ 0.5127    ┆ 0.5147   ┆ 0.0024           │
+│ rq_lastloan_late    ┆ 0.2571    ┆ 0.0001   ┆ 0.6616    ┆ 0.6615   ┆ 0.0044           │
+│ rq_streak_max       ┆ 0.2415    ┆ 0.0007   ┆ 0.5285    ┆ 0.5299   ┆ 0.0053           │
+│ bz_newest           ┆ 0.2386    ┆ 0.0004   ┆ 0.9991    ┆ 0.9992   ┆ 0.0048           │
+│ rq_first_inst_late  ┆ 0.2251    ┆ 0.0000   ┆ 0.6616    ┆ 0.6615   ┆ 0.0020           │
+│ rq_first_inst_dpd   ┆ 0.2230    ┆ 0.0002   ┆ 0.6616    ┆ 0.6615   ┆ 0.0033           │
+│ rq_lastloan_maxdpd  ┆ 0.2097    ┆ 0.0002   ┆ 0.6616    ┆ 0.6615   ┆ 0.0043           │
+│ ec2_base            ┆ 0.1691    ┆ 0.0004   ┆ 1.0000    ┆ 1.0000   ┆ 0.0074           │
+│ ec2_night_share_90  ┆ 0.1574    ┆ 0.0003   ┆ 0.9555    ┆ 0.9552   ┆ 0.0046           │
+│ ec2_cancel_28       ┆ 0.0867    ┆ 0.0001   ┆ 1.0000    ┆ 1.0000   ┆ 0.0021           │
+│ bz_delinq_all_mean  ┆ 0.0801    ┆ 0.0002   ┆ 1.0000    ┆ 1.0000   ┆ 0.0029           │
+│ bz_range            ┆ 0.0579    ┆ 0.0004   ┆ 0.9991    ┆ 0.9992   ┆ 0.0047           │
+│ ob_term_mean        ┆ 0.0501    ┆ 0.0002   ┆ 0.6652    ┆ 0.6651   ┆ 0.0040           │
+│ ob_amt_90d          ┆ 0.0485    ┆ 0.0000   ┆ 0.6652    ┆ 0.6651   ┆ 0.0032           │
+│ cf_nonincome_share  ┆ 0.0478    ┆ 0.0004   ┆ 0.7000    ┆ 0.7000   ┆ 0.0045           │
+└─────────────────────┴───────────┴──────────┴───────────┴──────────┴──────────────────┘

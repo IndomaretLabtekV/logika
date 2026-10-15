@@ -1,0 +1,143 @@
+version,cell,text
+1,57,[lgb] OOF KS=0.5057  AUC=0.8341  fold KS=0.5053+-0.0103  sim |pub-priv| p50=0.0094 p95=0.0270
+1,61,[xgb] OOF KS=0.5059  AUC=0.8339  fold KS=0.5063+-0.0092  sim |pub-priv| p50=0.0095 p95=0.0269
+1,63,[cat] OOF KS=0.5041  AUC=0.8329  fold KS=0.5053+-0.0100  sim |pub-priv| p50=0.0099 p95=0.0287
+1,70,[tabpfn] OOF KS=0.4956  AUC=0.8271  fold KS=0.4987+-0.0080  sim |pub-priv| p50=0.0097 p95=0.0273
+1,72,[causilo] OOF KS=0.4953  AUC=0.8268  fold KS=0.4986+-0.0063  sim |pub-priv| p50=0.0094 p95=0.0282
+1,75,  lgb      OOF KS 0.5057
+1,75,  xgb      OOF KS 0.5059
+1,75,  cat      OOF KS 0.5041
+1,75,  tabpfn   OOF KS 0.4956
+1,75,  causilo  OOF KS 0.4953
+1,75,  BLEND    OOF KS 0.5051
+2,63,[lgb] OOF KS=0.5118  AUC=0.8363  fold KS=0.5106+-0.0095  sim |pub-priv| p50=0.0092 p95=0.0276
+2,63,[lgb_s] OOF KS=0.5098  AUC=0.8365  fold KS=0.5107+-0.0088  sim |pub-priv| p50=0.0084 p95=0.0257
+2,65,OOF KS v1 features 0.5017 -> v1+v2 features 0.5071
+2,69,[xgb] OOF KS=0.5092  AUC=0.8364  fold KS=0.5090+-0.0090  sim |pub-priv| p50=0.0093 p95=0.0252
+2,69,[xgb_s] OOF KS=0.5104  AUC=0.8365  fold KS=0.5096+-0.0082  sim |pub-priv| p50=0.0092 p95=0.0263
+2,71,[cat] OOF KS=0.5072  AUC=0.8352  fold KS=0.5086+-0.0088  sim |pub-priv| p50=0.0083 p95=0.0261
+2,71,[cat_s] OOF KS=0.5068  AUC=0.8351  fold KS=0.5084+-0.0094  sim |pub-priv| p50=0.0091 p95=0.0282
+2,78,[tabpfn] OOF KS=0.4864  AUC=0.8219  fold KS=0.4881+-0.0094  sim |pub-priv| p50=0.0100 p95=0.0252
+2,80,[causilo] OOF KS=0.4848  AUC=0.8217  fold KS=0.4881+-0.0095  sim |pub-priv| p50=0.0099 p95=0.0263
+2,83,  lgb      OOF KS 0.5118
+2,83,  lgb_s    OOF KS 0.5098
+2,83,  xgb      OOF KS 0.5092
+2,83,  xgb_s    OOF KS 0.5104
+2,83,  cat      OOF KS 0.5072
+2,83,  cat_s    OOF KS 0.5068
+2,83,  tabpfn   OOF KS 0.4864
+2,83,  causilo  OOF KS 0.4848
+2,83,  BLEND    OOF KS 0.5135   (version 1 blend: 0.5051)
+3,63,[lgb] OOF KS=0.5118  AUC=0.8363  fold KS=0.5106+-0.0095  sim |pub-priv| p50=0.0092 p95=0.0276
+3,63,[lgb_s] OOF KS=0.5098  AUC=0.8365  fold KS=0.5107+-0.0088  sim |pub-priv| p50=0.0084 p95=0.0257
+3,65,OOF KS v1 features 0.5017 -> v1+v2 features 0.5071
+3,69,[xgb] OOF KS=0.5092  AUC=0.8364  fold KS=0.5090+-0.0090  sim |pub-priv| p50=0.0093 p95=0.0252
+3,69,[xgb_s] OOF KS=0.5104  AUC=0.8365  fold KS=0.5096+-0.0082  sim |pub-priv| p50=0.0092 p95=0.0263
+3,71,[cat] OOF KS=0.5070  AUC=0.8352  fold KS=0.5086+-0.0090  sim |pub-priv| p50=0.0086 p95=0.0267
+3,71,[cat_s] OOF KS=0.5071  AUC=0.8351  fold KS=0.5089+-0.0091  sim |pub-priv| p50=0.0087 p95=0.0271
+3,78,[tabpfn] OOF KS=0.4995  AUC=0.8308  fold KS=0.5027+-0.0112  sim |pub-priv| p50=0.0099 p95=0.0281
+3,82,[tabm] OOF KS=0.5126  AUC=0.8383  fold KS=0.5145+-0.0084  sim |pub-priv| p50=0.0089 p95=0.0257
+3,86,held-out halves: greedy 0.5138 vs equal-weight trees 0.5109
+3,86,  adding tabpfn at 20% to the tree blend: held-out halves 0.5107 (trees alone 0.5109)
+3,86,  adding tabm at 20% to the tree blend: held-out halves 0.5134 (trees alone 0.5109)
+3,86,  lgb      OOF KS 0.5118
+3,86,  lgb_s    OOF KS 0.5098
+3,86,  xgb      OOF KS 0.5092
+3,86,  xgb_s    OOF KS 0.5104
+3,86,  cat      OOF KS 0.5070
+3,86,  cat_s    OOF KS 0.5071
+3,86,  tabpfn   OOF KS 0.4995
+3,86,  tabm     OOF KS 0.5126
+3,86,"  BLEND    OOF KS 0.5142   (version 2 blend: 0.5134 in-sample greedy, 0.5104 equal-weight trees)"
+5,69,[lgb] OOF KS=0.5241  AUC=0.8450  fold KS=0.5246+-0.0075  sim |pub-priv| p50=0.0090 p95=0.0281
+5,69,[lgb_s] OOF KS=0.5238  AUC=0.8452  fold KS=0.5256+-0.0083  sim |pub-priv| p50=0.0088 p95=0.0276
+5,71,OOF KS v3 features 0.5070 -> v3+v5 features 0.5221
+5,75,[xgb] OOF KS=0.5235  AUC=0.8450  fold KS=0.5242+-0.0082  sim |pub-priv| p50=0.0085 p95=0.0250
+5,75,[xgb_s] OOF KS=0.5239  AUC=0.8451  fold KS=0.5252+-0.0092  sim |pub-priv| p50=0.0089 p95=0.0277
+5,77,[cat] OOF KS=0.5234  AUC=0.8438  fold KS=0.5243+-0.0080  sim |pub-priv| p50=0.0088 p95=0.0290
+5,77,[cat_s] OOF KS=0.5211  AUC=0.8434  fold KS=0.5233+-0.0072  sim |pub-priv| p50=0.0092 p95=0.0299
+5,84,[tabpfn_rel] OOF KS=0.4912  AUC=0.8246  fold KS=0.4926+-0.0084  sim |pub-priv| p50=0.0088 p95=0.0260
+5,86,manifest pins no checkpoint_sha256; loading /root/.cache/huggingface/hub/models--LG-AI-Research--EXAONE-Tabular/snapshots/093ad1c2613e1e95d26df8610451d2e02ed53cbe/exaone-tabular-classifier-v1_default.safetensors without an integrity check (structural validation still runs)
+5,86,EXAONE skipped: RuntimeError('No available kernel. Aborting execution.')
+5,90,[tabm] OOF KS=0.5257  AUC=0.8461  fold KS=0.5266+-0.0093  sim |pub-priv| p50=0.0093 p95=0.0248
+5,94,held-out halves: greedy 0.5263 vs equal-weight trees 0.5246
+5,94,  adding tabpfn_rel at 20% to the tree blend: held-out halves 0.5245 (trees alone 0.5246)
+5,94,  adding tabm at 20% to the tree blend: held-out halves 0.5253 (trees alone 0.5246)
+5,94,  lgb      OOF KS 0.5241
+5,94,  lgb_s    OOF KS 0.5238
+5,94,  xgb      OOF KS 0.5235
+5,94,  xgb_s    OOF KS 0.5239
+5,94,  cat      OOF KS 0.5234
+5,94,  cat_s    OOF KS 0.5211
+5,94,  tabpfn_rel OOF KS 0.4912
+5,94,  tabm     OOF KS 0.5257
+5,94,"  BLEND    OOF KS 0.5274   (version 2 blend: 0.5134 in-sample greedy, 0.5104 equal-weight trees)"
+6,66,[lgb] OOF KS=0.5246  AUC=0.8447  fold KS=0.5250+-0.0081  sim |pub-priv| p50=0.0089 p95=0.0276
+6,66,[lgb_s] OOF KS=0.5243  AUC=0.8451  fold KS=0.5250+-0.0085  sim |pub-priv| p50=0.0089 p95=0.0279
+6,68,OOF KS v3 features 0.5070 -> v3+v5 features 0.5226
+6,72,[xgb] OOF KS=0.5224  AUC=0.8450  fold KS=0.5248+-0.0079  sim |pub-priv| p50=0.0087 p95=0.0252
+6,72,[xgb_s] OOF KS=0.5241  AUC=0.8450  fold KS=0.5258+-0.0087  sim |pub-priv| p50=0.0088 p95=0.0280
+6,74,[cat] OOF KS=0.5211  AUC=0.8436  fold KS=0.5235+-0.0074  sim |pub-priv| p50=0.0091 p95=0.0284
+6,74,[cat_s] OOF KS=0.5204  AUC=0.8432  fold KS=0.5225+-0.0076  sim |pub-priv| p50=0.0092 p95=0.0291
+6,81,[tabpfn] OOF KS=0.5186  AUC=0.8425  fold KS=0.5231+-0.0087  sim |pub-priv| p50=0.0092 p95=0.0267
+6,83,manifest pins no checkpoint_sha256; loading /root/.cache/huggingface/hub/models--LG-AI-Research--EXAONE-Tabular/snapshots/093ad1c2613e1e95d26df8610451d2e02ed53cbe/exaone-tabular-classifier-v1_default.safetensors without an integrity check (structural validation still runs)
+6,83,"EXAONE probe: context 3000 rows (419 bad), query 3000 rows (410 bad), 42s, probe KS=0.5242"
+6,83,"  EXAONE skipped: context would be below 10,000 rows on this GPU"
+6,87,[tabm] OOF KS=0.5248  AUC=0.8461  fold KS=0.5273+-0.0084  sim |pub-priv| p50=0.0091 p95=0.0261
+6,87,[tabm_p] OOF KS=0.5256  AUC=0.8461  fold KS=0.5272+-0.0075  sim |pub-priv| p50=0.0086 p95=0.0267
+6,91,held-out halves: equal-weight trees     0.5239
+6,91,held-out halves: 80% trees + 20% TabM   0.5260
+6,91,held-out halves: greedy                 0.5263
+6,91,  adding tabpfn at 20% to the tree blend: held-out halves 0.5243 (trees alone 0.5239)
+6,91,  adding tabm at 20% to the tree blend: held-out halves 0.5260 (trees alone 0.5239)
+6,91,  adding tabm_p at 20% to the tree blend: held-out halves 0.5252 (trees alone 0.5239)
+6,91,  lgb      OOF KS 0.5246
+6,91,  lgb_s    OOF KS 0.5243
+6,91,  xgb      OOF KS 0.5224
+6,91,  xgb_s    OOF KS 0.5241
+6,91,  cat      OOF KS 0.5211
+6,91,  cat_s    OOF KS 0.5204
+6,91,  tabpfn   OOF KS 0.5186
+6,91,  tabm     OOF KS 0.5248
+6,91,  tabm_p   OOF KS 0.5256
+6,91,"  BLEND    OOF KS 0.5283   (version 5: 0.5274 greedy in-sample, 0.5246 equal-weight trees)"
+7,67,[lgb] OOF KS=0.5246  AUC=0.8447  fold KS=0.5250+-0.0081  sim |pub-priv| p50=0.0090 p95=0.0278
+7,67,[lgb_s] OOF KS=0.5243  AUC=0.8451  fold KS=0.5250+-0.0085  sim |pub-priv| p50=0.0089 p95=0.0279
+7,69,OOF KS v3 features 0.5070 -> v3+v5 features 0.5226
+7,73,[xgb] OOF KS=0.5224  AUC=0.8450  fold KS=0.5248+-0.0079  sim |pub-priv| p50=0.0087 p95=0.0252
+7,73,[xgb_s] OOF KS=0.5241  AUC=0.8450  fold KS=0.5258+-0.0087  sim |pub-priv| p50=0.0088 p95=0.0280
+7,75,[cat] OOF KS=0.5221  AUC=0.8436  fold KS=0.5236+-0.0075  sim |pub-priv| p50=0.0092 p95=0.0289
+7,75,[cat_s] OOF KS=0.5206  AUC=0.8433  fold KS=0.5227+-0.0076  sim |pub-priv| p50=0.0091 p95=0.0282
+7,82,[tabpfn] OOF KS=0.5189  AUC=0.8425  fold KS=0.5231+-0.0086  sim |pub-priv| p50=0.0091 p95=0.0264
+7,86,[tabpfn_rel] OOF KS=0.4917  AUC=0.8259  fold KS=0.4960+-0.0089  sim |pub-priv| p50=0.0095 p95=0.0264
+7,88,[causilo] OOF KS=0.5226  AUC=0.8439  fold KS=0.5253+-0.0099  sim |pub-priv| p50=0.0096 p95=0.0283
+7,92,[tabm] OOF KS=0.5253  AUC=0.8461  fold KS=0.5269+-0.0080  sim |pub-priv| p50=0.0095 p95=0.0263
+7,92,[tabm_p] OOF KS=0.5251  AUC=0.8463  fold KS=0.5273+-0.0078  sim |pub-priv| p50=0.0090 p95=0.0266
+7,94,manifest pins no checkpoint_sha256; loading /root/.cache/huggingface/hub/models--LG-AI-Research--EXAONE-Tabular/snapshots/093ad1c2613e1e95d26df8610451d2e02ed53cbe/exaone-tabular-classifier-v1_default.safetensors without an integrity check (structural validation still runs)
+7,94,"EXAONE probe: context 4000 (546 bad), query 4000 (570 bad), 65.0s, KS=0.5437, deep LightGBM OOF on the same rows 0.5467"
+7,94,manifest pins no checkpoint_sha256; loading /root/.cache/huggingface/hub/models--LG-AI-Research--EXAONE-Tabular/snapshots/093ad1c2613e1e95d26df8610451d2e02ed53cbe/exaone-tabular-classifier-v1_default.safetensors without an integrity check (structural validation still runs)
+7,94,"EXAONE probe: context 12000 (1609 bad), query 12000 (1587 bad), 346.0s, KS=0.5120, deep LightGBM OOF on the same rows 0.5189"
+7,94,manifest pins no checkpoint_sha256; loading /root/.cache/huggingface/hub/models--LG-AI-Research--EXAONE-Tabular/snapshots/093ad1c2613e1e95d26df8610451d2e02ed53cbe/exaone-tabular-classifier-v1_default.safetensors without an integrity check (structural validation still runs)
+7,94,manifest pins no checkpoint_sha256; loading /root/.cache/huggingface/hub/models--LG-AI-Research--EXAONE-Tabular/snapshots/093ad1c2613e1e95d26df8610451d2e02ed53cbe/exaone-tabular-classifier-v1_default.safetensors without an integrity check (structural validation still runs)
+7,94,"EXAONE skipped: RuntimeError('detected VRAM cannot fit the minimum model forward; mode=feature_attention, support_rows=56000, query_rows=1, feature_count=100, members=1, feature_attention_row_chunk=1, estimated_reserved_bytes=25891438592, target_vram_bytes=13034943283')"
+7,98,held-out halves: equal-weight trees     0.5242
+7,98,held-out halves: 80% trees + 20% TabM   0.5262
+7,98,held-out halves: greedy                 0.5261
+7,98,held-out halves: bagged greedy          0.5268
+7,98,  adding tabpfn at 20% to the tree blend: held-out halves 0.5243 (trees alone 0.5242)
+7,98,  adding tabpfn_rel at 20% to the tree blend: held-out halves 0.5246 (trees alone 0.5242)
+7,98,  adding causilo at 20% to the tree blend: held-out halves 0.5248 (trees alone 0.5242)
+7,98,  adding tabm at 20% to the tree blend: held-out halves 0.5262 (trees alone 0.5242)
+7,98,  adding tabm_p at 20% to the tree blend: held-out halves 0.5251 (trees alone 0.5242)
+7,98,  lgb      OOF KS 0.5246
+7,98,  lgb_s    OOF KS 0.5243
+7,98,  xgb      OOF KS 0.5224
+7,98,  xgb_s    OOF KS 0.5241
+7,98,  cat      OOF KS 0.5221
+7,98,  cat_s    OOF KS 0.5206
+7,98,  tabpfn   OOF KS 0.5189
+7,98,  tabpfn_rel OOF KS 0.4917
+7,98,  causilo  OOF KS 0.5226
+7,98,  tabm     OOF KS 0.5253
+7,98,  tabm_p   OOF KS 0.5251
+7,98,"  BLEND    OOF KS 0.5270   (version 6: 0.5283 greedy in-sample, 0.5230 equal-weight trees)"

@@ -1,0 +1,5 @@
+feature,total_variation,unseen_test_levels
+loan_purpose,0.006780952380952374,[]
+region,0.0032380952380952482,[]
+employment_type,0.0070476190476190664,[]
+housing_status,0.003495238095238107,[]

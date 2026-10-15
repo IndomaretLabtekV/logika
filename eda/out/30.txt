@@ -1,0 +1,26 @@
+GBDT equal blend KS=0.5104   FM pair KS=0.4863   rank corr=0.9467
+
+=== KS by segment
+model                  thin-file               history    history, <=12 inst     history, >12 inst
+lgb                       0.4735                0.5254                0.4989                0.5457
+lgb_s                     0.4708                0.5243                0.4937                0.5471
+xgb                       0.4739                0.5232                0.4922                0.5446
+xgb_s                     0.4687                0.5251                0.4911                0.5472
+cat                       0.4711                0.5227                0.4882                0.5450
+cat_s                     0.4735                0.5215                0.4872                0.5451
+tabpfn                    0.4480                0.5003                0.4687                0.5212
+causilo                   0.4472                0.5005                0.4690                0.5246
+GBDT                      0.4716                0.5242                0.4914                0.5469
+FM                        0.4473                0.5015                0.4694                0.5241
+
+residual test of tabpfn vs GBDT blend: chi2/df=0.79  dKS_cf=+0.0009 (noise p95 ~1.2 / +0.002)
+
+residual test of causilo vs GBDT blend: chi2/df=0.27  dKS_cf=+0.0018 (noise p95 ~1.2 / +0.002)
+  blend GBDT*(1-0.1) + FM*0.1: KS=0.5107  thin=0.4758  hist=0.5246
+  blend GBDT*(1-0.2) + FM*0.2: KS=0.5094  thin=0.4737  hist=0.5241
+  blend GBDT*(1-0.3) + FM*0.3: KS=0.5073  thin=0.4698  hist=0.5217
+GBDT: pooled KS 0.5104 vs segment-recalibrated pooled KS 0.5090
+FM: pooled KS 0.4863 vs segment-recalibrated pooled KS 0.4848
+FM >> GBDT  n=  3500 bad rate=0.051 thin-file share=0.15
+FM << GBDT  n=  3500 bad rate=0.120 thin-file share=0.23
+agree       n= 63000 bad rate=0.141 thin-file share=0.31

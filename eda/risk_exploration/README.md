@@ -1,6 +1,6 @@
 # Extended credit-risk exploration
 
-Read [the findings and preprocessing plan](../../RISK_EXPLORATION_REPORT.md). This extension leaves the original EDA and model notebooks intact. It executes directly from the raw committee CSVs and does not need the old feature Parquets.
+Read [the findings and preprocessing plan](../../docs/reports/RISK_EXPLORATION_REPORT.md). This extension leaves the original EDA and model notebooks intact. It executes directly from the raw committee CSVs and does not need the old feature Parquets.
 
 Run from the repository root using the existing environment:
 

@@ -1,0 +1,77 @@
+05_feature_drift (228, 7) 
+                  feature  train_test_KS        p      PSI  missing_train  missing_test   q
+             bc_inq_mean       0.010405 0.021053 0.000861       0.000000        0.0000 1.0
+employment_tenure_months       0.009876 0.033037 0.001028       0.000000        0.0000 1.0
+              bc_inq_max       0.009857 0.033563 0.000756       0.000000        0.0000 1.0
+           bc_delay_mean       0.009562 0.042709 0.000620       0.000000        0.0000 1.0
+                     age       0.009462 0.046265 0.000665       0.000000        0.0000 1.0
+           bc_stale_mean       0.009205 0.056608 0.000630       0.000000        0.0000 1.0
+            ac_out_in_l3       0.008871 0.072924 0.000498       0.300000        0.3000 1.0
+    bh_outstanding_delta       0.008862 0.073444 0.000711       0.300000        0.3000 1.0
+         bz_inq_external       0.008538 0.093068 0.000601       0.000000        0.0000 1.0
+          decision_lag_h       0.008410 0.101993 0.000546       0.000000        0.0000 1.0
+           ac_last_close       0.008286 0.111248 0.000672       0.300000        0.3000 1.0
+         tenure_over_age       0.007962 0.138766 0.000637       0.000000        0.0000 1.0
+                bp_out_a       0.007924 0.142338 0.000627       0.000000        0.0000 1.0
+             ec_cat_home       0.007895 0.145066 0.000494       0.000000        0.0000 1.0
+              ec_base_wk       0.007719 0.162828 0.000544       0.000000        0.0000 1.0
+          ac_avgbal_mean       0.007690 0.165865 0.000929       0.300000        0.3000 1.0
+                   pp_30       0.007552 0.181182 0.000559       0.256971        0.2569 1.0
+      bc_outstanding_max       0.007419 0.197003 0.000528       0.000000        0.0000 1.0
+            cf_minbal_l3       0.007376 0.202310 0.000767       0.300000        0.3000 1.0
+                ec2_base       0.007367 0.203504 0.000433       0.000000        0.0000 1.0
+05_categorical_drift (4, 3) 
+         feature  total_variation unseen_test_levels
+   loan_purpose         0.006781                 []
+         region         0.003238                 []
+employment_type         0.007048                 []
+ housing_status         0.003495                 []
+05_raw_prediction_drift (8, 6) 
+      model  raw_prediction_train_test_KS  OOF_mean  test_mean  OOF_std  test_std
+       lgb                      0.005733  0.134125   0.134872 0.168941  0.169767
+     lgb_s                      0.005548  0.135427   0.136132 0.168863  0.169778
+       xgb                      0.004495  0.134365   0.134960 0.168583  0.169200
+     xgb_s                      0.004857  0.135455   0.136140 0.169048  0.169927
+       cat                      0.006690  0.134976   0.135472 0.167939  0.168370
+     cat_s                      0.007243  0.135512   0.135994 0.168199  0.168739
+tabpfn_rel                      0.004471  0.138088   0.137985 0.156213  0.155767
+      tabm                      0.004238  0.137115   0.137355 0.170846  0.170396
+05_information_timing (5, 5) 
+                  table    rows  equal_cutoff  after_cutoff  last_payment_at_or_after_cutoff
+ previous_applications  201984             0             0                              NaN
+     repayment_history 1361341             0             0                              0.0
+      account_behavior 1084418             0             0                              NaN
+   bureau_observations  797563             0             0                              NaN
+ecommerce_transactions 4359817             0             0                              NaN
+05_month_mix (12, 5) 
+  month  train  test  train_bad_rate  saved_OOF_KS
+     1   5778  2610        0.142956      0.521588
+     2   5898  2477        0.147338      0.525159
+     3   5809  2580        0.138406      0.514376
+     4   5910  2459        0.130795      0.566514
+     5   5864  2439        0.120055      0.544283
+     6   5776  2513        0.135388      0.528794
+     7   5739  2478        0.128942      0.561593
+     8   5809  2496        0.136168      0.531707
+     9   5830  2485        0.126587      0.499439
+    10   5854  2482        0.140417      0.549359
+    11   5821  2535        0.143618      0.525430
+    12   5912  2446        0.139039      0.511549
+05_drift_decision {
+  "max_feature_train_test_KS": 0.010404761904761917,
+  "max_PSI": 0.0011588760058924457,
+  "features_drift_FDR005": [],
+  "thin_train": 0.3,
+  "thin_test": 0.3,
+  "train_date_min": "2025-01-01 08:00:00",
+  "train_date_max": "2025-12-28 20:59:00",
+  "test_date_min": "2025-01-01 08:07:00",
+  "test_date_max": "2025-12-28 20:52:00",
+  "caveats": [
+    "Aggregate covariate similarity cannot guarantee public/private equality.",
+    "OOF is held-out prediction; test is a fold ensemble, so raw prediction variance is not directly comparable.",
+    "Repayment DPD values are cutoff snapshots, not values available on their old due dates.",
+    "Month-sliced random OOF is not a forward-time holdout."
+  ]
+}
+FIGURE 05_drift_timing
