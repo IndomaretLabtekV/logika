@@ -23,3 +23,16 @@
 - `results/v8/submission_v9_stack.csv`: stacking 9 model v8 (lgb, lgb_s, xgb, xgb_s, cat, cat_s, tabm, tabpfn, causilo).
 - Notebook v9 sel blend: fungsi `fit_stack`. Kandidat disimpan sebagai `(held score, (oof, test))`.
 - Script lokal pembanding v8 vs v9 dibuat di scratchpad sesi lama (kemungkinan sudah hilang). Logikanya: `logreg` Newton seperti di `eda/96_segment_calibration.py`, dengan 20 pengulangan split separuh.
+
+## Revisi 16 Okt (setelah probe public)
+- **Stack logit-LR kalah di public dua kali**: v9 (11 model) 0,55917 dan S3 (9 model + TabICL17) 0,55778, vs blend
+  rank v8 0,56145. Keduanya punya bobot negatif. Kesimpulan "logit stacking menang tipis" di atas **hanya berlaku di OOF
+  yang bias**; jangan dipakai sebagai submission tanpa validasi bersih.
+- Blend v8 yang disubmit = rank-average greedy (bagged) dengan bobot positif semua, 46,7% GBDT / 53,3% NN/FM.
+- Dekomposisi di public: bagian GBDT saja 0,56133, bagian NN/FM saja 0,55866. Porsi TabM di blend v8 kemungkinan terlalu
+  besar karena OOF TabM paling menggelembung.
+- Aturan baru: pilih bobot di **OOF bersih**, prefer rank-average bobot positif, nilai di held-out halves **dan** bootstrap
+  baris; curigai setiap gain yang datang dari bobot negatif.
+- `results/v8/submission_v9_stack.csv` (stack LR 9 model v8) tidak pernah disubmit; dengan bukti di atas, kemungkinan
+  besar juga di bawah v8 di public.
+- Tool lokal: `02_proyek_dan_tools/tools_bench_lokal.md`.

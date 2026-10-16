@@ -1,0 +1,4 @@
+{"id": "riantamaputra/logika-v18-bias", "title": "Logika v18 bias", "code_file": "logika-v18-bias.ipynb",
+ "language": "python", "kernel_type": "notebook", "is_private": true, "enable_gpu": false, "enable_tpu": false,
+ "enable_internet": true, "keywords": [], "dataset_sources": ["riantamaputra/logika-v8-preds"], "kernel_sources": [],
+ "competition_sources": ["data-science-competition-logika-ui-2026"], "model_sources": []}

@@ -32,3 +32,15 @@ Aturan praktis: selisih public < ±0,005 antara dua submission yang berkorelasi 
 - Submit versi baru hanya kalau held-out-nya melampaui versi terbaik dengan margin berpasangan yang berarti. Kalau tidak, submit hanya sebagai cek kepatuhan atau konsistensi (contoh: v6).
 - Jangan pernah memilih submission hanya berdasarkan public. Bobot public dan private sama-sama 45%, jadi yang paling aman adalah submission dengan held-out terbaik **dan** dihasilkan oleh notebook reproducible.
 - LB probing dilarang (rule 11).
+
+## Revisi 16 Okt
+- **Skema CV-nya benar (StratifiedKFold random), tapi cara early stopping-nya salah**: semua model v1–v9 memilih
+  iterasi/epoch di fold validasi. Lihat `bias_oof_early_stopping.md`. Protokol yang benar: stopping/seleksi di inner
+  split dari train fold, outer fold hanya untuk menilai.
+- Probe 16 Okt (`probe_submission_16okt.md`): sd selisih public dua submission dengan Spearman 0,998 ≈ 0,0024–0,0036.
+  Satu probe tidak bisa membedakan ±0,005; dua probe yang dirancang berlawanan (S4 vs S5) bisa (z 2,3).
+- Konsistensi slope public/OOF (~1,4) **gagal** untuk kandidat yang condong ke TabM: slope S3 −3,3, S5 −3,8, S4 0,04.
+  Jadi "public ≈ OOF + 0,03" hanya berlaku untuk blend yang komposisinya mirip.
+- Top-1 public 16 Okt 0,57768 (cupuu), cutoff top-8 ~0,57005, kita ~#34 (0,56145). Dengan sd selisih 0,0026–0,0055 antar
+  model kita sendiri, gap 0,016 tidak bisa ditutup oleh keberuntungan satu submission.
+- Batas submit 3/hari.

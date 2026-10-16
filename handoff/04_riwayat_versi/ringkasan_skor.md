@@ -1,28 +1,63 @@
-# Ringkasan skor semua versi
+# Ringkasan skor semua versi dan submission
 
-| Versi | Tanggal run | Perubahan utama | OOF / held-out | Public | Status |
-|---|---|---|---|---|---|
-| v1 | 13 Okt | baseline: 176 fitur, LGB/XGB/Cat + TabPFN + Causilo, equal rank blend | 0,5051 | **0,53139** | disubmit |
-| v2 | 13 Okt | +38 fitur residual (bz/ob/rq/sv/cf/ec2) + varian shallow trees | 0,5135 (greedy in-sample) | **0,54192** | disubmit |
-| v3 | 13 Okt | TabPFN konteks penuh, LimiX-2 (hang, lalu dibuang), **TabM** | 0,5142 | **0,54545** | disubmit |
-| v4 | 13–14 Okt | dibuat **Astra**: ablation spend 112–224 hari / semantic rate, 2 seed, tanpa FM | 0,5114 | tidak tercatat ("cukup jelek") | bahan analisis |
-| v5 | 14 Okt | **price premium `pp_*`** + dec_month (+0,014). TabPFN di DFS. EXAONE gagal | 0,5274 | **0,56145** ← terbaik | disubmit |
-| v6 | 14 Okt | referensi harga aman-waktu, nn_prep per fold, TabPFN di fitur manual, tabm_p | 0,5283 in-sample / 0,5263 held-out | **0,56123** | disubmit |
-| v7 | 14–15 Okt | Kaggle T4x2: Causilo jalan, TabPFN-Rel native, EXAONE crash, bagged greedy | 0,5270 / 0,5268 held-out | — | tidak disubmit (Spearman 0,9995 vs v6) |
-| v8 | 15 Okt | augmentasi 81.702 pinjaman historis, TabICL (crash ±4 jam), blend lokal | 0,5270 (bobot aktual); bagged greedy held-out 0,5277 | sekitar 0,561 ("sama aja") | disubmit |
-| v8-stack | 15 Okt | logit stacking lokal 9 model v8 (`results/v8/submission_v9_stack.csv`) | 0,5277 cross-fit; held-out halves 0,5287 | belum tercatat | disarankan submit |
-| v9 | 15 Okt | tanpa histori/TabICL/EXAONE, TabM 5 seed, RealMLP, logit stacking | 0,5261 in-sample / 0,5272 held-out | belum tercatat | disarankan submit supaya bisa dipilih (dihasilkan notebook utuh) |
+⚠ Angka OOF v1–v9 **optimis** karena early stopping di fold validasi (TabM paling parah). Lihat
+`07_validasi_dan_leaderboard/bias_oof_early_stopping.md`. Run v10–v21 memakai inner split (bersih), jadi angka
+OOF-nya lebih rendah tapi jujur; jangan dibandingkan langsung dengan v1–v9.
 
-## Top-1 public (laporan user)
-0,57059 (13 Okt) → 0,57184 (14 Okt) → 0,57458 (14 Okt malam) → 0,57493 (15 Okt).
+## Semua submission (dikonfirmasi lewat `kaggle competitions submissions`)
+| Tanggal (UTC) | Submission | Isi | Public |
+|---|---|---|---|
+| 11 Okt | submission_lightgbm / xgboost / catboost | baseline teman (repo awal, sebelum v1) | 0,50227 / 0,50053 / 0,50662 |
+| 13 Okt 04:08 | v1 | baseline 176 fitur, equal rank blend | 0,53139 |
+| 13 Okt 07:14 | v2 | +38 fitur residual + shallow trees | 0,54192 |
+| 13 Okt 13:59 | v3 | TabPFN ctx penuh + TabM | 0,54545 |
+| 14 Okt 06:01 | v5 | **price premium pp_*** | **0,56145** |
+| 14 Okt 11:34 | v6 | referensi harga aman-waktu, nn_prep per fold | 0,56123 |
+| 15 Okt 06:41 | v8 | augmentasi historis, blend rank greedy (54,8% bobot di model _aug) | **0,56145** |
+| 15 Okt 13:36 | v9 | stack logit-LR 11 model | 0,55917 |
+| 16 Okt 15:08 | probe S3 | stack logit-LR 9 model v8 + TabICL17 | 0,55778 |
+| 16 Okt 15:13 | probe S5 | v8 bagian NN/FM saja | 0,55866 |
+| 16 Okt 15:14 | probe S4 | v8 bagian GBDT saja | 0,56133 |
 
-## Pola penting
-- **Public − OOF stabil sekitar +0,026 sampai +0,034** di semua versi. Lihat `07_validasi_dan_leaderboard/`.
-- Dua lompatan nyata: v1 → v2 (fitur perilaku, +0,011 public) dan v3 → v5 (fitur harga, +0,016 public). Selain itu semua perubahan berada di dalam noise.
-- Selisih public antar versi yang lebih kecil dari ±0,005 adalah noise. Sd selisih public v6−v5 sekitar 0,0026.
-- Korelasi Spearman submission antar versi sejak v5: 0,998–0,9995. Prediksinya praktis sama.
+Belum pernah disubmit: v4, v7, `results/v8/submission_v9_stack.csv` (stack LR 9 model v8).
+Batas submit **3 per hari** (dikonfirmasi 16 Okt).
 
-## KS per model (OOF, versi terakhir yang menjalankannya)
+## Leaderboard (laporan user / sesi)
+- Top-1: 0,57059 (13 Okt) → 0,57184 → 0,57458 → 0,57493 (15 Okt) → **0,57768** (16 Okt, tim "cupuu").
+- Cutoff top-8 (lolos final) sekitar **0,57005** (16 Okt).
+- Tim kita "lagi mager lomba bentar", peringkat sekitar 34 dengan 0,56145.
+
+## OOF per versi (v1–v9, bias)
+| Versi | Perubahan utama | OOF / held-out | Public |
+|---|---|---|---|
+| v1 | baseline | 0,5051 | 0,53139 |
+| v2 | fitur residual + shallow | 0,5135 (greedy in-sample) | 0,54192 |
+| v3 | TabPFN ctx penuh, TabM (LimiX hang, dibuang) | 0,5142 | 0,54545 |
+| v4 | eksperimen Astra (spend/semantic) | 0,5114 | tidak tercatat |
+| v5 | pp_* (+0,014) | 0,5274 | 0,56145 |
+| v6 | kepatuhan cutoff, tabm_p | 0,5283 in-sample / 0,5263 held-out | 0,56123 |
+| v7 | Causilo, TabPFN-Rel, EXAONE crash | 0,5268 held-out | – |
+| v8 | augmentasi historis, TabICL crash | blend aktual 0,52703 | 0,56145 |
+| v8-stack | stack LR 9 model (lokal) | 0,5281 held-out | – |
+| v9 | stack LR 11 model | 0,5272 held-out | 0,55917 |
+
+## Eksperimen 16 Okt (protokol bersih kecuali disebut lain)
+| Run | Isi | OOF KS | + stack v8 (bias) |
+|---|---|---|---|
+| v10 | LGB nested tuning: control / tuned | 0,5191 / 0,5214 | campuran 80/20 −0,0013 |
+| v11 | TabM optimizer: control / tuned | 0,5175 / 0,5199 | campuran 80/20 −0,0008 |
+| v12 | TabM kapasitas: control / tuned | 0,5186 / 0,5192 | −0,0003 |
+| v13 | EBM aditif / 20 interaksi | 0,5172 / 0,5185 | −0,0001 |
+| v14 | hybrid set-encoder / events saja | 0,5187 / 0,5107 | −0,0002 / −0,0001 |
+| v15 | rank_xendcg / XGB pairwise / L2 meta / L2 full | 0,5178 / 0,5001 / 0,5248 / 0,5229 | ≈ 0 |
+| v16 | TabICL ctx 40k | 0,5079 | +0,0006 (bobot negatif) |
+| v17 | TabICL ctx penuh, 8 est | 0,5133 | +0,0006–0,0007 (bobot negatif, P>0 0,69) |
+| v18 | linear_tree / monotone / ExtraTrees | 0,5197 / 0,5177 / 0,5001 | ≈ 0 |
+| v19 | pseudo-label (base / soft1 / soft.3 / hard) | 0,5200 / 0,5197 / 0,5206 / 0,5208 | −0,0001 |
+| v20 | Causilo/TabPFN 16 est | tidak jalan (kuota GPU) | – |
+| v21 | LGB base / +mature / pruned | 0,5214 / 0,5203 / 0,5191 | ≈ 0 |
+
+## KS per model v5–v9 (OOF, bias; dari handoff lama)
 | Model | v5 | v6 | v7 | v8 | v9 |
 |---|---|---|---|---|---|
 | lgb | 0,5241 | 0,5246 | — | 0,5239 | 0,5248 |
@@ -33,10 +68,17 @@
 | cat_s | — | 0,5204 | — | 0,5208 | 0,5213 |
 | tabm | 0,5257 | 0,5248 | 0,5253 | 0,5257 | 0,5253 |
 | tabm_p | — | 0,5256 | 0,5251 | — | 0,5245 |
-| realmlp | — | — | — | (tidak jalan) | 0,5223 |
+| realmlp | — | — | — | — | 0,5223 |
 | tabpfn (fitur manual) | — | 0,5186 | 0,5189 | 0,5186 | 0,5187 |
-| tabpfn di DFS / TabPFN-Rel | 0,4912 | — | 0,4917 | — | — |
+| tabpfn DFS / TabPFN-Rel | 0,4912 | — | 0,4917 | — | — |
 | causilo | — | — | 0,5226 | 0,5241 | 0,5239 |
 | EXAONE | gagal | probe 0,524 (3k) | crash 56k | tidak jalan | dibuang |
 
-(Angka v5/v6 trees dari review Astra; nilai yang tidak tercatat dibiarkan kosong.)
+v8 juga punya varian `_aug` (lgb_aug 0,5240, lgb_s_aug 0,5219, xgb_aug 0,5239, xgb_s_aug 0,5235, cat_aug 0,5209,
+cat_s_aug 0,5198, tabm_aug 0,5258).
+
+## Pola penting
+- Public − OOF stabil sekitar +0,03 di v1–v9 (subset public kebetulan "mudah"; bukan konverter).
+- Dua lompatan nyata saja: v1 → v2 (+0,011 public) dan v3 → v5 (+0,016 public, fitur harga).
+- Sejak v5 semua submission berkorelasi Spearman 0,996–0,9995 dengan v8; selisih public ±0,003 adalah noise per
+  submission, **kecuali** pola sistematis: kandidat yang condong ke TabM / bobot negatif selalu turun (lihat bias OOF).

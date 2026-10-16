@@ -34,3 +34,20 @@
 - Run panjang dengan banyak model baru sekaligus (v8). Satu model crash, semua yang di belakangnya ikut hilang, dan tidak ada pertanyaan yang terjawab tuntas.
 - Mengubah beberapa hal sekaligus (v6) membuat perubahan public tidak bisa diatribusikan.
 - Screening fitur terhadap OOF yang sudah dipilih memakai label yang sama berulang kali, jadi "konfirmasi" bukan holdout baru.
+
+## Tambahan 16 Okt (semua null; detail `04_riwayat_versi/v10.md` … `v21`)
+| Dicoba | Hasil |
+|---|---|
+| Tuning LGB 12 konfigurasi nested (v10) | +0,0022, 3/5 fold; campuran −0,0013 |
+| Tuning TabM optimizer (v11) dan kapasitas (v12) | +0,0024 (3/5) / +0,0005 |
+| EBM aditif / pairwise (v13) | 0,517 / 0,518 |
+| Set-encoder baris mentah semua tabel (v14) | 0,5187 hybrid, 0,5107 events-only; stack −0,0002 |
+| LGB rank_xendcg, XGB rank:pairwise, L2 LGB stacker (v15) | ≈ 0 |
+| TabICLv2 ctx 40k / penuh (v16/v17) | 0,508 / 0,513; gain stack hanya lewat bobot negatif; public −0,0037 |
+| LGB linear_tree, monotone, ExtraTrees (v18) | ≈ 0 |
+| Pseudo-label self-training (v19) | ≈ 0 |
+| Fitur mature-history Astra, pruning fitur redundan (v21) | −0,0011 / −0,0023 OOF |
+| Stack LR per segmen, bobot optimasi-KS, interaksi logit × history | −0,0001 sampai −0,0009 |
+| Belasan cek EDA lokal (lihat `05_katalog_eksperimen/eda_lokal_16okt.md`) | null |
+| Stack logit-LR dengan bobot negatif sebagai submission (v9, S3) | public −0,0023 / −0,0037 vs blend rank v8 |
+| Blend yang condong ke TabM (S5) | public −0,0028 |

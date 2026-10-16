@@ -42,3 +42,21 @@ Tafsiran yang dipakai sepanjang chat dan tidak pernah dikoreksi user:
 - Laptop: Intel Core Ultra 7 155H dengan iGPU Intel Arc (tanpa CUDA).
 - vast.ai (RTX5090) sempat dipakai untuk v7, lalu **ditinggalkan karena download lambat**. Semua run sekarang di Kaggle T4x2.
 - User bilang "ga perlu ada constraint lamanya training". Tapi sesi Kaggle tetap dibatasi 12 jam, jadi notebook memakai guard `DEADLINE`.
+
+## Tambahan 16 Okt
+- User memasang `/goal`: "capai target >0.57768, jangan berhenti sebelum itu terjadi, jangan submit jika belum lebih
+  bagus dari v8, jangan run model ataupun notebook di local, … akses kaggle saja untuk run model". Artinya:
+  - assistant **boleh dan diharapkan** menjalankan model sendiri lewat Kaggle API (push kernel, ambil output);
+  - submit hanya kalau validasi lebih baik dari v8 (kecuali user eksplisit minta probe);
+  - Stop hook `/goal` menolak berhenti selama target belum tercapai. Ketika user minta berhenti dan izin submit ditolak,
+    hook ini membuat loop. User akhirnya `/goal clear`. Jangan menyarankan `/goal clear` atas inisiatif sendiri saat
+    hook aktif kecuali memang buntu karena keputusan user.
+- "keknya batalin semua dulu aja dah, jujur ini ga nambah nambah dari v8" → user capek dengan eksperimen model yang
+  tidak menambah; lebih menghargai eksperimen yang memberi **informasi** (probe yang bisa dianalisis).
+- Preferensi submit (16 Okt): "coba submit aja sendiri deh, biar lu bisa mengecek isiannya, terus nama filenya tetep
+  submission.csv aja, tapi di descriptionnya baru jelasin ini apa, satu per satu dulu submitnya, selesai 1 terus
+  analisis skornya, terus lanjut lagi, takutnya ada yang mau diubah".
+- "intinya gua pengen 2 submission ini bisa bermanfaat buat research kita" → setiap submit harus menjawab pertanyaan,
+  bukan sekadar coba-coba.
+- Handoff harus selengkap mungkin, dibagi ke beberapa folder, tanpa menyalin notebook/results; file tidak relevan
+  dihapus supaya repo bisa di-git push oleh user sendiri (**assistant tidak push**).

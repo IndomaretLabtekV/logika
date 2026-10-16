@@ -34,3 +34,23 @@
 - Semua model "melihat" informasi yang sama. Korelasi rank OOF antar model 0,97–0,997; TabPFN dan Causilo 0,990.
 - Model tunggal terbaik (TabM) sekitar 0,525, dan blend terbaik sekitar 0,528.
 - Foundation model tidak mengalahkan GBDT/TabM di data ini, bahkan dengan konteks penuh.
+
+## Tambahan 16 Okt (protokol bersih: early stopping di inner split)
+| Model | OOF KS bersih | Catatan |
+|---|---|---|
+| LightGBM param v8 (v10 control) | 0,5191 | 1 seed; v21 base 2 seed 0,5214; v19 base 0,5200 |
+| LightGBM tuned per fold (v10) | 0,5214 | konfigurasi tidak stabil antar fold |
+| TabM config v8 (v11 control) | 0,5175 | epoch terbaik ~6, overfit dini |
+| TabM tuned (v11) / kapasitas (v12) | 0,5199 / 0,5192 | |
+| EBM aditif / 20 interaksi (v13) | 0,5172 / 0,5185 | |
+| Set-encoder hybrid / events (v14) | 0,5187 / 0,5107 | events korelasi 0,95 dengan TabM |
+| LGB rank_xendcg / XGB pairwise (v15) | 0,5178 / 0,5001 | |
+| L2 LGB di atas logit v8 (v15) | 0,5248 / 0,5229 | input OOF v8 yang bias |
+| TabICLv2 ctx 40k, 4 est / ctx penuh, 8 est, 150 fitur (v16/v17) | 0,5079 / 0,5133 | query di-chunk 2.000; ~16 menit / ~1 jam per fold di T4 |
+| LGB linear_tree / monotone / ExtraTrees (v18) | 0,5197 / 0,5177 / 0,5001 | |
+| LGB pseudo-label (v19) | 0,5197–0,5208 | |
+| LGB + mature-history / pruned (v21) | 0,5203 / 0,5191 | |
+
+Catatan penting: angka di atas **tidak bisa** dibandingkan langsung dengan tabel v1–v9 (yang bias). Contoh: TabM v8
+0,5257 vs TabM bersih 0,5175. Di protokol bersih, LGB (~0,520) justru **setara atau lebih baik** dari TabM (~0,518–0,520),
+kebalikan dari kesan v3–v9 bahwa TabM model tunggal terbaik.

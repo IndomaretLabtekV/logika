@@ -56,7 +56,7 @@ Rencana 16 hari dari Astra:
 - Bobot aktual CSV v8 direkonstruksi: 54,83% augmented. OOF 0,527025.
 - Augmentasi tidak lolos (semua CI melintasi nol). Snapshot historis tidak identifikasi (ambiguitas ledger, profil saat ini, domain shift). Protokolnya transduktif.
 - **Bug bin kuantil** di screening assistant (0 dan nilai positif langka digabung). Setelah diperbaiki, 0/30 kandidat lolos BH. Matched-provider bureau delta p 0,014/0,012 tapi q 0,22/0,36.
-- 9 fitur selected-history (`out/03_selected_history_features.parquet`) **belum diuji di model**.
+- 9 fitur selected-history (`out/03_selected_history_features.parquet`): diuji 16 Okt di v21, null.
 - Saran: jalankan RealMLP dan EXAONE sebagai eksperimen terpisah; TabICL hanya setelah pilot dengan query yang di-chunk; selected-only sebagai kontrol; satu run untuk satu pertanyaan.
 
 ## Status rekomendasi Astra
@@ -64,13 +64,13 @@ Rencana 16 hari dari Astra:
 |---|---|
 | Referensi harga aman-waktu, nn_prep per fold | ✅ v6 |
 | Probe EXAONE benar, ≤ 100 kolom | ✅ v6 (jalan di 3k) |
-| EXAONE OOF lengkap 8–12k | ❌ tidak pernah selesai (v7 crash 56k; v8 tidak sampai; v9 dibuang) |
+| EXAONE OOF lengkap 8–12k | ❌ tidak pernah selesai (v7 crash 56k; v8 tidak sampai; v9 dibuang; 16 Okt tidak dicoba) |
 | Causilo kategori bertipe | ✅ v8/v9 (0,5226 → 0,524) |
 | RealMLP-TD | ✅ v9 (0,5223, tidak membantu) |
-| TabICLv2 | ❌ crash OOM di v8 (query 44k), belum dicoba dengan query di-chunk |
-| Ablation kebijakan checkpoint (AUC vs KS) | ❌ belum |
+| TabICLv2 | ✅ 16 Okt v16/v17 dengan query di-chunk: 0,5079 / 0,5133, tidak menambah (S3 public −0,0037) |
+| Ablation kebijakan checkpoint (AUC vs KS) | ⚠ tidak diuji langsung; ditemukan masalah lebih besar: checkpoint dipilih di fold validasi (bias OOF v1–v9) |
 | DFS native dengan kategori dan lineage benar | ❌ belum (v7 versi kasar 0,4917) |
 | Spending 112–224 / semantic rate | ✅ diuji di v4 (tidak konsisten) |
 | Rasio DPD exposure-matang, delta provider sama | ❌ belum diuji di model (screen 0/15) |
-| 9 fitur selected-history | ❌ belum diuji di model |
-| Simpan per-fold/per-seed preds, bobot, hash, versi | ⚠ sebagian (oof_all.parquet dengan ID sejak v7; bobot dan hash belum) |
+| 9 fitur selected-history | ✅ 16 Okt v21: −0,0011 OOF LGB, null |
+| Simpan per-fold/per-seed preds, bobot, hash, versi | ⚠ sebagian (oof_all.parquet dengan ID sejak v7; manifest di v10–v13; bobot v8 direkonstruksi 16 Okt) |

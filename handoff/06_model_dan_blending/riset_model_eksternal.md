@@ -27,3 +27,15 @@
 - Kaggle: Python 3.13, torch 2.11, T4 (compute capability 7.5, **tanpa flash-attn**, tanpa bf16 cepat).
 - Model yang wajib flash-attn atau butuh VRAM di atas 15 GB per GPU tidak praktis. Dua T4 tidak bisa digabung jadi satu pool memori untuk satu model.
 - In-context learner: biaya kira-kira kuadratik terhadap context dan linear terhadap query. **Query harus di-chunk.**
+
+## Tambahan 16 Okt
+- TabM API dan default dicek di https://github.com/yandex-research/tabm (`tabm.py`); dipin tabm 0.0.3,
+  rtdl_num_embeddings 0.0.12 (v11/v12).
+- EBM: https://interpret.ml/docs/python/api/ExplainableBoostingClassifier.html, https://github.com/interpretml/interpret (v13).
+- TabICL (`pip install tabicl`, `TabICLClassifier(n_estimators, batch_size=1, device, kv_cache=False)`): kunci agar
+  muat di T4 adalah **memecah query** (`predict_proba` per 2.000 baris). Context 56k + 8 estimator ≈ 1 jam per fold
+  di satu T4; 40k + 4 estimator ≈ 16 menit.
+- Causilo (`pip install --no-deps causilo`, `CausiloClassifier(n_estimators, random_state, device)`), TabPFN
+  (`TabPFNClassifier(n_estimators, device, ignore_pretraining_limits=True, categorical_features_indices)`, butuh token).
+- LightGBM objective `rank_xendcg` dan XGBoost `rank:pairwise` butuh grup; dipakai grup acak 1.000 baris (v15).
+- Kesimpulan riset 16 Okt: tidak ada model eksternal yang mengubah gambaran; masalah utama ada di validasi, bukan model.

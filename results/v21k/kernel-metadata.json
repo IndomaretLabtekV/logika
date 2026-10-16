@@ -1,0 +1,4 @@
+{"id": "riantamaputra/logika-v21-feat", "title": "Logika v21 feat", "code_file": "logika-v21-feat.ipynb",
+ "language": "python", "kernel_type": "notebook", "is_private": true, "enable_gpu": false, "enable_tpu": false,
+ "enable_internet": true, "keywords": [], "dataset_sources": ["riantamaputra/logika-mature-history"], "kernel_sources": [],
+ "competition_sources": ["data-science-competition-logika-ui-2026"], "model_sources": []}

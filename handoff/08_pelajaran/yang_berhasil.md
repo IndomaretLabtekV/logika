@@ -14,3 +14,13 @@
 | Safety-net submission di tengah notebook | v9 | run yang mati di tengah tetap menghasilkan file |
 | Guard deadline di dalam fold, run FM paralel di 2 GPU | v7+ | menghindari hang seperti v3 |
 | Simpan `oof_all.parquet` dengan ID | v7+ | memungkinkan blend, stacking, dan audit lokal |
+
+## 16 Okt
+| Hal | Bukti | Kenapa berguna |
+|---|---|---|
+| Menjalankan kernel Kaggle langsung lewat CLI (push → poll → output) | 12 run dalam sehari tanpa upload manual | iterasi jauh lebih cepat; lihat `02_proyek_dan_tools/kaggle_cli_kernel_dan_submit.md` |
+| Protokol bersih: early stopping di inner split | v10–v21 | angka OOF jujur; memperlihatkan bias v8 |
+| TabICL dengan query di-chunk | v16/v17 jalan tanpa OOM | memperbaiki crash v8 (walau modelnya tidak menambah) |
+| Rekonstruksi bobot blend v8 dari file submission (NNLS) | korelasi 0,99999999993 | memungkinkan dekomposisi v8 jadi bagian GBDT dan NN/FM |
+| **Probe submission yang dirancang sebagai dekomposisi** (S4 = GBDT v8, S5 = NN/FM v8) | z 2,3 ayunan antar keluarga | langsung mengungkap bias OOF; satu submit "kandidat" biasa tidak akan memberi info ini |
+| Submit satu per satu lalu analisis sebelum lanjut (permintaan user) | S1/S2 diganti S4/S5 setelah hasil S3 | submit berikutnya didesain ulang berdasarkan bukti terbaru |

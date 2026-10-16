@@ -1,31 +1,35 @@
 # Prompt siap tempel untuk chat baru
 
-Salin blok di bawah ke chat baru. Silakan tambahkan permintaan spesifik di akhirnya.
+Salin blok di bawah ke chat baru, lalu isi permintaan di akhir.
 
 ---
 
 ```
-Gua lagi ikut lomba Kaggle DSC LOGIKA UI 2026 (credit risk, metrik KS, tabular binary classification).
+Gua lagi ikut lomba Kaggle DSC LOGIKA UI 2026 (credit risk, metrik KS, tabular binary classification,
+slug data-science-competition-logika-ui-2026, akun Kaggle riantamaputra).
 Konteks lomba ada di @docs/context.md, dataset di @data/ (lihat @data/DATA_DICTIONARY.md).
-Seluruh progress dari chat sebelumnya ada di folder @handoff/ — baca dulu @handoff/README.md lalu
-@handoff/00_mulai_di_sini/status_sekarang.md, @handoff/08_pelajaran/ dan @handoff/09_langkah_berikutnya/rekomendasi.md
-sebelum ngapa-ngapain. Jangan ulang analisis yang sudah tercatat di @handoff/05_katalog_eksperimen/ kecuali ada alasan
-baru yang jelas.
+Seluruh progress dari chat sebelumnya ada di folder @handoff/. Baca dulu berurutan:
+@handoff/README.md, @handoff/00_mulai_di_sini/status_sekarang.md,
+@handoff/07_validasi_dan_leaderboard/bias_oof_early_stopping.md, @handoff/08_pelajaran/,
+@handoff/09_langkah_berikutnya/rekomendasi.md.
+Jangan ulang analisis/eksperimen yang sudah tercatat null di @handoff/04_riwayat_versi/,
+@handoff/05_katalog_eksperimen/ dan @handoff/08_pelajaran/yang_tidak_efektif.md kecuali ada alasan baru yang jelas.
 
 Aturan kerja:
 - Jawab dalam Bahasa Indonesia.
-- JANGAN RUN MODEL ATAUPUN NOTEBOOKNYA DI LOCAL! Cukup lakukan EDA dan Preprocessing yang memang bisa dijalankan di
-  laptop gua yang punya spesifikasi CPU Intel Core Ultra 7 155H dan GPU Intel Arc Graphics (Meteor Lake-P integrated GPU).
-  (Boleh: statistik/counting/EDA tanpa label model, aritmetika di prediksi tersimpan seperti blending/stacking,
-  dry run notebook dengan semua model di-stub.)
-- Notebook dijalankan di Kaggle GPU T4x2 (sesi maks 12 jam). Buat notebook pakai skill @ref/notebook/ dan patuhi
-  @docs/context.md.
-- Tiap analisis EDA = satu file .py yang mengeluarkan angka dan gambar, lalu analisis outputnya. Verifikasi
-  preprocessing dengan sampel tiap kelas. Tangani duplikasi dan leakage.
-- Cek selalu val KS supaya tidak jomplang antara public dan private.
-- Jujur soal hasil, jangan fabrikasi, jangan overclaim. Jangan sarankan LB probing (melanggar rule 11).
-- Jangan bilang "final" terus-terusan; deadline notebook 30 Oktober 2026 23:59 WIB.
-- Hasil run Kaggle tiap versi gua taruh di results/vN/ dan notebook di notebook/vN.ipynb.
+- JANGAN RUN MODEL ATAUPUN NOTEBOOKNYA DI LOCAL! Lokal hanya EDA, preprocessing, dan aritmetika pada prediksi
+  tersimpan (blending/stacking/bootstrap). Laptop: Intel Core Ultra 7 155H, iGPU Intel Arc (tanpa CUDA).
+- Model dijalankan di Kaggle. Lu boleh push kernel sendiri lewat Kaggle CLI dan ambil outputnya
+  (cara lengkap: @handoff/02_proyek_dan_tools/kaggle_cli_kernel_dan_submit.md). Kuota GPU 30 jam/minggu.
+  Kalau CLI bilang "Authentication required", minta gua jalanin `kaggle auth login --force`.
+- Validasi wajib bersih: early stopping / seleksi apa pun HANYA di inner split dari train fold, jangan di fold OOF.
+- Submit: maksimal 3/hari, satu per satu, nama file selalu submission.csv, jelaskan isinya di description,
+  analisis skornya dulu sebelum submit berikutnya. Setiap submit harus menjawab pertanyaan riset, bukan coba-coba.
+  Jangan submit kandidat yang belum lebih bagus dari v8 di validasi bersih kecuali gua minta probe.
+- Jujur soal hasil, jangan fabrikasi, jangan overclaim. Jangan LB probing label (rule 11).
+- Jangan bilang "final" terus-terusan. Deadline notebook 30 Oktober 2026 23:59 WIB.
+- Notebook final pakai skill @ref/notebook/ dan patuhi @docs/context.md; harus menghasilkan file yang disubmit.
+- Jangan git push; gua push sendiri.
 
 Permintaan gua sekarang: <isi di sini>
 ```

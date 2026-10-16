@@ -27,6 +27,8 @@ Di dalam kelas target=0 dan target=1 (jadi bukan efek label), korelasinya:
 
 Interpretasinya: risiko dibentuk oleh beberapa **faktor laten** (stress / konsumsi berlebih, blok bureau/rate/utilisasi/penolakan, blok affordability), dan masing-masing diukur dengan noise lewat beberapa kanal. Ini menjelaskan kenapa TabM (NN) konsisten menjadi model tunggal terbaik, dan kenapa logit stacking sedikit lebih baik daripada rata-rata rank.
 
+⚠ Revisi 16 Okt: keunggulan TabM dan logit stacking itu terlihat di OOF yang bias (early stopping di fold validasi). Di protokol bersih TabM ~0,518–0,520 vs LGB ~0,520, dan stack LR kalah di public. Struktur faktor laten aditif tetap berlaku (EBM aditif ≈ LGB), tapi jangan jadikan alasan memberi bobot besar ke TabM.
+
 ## Segmen
 - Thin-file KS jauh lebih rendah daripada history. v1: 0,476 vs 0,517. v5 dan seterusnya: sekitar 0,500 vs 0,536. v9: 0,5009 vs 0,5357.
 - Lompatan thin-file 0,477 → 0,500 datang dari fitur harga (v5), karena thin-file tetap punya e-commerce.

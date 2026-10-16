@@ -42,3 +42,12 @@ rm -rf ../output_v9 ../output                                  # bersihkan
 | TabPFN-3.5 (konteks penuh 56k, 104 fitur, 2 GPU paralel) | sekitar 14 menit |
 | Causilo | sekitar 17 menit |
 | Total v9 | sekitar 4 jam |
+
+## Jebakan tambahan 16 Okt
+- `ls` di-alias (`--icons`, dan `ls data` bisa error "invalid value 'data' for '--icons'"). Pakai `command ls`.
+- Python sistem (`python3`) tidak punya polars; selalu `.venv/bin/python`.
+- Perintah > 2 menit di Bash pindah ke background; bootstrap KS ribuan kali bisa > 2 menit, beri timeout besar atau
+  kurangi iterasi.
+- Builder notebook (`notebook/build_vNN.py`) hanya `compile()` sel; aman dijalankan lokal karena tidak melatih apa pun.
+- Kredensial Kaggle CLI kedaluwarsa diam-diam (lihat `kaggle_cli_kernel_dan_submit.md`).
+- File di scratchpad sesi (`/tmp/claude-…/scratchpad`) hilang antar sesi; simpan apa pun yang penting di repo.

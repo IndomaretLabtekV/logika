@@ -1,0 +1,4 @@
+{"id": "riantamaputra/logika-v19-pl", "title": "Logika v19 pl", "code_file": "logika-v19-pl.ipynb",
+ "language": "python", "kernel_type": "notebook", "is_private": true, "enable_gpu": false, "enable_tpu": false,
+ "enable_internet": true, "keywords": [], "dataset_sources": [], "kernel_sources": [],
+ "competition_sources": ["data-science-competition-logika-ui-2026"], "model_sources": []}

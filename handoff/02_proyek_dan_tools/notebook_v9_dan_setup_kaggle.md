@@ -1,4 +1,6 @@
-# Notebook v9 (versi aktif) dan setup Kaggle
+# Notebook v9 (versi pipeline penuh terakhir) dan setup Kaggle
+
+⚠ **Masalah validasi:** builder ini (`notebook/build_notebook.py`) melakukan early stopping LGB/XGB/CatBoost/TabM di fold validasi (baris 874, 932, 966/973, 1169), sehingga OOF optimis. Perbaiki dulu sebelum dipakai untuk notebook final. Lihat `07_validasi_dan_leaderboard/bias_oof_early_stopping.md` dan `09_langkah_berikutnya/rekomendasi.md`.
 
 ## Konvensi skill `ref/notebook/`
 - Banner 3 sel (judul, tim, daftar isi), lalu **Introduction** (Overview, Aim, Metric, Dataset, Approach), lalu **Initialization** (Environment Setup dengan `!nvidia-smi` dan `%pip`, Import Libraries, Seed Everything, Settings, Load Dataset).
@@ -63,3 +65,6 @@ N_ROUNDS=10000  EARLY_STOP=200  (metric early stopping: AUC)
 5. **Save Version → Save & Run All (Commit).** Sesi interaktif bisa mati kalau ditinggal.
 6. Setelah selesai, unduh seluruh `/kaggle/working` ke `results/vN/` dan notebook hasil run ke `notebook/vN.ipynb`.
 7. Nama notebook resmi: `ParticipantNumber_TeamName_Notebook`. Isi juga banner tim di builder.
+
+## Alternatif (16 Okt): push lewat CLI
+Sejak 16 Okt eksperimen dijalankan dengan `kaggle kernels push` dari folder staging. Lihat `kaggle_cli_kernel_dan_submit.md`. Untuk notebook yang butuh TabPFN-3.5, pasang secret di UI (kernel CLI baru tidak otomatis punya secret).

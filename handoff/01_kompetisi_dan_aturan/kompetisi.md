@@ -14,7 +14,7 @@ Sumber lengkap: `docs/context.md`. Ringkasan bagian yang relevan:
 
 ## Submission
 - Kolom `application_id,default_probability`. Ada 30.000 baris, setiap ID test muncul tepat sekali, nilainya finite dan di dalam [0, 1].
-- Batas submission per hari: dari pola chat (13 Okt "sisa 1 submission lagi" setelah dua submit, 14 Okt "last submission of the day" untuk yang ketiga), **kelihatannya 3 per hari**. Cek ulang di halaman Kaggle.
+- Batas submission **3 per hari** (dikonfirmasi 16 Okt: CLI "2 submissions remaining today" setelah submit pertama hari itu, lalu 2 submit lagi berhasil).
 
 ## Penilaian babak penyisihan
 | Komponen | Bobot |
@@ -39,3 +39,8 @@ Sumber lengkap: `docs/context.md`. Ringkasan bagian yang relevan:
 - 70.000 train dan 30.000 test, satu aplikasi per customer. Customer train dan test disjoint.
 - Bad rate train 13,58% (9.507 positif). Stabil 12–15% per bulan.
 - Train dan test diacak (interleaved) di bulan yang sama (Jan–Des 2025). PSI semua fitur di bawah 0,002, jadi **split-nya random**, dan stratified KFold adalah skema yang tepat.
+
+## Posisi leaderboard (16 Okt)
+- Top-1 public **0,57768** (tim "cupuu"). Cutoff top-8 sekitar **0,57005**.
+- Tim kita "lagi mager lomba bentar": 0,56145 (v5 dan v8), peringkat sekitar 34.
+- Akun Kaggle: `riantamaputra`. Slug kompetisi: `data-science-competition-logika-ui-2026`.

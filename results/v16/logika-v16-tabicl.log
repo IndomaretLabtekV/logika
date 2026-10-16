@@ -1,0 +1,48 @@
+[{"stream_name":"stderr","time":7.631203815,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":7.631253811,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":7.631257802,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":7.631260184,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stderr","time":8.240184336,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":8.240230506,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":8.240236173,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":8.240240151,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stdout","time":12.552010251,"data":"\u001b[?25l   \u001b[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m \u001b[32m0.0/876.6 kB\u001b[0m \u001b[31m?\u001b[0m eta \u001b[36m-:--:--\u001b[0m\r\u001b[2K   \u001b[91m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m\u001b[91m╸\u001b[0m \u001b[32m870.4/876.6 kB\u001b[0m \u001b[31m27.8 MB/s\u001b[0m eta \u001b[36m0:00:01\u001b[0m\r\u001b[2K   \u001b[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m \u001b[32m876.6/876.6 kB\u001b[0m \u001b[31m17.4 MB/s\u001b[0m eta \u001b[36m0:00:00\u001b[0m\r\n"}
+,{"stream_name":"stdout","time":13.060870093,"data":"\u001b[?25h\u001b[?25l   \u001b[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m \u001b[32m0.0/54.5 MB\u001b[0m \u001b[31m?\u001b[0m eta \u001b[36m-:--:--\u001b[0m\r\u001b[2K   \u001b[91m━━━\u001b[0m\u001b[91m╸\u001b[0m\u001b[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m \u001b[32m5.3/54.5 MB\u001b[0m \u001b[31m159.0 MB/s\u001b[0m eta \u001b[36m0:00:01\u001b[0m\r\u001b[2K   \u001b[91m━━━━━━━━\u001b[0m\u001b[91m╸\u001b[0m\u001b[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m \u001b[32m11.9/54.5 MB\u001b[0m \u001b[31m189.4 MB/s\u001b[0m eta \u001b[36m0:00:01\u001b[0m\r\u001b[2K   \u001b[91m━━━━━━━━━━━━━\u001b[0m\u001b[91m╸\u001b[0m\u001b[90m━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m \u001b[32m18.6/54.5 MB\u001b[0m \u001b[31m192.7 MB/s\u001b[0m eta \u001b[36m0:00:01\u001b[0m\r\u001b[2K   \u001b[91m━━━━━━━━━━━━━━━━━━\u001b[0m\u001b[91m╸\u001b[0m\u001b[90m━━━━━━━━━━━━━━━━━━━━━\u001b[0m \u001b[32m25.4/54.5 MB\u001b[0m \u001b[31m198.7 MB/s\u001b[0m eta \u001b[36m0:00:01\u001b[0m\r\u001b[2K   \u001b[91m━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m\u001b[91m╸\u001b[0m\u001b[90m━━━━━━━━━━━━━━━━\u001b[0m \u001b[32m32.5/54.5 MB\u001b[0m \u001b[31m206.5 MB/s\u001b[0m eta \u001b[36m0:00:01\u001b[0m\r\u001b[2K   \u001b[91m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m\u001b[90m╺\u001b[0m\u001b[90m━━━━━━━━━━\u001b[0m \u001b[32m39.6/54.5 MB\u001b[0m \u001b[31m204.6 MB/s\u001b[0m eta \u001b[36m0:00:01\u001b[0m\r\u001b[2K   \u001b[91m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m\u001b[91m╸\u001b[0m\u001b[90m━━━━━\u001b[0m \u001b[32m47.6/54.5 MB\u001b[0m \u001b[31m218.8 MB/s\u001b[0m eta \u001b[36m0:00:01\u001b[0m\r\u001b[2K   \u001b[91m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m\u001b[91m╸\u001b[0m \u001b[32m54.5/54.5 MB\u001b[0m \u001b[31m269.0 MB/s\u001b[0m eta \u001b[36m0:00:01\u001b[0m\r\u001b[2K   \u001b[91m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m\u001b[91m╸\u001b[0m \u001b[32m54.5/54.5 MB\u001b[0m \u001b[31m269.0 MB/s\u001b[0m eta \u001b[36m0:00:01\u001b[0m\r\u001b[2K   \u001b[91m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m\u001b[91m╸\u001b[0m \u001b[32m54.5/54.5 MB\u001b[0m \u001b[31m269.0 MB/s\u001b[0m eta \u001b[36m0:00:01\u001b[0m\r\u001b[2K   \u001b[91m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m\u001b[91m╸\u001b[0m \u001b[32m54.5/54.5 MB\u001b[0m \u001b[31m269.0 MB/s\u001b[0m eta \u001b[36m0:00:01\u001b[0m\r\u001b[2K   \u001b[91m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m\u001b[91m╸\u001b[0m \u001b[32m54.5/54.5 MB\u001b[0m \u001b[31m269.0 MB/s\u001b[0m eta \u001b[36m0:00:01\u001b[0m\r\u001b[2K   \u001b[91m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m\u001b[91m╸\u001b[0m \u001b[32m54.5/54.5 MB\u001b[0m \u001b[31m269.0 MB/s\u001b[0m eta \u001b[36m0:00:01\u001b[0m\r\u001b[2K   \u001b[91m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m\u001b[91m╸\u001b[0m \u001b[32m54.5/54.5 MB\u001b[0m \u001b[31m269.0 MB/s\u001b[0m eta \u001b[36m0:00:01\u001b[0m\r\u001b[2K   \u001b[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m \u001b[32m54.5/54.5 MB\u001b[0m \u001b[31m39.0 MB/s\u001b[0m eta \u001b[36m0:00:00\u001b[0m\r\n"}
+,{"stream_name":"stdout","time":13.11113736,"data":"\u001b[?25h\u001b[?25l   \u001b[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m \u001b[32m0.0/310.4 kB\u001b[0m \u001b[31m?\u001b[0m eta \u001b[36m-:--:--\u001b[0m\r\u001b[2K   \u001b[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m \u001b[32m310.4/310.4 kB\u001b[0m \u001b[31m14.2 MB/s\u001b[0m eta \u001b[36m0:00:00\u001b[0m\r\n"}
+,{"stream_name":"stdout","time":18.268023092,"data":"\u001b[?25h\u001b[31mERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.\r\n"}
+,{"stream_name":"stdout","time":18.268057305,"data":"cudf-polars-cu12 26.2.1 requires polars\u003c1.36,\u003e=1.30, but you have polars 2.0.0 which is incompatible.\u001b[0m\u001b[31m\r\n"}
+,{"stream_name":"stdout","time":18.442079159,"data":"\u001b[0mNote: you may need to restart the kernel to use updated packages.\n"}
+,{"stream_name":"stderr","time":120.047611139,"data":"Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stderr","time":120.047643252,"data":"\n"}
+,{"stream_name":"stderr","time":120.047649651,"data":"Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stdout","time":120.155734008,"data":"INFO: You are downloading 'tabicl-classifier-v2-20260212.ckpt', the latest best-performing version, used in our TabICLv2 paper.\n"}
+,{"stream_name":"stdout","time":120.155780341,"data":"\n"}
+,{"stream_name":"stdout","time":120.155785651,"data":"Checkpoint 'tabicl-classifier-v2-20260212.ckpt' not cached.\n"}
+,{"stream_name":"stdout","time":120.15579015,"data":" Downloading from Hugging Face Hub (jingang/TabICL).\n"}
+,{"stream_name":"stdout","time":120.155793693,"data":"\n"}
+,{"stream_name":"stdout","time":120.155796871,"data":"INFO: You are downloading 'tabicl-classifier-v2-20260212.ckpt', the latest best-performing version, used in our TabICLv2 paper.\n"}
+,{"stream_name":"stdout","time":120.155800487,"data":"\n"}
+,{"stream_name":"stdout","time":120.155803698,"data":"Checkpoint 'tabicl-classifier-v2-20260212.ckpt' not cached.\n"}
+,{"stream_name":"stdout","time":120.155807422,"data":" Downloading from Hugging Face Hub (jingang/TabICL).\n"}
+,{"stream_name":"stdout","time":120.155810762,"data":"\n"}
+,{"stream_name":"stdout","time":167.937264817,"data":"fold 1 first chunk 48s\n"}
+,{"stream_name":"stdout","time":168.099261832,"data":"fold 0 first chunk 49s\n"}
+,{"stream_name":"stdout","time":1085.910792572,"data":"fold 1 KS 0.51408 in 966s on cuda:1\n"}
+,{"stream_name":"stdout","time":1090.898484149,"data":"fold 0 KS 0.51677 in 971s on cuda:0\n"}
+,{"stream_name":"stdout","time":1142.961533824,"data":"fold 3 first chunk 53s\n"}
+,{"stream_name":"stdout","time":1148.29021088,"data":"fold 2 first chunk 54s\n"}
+,{"stream_name":"stdout","time":2013.435818978,"data":"fold 3 KS 0.51398 in 924s on cuda:1\n"}
+,{"stream_name":"stdout","time":2018.685713203,"data":"fold 2 KS 0.51763 in 924s on cuda:0\n"}
+,{"stream_name":"stdout","time":2069.503096772,"data":"fold 4 first chunk 47s\n"}
+,{"stream_name":"stdout","time":2855.290323935,"data":"fold 4 KS 0.50021 in 833s on cuda:0\n"}
+,{"stream_name":"stdout","time":2855.377467026,"data":"completed folds [0, 1, 2, 3, 4]\n"}
+,{"stream_name":"stdout","time":2855.377499873,"data":"TabICL OOF KS 0.5079254849764457\n"}
+,{"stream_name":"stderr","time":2861.446727897,"data":"/usr/local/lib/python3.13/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":2861.446752384,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":2861.621500271,"data":"/usr/local/lib/python3.13/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":2861.621538229,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":2862.481191945,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to notebook\n"}
+,{"stream_name":"stderr","time":2862.57528273,"data":"[NbConvertApp] Writing 62557 bytes to __notebook__.ipynb\n"}
+,{"stream_name":"stderr","time":2865.403886317,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to html\n"}
+,{"stream_name":"stderr","time":2866.142675679,"data":"[NbConvertApp] Writing 507254 bytes to __results__.html\n"}
+]

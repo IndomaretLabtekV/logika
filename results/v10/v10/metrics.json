@@ -1,0 +1,18 @@
+{
+  "control_ks": 0.5191258051756706,
+  "tuned_ks": 0.5213733436513446,
+  "delta": 0.002247538475673938,
+  "paired_bootstrap_95": [
+    -0.0008991645364411186,
+    0.005355516429847422
+  ],
+  "fold_deltas": [
+    0.005202088031364793,
+    0.003934678753073739,
+    -0.005943165969998887,
+    0.002833209657514768,
+    -0.0026211939683535856
+  ],
+  "promotion_candidate": false,
+  "caveat": "Bootstrap is conditional on fitted models; public score is unverified."
+}
