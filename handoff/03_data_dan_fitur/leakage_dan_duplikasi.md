@@ -26,3 +26,16 @@ Prinsip yang dipegang: snapshot repayment adalah keadaan **pada selected cutoff*
 
 ## Kesimpulan
 Tidak ada leakage atau duplikasi yang bisa "dieksploitasi". Data bersih dan sintetis. Hal yang perlu dijaga hanya grain order dan aturan cutoff.
+
+## Tambahan 17–18 Okt
+| Cek | Hasil |
+|---|---|
+| Adversarial validation train vs test (`eda/104`, LightGBM 5-fold) | AUC 0,4987 → split acak, StratifiedKFold tepat |
+| account_behavior memuat bulan berjalan? | bulan terakhir per customer selalu tepat 1 bulan sebelum bulan keputusan (70.000/70.000) → bersih |
+| Bureau memuat pinjaman lender sendiri? | tidak (outstanding korelasi 0,14; delinquency 0,01–0,02) → tidak ada konstruksi "eksternal = bureau − internal" |
+| Kebocoran lewat seleksi fitur FM | `fm_select` dihitung per train fold (validation_v2) |
+| Pseudo-label / fitting distribusi test | tidak dipakai (dilarang); Kumo-70k memakai train saja sebagai context, test hanya query |
+| Bobot blend | dipilih cross-fit (4 fold → fold ke-5), tidak pernah di baris yang dinilai; tidak disetel dari public |
+
+Desain fitur dari EDA di seluruh label train tidak bisa dihindari; karena itu fitur baru wajib dikonfirmasi lewat model
+cross-fit, bukan dari skor EDA.

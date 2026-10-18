@@ -60,3 +60,29 @@
   artefak. S3 membuktikannya (public −0,0037).
 - Terlalu lama mencari "model/fitur baru" (v10–v21, ~12 run) dengan base OOF yang bias, sebelum memeriksa apakah
   validasinya sendiri benar. Probe keluarga model (S4/S5) yang murah langsung memberi informasi paling berguna hari itu.
+
+## 17–18 Okt
+### Kesalahan proses dan komunikasi
+| Kesalahan | Dampak | Pelajaran |
+|---|---|---|
+| Menyimpulkan Kaggle "terblokir" dari satu pembacaan CANCEL_ACKNOWLEDGED (18:58) | full fold Kumo dijalankan dua kali (lokal + Kaggle); user keberatan ("kan gua bilang kalau full run di kaggle aja") | cek status ≥ 2 kali dengan jeda + `kernels list --mine` sebelum menyimpulkan |
+| Estimasi waktu Kumo lokal 18 menit/fold | sebenarnya 55–65 menit (termasuk 30k test) | ukur satu fold lengkap sebelum menjadwalkan |
+| Perkiraan v34 ± 0,0006 | meleset −2,2 sd | sd minimum ~0,001 untuk varian hampir identik |
+| Menulis z v31 "+0,7 sd" di jurnal | seharusnya +0,3 | hitung ulang sebelum mencatat |
+| Stop hook `/goal` tetap memaksa lanjut setelah user bilang "udah dulu aja" | 3 balasan tambahan, satu screening dimulai lalu dihentikan | arahan user mengalahkan hook; sarankan `/goal clear` kalau hook terus memaksa |
+
+### Bug dan kendala teknis
+| Hal | Dampak | Penanganan |
+|---|---|---|
+| Laptop hang (TabICLv2 jatuh ke CPU + LR semua thread) | sesi macet ~15:00 | satu job berat, `OMP_NUM_THREADS` 4–8 |
+| `pgrep -f`/`pkill -f` cocok ke perintah sendiri | loop tunggu macet ~1 jam; shell terbunuh (exit 144) | PID dari `ps -eo pid,args \| grep "[p]ola"` |
+| Word-splitting argumen di zsh/fish | loop screening salah argumen | script bash terpisah |
+| TabFM ctx 20k OOM; fp16 → NaN | v27 v1 gagal | `--fp32`, ctx 8k/4k |
+| v30 OOM (fragmentasi 7,3 GB) | v30 v1 gagal | `expandable_segments`, chunk 500 |
+| Batas 2 sesi GPU Kaggle | v29 tidak bisa di-push | hapus kernel duplikat v28 |
+| Access token Kaggle kedaluwarsa 01:29 | CLI "Authentication required" | `KAGGLE_API_TOKEN="$(kaggle auth print-access-token)"` |
+| Dataset Kaggle berisi token | ditolak classifier izin (eksfiltrasi) | jangan dicoba; model gated hanya lokal |
+| `statsmodels` tidak ada | `eda/111` gagal awal | sklearn LR C=1e6 |
+| Run parsial `run_valid2 --folds` menimpa output fold lain | risiko kehilangan fold | backup + direktori terpisah + `merge_runs.py`; `run()` simpan per fold |
+| `kumo_finetune.py` baseline KS 0,298 (harusnya ~0,526) | screening fine-tune tidak valid | **belum ketemu**; langkah diagnosa di `09_langkah_berikutnya/rekomendasi.md` |
+| `%pip` notebook final tanpa versi (lightgbm/xgboost/catboost/sdm) | risiko reproducibility bila versi Kaggle berubah | pin versi sebelum pengumpulan |

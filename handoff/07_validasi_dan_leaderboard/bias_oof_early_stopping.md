@@ -70,3 +70,11 @@ Jalankan ulang pipeline v8/v9 di Kaggle dengan:
 - simpan OOF + test per model dengan ID;
 - lalu pilih bobot blend dari OOF bersih ini (rank-average bobot positif, dinilai di held-out halves), bukan dari public.
 Butuh GPU (TabM, TabPFN, Causilo). Kuota GPU Kaggle mingguan habis 16 Okt, reset mingguan.
+
+## Status 18 Okt: perbaikan sudah dikerjakan
+- Rerun bersih = **v22** (validation_v2, `validation_v2.md`). Angka pembanding bersih: lgb 0,52316 (v8 bias 0,5239),
+  TabM 0,52100 (v8 bias 0,5257) → bias TabM ~0,0047, LGB ~0,0007 dengan 3 seed dan refit penuh (lebih kecil dari estimasi
+  kasar 16 Okt karena v10/v11 kontrol hanya 1 seed dan fit di 2/3 train fold, tapi arah sama: TabM paling menggelembung).
+- Resep v8 di model bersih: 0,52426 (vs OOF v8 bias 0,52703).
+- Blend yang dipilih dari OOF bersih (v31) memang naik di public (+0,0026) — pertama kalinya sejak v5 keputusan dari CV
+  terkonfirmasi di public.

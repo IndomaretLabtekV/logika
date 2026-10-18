@@ -54,3 +54,28 @@
 Catatan penting: angka di atas **tidak bisa** dibandingkan langsung dengan tabel v1–v9 (yang bias). Contoh: TabM v8
 0,5257 vs TabM bersih 0,5175. Di protokol bersih, LGB (~0,520) justru **setara atau lebih baik** dari TabM (~0,518–0,520),
 kebalikan dari kesan v3–v9 bahwa TabM model tunggal terbaik.
+
+## Tambahan 17–18 Okt (validation_v2: stop di inner 1/7, refit budget tetap, bobot cross-fit)
+| Model | OOF KS bersih | Catatan |
+|---|---|---|
+| **Kumo-Tabular large, context penuh 56k** (NVIDIA `structured-data-models`) | **0,52665** | model tunggal terbaik; 55–65 menit/fold lokal, ~2,3 jam/fold T4 |
+| Kumo large, 2 draw context 20k | 0,52484 | varians draw context menekan ~0,002 |
+| Kumo large, context 70k (seluruh train), test sekali | – (tanpa OOF) | Spearman 0,99869 vs rata-rata 5 fold; 4,5 jam T4, 6,5 GB |
+| Causilo (4 est, 100 fitur, pandas categorical) | 0,52583 | model terbaik di v22; 115–145 s/fold lokal |
+| seg_causilo (per segmen has_history) | 0,52409 | null |
+| lgb / xgb / xgb_s / lgb_s / cat_s / cat (param v8, 3 seed) | 0,52316 / 0,52310 / 0,52285 / 0,52118 / 0,52077 / 0,51975 | hyperparameter v8, tidak di-tune (tuning v10 null) |
+| TabM (config v8, 3 seed, epoch dipilih di inner lalu refit) | 0,52100 | terlemah; epoch terbaik 5–6 |
+| LR rank-gauss + one-hot (`lr_q`) | 0,52119 | ≈ TabM → risiko hampir linear |
+
+Zoo fold 0 (detail `05_katalog_eksperimen/screening_lokal_17okt.md`): TabPFN-3.5 0,5175, TabICLv2 0,5163, RealMLP 0,5157,
+iLTM 0,5216, TabFM 0,5173, AutoGluon CatBoost 0,5237, Mitra 0,4488; LimiX-2/TabDPT/Nori OOM atau gagal. Hanya Kumo dan
+Causilo yang menambah.
+
+### Kesimpulan model (revisi 18 Okt)
+- Di protokol bersih urutannya: **Kumo ctx penuh > Causilo > LGB/XGB > TabM ≈ LR**. Kesan v3–v9 (TabM terbaik) adalah
+  artefak bias OOF.
+- Keluarga ICL (Kumo, Causilo) menambah informasi yang tidak ditangkap pohon (+0,002 CV, +0,0026 public di v31), tapi
+  **hanya kalau dicampur pohon** (lihat `blending_dan_stacking.md`).
+- Korelasi rank: Kumo–Causilo 0,989, Kumo–trees ~0,978, antar pohon 0,97–0,999, TabFM vs Kumo 0,977.
+- Kapasitas tambahan (fitur lebih banyak, model lebih besar, estimator lebih banyak) tidak membantu: Kumo f154 < f100,
+  medium < large, e8 ≈ e4 dalam noise; Causilo f150/f300 ≤ f100.

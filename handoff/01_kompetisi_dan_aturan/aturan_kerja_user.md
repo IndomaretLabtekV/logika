@@ -1,6 +1,10 @@
 # Aturan kerja dari user
 
-## Batasan keras (verbatim)
+> ⚠ Sejak 17 Okt 2026 laptop diganti (CachyOS, RTX 3070 Ti 8 GB) dan aturan "jangan run model lokal" **tidak berlaku
+> lagi**: screening model lokal di GPU diperbolehkan. Lihat bagian "Tambahan 17–18 Okt" di bawah. Bagian berikut
+> dipertahankan sebagai riwayat.
+
+## Batasan keras lama 12–16 Okt (verbatim)
 > "JANGAN RUN MODEL ATAUPUN NOTEBOOKNYA DI LOCAL! Cukup lakukan EDA dan Preprocessing yang memang bisa dijalankan di laptop gua yang punya spesifikasi CPU Intel Core Ultra 7 155H dan GPU Intel Arc Graphics (Meteor Lake-P integrated GPU)."
 
 Tafsiran yang dipakai sepanjang chat dan tidak pernah dikoreksi user:
@@ -60,3 +64,55 @@ Tafsiran yang dipakai sepanjang chat dan tidak pernah dikoreksi user:
   bukan sekadar coba-coba.
 - Handoff harus selengkap mungkin, dibagi ke beberapa folder, tanpa menyalin notebook/results; file tidak relevan
   dihapus supaya repo bisa di-git push oleh user sendiri (**assistant tidak push**).
+
+## Tambahan 17–18 Okt (sesi `/goal` "public > 0,57005")
+### Instruksi `/goal` (inti, dipasang user 17 Okt)
+- Target public > 0,57005 (stretch > 0,57768) dari kandidat yang unggul atas resep v8 di **validasi bersih**
+  (paired bootstrap P>0 ≥ 0,9, menang di mayoritas fold) dan reproducible. "Fitur jenuh: cari informasi baru, bukan tuning."
+- Alokasi ~70% riset/EDA, ~30% modelling. Catat bukti dan keputusan tiap siklus di `handoff/`.
+- Audit skema validasi; kalau masih bias buat validation_v2 (nested), evaluasi ulang v8 dan semua kandidat di skema
+  yang sama; jangan pilih skema karena skornya lebih tinggi. Rerun bersih, simpan OOF/test per model dengan application_id.
+- Blend: rank-average bobot positif, dipilih di held-out; hindari stack LR berbobot negatif.
+- Lokal: screening 1 fold beberapa epoch di GPU lokal, dibandingkan resep v8 di fold dan protokol yang sama; VRAM < 8 GB,
+  satu job sekaligus. Hanya yang mengalahkan v8 di screening lanjut full fold (awalnya: di Kaggle T4×2).
+- Kuota GPU Kaggle 30 jam/minggu, catat versi paket di manifest. Kalau CLI "Authentication required", minta user
+  `! kaggle auth login --force`.
+- EDA: setiap analisis satu file `.py` di `eda/` yang mencetak angka dan menyimpan gambar ke `eda/out/`; fitur baru lewat
+  `eda/features.py` lalu diverifikasi (sampel per kelas, uji leakage cutoff `decision_datetime`).
+- **Larangan (verbatim):** "data eksternal, leakage masa depan, pseudo-label test, fitting distribusi test, LB probing
+  (rule 11). Pretrained publik boleh."
+- Submission: CSV 30.000 baris, disimpan di `results/vN/`; nama `submission.csv` hanya untuk kandidat yang dipromosikan.
+  Maks 3/hari, reset 07:00 WIB; satu per satu; description berisi isi dan pertanyaan riset; tulis perkiraan ± sd sebelum
+  submit dan analisis sesudahnya. Submit sendiri hanya kalau lebih bagus dari v8 di validasi bersih full fold dan gain
+  jelas di atas noise. Sebelum 07:00 WIB manfaatkan 1 submission untuk kandidat paling informatif.
+- Notebook final harus menghasilkan file yang disubmit, pakai `ref/notebook/SKILL.md`, deadline 30 Okt 2026 23:59 WIB.
+- Skill yang diminta: mlcraft:domain-tabular, mlcraft:data-rigor-and-leakage, mlcraft:rigorous-evaluation,
+  mlcraft:accuracy-improvement-loop, ml-training-recipes, 0-autoresearch-skill.
+- "Bahasa Indonesia, jujur, klaim disertai angka, jangan git push."
+
+### Arahan tambahan selama sesi (kutipan user)
+| Kapan | Kutipan | Artinya |
+|---|---|---|
+| 17 Okt sore | minta uji semua model leaderboard TabArena, jangan terpaku patokan v8, coba skema CV lain, cek repo supaya EDA/preprocessing tidak diulang | zoo screening + `eda/104` |
+| 17 Okt malam | "kaggle nya ke blocked kenapa? kan gua bilang kalau full run di kaggle aja" | user keberatan full fold dijalankan lokal karena status Kaggle salah dibaca |
+| 17 Okt malam | "kalau sampai jam 6 belum ada 1 pun breakthrough dari v8, gua ingin lu coba lakukan submission apapun yang memang membantu kita untuk analisis" | submission informatif sebelum 07:00 tetap dipakai walau tanpa breakthrough |
+| 17 Okt malam | "next time kalau memang lebih cepat di local, mending di local aja, kecuali memang lebih cepat di kaggle" | **aturan baru: full fold di tempat yang lebih cepat** (menggantikan "full fold di Kaggle") |
+| 17 Okt malam | "gua mau tidur, intinya lu bebas lakukan apapun as long as goal tercapai. cari sampai mabok gimana caranya biar dapet > 0.57" | kerja otonom semalam |
+| 18 Okt pagi | "lanjutkan sampai goal tercapai, masih ada sisa 13 hari. jangan stop sampai dapat 0.57768" | lanjut riset |
+| 18 Okt pagi | "kayaknya kalau seluruh run ini beres udah dulu aja" | berhenti setelah run yang sedang jalan selesai |
+| 18 Okt siang | "kalau analisis dari final run nya udah beres, udahin dulu aja, gua mau matiin laptop dulu, karena udah hampir 24 jam nyala" | stop, lalu `/goal clear` |
+| 18 Okt siang | minta handoff selengkap mungkin dibagi beberapa folder, tanpa notebook/results, hapus file tidak penting, rapikan untuk push (assistant tidak push) | folder ini |
+
+### Keamanan dan kredensial (wajib)
+- Token HF dan PriorLabs (TabPFN) diberikan user; disimpan **hanya** di `~/.config/logika/secrets.env` dan
+  `~/.cache/huggingface/token`. Jangan pernah menulis token ke file repo, notebook, commit, log, atau dataset.
+- Membuat dataset Kaggle berisi token **ditolak** oleh classifier izin (eksfiltrasi data). Jangan dicoba lagi.
+  Akibatnya model gated (TabPFN) hanya diuji lokal; kernel Kaggle hasil push CLI tidak punya secret.
+- Access token Kaggle dibuat saat runtime ke variabel environment saja (lihat `02_proyek_dan_tools/kaggle_cli_kernel_dan_submit.md`).
+
+### Preferensi yang terlihat di sesi ini
+- User menghargai kerja otonom panjang tapi ingin bisa menghentikan dengan satu kalimat; arahan "udah dulu" lebih
+  tinggi dari Stop hook `/goal`. Stop hook tetap memaksa lanjut sampai user `/goal clear`.
+- Pertanyaan "TabFM bukannya udah pernah ya?" → sebelum 17 Okt TabFM belum pernah dijalankan (status C3 ❌); 17 Okt OOM
+  lokal, v27 Kaggle v1 gagal (OOM/NaN), v2 jalan dan null. Cek katalog sebelum mengusulkan model "baru".
+- User bertanya mana yang lebih cepat, lokal atau Kaggle → jawaban berangka ada di `02_proyek_dan_tools/kecepatan_lokal_vs_kaggle.md`.

@@ -94,3 +94,26 @@ Notasi:
 | 95 | pp_mean dll. di-residualisasi terhadap blok nuisance (income, umur, tenure, tanggungan, dummy) | pp_mean 0,369 → 0,376 univariat, tapi chi2 vs v8 1,18 (sudah dipakai model) |
 | 96 | Rekalibrasi per segmen vs logit stacking | rekalibrasi −0,0005 sampai −0,0026; **logit stacking +0,0008 (5/6)**; stacking × history −0,0007 |
 | cek cepat | urutan baris CSV, jendela aplikasi→keputusan, offset public, simetri provider bureau, korelasi di dalam kelas, spesialisasi segmen | lihat `03_data_dan_fitur/temuan_eda_utama.md` dan `07_validasi_dan_leaderboard/` |
+
+## Fase validation_v2 (100–111, 17–18 Okt): referensi = OOF bersih cross-fit
+| # | Pertanyaan | Hasil |
+|---|---|---|
+| 100 | Utang/akun eksternal = bureau − pinjaman lender sendiri? | bureau outstanding tidak memuat pinjaman sendiri (korelasi 0,14), delinquency juga tidak (0,01–0,02); total DTI chi2/df 2,97, dKS_cf +0,0018 (null p95 ~0,0015) → lemah; Causilo + 14 fitur 0,5237 vs 0,5249 → null |
+| 101 | Shock makro per segmen × bulan | efek Mei O/E 0,888 (z −3,9), tapi koreksi bulan / segmen × bulan dKS ≤ null p95 → null |
+| 102 | Learning curve fold 0 (40/60/80/100%) | lgb 0,5122/0,5169/0,5198/0,5197; cat_s 0,5151/0,5167/0,5188/0,5194 → datar; plafon informasi fitur |
+| 103 | Residual 228 fitur vs OOF bersih (trees+causilo terkalibrasi) + KS per segmen | 0/228 di atas null (chi2/df p95 1,93, dKS p95 +0,0018); thin ~0,496 vs history ~0,535; Causilo unggul di thin-file & rate 24–28% |
+| 104 | Skema CV: 5 vs 10 fold, maju-waktu, adversarial | 0,52074 vs 0,52067 (P 0,59); maju-waktu −0,0024 (sd bulan ~0,02) → tanpa drift; adversarial AUC 0,4987 |
+| 105 | Peta informasi per keluarga fitur (LR rank-gauss) | repayment hilang 0,0266, bureau 0,0139, pp 0,0114, akun 0,0051, perilaku ec 0,0041, previous 0,0030; dua faktor laten + repayment |
+| 106 | Kenapa `kumo_fit` 0,5182 vs sdm_screen 0,5276 | varians draw context 0,518–0,528 + estimator ±0,002; tidak ada bug |
+| 107 | Noise public (subset 30% OOF cross-fit) | trees_causilo_kumo − v8: +0,0016 ± 0,0022 (20k), +0,0024 ± 0,0022 (ctx penuh); icl_nn_only − trees_only +0,0018 ± 0,0026 (S5−S4 public −0,0027 di ekor bawah ~P 0,1) |
+| 108 | Bobot blend per segmen thin/history | −0,0005 (P 0,34) vs global; bobot grid tidak stabil; bobot tetap 1:1:1 lebih baik → null |
+| 109 | (output saja, `out/109_seg_causilo.txt`) seg_causilo di blend | +0,00154 / +0,00162 (P 0,83 / 0,85) = noise |
+| 110 | Neighbor gap validasi→train vs test→train | rasio 1,001 / 1,0005 / 1,0006 (1/10/50-NN) → null; menolak hipotesis CV ICL menggelembung |
+| 111 | Harga relatif per subkelompok (30+ kandidat) | maks LR chi2 5,4 < Bonferroni 9,4; pp_* lama juga null → habis |
+| ad hoc | Harga item vs kovariat item (qty, bayar, ukuran order, jam, status) | 0,0000 varians dijelaskan → pp_mean statistik cukup |
+| ad hoc | account_behavior memuat bulan berjalan? | tidak (70.000/70.000 bulan terakhir = bulan keputusan − 1) |
+| ad hoc | Lag keputusan previous apps | null (sudah di eda/51) |
+
+Output: `eda/out/100_*` … `111_*`, blend `eda/out/blend2_v22.txt`, `blend2_v26.txt`, `blend2_v28.txt`, `blend2_v36.txt`,
+riwayat submission `eda/out/107_submissions.csv`, noise public lama `107_public_noise.txt` (Kumo 20k) dan baru
+`107_public_noise_v28.txt` (Kumo ctx penuh).

@@ -51,3 +51,41 @@
 | Belasan cek EDA lokal (lihat `05_katalog_eksperimen/eda_lokal_16okt.md`) | null |
 | Stack logit-LR dengan bobot negatif sebagai submission (v9, S3) | public −0,0023 / −0,0037 vs blend rank v8 |
 | Blend yang condong ke TabM (S5) | public −0,0028 |
+
+## Tambahan 17–18 Okt (validation_v2; detail di `04_riwayat_versi/` dan `05_katalog_eksperimen/`)
+### Model
+| Dicoba | Hasil |
+|---|---|
+| TabPFN-3.5, TabICLv2 (AutoGluon dan sdm), RealMLP-TD, TabSwift, AutoGluon LGB/XGB/Cat/NN/FastAI/Linear, RF/ET/KNN, WOE-LR | fold 0 semua ≤ resep v8 atau +20% di bawah P 0,7 |
+| iLTM (v23), Mitra (v25), TabFM fp32 (v27) | 0,5216 / 0,4488 / 0,5173 |
+| LimiX-2, TabDPT/Turbo, Nori, TabPFN-3 besar | OOM di 8 GB dan 15 GB, gagal load, atau gagal fit |
+| Causilo e16 / f150 / f300 / f60 | ≤ titik default (4 est, 100 fitur) |
+| Kumo small/medium, f154/198 fitur, e8, seed generator kedua (v33) | ≤ large e4 100 fitur ctx penuh dalam noise |
+| Kumo dengan subsample context 20k (1 atau 2 draw) | −0,0018 OOF vs context penuh |
+| seg_causilo (fit per segmen has_history, v29) | 0,52409 vs 0,52583 |
+| TabM bersih | 0,52100, model terlemah; ≈ LR rank-gauss |
+| Causilo + 14 fitur utang eksternal | 0,5237 vs 0,5249 |
+| Fine-tune Kumo | belum valid (bug baseline 0,298) — **bukan null, belum diuji** |
+
+### Blending
+| Dicoba | Hasil |
+|---|---|
+| Blend tanpa pohon (Causilo+Kumo, Kumo saja) | public 0,55709 / 0,56056 vs 0,56405 |
+| Bobot blend per segmen thin/history (`eda/108`) | −0,0005 (P 0,34), bobot tidak stabil |
+| Greedy bagged vs bobot tetap per keluarga | +0,00164 (P 0,84) < +0,00221 (P 0,93) |
+| Tambah TabM + LR ke campuran (v35) | CV setara, public 0,56298 (dalam klaster) |
+
+### Fitur dan EDA
+| Dicoba | Hasil |
+|---|---|
+| Utang/akun eksternal dari bureau (`eda/100`) | lemah (chi2/df 2,97, dKS +0,0018 ≈ null p95) |
+| Shock makro per segmen × bulan (`eda/101`) | efek Mei ada, tidak bisa dimanfaatkan |
+| Residual 228 fitur vs OOF bersih (`eda/103`) | 0 di atas null |
+| Harga relatif per subkelompok, 30+ kandidat (`eda/111`) | maks chi2 5,4 < 9,4 |
+| Kovariat harga item | 0,0000 varians dijelaskan |
+| 10-fold vs 5-fold, refit dengan data lebih banyak | +0,0000 / datar |
+
+### Proses
+- Menjalankan full fold lokal karena salah baca status Kaggle → komputasi ganda (v26).
+- Screening ICL dengan satu draw context → angka fold 0 terlalu optimis (0,5276 vs pooled 0,52484).
+- Memperkirakan public dengan sd dari bootstrap selisih untuk varian hampir identik (v34 ± 0,0006) → terlalu sempit.

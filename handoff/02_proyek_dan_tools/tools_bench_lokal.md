@@ -1,4 +1,8 @@
-# Tool lokal untuk menilai prediksi tersimpan (aritmetika saja, boleh di laptop)
+# Tool lokal untuk menilai prediksi tersimpan (era 16 Okt)
+
+> ⚠ **Usang sejak 17 Okt.** Semua tool di bawah memakai OOF v8 yang bias sebagai base. Penggantinya: `eda/blend2.py`,
+> `eda/write_candidate.py`, `eda/screen2.py`, `eda/107_public_noise.py` di atas OOF bersih validation_v2
+> (lihat `validation_v2_dan_tool.md`). File ini disimpan sebagai riwayat.
 
 Semua script dijalankan dari root repo dengan `.venv/bin/python`. Tidak ada yang melatih model.
 

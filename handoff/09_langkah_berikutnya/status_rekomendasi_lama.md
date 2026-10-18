@@ -20,3 +20,20 @@
 | baru | Model baris mentah (set-encoder) | ✅ v14 | 0,5187 / 0,5107; null |
 | baru | Bias inductive lain (linear_tree, monotone, ExtraTrees), EBM | ✅ v13, v18 | null |
 | baru | Causilo/TabPFN 16 estimator | ❌ v20 dibuat, tidak jalan (kuota GPU) | – |
+
+## Status rekomendasi handoff 16 Okt (per 18 Okt)
+| Rekomendasi 16 Okt | Status | Hasil |
+|---|---|---|
+| P1: rerun pipeline dengan early stopping di inner split | ✅ v22 + validation_v2 (refit budget tetap, bobot cross-fit) | resep v8 bersih 0,52426; Causilo > LGB > TabM |
+| P1: TabM epoch di inner lalu refit | ✅ v22 | TabM 0,52100 (terlemah) |
+| P1: TabPFN + Causilo tetap | ⚠ Causilo ✅; TabPFN hanya screening lokal (kernel CLI tanpa token) | TabPFN-3.5 fold 0 0,5175, tidak menambah |
+| P1: varian `_aug` | ❌ sengaja tidak (transduktif, efek ≈ 0) | – |
+| P1: ganti base bench ke OOF bersih | ✅ `eda/blend2.py` (bench s01–s04 usang) | – |
+| P1: cek porsi GBDT optimal di OOF bersih | ✅ kurva porsi pohon datar 0–0,4 lalu turun; public: tanpa pohon jatuh | GBDT ≥ 1/3 |
+| P2: notebook final reproducible | ✅ `notebook/build_final.py`, lulus run Kaggle (= v34) | banner + pin versi masih kurang |
+| P3: S4-like submission GBDT bersih | ❌ tidak disubmit (resep v8 bersih ditulis di `results/v24/`) | digantikan v31/v32 |
+| P3: v20 Causilo/TabPFN 16 estimator | ✅ sebagian di screening (Causilo e16 0,5243 ≤ e4) | null |
+| C3 lama: Xiaomi-TabLDM / TabFM / Mitra | ✅ TabFM (v27) dan Mitra (v25) null; Xiaomi-TabLDM tidak dicoba | – |
+| C1 lama: EXAONE 8–12k | ❌ tidak dicoba (prioritas kalah dari Kumo/Causilo) | – |
+| baru: model ICL relasional (KumoRelational) | ❌ ditunda (alasan di `rekomendasi.md`) | – |
+| baru: fine-tune Kumo | ⚠ script ada, baseline bug | lihat `rekomendasi.md` langkah 1 |

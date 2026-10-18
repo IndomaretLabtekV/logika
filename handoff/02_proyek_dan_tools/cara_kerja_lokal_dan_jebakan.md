@@ -1,5 +1,8 @@
 # Cara kerja lokal dan jebakan teknis
 
+> Bagian "Environment" dan "Dry run" di bawah berlaku untuk laptop lama (12–16 Okt, tanpa CUDA). Environment sekarang ada di
+> bagian "Mesin baru 17 Okt" di akhir file dan di `validation_v2_dan_tool.md`.
+
 ## Environment
 - `.venv`: Python 3.13, polars 2.0.0, numpy, scipy, dan matplotlib. **Tidak ada sklearn.** Untuk clustering pakai `scipy.cluster.vq.kmeans2`, untuk logistic regression pakai Newton numpy.
 - `.venv-rel`: Python 3.12 berisi tabpfn-rel, relarena-core[dfs], dan relbench, **tanpa torch**. Hanya untuk featurizer DFS native (`eda/66a`).
@@ -51,3 +54,30 @@ rm -rf ../output_v9 ../output                                  # bersihkan
 - Builder notebook (`notebook/build_vNN.py`) hanya `compile()` sel; aman dijalankan lokal karena tidak melatih apa pun.
 - Kredensial Kaggle CLI kedaluwarsa diam-diam (lihat `kaggle_cli_kernel_dan_submit.md`).
 - File di scratchpad sesi (`/tmp/claude-…/scratchpad`) hilang antar sesi; simpan apa pun yang penting di repo.
+
+## Mesin baru 17 Okt
+- CachyOS, i7-12700H (20 thread), RAM 32 GB, RTX 3070 Ti Laptop 8 GB. Repo `/home/veinsan/Projects/logika`.
+  Shell user **fish** (bukan bash/zsh).
+- `.venv` (Python 3.13) sekarang lengkap: torch CUDA, lightgbm, xgboost, catboost, tabm, causilo, sklearn,
+  structured-data-models. `.venv-zoo` untuk AutoGluon/TabArena. Versi: `validation_v2_dan_tool.md`.
+- Data diunduh ulang lewat Kaggle CLI ke `data/`; cache `data_pq/` dibangun ulang otomatis oleh `common.features()`.
+- Model boleh dilatih lokal (screening dan full fold), VRAM < 8 GB, satu job berat sekaligus.
+
+## Jebakan baru 17–18 Okt
+- **Laptop hang** (17 Okt ~15:00): TabICLv2 (AutoGluon) jatuh ke CPU (~500% CPU) bersamaan ablation LR yang memakai semua
+  thread. Aturan: satu job berat sekaligus, `OMP_NUM_THREADS=4` (maks 8), `nice -n 5` untuk job panjang.
+- **`pgrep -f` / `pkill -f` mencocokkan baris perintah sendiri.** Loop `until ! pgrep -f "<pola>"` tidak pernah selesai
+  (diagnostik `eda/106` tertunda ~1 jam), dan `pkill -f` pernah membunuh shell sendiri (exit 144). Ambil PID dengan
+  `ps -eo pid,args | grep "[p]ola"` lalu `kill <PID>`.
+- **Word-splitting argumen dalam loop**: di zsh/fish `"$a"` berisi beberapa argumen tidak dipecah seperti bash. Untuk loop
+  screening pakai script bash terpisah.
+- `statsmodels` tidak terpasang → log-likelihood LR pakai `sklearn.linear_model.LogisticRegression(C=1e6)` (lihat `eda/111`).
+- **Run parsial menimpa output.** `run_valid2.py` dengan `--folds` menulis file bernama sama; dulu fold lain bisa hilang.
+  Sekarang `valid2.run` menyimpan setelah setiap fold, tapi tetap pakai direktori output berbeda per run parsial lalu
+  gabung dengan `merge_runs.py`.
+- **OOM Kumo context besar**: set `PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True` dan chunk query 500–1000.
+  Fragmentasi (7,3 GB reserved-unallocated) adalah penyebab OOM v30 v1.
+- **TabFM di fp16 → prediksi NaN**; wajib `--fp32`. Context 20k OOM di T4 (12,4 GB).
+- **Estimasi waktu Kumo lokal**: ~55–65 menit per fold context penuh (termasuk 30k test), bukan 18 menit (angka 18 menit
+  dari screening tanpa test).
+- Python sistem tidak punya polars; `python3 -I` tidak melihat `.venv`. Selalu `.venv/bin/python`.

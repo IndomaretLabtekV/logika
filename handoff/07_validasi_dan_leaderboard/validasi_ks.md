@@ -44,3 +44,11 @@ Aturan praktis: selisih public < ±0,005 antara dua submission yang berkorelasi 
 - Top-1 public 16 Okt 0,57768 (cupuu), cutoff top-8 ~0,57005, kita ~#34 (0,56145). Dengan sd selisih 0,0026–0,0055 antar
   model kita sendiri, gap 0,016 tidak bisa ditutup oleh keberuntungan satu submission.
 - Batas submit 3/hari.
+
+## Revisi 17–18 Okt
+- Skema sekarang: **validation_v2** (`validation_v2.md`). Aturan keputusan submit: paired bootstrap P>0 ≥ 0,9 + mayoritas
+  fold vs resep v8 bersih, perkiraan public ± sd ditulis sebelum submit.
+- Noise public diperbarui di `noise_public_17_18okt.md`: varian dengan Spearman 0,9999 bisa beda ~0,001 di public; klaster
+  varian setara-CV sd 0,0006. Aturan praktis lama (selisih < ±0,005 = noise untuk Spearman > 0,998) tetap berlaku; untuk
+  Spearman > 0,9998 pakai ±0,002.
+- Slope "public ≈ OOF + 0,03" tidak dipakai lagi; perkiraan public dihitung dari selisih terhadap v8 di subset 30%.

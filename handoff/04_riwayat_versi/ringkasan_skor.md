@@ -82,3 +82,43 @@ cat_s_aug 0,5198, tabm_aug 0,5258).
 - Dua lompatan nyata saja: v1 → v2 (+0,011 public) dan v3 → v5 (+0,016 public, fitur harga).
 - Sejak v5 semua submission berkorelasi Spearman 0,996–0,9995 dengan v8; selisih public ±0,003 adalah noise per
   submission, **kecuali** pola sistematis: kandidat yang condong ke TabM / bobot negatif selalu turun (lihat bias OOF).
+
+## Submission 17–18 Okt (validation_v2, semua dengan pra-registrasi perkiraan ± sd)
+| Waktu (WIB) | Submission | Isi | CV vs resep v8 bersih | Perkiraan | Public |
+|---|---|---|---|---|---|
+| 18 Okt 04:22 | **v31** | rank-avg 6 GBDT 1/3 + Causilo 1/3 + Kumo ctx penuh 1/3 | +0,00221 (P 0,93, 4/5) | 0,5633 ± 0,0025 | **0,56405** |
+| 18 Okt 04:23 | v31b | Causilo 1/2 + Kumo 1/2 (tanpa pohon) | +0,00252 (P 0,91, 4/5) | 0,5642 ± 0,0017 | 0,55709 (−4 sd) |
+| 18 Okt 04:30 | v31c | Kumo ctx penuh saja | ≈ v31 (−0,0001 ± 0,0016) | 0,5640 ± 0,0021 | 0,56056 (−1,6 sd) |
+| 18 Okt 07:01 | v32 | 6 GBDT 1/3 + Kumo 2/3 (tanpa Causilo) | +0,00212 (P 0,91, 4/5) | 0,5640 ± 0,0018 | 0,56376 |
+| 18 Okt 07:04 | v34 | resep notebook final: 6 GBDT 1/3 + Causilo 1/3 + Kumo context 70k 1/3 | Spearman vs v31 0,99985 | 0,5640 ± 0,0006 | 0,56271 |
+| 18 Okt 07:22 | v35 | 6 GBDT 0,3 + Kumo 0,3 + Causilo 0,2 + TabM 0,1 + lr_q 0,1 | +0,00209 (P 0,95, **5/5**) | 0,5638 ± 0,0015 | 0,56298 |
+
+v31/v31b/v31c memakai kuota window 17→18 Okt; v32/v34/v35 kuota window 18 Okt (habis). Kandidat yang ditulis tapi tidak
+disubmit: `results/v24/v8recipe_clean.csv`, `results/v24/trees_causilo50.csv`, `results/v26/trees_causilo_kumo.csv`.
+Detail dan analisis: `v31_v35_submission.md`.
+
+## OOF bersih per model (validation_v2, pooled, seed 42/7/2026 untuk GBDT/TabM, 1 seed untuk ICL)
+| Model | OOF KS | Sumber |
+|---|---|---|
+| **Kumo-Tabular large, context penuh 56k** | **0,52665** | v28m |
+| Kumo large ctx penuh, seed generator kedua / rata-rata 2 seed | 0,52586 / 0,52569 | v33m / v36 |
+| Causilo (4 est, 100 fitur) | 0,52583 | v22 |
+| Kumo large, 2 draw ctx 20k | 0,52484 (Kaggle 0,52469) | v26_local / v26 |
+| seg_causilo | 0,52409 | v29m |
+| lgb / xgb / xgb_s | 0,52316 / 0,52310 / 0,52285 | v22 |
+| lr_q (LR rank-gauss) | 0,52119 | screen/lin_5f |
+| lgb_s / cat_s | 0,52118 / 0,52077 | v22 |
+| tabm | 0,52100 | v22 |
+| cat | 0,51975 | v22 |
+
+| Blend (cross-fit) | cf KS | Δ vs resep v8 (0,52426) | P>0 | fold menang |
+|---|---|---|---|---|
+| equal trees | 0,52448 | −0,0004 | 0,35 | 3/5 |
+| trees 50% + causilo 50% | 0,52527 | +0,0011 | 0,77 | 4/5 |
+| trees/causilo/kumo-20k 1:1:1 | 0,52602 | +0,00152 | 0,84 | 4/5 |
+| **trees/causilo/kumo ctx penuh 1:1:1 (v31)** | **0,52613** | **+0,00221** | **0,93** | **4/5** |
+| kumo_causilo_50 (v31b) | 0,52701 | +0,00252 | 0,91 | 4/5 |
+| v8 + 25% kumo | 0,52537 | +0,00134 | 0,93 | 4/5 |
+
+## Leaderboard 18 Okt
+Kita #24 (0,56405). Top-1 0,57768, #2 0,57530, #3 0,57290; tujuh tim > 0,570.

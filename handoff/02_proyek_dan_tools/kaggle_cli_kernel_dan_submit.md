@@ -1,7 +1,7 @@
 # Kaggle CLI: push kernel, ambil hasil, submit (alur sejak 16 Okt)
 
-Sejak 16 Okt assistant menjalankan model **langsung lewat Kaggle API** (bukan user upload manual). Tidak ada model atau
-notebook yang dijalankan lokal.
+Sejak 16 Okt assistant menjalankan model **langsung lewat Kaggle API** (bukan user upload manual). Sejak 17 Okt model
+juga boleh dijalankan lokal (GPU 3070); Kaggle dipakai untuk paralel, VRAM besar, dan notebook final.
 
 ## Akun dan auth
 - Akun Kaggle: `riantamaputra`. Kaggle CLI 2.2.4, kredensial OAuth di `~/.kaggle/credentials.json`.
@@ -59,3 +59,49 @@ logika-v18-bias (CPU), logika-v19-pl (CPU), logika-v21-feat (CPU). logika-v20-fm
   `data/sample_submission.csv`, tanpa null, nilai di [0, 1].
 - Submit dari assistant bisa ditolak classifier izin Claude Code ("Real-World Transactions") kalau user belum
   eksplisit meminta. Setelah user bilang "coba submit aja sendiri", submit berjalan.
+
+## Tambahan 17–18 Okt
+### Auth: access token kedaluwarsa tanpa login ulang
+- 18 Okt 01:29 WIB semua perintah membalas "Authentication required". `kaggle auth print-access-token` mencetak access
+  token baru dari refresh token (tanpa menyimpannya), jadi cukup:
+  ```
+  KAGGLE_API_TOKEN="$(kaggle auth print-access-token 2>/dev/null)" kaggle <perintah>
+  ```
+  Praktisnya dibuat wrapper kecil di scratchpad sesi (`kg`), isinya hanya baris itu + `exec kaggle "$@"`. Token **tidak**
+  ditulis ke file mana pun. Kalau `print-access-token` juga gagal, baru minta user `! kaggle auth login --force`.
+
+### Pola kernel v22+ (berbeda dari v10–v21)
+- Builder `notebook/build_vNN.py` menyematkan file repo (`features.py`, `nn_prep.py`, `valid2.py`, `run_valid2.py`,
+  dan script lain bila perlu) sebagai string → ditulis ke `/kaggle/working/code/` → dijalankan dengan
+  `subprocess.Popen` per GPU (`CUDA_VISIBLE_DEVICES=0/1`). Jadi kernel Kaggle menjalankan kode yang sama dengan lokal.
+- Builder menulis `notebook/vNN.ipynb`; salin ke `results/vNNk/<slug>.ipynb` lalu `kaggle kernels push -p results/vNNk`.
+  Notebook staging sudah dihapus saat bersih-bersih 18 Okt (duplikat `notebook/vNN.ipynb`); `kernel-metadata.json` tetap ada.
+- `kaggle kernels output` menaruh file di `results/vNN/vNN/...` dan log di `results/vNN/<slug>.log`. Salinan kode yang
+  dipakai saat run ada di `results/vNN/code/`.
+
+### Batasan yang ditemukan
+- **Maksimal 2 sesi GPU batch bersamaan.** Push ke-3 ditolak "Maximum batch GPU session count of 2 reached". Kernel v28
+  (duplikat run lokal) dihapus (`kaggle kernels delete`) supaya v29 bisa jalan.
+- **Status CANCEL_ACKNOWLEDGED bisa sementara.** 17 Okt 18:58 v25/v26 terbaca CANCEL_ACKNOWLEDGED, disimpulkan
+  "terblokir", padahal 21:30 v25 COMPLETE dan v26 RUNNING. Cek `kaggle kernels status` + `kaggle kernels list --mine`
+  minimal 2 kali dengan jeda sebelum menyimpulkan.
+- Kernel CLI tidak punya secret → TabPFN (gated) tidak bisa di Kaggle; dataset berisi token ditolak (jangan dicoba).
+- Paket `structured-data-models` (Kumo) dan bobotnya diunduh saat runtime (Internet on), tidak butuh token.
+
+### Slug kernel 17–18 Okt
+| Slug | Isi | Hasil |
+|---|---|---|
+| logika-v22-clean | rerun bersih resep v8 (6 GBDT × 3 seed, TabM 3 seed, Causilo) | COMPLETE, fondasi validation_v2 |
+| logika-v23-zoo | zoo TabArena ronde 1 (TabICL/v2, iLTM, TabDPT, Nori, LimiX, Mitra) | iLTM 0,5216; lainnya OOM/ditolak |
+| logika-v25-zoo2 | zoo ronde 2 (LimiX ctx 15k, TabDPT, Nori, Mitra, TabICLv2) | LimiX OOM, TabDPT gagal load, Nori gagal, Mitra 0,4488 |
+| logika-v26-kumo | Kumo large 2 draw ctx 20k, 5 fold | COMPLETE, = run lokal (reproducible) |
+| logika-v27-tabfm | TabFM fold 0 (v2: fp32, ctx 8k/4k) | null (0,5173 / 0,5169) |
+| logika-v28-kumo56k | Kumo context penuh 5 fold | **dihapus** saat jalan (duplikat run lokal, batas 2 sesi) |
+| logika-v29-segcausilo | Causilo per segmen has_history | null |
+| logika-v30-kumo70k | Kumo context 70k, test sekali (ukur waktu/VRAM) | 16.172 s, 6,5 GB |
+| logika-v33-kumo-g1 | Kumo ctx penuh seed generator kedua, fold 3–4 | null (bagian dari v33m) |
+| logika-final | notebook final penuh | COMPLETE, = v34 |
+
+### Submit 17–18 Okt
+Semua lewat `kaggle competitions submit ... -f <dir>/submission.csv -m "<isi + pertanyaan riset + perkiraan>"`.
+File kandidat disalin ke folder sementara sebagai `submission.csv`. Daftar dan hasil: `04_riwayat_versi/ringkasan_skor.md`.

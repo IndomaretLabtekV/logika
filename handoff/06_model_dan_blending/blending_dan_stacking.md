@@ -36,3 +36,29 @@
 - `results/v8/submission_v9_stack.csv` (stack LR 9 model v8) tidak pernah disubmit; dengan bukti di atas, kemungkinan
   besar juga di bawah v8 di public.
 - Tool lokal: `02_proyek_dan_tools/tools_bench_lokal.md`.
+
+## Revisi 17–18 Okt (validation_v2)
+### Cara memilih blend sekarang
+- `eda/blend2.py`: rank-average bobot non-negatif. Bobot dipilih di 4 outer fold (penugasan fold seed 42) lalu
+  diterapkan ke fold ke-5 → setiap baris yang dinilai tidak pernah dipakai memilih bobotnya. Pembanding: resep v8 di
+  model bersih (0,52426). Paired bootstrap selisih pooled KS + jumlah fold menang.
+- Aturan bobot tetap yang ditetapkan **sebelum** melihat hasil (misal 1:1:1 per keluarga) lebih jujur daripada greedy:
+  greedy bagged hanya +0,00164 (P 0,84) vs 1:1:1 +0,00221 (P 0,93) di v28; grid per segmen tidak stabil antar fold.
+- Hasil blend lengkap: `04_riwayat_versi/ringkasan_skor.md`.
+
+### Pelajaran public (6 submission, `04_riwayat_versi/v31_v35_submission.md`)
+| Komposisi | Public |
+|---|---|
+| pohon 1/3 + Causilo 1/3 + Kumo 1/3 (v31) | 0,56405 |
+| pohon 1/3 + Kumo 2/3 (v32) | 0,56376 |
+| pohon 0,3 + Kumo 0,3 + Causilo 0,2 + TabM 0,1 + LR 0,1 (v35) | 0,56298 |
+| pohon 1/3 + Causilo 1/3 + Kumo-70k 1/3 (v34) | 0,56271 |
+| Kumo saja (v31c) | 0,56056 |
+| Causilo 1/2 + Kumo 1/2 (v31b) | 0,55709 |
+| (16 Okt) NN/FM v8 saja (S5) | 0,55866 |
+
+- **GBDT minimal ~1/3.** Tiga blend tanpa pohon jatuh −0,003 s.d. −0,007 walau CV setara atau lebih tinggi.
+- Varian berpohon setara-CV mengumpul di 0,5627–0,5641 (sd 0,0006). Selisih di dalam klaster = noise.
+- Kurva CV porsi pohon datar 0–0,4 (0,5270 → 0,5259) lalu turun setelah 0,5 → 1/3 adalah pilihan CV-konsisten
+  yang juga aman di public. Jangan menyetel bobot dari public.
+- Stack logit-LR tetap tidak dipakai (bobot negatif kalah di public 2×, 16 Okt).

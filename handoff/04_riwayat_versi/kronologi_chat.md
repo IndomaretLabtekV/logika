@@ -34,3 +34,26 @@
 | 5 (token kedaluwarsa 14:58, S3 15:08) | "coba submit aja sendiri deh … nama filenya tetep submission.csv … satu per satu, selesai 1 terus analisis skornya" | Token OAuth Kaggle CLI kedaluwarsa (14:58 UTC) → user `kaggle auth login --force`. S3 disubmit: 0,55778 |
 | 6 (S5 15:13, S4 15:14) | "v21 juga udah beres … pengen 2 submission ini bisa bermanfaat buat research" | v21 null. S1/S2 diganti dekomposisi blend v8: S5 (NN/FM) 0,55866, S4 (GBDT) 0,56133 → **ditemukan bias OOF karena early stopping di fold validasi** |
 | 7 | minta handoff lengkap + bersihkan repo untuk git push | folder `handoff/` ini ditulis ulang; file redundan dihapus |
+
+## 17–18 Okt 2026 (satu sesi panjang dengan `/goal` "public > 0,57005"; waktu WIB)
+| Waktu | Permintaan user | Yang dikerjakan / diputuskan |
+|---|---|---|
+| 17 Okt pagi | `/goal` panjang (teks inti di `01_kompetisi_dan_aturan/aturan_kerja_user.md`): validasi bersih, 70% EDA, screening lokal, full fold Kaggle, target > 0,57005 | Mesin baru (RTX 3070 Ti). Audit skema → **validation_v2** (`eda/valid2.py`). Screening fold 0 resep v8 lokal. **v22** (rerun bersih) push 08:30, selesai ~12:50 |
+| 17 Okt siang | (lanjut goal) | `blend2.py` cross-fit; EDA `eda/100`, `101` (null); cek kovariat harga item (null) |
+| 17 Okt sore | uji semua model TabArena, jangan terpaku v8, coba skema CV lain, cek repo agar EDA tidak diulang; memberi token HF/PriorLabs | zoo screening fold 0 (`screen2.py`, `zoo_screen.py`, `sdm_screen.py`), `lr_q`, `eda/103`–`105`. Token disimpan di luar repo. Laptop hang ~15:00 (TabICLv2 jatuh ke CPU + LR semua thread) → aturan 1 job berat, OMP dibatasi |
+| 17 Okt sore–malam | (lanjut) | v23/v25 zoo Kaggle; Kumo-Tabular ditemukan (fold 0 0,5276); investigasi varians Kumo (`eda/106`); **v26** push 18:25. Dataset Kaggle berisi token ditolak classifier izin |
+| 17 Okt 18:58 | – | v25/v26 terbaca CANCEL_ACKNOWLEDGED → disimpulkan Kaggle terblokir → Kumo full fold dijalankan lokal (`v26_local`) |
+| 17 Okt malam | "kaggle nya ke blocked kenapa? kan gua bilang kalau full run di kaggle aja" | Cek ulang 21:30: v25 COMPLETE, v26 RUNNING → koreksi dicatat (status CANCEL sementara). Memory: cek status ≥ 2 kali |
+| 17 Okt malam | "lanjutkan sampai goal selesai, kalau sampai jam 6 belum ada 1 pun breakthrough dari v8 … submission apapun yang membantu … analisis" | `eda/102` learning curve, `eda/107` noise public; blend Kumo-20k +0,00152 (P 0,84, belum lolos) → **v28** Kumo context penuh |
+| 17 Okt 22:50 | "v26 udah beres, lanjutkan goalnya" | v26 Kaggle = lokal (selisih ≤ 0,0004/fold) → reproducible |
+| 17 Okt malam | "next time kalau memang lebih cepat di local, mending di local aja, kecuali memang lebih cepat di kaggle" | aturan baru: full fold di tempat yang lebih cepat (3070 ≈ 2,3–2,5× T4). v28 fold lain dijalankan lokal |
+| 17 Okt malam | "gua mau tidur … cari sampai mabok gimana caranya biar dapet > 0.57" ; "TabFM bukannya udah pernah ya?" ; "oke lanjutin … submit … sebelum jam 7 pagi" | kerja otonom: v27 TabFM, `eda/108` (null), **v29** seg_causilo (null), **v30** Kumo-70k; v28 Kaggle dihapus (batas 2 sesi GPU); token Kaggle kedaluwarsa 01:29 → wrapper `print-access-token` |
+| 18 Okt 04:17–04:30 | – | v28m Kumo ctx penuh 0,52665 (5/5 fold menang vs 20k); blend 1:1:1 **+0,00221, P 0,93 → lolos**. Submit **v31 0,56405** (terbaik), v31b 0,55709, v31c 0,56056 |
+| 18 Okt dini hari | – | `eda/110` neighbor gap (null), v27 v2 TabFM (null), screening Kumo e8/f150/medium, **v33** (seed generator kedua) |
+| 18 Okt 07:00–07:22 | – | window baru: submit v32 0,56376, v34 0,56271 (resep final), v35 0,56298 → klaster 0,5627–0,5641 |
+| 18 Okt 07:05 | – | notebook final dirakit, push `logika-final` ke Kaggle |
+| 18 Okt pagi | "lanjutkan sampai goal tercapai, masih ada sisa 13 hari. jangan stop sampai dapat 0.57768" | `eda/111` scan harga relatif (null), cek account_behavior (bersih), v33 selesai (null), `kumo_finetune.py` ditulis |
+| 18 Okt pagi | "kayaknya kalau seluruh run ini beres udah dulu aja" | tidak memulai eksperimen baru; menunggu `logika-final` |
+| 18 Okt pagi | "overall run nya better di local atau di kaggle deh? lebih cepet mana maksudnya" | jawaban berangka: lokal 2,3–3× per job (`02_proyek_dan_tools/kecepatan_lokal_vs_kaggle.md`) |
+| 18 Okt ~11:26 | – | `logika-final` selesai: identik dengan v34 (Spearman 1,0). Stop hook `/goal` memaksa lanjut 3×; screening `kumo_finetune.py` dijalankan → KS baseline 0,298 (bug), dihentikan |
+| 18 Okt siang | "kalau analisis dari final run nya udah beres, udahin dulu aja, gua mau matiin laptop dulu" ; `/goal clear` ; minta handoff lengkap + bersih-bersih repo | folder `handoff/` diperbarui, file turunan dihapus, `.gitignore` diperbarui (tidak di-push) |

@@ -1,30 +1,32 @@
 # DSC LOGIKA UI 2026 — Credit Risk (KS)
 
 Prediksi pinjaman yang mencapai DPD ≥ 90 dalam 12 bulan. Metrik: KS. Deadline notebook: 30 Oktober 2026, 23:59 WIB.
-Status, riwayat versi v1–v9, temuan, dan langkah berikutnya ada di **[`handoff/`](handoff/README.md)**. Baca itu dulu.
+Status, riwayat versi v1–v36, temuan, dan langkah berikutnya ada di **[`handoff/`](handoff/README.md)**. Baca itu dulu.
+
+Public terbaik 0,56405 (v31: rank blend 6 GBDT + Causilo + NVIDIA Kumo-Tabular). Notebook final:
+`notebook/build_final.py` → `notebook/final.ipynb`.
 
 | Path | Isi |
 |---|---|
-| `handoff/` | Handoff lengkap: status, aturan, data, fitur, riwayat versi, katalog eksperimen, model, pelajaran, dan rekomendasi |
+| `handoff/` | Handoff lengkap: status, aturan, tools, data, fitur, riwayat versi, katalog eksperimen, model, validasi, pelajaran, rekomendasi |
 | `docs/context.md` | Overview, dataset, dan rules kompetisi (salinan halaman Kaggle) |
-| `docs/data_guide.md` | Panduan dataset dan saran keluarga fitur |
-| `docs/reports/` | Laporan EDA awal (`EDA_RESEARCH_REPORT.md`) dan risk exploration (`RISK_EXPLORATION_REPORT.md`) |
-| `data/` | CSV kompetisi (tidak di-commit). Taruh file dari Kaggle di sini |
-| `eda/` | Pipeline utama: `features.py` (sumber fitur tunggal), `nn_prep.py`, `common.py`, script analisis `00`–`96`, output di `eda/out/` |
+| `docs/data_guide.md`, `docs/reports/` | Panduan dataset dan laporan EDA awal (repo teman) |
+| `data/` | CSV kompetisi (tidak di-commit). Unduh dari Kaggle ke sini |
+| `eda/` | `features.py` (sumber fitur tunggal), `valid2.py` + `run_valid2.py` (validation_v2), `blend2.py`, script analisis `00`–`111`, output di `eda/out/` |
 | `eda/deep/`, `eda/v5_review/` … `eda/v8_review/` | Audit independen per versi |
-| `eda/baseline_duckdb/` | EDA dan fitur SQL baseline awal (DuckDB, 63 fitur) |
-| `eda/risk_exploration/` | Risk exploration lanjutan (DuckDB SQL), output di `outputs/04_risk_exploration/` |
-| `notebook/build_notebook.py` | Builder notebook Kaggle aktif (v9). `dryrun_stub.py` untuk dry run lokal tanpa model |
-| `notebook/v1.ipynb` … `v9.ipynb` | Notebook hasil run Kaggle T4x2 |
-| `notebook/0-initial-iteration/` | Baseline awal: tiga notebook GBDT CPU (pooled OOF KS sekitar 0,48) |
-| `results/v1` … `v9/` | Output Kaggle: OOF/test prediksi per model, submission, gambar |
+| `eda/baseline_duckdb/`, `eda/risk_exploration/` | EDA SQL baseline awal (DuckDB) |
+| `notebook/build_final.py`, `final.ipynb` | Notebook final (Kaggle T4×2) |
+| `notebook/build_vNN.py`, `vNN.ipynb` | Builder dan notebook eksperimen v1–v33 |
+| `results/` | Prediksi OOF/test per model (dengan application_id), kandidat submission, log run |
+| `submissions/probe/` | Probe submission 16 Okt |
 | `ref/notebook/` | Skill dan konvensi penulisan notebook |
 | `research/` | Indeks paper metode (PDF diunduh ulang dengan `download_papers.py`) |
 
-## Setup lokal
+## Setup lokal (CachyOS, RTX 3070 Ti 8 GB)
 ```bash
-uv venv .venv && uv pip install --python .venv/bin/python polars==2.0.0 numpy scipy matplotlib
-cd eda && ../.venv/bin/python 02_build_features.py                       # bangun cache data_pq/
-uv pip install --python .venv/bin/python -r eda/baseline_duckdb/requirements.txt   # untuk eda/baseline_duckdb dan eda/risk_exploration
+uv venv .venv && uv pip install --python .venv/bin/python polars==2.0.0 numpy scipy matplotlib scikit-learn \
+    lightgbm xgboost catboost torch tabm==0.0.3 rtdl_num_embeddings==0.0.12 structured-data-models
+uv pip install --python .venv/bin/python --no-deps causilo
+cd eda && ../.venv/bin/python run_valid2.py ../results/screen/check lgb --folds 0 --seeds 42   # bangun cache + screening
 ```
-Model **tidak** dilatih di lokal. Semua training dilakukan di Kaggle (GPU T4 x2). Panduannya ada di `handoff/02_proyek_dan_tools/`.
+Versi persis dan environment `.venv-zoo` (AutoGluon/TabArena): `handoff/02_proyek_dan_tools/validation_v2_dan_tool.md`.

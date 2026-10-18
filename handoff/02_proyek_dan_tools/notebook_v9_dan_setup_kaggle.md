@@ -1,4 +1,7 @@
-# Notebook v9 (versi pipeline penuh terakhir) dan setup Kaggle
+# Notebook v9 (pipeline penuh era lama) dan setup Kaggle
+
+> Riwayat. Notebook yang dipakai sekarang adalah `notebook/build_final.py` (lihat `notebook_final.md`). Bagian setup
+> Kaggle manual di bawah masih berlaku kalau user ingin menjalankan dari UI.
 
 ⚠ **Masalah validasi:** builder ini (`notebook/build_notebook.py`) melakukan early stopping LGB/XGB/CatBoost/TabM di fold validasi (baris 874, 932, 966/973, 1169), sehingga OOF optimis. Perbaiki dulu sebelum dipakai untuk notebook final. Lihat `07_validasi_dan_leaderboard/bias_oof_early_stopping.md` dan `09_langkah_berikutnya/rekomendasi.md`.
 

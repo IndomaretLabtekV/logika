@@ -44,3 +44,10 @@ Sumber lengkap: `docs/context.md`. Ringkasan bagian yang relevan:
 - Top-1 public **0,57768** (tim "cupuu"). Cutoff top-8 sekitar **0,57005**.
 - Tim kita "lagi mager lomba bentar": 0,56145 (v5 dan v8), peringkat sekitar 34.
 - Akun Kaggle: `riantamaputra`. Slug kompetisi: `data-science-competition-logika-ui-2026`.
+
+## Posisi leaderboard (18 Okt)
+- Kita **#24** dengan 0,56405 (v31). Top-1 0,57768, #2 0,57530, #3 0,57290; tujuh tim di atas 0,570.
+- Rentang 0,563–0,568 sangat padat. Cutoff top-8 sekitar 0,570.
+- Penilaian (docs/context.md §6): public 45% + private 45% + notebook 10% (reproducibility). Proporsi baris public/private
+  tidak diketahui; analisis noise memakai asumsi public = 30% test (9.000 baris).
+- Riwayat lengkap submission: `04_riwayat_versi/ringkasan_skor.md`.

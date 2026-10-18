@@ -39,3 +39,20 @@
   (`TabPFNClassifier(n_estimators, device, ignore_pretraining_limits=True, categorical_features_indices)`, butuh token).
 - LightGBM objective `rank_xendcg` dan XGBoost `rank:pairwise` butuh grup; dipakai grup acak 1.000 baris (v15).
 - Kesimpulan riset 16 Okt: tidak ada model eksternal yang mengubah gambaran; masalah utama ada di validasi, bukan model.
+
+## Tambahan 17–18 Okt
+- **NVIDIA Kumo-Tabular** (paket PyPI `structured-data-models` 0.2.1, import `sdm`): `sdm.models.KumoTabular(task=
+  "classification", size="small|medium|large", device)`; input `sdm.TableTensor.from_pandas(df, stypes)` dengan
+  `sdm.infer_stypes(df, overrides={"target": "categorical", <fitur>: "numerical"})`; prediksi
+  `model(x_context=..., y_context=..., x_query=..., num_estimators=4, generator=g)`, probabilitas kelas "1" =
+  `out.to_pandas()["1"]` (= `out.numerical[..., 1]`). Bobot large fp32 816 MB, diunduh otomatis. Paket yang sama memuat
+  **TabFM** (Google, lisensi non-komersial → `accept_license=True`, ~7 GB, wajib fp32) dan **TabICLv2**.
+  KumoRelational ditunda: sampler graf mengambil tetangga terbatas (merusak agregat seperti pp_mean), basis TabICLv2
+  lemah di data ini, v14 set-encoder baris mentah null, biaya ~½ hari.
+- **TabArena** (`tabarena` 0.1.0 + `autogluon.tabular` 1.6.3, `.venv-zoo`): model zoo lewat AutoGluon (LimiX, TabFM,
+  Mitra, TabDPT, Nori, iLTM, TabICL/v2, RealMLP, TabSwift, LGB/XGB/Cat/NN/FastAI/Linear/RF/XT/KNN). Estimasi memori
+  AutoGluon menolak banyak model di 8 GB / 15 GB; rasio memori bisa dinaikkan. TabDPT gagal load checkpoint
+  (`Missing key enc_cell_dim`) karena versi wrapper tidak cocok.
+- TabPFN-3.5 (paket `tabpfn` 9.0.0, gated, token PriorLabs/HF) hanya bisa lokal (kernel CLI tanpa secret).
+- Kesimpulan riset 17–18 Okt: zoo TabArena praktis tuntas; satu-satunya model eksternal yang menambah adalah Kumo-Tabular
+  large dengan context penuh. Model > 8 GB VRAM tidak memberi apa-apa di T4.
