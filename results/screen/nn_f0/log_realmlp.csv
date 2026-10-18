@@ -1,0 +1,2 @@
+model,seed,fold,ks,budget,sec
+realmlp,42,0,0.5157413482666016,0,336.6

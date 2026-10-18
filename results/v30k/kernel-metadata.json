@@ -1,0 +1,5 @@
+{"id": "riantamaputra/logika-v30-kumo70k", "title": "Logika v30 kumo70k", "code_file": "logika-v30-kumo70k.ipynb",
+ "language": "python", "kernel_type": "notebook", "is_private": true, "enable_gpu": true, "enable_tpu": false,
+ "enable_internet": true, "keywords": [], "dataset_sources": [], "kernel_sources": [],
+ "competition_sources": ["data-science-competition-logika-ui-2026"], "model_sources": [],
+ "machine_shape": "NvidiaTeslaT4"}

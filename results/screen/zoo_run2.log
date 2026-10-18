@@ -1,0 +1,259 @@
+AutoGluon infers your prediction problem is: 'binary' (because only two unique label-values observed).
+	If 'binary' is not the correct problem_type, please manually specify the problem_type parameter during Predictor init (You may specify problem_type as one of: ['binary', 'multiclass', 'regression', 'quantile'])
+	Warning: Exception caused TA-LimiX to fail during training... Skipping this model.
+		CUDA out of memory. Tried to allocate 10.84 GiB. GPU 0 has a total capacity of 7.69 GiB of which 972.19 MiB is free. Process 1297 has 34.84 MiB memory in use. Including non-PyTorch memory, this process has 6.39 GiB memory in use. Of the allocated memory 6.09 GiB is allocated by PyTorch, and 116.43 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+Detailed Traceback:
+Traceback (most recent call last):
+  File "/home/veinsan/Projects/logika/.venv-zoo/lib/python3.13/site-packages/autogluon/tabular/trainer/abstract_trainer.py", line 2451, in _train_and_save
+    y_pred_proba_val = model.predict_proba(X_val, record_time=True)
+  File "/home/veinsan/Projects/logika/.venv-zoo/lib/python3.13/site-packages/autogluon/core/models/abstract/abstract_model.py", line 1786, in predict_proba
+    y_pred_proba = self._predict_proba_internal(X=X, normalize=normalize, **kwargs)
+  File "/home/veinsan/Projects/logika/.venv-zoo/lib/python3.13/site-packages/autogluon/core/models/abstract/abstract_model.py", line 1827, in _predict_proba_internal
+    y_pred_proba = self._predict_proba(X=X, **kwargs)
+  File "/home/veinsan/Projects/logika/.venv-zoo/lib/python3.13/site-packages/tabarena/models/limix/model.py", line 217, in _predict_proba
+    chunk_out = self.model.predict(
+        self.model._X_train,
+    ...<2 lines>...
+        task_type=task_type,
+    )
+  File "/home/veinsan/Projects/logika/.venv-zoo/lib/python3.13/site-packages/tabarena/models/limix/_vendor/inference/predictor.py", line 289, in predict
+    return self._predict_cls(x_train, y_train, x_test)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/veinsan/Projects/logika/.venv-zoo/lib/python3.13/site-packages/tabarena/models/limix/_vendor/inference/predictor.py", line 333, in _predict_cls
+    feature_attention_score, sample_attention_score = step.inference(X_train=x_[:len(y_train)].astype(np.float32),
+                                                      ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                                                                     y_train=y_train.astype(np.float32),
+                                                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                                                                     X_test=x_[len(y_train):].astype(np.float32),
+                                                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                                                                     task_type="cls",device=self.device)
+                                                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/veinsan/Projects/logika/.venv-zoo/lib/python3.13/site-packages/tabarena/models/limix/_vendor/inference/inference_method.py", line 309, in inference
+    output, feature_attention, sample_attention = model(x=x_, y=y_, eval_pos=y_.shape[1],
+                                                  ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                                                        task_type=task_type,
+                                                        ^^^^^^^^^^^^^^^^^^^^
+                                                        calculate_feature_attention=self.calculate_feature_attention,
+                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                                                        calculate_sample_attention=self.calculate_sample_attention)
+                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/veinsan/Projects/logika/.venv-zoo/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/veinsan/Projects/logika/.venv-zoo/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/veinsan/Projects/logika/.venv-zoo/lib/python3.13/site-packages/tabarena/models/limix/_vendor/model/transformer.py", line 157, in forward
+    x_encoder_result = self.encoder_x(preprocessed_x)
+  File "/home/veinsan/Projects/logika/.venv-zoo/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/veinsan/Projects/logika/.venv-zoo/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/veinsan/Projects/logika/.venv-zoo/lib/python3.13/site-packages/tabarena/models/limix/model.py", line 335, in forward
+    out = self.inner(x)
+  File "/home/veinsan/Projects/logika/.venv-zoo/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/veinsan/Projects/logika/.venv-zoo/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/veinsan/Projects/logika/.venv-zoo/lib/python3.13/site-packages/torch/nn/modules/container.py", line 250, in forward
+    input = module(input)
+  File "/home/veinsan/Projects/logika/.venv-zoo/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/veinsan/Projects/logika/.venv-zoo/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/veinsan/Projects/logika/.venv-zoo/lib/python3.13/site-packages/tabarena/models/limix/_vendor/model/encoders.py", line 347, in forward
+    x_emb = self.numeric_mlp(x)
+  File "/home/veinsan/Projects/logika/.venv-zoo/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/veinsan/Projects/logika/.venv-zoo/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/veinsan/Projects/logika/.venv-zoo/lib/python3.13/site-packages/torch/nn/modules/container.py", line 250, in forward
+    input = module(input)
+  File "/home/veinsan/Projects/logika/.venv-zoo/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/veinsan/Projects/logika/.venv-zoo/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/veinsan/Projects/logika/.venv-zoo/lib/python3.13/site-packages/torch/nn/modules/normalization.py", line 229, in forward
+    return F.layer_norm(
+           ~~~~~~~~~~~~^
+        input, self.normalized_shape, self.weight, self.bias, self.eps
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/veinsan/Projects/logika/.venv-zoo/lib/python3.13/site-packages/torch/nn/functional.py", line 2901, in layer_norm
+    return torch.layer_norm(
+           ~~~~~~~~~~~~~~~~^
+        input, normalized_shape, weight, bias, eps, torch.backends.cudnn.enabled
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 10.84 GiB. GPU 0 has a total capacity of 7.69 GiB of which 972.19 MiB is free. Process 1297 has 34.84 MiB memory in use. Including non-PyTorch memory, this process has 6.39 GiB memory in use. Of the allocated memory 6.09 GiB is allocated by PyTorch, and 116.43 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+Warning: AutoGluon did not successfully train any models
+Traceback (most recent call last):
+  File "/home/veinsan/Projects/logika/eda/zoo_screen.py", line 54, in main
+    pred = TabularPredictor(label="target", eval_metric="roc_auc", path=str(path), verbosity=1).fit(
+        train_data=df.iloc[tr[fi]], tuning_data=df.iloc[tr[st]], hyperparameters={cls(name): {}},
+        num_gpus=1, fit_weighted_ensemble=False, time_limit=minutes * 60, raise_on_no_models_fitted=True)
+  File "/home/veinsan/Projects/logika/.venv-zoo/lib/python3.13/site-packages/autogluon/common/utils/decorators.py", line 34, in _call
+    return f(*gargs, **gkwargs)
+  File "/home/veinsan/Projects/logika/.venv-zoo/lib/python3.13/site-packages/autogluon/tabular/predictor/predictor.py", line 1596, in fit
+    self._fit(ag_fit_kwargs=ag_fit_kwargs, ag_post_fit_kwargs=ag_post_fit_kwargs)
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/veinsan/Projects/logika/.venv-zoo/lib/python3.13/site-packages/autogluon/tabular/predictor/predictor.py", line 1604, in _fit
+    self._post_fit(**ag_post_fit_kwargs)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/veinsan/Projects/logika/.venv-zoo/lib/python3.13/site-packages/autogluon/tabular/predictor/predictor.py", line 2010, in _post_fit
+    raise RuntimeError(
+    ...<3 lines>...
+    )
+RuntimeError: No models were trained successfully during fit(). Inspect the log output or increase verbosity to determine why no models were fit. Alternatively, set `raise_on_no_models_fitted` to False during the fit call.
+{'model': 'LimiXModel', 'ks': nan, 'status': 'RuntimeError: No models were trained successfully during fit(). Inspect the log output or increase verbosity to determine why no models were fit. Alternatively, set `raise_on', 'sec': 25}
+AutoGluon infers your prediction problem is: 'binary' (because only two unique label-values observed).
+	If 'binary' is not the correct problem_type, please manually specify the problem_type parameter during Predictor init (You may specify problem_type as one of: ['binary', 'multiclass', 'regression', 'quantile'])
+	Warning: Exception caused TA-TabPFN-3 to fail during training... Skipping this model.
+		CUDA out of memory with 8,000 test samples.
+
+This is issue is usually caused by one of the following two reasons:
+
+1) Large test set — split into batches:
+
+    predictions = []
+    for i in range(0, len(X_test), 100):
+        pred = model.predict_proba(X_test[i:i + 100])
+        predictions.append(pred)
+    predictions = np.vstack(predictions)
+
+   Only with fit_mode='fit_with_cache', test rows are chunked
+   automatically — lower the TABPFN_MAX_BATCHED_TEST_ROWS
+   environment variable (currently 32768) to
+   reduce peak memory without changing your code.
+
+2) Large training set — batching won't help.
+   Subsample your training data; see https://docs.priorlabs.ai
+   for further guidance.
+
+Your sizes: 48,000 train / 8,000 test samples, 231 features.
+Not sure which? If model.predict_proba(X_test[:1]) also fails, it's (2).
+
+Original error: CUDA out of memory. Tried to allocate 322.00 MiB. GPU 0 has a total capacity of 7.69 GiB of which 216.19 MiB is free. Process 1297 has 34.84 MiB memory in use. Including non-PyTorch memory, this process has 7.13 GiB memory in use. Of the allocated memory 6.78 GiB is allocated by PyTorch, and 125.01 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+Detailed Traceback:
+Traceback (most recent call last):
+  File "/home/veinsan/Projects/logika/.venv-zoo/lib/python3.13/site-packages/autogluon/tabular/trainer/abstract_trainer.py", line 2451, in _train_and_save
+    y_pred_proba_val = model.predict_proba(X_val, record_time=True)
+  File "/home/veinsan/Projects/logika/.venv-zoo/lib/python3.13/site-packages/autogluon/core/models/abstract/abstract_model.py", line 1786, in predict_proba
+    y_pred_proba = self._predict_proba_internal(X=X, normalize=normalize, **kwargs)
+  File "/home/veinsan/Projects/logika/.venv-zoo/lib/python3.13/site-packages/autogluon/core/models/abstract/abstract_model.py", line 1827, in _predict_proba_internal
+    y_pred_proba = self._predict_proba(X=X, **kwargs)
+  File "/home/veinsan/Projects/logika/.venv-zoo/lib/python3.13/site-packages/autogluon/core/models/abstract/abstract_model.py", line 1866, in _predict_proba
+    y_pred_proba = self.model.predict_proba(X)
+  File "/home/veinsan/Projects/logika/.venv-zoo/lib/python3.13/site-packages/tabpfn/classifier.py", line 1616, in predict_proba
+    return self._predict_proba(X)
+           ~~~~~~~~~~~~~~~~~~~^^^
+  File "/home/veinsan/.local/share/uv/python/cpython-3.13.16-linux-x86_64-gnu/lib/python3.13/contextlib.py", line 85, in inner
+    return func(*args, **kwds)
+  File "/home/veinsan/Projects/logika/.venv-zoo/lib/python3.13/site-packages/tabpfn/classifier.py", line 1630, in _predict_proba
+    self._raw_predict(X, return_logits=False).float().detach().cpu().numpy()
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/veinsan/Projects/logika/.venv-zoo/lib/python3.13/site-packages/tabpfn/classifier.py", line 1536, in _raw_predict
+    with handle_oom_errors(
+         ~~~~~~~~~~~~~~~~~^
+        self.devices_,
+        ^^^^^^^^^^^^^^
+    ...<2 lines>...
+        n_train_samples=getattr(self, "n_train_samples_", None),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ):
+    ^
+  File "/home/veinsan/.local/share/uv/python/cpython-3.13.16-linux-x86_64-gnu/lib/python3.13/contextlib.py", line 162, in __exit__
+    self.gen.throw(value)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "/home/veinsan/Projects/logika/.venv-zoo/lib/python3.13/site-packages/tabpfn/errors.py", line 192, in handle_oom_errors
+    raise TabPFNCUDAOutOfMemoryError(
+    ...<5 lines>...
+    ) from None
+tabpfn.errors.TabPFNCUDAOutOfMemoryError: CUDA out of memory with 8,000 test samples.
+
+This is issue is usually caused by one of the following two reasons:
+
+1) Large test set — split into batches:
+
+    predictions = []
+    for i in range(0, len(X_test), 100):
+        pred = model.predict_proba(X_test[i:i + 100])
+        predictions.append(pred)
+    predictions = np.vstack(predictions)
+
+   Only with fit_mode='fit_with_cache', test rows are chunked
+   automatically — lower the TABPFN_MAX_BATCHED_TEST_ROWS
+   environment variable (currently 32768) to
+   reduce peak memory without changing your code.
+
+2) Large training set — batching won't help.
+   Subsample your training data; see https://docs.priorlabs.ai
+   for further guidance.
+
+Your sizes: 48,000 train / 8,000 test samples, 231 features.
+Not sure which? If model.predict_proba(X_test[:1]) also fails, it's (2).
+
+Original error: CUDA out of memory. Tried to allocate 322.00 MiB. GPU 0 has a total capacity of 7.69 GiB of which 216.19 MiB is free. Process 1297 has 34.84 MiB memory in use. Including non-PyTorch memory, this process has 7.13 GiB memory in use. Of the allocated memory 6.78 GiB is allocated by PyTorch, and 125.01 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+Warning: AutoGluon did not successfully train any models
+Traceback (most recent call last):
+  File "/home/veinsan/Projects/logika/eda/zoo_screen.py", line 54, in main
+    pred = TabularPredictor(label="target", eval_metric="roc_auc", path=str(path), verbosity=1).fit(
+        train_data=df.iloc[tr[fi]], tuning_data=df.iloc[tr[st]], hyperparameters={cls(name): {}},
+        num_gpus=1, fit_weighted_ensemble=False, time_limit=minutes * 60, raise_on_no_models_fitted=True)
+  File "/home/veinsan/Projects/logika/.venv-zoo/lib/python3.13/site-packages/autogluon/common/utils/decorators.py", line 34, in _call
+    return f(*gargs, **gkwargs)
+  File "/home/veinsan/Projects/logika/.venv-zoo/lib/python3.13/site-packages/autogluon/tabular/predictor/predictor.py", line 1596, in fit
+    self._fit(ag_fit_kwargs=ag_fit_kwargs, ag_post_fit_kwargs=ag_post_fit_kwargs)
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/veinsan/Projects/logika/.venv-zoo/lib/python3.13/site-packages/autogluon/tabular/predictor/predictor.py", line 1604, in _fit
+    self._post_fit(**ag_post_fit_kwargs)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/veinsan/Projects/logika/.venv-zoo/lib/python3.13/site-packages/autogluon/tabular/predictor/predictor.py", line 2010, in _post_fit
+    raise RuntimeError(
+    ...<3 lines>...
+    )
+RuntimeError: No models were trained successfully during fit(). Inspect the log output or increase verbosity to determine why no models were fit. Alternatively, set `raise_on_no_models_fitted` to False during the fit call.
+{'model': 'TabPFN3Model', 'ks': nan, 'status': 'RuntimeError: No models were trained successfully during fit(). Inspect the log output or increase verbosity to determine why no models were fit. Alternatively, set `raise_on', 'sec': 17}
+AutoGluon infers your prediction problem is: 'binary' (because only two unique label-values observed).
+	If 'binary' is not the correct problem_type, please manually specify the problem_type parameter during Predictor init (You may specify problem_type as one of: ['binary', 'multiclass', 'regression', 'quantile'])
+	Warning: Not enough memory to safely train model. Estimated to require 1158.084 GB out of 23.700 GB available memory (4886.533%)... (90.000% of avail memory is the max safe size)
+	To force training the model, specify the model hyperparameter "ag.max_memory_usage_ratio" to a larger value (currently 1.0, set to >=54.34 to avoid the error)
+		To set the same value for all models, do the following when calling predictor.fit: `predictor.fit(..., ag_args_fit={"ag.max_memory_usage_ratio": VALUE})`
+		Setting "ag.max_memory_usage_ratio" to values above 1 may result in out-of-memory errors. You may consider using a machine with more memory as a safer alternative.
+	Not enough memory to train Mitra... Skipping this model.
+Warning: AutoGluon did not successfully train any models
+Traceback (most recent call last):
+  File "/home/veinsan/Projects/logika/eda/zoo_screen.py", line 54, in main
+    pred = TabularPredictor(label="target", eval_metric="roc_auc", path=str(path), verbosity=1).fit(
+        train_data=df.iloc[tr[fi]], tuning_data=df.iloc[tr[st]], hyperparameters={cls(name): {}},
+        num_gpus=1, fit_weighted_ensemble=False, time_limit=minutes * 60, raise_on_no_models_fitted=True)
+  File "/home/veinsan/Projects/logika/.venv-zoo/lib/python3.13/site-packages/autogluon/common/utils/decorators.py", line 34, in _call
+    return f(*gargs, **gkwargs)
+  File "/home/veinsan/Projects/logika/.venv-zoo/lib/python3.13/site-packages/autogluon/tabular/predictor/predictor.py", line 1596, in fit
+    self._fit(ag_fit_kwargs=ag_fit_kwargs, ag_post_fit_kwargs=ag_post_fit_kwargs)
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/veinsan/Projects/logika/.venv-zoo/lib/python3.13/site-packages/autogluon/tabular/predictor/predictor.py", line 1604, in _fit
+    self._post_fit(**ag_post_fit_kwargs)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/veinsan/Projects/logika/.venv-zoo/lib/python3.13/site-packages/autogluon/tabular/predictor/predictor.py", line 2010, in _post_fit
+    raise RuntimeError(
+    ...<3 lines>...
+    )
+RuntimeError: No models were trained successfully during fit(). Inspect the log output or increase verbosity to determine why no models were fit. Alternatively, set `raise_on_no_models_fitted` to False during the fit call.
+{'model': 'MitraModel', 'ks': nan, 'status': 'RuntimeError: No models were trained successfully during fit(). Inspect the log output or increase verbosity to determine why no models were fit. Alternatively, set `raise_on', 'sec': 2}
+AutoGluon infers your prediction problem is: 'binary' (because only two unique label-values observed).
+	If 'binary' is not the correct problem_type, please manually specify the problem_type parameter during Predictor init (You may specify problem_type as one of: ['binary', 'multiclass', 'regression', 'quantile'])
+INFO: You are downloading 'tabicl-classifier-v2-20260212.ckpt', the latest best-performing version, used in our TabICLv2 paper.
+
+Checkpoint 'tabicl-classifier-v2-20260212.ckpt' not cached.
+ Downloading from Hugging Face Hub (jingang/TabICL).
+
+{'model': 'TabICLv2Model', 'ks': 0.5162580115067699, 'status': 'ok', 'sec': 841}
+AutoGluon infers your prediction problem is: 'binary' (because only two unique label-values observed).
+	If 'binary' is not the correct problem_type, please manually specify the problem_type parameter during Predictor init (You may specify problem_type as one of: ['binary', 'multiclass', 'regression', 'quantile'])

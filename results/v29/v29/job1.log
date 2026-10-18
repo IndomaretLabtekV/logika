@@ -1,0 +1,10 @@
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Fetching 2 files: 100%|██████████| 2/2 [00:04<00:00,  2.17s/it]Fetching 2 files: 100%|██████████| 2/2 [00:04<00:00,  2.17s/it]
+/usr/local/lib/python3.13/dist-packages/torch/nn/functional.py:2954: UserWarning: Mismatch dtype between input and weight: input dtype = c10::Half, weight dtype = float, Cannot dispatch to fused implementation. (Triggered internally at /pytorch/aten/src/ATen/native/layer_norm.cpp:344.)
+  return torch.rms_norm(input, normalized_shape, weight, eps)
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Fetching 2 files: 100%|██████████| 2/2 [00:00<00:00, 849.74it/s]
+{'model': 'seg_causilo', 'seed': 42, 'fold': 3, 'ks': 0.5136962440802845, 'budget': 104, 'sec': 203.5}
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Fetching 2 files: 100%|██████████| 2/2 [00:00<00:00, 883.38it/s]
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Fetching 2 files: 100%|██████████| 2/2 [00:00<00:00, 867.94it/s]
+{'model': 'seg_causilo', 'seed': 42, 'fold': 4, 'ks': 0.5444938887622794, 'budget': 104, 'sec': 203.0}
+seg_causilo: OOF KS 0.52866 on 28000 rows
+done in 416s

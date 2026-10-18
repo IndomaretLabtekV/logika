@@ -1,0 +1,3 @@
+model,seed,fold,ks,budget,sec
+seg_causilo,42,3,0.5136962440802845,104,203.5
+seg_causilo,42,4,0.5444938887622794,104,203.0

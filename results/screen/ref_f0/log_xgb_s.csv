@@ -1,0 +1,2 @@
+model,seed,fold,ks,budget,sec
+xgb_s,42,0,0.5147218704223633,2062,11.4

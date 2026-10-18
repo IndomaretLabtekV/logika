@@ -1,0 +1,5 @@
+{"id": "riantamaputra/logika-v26-kumo", "title": "Logika v26 kumo", "code_file": "logika-v26-kumo.ipynb",
+ "language": "python", "kernel_type": "notebook", "is_private": true, "enable_gpu": true, "enable_tpu": false,
+ "enable_internet": true, "keywords": [], "dataset_sources": [], "kernel_sources": [],
+ "competition_sources": ["data-science-competition-logika-ui-2026"], "model_sources": [],
+ "machine_shape": "NvidiaTeslaT4"}

@@ -1,0 +1,2 @@
+model,seed,fold,ks,budget,sec
+kumo_large_c20000_e8,42,0,0.5196373462677002,20000,1723.5

@@ -1,0 +1,2 @@
+model,seed,fold,ks,budget,sec
+woe_lr,42,0,0.5161684470643058,0.003,18.0

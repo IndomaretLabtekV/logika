@@ -1,0 +1,122 @@
+AutoGluon infers your prediction problem is: 'binary' (because only two unique label-values observed).
+	If 'binary' is not the correct problem_type, please manually specify the problem_type parameter during Predictor init (You may specify problem_type as one of: ['binary', 'multiclass', 'regression', 'quantile'])
+	Warning: Exception caused TA-LimiX to fail during training... Skipping this model.
+		CUDA out of memory. Tried to allocate 10.84 GiB. GPU 0 has a total capacity of 14.56 GiB of which 8.23 GiB is free. Including non-PyTorch memory, this process has 6.33 GiB memory in use. Of the allocated memory 6.09 GiB is allocated by PyTorch, and 116.43 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://docs.pytorch.org/docs/stable/notes/cuda.html#optimizing-memory-usage-with-pytorch-cuda-alloc-conf)
+Detailed Traceback:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/dist-packages/autogluon/tabular/trainer/abstract_trainer.py", line 2451, in _train_and_save
+    y_pred_proba_val = model.predict_proba(X_val, record_time=True)
+  File "/usr/local/lib/python3.13/dist-packages/autogluon/core/models/abstract/abstract_model.py", line 1786, in predict_proba
+    y_pred_proba = self._predict_proba_internal(X=X, normalize=normalize, **kwargs)
+  File "/usr/local/lib/python3.13/dist-packages/autogluon/core/models/abstract/abstract_model.py", line 1827, in _predict_proba_internal
+    y_pred_proba = self._predict_proba(X=X, **kwargs)
+  File "/usr/local/lib/python3.13/dist-packages/tabarena/models/limix/model.py", line 217, in _predict_proba
+    chunk_out = self.model.predict(
+        self.model._X_train,
+    ...<2 lines>...
+        task_type=task_type,
+    )
+  File "/usr/local/lib/python3.13/dist-packages/tabarena/models/limix/_vendor/inference/predictor.py", line 289, in predict
+    return self._predict_cls(x_train, y_train, x_test)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/dist-packages/tabarena/models/limix/_vendor/inference/predictor.py", line 333, in _predict_cls
+    feature_attention_score, sample_attention_score = step.inference(X_train=x_[:len(y_train)].astype(np.float32),
+                                                      ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                                                                     y_train=y_train.astype(np.float32),
+                                                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                                                                     X_test=x_[len(y_train):].astype(np.float32),
+                                                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                                                                     task_type="cls",device=self.device)
+                                                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/dist-packages/tabarena/models/limix/_vendor/inference/inference_method.py", line 309, in inference
+    output, feature_attention, sample_attention = model(x=x_, y=y_, eval_pos=y_.shape[1],
+                                                  ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                                                        task_type=task_type,
+                                                        ^^^^^^^^^^^^^^^^^^^^
+                                                        calculate_feature_attention=self.calculate_feature_attention,
+                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                                                        calculate_sample_attention=self.calculate_sample_attention)
+                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/dist-packages/torch/nn/modules/module.py", line 1779, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/dist-packages/torch/nn/modules/module.py", line 1790, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/usr/local/lib/python3.13/dist-packages/tabarena/models/limix/_vendor/model/transformer.py", line 157, in forward
+    x_encoder_result = self.encoder_x(preprocessed_x)
+  File "/usr/local/lib/python3.13/dist-packages/torch/nn/modules/module.py", line 1779, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/dist-packages/torch/nn/modules/module.py", line 1790, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/usr/local/lib/python3.13/dist-packages/tabarena/models/limix/model.py", line 335, in forward
+    out = self.inner(x)
+  File "/usr/local/lib/python3.13/dist-packages/torch/nn/modules/module.py", line 1779, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/dist-packages/torch/nn/modules/module.py", line 1790, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/usr/local/lib/python3.13/dist-packages/torch/nn/modules/container.py", line 253, in forward
+    input = module(input)
+  File "/usr/local/lib/python3.13/dist-packages/torch/nn/modules/module.py", line 1779, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/dist-packages/torch/nn/modules/module.py", line 1790, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/usr/local/lib/python3.13/dist-packages/tabarena/models/limix/_vendor/model/encoders.py", line 347, in forward
+    x_emb = self.numeric_mlp(x)
+  File "/usr/local/lib/python3.13/dist-packages/torch/nn/modules/module.py", line 1779, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/dist-packages/torch/nn/modules/module.py", line 1790, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/usr/local/lib/python3.13/dist-packages/torch/nn/modules/container.py", line 253, in forward
+    input = module(input)
+  File "/usr/local/lib/python3.13/dist-packages/torch/nn/modules/module.py", line 1779, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/dist-packages/torch/nn/modules/module.py", line 1790, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/usr/local/lib/python3.13/dist-packages/torch/nn/modules/normalization.py", line 229, in forward
+    return F.layer_norm(
+           ~~~~~~~~~~~~^
+        input, self.normalized_shape, self.weight, self.bias, self.eps
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/usr/local/lib/python3.13/dist-packages/torch/nn/functional.py", line 2935, in layer_norm
+    return torch.layer_norm(
+           ~~~~~~~~~~~~~~~~^
+        input, normalized_shape, weight, bias, eps, torch.backends.cudnn.enabled
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 10.84 GiB. GPU 0 has a total capacity of 14.56 GiB of which 8.23 GiB is free. Including non-PyTorch memory, this process has 6.33 GiB memory in use. Of the allocated memory 6.09 GiB is allocated by PyTorch, and 116.43 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://docs.pytorch.org/docs/stable/notes/cuda.html#optimizing-memory-usage-with-pytorch-cuda-alloc-conf)
+Warning: AutoGluon did not successfully train any models
+Traceback (most recent call last):
+  File "/kaggle/working/code/zoo_screen.py", line 62, in main
+    pred = TabularPredictor(label="target", eval_metric="roc_auc", path=str(path), verbosity=1).fit(
+        train_data=df.iloc[tr[fi]], tuning_data=df.iloc[tr[st]], hyperparameters={cls(name): dict(hp or {})},
+        num_gpus=1, fit_weighted_ensemble=False, time_limit=minutes * 60, raise_on_no_models_fitted=True)
+  File "/usr/local/lib/python3.13/dist-packages/autogluon/common/utils/decorators.py", line 34, in _call
+    return f(*gargs, **gkwargs)
+  File "/usr/local/lib/python3.13/dist-packages/autogluon/tabular/predictor/predictor.py", line 1596, in fit
+    self._fit(ag_fit_kwargs=ag_fit_kwargs, ag_post_fit_kwargs=ag_post_fit_kwargs)
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/dist-packages/autogluon/tabular/predictor/predictor.py", line 1604, in _fit
+    self._post_fit(**ag_post_fit_kwargs)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/dist-packages/autogluon/tabular/predictor/predictor.py", line 2010, in _post_fit
+    raise RuntimeError(
+    ...<3 lines>...
+    )
+RuntimeError: No models were trained successfully during fit(). Inspect the log output or increase verbosity to determine why no models were fit. Alternatively, set `raise_on_no_models_fitted` to False during the fit call.
+{'model': 'LimiXModel', 'n_fit': 48000, 'ks': nan, 'status': 'RuntimeError: No models were trained successfully during fit(). Inspect the log output or increase verbosity to determine why no models were fit. Alternatively, set `raise_on', 'sec': 43}
+AutoGluon infers your prediction problem is: 'binary' (because only two unique label-values observed).
+	If 'binary' is not the correct problem_type, please manually specify the problem_type parameter during Predictor init (You may specify problem_type as one of: ['binary', 'multiclass', 'regression', 'quantile'])
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Killed
+AutoGluon infers your prediction problem is: 'binary' (because only two unique label-values observed).
+	If 'binary' is not the correct problem_type, please manually specify the problem_type parameter during Predictor init (You may specify problem_type as one of: ['binary', 'multiclass', 'regression', 'quantile'])
+Early return: time budget nearly exhausted (remaining=210.26s < needed=324.72s; avg_pred=324.39s, cushion=+0%). Stopping at 8/12 predictors.
+{'model': 'ILTMModel', 'n_fit': 48000, 'ks': 0.5216433562161789, 'status': 'ok', 'sec': 2721}

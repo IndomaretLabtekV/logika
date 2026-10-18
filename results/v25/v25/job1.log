@@ -1,0 +1,229 @@
+AutoGluon infers your prediction problem is: 'binary' (because only two unique label-values observed).
+	If 'binary' is not the correct problem_type, please manually specify the problem_type parameter during Predictor init (You may specify problem_type as one of: ['binary', 'multiclass', 'regression', 'quantile'])
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+	Warning: Exception caused TA-TabDPT to fail during training... Skipping this model.
+		Missing key enc_cell_dim
+    full_key: model.enc_cell_dim
+    object_type=dict
+Detailed Traceback:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/dist-packages/autogluon/tabular/trainer/abstract_trainer.py", line 2438, in _train_and_save
+    model = self._train_single(**model_fit_kwargs)
+  File "/usr/local/lib/python3.13/dist-packages/autogluon/tabular/trainer/abstract_trainer.py", line 2301, in _train_single
+    model = model.fit(
+        X=X,
+    ...<6 lines>...
+        **model_fit_kwargs,
+    )
+  File "/usr/local/lib/python3.13/dist-packages/autogluon/core/models/abstract/abstract_model.py", line 1399, in fit
+    out = self._fit(**kwargs)
+  File "/usr/local/lib/python3.13/dist-packages/tabarena/models/tabdpt/model.py", line 104, in _fit
+    self.model = self._init_tabdpt_model(model_cls=model_cls, device=device, hps=hps)
+                 ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/dist-packages/tabarena/models/tabdpt/model.py", line 121, in _init_tabdpt_model
+    return model_cls(**kwargs)
+  File "/usr/local/lib/python3.13/dist-packages/tabdpt/classifier.py", line 29, in __init__
+    super().__init__(
+    ~~~~~~~~~~~~~~~~^
+        mode="cls",
+        ^^^^^^^^^^^
+    ...<10 lines>...
+        verbose=verbose,
+        ^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/usr/local/lib/python3.13/dist-packages/tabdpt/estimator.py", line 96, in __init__
+    self._load_model()
+    ~~~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/dist-packages/tabdpt/estimator.py", line 164, in _load_model
+    self.model = TabDPTModel.load(
+                 ~~~~~~~~~~~~~~~~^
+        model_state=model_state, config=cfg, use_flash=self.use_flash, clip_sigma=self.clip_sigma
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/usr/local/lib/python3.13/dist-packages/tabdpt/model.py", line 143, in load
+    enc_cell_dim=config.model.enc_cell_dim,
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/dist-packages/omegaconf/dictconfig.py", line 355, in __getattr__
+    self._format_and_raise(
+    ~~~~~~~~~~~~~~~~~~~~~~^
+        key=key, value=None, cause=e, type_override=ConfigAttributeError
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/usr/local/lib/python3.13/dist-packages/omegaconf/base.py", line 231, in _format_and_raise
+    format_and_raise(
+    ~~~~~~~~~~~~~~~~^
+        node=self,
+        ^^^^^^^^^^
+    ...<4 lines>...
+        type_override=type_override,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/usr/local/lib/python3.13/dist-packages/omegaconf/_utils.py", line 899, in format_and_raise
+    _raise(ex, cause)
+    ~~~~~~^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/dist-packages/omegaconf/_utils.py", line 797, in _raise
+    raise ex.with_traceback(sys.exc_info()[2])  # set env var OC_CAUSE=1 for full trace
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/dist-packages/omegaconf/dictconfig.py", line 351, in __getattr__
+    return self._get_impl(
+           ~~~~~~~~~~~~~~^
+        key=key, default_value=_DEFAULT_MARKER_, validate_key=False
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/usr/local/lib/python3.13/dist-packages/omegaconf/dictconfig.py", line 442, in _get_impl
+    node = self._get_child(
+        key=key, throw_on_missing_key=True, validate_key=validate_key
+    )
+  File "/usr/local/lib/python3.13/dist-packages/omegaconf/basecontainer.py", line 73, in _get_child
+    child = self._get_node(
+        key=key,
+    ...<3 lines>...
+        throw_on_missing_key=throw_on_missing_key,
+    )
+  File "/usr/local/lib/python3.13/dist-packages/omegaconf/dictconfig.py", line 480, in _get_node
+    raise ConfigKeyError(f"Missing key {key!s}")
+omegaconf.errors.ConfigAttributeError: Missing key enc_cell_dim
+    full_key: model.enc_cell_dim
+    object_type=dict
+Warning: AutoGluon did not successfully train any models
+Traceback (most recent call last):
+  File "/kaggle/working/code/zoo_screen.py", line 62, in main
+    pred = TabularPredictor(label="target", eval_metric="roc_auc", path=str(path), verbosity=1).fit(
+        train_data=df.iloc[tr[fi]], tuning_data=df.iloc[tr[st]], hyperparameters={cls(name): dict(hp or {})},
+        num_gpus=1, fit_weighted_ensemble=False, time_limit=minutes * 60, raise_on_no_models_fitted=True)
+  File "/usr/local/lib/python3.13/dist-packages/autogluon/common/utils/decorators.py", line 34, in _call
+    return f(*gargs, **gkwargs)
+  File "/usr/local/lib/python3.13/dist-packages/autogluon/tabular/predictor/predictor.py", line 1596, in fit
+    self._fit(ag_fit_kwargs=ag_fit_kwargs, ag_post_fit_kwargs=ag_post_fit_kwargs)
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/dist-packages/autogluon/tabular/predictor/predictor.py", line 1604, in _fit
+    self._post_fit(**ag_post_fit_kwargs)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/dist-packages/autogluon/tabular/predictor/predictor.py", line 2010, in _post_fit
+    raise RuntimeError(
+    ...<3 lines>...
+    )
+RuntimeError: No models were trained successfully during fit(). Inspect the log output or increase verbosity to determine why no models were fit. Alternatively, set `raise_on_no_models_fitted` to False during the fit call.
+{'model': 'TabDPTModel', 'n_fit': 48000, 'ks': nan, 'status': 'RuntimeError: No models were trained successfully during fit(). Inspect the log output or increase verbosity to determine why no models were fit. Alternatively, set `raise_on', 'sec': 11}
+AutoGluon infers your prediction problem is: 'binary' (because only two unique label-values observed).
+	If 'binary' is not the correct problem_type, please manually specify the problem_type parameter during Predictor init (You may specify problem_type as one of: ['binary', 'multiclass', 'regression', 'quantile'])
+	Warning: Exception caused TA-TabDPT-Turbo to fail during training... Skipping this model.
+		Error(s) in loading state_dict for TabDPTModel:
+	Missing key(s) in state_dict: "cls_y_encoders.0.weight", "cls_y_encoders.1.weight", "cls_y_encoders.2.weight", "cls_y_encoders.3.weight", "cls_y_encoders.4.weight", "cls_y_encoders.5.weight", "cls_y_encoders.6.weight", "cls_y_encoders.7.weight", "cls_y_encoders.8.weight", "cls_y_encoders.9.weight", "cls_y_encoders.10.weight", "cls_y_encoders.11.weight", "cls_y_encoders.12.weight", "cls_y_encoders.13.weight", "cls_y_encoders.14.weight", "cls_y_encoders.15.weight", "cls_y_encoders.16.weight", "cls_y_encoders.17.weight", "cls_y_encoders.18.weight", "cls_y_encoders.19.weight", "cls_y_encoders.20.weight", "cls_y_encoders.21.weight", "cls_y_encoders.22.weight", "cls_y_encoders.23.weight", "cls_y_encoders.24.weight", "cls_y_encoders.25.weight", "cls_y_encoders.26.weight", "cls_y_encoders.27.weight", "cls_y_encoders.28.weight", "cls_y_encoders.29.weight", "cls_y_encoders.30.weight", "cls_y_encoders.31.weight", "reg_y_encoders.0.0.weight", "reg_y_encoders.0.0.bias", "reg_y_encoders.0.2.weight", "reg_y_encoders.0.2.bias", "reg_y_encoders.1.0.weight", "reg_y_encoders.1.0.bias", "reg_y_encoders.1.2.weight", "reg_y_encoders.1.2.bias", "reg_y_encoders.2.0.weight", "reg_y_encoders.2.0.bias", "reg_y_encoders.2.2.weight", "reg_y_encoders.2.2.bias", "reg_y_encoders.3.0.weight", "reg_y_encoders.3.0.bias", "reg_y_encoders.3.2.weight", "reg_y_encoders.3.2.bias", "reg_y_encoders.4.0.weight", "reg_y_encoders.4.0.bias", "reg_y_encoders.4.2.weight", "reg_y_encoders.4.2.bias", "reg_y_encoders.5.0.weight", "reg_y_encoders.5.0.bias", "reg_y_encoders.5.2.weight", "reg_y_encoders.5.2.bias", "reg_y_encoders.6.0.weight", "reg_y_encoders.6.0.bias", "reg_y_encoders.6.2.weight", "reg_y_encoders.6.2.bias", "reg_y_encoders.7.0.weight", "reg_y_encoders.7.0.bias", "reg_y_encoders.7.2.weight", "reg_y_encoders.7.2.bias", "reg_y_encoders.8.0.weight", "reg_y_encoders.8.0.bias", "reg_y_encoders.8.2.weight", "reg_y_encoders.8.2.bias", "reg_y_encoders.9.0.weight", "reg_y_encoders.9.0.bias", "reg_y_encoders.9.2.weight", "reg_y_encoders.9.2.bias", "reg_y_encoders.10.0.weight", "reg_y_encoders.10.0.bias", "reg_y_encoders.10.2.weight", "reg_y_encoders.10.2.bias", "reg_y_encoders.11.0.weight", "reg_y_encoders.11.0.bias", "reg_y_encoders.11.2.weight", "reg_y_encoders.11.2.bias", "reg_y_encoders.12.0.weight", "reg_y_encoders.12.0.bias", "reg_y_encoders.12.2.weight", "reg_y_encoders.12.2.bias", "reg_y_encoders.13.0.weight", "reg_y_encoders.13.0.bias", "reg_y_encoders.13.2.weight", "reg_y_encoders.13.2.bias", "reg_y_encoders.14.0.weight", "reg_y_encoders.14.0.bias", "reg_y_encoders.14.2.weight", "reg_y_encoders.14.2.bias", "reg_y_encoders.15.0.weight", "reg_y_encoders.15.0.bias", "reg_y_encoders.15.2.weight", "reg_y_encoders.15.2.bias", "reg_y_encoders.16.0.weight", "reg_y_encoders.16.0.bias", "reg_y_encoders.16.2.weight", "reg_y_encoders.16.2.bias", "reg_y_encoders.17.0.weight", "reg_y_encoders.17.0.bias", "reg_y_encoders.17.2.weight", "reg_y_encoders.17.2.bias", "reg_y_encoders.18.0.weight", "reg_y_encoders.18.0.bias", "reg_y_encoders.18.2.weight", "reg_y_encoders.18.2.bias", "reg_y_encoders.19.0.weight", "reg_y_encoders.19.0.bias", "reg_y_encoders.19.2.weight", "reg_y_encoders.19.2.bias", "reg_y_encoders.20.0.weight", "reg_y_encoders.20.0.bias", "reg_y_encoders.20.2.weight", "reg_y_encoders.20.2.bias", "reg_y_encoders.21.0.weight", "reg_y_encoders.21.0.bias", "reg_y_encoders.21.2.weight", "reg_y_encoders.21.2.bias", "reg_y_encoders.22.0.weight", "reg_y_encoders.22.0.bias", "reg_y_encoders.22.2.weight", "reg_y_encoders.22.2.bias", "reg_y_encoders.23.0.weight", "reg_y_encoders.23.0.bias", "reg_y_encoders.23.2.weight", "reg_y_encoders.23.2.bias", "reg_y_encoders.24.0.weight", "reg_y_encoders.24.0.bias", "reg_y_encoders.24.2.weight", "reg_y_encoders.24.2.bias", "reg_y_encoders.25.0.weight", "reg_y_encoders.25.0.bias", "reg_y_encoders.25.2.weight", "reg_y_encoders.25.2.bias", "reg_y_encoders.26.0.weight", "reg_y_encoders.26.0.bias", "reg_y_encoders.26.2.weight", "reg_y_encoders.26.2.bias", "reg_y_encoders.27.0.weight", "reg_y_encoders.27.0.bias", "reg_y_encoders.27.2.weight", "reg_y_encoders.27.2.bias", "reg_y_encoders.28.0.weight", "reg_y_encoders.28.0.bias", "reg_y_encoders.28.2.weight", "reg_y_encoders.28.2.bias", "reg_y_encoders.29.0.weight", "reg_y_encoders.29.0.bias", "reg_y_encoders.29.2.weight", "reg_y_encoders.29.2.bias", "reg_y_encoders.30.0.weight", "reg_y_encoders.30.0.bias", "reg_y_encoders.30.2.weight", "reg_y_encoders.30.2.bias", "reg_y_encoders.31.0.weight", "reg_y_encoders.31.0.bias", "reg_y_encoders.31.2.weight", "reg_y_encoders.31.2.bias". 
+	Unexpected key(s) in state_dict: "y_encoders.0.0.bias", "y_encoders.0.0.weight", "y_encoders.0.2.bias", "y_encoders.0.2.weight", "y_encoders.1.0.bias", "y_encoders.1.0.weight", "y_encoders.1.2.bias", "y_encoders.1.2.weight", "y_encoders.10.0.bias", "y_encoders.10.0.weight", "y_encoders.10.2.bias", "y_encoders.10.2.weight", "y_encoders.11.0.bias", "y_encoders.11.0.weight", "y_encoders.11.2.bias", "y_encoders.11.2.weight", "y_encoders.12.0.bias", "y_encoders.12.0.weight", "y_encoders.12.2.bias", "y_encoders.12.2.weight", "y_encoders.13.0.bias", "y_encoders.13.0.weight", "y_encoders.13.2.bias", "y_encoders.13.2.weight", "y_encoders.14.0.bias", "y_encoders.14.0.weight", "y_encoders.14.2.bias", "y_encoders.14.2.weight", "y_encoders.15.0.bias", "y_encoders.15.0.weight", "y_encoders.15.2.bias", "y_encoders.15.2.weight", "y_encoders.16.0.bias", "y_encoders.16.0.weight", "y_encoders.16.2.bias", "y_encoders.16.2.weight", "y_encoders.17.0.bias", "y_encoders.17.0.weight", "y_encoders.17.2.bias", "y_encoders.17.2.weight", "y_encoders.18.0.bias", "y_encoders.18.0.weight", "y_encoders.18.2.bias", "y_encoders.18.2.weight", "y_encoders.19.0.bias", "y_encoders.19.0.weight", "y_encoders.19.2.bias", "y_encoders.19.2.weight", "y_encoders.2.0.bias", "y_encoders.2.0.weight", "y_encoders.2.2.bias", "y_encoders.2.2.weight", "y_encoders.20.0.bias", "y_encoders.20.0.weight", "y_encoders.20.2.bias", "y_encoders.20.2.weight", "y_encoders.21.0.bias", "y_encoders.21.0.weight", "y_encoders.21.2.bias", "y_encoders.21.2.weight", "y_encoders.22.0.bias", "y_encoders.22.0.weight", "y_encoders.22.2.bias", "y_encoders.22.2.weight", "y_encoders.23.0.bias", "y_encoders.23.0.weight", "y_encoders.23.2.bias", "y_encoders.23.2.weight", "y_encoders.24.0.bias", "y_encoders.24.0.weight", "y_encoders.24.2.bias", "y_encoders.24.2.weight", "y_encoders.25.0.bias", "y_encoders.25.0.weight", "y_encoders.25.2.bias", "y_encoders.25.2.weight", "y_encoders.26.0.bias", "y_encoders.26.0.weight", "y_encoders.26.2.bias", "y_encoders.26.2.weight", "y_encoders.27.0.bias", "y_encoders.27.0.weight", "y_encoders.27.2.bias", "y_encoders.27.2.weight", "y_encoders.28.0.bias", "y_encoders.28.0.weight", "y_encoders.28.2.bias", "y_encoders.28.2.weight", "y_encoders.29.0.bias", "y_encoders.29.0.weight", "y_encoders.29.2.bias", "y_encoders.29.2.weight", "y_encoders.3.0.bias", "y_encoders.3.0.weight", "y_encoders.3.2.bias", "y_encoders.3.2.weight", "y_encoders.30.0.bias", "y_encoders.30.0.weight", "y_encoders.30.2.bias", "y_encoders.30.2.weight", "y_encoders.31.0.bias", "y_encoders.31.0.weight", "y_encoders.31.2.bias", "y_encoders.31.2.weight", "y_encoders.4.0.bias", "y_encoders.4.0.weight", "y_encoders.4.2.bias", "y_encoders.4.2.weight", "y_encoders.5.0.bias", "y_encoders.5.0.weight", "y_encoders.5.2.bias", "y_encoders.5.2.weight", "y_encoders.6.0.bias", "y_encoders.6.0.weight", "y_encoders.6.2.bias", "y_encoders.6.2.weight", "y_encoders.7.0.bias", "y_encoders.7.0.weight", "y_encoders.7.2.bias", "y_encoders.7.2.weight", "y_encoders.8.0.bias", "y_encoders.8.0.weight", "y_encoders.8.2.bias", "y_encoders.8.2.weight", "y_encoders.9.0.bias", "y_encoders.9.0.weight", "y_encoders.9.2.bias", "y_encoders.9.2.weight". 
+Detailed Traceback:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/dist-packages/autogluon/tabular/trainer/abstract_trainer.py", line 2438, in _train_and_save
+    model = self._train_single(**model_fit_kwargs)
+  File "/usr/local/lib/python3.13/dist-packages/autogluon/tabular/trainer/abstract_trainer.py", line 2301, in _train_single
+    model = model.fit(
+        X=X,
+    ...<6 lines>...
+        **model_fit_kwargs,
+    )
+  File "/usr/local/lib/python3.13/dist-packages/autogluon/core/models/abstract/abstract_model.py", line 1399, in fit
+    out = self._fit(**kwargs)
+  File "/usr/local/lib/python3.13/dist-packages/tabarena/models/tabdpt/model.py", line 104, in _fit
+    self.model = self._init_tabdpt_model(model_cls=model_cls, device=device, hps=hps)
+                 ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/dist-packages/tabarena/models/tabdpt/model.py", line 121, in _init_tabdpt_model
+    return model_cls(**kwargs)
+  File "/usr/local/lib/python3.13/dist-packages/tabdpt/classifier.py", line 29, in __init__
+    super().__init__(
+    ~~~~~~~~~~~~~~~~^
+        mode="cls",
+        ^^^^^^^^^^^
+    ...<10 lines>...
+        verbose=verbose,
+        ^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/usr/local/lib/python3.13/dist-packages/tabdpt/estimator.py", line 96, in __init__
+    self._load_model()
+    ~~~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/dist-packages/tabdpt/estimator.py", line 164, in _load_model
+    self.model = TabDPTModel.load(
+                 ~~~~~~~~~~~~~~~~^
+        model_state=model_state, config=cfg, use_flash=self.use_flash, clip_sigma=self.clip_sigma
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/usr/local/lib/python3.13/dist-packages/tabdpt/model.py", line 164, in load
+    model.load_state_dict(model_state)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/dist-packages/torch/nn/modules/module.py", line 2639, in load_state_dict
+    raise RuntimeError(
+    ...<3 lines>...
+    )
+RuntimeError: Error(s) in loading state_dict for TabDPTModel:
+	Missing key(s) in state_dict: "cls_y_encoders.0.weight", "cls_y_encoders.1.weight", "cls_y_encoders.2.weight", "cls_y_encoders.3.weight", "cls_y_encoders.4.weight", "cls_y_encoders.5.weight", "cls_y_encoders.6.weight", "cls_y_encoders.7.weight", "cls_y_encoders.8.weight", "cls_y_encoders.9.weight", "cls_y_encoders.10.weight", "cls_y_encoders.11.weight", "cls_y_encoders.12.weight", "cls_y_encoders.13.weight", "cls_y_encoders.14.weight", "cls_y_encoders.15.weight", "cls_y_encoders.16.weight", "cls_y_encoders.17.weight", "cls_y_encoders.18.weight", "cls_y_encoders.19.weight", "cls_y_encoders.20.weight", "cls_y_encoders.21.weight", "cls_y_encoders.22.weight", "cls_y_encoders.23.weight", "cls_y_encoders.24.weight", "cls_y_encoders.25.weight", "cls_y_encoders.26.weight", "cls_y_encoders.27.weight", "cls_y_encoders.28.weight", "cls_y_encoders.29.weight", "cls_y_encoders.30.weight", "cls_y_encoders.31.weight", "reg_y_encoders.0.0.weight", "reg_y_encoders.0.0.bias", "reg_y_encoders.0.2.weight", "reg_y_encoders.0.2.bias", "reg_y_encoders.1.0.weight", "reg_y_encoders.1.0.bias", "reg_y_encoders.1.2.weight", "reg_y_encoders.1.2.bias", "reg_y_encoders.2.0.weight", "reg_y_encoders.2.0.bias", "reg_y_encoders.2.2.weight", "reg_y_encoders.2.2.bias", "reg_y_encoders.3.0.weight", "reg_y_encoders.3.0.bias", "reg_y_encoders.3.2.weight", "reg_y_encoders.3.2.bias", "reg_y_encoders.4.0.weight", "reg_y_encoders.4.0.bias", "reg_y_encoders.4.2.weight", "reg_y_encoders.4.2.bias", "reg_y_encoders.5.0.weight", "reg_y_encoders.5.0.bias", "reg_y_encoders.5.2.weight", "reg_y_encoders.5.2.bias", "reg_y_encoders.6.0.weight", "reg_y_encoders.6.0.bias", "reg_y_encoders.6.2.weight", "reg_y_encoders.6.2.bias", "reg_y_encoders.7.0.weight", "reg_y_encoders.7.0.bias", "reg_y_encoders.7.2.weight", "reg_y_encoders.7.2.bias", "reg_y_encoders.8.0.weight", "reg_y_encoders.8.0.bias", "reg_y_encoders.8.2.weight", "reg_y_encoders.8.2.bias", "reg_y_encoders.9.0.weight", "reg_y_encoders.9.0.bias", "reg_y_encoders.9.2.weight", "reg_y_encoders.9.2.bias", "reg_y_encoders.10.0.weight", "reg_y_encoders.10.0.bias", "reg_y_encoders.10.2.weight", "reg_y_encoders.10.2.bias", "reg_y_encoders.11.0.weight", "reg_y_encoders.11.0.bias", "reg_y_encoders.11.2.weight", "reg_y_encoders.11.2.bias", "reg_y_encoders.12.0.weight", "reg_y_encoders.12.0.bias", "reg_y_encoders.12.2.weight", "reg_y_encoders.12.2.bias", "reg_y_encoders.13.0.weight", "reg_y_encoders.13.0.bias", "reg_y_encoders.13.2.weight", "reg_y_encoders.13.2.bias", "reg_y_encoders.14.0.weight", "reg_y_encoders.14.0.bias", "reg_y_encoders.14.2.weight", "reg_y_encoders.14.2.bias", "reg_y_encoders.15.0.weight", "reg_y_encoders.15.0.bias", "reg_y_encoders.15.2.weight", "reg_y_encoders.15.2.bias", "reg_y_encoders.16.0.weight", "reg_y_encoders.16.0.bias", "reg_y_encoders.16.2.weight", "reg_y_encoders.16.2.bias", "reg_y_encoders.17.0.weight", "reg_y_encoders.17.0.bias", "reg_y_encoders.17.2.weight", "reg_y_encoders.17.2.bias", "reg_y_encoders.18.0.weight", "reg_y_encoders.18.0.bias", "reg_y_encoders.18.2.weight", "reg_y_encoders.18.2.bias", "reg_y_encoders.19.0.weight", "reg_y_encoders.19.0.bias", "reg_y_encoders.19.2.weight", "reg_y_encoders.19.2.bias", "reg_y_encoders.20.0.weight", "reg_y_encoders.20.0.bias", "reg_y_encoders.20.2.weight", "reg_y_encoders.20.2.bias", "reg_y_encoders.21.0.weight", "reg_y_encoders.21.0.bias", "reg_y_encoders.21.2.weight", "reg_y_encoders.21.2.bias", "reg_y_encoders.22.0.weight", "reg_y_encoders.22.0.bias", "reg_y_encoders.22.2.weight", "reg_y_encoders.22.2.bias", "reg_y_encoders.23.0.weight", "reg_y_encoders.23.0.bias", "reg_y_encoders.23.2.weight", "reg_y_encoders.23.2.bias", "reg_y_encoders.24.0.weight", "reg_y_encoders.24.0.bias", "reg_y_encoders.24.2.weight", "reg_y_encoders.24.2.bias", "reg_y_encoders.25.0.weight", "reg_y_encoders.25.0.bias", "reg_y_encoders.25.2.weight", "reg_y_encoders.25.2.bias", "reg_y_encoders.26.0.weight", "reg_y_encoders.26.0.bias", "reg_y_encoders.26.2.weight", "reg_y_encoders.26.2.bias", "reg_y_encoders.27.0.weight", "reg_y_encoders.27.0.bias", "reg_y_encoders.27.2.weight", "reg_y_encoders.27.2.bias", "reg_y_encoders.28.0.weight", "reg_y_encoders.28.0.bias", "reg_y_encoders.28.2.weight", "reg_y_encoders.28.2.bias", "reg_y_encoders.29.0.weight", "reg_y_encoders.29.0.bias", "reg_y_encoders.29.2.weight", "reg_y_encoders.29.2.bias", "reg_y_encoders.30.0.weight", "reg_y_encoders.30.0.bias", "reg_y_encoders.30.2.weight", "reg_y_encoders.30.2.bias", "reg_y_encoders.31.0.weight", "reg_y_encoders.31.0.bias", "reg_y_encoders.31.2.weight", "reg_y_encoders.31.2.bias". 
+	Unexpected key(s) in state_dict: "y_encoders.0.0.bias", "y_encoders.0.0.weight", "y_encoders.0.2.bias", "y_encoders.0.2.weight", "y_encoders.1.0.bias", "y_encoders.1.0.weight", "y_encoders.1.2.bias", "y_encoders.1.2.weight", "y_encoders.10.0.bias", "y_encoders.10.0.weight", "y_encoders.10.2.bias", "y_encoders.10.2.weight", "y_encoders.11.0.bias", "y_encoders.11.0.weight", "y_encoders.11.2.bias", "y_encoders.11.2.weight", "y_encoders.12.0.bias", "y_encoders.12.0.weight", "y_encoders.12.2.bias", "y_encoders.12.2.weight", "y_encoders.13.0.bias", "y_encoders.13.0.weight", "y_encoders.13.2.bias", "y_encoders.13.2.weight", "y_encoders.14.0.bias", "y_encoders.14.0.weight", "y_encoders.14.2.bias", "y_encoders.14.2.weight", "y_encoders.15.0.bias", "y_encoders.15.0.weight", "y_encoders.15.2.bias", "y_encoders.15.2.weight", "y_encoders.16.0.bias", "y_encoders.16.0.weight", "y_encoders.16.2.bias", "y_encoders.16.2.weight", "y_encoders.17.0.bias", "y_encoders.17.0.weight", "y_encoders.17.2.bias", "y_encoders.17.2.weight", "y_encoders.18.0.bias", "y_encoders.18.0.weight", "y_encoders.18.2.bias", "y_encoders.18.2.weight", "y_encoders.19.0.bias", "y_encoders.19.0.weight", "y_encoders.19.2.bias", "y_encoders.19.2.weight", "y_encoders.2.0.bias", "y_encoders.2.0.weight", "y_encoders.2.2.bias", "y_encoders.2.2.weight", "y_encoders.20.0.bias", "y_encoders.20.0.weight", "y_encoders.20.2.bias", "y_encoders.20.2.weight", "y_encoders.21.0.bias", "y_encoders.21.0.weight", "y_encoders.21.2.bias", "y_encoders.21.2.weight", "y_encoders.22.0.bias", "y_encoders.22.0.weight", "y_encoders.22.2.bias", "y_encoders.22.2.weight", "y_encoders.23.0.bias", "y_encoders.23.0.weight", "y_encoders.23.2.bias", "y_encoders.23.2.weight", "y_encoders.24.0.bias", "y_encoders.24.0.weight", "y_encoders.24.2.bias", "y_encoders.24.2.weight", "y_encoders.25.0.bias", "y_encoders.25.0.weight", "y_encoders.25.2.bias", "y_encoders.25.2.weight", "y_encoders.26.0.bias", "y_encoders.26.0.weight", "y_encoders.26.2.bias", "y_encoders.26.2.weight", "y_encoders.27.0.bias", "y_encoders.27.0.weight", "y_encoders.27.2.bias", "y_encoders.27.2.weight", "y_encoders.28.0.bias", "y_encoders.28.0.weight", "y_encoders.28.2.bias", "y_encoders.28.2.weight", "y_encoders.29.0.bias", "y_encoders.29.0.weight", "y_encoders.29.2.bias", "y_encoders.29.2.weight", "y_encoders.3.0.bias", "y_encoders.3.0.weight", "y_encoders.3.2.bias", "y_encoders.3.2.weight", "y_encoders.30.0.bias", "y_encoders.30.0.weight", "y_encoders.30.2.bias", "y_encoders.30.2.weight", "y_encoders.31.0.bias", "y_encoders.31.0.weight", "y_encoders.31.2.bias", "y_encoders.31.2.weight", "y_encoders.4.0.bias", "y_encoders.4.0.weight", "y_encoders.4.2.bias", "y_encoders.4.2.weight", "y_encoders.5.0.bias", "y_encoders.5.0.weight", "y_encoders.5.2.bias", "y_encoders.5.2.weight", "y_encoders.6.0.bias", "y_encoders.6.0.weight", "y_encoders.6.2.bias", "y_encoders.6.2.weight", "y_encoders.7.0.bias", "y_encoders.7.0.weight", "y_encoders.7.2.bias", "y_encoders.7.2.weight", "y_encoders.8.0.bias", "y_encoders.8.0.weight", "y_encoders.8.2.bias", "y_encoders.8.2.weight", "y_encoders.9.0.bias", "y_encoders.9.0.weight", "y_encoders.9.2.bias", "y_encoders.9.2.weight". 
+Warning: AutoGluon did not successfully train any models
+Traceback (most recent call last):
+  File "/kaggle/working/code/zoo_screen.py", line 62, in main
+    pred = TabularPredictor(label="target", eval_metric="roc_auc", path=str(path), verbosity=1).fit(
+        train_data=df.iloc[tr[fi]], tuning_data=df.iloc[tr[st]], hyperparameters={cls(name): dict(hp or {})},
+        num_gpus=1, fit_weighted_ensemble=False, time_limit=minutes * 60, raise_on_no_models_fitted=True)
+  File "/usr/local/lib/python3.13/dist-packages/autogluon/common/utils/decorators.py", line 34, in _call
+    return f(*gargs, **gkwargs)
+  File "/usr/local/lib/python3.13/dist-packages/autogluon/tabular/predictor/predictor.py", line 1596, in fit
+    self._fit(ag_fit_kwargs=ag_fit_kwargs, ag_post_fit_kwargs=ag_post_fit_kwargs)
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/dist-packages/autogluon/tabular/predictor/predictor.py", line 1604, in _fit
+    self._post_fit(**ag_post_fit_kwargs)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/dist-packages/autogluon/tabular/predictor/predictor.py", line 2010, in _post_fit
+    raise RuntimeError(
+    ...<3 lines>...
+    )
+RuntimeError: No models were trained successfully during fit(). Inspect the log output or increase verbosity to determine why no models were fit. Alternatively, set `raise_on_no_models_fitted` to False during the fit call.
+{'model': 'TabDPTTurboModel', 'n_fit': 48000, 'ks': nan, 'status': 'RuntimeError: No models were trained successfully during fit(). Inspect the log output or increase verbosity to determine why no models were fit. Alternatively, set `raise_on', 'sec': 7}
+AutoGluon infers your prediction problem is: 'binary' (because only two unique label-values observed).
+	If 'binary' is not the correct problem_type, please manually specify the problem_type parameter during Predictor init (You may specify problem_type as one of: ['binary', 'multiclass', 'regression', 'quantile'])
+Warning: AutoGluon did not successfully train any models
+Traceback (most recent call last):
+  File "/kaggle/working/code/zoo_screen.py", line 62, in main
+    pred = TabularPredictor(label="target", eval_metric="roc_auc", path=str(path), verbosity=1).fit(
+        train_data=df.iloc[tr[fi]], tuning_data=df.iloc[tr[st]], hyperparameters={cls(name): dict(hp or {})},
+        num_gpus=1, fit_weighted_ensemble=False, time_limit=minutes * 60, raise_on_no_models_fitted=True)
+  File "/usr/local/lib/python3.13/dist-packages/autogluon/common/utils/decorators.py", line 34, in _call
+    return f(*gargs, **gkwargs)
+  File "/usr/local/lib/python3.13/dist-packages/autogluon/tabular/predictor/predictor.py", line 1596, in fit
+    self._fit(ag_fit_kwargs=ag_fit_kwargs, ag_post_fit_kwargs=ag_post_fit_kwargs)
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/dist-packages/autogluon/tabular/predictor/predictor.py", line 1604, in _fit
+    self._post_fit(**ag_post_fit_kwargs)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/dist-packages/autogluon/tabular/predictor/predictor.py", line 2010, in _post_fit
+    raise RuntimeError(
+    ...<3 lines>...
+    )
+RuntimeError: No models were trained successfully during fit(). Inspect the log output or increase verbosity to determine why no models were fit. Alternatively, set `raise_on_no_models_fitted` to False during the fit call.
+{'model': 'NoriModel', 'n_fit': 48000, 'ks': nan, 'status': 'RuntimeError: No models were trained successfully during fit(). Inspect the log output or increase verbosity to determine why no models were fit. Alternatively, set `raise_on', 'sec': 2}
+AutoGluon infers your prediction problem is: 'binary' (because only two unique label-values observed).
+	If 'binary' is not the correct problem_type, please manually specify the problem_type parameter during Predictor init (You may specify problem_type as one of: ['binary', 'multiclass', 'regression', 'quantile'])
+Warning: AutoGluon did not successfully train any models
+Traceback (most recent call last):
+  File "/kaggle/working/code/zoo_screen.py", line 62, in main
+    pred = TabularPredictor(label="target", eval_metric="roc_auc", path=str(path), verbosity=1).fit(
+        train_data=df.iloc[tr[fi]], tuning_data=df.iloc[tr[st]], hyperparameters={cls(name): dict(hp or {})},
+        num_gpus=1, fit_weighted_ensemble=False, time_limit=minutes * 60, raise_on_no_models_fitted=True)
+  File "/usr/local/lib/python3.13/dist-packages/autogluon/common/utils/decorators.py", line 34, in _call
+    return f(*gargs, **gkwargs)
+  File "/usr/local/lib/python3.13/dist-packages/autogluon/tabular/predictor/predictor.py", line 1596, in fit
+    self._fit(ag_fit_kwargs=ag_fit_kwargs, ag_post_fit_kwargs=ag_post_fit_kwargs)
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/dist-packages/autogluon/tabular/predictor/predictor.py", line 1604, in _fit
+    self._post_fit(**ag_post_fit_kwargs)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/dist-packages/autogluon/tabular/predictor/predictor.py", line 2010, in _post_fit
+    raise RuntimeError(
+    ...<3 lines>...
+    )
+RuntimeError: No models were trained successfully during fit(). Inspect the log output or increase verbosity to determine why no models were fit. Alternatively, set `raise_on_no_models_fitted` to False during the fit call.
+{'model': 'Nori30MModel', 'n_fit': 48000, 'ks': nan, 'status': 'RuntimeError: No models were trained successfully during fit(). Inspect the log output or increase verbosity to determine why no models were fit. Alternatively, set `raise_on', 'sec': 3}

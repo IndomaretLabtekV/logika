@@ -1,0 +1,3 @@
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+tabfm <class 'sdm.tensor.table.TableTensor'> {Stype.numerical: ('1', '0'), Stype.categorical: (), Stype.datetime: (), Stype.text: (), Stype.id: ()}
+{'model': 'tabfm_c7999_e4_f104', 'ks': 0.5172840895854858, 'sec': 6848}

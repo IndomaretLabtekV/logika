@@ -1,0 +1,2 @@
+model,seed,fold,ks,budget,sec
+lgb_s,42,0,0.5127667373660549,1784,16.0

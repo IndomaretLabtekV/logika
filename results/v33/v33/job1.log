@@ -1,0 +1,6 @@
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+/usr/local/lib/python3.13/dist-packages/torch/nn/functional.py:2954: UserWarning: Mismatch dtype between input and weight: input dtype = c10::Half, weight dtype = float, Cannot dispatch to fused implementation. (Triggered internally at /pytorch/aten/src/ATen/native/layer_norm.cpp:344.)
+  return torch.rms_norm(input, normalized_shape, weight, eps)
+{'model': 'kumo_large_c56000_g1', 'seed': 42, 'fold': 4, 'ks': 0.5523234802217224, 'budget': 56000, 'sec': 8493.8}
+kumo_large_c56000_g1: OOF KS 0.55232 on 14000 rows
+done in 8505s
