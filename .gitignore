@@ -1,6 +1,7 @@
 # environments
 .venv/
 .venv-rel/
+.venv-zoo/
 __pycache__/
 *.pyc
 .ipynb_checkpoints/
@@ -18,6 +19,8 @@ catboost_info/
 eda/deep/out/relational/
 eda/deep/out/preprocessed/
 eda/*/out/*.parquet
+eda/out/*.parquet
+results/**/features.parquet
 eda/*/out/*.npz
 !eda/v8_review/out/*.parquet
 results/v4/v4/features_*.parquet
