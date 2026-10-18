@@ -1,0 +1,8 @@
+causilo pooled 0.52583 thin 0.4963 hist 0.5349
+seg_causilo pooled 0.52409 thin 0.4953 hist 0.5359
+kumo_large_c20000_b2 pooled 0.52484 thin 0.4964 hist 0.5372
+seg raw pooled 0.52409
+tck (causilo)          0.52602 vs v8 +0.00152 sd 0.00155 P 0.84 4/5
+tck (seg_causilo)      0.52548 vs v8 +0.00154 sd 0.00161 P 0.83 3/5
+tck + both causilo     0.52589 vs v8 +0.00162 sd 0.00159 P 0.85 4/5
+causilo+seg 50/50      0.52606 vs v8 +0.00127 sd 0.00203 P 0.73 3/5

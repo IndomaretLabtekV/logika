@@ -1,0 +1,43 @@
+base logit fit: llf -20541.3
+23 new candidates; Bonferroni chi2(1) bar at 0.05 ~ 9.4
+             feature     chi2  df       p      coef  coverage  existing
+  z_cancel_minus_all    5.428   2 0.06628   0.08893    0.8073     False
+             z_slope    4.478   1 0.03434  -0.09512         1     False
+       pp_cat_health    3.588   2  0.1663  -0.00807    0.8456      True
+         z_cancelled    3.155   2  0.2065   0.07113    0.8075     False
+       z_pm_e_wallet    2.825   2  0.2435   0.08409    0.6508     False
+               pp_30    2.429   2  0.2969  -0.06142     0.743      True
+  credit_spend_share    1.972   1  0.1603   0.09077         1     False
+    z_pm_credit_card    1.955   2  0.3762  -0.02905    0.1857     False
+  pp_cat_electronics    1.549   2   0.461   0.02117    0.7125      True
+  z_pm_bank_transfer    1.482   2  0.4765  -0.05903    0.4373     False
+            z_last10    1.463   1  0.2264   0.07957         1     False
+pp_cat_personal_care    1.375   2  0.5028  -0.05187    0.9403      True
+              pp_old    1.286   2  0.5258  -0.02853    0.9452      True
+               z_day    1.248   2  0.5357  -0.06255    0.9997     False
+      pp_qty_item_90    1.145   2   0.564  -0.05735    0.9555      True
+     cod_spend_share    1.107   1  0.2927   0.03579         1     False
+ z_cod_minus_ewallet   0.9877   2  0.6103  -0.03584    0.4342     False
+        z_frac_lt_m1   0.9666   1  0.3255   0.05652         1     False
+         pp_cat_home   0.7968   2  0.6714  -0.01804    0.9012      True
+          z_basket3p   0.7624   2   0.683  -0.01131    0.8809     False
+              pp_max   0.7236   1   0.395  -0.04305         1      True
+            z_pm_COD    0.704   2  0.7033  -0.03148    0.6908     False
+    pp_cat_groceries   0.6576   2  0.7198  -0.03487    0.9908      True
+           z_weekend   0.6394   2  0.7264   0.01864    0.9986     False
+   z_night_minus_day    0.597   2  0.7419   0.02353    0.9985     False
+    pp_cat_education   0.5913   2   0.744  -0.03712    0.7894      True
+           z_qty_gt1   0.5794   2  0.7485  -0.04101    0.9995     False
+           z_basket1   0.3306   2  0.8476   0.04558         1     False
+      pp_cat_fashion   0.2784   2  0.8701  -0.02838    0.9555      True
+             z_night   0.1617   2  0.9223 -0.006358    0.9988     False
+         pp_qty_item  0.09844   1  0.7537 -0.007368         1      True
+             pp_done  0.08967   1  0.7646  -0.01852         1      True
+z_credit_minus_debit  0.07122   2   0.965   0.00133   0.05924     False
+                z_sd   0.0484   1  0.8259  0.009772         1     False
+             pp_mean  0.04705   1  0.8283  -0.01347         1      True
+     z_pm_debit_card  0.02843   2  0.9859  0.008121    0.4341     False
+              pp_min  0.01313   1  0.9088 -0.005597         1      True
+             pp_trim 0.004793   1  0.9448 -0.004915         1      True
+          z_frac_gt1 0.001661   1  0.9675 -0.002321         1     False
+               pp_90 -0.07772   2       1 -0.005685    0.9555      True

@@ -1,0 +1,40 @@
+{'bureau': 50, 'ec_behav': 40, 'account': 38, 'repay': 36, 'prev': 25, 'app': 19, 'ec_price': 17, 'cross': 7}
+all features: LR OOF KS 0.52093
+/home/veinsan/Projects/logika/eda/105_family_ablation.py:37: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  Xs = Xs.assign(**{c: pd.Categorical(np.zeros(len(Xs), int), categories=[0])})
+/home/veinsan/Projects/logika/eda/105_family_ablation.py:37: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  Xs = Xs.assign(**{c: pd.Categorical(np.zeros(len(Xs), int), categories=[0])})
+/home/veinsan/Projects/logika/eda/105_family_ablation.py:37: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  Xs = Xs.assign(**{c: pd.Categorical(np.zeros(len(Xs), int), categories=[0])})
+/home/veinsan/Projects/logika/eda/105_family_ablation.py:37: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  Xs = Xs.assign(**{c: pd.Categorical(np.zeros(len(Xs), int), categories=[0])})
+{'family': 'app', 'n': 19, 'ks_alone': 0.23222293830352259, 'ks_drop': 0.5218247449073172, 'loss': -0.0008933642674751052}
+{'family': 'bureau', 'n': 50, 'ks_alone': 0.27164348253547715, 'ks_drop': 0.5069937574098283, 'loss': 0.013937623230013796}
+{'family': 'repay', 'n': 36, 'ks_alone': 0.343061727313395, 'ks_drop': 0.49436690602614547, 'loss': 0.026564474613696654}
+{'family': 'account', 'n': 38, 'ks_alone': 0.14917568958404048, 'ks_drop': 0.5158734101268062, 'loss': 0.005057970513035914}
+{'family': 'prev', 'n': 25, 'ks_alone': 0.21316468664973592, 'ks_drop': 0.5179757686496821, 'loss': 0.002955611990160034}
+{'family': 'ec_behav', 'n': 40, 'ks_alone': 0.36359489593440864, 'ks_drop': 0.5167830722324203, 'loss': 0.0041483084074218635}
+{'family': 'ec_price', 'n': 17, 'ks_alone': 0.3762879715220135, 'ks_drop': 0.5095541003120305, 'loss': 0.0113772803278116}
+{'family': 'cross', 'n': 7, 'ks_alone': 0.164369555672437, 'ks_drop': 0.5192392345123994, 'loss': 0.0016921461274427285}
+
+within-class correlation of family scores, target=0:
+           app  bureau  repay  account  prev  ec_behav  ec_price  cross
+app       1.00    0.65   0.19     0.08  0.68     -0.01      0.00   0.21
+bureau    0.65    1.00   0.24     0.08  0.65     -0.04     -0.04   0.25
+repay     0.19    0.24   1.00     0.15  0.31      0.31      0.32   0.07
+account   0.08    0.08   0.15     1.00  0.18      0.23      0.19   0.24
+prev      0.68    0.65   0.31     0.18  1.00     -0.02     -0.01   0.20
+ec_behav -0.01   -0.04   0.31     0.23 -0.02      1.00      0.84   0.09
+ec_price  0.00   -0.04   0.32     0.19 -0.01      0.84      1.00   0.05
+cross     0.21    0.25   0.07     0.24  0.20      0.09      0.05   1.00
+
+within-class correlation of family scores, target=1:
+           app  bureau  repay  account  prev  ec_behav  ec_price  cross
+app       1.00    0.65   0.27     0.11  0.69     -0.04     -0.04   0.23
+bureau    0.65    1.00   0.31     0.09  0.67     -0.12     -0.12   0.28
+repay     0.27    0.31   1.00     0.31  0.41      0.28      0.31   0.23
+account   0.11    0.09   0.31     1.00  0.26      0.20      0.15   0.29
+prev      0.69    0.67   0.41     0.26  1.00     -0.05     -0.05   0.29
+ec_behav -0.04   -0.12   0.28     0.20 -0.05      1.00      0.83   0.07
+ec_price -0.04   -0.12   0.31     0.15 -0.05      0.83      1.00   0.02
+cross     0.23    0.28   0.23     0.29  0.29      0.07      0.02   1.00

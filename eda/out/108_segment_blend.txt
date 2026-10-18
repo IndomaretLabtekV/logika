@@ -1,0 +1,14 @@
+has_history=0 n=21000 bad=0.117 trees:0.4963 causilo:0.4963 kumo:0.4964 tabm:0.4945
+has_history=1 n=49000 bad=0.144 trees:0.5344 causilo:0.5349 kumo:0.5372 tabm:0.5323
+fold weights seg0: {'trees': np.float64(0.0), 'causilo': np.float64(0.1), 'kumo': np.float64(0.3), 'tabm': np.float64(0.6)}  global {'trees': np.float64(0.1), 'causilo': np.float64(0.4), 'kumo': np.float64(0.2), 'tabm': np.float64(0.3)}
+fold weights seg1: {'trees': np.float64(0.1), 'causilo': np.float64(0.2), 'kumo': np.float64(0.6), 'tabm': np.float64(0.1)}  global {'trees': np.float64(0.1), 'causilo': np.float64(0.4), 'kumo': np.float64(0.2), 'tabm': np.float64(0.3)}
+fold weights seg0: {'trees': np.float64(0.1), 'causilo': np.float64(0.0), 'kumo': np.float64(0.6), 'tabm': np.float64(0.3)}  global {'trees': np.float64(0.1), 'causilo': np.float64(0.0), 'kumo': np.float64(0.7), 'tabm': np.float64(0.2)}
+fold weights seg1: {'trees': np.float64(0.2), 'causilo': np.float64(0.2), 'kumo': np.float64(0.6), 'tabm': np.float64(0.0)}  global {'trees': np.float64(0.1), 'causilo': np.float64(0.0), 'kumo': np.float64(0.7), 'tabm': np.float64(0.2)}
+fold weights seg0: {'trees': np.float64(0.0), 'causilo': np.float64(0.1), 'kumo': np.float64(0.3), 'tabm': np.float64(0.6)}  global {'trees': np.float64(0.1), 'causilo': np.float64(0.9), 'kumo': np.float64(0.0), 'tabm': np.float64(0.0)}
+fold weights seg1: {'trees': np.float64(0.1), 'causilo': np.float64(0.2), 'kumo': np.float64(0.7), 'tabm': np.float64(0.0)}  global {'trees': np.float64(0.1), 'causilo': np.float64(0.9), 'kumo': np.float64(0.0), 'tabm': np.float64(0.0)}
+fold weights seg0: {'trees': np.float64(0.0), 'causilo': np.float64(0.0), 'kumo': np.float64(0.1), 'tabm': np.float64(0.9)}  global {'trees': np.float64(0.2), 'causilo': np.float64(0.3), 'kumo': np.float64(0.5), 'tabm': np.float64(0.0)}
+fold weights seg1: {'trees': np.float64(0.1), 'causilo': np.float64(0.1), 'kumo': np.float64(0.8), 'tabm': np.float64(0.0)}  global {'trees': np.float64(0.2), 'causilo': np.float64(0.3), 'kumo': np.float64(0.5), 'tabm': np.float64(0.0)}
+fold weights seg0: {'trees': np.float64(0.0), 'causilo': np.float64(0.4), 'kumo': np.float64(0.3), 'tabm': np.float64(0.3)}  global {'trees': np.float64(0.2), 'causilo': np.float64(0.3), 'kumo': np.float64(0.5), 'tabm': np.float64(0.0)}
+fold weights seg1: {'trees': np.float64(0.2), 'causilo': np.float64(0.2), 'kumo': np.float64(0.6), 'tabm': np.float64(0.0)}  global {'trees': np.float64(0.2), 'causilo': np.float64(0.3), 'kumo': np.float64(0.5), 'tabm': np.float64(0.0)}
+cross-fit KS global 0.52539  per-segment 0.52490  diff -0.00049 sd 0.00122 P>0 0.34
+folds won 4 /5

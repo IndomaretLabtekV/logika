@@ -1,0 +1,2 @@
+trees_causilo_kumo - v8_recipe: full OOF +0.00186; 30% subset mean +0.00239 sd 0.00215; P(subset diff < 0) 0.14; 5-95% [-0.0012, +0.0058]
+icl_nn_only - trees_only: full OOF +0.00096; 30% subset mean +0.00243 sd 0.00261; P(subset diff < 0) 0.17; 5-95% [-0.0018, +0.0068]

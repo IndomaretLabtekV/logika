@@ -1,0 +1,12 @@
+region           x month   cells  60  chi2/cell  1.05  null p95  1.23  p=0.22  max|z| 2.93
+region           x quarter cells  20  chi2/cell  1.45  null p95  1.14  p=0.01  max|z| 2.70
+employment_type  x month   cells  36  chi2/cell  1.32  null p95  1.23  p=0.02  max|z| 3.17
+employment_type  x quarter cells  12  chi2/cell  1.65  null p95  1.34  p=0.01  max|z| 2.67
+loan_purpose     x month   cells  60  chi2/cell  1.23  null p95  1.26  p=0.07  max|z| 2.66
+loan_purpose     x quarter cells  20  chi2/cell  1.50  null p95  1.22  p=0.00  max|z| 2.59
+housing_status   x month   cells  36  chi2/cell  1.44  null p95  1.41  p=0.05  max|z| 2.97
+housing_status   x quarter cells  12  chi2/cell  2.32  null p95  1.25  p=0.00  max|z| 3.07
+rate             x month   cells  60  chi2/cell  1.27  null p95  1.14  p=0.04  max|z| 3.03
+rate             x quarter cells  20  chi2/cell  1.43  null p95  1.37  p=0.02  max|z| 2.13
+history          x month   cells  24  chi2/cell  2.04  null p95  1.38  p=0.00  max|z| 4.06
+history          x quarter cells   8  chi2/cell  2.17  null p95  1.68  p=0.01  max|z| 2.92

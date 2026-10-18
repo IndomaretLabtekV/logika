@@ -1,0 +1,40 @@
+{'model': 'lgb', 'frac': 0.4, 'rep': 0, 'n_train': 22400, 'ks': 0.5134710790980548, 'budget': 391}
+Default metric period is 5 because AUC is/are not implemented for GPU
+Default metric period is 5 because AUC is/are not implemented for GPU
+{'model': 'cat_s', 'frac': 0.4, 'rep': 0, 'n_train': 22400, 'ks': 0.5155617131834381, 'budget': 1913}
+{'model': 'lgb', 'frac': 0.4, 'rep': 1, 'n_train': 22400, 'ks': 0.5108674059733136, 'budget': 297}
+Default metric period is 5 because AUC is/are not implemented for GPU
+Default metric period is 5 because AUC is/are not implemented for GPU
+{'model': 'cat_s', 'frac': 0.4, 'rep': 1, 'n_train': 22400, 'ks': 0.5146705035030349, 'budget': 1049}
+{'model': 'lgb', 'frac': 0.6, 'rep': 0, 'n_train': 33600, 'ks': 0.5172738722825834, 'budget': 573}
+Default metric period is 5 because AUC is/are not implemented for GPU
+Default metric period is 5 because AUC is/are not implemented for GPU
+{'model': 'cat_s', 'frac': 0.6, 'rep': 0, 'n_train': 33600, 'ks': 0.5128806494239462, 'budget': 3164}
+{'model': 'lgb', 'frac': 0.6, 'rep': 1, 'n_train': 33600, 'ks': 0.5165267048341624, 'budget': 423}
+Default metric period is 5 because AUC is/are not implemented for GPU
+Default metric period is 5 because AUC is/are not implemented for GPU
+{'model': 'cat_s', 'frac': 0.6, 'rep': 1, 'n_train': 33600, 'ks': 0.520527409349806, 'budget': 1241}
+{'model': 'lgb', 'frac': 0.8, 'rep': 0, 'n_train': 44800, 'ks': 0.5185498612425049, 'budget': 479}
+Default metric period is 5 because AUC is/are not implemented for GPU
+Default metric period is 5 because AUC is/are not implemented for GPU
+{'model': 'cat_s', 'frac': 0.8, 'rep': 0, 'n_train': 44800, 'ks': 0.5158521889310609, 'budget': 1614}
+{'model': 'lgb', 'frac': 0.8, 'rep': 1, 'n_train': 44800, 'ks': 0.5210103182150728, 'budget': 336}
+Default metric period is 5 because AUC is/are not implemented for GPU
+Default metric period is 5 because AUC is/are not implemented for GPU
+{'model': 'cat_s', 'frac': 0.8, 'rep': 1, 'n_train': 44800, 'ks': 0.5217334423932593, 'budget': 2016}
+{'model': 'lgb', 'frac': 1.0, 'rep': 0, 'n_train': 56000, 'ks': 0.5189211188998843, 'budget': 638}
+Default metric period is 5 because AUC is/are not implemented for GPU
+Default metric period is 5 because AUC is/are not implemented for GPU
+{'model': 'cat_s', 'frac': 1.0, 'rep': 0, 'n_train': 56000, 'ks': 0.5212411423048993, 'budget': 2627}
+{'model': 'lgb', 'frac': 1.0, 'rep': 1, 'n_train': 56000, 'ks': 0.5205404092373287, 'budget': 505}
+Default metric period is 5 because AUC is/are not implemented for GPU
+Default metric period is 5 because AUC is/are not implemented for GPU
+{'model': 'cat_s', 'frac': 1.0, 'rep': 1, 'n_train': 56000, 'ks': 0.5175934347350646, 'budget': 2156}
+model     cat_s       lgb
+frac                     
+0.4    0.515116  0.512169
+0.6    0.516704  0.516900
+0.8    0.518793  0.519780
+1.0    0.519417  0.519731
+cat_s: KS gain per doubling of training rows +0.0034; +25% rows (full-train refit) ~ +0.0011
+lgb: KS gain per doubling of training rows +0.0060; +25% rows (full-train refit) ~ +0.0019

@@ -1,0 +1,5 @@
+mean dist to 1-NN: validation 9.3262 (median 9.5532)  test 9.3351 (median 9.6052)  ratio 1.0010
+mean dist to 10-NN: validation 10.6464 (median 11.0675)  test 10.6513 (median 11.0686)  ratio 1.0005
+mean dist to 50-NN: validation 11.9391 (median 12.4346)  test 11.9465 (median 12.4444)  ratio 1.0006
+share of rows whose 1-NN distance < 5th pct of validation 1-NN: val 0.050 test 0.049
+50-NN label average KS on validation: 0.4305

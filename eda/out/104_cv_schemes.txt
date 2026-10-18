@@ -1,0 +1,17 @@
+== A) 5 vs 10 folds (seed 42) ==
+ 5-fold: pooled OOF KS 0.52074  mean fold KS 0.52422 sd 0.0112
+10-fold: pooled OOF KS 0.52067  mean fold KS 0.52609 sd 0.0151
+10-fold minus 5-fold: +0.00044 sd 0.00181 P>0 0.59
+
+== B) forward-in-time vs random of the same size ==
+score month  7: train 35035  forward KS 0.5516  random KS 0.5399
+score month  8: train 40774  forward KS 0.5280  random KS 0.5315
+score month  9: train 46583  forward KS 0.4896  random KS 0.5150
+score month 10: train 52413  forward KS 0.5428  random KS 0.5474
+score month 11: train 58267  forward KS 0.5207  random KS 0.5282
+score month 12: train 64088  forward KS 0.5137  random KS 0.4988
+mean forward - random: -0.0024 (sd of one-month KS ~0.02)
+
+== C) adversarial validation train vs test ==
+adversarial AUC 0.4987
+top adversarial features: [('pp_cat_fashion', 1211), ('bc_score_std', 1196), ('pp_cat_personal_care', 1135), ('pp_cat_health', 1129), ('ec_cat_personal_care', 1075), ('pp_90', 1006), ('pp_cat_education', 1004), ('pp_cat_electronics', 996)]

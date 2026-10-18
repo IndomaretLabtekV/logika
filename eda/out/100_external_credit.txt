@@ -1,0 +1,61 @@
+== does bureau contain own open loans? ==
+shape: (9, 6)
+┌────────────┬───────┬───────────────┬──────────────┬────────────┬──────────┐
+│ own_active ┆ n     ┆ b_active_mean ┆ b_active_min ┆ b_out_mean ┆ own_out  │
+│ ---        ┆ ---   ┆ ---           ┆ ---          ┆ ---        ┆ ---      │
+│ u32        ┆ u32   ┆ f64           ┆ f64          ┆ f64        ┆ f64      │
+╞════════════╪═══════╪═══════════════╪══════════════╪════════════╪══════════╡
+│ 0          ┆ 48741 ┆ 1.623978      ┆ 1.215917     ┆ 1.6847e7   ┆ 0.0      │
+│ 1          ┆ 27615 ┆ 2.248555      ┆ 1.659678     ┆ 1.7375e7   ┆ 1.2473e7 │
+│ 2          ┆ 15971 ┆ 2.752499      ┆ 1.946152     ┆ 1.6906e7   ┆ 2.4972e7 │
+│ 3          ┆ 5852  ┆ 3.268085      ┆ 2.195489     ┆ 1.6617e7   ┆ 3.8541e7 │
+│ 4          ┆ 1475  ┆ 3.732203      ┆ 2.362712     ┆ 1.4778e7   ┆ 5.0217e7 │
+│ 5          ┆ 291   ┆ 4.350515      ┆ 2.80756      ┆ 1.5422e7   ┆ 6.2279e7 │
+│ 6          ┆ 50    ┆ 4.31          ┆ 2.34         ┆ 1.5172e7   ┆ 7.2371e7 │
+│ 7          ┆ 4     ┆ 6.75          ┆ 4.75         ┆ 1.3978e7   ┆ 9.5700e7 │
+│ 8          ┆ 1     ┆ 3.0           ┆ 0.0          ┆ 0.0        ┆ 6.4645e7 │
+└────────────┴───────┴───────────────┴──────────────┴────────────┴──────────┘
+corr(b_out_mean, own_out) = 0.14313836878008232
+corr(b_active_mean, own_active) = 0.39488888633283686
+share of provider rows with outstanding - revolving >= own_out: 0.6606244888067614
+share with active_accounts >= own_active: 0.9094695707491443
+Traceback (most recent call last):
+  File "/home/veinsan/Projects/logika/eda/100_external_credit.py", line 62, in <module>
+    pv.filter(pl.col("own_active") > 0).select((pl.col("inst_out") - pl.col("own_out")).quantile(q) for q in (0.01, 0.1, 0.5, 0.9)).row(0))
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/veinsan/Projects/logika/.venv/lib/python3.13/site-packages/polars/dataframe/frame.py", line 10574, in select
+    ._collect_eager(optimizations=QueryOptFlags._eager())
+     ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/veinsan/Projects/logika/.venv/lib/python3.13/site-packages/polars/lazyframe/frame.py", line 1947, in _collect_eager
+    return _eager_engine().collect(
+           ~~~~~~~~~~~~~~~~~~~~~~~^
+        self, optimizations=optimizations, background=False
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/veinsan/Projects/logika/.venv/lib/python3.13/site-packages/polars/lazyframe/engine.py", line 408, in collect
+    return wrap_df(ldf.collect(self.name, callback))
+                   ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+polars.exceptions.DuplicateError: projections contained duplicate output name 'inst_out'. It's possible that multiple expressions are returning the same default column name. If this is the case, try renaming the columns with `.alias("new_name")` to avoid duplicate column names.
+└────────────┴───────┴───────────────┴──────────────┴────────────┴──────────┘
+corr(b_out_mean, own_out) = 0.14313836878008232
+corr(b_active_mean, own_active) = 0.39488888633283686
+share of provider rows with outstanding - revolving >= own_out: 0.6606244888067614
+share with active_accounts >= own_active: 0.9094695707491443
+quantiles inst_out - own_out (own_active>0): (-87445583.52870782, -34102721.76085738, -5429859.417557932, 15611338.827719089)
+
+== candidate vs v8 reference (chi2/df ~1 = nothing new; dKS cross-fit) ==
+ext_active         KS 0.0203  chi2/df   1.30  dKS_cf +0.00087
+ext_active_mean    KS 0.0292  chi2/df   1.47  dKS_cf +0.00045
+ext_out            KS 0.0607  chi2/df   1.21  dKS_cf +0.00084
+ext_out_mean       KS 0.0662  chi2/df   1.31  dKS_cf +0.00108
+ext_inst_out       KS 0.0668  chi2/df   1.25  dKS_cf +0.00094
+own_out_share      KS 0.0891  chi2/df   1.12  dKS_cf +0.00018
+act_gap            KS 0.0414  chi2/df   1.05  dKS_cf +0.00058
+out_gap            KS 0.0454  chi2/df   1.52  dKS_cf +0.00128
+own_active         KS 0.0918  chi2/df   1.02  dKS_cf +0.00091
+own_out            KS 0.1212  chi2/df   0.86  dKS_cf +0.00129
+tot_out            KS 0.1497  chi2/df   1.22  dKS_cf +0.00071
+tot_out_mean       KS 0.1530  chi2/df   1.26  dKS_cf +0.00041
+tot_dti            KS 0.1483  chi2/df   2.97  dKS_cf +0.00177
+own_dti            KS 0.1145  chi2/df   1.97  dKS_cf +0.00154
