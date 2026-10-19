@@ -56,3 +56,11 @@
 - TabPFN-3.5 (paket `tabpfn` 9.0.0, gated, token PriorLabs/HF) hanya bisa lokal (kernel CLI tanpa secret).
 - Kesimpulan riset 17–18 Okt: zoo TabArena praktis tuntas; satu-satunya model eksternal yang menambah adalah Kumo-Tabular
   large dengan context penuh. Model > 8 GB VRAM tidak memberi apa-apa di T4.
+
+## 19 Okt
+- **VIP-COP** (Chen, Ding & Akoglu, CMU; arXiv 2605.12904, "Black-box Context Optimization for Tabular Foundation
+  Models"): pilih satu context global (baris dan/atau fitur) untuk TFM beku dengan importance sampling softmax(φ/τ) +
+  regresi KernelSHAP atas AUROC validasi; dibandingkan acak, ensemble 20 context, context penuh, KMeans, DT+TFM.
+  Ringkasan lengkap + rencana implementasi untuk Kumo: `10_ide_belum_dicoba/vipcop_context_optimization.md`.
+- WebSearch kompetisi: tidak ada tulisan publik untuk DSC LOGIKA UI 2026; tesis UMN (kc.umn.ac.id eprint 43840) hanya
+  mendeskripsikan penyelenggaraan edisi 2025. Tidak ada simulator data kredit sintetis yang cocok.

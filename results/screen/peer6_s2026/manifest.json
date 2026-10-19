@@ -1,0 +1,124 @@
+{
+  "packages": {
+    "numpy": "2.5.4",
+    "pandas": "3.0.6",
+    "polars": "2.0.0",
+    "scikit-learn": "1.9.1",
+    "scipy": "1.18.1",
+    "lightgbm": "4.7.0",
+    "xgboost": "3.4.1",
+    "catboost": "1.2.10",
+    "torch": "2.14.1",
+    "tabm": "0.0.3",
+    "rtdl_num_embeddings": "0.0.12",
+    "causilo": "1.0.3"
+  },
+  "config": {
+    "N_FOLDS": 5,
+    "INNER": 7,
+    "REFIT": 1.15,
+    "SEEDS": [
+      42,
+      7,
+      2026
+    ],
+    "N_ROUNDS": 10000,
+    "EARLY_STOP": 200,
+    "LGB": {
+      "objective": "binary",
+      "metric": "auc",
+      "learning_rate": 0.02,
+      "num_leaves": 31,
+      "min_child_samples": 100,
+      "feature_fraction": 0.5,
+      "bagging_fraction": 0.8,
+      "bagging_freq": 1,
+      "lambda_l2": 5.0,
+      "verbose": -1,
+      "n_jobs": 20
+    },
+    "LGB_S": {
+      "objective": "binary",
+      "metric": "auc",
+      "learning_rate": 0.02,
+      "num_leaves": 7,
+      "min_child_samples": 200,
+      "feature_fraction": 0.4,
+      "bagging_fraction": 0.8,
+      "bagging_freq": 1,
+      "lambda_l2": 10.0,
+      "verbose": -1,
+      "n_jobs": 20,
+      "max_depth": 3
+    },
+    "XGB": {
+      "objective": "binary:logistic",
+      "eval_metric": "auc",
+      "learning_rate": 0.02,
+      "max_depth": 5,
+      "min_child_weight": 5,
+      "subsample": 0.8,
+      "colsample_bytree": 0.5,
+      "reg_lambda": 5.0,
+      "tree_method": "hist",
+      "device": "cuda"
+    },
+    "XGB_S": {
+      "objective": "binary:logistic",
+      "eval_metric": "auc",
+      "learning_rate": 0.02,
+      "max_depth": 3,
+      "min_child_weight": 20,
+      "subsample": 0.8,
+      "colsample_bytree": 0.4,
+      "reg_lambda": 10.0,
+      "tree_method": "hist",
+      "device": "cuda"
+    },
+    "CAT": {
+      "learning_rate": 0.03,
+      "depth": 6,
+      "l2_leaf_reg": 5,
+      "loss_function": "Logloss",
+      "eval_metric": "AUC",
+      "task_type": "GPU",
+      "verbose": 0
+    },
+    "CAT_S": {
+      "learning_rate": 0.03,
+      "depth": 4,
+      "l2_leaf_reg": 10,
+      "loss_function": "Logloss",
+      "eval_metric": "AUC",
+      "task_type": "GPU",
+      "verbose": 0
+    },
+    "TABM": {
+      "lr": 0.002,
+      "wd": 0.0003,
+      "bins": 48,
+      "batch": 512,
+      "epochs": 60,
+      "patience": 8
+    }
+  },
+  "models": [
+    "lgb",
+    "lgb_s"
+  ],
+  "folds": null,
+  "seeds": [
+    2026
+  ],
+  "n_features": 238,
+  "extra": [
+    "application_id",
+    "m_ac_lowdays_max",
+    "m_ac_lowdays_mean",
+    "m_ac_frac_zero_min",
+    "m_bp_delinq_a",
+    "h_pp90",
+    "r_bcout"
+  ],
+  "drop": []
+}

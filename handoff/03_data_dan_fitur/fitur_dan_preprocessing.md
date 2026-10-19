@@ -52,3 +52,18 @@ Total **232 prediktor** (4 kategorikal: loan_purpose, region, employment_type, h
 - Augmentasi gaya CV (rotation, jitter, SMOTE): tidak ada dasar semantik untuk fitur keuangan.
 - Menghapus item dengan konten kembar: lihat `leakage_dan_duplikasi.md`.
 - Pembulatan float `pv_rate_delta` (usulan Astra): tidak diadopsi dan belum diuji di model.
+
+## Konstruksi fitur 18–19 Okt (TIDAK ada yang diadopsi ke `features.py`; parquet di `eda/out/`, regenerable)
+| Script | Kolom | Hasil terbaik |
+|---|---|---|
+| `eda/114_cross_timing.py` | A_/B_/C_/D_ (11) | null |
+| `eda/115_repay_latent.py` | re_* (EB disiplin bayar) | LGB −0,0003, Causilo −0,0014 |
+| `eda/125` thin-view (drop 113 kolom kosong thin + has_history) | model, bukan kolom | keluarga +0,0002 |
+| `eda/135_prev_escalation.py` | E_* (9) | null |
+| `eda/136_affordability.py` | F_* (8) | null |
+| `eda/137_peer_relative.py` | x\|z\|grup, x\|r\|grup (3.150) | LGB_s +0,0023 (seleksi bocor), keluarga +0,0002 |
+| `eda/138_month_normalized_account.py` | M_* (15, patuh cutoff) | lemah |
+| `eda/142_snapshot_deltas.py --shifts` | d90_/d180_ (333), d30_/d365_ | keluarga −0,0002 / −0,0009 |
+| `eda/144_misc_constructs.py` | G_* (15) | null |
+| `eda/145` / `146` pasangan | pw_* | bersarang −0,0005 |
+Snapshot fitur: `data_pq/features_shift{30,90,180,365}.parquet` (di-.gitignore, dibangun ulang oleh `eda/142`).

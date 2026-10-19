@@ -38,3 +38,8 @@ research/papers/
 *.pkl
 *.cbm
 *.ubj
+
+# training checkpoints / logs written by pytorch-lightning (pytabkit TabR, TabM) and local runners
+checkpoints/
+lightning_logs/
+*.ckpt

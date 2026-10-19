@@ -41,3 +41,14 @@
 | `valid2.run` menulis output setiap fold | run terputus tidak kehilangan fold | – |
 | Wrapper `print-access-token` untuk Kaggle CLI | jalan lagi tanpa login interaktif | tidak menunggu user saat tidur |
 | Peta informasi keluarga fitur + learning curve | jelas di mana informasi berada dan bahwa data tidak kurang | menghentikan pencarian ke arah yang tidak berguna |
+
+## 18 Okt sore – 19 Okt
+| Hal | Bukti | Kenapa berguna |
+|---|---|---|
+| Diagnosa satu faktor per kali untuk bug Kumo (`eda/112` + cek chunk) | bug class-order ketemu dalam ~1 jam | variabel dipisah satu per satu sampai tersisa satu penjelasan |
+| Probe keluarga terpisah di public dengan pra-registrasi | Causilo-only z −3,4, trees-only +0,9 | memetakan keluarga mana yang CV-nya transfer (walau waktunya melanggar arahan) |
+| Validasi bersarang untuk seleksi fitur | membongkar gain palsu +0,0036 | mencegah submit kandidat palsu |
+| Kurva seed / multi-seed OOF | margin v31 jujur +0,0017; seed 42 beruntung | kalibrasi ambang keputusan |
+| Uji notebook submission end-to-end di lokal (nbclient) | Spearman 1,000000 vs v34; bug path lokal ketemu | reproducibility tanpa kuota Kaggle |
+| Satu job berat + `taskset`/`nice` | tidak hang lagi setelah 18 Okt malam | stabilitas laptop |
+| Memory feedback setiap teguran user | 4 aturan baru tersimpan | kesalahan tidak terulang lintas chat |

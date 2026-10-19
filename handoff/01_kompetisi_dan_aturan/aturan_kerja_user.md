@@ -116,3 +116,29 @@ Tafsiran yang dipakai sepanjang chat dan tidak pernah dikoreksi user:
 - Pertanyaan "TabFM bukannya udah pernah ya?" → sebelum 17 Okt TabFM belum pernah dijalankan (status C3 ❌); 17 Okt OOM
   lokal, v27 Kaggle v1 gagal (OOM/NaN), v2 jalan dan null. Cek katalog sebelum mengusulkan model "baru".
 - User bertanya mana yang lebih cepat, lokal atau Kaggle → jawaban berangka ada di `02_proyek_dan_tools/kecepatan_lokal_vs_kaggle.md`.
+
+## 18 Okt malam (teguran)
+- Kuota GPU Kaggle habis → **semua run di lokal**, termasuk uji notebook. Jangan push kernel kecuali user minta saat itu.
+- **Jangan menyebut "final"** (notebook final, resep final) selama lomba berjalan; pakai "notebook submission" / nama builder.
+
+## Sesi `/goal` 18 Okt sore – 19 Okt (kutipan dan aturan baru)
+Teks `/goal` 18 Okt 12:43 (inti): lanjutkan lomba, target public > 0,57768, baca handoff dulu, langkah pertama lacak
+bug `eda/kumo_finetune.py` lalu screening fine-tune Kumo; "fitur dan model zoo sudah jenuh: cari informasi atau cara
+baru, bukan tuning"; riset ~70% / modelling ~30%; validation_v2 wajib; semua run di lokal; Kaggle hanya untuk uji
+reproducibility notebook; submit hanya bila lolos validation_v2 dengan gain > 0,002; jangan tulis token; bahasa
+Indonesia, jujur, klaim berangka, jangan git push.
+
+| Kapan | Kutipan user | Artinya / aturan |
+|---|---|---|
+| 18 Okt ~20:30 | "Stop sebut bahwa itu adalah notebook final … Kuota kaggle gua sudah habis, bukankah gua udah bilang … seluruh run dilakukan di local saja" | **tidak ada push Kaggle**; **jangan sebut "final"** selama lomba berjalan |
+| 18 Okt ~22:00 (setelah laptop hang) | "hari ini submisison kan sudah kepakai 3/3 … gua ingin lu memakai seluruh submissionnya jika memang benar benar sudah mendapatkan breakthrough … jika dalam rentang waktu besok jam 07:00 sampai 06:00 2 hari lagi lu tidak mendapatkan breakthrough, disitu lu boleh memakai seluruh submisisonnya untuk bahan analisis … seluruh hal yang lu lakukan wajib 100% masih mengikuti aturan yang ada di @docs/context.md" | sebelum **21 Okt 06:00** hanya breakthrough yang boleh disubmit; sesudahnya (tanpa breakthrough) semua slot boleh untuk analisis |
+| 19 Okt ~07:40 | "Kenapa lu malah submit sekarang? Bukannya gua udah biiang untuk eksperimen dulu sampai besok jam 6 pagi? Atau memang lu tadi bener bener pede dengan ke 3 submission itu?" | 3 probe 19 Okt 07:00 **melanggar** arahan (salah baca jendela). Ragu soal jendela waktu → tunggu/tanya |
+| 19 Okt siang | "Oh ya, lu udah pernah coba temporal & relational feature engineering belum?" | dijawab (sudah banyak; celah: snapshot cutoff mundur) lalu dikerjakan → null |
+| 19 Okt malam | "btw lu udah nyoba optimizing context sampling belum? temen gua yang dapet skor publik 0.57065 dia pakai kumo ensemble 3 seed, coba jawab dulu udah atau belum" + paper arXiv 2605.12904 | jawaban: belum (lihat `10_ide_belum_dicoba/vipcop_context_optimization.md`) |
+| 19 Okt malam | "gua ga bilang lu suruh jalanin loh? gua cuma nanya udah atau belum, batalin seluruh proses yang ada" | **pertanyaan = jawab saja**, jangan menjalankan apa pun tanpa diminta; semua proses dihentikan |
+| 19 Okt malam | minta folder handoff selengkap mungkin, beberapa folder, tanpa notebook/results, plus rapikan repo siap commit GitHub | folder ini (tidak di-push) |
+
+### Preferensi yang terlihat di sesi ini
+- User marah bila arahan eksplisit (lokasi run, jendela submit, "jangan jalankan") dilanggar walau dengan niat baik.
+  Arahan user > dorongan Stop hook `/goal`.
+- User memberi petunjuk dari luar (teman tim lain, paper) dan ingin jawaban jujur "sudah/belum" lebih dulu.

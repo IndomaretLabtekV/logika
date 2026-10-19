@@ -1,0 +1,2 @@
+trees_only - v31_seed42: full OOF -0.00167; 30% subset mean -0.00300 sd 0.00238; P(subset diff > 0) 0.10; 5-95% [-0.0069, +0.0007]
+trees_only - v31_3seed: full OOF -0.00132; 30% subset mean -0.00247 sd 0.00235; P(subset diff > 0) 0.15; 5-95% [-0.0064, +0.0014]

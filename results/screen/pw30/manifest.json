@@ -1,0 +1,148 @@
+{
+  "packages": {
+    "numpy": "2.5.4",
+    "pandas": "3.0.6",
+    "polars": "2.0.0",
+    "scikit-learn": "1.9.1",
+    "scipy": "1.18.1",
+    "lightgbm": "4.7.0",
+    "xgboost": "3.4.1",
+    "catboost": "1.2.10",
+    "torch": "2.14.1",
+    "tabm": "0.0.3",
+    "rtdl_num_embeddings": "0.0.12",
+    "causilo": "1.0.3"
+  },
+  "config": {
+    "N_FOLDS": 5,
+    "INNER": 7,
+    "REFIT": 1.15,
+    "SEEDS": [
+      42,
+      7,
+      2026
+    ],
+    "N_ROUNDS": 10000,
+    "EARLY_STOP": 200,
+    "LGB": {
+      "objective": "binary",
+      "metric": "auc",
+      "learning_rate": 0.02,
+      "num_leaves": 31,
+      "min_child_samples": 100,
+      "feature_fraction": 0.5,
+      "bagging_fraction": 0.8,
+      "bagging_freq": 1,
+      "lambda_l2": 5.0,
+      "verbose": -1,
+      "n_jobs": 20
+    },
+    "LGB_S": {
+      "objective": "binary",
+      "metric": "auc",
+      "learning_rate": 0.02,
+      "num_leaves": 7,
+      "min_child_samples": 200,
+      "feature_fraction": 0.4,
+      "bagging_fraction": 0.8,
+      "bagging_freq": 1,
+      "lambda_l2": 10.0,
+      "verbose": -1,
+      "n_jobs": 20,
+      "max_depth": 3
+    },
+    "XGB": {
+      "objective": "binary:logistic",
+      "eval_metric": "auc",
+      "learning_rate": 0.02,
+      "max_depth": 5,
+      "min_child_weight": 5,
+      "subsample": 0.8,
+      "colsample_bytree": 0.5,
+      "reg_lambda": 5.0,
+      "tree_method": "hist",
+      "device": "cuda"
+    },
+    "XGB_S": {
+      "objective": "binary:logistic",
+      "eval_metric": "auc",
+      "learning_rate": 0.02,
+      "max_depth": 3,
+      "min_child_weight": 20,
+      "subsample": 0.8,
+      "colsample_bytree": 0.4,
+      "reg_lambda": 10.0,
+      "tree_method": "hist",
+      "device": "cuda"
+    },
+    "CAT": {
+      "learning_rate": 0.03,
+      "depth": 6,
+      "l2_leaf_reg": 5,
+      "loss_function": "Logloss",
+      "eval_metric": "AUC",
+      "task_type": "GPU",
+      "verbose": 0
+    },
+    "CAT_S": {
+      "learning_rate": 0.03,
+      "depth": 4,
+      "l2_leaf_reg": 10,
+      "loss_function": "Logloss",
+      "eval_metric": "AUC",
+      "task_type": "GPU",
+      "verbose": 0
+    },
+    "TABM": {
+      "lr": 0.002,
+      "wd": 0.0003,
+      "bins": 48,
+      "batch": 512,
+      "epochs": 60,
+      "patience": 8
+    }
+  },
+  "models": [
+    "lgb",
+    "lgb_s"
+  ],
+  "folds": null,
+  "seeds": [
+    42
+  ],
+  "n_features": 262,
+  "extra": [
+    "application_id",
+    "pw_pp_90_prod_bh_score_delta",
+    "pw_cf_nonincome_share_ratio_bz_trend",
+    "pw_rp_frac_dpd1_diff_ec2_ewm56_rel",
+    "pw_bc_score_mean_diff_bh_score_min",
+    "pw_rp_maxdpd_mean_max_pp_min",
+    "pw_pp_30_diff_rq_frac_1_29",
+    "pw_pp_old_ratio_bp_score_c",
+    "pw_bh_last_score_prod_pp_cat_home",
+    "pw_rp_days_since_delinq_ratio_ec_recency_d",
+    "pw_bc_score_mean_diff_bh_score_mean",
+    "pw_rp_n_inst_diff_ec_recency_d",
+    "pw_rp_maxdpd_mean_ratio_rp_n_inst",
+    "pw_cf_nonincome_share_diff_bz_trend",
+    "pw_ob_remaining_diff_ac_outflow_mean",
+    "pw_rp_frac_dpd30_ratio_rp_n_inst",
+    "pw_ac_outflow_mean_max_bc_revlimit_max",
+    "pw_ac_minbal_min_ratio_bz_trend",
+    "pw_dti_verified_prod_rp_frac_dpd1_6m",
+    "pw_dti_verified_prod_rp_days_since_delinq",
+    "pw_ec_accel_30d_ratio_pp_cat_health",
+    "pw_rp_frac_dpd1_diff_rp_n_inst",
+    "pw_bc_score_min_ratio_bh_score_mean",
+    "pw_pp_30_diff_bh_score_min",
+    "pw_bc_revlimit_max_max_pv_req_mean",
+    "pw_pp_done_diff_bz_newest",
+    "pw_ec2_ewm7_rel_max_ec_spend_90d_ratio",
+    "pw_rp_late_mean_diff_ec2_aov_shift",
+    "pw_rp_remaining_oblig_diff_pp_cat_home",
+    "pw_rp_n_inst_ratio_ec_recency_d",
+    "pw_rp_late_mean_prod_bz_trend"
+  ],
+  "drop": []
+}

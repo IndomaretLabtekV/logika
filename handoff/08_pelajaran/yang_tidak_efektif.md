@@ -65,7 +65,8 @@
 | seg_causilo (fit per segmen has_history, v29) | 0,52409 vs 0,52583 |
 | TabM bersih | 0,52100, model terlemah; ≈ LR rank-gauss |
 | Causilo + 14 fitur utang eksternal | 0,5237 vs 0,5249 |
-| Fine-tune Kumo | belum valid (bug baseline 0,298) — **bukan null, belum diuji** |
+| Fine-tune Kumo (18 Okt sore, bug sudah diperbaiki) | blok ICL lr 1e-5: inner-stop KS tidak naik dalam 150 langkah (null); semua parameter OOM di 8 GB |
+| Stacked ICL (`stk_causilo`, `stk_kumo`: skor LGB OOF bersarang sebagai fitur) | fold 0 0,5224 vs 0,5249 / 0,5258 vs 0,5256; di v31 −0,0017 / −0,0011 |
 
 ### Blending
 | Dicoba | Hasil |
@@ -89,3 +90,34 @@
 - Menjalankan full fold lokal karena salah baca status Kaggle → komputasi ganda (v26).
 - Screening ICL dengan satu draw context → angka fold 0 terlalu optimis (0,5276 vs pooled 0,52484).
 - Memperkirakan public dengan sd dari bootstrap selisih untuk varian hampir identik (v34 ± 0,0006) → terlalu sempit.
+
+## Tambahan 18 Okt sore
+| Dicoba | Hasil |
+|---|---|
+| Timing lintas tabel (`eda/114`): ganti kerja vs riwayat, burst belanja sebelum jatuh tempo telat, low balance di bulan telat, belanja vs outflow | 11 kandidat, dKS maks +0,0012 < null p95 +0,0014 |
+| Laten disiplin bayar per cicilan (`eda/115`, logistik kovariat + random intercept EB) | uji residual sedikit di atas null (re_sev_t1 χ²/df 3,5, dKS +0,0022) tapi **tidak transfer**: LGB −0,0003, LGB_s −0,0012, Causilo −0,0014 (P 0,21) |
+| KumoRelational | tidak dijalankan: berbasis TabICLv2 (keluarga lebih lemah) dan meng-embed semua 4,36 juta item → tidak muat 8 GB tanpa subsampling yang merusak pp_mean |
+| Feature bagging ICL (`fm_select(rand)`, Causilo 3 subset acak) | anggota 0,514–0,523; bag −0,0022 (P 0,09); di v31 −0,0006 |
+
+## Tambahan 19 Okt (semua diuji di level keluarga pohon, referensi pohon saja)
+| Dicoba | Hasil |
+|---|---|
+| Scan residual 228 fitur vs pohon saja (`eda/134`) | 1/228 (dec_month) |
+| Eskalasi aplikasi sebelumnya (`eda/135`), keterjangkauan 3-arah (`eda/136`) | null |
+| 3.150 fitur relatif-kelompok (`eda/137`) | LGB_s +0,0023 (P 0,98), keluarga +0,0002 |
+| Seleksi konfigurasi LGB bersarang (`lgb_nested`) | −0,0002 |
+| PCA rotation / LR stack untuk pohon | null |
+| Pembersihan label bersarang (`eda/141`) | −0,001 |
+| Snapshot fitur cutoff −90/−180 hari, 333 delta (`eda/142/143`) | LGB/XGB +0,0013–0,0022, keluarga −0,0002 |
+| Validasi maju-waktu (`eda/140`) | tidak mereproduksi penalti ICL di public |
+| TabR 3 seed (`results/v40`) | 0,51217; ditambah ke v31 −0,0008…−0,0026 |
+| Distilasi ICL → LGB (`eda/118/119`) | fold 0 +0,004…+0,010, 5 fold ≤ v31 |
+| Thin-view (`eda/125/126`) | thin +0,0026, pooled +0,0002 |
+| Scan pita titik potong (`eda/127`), objective surrogate-KS (`eda/128`), spesialis pita (`eda/149`) | null / −0,004 / −0,0008…−0,0053 |
+| 7.080 pasangan fitur (`eda/145/146`) | bersarang −0,0005 (yang bocor +0,0036) |
+| Konstruksi lain (`eda/144`), persentil akun per bulan (`eda/138`) | null / lemah |
+| Agregasi keluarga pohon prob/logit (`eda/147`) | ±0,0002 |
+| Keluarga 9 pohon (lgb_x, xgb_d8, cat_d8) | −0,0001 |
+| Seed outer tambahan untuk pohon (6 seed) | OOF 0,52324; test Spearman 0,99997 vs 3 seed |
+| Snapshot −30/−365 (`eda/142 --shifts 30,365`) | keluarga −0,0009 |
+| Riset web untuk kompetisi/generator | tidak ada informasi |

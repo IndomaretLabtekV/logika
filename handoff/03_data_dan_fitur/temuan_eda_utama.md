@@ -93,3 +93,27 @@ Repayment paling unik (hilang 0,027), padahal hanya ada untuk ~66% customer.
 - **Residual 228 fitur vs OOF bersih** (`eda/103`): 0 di atas null (chi2/df p95 1,93, dKS p95 +0,0018).
 - **Neighbor gap** (`eda/110`): jarak 1/10/50-NN validasi→train vs test→train rasio 1,001/1,0005/1,0006 → tidak ada
   struktur "tetangga dalam train" yang menggelembungkan CV model ICL.
+
+## Tambahan 18–19 Okt (referensi = OOF bersih; sejak 19 Okt referensi utama = **pohon saja**, keluarga yang CV-nya transfer)
+### Struktur skor
+- **ICL vs pohon** (`eda/113`): Spearman trees–Kumo 0,982, trees–Causilo 0,984, Causilo–Kumo 0,989. Residual Kumo di atas
+  pohon LR χ² 255 (df 1); Causilo 115; keduanya 255 → info Causilo di luar pohon ⊂ Kumo. Penggerak residual:
+  `cf_nonincome_share`, `pv_appr_max`, `employment_tenure_months`, `ob_term_mean` (fitur ini tidak ada di `fm_select`
+  KS-ranked). **Tetapi residual ICL ternyata tidak transfer ke public** (probe 19 Okt).
+- **KS pooled ditentukan di satu titik potong** (rank v31 ~0,688; pita 0,55–0,80 berisi 17,5k baris, bad 14,1%).
+  Perbaikan di dalam satu segmen hampir tidak menggeser pooled (thin-view: thin +0,0026 → pooled +0,0002).
+- **Ekstrem terpisah sempurna** (`eda/148`): 2% teraman 0 bad / 1.400 (95% atas 0,36%), 0,25% teratas bad 0,86–0,89 →
+  tidak ada lantai noise label; semua kesulitan di tengah. Dalam pita, model global (KS pita 0,15–0,20) lebih baik dari
+  spesialis pita (0,14–0,17).
+- **Varians seed outer**: LGB seed tunggal sd 0,0016 (0,5179–0,5227), Causilo sd 0,0016 (0,5215–0,5258, seed 42 = tertinggi),
+  Kumo 3 seed 0,52570 vs seed 42 0,52665; set seed pohon v22 (42/7/2026) 0,52448 vs seed 1/2/3 0,52400, 6 seed 0,52324.
+- **Averaging**: rata-rata k seed outer menolong LGB (+0,0033 dari 1→8 seed) dan Causilo (+0,0022 dari 1→5) setara; di
+  level keluarga 6 GBDT seed tambahan tidak menambah (keragaman antar model sudah memberi efek yang sama).
+
+### Hipotesis data yang diuji dan ditolak (19 Okt; detail `05_katalog_eksperimen/katalog_eda.md`)
+timing lintas tabel (burst belanja sebelum jatuh tempo telat, low balance di bulan telat, belanja vs outflow), ganti
+kerja vs umur riwayat, laten disiplin bayar per cicilan (EB), eskalasi requested amount / percepatan aplikasi /
+re-apply cepat setelah ditolak, keterjangkauan 3-arah (DSR total vs income terverifikasi, sisa kas, bulan buffer),
+3.150 fitur relatif-kelompok, 7.080 pasangan fitur (OpenFE-style), snapshot fitur di cutoff −30/−90/−180/−365 hari
+(333 + kolom delta), volatilitas outflow, bentuk buffer likuiditas, residual skor bureau, LTI aplikasi lama,
+per-provider active accounts/revolving limit. Semuanya null di level keluarga pohon.

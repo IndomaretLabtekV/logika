@@ -1,0 +1,10 @@
+seeds available: [1, 2, 3, 4, 5, 7, 42, 2026]
+lgb: single-seed KS mean 0.52049 sd 0.00158 range [0.51787, 0.52274]
+lgb: mean-over-k curve 1:0.52066 2:0.52240 3:0.52282 4:0.52301 5:0.52329 6:0.52324 7:0.52330 8:0.52400
+lgb_s: single-seed KS mean 0.52121 sd 0.00153 range [0.51762, 0.52299]
+lgb_s: mean-over-k curve 1:0.52148 2:0.52227 3:0.52242 4:0.52252 5:0.52269 6:0.52289 7:0.52286 8:0.52320
+causilo seeds [42, [1, 2, 7, 2026]]: single KS mean 0.52300 sd 0.00157 range [0.52149, 0.52583]
+causilo: mean-over-k curve 1:0.52270 2:0.52377 3:0.52454 4:0.52473 5:0.52493
+mean pairwise corr between single seeds: lgb 0.98529, causilo 0.99467
+causilo: seed 42 0.52583; other 2 seeds (mean) 0.52280; mean of 3 0.52418; corr(seed42, other) 0.99613
+kumo: seed 42 0.52665; other 2 seeds (mean) 0.52582; mean of 3 0.52570; corr(seed42, other) 0.99720

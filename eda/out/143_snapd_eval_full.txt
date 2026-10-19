@@ -1,0 +1,7 @@
+lgb    3 seeds +deltas vs without: 0.52432 vs 0.52265 d +0.00130 sd 0.00174 P>0 0.77 folds 4/5
+lgb_s  3 seeds +deltas vs without: 0.52352 vs 0.52129 d +0.00216 sd 0.00166 P>0 0.91 folds 4/5
+xgb    3 seeds +deltas vs without: 0.52440 vs 0.52310 d +0.00144 sd 0.00172 P>0 0.78 folds 4/5
+xgb_s  3 seeds +deltas vs without: 0.52300 vs 0.52285 d +0.00022 sd 0.00157 P>0 0.54 folds 3/5
+cat    3 seeds +deltas vs without: 0.51940 vs 0.51975 d -0.00045 sd 0.00158 P>0 0.40 folds 3/5
+cat_s  3 seeds +deltas vs without: 0.52063 vs 0.52077 d -0.00008 sd 0.00161 P>0 0.47 folds 2/5
+tree family (replaced ['cat', 'cat_s', 'lgb', 'lgb_s', 'xgb', 'xgb_s']) vs v22 trees: 0.52396 vs 0.52448 d -0.00015 sd 0.00160 P>0 0.46 folds 3/5

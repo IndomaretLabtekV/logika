@@ -15,8 +15,11 @@ MODELS = {
     "tabm": lambda: v.tabm_fit(),
     "causilo": lambda: v.causilo_fit(),
     "realmlp": lambda: v.realmlp_fit(),
+    "tabr": lambda: v.realmlp_fit(model="TabR_S_D_Classifier"),
     "woe_lr": lambda: v.woe_lr_fit(),
     "lr_q": lambda: v.lr_q_fit(),
+    "lgb_nested": lambda: v.lgb_nested_fit(),
+    "lgb_x": lambda: v.lgb_fit(v.LGB_X), "xgb_d8": lambda: v.xgb_fit(v.XGB_D8), "cat_d8": lambda: v.cat_fit(v.CAT_D8),
 }
 
 
@@ -24,16 +27,22 @@ def model(name):
     """'causilo_e16_f150' -> causilo_fit(n_est=16, n_num=150); other names from MODELS."""
     if name.startswith("seg_"):
         return v.seg_fit(model(name[4:]))
+    if name.startswith("stk_"):
+        return v.stack_fit(model(name[4:]))
+    if name.startswith("slr_"):
+        return v.stack_lr_fit(model(name[4:]))
+    if name.startswith("pca_"):
+        return v.pca_fit(model(name[4:]))
     base = name.split("_")[0]
     if base in ("causilo", "tabpfn", "tabdpt", "kumo"):
         parts = name.split("_")[1:]
         kw = {"size": parts.pop(0)} if base == "kumo" and parts and parts[0] in ("small", "medium", "large") else {}
-        kw |= {dict(e="n_est", f="n_num", c="max_context", x="context", n="n_ens", b="n_bag", g="g_off")[t[0]]: int(t[1:]) for t in parts}
+        kw |= {dict(e="n_est", f="n_num", c="max_context", x="context", n="n_ens", b="n_bag", g="g_off", r="rand")[t[0]]: int(t[1:]) for t in parts}
         return getattr(v, f"{base}_fit")(**kw)
     return MODELS[name]()
 
 
-def main(features: pl.DataFrame, out: Path, names, folds=None, seeds=None, extra=None, drop=(), deadline=None):
+def main(features: pl.DataFrame, out: Path, names, folds=None, seeds=None, extra=None, drop=(), deadline=None, test=True):
     if extra is not None:
         features = features.join(extra, on="application_id", how="left", validate="1:1")
     features = features.drop([c for c in drop if c in features.columns])
@@ -43,7 +52,7 @@ def main(features: pl.DataFrame, out: Path, names, folds=None, seeds=None, extra
                          extra=None if extra is None else extra.columns, drop=list(drop)))
     res = {}
     for n in names:
-        res[n] = v.run(n, model(n), X, Xt, y, ids, tids, out, seeds=seeds or v.SEEDS, folds=folds, deadline=deadline)
+        res[n] = v.run(n, model(n), X, Xt, y, ids, tids, out, seeds=seeds or v.SEEDS, folds=folds, deadline=deadline, test=test)
     return res
 
 
@@ -57,6 +66,7 @@ if __name__ == "__main__":
     ap.add_argument("--drop", default="", help="comma-separated feature columns to drop")
     ap.add_argument("--features", help="build_all parquet (default: data_pq/features.parquet via common.features)")
     ap.add_argument("--hours", type=float, help="deadline in hours from start")
+    ap.add_argument("--no-test", action="store_true", help="screening: skip test predictions")
     a = ap.parse_args()
     t0 = time.time()
     if a.features:
@@ -66,5 +76,5 @@ if __name__ == "__main__":
         feats = features()
     main(feats, Path(a.out), a.models.split(","), a.folds, a.seeds,
          pl.read_parquet(a.extra) if a.extra else None, [c for c in a.drop.split(",") if c],
-         t0 + a.hours * 3600 if a.hours else None)
+         t0 + a.hours * 3600 if a.hours else None, not a.no_test)
     print(f"done in {time.time() - t0:.0f}s")

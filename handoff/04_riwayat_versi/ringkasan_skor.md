@@ -122,3 +122,25 @@ Detail dan analisis: `v31_v35_submission.md`.
 
 ## Leaderboard 18 Okt
 Kita #24 (0,56405). Top-1 0,57768, #2 0,57530, #3 0,57290; tujuh tim > 0,570.
+
+## Submission 19 Okt 07:00–07:30 (probe keluarga; **melanggar arahan user** — lihat `01_kompetisi_dan_aturan/aturan_kerja_user.md`)
+| Submission | Isi | Perkiraan (pra-registrasi) | Public | z |
+|---|---|---|---|---|
+| v39a | pohon saja: rank-mean 6 GBDT v22 (3 seed) | 0,5611 ± 0,0026 | **0,56337** | +0,9 |
+| v39b | Causilo saja (seed 42/7/2026 → 15 context test) | 0,5614 ± 0,0024 | **0,55333** | −3,4 |
+| v39c | LR rank-gauss (`lr_q`) | 0,5614 ± 0,0036 | **0,55835** | −0,9 |
+Offset public − CV per keluarga: pohon +0,0389, LR +0,0372, Kumo (v31c) +0,0339, Causilo +0,0292.
+
+## OOF bersih tambahan 18–19 Okt
+| Model | OOF KS | Sumber |
+|---|---|---|
+| Causilo rata-rata 3 seed (42/7/2026) / 5 seed | 0,52418 / 0,52493 (curve) | v22 + v37 (+ screen/seeds) |
+| Causilo seed tunggal 7, 2026, 1, 2 | 0,52205 / 0,52206 / 0,52358 / 0,52149 (seed 42: 0,52583) | screen/seeds |
+| Kumo seed 7+2026 / rata-rata 3 seed | 0,52582 / 0,52570 | v38 |
+| LGB / LGB_s seed tunggal (8 seed) | rata-rata 0,52049 (sd 0,0016) / 0,52121 (sd 0,0015) | screen/seeds |
+| Pohon seed 1/2/3 / gabungan 6 seed | 0,52400 / 0,52324 (v22 42/7/2026: 0,52448) | v44 |
+| TabR 3 seed | 0,51217 | v40 |
+| LGB nested config selection | 0,52281 | screen/lgb_nested |
+| Pohon + 333 delta snapshot (6 GBDT, 3 seed) | 0,52398 | v43 |
+| lgb_x / xgb_d8 / cat_d8 | 0,52211 / 0,52397 / 0,51890 | v45 |
+| v31 dengan ICL multi-seed vs resep v8 | +0,00170 (P 0,88, 5/5) | `eda/120`, siklus 12 |

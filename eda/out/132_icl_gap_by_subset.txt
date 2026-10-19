@@ -1,0 +1,54 @@
+
+dec_month:
+  1                n   5778 bad 0.143 trees 0.5186 | causilo +0.0047±0.0076 | kumo +0.0035±0.0069 | lr_q +0.0042±0.0075
+  2                n   5898 bad 0.147 trees 0.5169 | causilo +0.0105±0.0064 | kumo +0.0133±0.0080 | lr_q +0.0145±0.0061
+  3                n   5809 bad 0.138 trees 0.5046 | causilo +0.0059±0.0059 | kumo +0.0086±0.0056 | lr_q -0.0072±0.0081
+  4                n   5910 bad 0.131 trees 0.5694 | causilo -0.0058±0.0058 | kumo -0.0043±0.0069 | lr_q -0.0125±0.0075
+  5                n   5864 bad 0.120 trees 0.5434 | causilo +0.0066±0.0061 | kumo +0.0140±0.0059 | lr_q +0.0049±0.0078
+  6                n   5776 bad 0.135 trees 0.5280 | causilo -0.0127±0.0075 | kumo -0.0017±0.0062 | lr_q -0.0162±0.0094
+  7                n   5739 bad 0.129 trees 0.5533 | causilo -0.0014±0.0076 | kumo +0.0097±0.0072 | lr_q +0.0003±0.0077
+  8                n   5809 bad 0.136 trees 0.5328 | causilo -0.0044±0.0064 | kumo -0.0087±0.0074 | lr_q -0.0090±0.0084
+  9                n   5830 bad 0.127 trees 0.4960 | causilo +0.0093±0.0063 | kumo +0.0093±0.0079 | lr_q -0.0040±0.0083
+  10               n   5854 bad 0.140 trees 0.5492 | causilo -0.0010±0.0071 | kumo +0.0011±0.0083 | lr_q +0.0046±0.0084
+  11               n   5821 bad 0.144 trees 0.5317 | causilo +0.0038±0.0074 | kumo +0.0026±0.0068 | lr_q -0.0053±0.0081
+  12               n   5912 bad 0.139 trees 0.5132 | causilo +0.0026±0.0071 | kumo +0.0095±0.0071 | lr_q +0.0031±0.0073
+
+has_history:
+  0                n  21000 bad 0.117 trees 0.4963 | causilo -0.0016±0.0035 | kumo +0.0016±0.0035 | lr_q -0.0066±0.0041
+  1                n  49000 bad 0.144 trees 0.5344 | causilo -0.0005±0.0026 | kumo +0.0037±0.0029 | lr_q -0.0001±0.0025
+
+rate:
+  16               n  12560 bad 0.055 trees 0.5295 | causilo +0.0009±0.0075 | kumo +0.0071±0.0083 | lr_q +0.0074±0.0085
+  20               n  29800 bad 0.106 trees 0.4959 | causilo +0.0010±0.0034 | kumo +0.0026±0.0033 | lr_q +0.0026±0.0041
+  24               n  22358 bad 0.178 trees 0.4706 | causilo +0.0014±0.0037 | kumo +0.0073±0.0032 | lr_q +0.0035±0.0042
+  28               n   4938 bad 0.304 trees 0.4693 | causilo +0.0084±0.0058 | kumo +0.0081±0.0064 | lr_q +0.0108±0.0061
+
+region:
+  Region_A         n  13978 bad 0.136 trees 0.5203 | causilo -0.0031±0.0037 | kumo +0.0042±0.0045 | lr_q -0.0016±0.0048
+  Region_B         n  13951 bad 0.136 trees 0.5211 | causilo +0.0060±0.0046 | kumo +0.0099±0.0056 | lr_q +0.0051±0.0055
+  Region_C         n  13855 bad 0.135 trees 0.5248 | causilo -0.0025±0.0046 | kumo -0.0003±0.0044 | lr_q -0.0066±0.0052
+  Region_D         n  14042 bad 0.143 trees 0.5268 | causilo +0.0012±0.0043 | kumo +0.0031±0.0047 | lr_q -0.0042±0.0055
+  Region_E         n  14174 bad 0.129 trees 0.5344 | causilo +0.0067±0.0051 | kumo +0.0011±0.0053 | lr_q +0.0010±0.0058
+
+purpose:
+  education        n  13901 bad 0.136 trees 0.5336 | causilo -0.0031±0.0046 | kumo +0.0019±0.0051 | lr_q -0.0083±0.0047
+  home_improvement n  14143 bad 0.135 trees 0.5178 | causilo -0.0026±0.0048 | kumo -0.0019±0.0051 | lr_q -0.0027±0.0047
+  household        n  14006 bad 0.138 trees 0.5413 | causilo +0.0015±0.0041 | kumo +0.0077±0.0048 | lr_q +0.0045±0.0049
+  medical          n  13999 bad 0.136 trees 0.5104 | causilo +0.0016±0.0040 | kumo +0.0041±0.0043 | lr_q -0.0010±0.0052
+  working_capital  n  13951 bad 0.133 trees 0.5296 | causilo -0.0002±0.0044 | kumo +0.0018±0.0048 | lr_q -0.0025±0.0058
+
+employment:
+  salaried         n  33473 bad 0.132 trees 0.5248 | causilo +0.0002±0.0030 | kumo +0.0052±0.0029 | lr_q -0.0019±0.0035
+  self_employed    n  20987 bad 0.138 trees 0.5209 | causilo +0.0020±0.0040 | kumo +0.0020±0.0036 | lr_q -0.0002±0.0041
+  variable_income  n  15540 bad 0.140 trees 0.5317 | causilo -0.0031±0.0045 | kumo -0.0003±0.0042 | lr_q -0.0028±0.0046
+
+housing:
+  family           n  20400 bad 0.134 trees 0.5167 | causilo +0.0031±0.0040 | kumo +0.0029±0.0040 | lr_q +0.0005±0.0044
+  owned            n  19500 bad 0.137 trees 0.5211 | causilo +0.0006±0.0036 | kumo +0.0111±0.0035 | lr_q -0.0064±0.0040
+  rented           n  30100 bad 0.136 trees 0.5353 | causilo -0.0027±0.0033 | kumo -0.0037±0.0034 | lr_q -0.0026±0.0036
+
+worst subsets for causilo: [('dec_month', 6, -0.0127, np.int64(5776)), ('dec_month', 4, -0.0058, np.int64(5910)), ('dec_month', 8, -0.0044, np.int64(5809))]
+
+worst subsets for kumo: [('dec_month', 8, -0.0087, np.int64(5809)), ('dec_month', 4, -0.0043, np.int64(5910)), ('housing', 'rented', -0.0037, np.int64(30100))]
+
+worst subsets for lr_q: [('dec_month', 6, -0.0162, np.int64(5776)), ('dec_month', 4, -0.0125, np.int64(5910)), ('dec_month', 8, -0.009, np.int64(5809))]

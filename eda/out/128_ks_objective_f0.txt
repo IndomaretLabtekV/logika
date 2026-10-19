@@ -1,0 +1,3 @@
+fold 0 lam 0: rounds 420, outer KS 0.52066
+fold 0 lam 1: rounds 1324, outer KS 0.51663
+fold 0 lam 3: rounds 559, outer KS 0.51639

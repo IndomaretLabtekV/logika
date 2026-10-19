@@ -1,0 +1,172 @@
+/home/veinsan/Projects/logika/.venv/lib/python3.13/site-packages/sdm/tensor/string.py:502: RuntimeWarning: Falling back to a CPU-based string sort because cuDF is not installed. Install cuDF to enable faster CUDA-based string sorting without device synchronization. This warning will be suppressed for the remainder of this process.
+  warn_once(
+context 70000, test rows 30000, 6478 s, peak VRAM 5.0 GB
+{'model': 'lgb', 'seed': 42, 'fold': 0, 'ks': 0.5189211188998843, 'budget': 638, 'sec': 24.3}
+{'model': 'lgb', 'seed': 42, 'fold': 1, 'ks': 0.5293210723959387, 'budget': 466, 'sec': 17.4}
+{'model': 'lgb', 'seed': 42, 'fold': 2, 'ks': 0.5175898260706353, 'budget': 695, 'sec': 22.6}
+{'model': 'lgb', 'seed': 42, 'fold': 3, 'ks': 0.5116353495176702, 'budget': 597, 'sec': 19.3}
+{'model': 'lgb', 'seed': 42, 'fold': 4, 'ks': 0.5436172415285682, 'budget': 573, 'sec': 19.6}
+{'model': 'lgb', 'seed': 7, 'fold': 0, 'ks': 0.5327374341413307, 'budget': 428, 'sec': 14.6}
+{'model': 'lgb', 'seed': 7, 'fold': 1, 'ks': 0.5388920330645834, 'budget': 463, 'sec': 15.2}
+{'model': 'lgb', 'seed': 7, 'fold': 2, 'ks': 0.5226547822477536, 'budget': 456, 'sec': 14.9}
+{'model': 'lgb', 'seed': 7, 'fold': 3, 'ks': 0.5201315961707047, 'budget': 575, 'sec': 17.4}
+{'model': 'lgb', 'seed': 7, 'fold': 4, 'ks': 0.5170446436471584, 'budget': 600, 'sec': 17.8}
+{'model': 'lgb', 'seed': 2026, 'fold': 0, 'ks': 0.5154624531726878, 'budget': 489, 'sec': 15.1}
+{'model': 'lgb', 'seed': 2026, 'fold': 1, 'ks': 0.5246873298791893, 'budget': 578, 'sec': 17.0}
+{'model': 'lgb', 'seed': 2026, 'fold': 2, 'ks': 0.5205840610335588, 'budget': 536, 'sec': 16.1}
+{'model': 'lgb', 'seed': 2026, 'fold': 3, 'ks': 0.5297335169720677, 'budget': 473, 'sec': 14.5}
+{'model': 'lgb', 'seed': 2026, 'fold': 4, 'ks': 0.5131690910491066, 'budget': 769, 'sec': 22.4}
+lgb: OOF KS 0.52279 on 70000 rows
+{'model': 'lgb_s', 'seed': 42, 'fold': 0, 'ks': 0.5127667373660549, 'budget': 1784, 'sec': 15.1}
+{'model': 'lgb_s', 'seed': 42, 'fold': 1, 'ks': 0.5229353450376668, 'budget': 968, 'sec': 9.0}
+{'model': 'lgb_s', 'seed': 42, 'fold': 2, 'ks': 0.5155414959670566, 'budget': 1403, 'sec': 13.0}
+{'model': 'lgb_s', 'seed': 42, 'fold': 3, 'ks': 0.5221112231184548, 'budget': 1886, 'sec': 15.8}
+{'model': 'lgb_s', 'seed': 42, 'fold': 4, 'ks': 0.5412323195133191, 'budget': 1415, 'sec': 12.1}
+{'model': 'lgb_s', 'seed': 7, 'fold': 0, 'ks': 0.5223017853019445, 'budget': 1275, 'sec': 11.8}
+{'model': 'lgb_s', 'seed': 7, 'fold': 1, 'ks': 0.5370239622709351, 'budget': 1188, 'sec': 10.5}
+{'model': 'lgb_s', 'seed': 7, 'fold': 2, 'ks': 0.523832337276734, 'budget': 1533, 'sec': 13.7}
+{'model': 'lgb_s', 'seed': 7, 'fold': 3, 'ks': 0.5176408958802795, 'budget': 2206, 'sec': 19.1}
+{'model': 'lgb_s', 'seed': 7, 'fold': 4, 'ks': 0.5174430722530807, 'budget': 1406, 'sec': 12.7}
+{'model': 'lgb_s', 'seed': 2026, 'fold': 0, 'ks': 0.5142674635119461, 'budget': 1938, 'sec': 15.7}
+{'model': 'lgb_s', 'seed': 2026, 'fold': 1, 'ks': 0.5204933661660927, 'budget': 1308, 'sec': 11.2}
+{'model': 'lgb_s', 'seed': 2026, 'fold': 2, 'ks': 0.5181252562206092, 'budget': 1778, 'sec': 14.6}
+{'model': 'lgb_s', 'seed': 2026, 'fold': 3, 'ks': 0.5332498406372493, 'budget': 1415, 'sec': 12.0}
+{'model': 'lgb_s', 'seed': 2026, 'fold': 4, 'ks': 0.5200501547213703, 'budget': 2614, 'sec': 20.7}
+lgb_s: OOF KS 0.52125 on 70000 rows
+{'model': 'xgb', 'seed': 42, 'fold': 0, 'ks': 0.5196279287338257, 'budget': 788, 'sec': 9.8}
+{'model': 'xgb', 'seed': 42, 'fold': 1, 'ks': 0.5251282453536987, 'budget': 603, 'sec': 6.8}
+{'model': 'xgb', 'seed': 42, 'fold': 2, 'ks': 0.5158395171165466, 'budget': 919, 'sec': 9.6}
+{'model': 'xgb', 'seed': 42, 'fold': 3, 'ks': 0.5208212733268738, 'budget': 835, 'sec': 8.8}
+{'model': 'xgb', 'seed': 42, 'fold': 4, 'ks': 0.5407364964485168, 'budget': 851, 'sec': 8.9}
+{'model': 'xgb', 'seed': 7, 'fold': 0, 'ks': 0.5270267128944397, 'budget': 718, 'sec': 7.8}
+{'model': 'xgb', 'seed': 7, 'fold': 1, 'ks': 0.5340155959129333, 'budget': 623, 'sec': 7.0}
+{'model': 'xgb', 'seed': 7, 'fold': 2, 'ks': 0.5213295817375183, 'budget': 750, 'sec': 8.2}
+{'model': 'xgb', 'seed': 7, 'fold': 3, 'ks': 0.5191503763198853, 'budget': 920, 'sec': 9.7}
+{'model': 'xgb', 'seed': 7, 'fold': 4, 'ks': 0.52081298828125, 'budget': 1121, 'sec': 11.5}
+{'model': 'xgb', 'seed': 2026, 'fold': 0, 'ks': 0.5142003297805786, 'budget': 931, 'sec': 9.6}
+{'model': 'xgb', 'seed': 2026, 'fold': 1, 'ks': 0.5232692360877991, 'budget': 527, 'sec': 6.2}
+{'model': 'xgb', 'seed': 2026, 'fold': 2, 'ks': 0.5169216990470886, 'budget': 787, 'sec': 8.4}
+{'model': 'xgb', 'seed': 2026, 'fold': 3, 'ks': 0.5377065539360046, 'budget': 664, 'sec': 7.4}
+{'model': 'xgb', 'seed': 2026, 'fold': 4, 'ks': 0.5204553604125977, 'budget': 902, 'sec': 9.5}
+xgb: OOF KS 0.52310 on 70000 rows
+{'model': 'xgb_s', 'seed': 42, 'fold': 0, 'ks': 0.5147218704223633, 'budget': 2062, 'sec': 10.0}
+{'model': 'xgb_s', 'seed': 42, 'fold': 1, 'ks': 0.5267914533615112, 'budget': 1176, 'sec': 6.3}
+{'model': 'xgb_s', 'seed': 42, 'fold': 2, 'ks': 0.5177438259124756, 'budget': 1631, 'sec': 8.3}
+{'model': 'xgb_s', 'seed': 42, 'fold': 3, 'ks': 0.5171409249305725, 'budget': 1682, 'sec': 8.3}
+{'model': 'xgb_s', 'seed': 42, 'fold': 4, 'ks': 0.5437676906585693, 'budget': 1377, 'sec': 7.1}
+{'model': 'xgb_s', 'seed': 7, 'fold': 0, 'ks': 0.5291118621826172, 'budget': 1479, 'sec': 7.5}
+{'model': 'xgb_s', 'seed': 7, 'fold': 1, 'ks': 0.5367345213890076, 'budget': 1067, 'sec': 5.6}
+{'model': 'xgb_s', 'seed': 7, 'fold': 2, 'ks': 0.5235904455184937, 'budget': 1288, 'sec': 6.6}
+{'model': 'xgb_s', 'seed': 7, 'fold': 3, 'ks': 0.5195204019546509, 'budget': 1602, 'sec': 7.9}
+{'model': 'xgb_s', 'seed': 7, 'fold': 4, 'ks': 0.5150460004806519, 'budget': 1338, 'sec': 6.9}
+{'model': 'xgb_s', 'seed': 2026, 'fold': 0, 'ks': 0.5146721601486206, 'budget': 1817, 'sec': 9.2}
+{'model': 'xgb_s', 'seed': 2026, 'fold': 1, 'ks': 0.5213702321052551, 'budget': 886, 'sec': 5.1}
+{'model': 'xgb_s', 'seed': 2026, 'fold': 2, 'ks': 0.5197204947471619, 'budget': 2181, 'sec': 11.0}
+{'model': 'xgb_s', 'seed': 2026, 'fold': 3, 'ks': 0.5336793065071106, 'budget': 1559, 'sec': 8.1}
+{'model': 'xgb_s', 'seed': 2026, 'fold': 4, 'ks': 0.5202438831329346, 'budget': 2760, 'sec': 13.7}
+xgb_s: OOF KS 0.52285 on 70000 rows
+Default metric period is 5 because AUC is/are not implemented for GPU
+Default metric period is 5 because AUC is/are not implemented for GPU
+{'model': 'cat', 'seed': 42, 'fold': 0, 'ks': 0.5168401803827871, 'budget': 2760, 'sec': 151.0}
+Default metric period is 5 because AUC is/are not implemented for GPU
+Default metric period is 5 because AUC is/are not implemented for GPU
+{'model': 'cat', 'seed': 42, 'fold': 1, 'ks': 0.521996048816795, 'budget': 1202, 'sec': 71.8}
+Default metric period is 5 because AUC is/are not implemented for GPU
+Default metric period is 5 because AUC is/are not implemented for GPU
+{'model': 'cat', 'seed': 42, 'fold': 2, 'ks': 0.5087237288686066, 'budget': 978, 'sec': 60.1}
+Default metric period is 5 because AUC is/are not implemented for GPU
+Default metric period is 5 because AUC is/are not implemented for GPU
+{'model': 'cat', 'seed': 42, 'fold': 3, 'ks': 0.5146516383290405, 'budget': 1522, 'sec': 88.5}
+Default metric period is 5 because AUC is/are not implemented for GPU
+Default metric period is 5 because AUC is/are not implemented for GPU
+{'model': 'cat', 'seed': 42, 'fold': 4, 'ks': 0.5368257026085079, 'budget': 1490, 'sec': 86.7}
+Default metric period is 5 because AUC is/are not implemented for GPU
+Default metric period is 5 because AUC is/are not implemented for GPU
+{'model': 'cat', 'seed': 7, 'fold': 0, 'ks': 0.5208458413772854, 'budget': 1508, 'sec': 88.8}
+Default metric period is 5 because AUC is/are not implemented for GPU
+Default metric period is 5 because AUC is/are not implemented for GPU
+{'model': 'cat', 'seed': 7, 'fold': 1, 'ks': 0.5314810537074048, 'budget': 734, 'sec': 48.4}
+Default metric period is 5 because AUC is/are not implemented for GPU
+Default metric period is 5 because AUC is/are not implemented for GPU
+{'model': 'cat', 'seed': 7, 'fold': 2, 'ks': 0.5173548715817633, 'budget': 1144, 'sec': 69.8}
+Default metric period is 5 because AUC is/are not implemented for GPU
+Default metric period is 5 because AUC is/are not implemented for GPU
+{'model': 'cat', 'seed': 7, 'fold': 3, 'ks': 0.5190270519464332, 'budget': 1679, 'sec': 97.4}
+Default metric period is 5 because AUC is/are not implemented for GPU
+Default metric period is 5 because AUC is/are not implemented for GPU
+{'model': 'cat', 'seed': 7, 'fold': 4, 'ks': 0.5135770805508952, 'budget': 1014, 'sec': 63.0}
+Default metric period is 5 because AUC is/are not implemented for GPU
+Default metric period is 5 because AUC is/are not implemented for GPU
+{'model': 'cat', 'seed': 2026, 'fold': 0, 'ks': 0.5159099710398157, 'budget': 1183, 'sec': 73.1}
+Default metric period is 5 because AUC is/are not implemented for GPU
+Default metric period is 5 because AUC is/are not implemented for GPU
+{'model': 'cat', 'seed': 2026, 'fold': 1, 'ks': 0.5189232927941188, 'budget': 1997, 'sec': 111.9}
+Default metric period is 5 because AUC is/are not implemented for GPU
+Default metric period is 5 because AUC is/are not implemented for GPU
+{'model': 'cat', 'seed': 2026, 'fold': 2, 'ks': 0.5207941461723875, 'budget': 1407, 'sec': 82.1}
+Default metric period is 5 because AUC is/are not implemented for GPU
+Default metric period is 5 because AUC is/are not implemented for GPU
+{'model': 'cat', 'seed': 2026, 'fold': 3, 'ks': 0.532145383330213, 'budget': 1014, 'sec': 62.2}
+Default metric period is 5 because AUC is/are not implemented for GPU
+Default metric period is 5 because AUC is/are not implemented for GPU
+{'model': 'cat', 'seed': 2026, 'fold': 4, 'ks': 0.5156571838224775, 'budget': 2378, 'sec': 135.8}
+cat: OOF KS 0.51964 on 70000 rows
+Default metric period is 5 because AUC is/are not implemented for GPU
+Default metric period is 5 because AUC is/are not implemented for GPU
+{'model': 'cat_s', 'seed': 42, 'fold': 0, 'ks': 0.5229381276222871, 'budget': 2627, 'sec': 72.7}
+Default metric period is 5 because AUC is/are not implemented for GPU
+Default metric period is 5 because AUC is/are not implemented for GPU
+{'model': 'cat_s', 'seed': 42, 'fold': 1, 'ks': 0.5252393685811152, 'budget': 1313, 'sec': 39.5}
+Default metric period is 5 because AUC is/are not implemented for GPU
+Default metric period is 5 because AUC is/are not implemented for GPU
+{'model': 'cat_s', 'seed': 42, 'fold': 2, 'ks': 0.5100265436833828, 'budget': 1849, 'sec': 53.0}
+Default metric period is 5 because AUC is/are not implemented for GPU
+Default metric period is 5 because AUC is/are not implemented for GPU
+{'model': 'cat_s', 'seed': 42, 'fold': 3, 'ks': 0.5128900867242788, 'budget': 1781, 'sec': 50.8}
+Default metric period is 5 because AUC is/are not implemented for GPU
+Default metric period is 5 because AUC is/are not implemented for GPU
+{'model': 'cat_s', 'seed': 42, 'fold': 4, 'ks': 0.537608913814434, 'budget': 1853, 'sec': 52.7}
+Default metric period is 5 because AUC is/are not implemented for GPU
+Default metric period is 5 because AUC is/are not implemented for GPU
+{'model': 'cat_s', 'seed': 7, 'fold': 0, 'ks': 0.5228233894845866, 'budget': 1899, 'sec': 51.1}
+Default metric period is 5 because AUC is/are not implemented for GPU
+Default metric period is 5 because AUC is/are not implemented for GPU
+{'model': 'cat_s', 'seed': 7, 'fold': 1, 'ks': 0.5310523182864635, 'budget': 1665, 'sec': 44.2}
+Default metric period is 5 because AUC is/are not implemented for GPU
+Default metric period is 5 because AUC is/are not implemented for GPU
+{'model': 'cat_s', 'seed': 7, 'fold': 2, 'ks': 0.5187685115246177, 'budget': 2562, 'sec': 64.3}
+Default metric period is 5 because AUC is/are not implemented for GPU
+Default metric period is 5 because AUC is/are not implemented for GPU
+{'model': 'cat_s', 'seed': 7, 'fold': 3, 'ks': 0.518932312160121, 'budget': 3026, 'sec': 75.9}
+Default metric period is 5 because AUC is/are not implemented for GPU
+Default metric period is 5 because AUC is/are not implemented for GPU
+{'model': 'cat_s', 'seed': 7, 'fold': 4, 'ks': 0.5147437705982982, 'budget': 1942, 'sec': 51.0}
+Default metric period is 5 because AUC is/are not implemented for GPU
+Default metric period is 5 because AUC is/are not implemented for GPU
+{'model': 'cat_s', 'seed': 2026, 'fold': 0, 'ks': 0.5170441786177589, 'budget': 1838, 'sec': 49.4}
+Default metric period is 5 because AUC is/are not implemented for GPU
+Default metric period is 5 because AUC is/are not implemented for GPU
+{'model': 'cat_s', 'seed': 2026, 'fold': 1, 'ks': 0.5228449545153935, 'budget': 1763, 'sec': 48.3}
+Default metric period is 5 because AUC is/are not implemented for GPU
+Default metric period is 5 because AUC is/are not implemented for GPU
+{'model': 'cat_s', 'seed': 2026, 'fold': 2, 'ks': 0.5197998504273811, 'budget': 2217, 'sec': 58.6}
+Default metric period is 5 because AUC is/are not implemented for GPU
+Default metric period is 5 because AUC is/are not implemented for GPU
+{'model': 'cat_s', 'seed': 2026, 'fold': 3, 'ks': 0.5354287688051956, 'budget': 2412, 'sec': 62.1}
+Default metric period is 5 because AUC is/are not implemented for GPU
+Default metric period is 5 because AUC is/are not implemented for GPU
+{'model': 'cat_s', 'seed': 2026, 'fold': 4, 'ks': 0.5211639121725675, 'budget': 2857, 'sec': 73.2}
+cat_s: OOF KS 0.52037 on 70000 rows
+done in 2866s
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Fetching 2 files:  50%|█████     | 1/2 [00:00<00:00,  2.09it/s]Fetching 2 files: 100%|██████████| 2/2 [00:00<00:00,  4.17it/s]
+{'model': 'causilo', 'seed': 42, 'fold': 0, 'ks': 0.5251144170761108, 'budget': 104, 'sec': 126.1}
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Fetching 2 files: 100%|██████████| 2/2 [00:00<00:00, 1104.49it/s]
+{'model': 'causilo', 'seed': 42, 'fold': 1, 'ks': 0.5337927937507629, 'budget': 104, 'sec': 124.2}
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Fetching 2 files: 100%|██████████| 2/2 [00:00<00:00, 1286.00it/s]
+{'model': 'causilo', 'seed': 42, 'fold': 2, 'ks': 0.5158557891845703, 'budget': 104, 'sec': 122.9}
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Fetching 2 files: 100%|██████████| 2/2 [00:00<00:00, 1382.89it/s]
+{'model': 'causilo', 'seed': 42, 'fold': 3, 'ks': 0.5134726762771606, 'budget': 104, 'sec': 123.3}
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Fetching 2 files: 100%|██████████| 2/2 [00:00<00:00, 1545.15it/s]
+{'model': 'causilo', 'seed': 42, 'fold': 4, 'ks': 0.551780104637146, 'budget': 104, 'sec': 122.3}
+causilo: OOF KS 0.52580 on 70000 rows
+done in 620s

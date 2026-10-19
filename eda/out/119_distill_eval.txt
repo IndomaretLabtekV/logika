@@ -1,0 +1,22 @@
+v31 0.52613  trees 0.52448  lgb(v22, 3 seeds) 0.52316
+
+118_oof_distill_a1_5f.parquet: alone 0.52074
+  vs lgb v22                   KS 0.52074 vs 0.52316  d -0.00262 sd 0.00146 P>0 0.03 folds 2/5
+  trees lgb->distill vs trees  KS 0.52443 vs 0.52448  d -0.00007 sd 0.00055 P>0 0.47 folds 2/5
+  v31 lgb->distill vs v31      KS 0.52639 vs 0.52613  d +0.00007 sd 0.00034 P>0 0.58 folds 3/5
+  v31 trees->distill vs v31    KS 0.52499 vs 0.52613  d -0.00083 sd 0.00090 P>0 0.19 folds 2/5
+  v31 trees+distill/2 vs v31   KS 0.52596 vs 0.52613  d -0.00017 sd 0.00064 P>0 0.38 folds 1/5
+
+118_oof_distill_a0.3_5f.parquet: alone 0.52343
+  vs lgb v22                   KS 0.52343 vs 0.52316  d +0.00017 sd 0.00181 P>0 0.54 folds 2/5
+  trees lgb->distill vs trees  KS 0.52339 vs 0.52448  d -0.00071 sd 0.00084 P>0 0.20 folds 1/5
+  v31 lgb->distill vs v31      KS 0.52654 vs 0.52613  d -0.00009 sd 0.00046 P>0 0.42 folds 1/5
+  v31 trees->distill vs v31    KS 0.52572 vs 0.52613  d -0.00051 sd 0.00096 P>0 0.29 folds 2/5
+  v31 trees+distill/2 vs v31   KS 0.52579 vs 0.52613  d -0.00034 sd 0.00063 P>0 0.28 folds 2/5
+
+118_oof_distill_a0.1_5f.parquet: alone 0.52239
+  vs lgb v22                   KS 0.52239 vs 0.52316  d -0.00062 sd 0.00204 P>0 0.40 folds 1/5
+  trees lgb->distill vs trees  KS 0.52364 vs 0.52448  d -0.00044 sd 0.00085 P>0 0.31 folds 2/5
+  v31 lgb->distill vs v31      KS 0.52611 vs 0.52613  d -0.00019 sd 0.00054 P>0 0.39 folds 3/5
+  v31 trees->distill vs v31    KS 0.52535 vs 0.52613  d -0.00100 sd 0.00096 P>0 0.15 folds 3/5
+  v31 trees+distill/2 vs v31   KS 0.52615 vs 0.52613  d -0.00036 sd 0.00072 P>0 0.32 folds 3/5

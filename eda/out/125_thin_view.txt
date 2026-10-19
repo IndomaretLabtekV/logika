@@ -1,0 +1,14 @@
+
+lgb: thin rows 21000, thin-view vs full on thin rows: KS 0.49636 vs 0.49308 d +0.00293 sd 0.00352 P>0 0.79 folds 4/5
+lgb: thin-view vs full on history rows: KS 0.47502 vs 0.53075 d -0.05511 sd 0.00434 P>0 0.00 folds 0/5
+lgb: thin rows use 0.5 thin-view (logit) -> thin KS 0.49667 vs 0.49308 d +0.00316 sd 0.00227 P>0 0.92 folds 4/5
+lgb:   pooled KS 0.52160 vs 0.52074 d +0.00071 sd 0.00072 P>0 0.83 folds 1/5
+lgb: thin rows use 1.0 thin-view (logit) -> thin KS 0.49636 vs 0.49308 d +0.00293 sd 0.00352 P>0 0.79 folds 4/5
+lgb:   pooled KS 0.52103 vs 0.52074 d +0.00050 sd 0.00112 P>0 0.67 folds 2/5
+
+lgb_s: thin rows 21000, thin-view vs full on thin rows: KS 0.49787 vs 0.49356 d +0.00252 sd 0.00347 P>0 0.76 folds 2/5
+lgb_s: thin-view vs full on history rows: KS 0.47837 vs 0.53127 d -0.05219 sd 0.00431 P>0 0.00 folds 0/5
+lgb_s: thin rows use 0.5 thin-view (logit) -> thin KS 0.49501 vs 0.49356 d +0.00131 sd 0.00226 P>0 0.71 folds 2/5
+lgb_s:   pooled KS 0.52198 vs 0.52114 d +0.00103 sd 0.00092 P>0 0.86 folds 4/5
+lgb_s: thin rows use 1.0 thin-view (logit) -> thin KS 0.49787 vs 0.49356 d +0.00252 sd 0.00347 P>0 0.76 folds 2/5
+lgb_s:   pooled KS 0.52176 vs 0.52114 d +0.00087 sd 0.00114 P>0 0.77 folds 3/5

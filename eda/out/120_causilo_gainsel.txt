@@ -1,0 +1,6 @@
+causilo new 0.52390 vs old 0.52583; spearman 0.99062
+family new vs old:   KS 0.52390 vs 0.52583  d -0.00165 sd 0.00178 P>0 0.17 folds 1/5
+v31 swapped vs v31:  KS 0.52596 vs 0.52615  d -0.00005 sd 0.00106 P>0 0.47 folds 4/5
+v31 swapped vs v8:   KS 0.52596 vs 0.52426  d +0.00208 sd 0.00151 P>0 0.93 folds 3/5
+v31 vs v8:           KS 0.52615 vs 0.52426  d +0.00214 sd 0.00148 P>0 0.92 folds 4/5
+blend2 result keys: ['v8_recipe', 'equal_trees', 'equal_all', 'trees_causilo_50', 'greedy_bagged']

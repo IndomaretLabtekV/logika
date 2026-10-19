@@ -1,0 +1,15 @@
+new alone 0.51217; spearman vs trees 0.9757, causilo 0.9743, kumo 0.9672
+[seed-42 ICL] v31 0.52615
+  + new 0.10 vs v31: KS 0.52489 vs 0.52615 d -0.00112 sd 0.00066 P>0 0.04 folds 1/5
+  + new 0.10 vs v8:  KS 0.52489 vs 0.52426 d +0.00102 sd 0.00148 P>0 0.76 folds 3/5
+  + new 0.20 vs v31: KS 0.52419 vs 0.52615 d -0.00211 sd 0.00086 P>0 0.00 folds 0/5
+  + new 0.20 vs v8:  KS 0.52419 vs 0.52426 d +0.00003 sd 0.00147 P>0 0.50 folds 2/5
+  + new 0.25 vs v31: KS 0.52371 vs 0.52615 d -0.00255 sd 0.00093 P>0 0.00 folds 1/5
+  + new 0.25 vs v8:  KS 0.52371 vs 0.52426 d -0.00041 sd 0.00149 P>0 0.38 folds 2/5
+[multi-seed ICL] v31 0.52622
+  + new 0.10 vs v31: KS 0.52505 vs 0.52622 d -0.00084 sd 0.00063 P>0 0.09 folds 0/5
+  + new 0.10 vs v8:  KS 0.52505 vs 0.52426 d +0.00096 sd 0.00147 P>0 0.73 folds 2/5
+  + new 0.20 vs v31: KS 0.52488 vs 0.52622 d -0.00141 sd 0.00093 P>0 0.07 folds 1/5
+  + new 0.20 vs v8:  KS 0.52488 vs 0.52426 d +0.00039 sd 0.00149 P>0 0.61 folds 2/5
+  + new 0.25 vs v31: KS 0.52412 vs 0.52622 d -0.00205 sd 0.00105 P>0 0.03 folds 0/5
+  + new 0.25 vs v8:  KS 0.52412 vs 0.52426 d -0.00025 sd 0.00150 P>0 0.42 folds 2/5

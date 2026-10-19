@@ -38,3 +38,21 @@ Kode: `eda/valid2.py` (protokol), `eda/run_valid2.py` (driver), `eda/blend2.py` 
 - v22: resep v8 bersih 0,52426; Causilo > LGB > TabM (kebalikan OOF bias).
 - v31 lolos (+0,00221, P 0,93, 4/5) dan gain transfer ke public (+0,0026).
 - Tapi CV **tidak** memprediksi kegagalan blend tanpa pohon di public (v31b −4 sd) → tambahan aturan praktis: GBDT ≥ 1/3.
+
+## Revisi 18 Okt sore: varians seed outer untuk model ICL
+- Causilo seed 42 (dipakai v22/v31) 0,52583; rata-rata 3 seed outer (42/7/2026) 0,52418 → seed 42 kebetulan
+  beruntung ~+0,0016. sd antar seed outer untuk ICL satu seed ≈ 0,0015 di OOF pooled — sebesar ambang keputusan.
+- Bootstrap baris (P>0) **tidak** menangkap varians ini (barisnya sama, assignment fold berbeda). Untuk kandidat ICL,
+  bandingkan pada beberapa seed outer bila biayanya terjangkau, atau perlakukan selisih < ~0,003 sebagai noise.
+- v31 dengan Causilo 3 seed vs v8 tetap +0,00194 (P 0,90, 4/5); Kumo 3 seed 0,52570 vs seed 42 0,52665. v31 dengan kedua ICL 3 seed vs v8: **+0,00170** (P 0,88, 5/5) — margin yang
+  jujur untuk v31 (bukan +0,00214).
+
+## Revisi 19 Okt: aturan tambahan
+1. **Winner's curse seleksi fitur** (`eda/145` vs `146`): memilih 30 dari 7.080 kandidat dengan residual label semua baris
+   lalu menilai di baris yang sama memberi +0,0036 (P 0,95) palsu; bersarang −0,0005. → seleksi apa pun yang memakai label
+   dari banyak kandidat wajib dilakukan di dalam train fold per outer fold.
+2. **Nilai di level keluarga**: gain per anggota pohon tidak berarti; pembanding = keluarga rank-mean 6 GBDT v22.
+3. **Rata-rata seed** untuk selisih < ~0,002 (set seed v22 juga beruntung ~+0,001).
+4. **CV tidak memvalidasi keluarga ICL untuk public** (offset ICL lebih rendah 0,005–0,010 dari pohon). Gain CV yang
+   datang dari ICL harus dianggap tidak pasti sampai dikonfirmasi public.
+5. Tidak ada skema validasi alternatif (maju-waktu, subset alami, label tetangga) yang mereproduksi penalti ICL.

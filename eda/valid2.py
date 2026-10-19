@@ -34,6 +34,9 @@ XGB_S = dict(XGB, max_depth=3, min_child_weight=20, colsample_bytree=0.4, reg_la
 CAT = dict(learning_rate=0.03, depth=6, l2_leaf_reg=5, loss_function="Logloss", eval_metric="AUC",
            task_type="GPU", verbose=0)
 CAT_S = dict(CAT, depth=4, l2_leaf_reg=10)
+LGB_X = dict(LGB, extra_trees=True)
+XGB_D8 = dict(XGB, max_depth=8, min_child_weight=20, colsample_bytree=0.4, reg_lambda=10.0)
+CAT_D8 = dict(CAT, depth=8, l2_leaf_reg=10)
 TABM = dict(lr=2e-3, wd=3e-4, bins=48, batch=512, epochs=60, patience=8)
 
 
@@ -79,6 +82,37 @@ def lgb_fit(params):
         n = math.ceil(m.best_iteration * REFIT)
         m = lgb.train(p, lgb.Dataset(X.iloc[tr], y[tr]), n)
         return [m.predict(r) for r in rest], n
+    return fit
+
+
+LGB_GRID = [  # diverse configurations for nested selection (lgb_nested); chosen per outer fold on inner-stop KS only
+    {}, dict(num_leaves=15, min_child_samples=200), dict(num_leaves=63, min_child_samples=100),
+    dict(num_leaves=127, min_child_samples=300, lambda_l2=20.0), dict(num_leaves=31, feature_fraction=0.3),
+    dict(num_leaves=31, feature_fraction=0.8), dict(num_leaves=7, max_depth=3, min_child_samples=200, feature_fraction=0.4,
+                                                  lambda_l2=10.0), dict(num_leaves=31, min_child_samples=500),
+    dict(num_leaves=255, min_child_samples=500, learning_rate=0.01, lambda_l2=30.0), dict(num_leaves=31, extra_trees=True),
+]
+
+
+def lgb_nested_fit(grid=LGB_GRID):
+    """Clean nested model selection: every config early-stops on the inner stop split; the config with the best
+    inner-stop KS is refitted on the whole training fold (budget x REFIT). No outer-fold label is used."""
+    import lightgbm as lgb
+
+    def fit(X, y, tr, fi, st, rest, seed):
+        best = None
+        d_fit = lgb.Dataset(X.iloc[tr[fi]], y[tr[fi]], free_raw_data=False)
+        for j, g in enumerate(grid):
+            p = dict(LGB, **g, seed=seed)
+            m = lgb.train(p, d_fit, N_ROUNDS, valid_sets=[lgb.Dataset(X.iloc[tr[st]], y[tr[st]], reference=d_fit)],
+                          callbacks=[lgb.early_stopping(EARLY_STOP, verbose=False)])
+            k = ks(y[tr[st]], m.predict(X.iloc[tr[st]], num_iteration=m.best_iteration))
+            if best is None or k > best[0]:
+                best = (k, j, p, m.best_iteration)
+        k, j, p, it = best
+        m = lgb.train(p, lgb.Dataset(X.iloc[tr], y[tr]), math.ceil(it * REFIT))
+        print(f"lgb_nested: config {j} {grid[j]} inner-stop KS {k:.4f} rounds {it}", flush=True)
+        return [m.predict(r) for r in rest], j
     return fit
 
 
@@ -192,26 +226,37 @@ def ks_nan(y, x):
     return max(ks(y, np.where(np.isnan(x), lo, x)), ks(y, np.where(np.isnan(x), hi, x)))
 
 
-def fm_select(X, y, tr, n_num=100):
+def fm_select(X, y, tr, n_num=100, rand=0, n_top=20):
     """v8 recipe: numeric columns ranked by univariate KS on the training fold, greedy |Spearman| < 0.95, top n_num,
-    plus the 4 categoricals."""
+    plus the 4 categoricals. rand > 0 (feature bagging): the n_top best kept, the other n_num - n_top drawn at random
+    (seed rand) from every column that passes the Spearman filter. rand < 0: rank by LGB gain (seed -rand) instead."""
     nums = [c for c in X.columns if c not in CAT_COLS]
     sub = X.iloc[tr]
-    ranked = sorted(nums, key=lambda c: -ks_nan(y[tr], sub[c].to_numpy(dtype=float)))[:2 * n_num]
+    if rand < 0:  # rank by LGB split gain on the training fold (conditional usefulness) instead of univariate KS
+        import lightgbm as lgb
+        m = lgb.train(dict(LGB, seed=-rand), lgb.Dataset(sub[nums], y[tr]), 400)
+        gain = dict(zip(nums, m.feature_importance("gain")))
+        ranked = sorted(nums, key=lambda c: -gain[c])[:2 * n_num]
+        rand = 0
+    else:
+        ranked = sorted(nums, key=lambda c: -ks_nan(y[tr], sub[c].to_numpy(dtype=float)))[:None if rand else 2 * n_num]
     corr = sub[ranked].rank().corr().abs().fillna(0.0)
     keep = []
     for c in ranked:
         if all(corr.loc[c, k] < 0.95 for k in keep):
             keep.append(c)
-        if len(keep) == n_num:
+        if len(keep) == n_num and not rand:
             break
+    if rand:
+        rest = list(np.random.default_rng(rand).permutation(keep[n_top:]))
+        keep = keep[:n_top] + rest[:n_num - n_top]
     return keep + CAT_COLS
 
 
-def icl_fit(make, n_num=100, max_context=60000, chunk=10000, as_codes=False):
+def icl_fit(make, n_num=100, max_context=60000, chunk=10000, as_codes=False, rand=0):
     """In-context learners: no early stopping (the inner split is unused). make(seed, cat_idx) -> sklearn-like model."""
     def fit(X, y, tr, fi, st, rest, seed):
-        cols = fm_select(X, y, tr, n_num)
+        cols = fm_select(X, y, tr, n_num, rand)
         ctx = tr if len(tr) <= max_context else np.random.default_rng(seed).choice(tr, max_context, replace=False)
 
         def frame(d):
@@ -250,10 +295,71 @@ def seg_fit(base):
     return fit
 
 
-def causilo_fit(n_num=100, n_est=4, max_context=60000, device="cuda"):
+def stack_fit(base, k=5):
+    """Stacked ICL: `base` gets one extra column gb_stk = LGB raw score. Context rows (training fold) carry nested k-fold
+    OOF scores from LGB fits inside the training fold; query rows carry the mean score of those same k fits (same
+    training size as the context scores: a refit on the whole fold gave sharper query scores, Causilo fold 0 -0.0027).
+    LGB budget comes from the inner stop split, so no outer-fold label is touched."""
+    import lightgbm as lgb
+
+    def fit(X, y, tr, fi, st, rest, seed):
+        p = dict(LGB, seed=seed)
+        m = lgb.train(p, lgb.Dataset(X.iloc[tr[fi]], y[tr[fi]]), N_ROUNDS,
+                      valid_sets=[lgb.Dataset(X.iloc[tr[st]], y[tr[st]])],
+                      callbacks=[lgb.early_stopping(EARLY_STOP, verbose=False)])
+        n = math.ceil(m.best_iteration * REFIT)
+        g, gq = np.full(len(X), np.nan), [np.zeros(len(r)) for r in rest]
+        for a, b in StratifiedKFold(k, shuffle=True, random_state=seed + 17).split(tr, y[tr]):
+            m = lgb.train(p, lgb.Dataset(X.iloc[tr[a]], y[tr[a]]), n)
+            g[tr[b]] = m.predict(X.iloc[tr[b]], raw_score=True)
+            for q, r in zip(gq, rest):
+                q += m.predict(r, raw_score=True) / k
+        print(f"stack_fit: gb_stk sd context {np.nanstd(g[tr]):.3f} query {np.std(gq[0]):.3f}", flush=True)
+        preds, _ = base(X.assign(gb_stk=g), y, tr, fi, st, [r.assign(gb_stk=q) for r, q in zip(rest, gq)], seed)
+        return preds, n
+    return fit
+
+
+def stack_lr_fit(base, k=5):
+    """Supervised oblique direction for trees: column lr_stk = nested logit of lr_q (rank-gauss LR). Training-fold rows
+    carry k-fold OOF lr_q scores fitted inside the training fold; query rows the mean of those k fits. No outer label."""
+    lr = lr_q_fit()
+
+    def fit(X, y, tr, fi, st, rest, seed):
+        g, gq = np.full(len(X), np.nan), [np.zeros(len(r)) for r in rest]
+        for a, b in StratifiedKFold(k, shuffle=True, random_state=seed + 23).split(tr, y[tr]):
+            sub = tr[a]
+            f2, s2 = inner(y[sub], seed, 99)
+            preds, _ = lr(X, y, sub, f2, s2, [X.iloc[tr[b]], *rest], seed)
+            g[tr[b]] = preds[0]
+            for q, p_ in zip(gq, preds[1:]):
+                q += p_ / k
+        lg = lambda p_: np.log(np.clip(p_, 1e-6, 1 - 1e-6) / (1 - np.clip(p_, 1e-6, 1 - 1e-6)))  # noqa: E731
+        return base(X.assign(lr_stk=lg(g)), y, tr, fi, st, [r.assign(lr_stk=lg(q)) for r, q in zip(rest, gq)], seed)
+    return fit
+
+
+def pca_fit(base, k=20):
+    """Rotation features for axis-aligned trees: rank-gauss (nn_prep, fitted on the training fold) -> PCA fitted on the
+    training fold -> k components appended as pca_0..k-1. Unsupervised, so no label enters."""
+    from nn_prep import nn_prep
+
+    def fit(X, y, tr, fi, st, rest, seed):
+        nums = [c for c in X.columns if c not in CAT_COLS]
+        A_tr, A_all, _ = nn_prep(X.iloc[tr][nums].to_numpy(float), X[nums].to_numpy(float))
+        mu = A_tr.mean(0)
+        _, _, vt = np.linalg.svd(A_tr - mu, full_matrices=False)
+        W = vt[:k].T
+        add = lambda d: d.assign(**{f"pca_{i}": c for i, c in enumerate(((nn_prep(X.iloc[tr][nums].to_numpy(float), d[nums].to_numpy(float))[1] - mu) @ W).T)})  # noqa: E731
+        Xa = X.assign(**{f"pca_{i}": c for i, c in enumerate(((A_all - mu) @ W).T)})
+        return base(Xa, y, tr, fi, st, [add(r) for r in rest], seed)
+    return fit
+
+
+def causilo_fit(n_num=100, n_est=4, max_context=60000, device="cuda", rand=0):
     from causilo import CausiloClassifier
     return icl_fit(lambda seed, ci: CausiloClassifier(n_estimators=n_est, random_state=seed, device=device),
-                   n_num, max_context)
+                   n_num, max_context, rand=rand)
 
 
 def tabpfn_fit(n_num=100, n_est=4, max_context=60000, device="cuda"):
@@ -281,7 +387,7 @@ def tabdpt_fit(n_num=100, context=4096, n_ens=8, device="cuda"):
     return icl_fit(lambda seed, ci: M(seed), n_num, 10 ** 9, chunk=2048, as_codes=True)
 
 
-def kumo_fit(size="large", n_num=100, max_context=20000, n_est=4, chunk=1000, n_bag=1, g_off=0):
+def kumo_fit(size="large", n_num=100, max_context=20000, n_est=4, chunk=1000, n_bag=1, g_off=0, rand=0):
     """NVIDIA Kumo-Tabular (structured-data-models) in-context learner on fm_select features (categoricals as integer
     codes, numeric-only model). Context = stratified subsample of `max_context` training-fold rows; no early stopping."""
     import torch
@@ -295,7 +401,7 @@ def kumo_fit(size="large", n_num=100, max_context=20000, n_est=4, chunk=1000, n_
 
     def fit(X, y, tr, fi, st, rest, seed):
         """n_bag context draws (stratified, independent) averaged: one 20k draw moves fold KS by up to ~0.01."""
-        cols = fm_select(X, y, tr, n_num)
+        cols = fm_select(X, y, tr, n_num, rand)
         dev = torch.device("cuda")
         model = sdm.models.KumoTabular(task="classification", size=size, device=dev)
         q = pd.concat([frame(r, cols) for r in rest], ignore_index=True)
@@ -327,10 +433,42 @@ def kumo_fit(size="large", n_num=100, max_context=20000, n_est=4, chunk=1000, n_
     return fit
 
 
-def realmlp_fit(n_ens=1, **kw):
-    """pytabkit RealMLP-TD (tuned defaults). Checkpoint selection only on the inner stop split (X_val), then the
-    selected network predicts the outer fold and test (no refit: RealMLP's schedule is tied to its epoch budget)."""
-    from pytabkit import RealMLP_TD_Classifier
+def _torch_faiss_gpu():
+    """shortcut: CPU-only faiss is installed but pytabkit TabR asks for faiss.GpuIndexFlatL2; an exact torch L2 index
+    (cdist + topk on the GPU) stands in. Upgrade to faiss-gpu if TabR becomes part of a recipe."""
+    import faiss
+    import torch
+
+    class Index:
+        def __init__(self, *a):
+            self.x = None
+
+        def reset(self):
+            self.x = None
+
+        def add(self, x):
+            self.x = x
+
+        def search(self, q, k):
+            d = torch.cdist(q.float(), self.x.float()) ** 2
+            dist, idx = d.topk(k, dim=1, largest=False)
+            return dist, idx
+
+    faiss.GpuIndexFlatConfig = type("Cfg", (), {"device": 0})
+    faiss.StandardGpuResources = lambda: None
+    faiss.GpuIndexFlatL2 = Index
+
+
+def realmlp_fit(n_ens=1, model="RealMLP_TD_Classifier", **kw):
+    """pytabkit RealMLP-TD (tuned defaults; `model` = another pytabkit class, e.g. TabR_S_D_Classifier). Checkpoint
+    selection only on the inner stop split (X_val), then the selected network predicts the outer fold and test (no
+    refit: the schedule is tied to its epoch budget)."""
+    import pytabkit
+    cls = getattr(pytabkit, model)
+    if model.startswith("RealMLP"):
+        kw |= dict(n_ens=n_ens, val_metric_name="1-auc_ovr")  # TabR only has its default val metric
+    else:
+        _torch_faiss_gpu()
 
     def prep(X, rows):
         """Median fill fitted on `rows`, one indicator per distinct missingness pattern (thin-file blocks)."""
@@ -357,9 +495,13 @@ def realmlp_fit(n_ens=1, **kw):
         tf = prep(X, tr[fi])
         X = tf(X)
         rest = [tf(r) for r in rest]
-        m = RealMLP_TD_Classifier(device="cuda", random_state=seed, n_ens=n_ens, verbosity=0, val_metric_name="1-auc_ovr",
-                                  **kw)
-        m.fit(X.iloc[tr[fi]], y[tr[fi]], X_val=X.iloc[tr[st]], y_val=y[tr[st]], cat_col_names=CAT_COLS)
+        cats = CAT_COLS
+        if not model.startswith("RealMLP"):  # pytabkit's cat encoder fails on an empty group under sklearn 1.9
+            X = pd.get_dummies(X, columns=CAT_COLS, dtype=float)
+            rest = [pd.get_dummies(r, columns=CAT_COLS, dtype=float) for r in rest]
+            cats = []
+        m = cls(device="cuda", random_state=seed, verbosity=0, **kw)
+        m.fit(X.iloc[tr[fi]], y[tr[fi]], X_val=X.iloc[tr[st]], y_val=y[tr[st]], cat_col_names=cats)
         return [m.predict_proba(r)[:, 1] for r in rest], 0
     return fit
 
@@ -447,9 +589,9 @@ def lr_q_fit(Cs=(0.001, 0.003, 0.01, 0.03, 0.1, 1.0), onehot=True):
     return fit
 
 
-def run(name, fit, X, Xt, y, ids, test_ids, out: Path, seeds=SEEDS, folds=None, deadline=None):
+def run(name, fit, X, Xt, y, ids, test_ids, out: Path, seeds=SEEDS, folds=None, deadline=None, test=True):
     """Runs fit over seeds x outer folds. OOF = mean over seeds (NaN where no fold ran); test = mean over all fits.
-    Writes out/oof_<name>.parquet, test_<name>.parquet and log_<name>.csv."""
+    Writes out/oof_<name>.parquet, test_<name>.parquet and log_<name>.csv. test=False (screening): no test predictions."""
     out.mkdir(parents=True, exist_ok=True)
     oof_sum, oof_n, test_sum, log = np.zeros(len(y)), np.zeros(len(y)), np.zeros(len(Xt)), []
     for seed in seeds:
@@ -460,7 +602,8 @@ def run(name, fit, X, Xt, y, ids, test_ids, out: Path, seeds=SEEDS, folds=None, 
                 raise TimeoutError(f"{name}: deadline before seed {seed} fold {k}")
             t0 = time.time()
             fi, st = inner(y[tr], seed, k)
-            (pv, pt), budget = fit(X, y, tr, fi, st, [X.iloc[va], Xt], seed)
+            preds, budget = fit(X, y, tr, fi, st, [X.iloc[va], Xt] if test else [X.iloc[va]], seed)
+            pv, pt = preds[0], preds[1] if test else np.nan
             oof_sum[va] += pv
             oof_n[va] += 1
             test_sum += pt
@@ -470,7 +613,8 @@ def run(name, fit, X, Xt, y, ids, test_ids, out: Path, seeds=SEEDS, folds=None, 
             # written after every fold so an interrupted run keeps the folds it finished
             oof = np.where(oof_n > 0, oof_sum / np.maximum(oof_n, 1), np.nan)
             pl.DataFrame({"application_id": ids, "target": y, name: oof}).write_parquet(out / f"oof_{name}.parquet")
-            pl.DataFrame({"application_id": test_ids, name: test_sum / len(log)}).write_parquet(out / f"test_{name}.parquet")
+            if test:
+                pl.DataFrame({"application_id": test_ids, name: test_sum / len(log)}).write_parquet(out / f"test_{name}.parquet")
     m = oof_n > 0
     print(f"{name}: OOF KS {ks(y[m], oof[m]):.5f} on {m.sum()} rows", flush=True)
     return oof, test_sum / len(log), log

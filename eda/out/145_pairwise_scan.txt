@@ -1,0 +1,33 @@
+7080 pairwise candidates; permuted chi2/df p95 1.74, family-wise thr ~2.87; above thr 2
+shape: (25, 2)
+┌─────────────────────────────────────────┬──────────┐
+│ feature                                 ┆ chi2     │
+│ ---                                     ┆ ---      │
+│ str                                     ┆ f64      │
+╞═════════════════════════════════════════╪══════════╡
+│ pp_90|prod|bh_score_delta               ┆ 3.08172  │
+│ cf_nonincome_share|ratio|bz_trend       ┆ 3.047467 │
+│ rp_frac_dpd1|diff|ec2_ewm56_rel         ┆ 2.819327 │
+│ bc_score_mean|diff|bh_score_min         ┆ 2.802005 │
+│ rp_maxdpd_mean|max|pp_min               ┆ 2.798206 │
+│ pp_30|diff|rq_frac_1_29                 ┆ 2.758819 │
+│ pp_old|ratio|bp_score_c                 ┆ 2.677999 │
+│ bh_last_score|prod|pp_cat_home          ┆ 2.674469 │
+│ rp_days_since_delinq|ratio|ec_recency_d ┆ 2.626744 │
+│ bc_score_mean|diff|bh_score_mean        ┆ 2.601492 │
+│ rp_n_inst|diff|ec_recency_d             ┆ 2.575039 │
+│ rp_maxdpd_mean|ratio|rp_n_inst          ┆ 2.557525 │
+│ cf_nonincome_share|diff|bz_trend        ┆ 2.537723 │
+│ ob_remaining|diff|ac_outflow_mean       ┆ 2.509588 │
+│ rp_frac_dpd30|ratio|rp_n_inst           ┆ 2.499155 │
+│ ac_outflow_mean|max|bc_revlimit_max     ┆ 2.498117 │
+│ ac_minbal_min|ratio|bz_trend            ┆ 2.466293 │
+│ dti_verified|prod|rp_frac_dpd1_6m       ┆ 2.438402 │
+│ dti_verified|prod|rp_days_since_delinq  ┆ 2.424753 │
+│ ec_accel_30d|ratio|pp_cat_health        ┆ 2.42017  │
+│ rp_frac_dpd1|diff|rp_n_inst             ┆ 2.393283 │
+│ bc_score_min|ratio|bh_score_mean        ┆ 2.390224 │
+│ pp_30|diff|bh_score_min                 ┆ 2.35514  │
+│ bc_revlimit_max|max|pv_req_mean         ┆ 2.343117 │
+│ pp_done|diff|bz_newest                  ┆ 2.312289 │
+└─────────────────────────────────────────┴──────────┘

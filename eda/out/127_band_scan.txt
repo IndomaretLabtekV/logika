@@ -1,0 +1,21 @@
+v31 KS 0.52615; KS cut at rank 0.688; band rows 17501 bad rate 0.141 thin share band 0.316 vs all 0.300
+null (permuted feature): band chi2/df p95 1.59, pooled dKS p95 +0.00179
+shape: (20, 3)
+┌─────────────────────┬──────────┬───────────┐
+│ feature             ┆ chi2     ┆ dks       │
+│ ---                 ┆ ---      ┆ ---       │
+│ str                 ┆ f64      ┆ f64       │
+╞═════════════════════╪══════════╪═══════════╡
+│ dec_month           ┆ 2.760142 ┆ 0.000548  │
+│ pv_rate_last        ┆ 2.169829 ┆ 0.001005  │
+│ bh_score_mean       ┆ 1.994703 ┆ 0.002731  │
+│ rq_streak_max       ┆ 1.979099 ┆ 0.001424  │
+│ ob_remaining        ┆ 1.927932 ┆ -0.000185 │
+│ …                   ┆ …        ┆ …         │
+│ pp_qty_item_90      ┆ 1.541268 ┆ 0.000509  │
+│ ec2_ewm7_rel        ┆ 1.520499 ┆ -0.000696 │
+│ bc_active_max       ┆ 1.513518 ┆ 0.00026   │
+│ bh_last_outstanding ┆ 1.498247 ┆ 0.00103   │
+│ ac_minbal_mean      ┆ 1.485635 ┆ 0.000955  │
+└─────────────────────┴──────────┴───────────┘
+above both nulls: 2 of 228

@@ -81,3 +81,19 @@ rm -rf ../output_v9 ../output                                  # bersihkan
 - **Estimasi waktu Kumo lokal**: ~55–65 menit per fold context penuh (termasuk 30k test), bukan 18 menit (angka 18 menit
   dari screening tanpa test).
 - Python sistem tidak punya polars; `python3 -I` tidak melihat `.venv`. Selalu `.venv/bin/python`.
+
+## Jebakan baru 18–19 Okt
+- **Laptop hang lagi (18 Okt ~21:50)** saat TabR (pytorch-lightning) fold 2; tidak ada OOM di journal, hanya "system too
+  slow". Aturan: job berat `taskset -c 0-11 nice -n 10`, OMP/MKL 8. Setelah itu tidak hang lagi.
+- **Kumo `out.numerical[..., 1]` bukan P(kelas 1)**: urutan kolom kelas berubah per panggilan (ecoc). Selalu pilih per nama
+  (`to_pandas()["1"]` atau `out.columns[sdm.Stype.numerical].index("1")`).
+- **pytabkit TabR**: encoder kategori gagal di sklearn 1.9 bila grup kosong → one-hot sendiri; `1-auc_ovr` tidak
+  didukung; faiss CPU-only → stand-in index torch; butuh `skorch`. Checkpoint lightning menumpuk di `eda/checkpoints/`
+  (dihapus, sekarang di-.gitignore).
+- **Snapshot cutoff mundur** (`build_all` dengan decision_datetime −k hari) kehilangan kolom pivot `bp_*` (laporan bureau
+  aplikasi terpilih belum ada) → lewati kolom yang tidak ada.
+- **Notebook lokal**: `OUTPUT_DIR` relatif + subprocess `cwd=CODE_DIR` → path ganda (diperbaiki `.resolve()`); `%pip` versi
+  pin akan men-downgrade `.venv` (diganti instalasi hanya bila `/kaggle/input` ada); < 2 GPU → rantai berurutan.
+  Eksekusi lokal: `nbclient` + `ipykernel` (dipasang di `.venv`), runner di scratchpad (`NotebookClient(...).execute()`).
+- `pkill -f` lagi-lagi membunuh shell sendiri (exit 144) saat menghentikan poller → pakai PID dari `ps … | grep "[p]ola"`.
+- Bash tool foreground dibatasi ~10 menit; tunggu job panjang dengan `run_in_background` + `until …; do sleep …; done`.

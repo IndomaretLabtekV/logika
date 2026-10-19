@@ -36,3 +36,13 @@ rank sekecil apa pun di sekitar titik itu menggeser KS public ~0,001. Konsekuens
 - Kontinuum skor konsisten dengan plafon ~0,565 + noise public + seleksi best-of-many (simulasi lama `eda/69`: tim teratas
   dari 20 tim setara dengan best-of-10 rata-rata +0,012 s.d. +0,028), **atau** tim atas punya informasi/metode yang tidak
   kita temukan. Tidak bisa dibedakan tanpa prediksi mereka.
+
+## Hasil vs perkiraan, 19 Okt (probe keluarga)
+| Submission | Perkiraan | Public | z |
+|---|---|---|---|
+| v39a pohon saja | 0,5611 ± 0,0026 | 0,56337 | +0,9 |
+| v39b Causilo saja | 0,5614 ± 0,0024 | 0,55333 | **−3,4** |
+| v39c LR saja | 0,5614 ± 0,0036 | 0,55835 | −0,9 |
+- sd selisih subset 30% untuk pasangan berkorelasi 0,97–0,98 ternyata ±0,0031–0,0035 (bukan 0,002).
+- Pola z semua probe ICL negatif (v31b −4, v31c −1,6, Causilo −3,4): **ICL di-overrate CV** secara konsisten di public.
+- Pohon positif (+0,9) → offset pohon public−CV +0,039 paling tinggi di antara keluarga.

@@ -62,3 +62,17 @@
 - Kurva CV porsi pohon datar 0–0,4 (0,5270 → 0,5259) lalu turun setelah 0,5 → 1/3 adalah pilihan CV-konsisten
   yang juga aman di public. Jangan menyetel bobot dari public.
 - Stack logit-LR tetap tidak dipakai (bobot negatif kalah di public 2×, 16 Okt).
+
+## Revisi 19 Okt (probe keluarga di public)
+| Komposisi | Public |
+|---|---|
+| pohon 1/3 + Causilo 1/3 + Kumo 1/3 (v31) | 0,56405 |
+| pohon 1/3 + Kumo 2/3 (v32) | 0,56376 |
+| **pohon saja** (v39a) | **0,56337** |
+| Kumo saja (v31c) | 0,56056 |
+| LR saja (v39c) | 0,55835 |
+| Causilo + Kumo (v31b) | 0,55709 |
+| **Causilo saja** (v39b) | **0,55333** |
+- Sumbangan ICL di public ≈ +0,0007 (noise), bukan +0,0017 seperti CV. Causilo kemungkinan merugikan di luar blend berpohon.
+- Agregasi keluarga pohon rank vs probabilitas vs logit: ±0,0002 (`eda/147`) → tetap rank-mean.
+- Untuk pilihan akhir di private: hedge (pohon-berat + Kumo), jangan memilih hanya dari public; margin CV < ~0,002 noise.

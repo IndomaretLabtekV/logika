@@ -1,0 +1,60 @@
+fold 0: teacher nested OOF on training fold KS 0.52188
+  alpha 1: rounds 638, outer fold KS 0.51892
+  alpha 0.3: rounds 3082, outer fold KS 0.52309
+  alpha 0.1: rounds 9470, outer fold KS 0.52880
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Fetching 2 files: 100%|██████████| 2/2 [00:00<00:00, 827.03it/s]
+[W1018 15:24:07.257120223 CUDACachingAllocator.cpp:3934] memory allocation failed with OOM on device 0 while trying to allocate 1237319680 bytes (free: 285802496, total: 8253669376).
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Fetching 2 files: 100%|██████████| 2/2 [00:00<00:00, 1130.24it/s]
+[W1018 15:24:50.807055040 CUDACachingAllocator.cpp:3934] memory allocation failed with OOM on device 0 while trying to allocate 1237319680 bytes (free: 260636672, total: 8253669376).
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Fetching 2 files: 100%|██████████| 2/2 [00:00<00:00, 2089.32it/s]
+[W1018 15:25:35.238145279 CUDACachingAllocator.cpp:3934] memory allocation failed with OOM on device 0 while trying to allocate 1237319680 bytes (free: 260636672, total: 8253669376).
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Fetching 2 files: 100%|██████████| 2/2 [00:00<00:00, 2161.46it/s]
+[W1018 15:26:19.712350482 CUDACachingAllocator.cpp:3934] memory allocation failed with OOM on device 0 while trying to allocate 1237319680 bytes (free: 260636672, total: 8253669376).
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Fetching 2 files: 100%|██████████| 2/2 [00:00<00:00, 1446.81it/s]
+[W1018 15:27:04.356472360 CUDACachingAllocator.cpp:3934] memory allocation failed with OOM on device 0 while trying to allocate 1237319680 bytes (free: 260636672, total: 8253669376).
+fold 1: teacher nested OOF on training fold KS 0.52141
+  alpha 1: rounds 466, outer fold KS 0.52932
+  alpha 0.3: rounds 1884, outer fold KS 0.52786
+  alpha 0.1: rounds 3809, outer fold KS 0.52559
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Fetching 2 files: 100%|██████████| 2/2 [00:00<00:00, 1452.32it/s]
+[W1018 15:31:45.080887044 CUDACachingAllocator.cpp:3934] memory allocation failed with OOM on device 0 while trying to allocate 1237319680 bytes (free: 260636672, total: 8253669376).
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Fetching 2 files: 100%|██████████| 2/2 [00:00<00:00, 1016.80it/s]
+[W1018 15:32:28.333273789 CUDACachingAllocator.cpp:3934] memory allocation failed with OOM on device 0 while trying to allocate 1237319680 bytes (free: 260636672, total: 8253669376).
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Fetching 2 files: 100%|██████████| 2/2 [00:00<00:00, 1240.55it/s]
+[W1018 15:33:12.991691117 CUDACachingAllocator.cpp:3934] memory allocation failed with OOM on device 0 while trying to allocate 1237319680 bytes (free: 260636672, total: 8253669376).
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Fetching 2 files: 100%|██████████| 2/2 [00:00<00:00, 1145.36it/s]
+[W1018 15:33:57.590263200 CUDACachingAllocator.cpp:3934] memory allocation failed with OOM on device 0 while trying to allocate 1237319680 bytes (free: 260636672, total: 8253669376).
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Fetching 2 files: 100%|██████████| 2/2 [00:00<00:00, 1848.53it/s]
+[W1018 15:34:41.451071299 CUDACachingAllocator.cpp:3934] memory allocation failed with OOM on device 0 while trying to allocate 1237319680 bytes (free: 260636672, total: 8253669376).
+fold 2: teacher nested OOF on training fold KS 0.52401
+  alpha 1: rounds 695, outer fold KS 0.51759
+  alpha 0.3: rounds 1654, outer fold KS 0.51624
+  alpha 0.1: rounds 4500, outer fold KS 0.51648
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Fetching 2 files: 100%|██████████| 2/2 [00:00<00:00, 1310.72it/s]
+[W1018 15:39:47.813558158 CUDACachingAllocator.cpp:3934] memory allocation failed with OOM on device 0 while trying to allocate 1237319680 bytes (free: 260636672, total: 8253669376).
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Fetching 2 files: 100%|██████████| 2/2 [00:00<00:00, 1942.26it/s]
+[W1018 15:40:32.134240704 CUDACachingAllocator.cpp:3934] memory allocation failed with OOM on device 0 while trying to allocate 1237319680 bytes (free: 260636672, total: 8253669376).
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Fetching 2 files: 100%|██████████| 2/2 [00:00<00:00, 1285.61it/s]
+[W1018 15:41:15.764562067 CUDACachingAllocator.cpp:3934] memory allocation failed with OOM on device 0 while trying to allocate 1237319680 bytes (free: 260636672, total: 8253669376).
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Fetching 2 files: 100%|██████████| 2/2 [00:00<00:00, 1314.62it/s]
+[W1018 15:42:00.224157146 CUDACachingAllocator.cpp:3934] memory allocation failed with OOM on device 0 while trying to allocate 1237319680 bytes (free: 260636672, total: 8253669376).
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Fetching 2 files: 100%|██████████| 2/2 [00:00<00:00, 1428.09it/s]
+[W1018 15:42:44.852184005 CUDACachingAllocator.cpp:3934] memory allocation failed with OOM on device 0 while trying to allocate 1237319680 bytes (free: 260636672, total: 8253669376).
+fold 3: teacher nested OOF on training fold KS 0.52539
+  alpha 1: rounds 597, outer fold KS 0.51164
+  alpha 0.3: rounds 2627, outer fold KS 0.51214
+  alpha 0.1: rounds 6166, outer fold KS 0.50912
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Fetching 2 files: 100%|██████████| 2/2 [00:00<00:00, 2122.62it/s]
+[W1018 15:49:15.090225882 CUDACachingAllocator.cpp:3934] memory allocation failed with OOM on device 0 while trying to allocate 1237319680 bytes (free: 260636672, total: 8253669376).
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Fetching 2 files: 100%|██████████| 2/2 [00:00<00:00, 1433.71it/s]
+[W1018 15:49:59.374651708 CUDACachingAllocator.cpp:3934] memory allocation failed with OOM on device 0 while trying to allocate 1237319680 bytes (free: 260636672, total: 8253669376).
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Fetching 2 files: 100%|██████████| 2/2 [00:00<00:00, 1374.51it/s]
+[W1018 15:50:42.803023624 CUDACachingAllocator.cpp:3934] memory allocation failed with OOM on device 0 while trying to allocate 1237319680 bytes (free: 260636672, total: 8253669376).
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Fetching 2 files: 100%|██████████| 2/2 [00:00<00:00, 1386.32it/s]
+[W1018 15:51:27.280146067 CUDACachingAllocator.cpp:3934] memory allocation failed with OOM on device 0 while trying to allocate 1237319680 bytes (free: 260636672, total: 8253669376).
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Fetching 2 files: 100%|██████████| 2/2 [00:00<00:00, 1814.93it/s]
+[W1018 15:52:10.885691029 CUDACachingAllocator.cpp:3934] memory allocation failed with OOM on device 0 while trying to allocate 1237319680 bytes (free: 260636672, total: 8253669376).
+fold 4: teacher nested OOF on training fold KS 0.51640
+  alpha 1: rounds 573, outer fold KS 0.54362
+  alpha 0.3: rounds 3176, outer fold KS 0.54594
+  alpha 0.1: rounds 6584, outer fold KS 0.54144

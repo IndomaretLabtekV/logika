@@ -1,0 +1,13 @@
+lgb: OOF KS 0.52165 on 70000 rows
+lgb_s: OOF KS 0.52158 on 70000 rows
+xgb: OOF KS 0.52085 on 70000 rows
+xgb_s: OOF KS 0.52055 on 70000 rows
+lgb: OOF KS 0.52087 on 70000 rows
+lgb_s: OOF KS 0.52300 on 70000 rows
+xgb: OOF KS 0.52072 on 70000 rows
+xgb_s: OOF KS 0.51983 on 70000 rows
+lgb: OOF KS 0.51854 on 70000 rows
+lgb_s: OOF KS 0.51958 on 70000 rows
+xgb: OOF KS 0.52025 on 70000 rows
+xgb_s: OOF KS 0.52001 on 70000 rows
+BATCH_DONE

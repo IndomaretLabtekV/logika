@@ -1,0 +1,4 @@
+lgb_x: OOF 0.52211, spearman vs lgb 0.9954
+xgb_d8: OOF 0.52397, spearman vs lgb 0.9963
+cat_d8: OOF 0.51890, spearman vs lgb 0.9843
+family9 vs family6: 0.52393 vs 0.52448 d -0.00013 sd 0.00077 P>0 0.44 folds 0/5

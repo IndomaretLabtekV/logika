@@ -1,0 +1,35 @@
+group loan_purpose: 450 candidates so far
+group region: 900 candidates so far
+group employment_type: 1350 candidates so far
+group housing_status: 1800 candidates so far
+group rate_tier: 2250 candidates so far
+group has_history: 2700 candidates so far
+group dec_month: 3150 candidates so far
+3150 candidates; permuted chi2/df mean 0.99 p95 1.90; approx family-wise threshold 3.03
+shape: (20, 4)
+┌─────────────────────────────────────┬──────────┬──────────┬──────────┐
+│ feature                             ┆ chi2     ┆ dks_mean ┆ dks_min  │
+│ ---                                 ┆ ---      ┆ ---      ┆ ---      │
+│ str                                 ┆ f64      ┆ f64      ┆ f64      │
+╞═════════════════════════════════════╪══════════╪══════════╪══════════╡
+│ pp_90|z|housing_status              ┆ 3.657997 ┆ 0.000185 ┆ 0.000038 │
+│ bc_outstanding_max|z|rate_tier      ┆ 3.563955 ┆ 0.000093 ┆ 0.0      │
+│ ac_frac_zero_min|r|dec_month        ┆ 3.351816 ┆ 0.001356 ┆ 0.001071 │
+│ ac_lowdays_mean|r|dec_month         ┆ 3.111534 ┆ 0.001511 ┆ 0.001265 │
+│ ac_lowdays_max|r|dec_month          ┆ 3.003804 ┆ 0.002018 ┆ 0.001669 │
+│ ec2_cancel_28|r|employment_type     ┆ 2.907513 ┆ 0.000172 ┆ 0.000014 │
+│ ec_orders_14d|r|dec_month           ┆ 2.884208 ┆ 0.000979 ┆ 0.000821 │
+│ bp_out_a|z|rate_tier                ┆ 2.861757 ┆ 0.000322 ┆ 0.000233 │
+│ pv_n_canc|r|dec_month               ┆ 2.815807 ┆ 0.000631 ┆ 0.000183 │
+│ bc_n_scored|r|dec_month             ┆ 2.802698 ┆ 0.000926 ┆ 0.000718 │
+│ bc_delinq_max|r|dec_month           ┆ 2.783466 ┆ 0.000663 ┆ 0.000219 │
+│ ec_pm_credit_card|r|employment_type ┆ 2.743273 ┆ 0.000487 ┆ 0.000378 │
+│ bp_delinq_a|r|dec_month             ┆ 2.649473 ┆ 0.001705 ┆ 0.001158 │
+│ ec_cancel_90d|r|employment_type     ┆ 2.633863 ┆ 0.000167 ┆ 0.0      │
+│ ec2_ewm7_rel|z|dec_month            ┆ 2.535138 ┆ 0.000871 ┆ 0.000432 │
+│ pv_last_decision_rej|r|dec_month    ┆ 2.526992 ┆ 0.000717 ┆ 0.000472 │
+│ bc_revlimit_max|r|employment_type   ┆ 2.472182 ┆ 0.000063 ┆ 0.0      │
+│ pv_n_canc|r|employment_type         ┆ 2.437781 ┆ 0.000071 ┆ 0.000002 │
+│ rp_cur_dpd_max|z|rate_tier          ┆ 2.410334 ┆ 0.000693 ┆ 0.000095 │
+│ bh_delinq_max|r|dec_month           ┆ 2.394769 ┆ 0.000286 ┆ 0.000113 │
+└─────────────────────────────────────┴──────────┴──────────┴──────────┘

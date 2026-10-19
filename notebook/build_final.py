@@ -134,8 +134,12 @@ cells.append(md(
 cells.append(code("!nvidia-smi"))
 cells.append(md("The following cell installs all libraries used in this notebook."))
 cells.append(code(
-    "%pip install -q polars==2.0.0 lightgbm xgboost catboost structured-data-models\n"
-    "%pip install -q --no-deps causilo"
+    "import subprocess, sys\n"
+    "from pathlib import Path\n"
+    "if Path('/kaggle/input').exists():  # pinned versions of the validated run; a local venv already has them\n"
+    "    subprocess.run([sys.executable, '-m', 'pip', 'install', '-q', 'polars==2.0.0', 'lightgbm==4.6.0', 'xgboost==3.4.1',\n"
+    "                    'catboost==1.2.10', 'structured-data-models==0.2.1'], check=True)\n"
+    "    subprocess.run([sys.executable, '-m', 'pip', 'install', '-q', '--no-deps', 'causilo==1.0.3'], check=True)"
 ))
 cells.append(md("## Import Libraries"))
 cells.append(code(
@@ -170,7 +174,7 @@ cells.append(code(
     "    _ON_KAGGLE = Path('/kaggle/input').exists()\n"
     "\n"
     "    DATA_DIR   = next(Path('/kaggle/input' if _ON_KAGGLE else '../data').rglob('train_applications.csv')).parent\n"
-    "    OUTPUT_DIR = Path('/kaggle/working') if _ON_KAGGLE else Path('../results/final')\n"
+    "    OUTPUT_DIR = Path('/kaggle/working') if _ON_KAGGLE else Path('../results/final').resolve()  # absolute: subprocesses run in CODE_DIR\n"
     "    CODE_DIR   = OUTPUT_DIR / 'pipeline'\n"
     "    RUN_DIR    = OUTPUT_DIR / 'run'\n"
     "\n"
@@ -258,6 +262,9 @@ cells.append(code(
     "        cmd('run_valid2.py', str(CFG.RUN_DIR / 'fm'), 'causilo', '--seeds', CFG.ICL_SEED,\n"
     "            '--features', feat_path, '--hours', '11')],\n"
     "}\n"
+    "import torch\n"
+    "if torch.cuda.device_count() < 2:  # one GPU (local / single T4): run both chains one after the other on GPU 0\n"
+    "    chains = {0: chains[0] + chains[1]}\n"
     "procs = {}\n"
     "for gpu, steps in chains.items():\n"
     "    env = dict(os.environ, CUDA_VISIBLE_DEVICES=str(gpu), PYTORCH_CUDA_ALLOC_CONF='expandable_segments:True')\n"

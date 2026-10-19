@@ -1,0 +1,4 @@
+trees only (v39a)        CV 0.52448 public 0.56337 offset +0.0389 | public gap to trees +0.00000 vs expected +0.00000 +- 0.00000 -> z +0.0
+Kumo only (v31c)         CV 0.52665 public 0.56056 offset +0.0339 | public gap to trees -0.00281 vs expected +0.00271 +- 0.00327 -> z -1.7
+LR rank-gauss (v39c)     CV 0.52119 public 0.55835 offset +0.0372 | public gap to trees -0.00502 vs expected -0.00204 +- 0.00351 -> z -0.8
+Causilo 3 seeds (v39b)   CV 0.52418 public 0.55333 offset +0.0292 | public gap to trees -0.01004 vs expected +0.00037 +- 0.00314 -> z -3.3

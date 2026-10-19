@@ -1,0 +1,14 @@
+/home/veinsan/Projects/logika/.venv/lib/python3.13/site-packages/sdm/tensor/string.py:502: RuntimeWarning: Falling back to a CPU-based string sort because cuDF is not installed. Install cuDF to enable faster CUDA-based string sorting without device synchronization. This warning will be suppressed for the remainder of this process.
+  warn_once(
+{'model': 'kumo_large_c56000', 'seed': 7, 'fold': 0, 'ks': 0.5255008339881897, 'budget': 56000, 'sec': 1147.2}
+{'model': 'kumo_large_c56000', 'seed': 7, 'fold': 1, 'ks': 0.5467854142189026, 'budget': 56000, 'sec': 1234.0}
+{'model': 'kumo_large_c56000', 'seed': 7, 'fold': 2, 'ks': 0.525903046131134, 'budget': 56000, 'sec': 1217.3}
+{'model': 'kumo_large_c56000', 'seed': 7, 'fold': 3, 'ks': 0.5232371687889099, 'budget': 56000, 'sec': 1076.2}
+{'model': 'kumo_large_c56000', 'seed': 7, 'fold': 4, 'ks': 0.5195529460906982, 'budget': 56000, 'sec': 1085.0}
+{'model': 'kumo_large_c56000', 'seed': 2026, 'fold': 0, 'ks': 0.5258044004440308, 'budget': 56000, 'sec': 1110.6}
+{'model': 'kumo_large_c56000', 'seed': 2026, 'fold': 1, 'ks': 0.5268533825874329, 'budget': 56000, 'sec': 1062.7}
+{'model': 'kumo_large_c56000', 'seed': 2026, 'fold': 2, 'ks': 0.5269128084182739, 'budget': 56000, 'sec': 1080.7}
+{'model': 'kumo_large_c56000', 'seed': 2026, 'fold': 3, 'ks': 0.545893669128418, 'budget': 56000, 'sec': 1092.0}
+{'model': 'kumo_large_c56000', 'seed': 2026, 'fold': 4, 'ks': 0.5280327796936035, 'budget': 56000, 'sec': 1096.4}
+kumo_large_c56000: OOF KS 0.52582 on 70000 rows
+done in 11204s

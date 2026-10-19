@@ -1,0 +1,8 @@
+previous_applications    rows after cutoff: train 0, test 0 | days from latest record to cutoff (median): train 177.21, test 178.08
+repayment_history        rows after cutoff: train 0, test 0 | days from latest record to cutoff (median): train 15.29, test 15.25
+bureau_observations      rows after cutoff: train 0, test 0 | days from latest record to cutoff (median): train 0.05, test 0.06
+ecommerce_transactions   rows after cutoff: train 0, test 0 | days from latest record to cutoff (median): train 11.11, test 11.08
+repayment last_payment_datetime after cutoff: train 0, test 0
+account months not complete before cutoff: train 0, test 0
+repayment train: rows/customer 20.57, share unpaid rows 0.0433, mean dpd 2.216
+repayment test: rows/customer 20.60, share unpaid rows 0.0428, mean dpd 2.180

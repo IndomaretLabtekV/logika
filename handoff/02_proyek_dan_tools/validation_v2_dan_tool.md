@@ -52,3 +52,34 @@ Semua script dijalankan dari `eda/` dengan `../.venv/bin/python` (kecuali disebu
   boleh dihapus kalau zoo tidak dipakai lagi.
 - Kaggle (manifest v22/final): numpy 2.1.3, pandas 2.3.3, polars 2.0.0, scikit-learn 1.6.1, scipy 1.16.3,
   lightgbm 4.6.0, xgboost 3.4.1, catboost 1.2.10, torch 2.11.0+cu128, tabm 0.0.3, rtdl_num_embeddings 0.0.12, causilo 1.0.3.
+
+## Tambahan 18–19 Okt (semua di `eda/valid2.py` / `eda/run_valid2.py`; jalur default resep tidak berubah)
+| Fitur | Cara pakai | Catatan |
+|---|---|---|
+| `run(..., test=False)` / `run_valid2.py --no-test` | screening tanpa prediksi 30k test | hemat ~2/3 waktu Kumo/ICL |
+| `stack_fit(base)` / prefix `stk_` | ICL diberi kolom `gb_stk` = skor LGB OOF bersarang (query = rata-rata 5 model inner) | null (siklus 4) |
+| `stack_lr_fit(base)` / prefix `slr_` | kolom `lr_stk` = logit lr_q bersarang | null (siklus 25) |
+| `pca_fit(base, k=20)` / prefix `pca_` | 20 komponen PCA rank-gauss (fit di train fold) ditambahkan | null |
+| `fm_select(..., rand=k)` / token `r<k>` | feature bagging: 20 fitur KS teratas + 80 acak dari yang lolos filter Spearman | null (siklus 8) |
+| `fm_select(..., rand=-k)` / token `r-1` | 100 fitur menurut **gain LGB** (fit di train fold) | Causilo null (siklus 16) |
+| `realmlp_fit(model="TabR_S_D_Classifier")` / model `tabr` | pytabkit TabR; kategori di-one-hot; metrik val default; index faiss GPU diganti `_torch_faiss_gpu` (cdist+topk) | butuh `skorch` (dipasang di `.venv`); null (siklus 15) |
+| `lgb_nested_fit(LGB_GRID)` / model `lgb_nested` | 10 konfigurasi LGB, pilih per outer fold dari KS inner-stop | null (siklus 21) |
+| `LGB_X`, `XGB_D8`, `CAT_D8` / model `lgb_x`, `xgb_d8`, `cat_d8` | varian pohon (extra_trees, depth 8) | null (siklus 34) |
+| `kumo_fulltrain.py --g_off K` | Kumo-70k dengan draw estimator lain (context sama); output `test_kumo_full70k_g<K>.parquet` | `results/v41` |
+| `kumo_finetune.py` (diperbaiki) | `p1(out)` memilih kolom kelas "1" per nama; baseline di-cache `eda/out/kumo_finetune_f0_base.parquet` | fine-tune null |
+
+### Evaluator baru (pakai ini, jangan menulis ulang)
+| Script | Fungsi |
+|---|---|
+| `eda/screen2.py` | fold 0: kini juga vs v31 fold 0 (kandidat menggantikan Kumo, atau ditambah 1/4) |
+| `eda/120_swap_eval.py FAM w:path …` | ganti satu keluarga v31 dengan OOF lain (multi-seed dirata-rata probabilitas), vs v31 dan resep v8 |
+| `eda/124_add_component.py path` | tambah keluarga ke v31 dengan bobot 0,1/0,2/0,25 (versi ICL seed 42 dan multi-seed) |
+| `eda/116_fbag_eval.py`, `eda/119_distill_eval.py`, `eda/143_snapd_eval.py` | evaluasi bag / distilasi / delta di level keluarga pohon |
+| `eda/121_trees_only_estimate.py`, `eda/131_public_family.py` | perkiraan public probe dan rangkuman offset per keluarga |
+| `eda/129_lowvar_candidate.py OUT.csv` | kandidat v31 varian rendah (pohon + Causilo multi-seed + Kumo-70k multi-draw) |
+| `eda/139_cutoff_audit.py` | audit baris setelah cutoff train vs test |
+
+### Prinsip evaluasi yang ditambahkan 19 Okt
+- **Bandingkan di level keluarga**, bukan anggota: gain anggota (LGB +0,002–0,004) hilang di rank-mean 6 GBDT.
+- **Rata-rata seed outer** sebelum percaya selisih < ~0,002 (sd seed ±0,0015; bootstrap baris tidak menangkapnya).
+- **Seleksi bersarang** untuk fitur yang dipilih dari banyak kandidat memakai label (`eda/146` sebagai pola).

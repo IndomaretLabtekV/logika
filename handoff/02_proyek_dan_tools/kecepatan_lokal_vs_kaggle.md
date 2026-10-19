@@ -44,3 +44,14 @@ GBDT penuh tidak pernah diukur lokal di sesi ini, jadi rasio untuk pohon belum a
   Kaggle saja (3 fold di satu GPU) ≈ 7 jam.
 - v26 (Kumo 2 draw 20k): lokal dan Kaggle sama-sama menjalankan 5 fold (karena status Kaggle salah dibaca) → komputasi
   ganda, tapi jadi bukti reproducibility lintas mesin (selisih ≤ 0,0004 per fold, Spearman OOF 1,0000).
+
+## Angka tambahan 18–19 Okt (lokal RTX 3070 Ti)
+| Job | Waktu |
+|---|---|
+| Kumo large, context 56k, 14k query (fold, tanpa test) | 1.050–1.230 s |
+| Kumo-70k (context 70k, 30k test) | 6.212–6.478 s, VRAM 5,0 GB |
+| Kumo forward context 10k/20k + 3.000 query, e1 | 3,0 / 4,2 s |
+| Causilo 5 fold (seed tunggal, tanpa test) | ~10 menit (114–133 s/fold) |
+| LGB 5 fold (20 thread) | ~4 menit; 6 GBDT × 3 seed dengan test ~1,5–2 jam |
+| TabR fold | 74 s |
+| Notebook submission penuh (Kumo-70k + 6 GBDT × 3 seed + Causilo) | 10.114 s (2,8 jam) vs Kaggle T4×2 4,3 jam |

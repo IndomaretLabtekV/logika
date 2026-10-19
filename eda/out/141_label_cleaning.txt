@@ -1,0 +1,4 @@
+fold 4 frac 0.02: flagged 1121 rows, outer KS 0.53952
+fold 4 frac 0.05: flagged 2801 rows, outer KS 0.53978
+drop frac 0.02: KS 0.51912 vs plain LGB s42 0.52074 d -0.00123 sd 0.00179 P>0 0.23 folds 1/5
+drop frac 0.05: KS 0.51979 vs plain LGB s42 0.52074 d -0.00102 sd 0.00188 P>0 0.30 folds 1/5

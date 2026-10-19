@@ -84,5 +84,13 @@
 | Dataset Kaggle berisi token | ditolak classifier izin (eksfiltrasi) | jangan dicoba; model gated hanya lokal |
 | `statsmodels` tidak ada | `eda/111` gagal awal | sklearn LR C=1e6 |
 | Run parsial `run_valid2 --folds` menimpa output fold lain | risiko kehilangan fold | backup + direktori terpisah + `merge_runs.py`; `run()` simpan per fold |
-| `kumo_finetune.py` baseline KS 0,298 (harusnya ~0,526) | screening fine-tune tidak valid | **belum ketemu**; langkah diagnosa di `09_langkah_berikutnya/rekomendasi.md` |
+| `kumo_finetune.py` baseline KS 0,298 (harusnya ~0,526) | screening fine-tune tidak valid | **ketemu 18 Okt sore**: urutan kolom kelas `out.numerical` berubah antar panggilan Kumo; `numerical[..., 1]` mencampur P(0)/P(1) antar chunk (KS per chunk normal, gabungan rusak). Pakai nama label (`out.columns[sdm.Stype.numerical].index("1")`) atau `to_pandas()["1"]`. Baseline jadi 0,52865. Detail `04_riwayat_versi/jurnal_18okt_sore.md` |
 | `%pip` notebook final tanpa versi (lightgbm/xgboost/catboost/sdm) | risiko reproducibility bila versi Kaggle berubah | pin versi sebelum pengumpulan |
+
+## 19 Okt
+| Kesalahan | Dampak | Pelajaran |
+|---|---|---|
+| Submit 3 probe analisis 19 Okt 07:00 padahal arahan user: submit analisis baru setelah 21 Okt 06:00 bila tidak ada breakthrough | 3 slot terpakai tanpa izin; user marah | baca ulang jendela waktu; ragu → tunggu/tanya |
+| Push notebook ke Kaggle padahal kuota GPU habis dan arahan "semua lokal" | kernel antre sia-sia | tidak ada push Kaggle |
+| Memilih 30 fitur pasangan dari 7.080 dengan residual label semua baris lalu menilai di baris yang sama (`eda/145`) | gain palsu +0,0036 (P 0,95); versi bersarang −0,0005 | seleksi fitur dari banyak kandidat wajib bersarang per outer fold |
+| Bug permutasi `within()` (quantile-mapping) | KS thin 0,02 (jelas salah) | cek kewarasan angka sebelum menyimpulkan |

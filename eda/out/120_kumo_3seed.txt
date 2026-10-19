@@ -1,0 +1,6 @@
+kumo new 0.52570 vs old 0.52665; spearman 0.99878
+family new vs old:   KS 0.52570 vs 0.52665  d +0.00009 sd 0.00115 P>0 0.54 folds 0/5
+v31 swapped vs v31:  KS 0.52603 vs 0.52615  d -0.00019 sd 0.00064 P>0 0.40 folds 3/5
+v31 swapped vs v8:   KS 0.52603 vs 0.52426  d +0.00195 sd 0.00147 P>0 0.91 folds 4/5
+v31 vs v8:           KS 0.52615 vs 0.52426  d +0.00214 sd 0.00148 P>0 0.92 folds 4/5
+blend2 result keys: ['v8_recipe', 'equal_trees', 'equal_all', 'trees_causilo_50', 'greedy_bagged']

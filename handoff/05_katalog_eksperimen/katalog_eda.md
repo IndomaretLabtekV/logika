@@ -117,3 +117,45 @@ Notasi:
 Output: `eda/out/100_*` … `111_*`, blend `eda/out/blend2_v22.txt`, `blend2_v26.txt`, `blend2_v28.txt`, `blend2_v36.txt`,
 riwayat submission `eda/out/107_submissions.csv`, noise public lama `107_public_noise.txt` (Kumo 20k) dan baru
 `107_public_noise_v28.txt` (Kumo ctx penuh).
+
+## Fase sesi 18 Okt sore – 19 Okt (112–152): referensi OOF bersih; sejak 19 Okt referensi utama = pohon saja
+| # | Pertanyaan | Hasil |
+|---|---|---|
+| 112 | Kenapa `kumo_finetune.py` KS 0,298? (4 cara bangun tabel vs OOF v28m) | semua identik (Spearman 1,0); penyebab ternyata urutan kolom kelas per panggilan (diuji di scratchpad, dicatat di jurnal siklus 1) |
+| 113 | Apa yang ICL tahu di luar pohon | residual Kumo LR χ² 255, Causilo ⊂ Kumo; penggerak cf_nonincome_share, pv_appr_max, tenure |
+| 114 | Timing lintas tabel (11 kandidat) | null (dKS ≤ +0,0012 < p95 +0,0014) |
+| 115 | Laten disiplin bayar per cicilan (EB) | residual lolos tipis; model null (LGB −0,0003, Causilo −0,0014) |
+| 116 | Feature bagging ICL (eval) | bag −0,0022 |
+| 117 | Pasangan bad/good mentah di pita yang sama | tidak ada pola yang terlihat mata |
+| 118/119 | Distilasi Causilo bersarang → LGB | fold 0 +0,004…+0,010, 5 fold ≤ v31 |
+| 120 | Swap keluarga v31 (Causilo/Kumo multi-seed) | margin jujur v31 +0,0017–0,0019 |
+| 121 | Perkiraan probe pohon-saja | −0,0030 ± 0,0024 vs v31 → public teramati −0,0007 |
+| 122 | Kurva averaging seed (LGB, Causilo) | keduanya naik +0,002–0,003; hipotesis "hanya pohon" ditolak |
+| 123 | v31 dengan komponen di-average | ≈ v31 |
+| 124 | Tambah komponen ke v31 (TabR) | −0,001…−0,0026 |
+| 125/126 | Thin-view model | thin +0,0026, pooled +0,0002 |
+| 127 | Scan residual di pita titik potong | 2/228 (multiple testing) |
+| 128 | Objective boosting surrogate-KS | −0,004 |
+| 129 | Kandidat v31 varian rendah | Spearman v31 0,99987 |
+| 130 | Konsistensi prediksi test ICL | sehat (Spearman vs pohon OOF 0,984 / test 0,987) |
+| 131 | Offset public−CV per keluarga | pohon +0,039, LR +0,037, Kumo +0,034, Causilo +0,029 |
+| 132 | Gap ICL vs pohon per subset alami | tidak ada subset −0,01 di luar noise |
+| 133 | Label tetangga (kNN) di luar pohon/v31 | χ² ≤ 3,5 → tidak ada sinyal tetangga |
+| 134 | Residual 228 fitur vs pohon saja | 1/228 (dec_month) |
+| 135 | Eskalasi aplikasi sebelumnya (9) | null |
+| 136 | Keterjangkauan 3-arah (8) | null |
+| 137 | 3.150 fitur relatif-kelompok | anggota dangkal +0,002 (seleksi bocor), keluarga null |
+| 138 | Persentil akun per bulan populasi (patuh cutoff) | lemah |
+| 139 | Audit cutoff train vs test | bersih |
+| 140 | Validasi maju-waktu per keluarga | tidak mereproduksi penalti ICL |
+| 141 | Pembersihan label bersarang | −0,001 |
+| 142/143 | Snapshot fitur cutoff −90/−180 (333 delta) | anggota +0,0013–0,0022, keluarga −0,0002 |
+| 144 | Konstruksi lain (volatilitas outflow, residual skor bureau, LTI lama, per-provider) | null |
+| 145/146 | 7.080 pasangan fitur; versi bersarang | +0,0036 palsu → −0,0005 (winner's curse) |
+| 147 | Agregasi keluarga pohon rank vs prob vs logit | ±0,0002 |
+| 148 | Lantai noise label | tidak ada (2% teraman 0 bad) |
+| 149 | Spesialis pita titik potong (bersarang) | −0,0008…−0,0053 |
+| 150 (inline, `out/150_tree_variants.txt`) | Keluarga 9 pohon (lgb_x, xgb_d8, cat_d8) | −0,0001 |
+| 151 (`142 --shifts 30,365`) | Snapshot −30/−365 | keluarga −0,0009 |
+| 152 | VIP-COP untuk Kumo | **dibatalkan atas permintaan user** sebelum ada hasil (lihat `10_ide_belum_dicoba/`) |
+Output: `eda/out/112_*` … `152_*` (txt/csv/png; parquet di-.gitignore).

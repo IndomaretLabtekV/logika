@@ -1,0 +1,78 @@
+KS: {'trees': 0.52448, 'causilo': 0.52583, 'kumo': 0.52665, 'v31': 0.52615}
+spearman all
+           trees  causilo    kumo     v31
+trees    1.0000   0.9839  0.9822  0.9936
+causilo  0.9839   1.0000  0.9892  0.9960
+kumo     0.9822   0.9892  1.0000  0.9954
+v31      0.9936   0.9960  0.9954  1.0000
+spearman within y=0
+           trees  causilo    kumo     v31
+trees    1.0000   0.9802  0.9781  0.9922
+causilo  0.9802   1.0000  0.9869  0.9951
+kumo     0.9781   0.9869  1.0000  0.9944
+v31      0.9922   0.9951  0.9944  1.0000
+spearman within y=1
+           trees  causilo    kumo     v31
+trees    1.0000   0.9792  0.9783  0.9921
+causilo  0.9792   1.0000  0.9863  0.9947
+kumo     0.9783   0.9863  1.0000  0.9943
+v31      0.9921   0.9947  0.9943  1.0000
+
+kumo: slope on trees 0.9809, resid sd 0.1947, KS(resid) 0.07676, LR chi2 y~trees+resid vs y~trees 254.8 (df 1)
+
+causilo: slope on trees 0.9827, resid sd 0.1854, KS(resid) 0.05293, LR chi2 y~trees+resid vs y~trees 114.9 (df 1)
+
+LR chi2 y~trees+r_kumo+r_causilo: 254.9 (df 2)
+
+top features driving kumo residual (Spearman):
+                 feature       rho    cover
+      cf_nonincome_share  0.218791 0.700000
+            ob_term_mean  0.108731 0.665214
+employment_tenure_months  0.106896 1.000000
+             pv_appr_max  0.095313 0.665214
+            ec_accel_30d -0.094188 1.000000
+            ac_lowdays_b  0.093514 0.700000
+        ac_lowdays_delta -0.089146 0.700000
+             pv_req_mean  0.088461 0.700000
+           bh_delinq_max  0.086360 0.700000
+          ob_amt_vs_last  0.085106 0.665214
+            dti_verified  0.082218 0.700000
+      rq_lastloan_maxdpd  0.080518 0.661600
+           rq_streak_max -0.080419 0.528529
+           ec2_ewm28_exc -0.080401 1.000000
+           ec_orders_30d -0.079648 1.000000
+            ec2_ewm7_rel -0.078663 1.000000
+           ec2_ewm56_rel -0.077652 1.000000
+          bh_score_delta  0.075497 0.697857
+      bz_delinq_all_mean  0.075425 1.000000
+             pv_appr_sum  0.074489 0.700000
+
+top features driving causilo residual (Spearman):
+                 feature       rho    cover
+      cf_nonincome_share  0.277579 0.700000
+             pv_appr_max  0.161725 0.665214
+             pv_appr_sum  0.151656 0.700000
+              bh_n_pulls  0.148876 0.700000
+                    pv_n  0.148876 0.700000
+               rp_n_inst  0.141059 0.661600
+              rp_n_loans  0.135070 0.661600
+            ac_lowdays_b  0.130868 0.700000
+             pv_req_mean  0.127798 0.700000
+employment_tenure_months  0.125662 1.000000
+             pv_rate_max  0.119821 0.665214
+           rp_maxdpd_max  0.118246 0.661600
+         ac_outflow_mean  0.117174 0.700000
+               rp_n_dpd1  0.109768 0.661600
+             rp_late_max  0.109681 0.659629
+        ac_frac_zero_min  0.109264 0.700000
+            bh_score_min -0.108443 0.699500
+     pv_days_since_first  0.107862 0.700000
+                bz_range  0.105837 0.999129
+              rp_n_dpd30  0.103970 0.661600
+
+segment KS (n, bad rate, trees, causilo, kumo, v31):
+  history   49000 0.144 0.5344 0.5349 0.5381 0.5372
+  thin      21000 0.117 0.4963 0.4963 0.4979 0.4977
+  ec_low    23384 0.141 0.5224 0.5260 0.5262 0.5251
+  ec_mid    24114 0.135 0.5116 0.5137 0.5165 0.5154
+  ec_high   22502 0.132 0.5418 0.5439 0.5435 0.5439

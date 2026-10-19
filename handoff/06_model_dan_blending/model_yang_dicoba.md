@@ -79,3 +79,25 @@ Causilo yang menambah.
 - Korelasi rank: Kumo–Causilo 0,989, Kumo–trees ~0,978, antar pohon 0,97–0,999, TabFM vs Kumo 0,977.
 - Kapasitas tambahan (fitur lebih banyak, model lebih besar, estimator lebih banyak) tidak membantu: Kumo f154 < f100,
   medium < large, e8 ≈ e4 dalam noise; Causilo f150/f300 ≤ f100.
+
+## Tambahan 18 Okt sore – 19 Okt (validation_v2)
+| Model / varian | OOF / hasil | Keterangan |
+|---|---|---|
+| Kumo fine-tune blok ICL (203M param), lr 1e-5 / 1e-4 | inner-stop KS tidak naik / turun | null; semua parameter OOM di 8 GB (AdamW) |
+| Stacked ICL (Causilo/Kumo + skor LGB bersarang) | Causilo 0,5224 vs 0,5249 (fold 0); Kumo 0,5258 vs 0,5256 | null |
+| Distilasi Causilo → LGB (target lunak α 0,3/0,1) | 0,52343 / 0,52239 (5 fold) | null di keluarga |
+| Causilo feature bagging / seleksi gain | bag 0,52345 / gain 0,52390 | null |
+| TabR (pytabkit, retrieval NN) | 0,51217 (3 seed) | terlemah; menambah ke v31 merugikan |
+| LGB nested config selection (10 config) | 0,52281 | null |
+| LGB extra_trees / XGB depth 8 / Cat depth 8 | 0,52211 / 0,52397 / 0,51890 | keluarga 9 null |
+| LGB custom objective surrogate-KS | −0,004 (fold 0) | null |
+| LGB spesialis pita titik potong | −0,0008…−0,0053 | null |
+| KumoRelational | tidak dijalankan | butuh embed 4,36 juta item, tidak muat 8 GB |
+| VIP-COP context optimisation untuk Kumo | belum (dibatalkan) | lihat `10_ide_belum_dicoba/` |
+
+### Kesimpulan model (revisi 19 Okt)
+- **Di public**: pohon (0,56337) > Kumo (0,56056) > LR (0,55835) > Causilo (0,55333), terbalik dari CV
+  (Kumo 0,5267 > Causilo 0,5258 > pohon 0,5245 > LR 0,5212). CV hanya bisa dipercaya untuk pohon dan LR.
+- Pohon jenuh: fitur, hyperparameter, seed, keragaman, agregasi tidak menaikkan keluarga 6 GBDT.
+- Info luar: tim 0,57065 memakai ensemble Kumo 3 seed → kemungkinan setup Kumo kita (fitur `fm_select` 100 numerik
+  top-KS + 4 kategori sebagai kode, context train fold) jauh dari optimal untuk public.

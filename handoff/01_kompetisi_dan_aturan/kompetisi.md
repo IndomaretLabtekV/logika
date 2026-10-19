@@ -51,3 +51,10 @@ Sumber lengkap: `docs/context.md`. Ringkasan bagian yang relevan:
 - Penilaian (docs/context.md §6): public 45% + private 45% + notebook 10% (reproducibility). Proporsi baris public/private
   tidak diketahui; analisis noise memakai asumsi public = 30% test (9.000 baris).
 - Riwayat lengkap submission: `04_riwayat_versi/ringkasan_skor.md`.
+
+## Posisi leaderboard (19 Okt ~20:00 WIB)
+- 118 tim. Kita **#33**, tim **"lagi cape lomba asli"** (athillazaidan, nicholaswisee, riantamaputra), 0,56405, 22 submit.
+- Top-1 **Datadataan 0,57788** (19 submit), #2 cupuu 0,57768 (28), #3 Magang Bareng Afiq 0,57458, #4 0,57167, #5 0,57120,
+  #6 0,57099, #7 0,57067, #8 BCC mau ke kopdes depok 0,57065, #9 HYPOMONĒ 0,57015; **9 tim > 0,570**; batas top-8 ~0,5707.
+- 33 tim ≥ 0,564 → klaster 0,564–0,568 sangat padat.
+- Nama tim di Kaggle harus sama dengan yang terdaftar di panitia (rule 1); nama notebook `ParticipantNumber_TeamName_Notebook`.

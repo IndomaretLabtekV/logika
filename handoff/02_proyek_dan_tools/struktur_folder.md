@@ -73,6 +73,16 @@ Cara pakai rinci: `validation_v2_dan_tool.md`.
 | `final_kaggle/` | output run Kaggle notebook final (`submission.csv` = v34, `run/{gbdt,fm}`, log, `pipeline/` kode saat run) |
 | `v22k` … `v33k`, `finalk` | `kernel-metadata.json` untuk push (notebook staging dihapus; buat ulang dengan builder) |
 
+| `final/` | **run lokal notebook submission 19 Okt** (`submission.csv` = v34, `run/`, `pipeline/`, `executed_notebook_local.ipynb`) |
+| `v37` … `v45`, `screen/*` (sesi 18–19 Okt) | indeks lengkap di `04_riwayat_versi/v37_v45_sesi_18_19okt.md` |
+
+## Yang dihapus saat bersih-bersih 19 Okt
+- `eda/checkpoints/` (19 checkpoint PyTorch Lightning dari TabR, 155 MB) dan `eda/__pycache__/`.
+- `results/finalk/logika-final.ipynb` (salinan staging push Kaggle yang dibatalkan; metadata kernel dipertahankan).
+- `results/final_local_run.ipynb` dipindah ke `results/final/executed_notebook_local.ipynb`.
+- `.gitignore` ditambah: `checkpoints/`, `lightning_logs/`, `*.ckpt`.
+- Snapshot fitur `data_pq/features_shift*.parquet` dan semua `eda/out/*.parquet` tetap di-.gitignore (regenerable).
+
 ## Yang dihapus saat bersih-bersih 18 Okt
 - Semua salinan `features.parquet` di `results/*/` (9 × 64 MB; turunan data lomba, bisa dibangun ulang, tidak boleh
   didistribusikan) dan `eda/out/100_external_credit.parquet` (6,7 MB, turunan).

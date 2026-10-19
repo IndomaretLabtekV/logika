@@ -1,0 +1,15 @@
+before fine-tuning: outer fold-0 KS 0.52865 (0 s)
+/home/veinsan/Projects/logika/.venv/lib/python3.13/site-packages/sdm/tensor/string.py:502: RuntimeWarning: Falling back to a CPU-based string sort because cuDF is not installed. Install cuDF to enable faster CUDA-based string sorting without device synchronization. This warning will be suppressed for the remainder of this process.
+  warn_once(
+step 0 inner-stop KS 0.50271
+step 25 loss 0.3684 inner-stop KS 0.49621 VRAM 6.0 GB 69 s
+step 50 loss 0.3074 inner-stop KS 0.50068 VRAM 6.0 GB 116 s
+step 75 loss 0.3146 inner-stop KS 0.49804 VRAM 6.0 GB 166 s
+step 100 loss 0.3099 inner-stop KS 0.49672 VRAM 6.0 GB 218 s
+step 125 loss 0.3063 inner-stop KS 0.49379 VRAM 6.0 GB 271 s
+step 150 loss 0.3057 inner-stop KS 0.48946 VRAM 6.0 GB 325 s
+step 175 loss 0.2973 inner-stop KS 0.49268 VRAM 6.0 GB 379 s
+step 200 loss 0.3068 inner-stop KS 0.49782 VRAM 6.0 GB 434 s
+step 225 loss 0.3033 inner-stop KS 0.49699 VRAM 6.0 GB 490 s
+step 250 loss 0.3008 inner-stop KS 0.49573 VRAM 6.0 GB 545 s
+no improvement on the inner stop rows; outer fold not re-scored

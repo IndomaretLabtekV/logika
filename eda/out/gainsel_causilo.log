@@ -1,0 +1,12 @@
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Fetching 2 files: 100%|██████████| 2/2 [00:00<00:00, 43.69it/s]
+{'model': 'causilo_r-1', 'seed': 42, 'fold': 0, 'ks': 0.5225359201431274, 'budget': 104, 'sec': 125.5}
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Fetching 2 files: 100%|██████████| 2/2 [00:00<00:00, 1416.99it/s]
+{'model': 'causilo_r-1', 'seed': 42, 'fold': 1, 'ks': 0.5311023592948914, 'budget': 104, 'sec': 124.2}
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Fetching 2 files: 100%|██████████| 2/2 [00:00<00:00, 1431.75it/s]
+{'model': 'causilo_r-1', 'seed': 42, 'fold': 2, 'ks': 0.5172727108001709, 'budget': 104, 'sec': 124.1}
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Fetching 2 files: 100%|██████████| 2/2 [00:00<00:00, 1330.05it/s]
+{'model': 'causilo_r-1', 'seed': 42, 'fold': 3, 'ks': 0.5101297497749329, 'budget': 104, 'sec': 125.7}
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Fetching 2 files: 100%|██████████| 2/2 [00:00<00:00, 1702.58it/s]
+{'model': 'causilo_r-1', 'seed': 42, 'fold': 4, 'ks': 0.5491987466812134, 'budget': 104, 'sec': 123.8}
+causilo_r-1: OOF KS 0.52390 on 70000 rows
+done in 625s

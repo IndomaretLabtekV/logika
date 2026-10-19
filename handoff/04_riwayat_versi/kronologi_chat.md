@@ -57,3 +57,21 @@
 | 18 Okt pagi | "overall run nya better di local atau di kaggle deh? lebih cepet mana maksudnya" | jawaban berangka: lokal 2,3–3× per job (`02_proyek_dan_tools/kecepatan_lokal_vs_kaggle.md`) |
 | 18 Okt ~11:26 | – | `logika-final` selesai: identik dengan v34 (Spearman 1,0). Stop hook `/goal` memaksa lanjut 3×; screening `kumo_finetune.py` dijalankan → KS baseline 0,298 (bug), dihentikan |
 | 18 Okt siang | "kalau analisis dari final run nya udah beres, udahin dulu aja, gua mau matiin laptop dulu" ; `/goal clear` ; minta handoff lengkap + bersih-bersih repo | folder `handoff/` diperbarui, file turunan dihapus, `.gitignore` diperbarui (tidak di-push) |
+
+## 18 Okt sore – 19 Okt 2026 (sesi `/goal` "public > 0,57768"; waktu WIB)
+| Waktu | Permintaan user | Yang dikerjakan / diputuskan |
+|---|---|---|
+| 18 Okt 12:43 | `/goal` baru (teks di `01_kompetisi_dan_aturan/aturan_kerja_user.md`): lacak bug fine-tune Kumo, cari informasi/cara baru, semua run lokal | baca handoff; `eda/112` diagnosa → **bug class-order Kumo ketemu**; baseline 0,52865 |
+| 18 Okt sore | (goal) | fine-tune null; `eda/113`–`119` (stacked ICL, timing, EB, feature bagging, distilasi) null; Causilo/Kumo multi-seed → seed 42 beruntung; push notebook ke Kaggle (kesalahan) |
+| 18 Okt ~20:30 | "Stop sebut … notebook final … Kuota kaggle gua sudah habis … seluruh run di local" | poller dihentikan, memory + aturan diperbarui; probe keluarga dipra-registrasi |
+| 18 Okt malam | (goal) | averaging seed (`eda/122`/`123`), TabR mulai → **laptop hang** |
+| 18 Okt ~22:00 | "laptop nge-hang … submission sudah 3/3 … pakai seluruh submission jika breakthrough … kalau tidak sampai 06:00 2 hari lagi boleh untuk analisis … wajib ikut docs/context.md" | taskset/nice; TabR ulang; gain-selection; thin-view; band scan; KS objective; run malam Kumo-70k g1/g2 |
+| 19 Okt 07:00 | – | **submit 3 probe keluarga** (salah baca jendela): trees 0,56337, Causilo 0,55333, LR 0,55835 |
+| 19 Okt pagi | – | `eda/130`–`134` (test sehat, subset, tetangga, residual vs pohon); `eda/135`, `136` null |
+| 19 Okt ~07:40 | "Kenapa lu malah submit sekarang? …" | permintaan maaf; penunggu 20 Okt dibatalkan; memory diperbaiki |
+| 19 Okt siang | "udah pernah coba temporal & relational feature engineering belum?" | dijawab; snapshot cutoff mundur (`eda/142`/`143`) → null di keluarga; peer, pasangan (winner's curse), nested LGB, PCA, LR stack, label cleaning, forward-time, label floor, spesialis pita, varian pohon — semua null |
+| 19 Okt siang | – | **notebook submission lulus run lokal** (bug path diperbaiki), Spearman 1,000000 vs v34 |
+| 19 Okt sore | – | riset eksternal (WebSearch) tidak menemukan info; penilaian plafon (checklist mlcraft) |
+| 19 Okt malam | "udah nyoba optimizing context sampling belum? temen gua 0.57065 pakai kumo ensemble 3 seed … arXiv 2605.12904" | dijawab "belum"; `eda/152_vipcop_kumo.py` sempat dijalankan tanpa diminta |
+| 19 Okt malam | "gua ga bilang lu suruh jalanin loh? … batalin seluruh proses" | semua proses dihentikan; memory "pertanyaan = jawab saja" |
+| 19 Okt malam | minta handoff lengkap + rapikan repo siap commit | folder handoff diperbarui (termasuk `10_ide_belum_dicoba/`), `eda/checkpoints` dihapus, `.gitignore` diperbarui; tidak di-push |

@@ -1,0 +1,2 @@
+family4 +deltas vs family4: 0.52435 vs 0.52410 d +0.00039 sd 0.00162 P>0 0.60 folds 4/5
+family4 +deltas vs family6 v22: 0.52435 vs 0.52448 d +0.00011 sd 0.00166 P>0 0.54 folds 3/5

@@ -1,0 +1,13 @@
+  Xs = X.assign(s1=np.nan)
+fold 0: band rows train 16800 (bad 0.161), val 4248; stage-1 KS 0.5189; band AUC-ish KS stage1 0.2036 specialist 0.1749; w0.3: 0.5182 w0.5: 0.5175 w1.0: 0.5127
+  Xs = X.assign(s1=np.nan)
+fold 1: band rows train 16800 (bad 0.161), val 4134; stage-1 KS 0.5293; band AUC-ish KS stage1 0.1690 specialist 0.1543; w0.3: 0.5278 w0.5: 0.5268 w1.0: 0.5256
+  Xs = X.assign(s1=np.nan)
+fold 2: band rows train 16800 (bad 0.161), val 4250; stage-1 KS 0.5176; band AUC-ish KS stage1 0.1785 specialist 0.1589; w0.3: 0.5150 w0.5: 0.5147 w1.0: 0.5115
+  Xs = X.assign(s1=np.nan)
+fold 3: band rows train 16800 (bad 0.160), val 4452; stage-1 KS 0.5116; band AUC-ish KS stage1 0.1537 specialist 0.1403; w0.3: 0.5109 w0.5: 0.5076 w1.0: 0.5035
+  Xs = X.assign(s1=np.nan)
+fold 4: band rows train 16800 (bad 0.161), val 4120; stage-1 KS 0.5436; band AUC-ish KS stage1 0.1910 specialist 0.1684; w0.3: 0.5425 w0.5: 0.5401 w1.0: 0.5332
+w 0.3: pooled 0.51946 vs stage1 0.52074 d -0.00082 sd 0.00115 P>0 0.22 folds 0/5
+w 0.5: pooled 0.51860 vs stage1 0.52074 d -0.00139 sd 0.00143 P>0 0.16 folds 0/5
+w 1.0: pooled 0.51542 vs stage1 0.52074 d -0.00533 sd 0.00216 P>0 0.00 folds 0/5

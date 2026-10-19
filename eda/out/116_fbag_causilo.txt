@@ -1,0 +1,6 @@
+member oof_causilo_r1.parquet           KS 0.52343  spearman vs base 0.9884
+member oof_causilo_r2.parquet           KS 0.51377  spearman vs base 0.9742
+member oof_causilo_r3.parquet           KS 0.51673  spearman vs base 0.9802
+causilo bag (4) vs causilo:  KS 0.52345 vs 0.52583  d -0.00217 sd 0.00172 P>0 0.09 folds 2/5
+v31 with causilo bag vs v31:     KS 0.52584 vs 0.52615  d -0.00061 sd 0.00093 P>0 0.25 folds 2/5
+bag KS by number of random members: 0:0.52583 1:0.52556 2:0.52331 3:0.52345

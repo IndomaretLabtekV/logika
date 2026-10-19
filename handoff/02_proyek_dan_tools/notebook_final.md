@@ -57,3 +57,10 @@ cp final.ipynb ../results/finalk/logika-final.ipynb          # staging (notebook
 KAGGLE_API_TOKEN="$(kaggle auth print-access-token)" kaggle kernels push -p ../results/finalk
 ```
 `results/finalk/kernel-metadata.json` sudah ada (T4, Internet on, private, sumber kompetisi).
+
+## Update 19 Okt (lokal, kuota Kaggle habis)
+- Versi paket di-pin; instalasi hanya di Kaggle (di lokal akan men-downgrade `.venv`).
+- < 2 GPU → kedua rantai berurutan di GPU 0; `OUTPUT_DIR` lokal absolut (bug path ganda diperbaiki).
+- Run lokal penuh 2,8 jam lulus, Spearman 1,000000 vs v34. Cara: `nbclient` (scratchpad `run_nb.py`) dengan
+  `taskset -c 0-11 nice -n 10`.
+- Sisa: banner tim (nomor peserta, anggota) dan nama file `ParticipantNumber_TeamName_Notebook`.

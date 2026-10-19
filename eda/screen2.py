@@ -12,6 +12,7 @@ import valid2 as v
 
 REF = {n: f"../results/screen/ref_f0/oof_{n}.parquet" for n in ["lgb", "lgb_s", "xgb", "xgb_s", "cat", "cat_s", "tabm"]}
 REF["causilo"] = "../results/screen/causilo_f0/oof_causilo.parquet"
+REF["kumo"] = "../results/v28m/oof_kumo_large_c56000.parquet"  # fold-0 rows of the v31 Kumo
 V8 = dict(lgb=.140, lgb_s=.056, xgb=.108, xgb_s=.084, cat=.037, cat_s=.042, tabm=.352, causilo=.137)
 
 
@@ -35,6 +36,7 @@ def load_ref():
     ids, y, _ = col(REF["lgb"])
     m = ~np.isnan(_)
     P = {n: col(p)[2][m] for n, p in REF.items()}
+    assert all(not np.isnan(x).any() for x in P.values())
     return ids.filter(m), y[m], {n: rk(x) for n, x in P.items()}
 
 
@@ -42,6 +44,9 @@ if __name__ == "__main__":
     ids, y, P = load_ref()
     trees = ["lgb", "lgb_s", "xgb", "xgb_s", "cat", "cat_s"]
     v8 = sum(w * P[n] for n, w in V8.items())
+    tr_ = np.mean([P[n] for n in trees], axis=0)
+    v31 = (tr_ + P["causilo"] + P["kumo"]) / 3
+    print(f"fold-0 v31 (trees+causilo+kumo 1/3) {v.ks(y, v31):.5f}  kumo {v.ks(y, P['kumo']):.5f}")
     base = 0.5 * np.mean([P[n] for n in trees], axis=0) + 0.5 * P["causilo"]
     print(f"fold-0 reference: v8 recipe {v.ks(y, v8):.5f}  trees+causilo {v.ks(y, base):.5f}  causilo {v.ks(y, P['causilo']):.5f}")
     for path in sys.argv[1:]:
@@ -50,6 +55,8 @@ if __name__ == "__main__":
         assert (cid.filter(m) == ids).all()
         c = rk(c[m])
         for tag, s, ref in [("alone vs v8", c, v8), ("base+20% vs base", 0.8 * base + 0.2 * c, base),
-                            ("base+20% vs v8", 0.8 * base + 0.2 * c, v8)]:
+                            ("base+20% vs v8", 0.8 * base + 0.2 * c, v8), ("alone vs kumo", c, P["kumo"]),
+                            ("v31 kumo->cand", (tr_ + P["causilo"] + c) / 3, v31),
+                            ("v31 + cand 1/4", (tr_ + P["causilo"] + P["kumo"] + c) / 4, v31)]:
             mu, sd, p = boot(y, s, ref)
             print(f"{path.split('/')[-1]:32s} {tag:18s} KS {v.ks(y, s):.5f}  d {mu:+.5f} sd {sd:.5f} P>0 {p:.2f}")

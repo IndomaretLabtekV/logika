@@ -1,0 +1,3 @@
+v31 + thin reorder (quantile-kept) vs v31: KS 0.52632 vs 0.52615 d +0.00009 sd 0.00054 P>0 0.56 folds 4/5
+v31 + thin reorder vs v8 recipe:           KS 0.52632 vs 0.52426 d +0.00222 sd 0.00150 P>0 0.94 folds 4/5
+  thin 0.50022 history 0.53723

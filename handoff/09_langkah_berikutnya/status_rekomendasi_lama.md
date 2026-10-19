@@ -37,3 +37,13 @@
 | C1 lama: EXAONE 8–12k | ❌ tidak dicoba (prioritas kalah dari Kumo/Causilo) | – |
 | baru: model ICL relasional (KumoRelational) | ❌ ditunda (alasan di `rekomendasi.md`) | – |
 | baru: fine-tune Kumo | ⚠ script ada, baseline bug | lihat `rekomendasi.md` langkah 1 |
+
+## Status rekomendasi versi 18 Okt (dicek 19 Okt malam)
+| Langkah 18 Okt | Status |
+|---|---|
+| 1. Lacak bug `kumo_finetune.py` | **selesai** — urutan kolom kelas Kumo berubah antar panggilan; diperbaiki, baseline 0,52865 |
+| 2. Screening fine-tune Kumo | **selesai, null** (blok ICL lr 1e-5/1e-4 tidak naik; semua parameter OOM) |
+| 3. Putuskan resep v34 vs v31 | belum diputuskan; info baru: pohon saja ≈ v31 di public, Causilo lemah di public |
+| 4. Rapikan notebook (banner, pin versi, rename, run ulang) | pin versi **selesai**; run ulang **selesai di lokal** (Kaggle tidak bisa, kuota habis); banner + rename **belum** (butuh data user) |
+| Ide lain: KumoRelational | tidak layak 8 GB |
+| Ide lain: refit pohon di 70k | tidak dikerjakan (learning curve datar) |

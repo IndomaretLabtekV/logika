@@ -1,0 +1,5 @@
+ctx 56000 query 2000 pos 251  v28m on these rows KS 0.52078
+A: KS 0.52078  spearman vs v28m 1.0000  mean p 0.1329  target stype categorical  129 s
+B: KS 0.52078  spearman vs v28m 1.0000  mean p 0.1329  target stype categorical  138 s
+C: KS 0.52078  spearman vs v28m 1.0000  mean p 0.1329  target stype categorical  150 s
+D: KS 0.52078  spearman vs v28m 1.0000  mean p 0.1329  target stype categorical  151 s

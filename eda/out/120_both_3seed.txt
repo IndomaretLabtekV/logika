@@ -1,0 +1,2 @@
+v31 (both ICL 3 seeds) vs v8: KS 0.52580 vs 0.52426 d +0.00170 sd 0.00148 P>0 0.88 folds 5/5
+trees+kumo3 (2/3) vs v8:      KS 0.52621 vs 0.52426 d +0.00234 sd 0.00162 P>0 0.93 folds 4/5

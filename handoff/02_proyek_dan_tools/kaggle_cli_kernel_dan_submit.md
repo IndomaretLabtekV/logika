@@ -105,3 +105,11 @@ logika-v18-bias (CPU), logika-v19-pl (CPU), logika-v21-feat (CPU). logika-v20-fm
 ### Submit 17–18 Okt
 Semua lewat `kaggle competitions submit ... -f <dir>/submission.csv -m "<isi + pertanyaan riset + perkiraan>"`.
 File kandidat disalin ke folder sementara sebagai `submission.csv`. Daftar dan hasil: `04_riwayat_versi/ringkasan_skor.md`.
+
+## Catatan 18–19 Okt
+- **Kuota GPU Kaggle user habis** (18 Okt). Push kernel 18 Okt 19:58 (`logika-final` versi 2) hanya QUEUED dan harus
+  dibatalkan user lewat UI — CLI tidak punya perintah cancel (`delete` menghapus seluruh kernel termasuk versi lama).
+  Jangan push kernel kecuali user minta.
+- Leaderboard lengkap: `kaggle competitions leaderboard -c <slug> -d -p DIR` (zip CSV dengan nama tim dan anggota).
+- Submit: `kaggle competitions submit -c <slug> -f results/vNN/<nama>/submission.csv -m "<isi + pertanyaan riset + perkiraan>"`;
+  skor muncul di `kaggle competitions submissions -c <slug>` baris ketiga setelah ~1 menit.

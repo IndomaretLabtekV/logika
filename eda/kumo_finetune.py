@@ -50,6 +50,12 @@ def rows(idx):
     return T[torch.as_tensor(idx, device=dev)]
 
 
+def p1(out):
+    """P(target == "1"). The class column order of out.numerical changes between calls (Kumo draws a class order per
+    call), so index by label name: numerical[..., 1] mixed P(0) and P(1) across chunks -> pooled KS 0.298 (bug 18 Okt)."""
+    return out.numerical[..., out.columns[sdm.Stype.numerical].index("1")]
+
+
 def predict(ctx, q, n_est, seed=0, chunk=1000):
     model.eval()
     c = rows(ctx)
@@ -59,12 +65,19 @@ def predict(ctx, q, n_est, seed=0, chunk=1000):
     with torch.no_grad(), torch.amp.autocast("cuda", dtype=torch.float16):
         for i in range(0, len(q), chunk):
             r = model(x_context=xc, y_context=yc, x_query=rows(q[i:i + chunk]).drop_columns("target"), num_estimators=n_est, generator=g)
-            out.append(r.numerical[..., 1].float().cpu().numpy())
+            out.append(p1(r).float().cpu().numpy())
     return np.concatenate(out)
 
 
 t0 = time.time()
-base = None if a.skip_base else predict(tr, va, 4)
+BASE = OUT / "kumo_finetune_f0_base.parquet"  # untouched model, context = whole training fold, e4, generator seed 0
+if a.skip_base:
+    base = None
+elif BASE.exists():
+    base = pl.read_parquet(BASE)["base"].to_numpy()
+else:
+    base = predict(tr, va, 4)
+    pl.DataFrame({"application_id": ids[va], "base": base}).write_parquet(BASE)
 if base is not None:
     print(f"before fine-tuning: outer fold-0 KS {v.ks(y[va], base):.5f} ({time.time() - t0:.0f} s)", flush=True)
 mon_ctx = strat(fi, 16000, np.random.default_rng(1))
@@ -87,9 +100,9 @@ for step in range(1, a.steps + 1):
     with torch.amp.autocast("cuda", dtype=torch.float16):
         out = model(x_context=c.drop_columns("target"), y_context=c[:, "target"], x_query=rows(q).drop_columns("target"),
                     num_estimators=1, generator=gen)
-    p1 = out.numerical[..., 1].float().clamp(1e-6, 1 - 1e-6)
+    pr = p1(out).float().clamp(1e-6, 1 - 1e-6)
     yt = torch.as_tensor(y[q], device=dev, dtype=torch.float32)
-    loss = torch.nn.functional.binary_cross_entropy(p1, yt)
+    loss = torch.nn.functional.binary_cross_entropy(pr, yt)
     opt.zero_grad(set_to_none=True)
     scaler.scale(loss).backward()
     scaler.unscale_(opt)
