@@ -1,0 +1,40 @@
+{
+  "status": "protocol locked before SSL model run",
+  "organizer_data_only": true,
+  "policy": "asymmetric class confidence; not adaptive FlexMatch/FreeMatch",
+  "source_sha256": {
+    "eda/156_kumo_ssl_context.py": "21ee03aa8404ff58bb66e968f68326f9e4256408b8388c195cfdf0c340df414c",
+    "eda/ssl_policies.py": "ab1c0f69c89e1603db005fd614260107d689134954b375572763f19386f31796",
+    "eda/152_vipcop_kumo.py": "67c3f1dab4f4663b4e9d2383c75977caee7cb80a6ba524c7b38dad6db23e93ba",
+    "eda/valid2.py": "3f1bfe40ae9e32d70577f537e6b7a29e2a103d7a423eb03026e62ab37d01f8fc",
+    "eda/common.py": "679d20a7beb3d5e3946232d1dcea66f21b871ab1a41c8879e15d3d5a615f92e7"
+  },
+  "features_sha256": "bd7ca1d8d88c53f22cd1589e60ddf9bbb5686d1fb5f6e214ff251505f8b9b034",
+  "thresholds_negative": [
+    0.02,
+    0.05
+  ],
+  "thresholds_positive": [
+    0.7,
+    0.9
+  ],
+  "caps": [
+    2000,
+    10000
+  ],
+  "group_coalitions": 0,
+  "seed": 42,
+  "fold": 0,
+  "search_confirm_gain_gate": 0.003,
+  "smoke_directory": "results/v49/ssl_asymmetric_smoke",
+  "screen_directory": "results/v49/ssl_asymmetric_f0",
+  "packages": {
+    "torch": "2.14.1",
+    "structured-data-models": "0.2.1",
+    "polars": "2.0.0",
+    "numpy": "2.5.4",
+    "pandas": "3.0.6",
+    "scikit-learn": "1.9.1"
+  },
+  "known_preprocessing": "legacy price reference uses unlabeled train and test customer histories; matched across baseline and SSL"
+}
