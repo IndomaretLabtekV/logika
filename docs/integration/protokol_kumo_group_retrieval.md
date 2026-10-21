@@ -30,7 +30,7 @@ Konfigurasi tetap sebelumrun:
   Context antarcentroid bolehoverlap;setiapquery menerima satu kelompok/e4.
   Vocab Kumo dipasang pada12kcontext yang dipakai,unknownquery→missing.
 - Kumo large/e4/generator100×seed+fold,chunk128/allocator0,7. Baseline tetap48k;
-  pembandingukuran adalah satu subset uniform12k固定seed untukinner-search saja,
+  pembandingukuran adalah satu subset uniform12k dengan seed tetap untukinner-search saja,
   bukan calonpromosi. Totalfitcontextretrieval8×12k lebihmahal dari1×48k;
   estimatorperquery samae4. Tidak mengklaim totalcompute persis identik.
 
