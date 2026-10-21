@@ -1,0 +1,66 @@
+{
+  "stage": "cv3_seed8247",
+  "weight_spline": 0.25,
+  "blend_dtype": "float64",
+  "comparisons": [
+    {
+      "name": "frozen_baseline",
+      "ks": 0.5280675176537729,
+      "auc": 0.8473424615241696,
+      "mean_fold_ks": 0.5290713916543162,
+      "fold_ks": [
+        0.5124609319281908,
+        0.5370138734262919,
+        0.5377393696084658
+      ],
+      "fold_deltas": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "delta_ks": 0.0,
+      "delta_mean_fold_ks": 0.0,
+      "fold_wins": 0
+    },
+    {
+      "name": "spline_only",
+      "ks": 0.5175052874643485,
+      "auc": 0.8410363188255049,
+      "mean_fold_ks": 0.5194948063254052,
+      "fold_ks": [
+        0.506228146037538,
+        0.5255390023955662,
+        0.5267172705431116
+      ],
+      "fold_deltas": [
+        -0.006232785890652792,
+        -0.011474871030725753,
+        -0.01102209906535423
+      ],
+      "delta_ks": -0.01056223018942437,
+      "delta_mean_fold_ks": -0.009576585328910925,
+      "fold_wins": 0
+    },
+    {
+      "name": "kumo75_spline25",
+      "ks": 0.5291441487028732,
+      "auc": 0.8473776315042312,
+      "mean_fold_ks": 0.5303724356678842,
+      "fold_ks": [
+        0.5159229352477592,
+        0.5363115854849809,
+        0.5388827862709125
+      ],
+      "fold_deltas": [
+        0.003462003319568474,
+        -0.0007022879413109973,
+        0.0011434166624466613
+      ],
+      "delta_ks": 0.001076631049100274,
+      "delta_mean_fold_ks": 0.001301044013568046,
+      "fold_wins": 2
+    }
+  ],
+  "baseline_directory": "artifacts/optimization/kumo/large_v5_ctx50000_e8",
+  "warning": "Repeated model selection on the same training labels; new folds are not an untouched holdout."
+}

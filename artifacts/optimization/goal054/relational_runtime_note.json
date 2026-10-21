@@ -1,0 +1,16 @@
+{
+  "date": "2026-10-19",
+  "phase": "Technical real-data preflight before evaluation",
+  "initial_failure": "Related-table customer_id values stored as pandas categorical produce an Arrow dictionary; SDM 0.2.1 ID conversion falls back to an object ndarray and raises TypeError",
+  "resolution": "Cast customer_id to strings in table conversion while preserving ID semantic type and exact link values",
+  "validation_scores_used": false,
+  "model_or_sampling_recipe_changed": false,
+  "related_data_or_checkpoint_bytes_changed": false,
+  "full_context_oom": {
+    "stage": "First context fit before any OOF/test result",
+    "requested_allocation_gib": 10.35,
+    "process_budget_gib": 23.77,
+    "reason": "SDK aggregates all history-node destinations at final hop before retaining customer readouts",
+    "resolution": "Compute final-hop destination statistics/projection for the customer table only; retain every source and message. New implementation recipe/name, unchanged context/features/weights. Require parity verification before training."
+  }
+}

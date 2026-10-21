@@ -1,0 +1,28 @@
+{
+  "id": 171327,
+  "ref": "https://www.kaggle.com/competitions/data-science-competition-logika-ui-2026",
+  "title": "Data Science Competition (DSC) LOGIKA UI 2026",
+  "url": "https://www.kaggle.com/competitions/data-science-competition-logika-ui-2026",
+  "description": "Exploring Mathematics Revealing The Unknowns",
+  "organizationName": "",
+  "organizationRef": "",
+  "category": "Community",
+  "reward": "Kudos",
+  "tags": [
+    {
+      "ref": "custom metric",
+      "name": "custom metric",
+      "description": "This competition's metric is defined under the 'Evaluation' tab",
+      "fullPath": ""
+    }
+  ],
+  "deadline": "2026-10-30T16:59:59.000Z",
+  "teamCount": 73,
+  "userHasEntered": true,
+  "userRank": 61,
+  "mergerDeadline": "2026-10-30T16:59:59.000Z",
+  "enabledDate": "2026-10-10T08:30:22.000Z",
+  "maxDailySubmissions": 3,
+  "maxTeamSize": 3,
+  "evaluationMetric": "metric_template 6a5d6f"
+}

@@ -1,0 +1,11 @@
+{
+  "fold": 4,
+  "training_ids_sha256": "4f1824e0ec4ad6bd6de47220dc2a7482a3ecac4b51ca32e75b7ecf1d035a07b1",
+  "validation_ids_sha256": "e7c31972fb6866a90afd9b242c139a35fa6a6732f910d5d489ff169356f42d7f",
+  "source_model_sha256": "bdf449dd53bad585afd5371e7d30bf68e98d44cedea6b89c0d66771c0765a46c",
+  "source_metadata_sha256": "0c42c971129986de5dbe29b226e42efdaf6e8ea22768e4c752bc9812d4b31caa",
+  "source_training_features_sha256": "7f115e62bae79221e1dc2834bb5c22216ce446b2971b367a3273cd84f6825fa4",
+  "training_prediction_sha256": "e4a710500b61ed0fd5cc14282a6f982562b0b60281f8932d7e5a505a8fdccfce",
+  "rows": 56000,
+  "note": "In-sample spline probabilities used only for another training stage. Both stages exclude outer-validation labels. No OOF probabilities from other outer folds are training inputs."
+}

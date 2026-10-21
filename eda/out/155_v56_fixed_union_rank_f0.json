@@ -1,0 +1,114 @@
+{
+  "rows": 14000,
+  "seeds": [
+    42
+  ],
+  "folds": [
+    0
+  ],
+  "fit_provenance": [
+    {
+      "seed": 42,
+      "fold": 0,
+      "rows": 14000,
+      "ks": 0.52979985086216,
+      "path": "results/v56/fixed_union_rank/s42_f0_outer.parquet",
+      "sha256": "042e180d02652e674e5451a09ec50ec96495a0cb9e2b7352c272e09270c7683c"
+    }
+  ],
+  "baseline_provenance": [
+    {
+      "seed": 42,
+      "fold": 0,
+      "rows": 14000,
+      "ks": 0.5243619848680439,
+      "path": "results/v56/fixed_union_rank/s42_f0_outer.parquet",
+      "sha256": "042e180d02652e674e5451a09ec50ec96495a0cb9e2b7352c272e09270c7683c"
+    }
+  ],
+  "seed_metrics": [
+    {
+      "seed": 42,
+      "pooled_ks": 0.52979985086216,
+      "matched_baseline_ks": 0.5243619848680439,
+      "matched_delta": 0.005437865994116109
+    }
+  ],
+  "comparisons": {
+    "kumo_seed42_historical": {
+      "candidate_ks": 0.52979985086216,
+      "reference_ks": 0.5255561484489765,
+      "delta": 0.004243702413183503,
+      "bootstrap_delta_mean": 0.0027959623345132573,
+      "bootstrap_sd": 0.0029831817573858165,
+      "p_gt_zero": 0.817,
+      "fold_deltas_seed42_assignment": [
+        0.004243702413183503
+      ],
+      "fold_wins": 1,
+      "fold_count": 1
+    },
+    "kumo_3seed_historical": {
+      "candidate_ks": 0.52979985086216,
+      "reference_ks": 0.5247393294292801,
+      "delta": 0.005060521432879828,
+      "bootstrap_delta_mean": 0.002918051813895749,
+      "bootstrap_sd": 0.0031223509332667185,
+      "p_gt_zero": 0.828,
+      "fold_deltas_seed42_assignment": [
+        0.005060521432879828
+      ],
+      "fold_wins": 1,
+      "fold_count": 1
+    },
+    "v31_historical": {
+      "candidate_ks": 0.52979985086216,
+      "reference_ks": 0.5242882028977227,
+      "delta": 0.005511647964437261,
+      "bootstrap_delta_mean": 0.003245147917719777,
+      "bootstrap_sd": 0.0034881242051418037,
+      "p_gt_zero": 0.826,
+      "fold_deltas_seed42_assignment": [
+        0.005511647964437261
+      ],
+      "fold_wins": 1,
+      "fold_count": 1
+    },
+    "v31_3seed_icl_reference": {
+      "candidate_ks": 0.52979985086216,
+      "reference_ks": 0.5235545570714409,
+      "delta": 0.006245293790719031,
+      "bootstrap_delta_mean": 0.0033071477396515517,
+      "bootstrap_sd": 0.0035680892461542562,
+      "p_gt_zero": 0.822,
+      "fold_deltas_seed42_assignment": [
+        0.006245293790719031
+      ],
+      "fold_wins": 1,
+      "fold_count": 1
+    },
+    "kumo_matched_baseline": {
+      "candidate_ks": 0.52979985086216,
+      "reference_ks": 0.5243619848680439,
+      "delta": 0.005437865994116109,
+      "bootstrap_delta_mean": 0.003935750933920947,
+      "bootstrap_sd": 0.002980782066621667,
+      "p_gt_zero": 0.906,
+      "fold_deltas_seed42_assignment": [
+        0.005437865994116109
+      ],
+      "fold_wins": 1,
+      "fold_count": 1
+    }
+  },
+  "complete_5fold_3seed": false,
+  "passes_local_gate": false,
+  "public_forecast": null,
+  "submission_allowed_by_this_report": false,
+  "limits": [
+    "Historical multi-seed Kumo file stores a seed average, not separate seed fits.",
+    "Public ICL transfer is uncertain; passing local gate alone is not a public score.",
+    "No recipe, threshold, feature set or blend weight is selected by this evaluator."
+  ],
+  "features_sha256": "bd7ca1d8d88c53f22cd1589e60ddf9bbb5686d1fb5f6e214ff251505f8b9b034"
+}

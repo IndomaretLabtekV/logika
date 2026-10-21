@@ -1,3 +1,0 @@
-model,n_fit,ks,status,sec
-LimiXModel,14999,,"RuntimeError: No models were trained successfully during fit(). Inspect the log output or increase verbosity to determine why no models were fit. Alternatively, set `raise_on",20
-MitraModel,7999,0.4487903778571655,ok,4424

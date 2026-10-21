@@ -1,0 +1,24 @@
+{
+  "weight_spline": 0.25,
+  "screen": {
+    "name": "kumo75_spline25",
+    "ks": 0.5291441487028732,
+    "auc": 0.8473776315042312,
+    "mean_fold_ks": 0.5303724356678842,
+    "fold_ks": [
+      0.5159229352477592,
+      0.5363115854849809,
+      0.5388827862709125
+    ],
+    "fold_deltas": [
+      0.003462003319568474,
+      -0.0007022879413109973,
+      0.0011434166624466613
+    ],
+    "delta_ks": 0.001076631049100274,
+    "delta_mean_fold_ks": 0.001301044013568046,
+    "fold_wins": 2
+  },
+  "confirmation_stage": "cv5_seed31027",
+  "rule": "Positive pooled/mean KS and at least 3/5 fold wins."
+}

@@ -1,0 +1,13 @@
+{
+  "candidates": [
+    "v5_tabm_weight1",
+    "v5_tabm_weight6_prior_corrected"
+  ],
+  "weights": [
+    0.25,
+    0.5
+  ],
+  "arithmetic": "float64",
+  "selection_rule": "Positive pooled/mean KS and at least 2/3 fold wins, followed by same-fold five-fold comparison.",
+  "reason": "Test neural TabM directly as a frozen-Kumo complement, rather than the older V5 ensemble."
+}

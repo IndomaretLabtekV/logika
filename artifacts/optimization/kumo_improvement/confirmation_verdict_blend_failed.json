@@ -1,0 +1,37 @@
+{
+  "selected": {
+    "name": "baseline_plus_v5_balanced1_e8_w0.25",
+    "ks": 0.5270190257185745,
+    "auc": 0.8472355605383737,
+    "fold_ks": [
+      0.5233693412826559,
+      0.5366499220289356,
+      0.5452772386882392,
+      0.5270543801158398,
+      0.5290151460235626
+    ],
+    "mean_fold_ks": 0.5322732056278466,
+    "delta_ks": -0.00020375862228116937,
+    "delta_mean_fold_ks": 0.00028938877156923224,
+    "fold_wins": 3,
+    "fold_deltas": [
+      0.0005688646433016364,
+      -0.0006836027810019907,
+      0.0021497640085635927,
+      -0.0007466190499285652,
+      0.00015853703691148802
+    ],
+    "components": [
+      {
+        "name": "baseline_e8",
+        "weight": 0.75
+      },
+      {
+        "name": "v5_balanced1_e8",
+        "weight": 0.25
+      }
+    ]
+  },
+  "passed": false,
+  "criterion": "Positive pooled and mean-fold KS deltas; at least 3/5 fold wins."
+}

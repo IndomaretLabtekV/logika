@@ -1,0 +1,631 @@
+{
+  "basic_rules": {
+    "age": {
+      "support": [
+        23,
+        60
+      ],
+      "frequencies": {
+        "23": 2618,
+        "24": 2633,
+        "25": 2630,
+        "26": 2662,
+        "27": 2621,
+        "28": 2583,
+        "29": 2582,
+        "30": 2739,
+        "31": 2589,
+        "32": 2650,
+        "33": 2642,
+        "34": 2683,
+        "35": 2587,
+        "36": 2611,
+        "37": 2663,
+        "38": 2651,
+        "39": 2712,
+        "40": 2515,
+        "41": 2607,
+        "42": 2563,
+        "43": 2615,
+        "44": 2644,
+        "45": 2557,
+        "46": 2582,
+        "47": 2656,
+        "48": 2647,
+        "49": 2675,
+        "50": 2687,
+        "51": 2657,
+        "52": 2633,
+        "53": 2715,
+        "54": 2675,
+        "55": 2635,
+        "56": 2622,
+        "57": 2649,
+        "58": 2559,
+        "59": 2618,
+        "60": 2633
+      },
+      "uniform_chi2_p": 0.7511820199273851,
+      "interpretation": "Consistent with discrete uniform 23..60. It does not identify the RNG or seed."
+    },
+    "profile_categories": {
+      "dependents": {
+        "0": 0.20021,
+        "1": 0.27009,
+        "2": 0.28029,
+        "3": 0.17845,
+        "4": 0.07096
+      },
+      "region": {
+        "Region_A": 0.19966,
+        "Region_B": 0.19943,
+        "Region_C": 0.19877,
+        "Region_D": 0.19966,
+        "Region_E": 0.20248
+      },
+      "employment_type": {
+        "salaried": 0.4803,
+        "self_employed": 0.29927,
+        "variable_income": 0.22043
+      },
+      "housing_status": {
+        "family": 0.29038,
+        "owned": 0.2793,
+        "rented": 0.43032
+      }
+    },
+    "loan_amount_grid": {
+      "1000": 1.0,
+      "10000": 1.0,
+      "100000": 1.0
+    },
+    "annual_interest_rates": {
+      "0.16": 17910,
+      "0.2": 42535,
+      "0.24": 32021,
+      "0.28": 7054,
+      "0.32": 480
+    },
+    "installment": {
+      "formula": "P*(r/12)/(1-(1+r/12)^(-term))",
+      "nearest_integer_exact_fraction": 0.49966,
+      "max_absolute_unrounded_residual_idr": 0.9999619105365127,
+      "ceil_exact_fraction": 1.0,
+      "floor_exact_fraction": 0.0,
+      "signed_residual_idr": {
+        "rows": 100000,
+        "mean": 0.4996185921258933,
+        "std": 0.288793109053016,
+        "quantiles": {
+          "q01": 0.010318022919818759,
+          "q05": 0.05065572774037719,
+          "q50": 0.500937700853683,
+          "q95": 0.9491599313914776,
+          "q99": 0.989971088245511
+        },
+        "skewness": -0.002438365417076899,
+        "excess_kurtosis": -1.2075621054466632,
+        "normal_fit_ks_descriptive": 0.060293556503006385,
+        "normality_caveat": "Descriptive fitted-distribution distance, not a calibrated hypothesis-test p-value."
+      },
+      "within_one_idr_fraction": 1.0
+    },
+    "selected_decision_time": {
+      "second_zero_fraction": 1.0,
+      "hour_frequencies": {
+        "8": 7725,
+        "9": 7756,
+        "10": 7750,
+        "11": 7528,
+        "12": 7726,
+        "13": 7684,
+        "14": 7877,
+        "15": 7648,
+        "16": 7496,
+        "17": 7695,
+        "18": 7716,
+        "19": 7765,
+        "20": 7634
+      },
+      "application_to_decision_seconds": {
+        "rows": 100000,
+        "mean": 82058.18714,
+        "std": 111555.15469480082,
+        "quantiles": {
+          "q01": 958.99,
+          "q05": 1869.9500000000007,
+          "q50": 34949.0,
+          "q95": 357421.9499999998,
+          "q99": 416815.21999999986
+        },
+        "skewness": 1.6608956506567545,
+        "excess_kurtosis": 1.6726769275729403,
+        "normal_fit_ks_descriptive": 0.23299676748165832,
+        "normality_caveat": "Descriptive fitted-distribution distance, not a calibrated hypothesis-test p-value."
+      }
+    },
+    "workflow_lag_mixture": {
+      "components": [
+        {
+          "low_hours": 0.2,
+          "high_hours": 3,
+          "observed_fraction": 0.44624,
+          "rows": 44624,
+          "uniform_fit_ks": 0.0030453041142356196
+        },
+        {
+          "low_hours": 6,
+          "high_hours": 30,
+          "observed_fraction": 0.35268,
+          "rows": 35268,
+          "uniform_fit_ks": 0.005297046898037894
+        },
+        {
+          "low_hours": 36,
+          "high_hours": 120,
+          "observed_fraction": 0.20108,
+          "rows": 20108,
+          "uniform_fit_ks": 0.004606092050019828
+        }
+      ],
+      "candidate_weights": [
+        0.45,
+        0.35,
+        0.2
+      ],
+      "gap_3_6_hours_rows": 0,
+      "gap_30_36_hours_rows": 0,
+      "inference_status": "Intervals are observed support; rounded component probabilities are a generator hypothesis."
+    },
+    "inference_status": "Observable quantization and identities are confirmed; generator source code is not available."
+  },
+  "target_used_in_latent_feature_estimation": false,
+  "original_generator_code_available": false,
+  "rng_reference": "https://numpy.org/doc/stable/reference/random/compatibility.html",
+  "ecommerce": {
+    "rows": 4359817,
+    "orders": 2986855,
+    "future_rows": 0,
+    "targets_used": false,
+    "unit_price_grid": {
+      "100": 1.0,
+      "500": 1.0,
+      "1000": 1.0
+    },
+    "minimum_unit_price_idr": 5000.0,
+    "unit_rounded_before_quantity_exact_fraction": 1.0,
+    "category_log_intercepts": {
+      "education": 11.505088084252682,
+      "electronics": 13.963040727929338,
+      "fashion": 12.02912635312544,
+      "groceries": 10.955159948437869,
+      "health": 11.653275847460145,
+      "home": 12.590135636730238,
+      "personal_care": 11.200677539750316
+    },
+    "category_geometric_baselines_idr": {
+      "education": 99219.32514730908,
+      "electronics": 1158968.2503339166,
+      "fashion": 167564.956173779,
+      "groceries": 57248.68481208111,
+      "health": 115067.69052715477,
+      "home": 293647.58496760245,
+      "personal_care": 73180.0074041419
+    },
+    "estimated_item_log_noise_sd": 0.6541885128466107,
+    "estimated_shared_order_log_noise_sd": 0.060701859199314506,
+    "estimated_customer_effect_prior_sd": 0.22408457377383723,
+    "within_order_pair_difference": {
+      "rows": 1372962,
+      "mean": -0.00036954104482321364,
+      "std": 0.9248310059673281,
+      "quantiles": {
+        "q01": -2.151763098020741,
+        "q05": -1.5215742495181974,
+        "q50": 0.0,
+        "q95": 1.521595993935069,
+        "q99": 2.1509520996367586
+      },
+      "skewness": 0.00023799370664347289,
+      "excess_kurtosis": 0.011404147863144143,
+      "normal_fit_ks_descriptive": 0.0022490327581122793,
+      "normality_caveat": "Descriptive fitted-distribution distance, not a calibrated hypothesis-test p-value."
+    },
+    "category_residuals": {
+      "education": {
+        "rows": 268901,
+        "mean": 3.1486570878868034e-14,
+        "std": 0.6485755853610993,
+        "quantiles": {
+          "q01": -1.5179781629623688,
+          "q05": -1.0684479360476855,
+          "q50": 0.0012267168922046254,
+          "q95": 1.0648267083877376,
+          "q99": 1.5076427781110129
+        },
+        "skewness": -0.026161111883737594,
+        "excess_kurtosis": 0.04390495830753327,
+        "normal_fit_ks_descriptive": 0.0033548901719801516,
+        "normality_caveat": "Descriptive fitted-distribution distance, not a calibrated hypothesis-test p-value."
+      },
+      "electronics": {
+        "rows": 216354,
+        "mean": 2.208503995842899e-15,
+        "std": 0.6457807167458638,
+        "quantiles": {
+          "q01": -1.5089326585796778,
+          "q05": -1.063612002647841,
+          "q50": -0.0006648019069674799,
+          "q95": 1.0624549658527387,
+          "q99": 1.5007211474782274
+        },
+        "skewness": 0.005776835485228034,
+        "excess_kurtosis": 0.012640405939944532,
+        "normal_fit_ks_descriptive": 0.00206459161357031,
+        "normality_caveat": "Descriptive fitted-distribution distance, not a calibrated hypothesis-test p-value."
+      },
+      "fashion": {
+        "rows": 540670,
+        "mean": 1.5399057955355373e-13,
+        "std": 0.6482645290925956,
+        "quantiles": {
+          "q01": -1.5143808624114687,
+          "q05": -1.0685635153768325,
+          "q50": 0.0008502016460965392,
+          "q95": 1.0654952671638565,
+          "q99": 1.5026676650077826
+        },
+        "skewness": -0.013469118407601637,
+        "excess_kurtosis": 0.03798804577480697,
+        "normal_fit_ks_descriptive": 0.002283719002037443,
+        "normality_caveat": "Descriptive fitted-distribution distance, not a calibrated hypothesis-test p-value."
+      },
+      "groceries": {
+        "rows": 810739,
+        "mean": -3.031729993835559e-13,
+        "std": 0.6521999262401682,
+        "quantiles": {
+          "q01": -1.5321223918454279,
+          "q05": -1.0762618388362062,
+          "q50": 0.0013326824187725461,
+          "q95": 1.0687936588075884,
+          "q99": 1.510569763875011
+        },
+        "skewness": -0.028404029804809886,
+        "excess_kurtosis": -0.010772344683620538,
+        "normal_fit_ks_descriptive": 0.004166799363256313,
+        "normality_caveat": "Descriptive fitted-distribution distance, not a calibrated hypothesis-test p-value."
+      },
+      "health": {
+        "rows": 324151,
+        "mean": -2.15217919236085e-13,
+        "std": 0.6490520125107396,
+        "quantiles": {
+          "q01": -1.5206921619495302,
+          "q05": -1.0681078246424578,
+          "q50": 0.0008996067723623935,
+          "q95": 1.066072707129945,
+          "q99": 1.5018287322562736
+        },
+        "skewness": -0.02578198247936702,
+        "excess_kurtosis": 0.04306714202799711,
+        "normal_fit_ks_descriptive": 0.003559391122541,
+        "normality_caveat": "Descriptive fitted-distribution distance, not a calibrated hypothesis-test p-value."
+      },
+      "home": {
+        "rows": 403549,
+        "mean": -4.370745747783289e-14,
+        "std": 0.6466769438983633,
+        "quantiles": {
+          "q01": -1.5082344535859273,
+          "q05": -1.0645340502040876,
+          "q50": 2.5933035305625296e-05,
+          "q95": 1.061849273478074,
+          "q99": 1.5073290518564435
+        },
+        "skewness": 0.01733508240345053,
+        "excess_kurtosis": 0.006457664337864433,
+        "normal_fit_ks_descriptive": 0.002631524406091046,
+        "normality_caveat": "Descriptive fitted-distribution distance, not a calibrated hypothesis-test p-value."
+      },
+      "personal_care": {
+        "rows": 485267,
+        "mean": 7.515716453916775e-14,
+        "std": 0.65040775012828,
+        "quantiles": {
+          "q01": -1.5262098769630732,
+          "q05": -1.071431920763824,
+          "q50": 0.0019790146569101386,
+          "q95": 1.0679392232450946,
+          "q99": 1.5113422298733736
+        },
+        "skewness": -0.02827948778293584,
+        "excess_kurtosis": 0.013329581016971126,
+        "normal_fit_ks_descriptive": 0.003711133823286361,
+        "normality_caveat": "Descriptive fitted-distribution distance, not a calibrated hypothesis-test p-value."
+      }
+    },
+    "order_split_customer_effect_correlation": 0.6687135993309685,
+    "latent_customer_effect": {
+      "rows": 70000,
+      "mean": -4.286070165999994e-06,
+      "std": 0.24871300045991138,
+      "quantiles": {
+        "q01": -0.567564538577648,
+        "q05": -0.3952450805787315,
+        "q50": -0.008571464486019103,
+        "q95": 0.4233306538560702,
+        "q99": 0.6264666373378825
+      },
+      "skewness": 0.1834275060213207,
+      "excess_kurtosis": 0.35454571950866587,
+      "normal_fit_ks_descriptive": 0.01936910867286712,
+      "normality_caveat": "Descriptive fitted-distribution distance, not a calibrated hypothesis-test p-value."
+    },
+    "quantization_interval_idr": "For unit prices above floor: pre-rounded unit value approximately in [unit-500,unit+500); item_total = rounded_unit*quantity.",
+    "inference_status": "Variance components and latent values are estimates under an additive log-price random-effects model, not recovered original RNG draws.",
+    "unit_price_at_5000_fraction": 0.0001417490688255952,
+    "location_identifiability": "Category intercepts and customer effects have a shared arbitrary additive origin. Centering the mean training customer effect at zero fixes a convention, not the original generator scale."
+  },
+  "bureau": {
+    "rows": 797563,
+    "targets_used": false,
+    "future_report_rows": 0,
+    "future_available_rows": 0,
+    "score_integer_fraction": 1.0,
+    "report_second_zero_fraction": 1.0,
+    "availability_lag_days": {
+      "rows": 797563,
+      "mean": 59.963190368660534,
+      "std": 34.91480679671867,
+      "quantiles": {
+        "q01": 1.0,
+        "q05": 6.0,
+        "q50": 60.0,
+        "q95": 114.0,
+        "q99": 119.0
+      },
+      "skewness": 0.011602385077819483,
+      "excess_kurtosis": -1.1969362402944095,
+      "normal_fit_ks_descriptive": 0.06169125876810744,
+      "normality_caveat": "Descriptive fitted-distribution distance, not a calibrated hypothesis-test p-value."
+    },
+    "estimated_provider_offsets": {
+      "Bureau_A": 0.005794781010353134,
+      "Bureau_B": 0.04662399962136039,
+      "Bureau_C": -0.05241878063171353
+    },
+    "estimated_provider_noise_sd": {
+      "Bureau_A": 22.98196855073303,
+      "Bureau_B": 23.03988187170871,
+      "Bureau_C": 22.9697369073074
+    },
+    "estimated_latent_score_prior_mean": 669.2934063836727,
+    "estimated_latent_score_prior_sd": 47.848359216017414,
+    "pair_differences": {
+      "Bureau_A-Bureau_B": {
+        "rows": 155134,
+        "mean": -0.04082921861100726,
+        "std": 32.54238828250277,
+        "quantiles": {
+          "q01": -76.0,
+          "q05": -53.0,
+          "q50": 0.0,
+          "q95": 54.0,
+          "q99": 76.0
+        },
+        "skewness": 0.0004659929830646588,
+        "excess_kurtosis": 0.015003777415038222,
+        "normal_fit_ks_descriptive": 0.007725498666681818,
+        "normality_caveat": "Descriptive fitted-distribution distance, not a calibrated hypothesis-test p-value."
+      },
+      "Bureau_A-Bureau_C": {
+        "rows": 154878,
+        "mean": 0.05821356164206666,
+        "std": 32.49276368759361,
+        "quantiles": {
+          "q01": -76.0,
+          "q05": -53.0,
+          "q50": 0.0,
+          "q95": 54.0,
+          "q99": 75.0
+        },
+        "skewness": -0.014179092405567863,
+        "excess_kurtosis": -0.003734139873019071,
+        "normal_fit_ks_descriptive": 0.008655181790376831,
+        "normality_caveat": "Descriptive fitted-distribution distance, not a calibrated hypothesis-test p-value."
+      },
+      "Bureau_B-Bureau_C": {
+        "rows": 126711,
+        "mean": 0.0849018632952151,
+        "std": 32.53375124779206,
+        "quantiles": {
+          "q01": -76.0,
+          "q05": -54.0,
+          "q50": 0.0,
+          "q95": 53.0,
+          "q99": 75.0
+        },
+        "skewness": -0.008539076208465824,
+        "excess_kurtosis": 0.011423363578212165,
+        "normal_fit_ks_descriptive": 0.007824223880174674,
+        "normality_caveat": "Descriptive fitted-distribution distance, not a calibrated hypothesis-test p-value."
+      }
+    },
+    "inference_status": "Same-application paired scores estimate offset/noise under independent unbiased provider errors. Age effects, dependence and clipping can violate that model."
+  },
+  "account": {
+    "rows": 1084418,
+    "targets_used": false,
+    "incomplete_month_rows": 0,
+    "opening_matches_previous_closing_fraction": 1.0,
+    "balance_identity_exact_fraction": 1.0,
+    "income_adjacent_log_difference_by_employment": {
+      "salaried": {
+        "rows": 487393,
+        "mean": -0.0003447595843790869,
+        "std": 0.3662996887829972,
+        "quantiles": {
+          "q01": -1.0117462439186584,
+          "q05": -0.588943859948311,
+          "q50": -0.00020993535565949628,
+          "q95": 0.5896307348396923,
+          "q99": 1.0063200540727806
+        },
+        "skewness": 0.02090618380793426,
+        "excess_kurtosis": 2.016771687052577,
+        "normal_fit_ks_descriptive": 0.04331348075972119,
+        "normality_caveat": "Descriptive fitted-distribution distance, not a calibrated hypothesis-test p-value."
+      },
+      "self_employed": {
+        "rows": 302989,
+        "mean": -0.00018233195999064987,
+        "std": 0.48699043735210495,
+        "quantiles": {
+          "q01": -1.2090408730822968,
+          "q05": -0.7934319456744021,
+          "q50": 0.0004947908773722531,
+          "q95": 0.7926306757096913,
+          "q99": 1.2079809178417
+        },
+        "skewness": 0.008944800872953013,
+        "excess_kurtosis": 0.6410812072967009,
+        "normal_fit_ks_descriptive": 0.015709812813773066,
+        "normality_caveat": "Descriptive fitted-distribution distance, not a calibrated hypothesis-test p-value."
+      },
+      "variable_income": {
+        "rows": 224036,
+        "mean": -0.00039111536111653716,
+        "std": 0.5914247503067579,
+        "quantiles": {
+          "q01": -1.4222301030452194,
+          "q05": -0.9666713861851393,
+          "q50": -0.0007969055161742844,
+          "q95": 0.969464202542909,
+          "q99": 1.4223770367638082
+        },
+        "skewness": 0.00806219606204678,
+        "excess_kurtosis": 0.36817214065880144,
+        "normal_fit_ks_descriptive": 0.009660340222802821,
+        "normality_caveat": "Descriptive fitted-distribution distance, not a calibrated hypothesis-test p-value."
+      }
+    },
+    "estimated_iid_log_income_noise_sd_by_employment": {
+      "salaried": 0.2590129938849792,
+      "self_employed": 0.34435424062467596,
+      "variable_income": 0.41820045150346913
+    },
+    "average_balance_midpoint_residual_in_income_units": {
+      "rows": 1084418,
+      "mean": -0.144178867915997,
+      "std": 0.4099014873037194,
+      "quantiles": {
+        "q01": -1.1871762743384413,
+        "q05": -0.7540067110658575,
+        "q50": -0.15304181186271043,
+        "q95": 0.4858012577648806,
+        "q99": 0.9435310370443981
+      },
+      "skewness": 0.16126305883167338,
+      "excess_kurtosis": 6.414614920752179,
+      "normal_fit_ks_descriptive": 0.04032089515637119,
+      "normality_caveat": "Descriptive fitted-distribution distance, not a calibrated hypothesis-test p-value."
+    },
+    "inference_status": "Income jitter estimate uses Var(log income_t-log income_(t-1))/2. Trend, autocorrelation and shocks can invalidate the iid assumption."
+  },
+  "repayment": {
+    "rows": 1361341,
+    "targets_used": false,
+    "future_due_rows": 0,
+    "future_payment_rows": 0,
+    "beta_binomial_priors": {
+      "1": {
+        "alpha": 0.7182888771661362,
+        "beta": 1.4728409268673175,
+        "strength": 2.1911298040334537,
+        "mean": 0.3278166705796721,
+        "customers": 46299,
+        "optimizer_success": true
+      },
+      "7": {
+        "alpha": 0.7158871105578913,
+        "beta": 1.4703323802984867,
+        "strength": 2.186219490856378,
+        "mean": 0.327454362909127,
+        "customers": 46183,
+        "optimizer_success": true
+      },
+      "30": {
+        "alpha": 0.6514900361030221,
+        "beta": 1.9478236472282855,
+        "strength": 2.5993136833313075,
+        "mean": 0.2506392515381467,
+        "customers": 45779,
+        "optimizer_success": true
+      }
+    },
+    "payment_fraction": {
+      "rows": 1361341,
+      "mean": 0.9672649989329558,
+      "std": 0.16752631743365146,
+      "quantiles": {
+        "q01": 0.0,
+        "q05": 1.0,
+        "q50": 1.0,
+        "q95": 1.0,
+        "q99": 1.0
+      },
+      "skewness": -5.152423345418678,
+      "excess_kurtosis": 25.247553548429018,
+      "normal_fit_ks_descriptive": 0.5346662004657254,
+      "normality_caveat": "Descriptive fitted-distribution distance, not a calibrated hypothesis-test p-value."
+    },
+    "full_payment_fraction": 0.9568197828464727,
+    "current_dpd_frequencies_top20": {
+      "0": 1303405,
+      "5": 1034,
+      "19": 1019,
+      "14": 1011,
+      "2": 1010,
+      "9": 1008,
+      "27": 995,
+      "11": 989,
+      "21": 980,
+      "3": 977,
+      "22": 974,
+      "12": 971,
+      "13": 968,
+      "4": 959,
+      "18": 958,
+      "16": 955,
+      "25": 948,
+      "20": 948,
+      "15": 947,
+      "6": 947
+    },
+    "inference_status": "Historical propensity posterior, not original Bernoulli RNG recovery. Payment dependence/censoring may overstate precision."
+  },
+  "added_features": [
+    "re_price_log_gls",
+    "re_price_log_posterior",
+    "re_price_posterior_sd",
+    "re_price_measurement_sd",
+    "re_price_latent_multiplier",
+    "re_price_order_noise_sd",
+    "re_bureau_score_gls",
+    "re_bureau_score_posterior",
+    "re_bureau_posterior_sd",
+    "re_income_geometric_mean",
+    "re_income_log_mean",
+    "re_income_log_sd",
+    "re_income_log_measurement_sd",
+    "re_declared_income_log_gap",
+    "re_outflow_income_geometric_ratio",
+    "re_late_1_posterior",
+    "re_late_1_posterior_sd",
+    "re_late_7_posterior",
+    "re_late_7_posterior_sd",
+    "re_late_30_posterior",
+    "re_late_30_posterior_sd"
+  ]
+}

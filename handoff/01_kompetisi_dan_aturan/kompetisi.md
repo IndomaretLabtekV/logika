@@ -48,8 +48,10 @@ Sumber lengkap: `docs/context.md`. Ringkasan bagian yang relevan:
 ## Posisi leaderboard (18 Okt)
 - Kita **#24** dengan 0,56405 (v31). Top-1 0,57768, #2 0,57530, #3 0,57290; tujuh tim di atas 0,570.
 - Rentang 0,563–0,568 sangat padat. Cutoff top-8 sekitar 0,570.
-- Penilaian (docs/context.md §6): public 45% + private 45% + notebook 10% (reproducibility). Proporsi baris public/private
-  tidak diketahui; analisis noise memakai asumsi public = 30% test (9.000 baris).
+- Penilaian (docs/context.md §6): public 45% + private 45% + notebook 10% (reproducibility).
+  **Konfirmasi user21Okt:** Kaggle memakai30%public/70%private dari30.000test
+  (9.000/21.000baris). Bobot rubrik45/45 bukan proporsi baris. Lihat koreksi
+  ukuran simulasi lama di [diagnosis167](../../docs/integration/protokol_diagnosis_public_private.md).
 - Riwayat lengkap submission: `04_riwayat_versi/ringkasan_skor.md`.
 
 ## Posisi leaderboard (19 Okt ~20:00 WIB)
@@ -58,3 +60,7 @@ Sumber lengkap: `docs/context.md`. Ringkasan bagian yang relevan:
   #6 0,57099, #7 0,57067, #8 BCC mau ke kopdes depok 0,57065, #9 HYPOMONĒ 0,57015; **9 tim > 0,570**; batas top-8 ~0,5707.
 - 33 tim ≥ 0,564 → klaster 0,564–0,568 sangat padat.
 - Nama tim di Kaggle harus sama dengan yang terdaftar di panitia (rule 1); nama notebook `ParticipantNumber_TeamName_Notebook`.
+
+## Klarifikasi panitia 20 Okt: semi-supervised diizinkan
+"Maaf ya baru menjawab untuk chatnya, Untuk penggunaan teknik semi-supervised learning diperbolehkan yaa dan hanya menggunakan data yang disediakan oleh panitia saja."
+Artinya pseudo-label / self-training memakai baris test yang disediakan panitia boleh; data dari luar tetap dilarang.

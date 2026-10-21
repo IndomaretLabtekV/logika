@@ -1,0 +1,22 @@
+{
+  "checkpoint": "submission_kumo.csv",
+  "public_score": 0.56262,
+  "checkpoint_sha256": "85ac74d1b4325eba4830fd1d31bb1c21b9b9a3a6fb180d48c0c9d4b921d59d40",
+  "selection_stage": "cv3_seed8247",
+  "confirmation_stage": "cv5_seed31027",
+  "screening_candidates": [
+    "core37_e8",
+    "denoised_e8",
+    "v5_latent100_e8",
+    "v5_e16",
+    "tabicl_v5_e8",
+    "tabicl_denoised_e8"
+  ],
+  "screening_rule": "Require positive pooled KS and mean-fold KS deltas, and at least 2 of 3 fold wins against the original Kumo recipe; rank eligible candidates by mean-fold KS, then pooled KS. Fixed blends with original Kumo use weights 0.25 and 0.5.",
+  "confirmation_rule": "Lock the chosen configuration before five-fold evaluation. Compare against baseline_e8 on the same five folds. Require positive pooled KS and mean-fold KS deltas and at least 3 of 5 fold wins.",
+  "limitation": "New splits reuse the same training labels; this is a consistency check, not an untouched holdout.",
+  "preserve_historical_predictions": true,
+  "kaggle_upload_automatic": false,
+  "baseline_context_limit": 50000,
+  "new_candidates_context_policy": "Use all available outer-training rows, unless the candidate explicitly samples context."
+}

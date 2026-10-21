@@ -1,0 +1,7 @@
+left,right,application_id_overlap,customer_id_overlap,predictor_hash_overlap,exact_predictor_overlap
+inner_fit,inner_stop,0,0,0,0
+inner_fit,outer_valid,0,0,0,0
+inner_fit,test,0,0,0,0
+inner_stop,outer_valid,0,0,0,0
+inner_stop,test,0,0,0,0
+outer_valid,test,0,0,0,0

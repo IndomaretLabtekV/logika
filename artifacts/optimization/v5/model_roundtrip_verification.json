@@ -1,0 +1,9 @@
+{
+  "oof_rows": 70000,
+  "test_rows": 30000,
+  "folds": 10,
+  "exact_oof_reproduction": true,
+  "exact_test_reproduction": true,
+  "unchanged_version4_sha256": "890e05a3f0b09500142395d5498e939928328b2770c509ca035f760a8dea8344",
+  "default_is_version4": true
+}

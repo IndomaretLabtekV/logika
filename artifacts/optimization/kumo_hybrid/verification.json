@@ -1,0 +1,68 @@
+{
+  "frozen_checkpoint_056262_unchanged": true,
+  "contexts_and_validation_disjoint": true,
+  "baseline_feature_fingerprints_match": true,
+  "spline_predictions_reproduced_from_saved_models": true,
+  "folds": [
+    {
+      "stage": "cv3_seed8247",
+      "fold": 0,
+      "scipy_ks": 0.5062281460375381,
+      "prediction_rebuild_max_abs_difference": 0.0
+    },
+    {
+      "stage": "cv3_seed8247",
+      "fold": 1,
+      "scipy_ks": 0.5255390023955662,
+      "prediction_rebuild_max_abs_difference": 0.0
+    },
+    {
+      "stage": "cv3_seed8247",
+      "fold": 2,
+      "scipy_ks": 0.5267172705431116,
+      "prediction_rebuild_max_abs_difference": 0.0
+    },
+    {
+      "stage": "cv5_seed31027",
+      "fold": 0,
+      "scipy_ks": 0.5139832920576035,
+      "prediction_rebuild_max_abs_difference": 0.0
+    },
+    {
+      "stage": "cv5_seed31027",
+      "fold": 1,
+      "scipy_ks": 0.5240587266223218,
+      "prediction_rebuild_max_abs_difference": 0.0
+    },
+    {
+      "stage": "cv5_seed31027",
+      "fold": 2,
+      "scipy_ks": 0.5296630259590362,
+      "prediction_rebuild_max_abs_difference": 0.0
+    },
+    {
+      "stage": "cv5_seed31027",
+      "fold": 3,
+      "scipy_ks": 0.5194091401121477,
+      "prediction_rebuild_max_abs_difference": 0.0
+    },
+    {
+      "stage": "cv5_seed31027",
+      "fold": 4,
+      "scipy_ks": 0.5222588955009727,
+      "prediction_rebuild_max_abs_difference": 0.0
+    }
+  ],
+  "submission": {
+    "file": "submission_kumo_spline_exploratory.csv",
+    "sha256": "3de98287976a7137ad63c946e9932b6ac3ba3a7ee6df607d74cde1aa6a8fc417",
+    "rows": 30000,
+    "ensemble_max_abs_difference": 1.1102230246251565e-16,
+    "independent_pooled_ks": 0.5285099762252743,
+    "independent_baseline_ks": 0.5272227843408557,
+    "export_mode": "exploratory",
+    "promotion_passed": false,
+    "public_score": null
+  },
+  "independent_hybrid_ks_verified": true
+}

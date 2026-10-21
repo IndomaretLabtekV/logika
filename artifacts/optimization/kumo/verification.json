@@ -1,0 +1,31 @@
+{
+  "medium_v5_ctx32768_e4": {
+    "oof_rows": 70000,
+    "context_hashes_match": true,
+    "no_context_validation_overlap": true,
+    "ks_independent_scipy": 0.5265646824011347,
+    "fold_ids_match": true
+  },
+  "large_v5_ctx50000_e8": {
+    "oof_rows": 70000,
+    "context_hashes_match": true,
+    "no_context_validation_overlap": true,
+    "ks_independent_scipy": 0.5280675176537729,
+    "fold_ids_match": true
+  },
+  "submission_kumo.csv": {
+    "rows": 30000,
+    "sample_order_matches": true,
+    "probabilities_valid": true,
+    "max_error_vs_independent_ensemble": 2.9802322498717615e-08,
+    "sha256": "85ac74d1b4325eba4830fd1d31bb1c21b9b9a3a6fb180d48c0c9d4b921d59d40"
+  },
+  "submission_kumo_blend.csv": {
+    "rows": 30000,
+    "sample_order_matches": true,
+    "probabilities_valid": true,
+    "max_error_vs_independent_ensemble": 7.450580596923828e-09,
+    "sha256": "056245bc9ac8fb1cc272c72b30335ad1500cee99a941302b62a84377d309f28b"
+  },
+  "previous_submissions_unchanged": true
+}

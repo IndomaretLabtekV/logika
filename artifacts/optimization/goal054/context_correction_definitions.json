@@ -1,0 +1,22 @@
+{
+  "date": "2026-10-18",
+  "foundation": "Frozen Kumo Large, 90 V5 columns, E8, 50,000 context rows, matching five folds seed 31027",
+  "correction_training": "6,000 outer-training rows excluded from the Kumo context; never outer-validation labels",
+  "penalties": [0.003, 0.03],
+  "correction_strengths": [0.5, 1.0],
+  "loss_variants": ["unweighted", "balanced"],
+  "encoder": "Signed log numeric, median imputation, quadratic quantile splines with three knots, standardization, missing indicators, one-hot employment type; fitted only on correction-training rows",
+  "objective": "Mean weighted binary cross entropy with frozen Kumo logit offset and L2 penalty; intercept unpenalized. The balanced prior shift is used only inside the loss, so zero correction preserves the original population probabilities.",
+  "optimizer": "L-BFGS-B, maxiter=300, ftol=1e-11, gtol=1e-7; require success and max gradient <1e-4",
+  "final_blend": "75% corrected Kumo + 25% original spline on matching outer folds",
+  "risk_features": [
+    "re_price_log_posterior", "re_price_posterior_sd",
+    "re_bureau_score_posterior", "re_bureau_posterior_sd",
+    "re_income_geometric_mean", "re_declared_income_log_gap",
+    "re_outflow_income_geometric_ratio", "re_late_1_posterior",
+    "re_late_30_posterior", "installment_observed_income_ratio",
+    "v2_existing_total_burden_observed", "employment_type"
+  ],
+  "selection": "Evaluate all eight fixed recipes on the same full five-fold OOF. Do not fit a correction using all-fold OOF labels and evaluate it on those same rows.",
+  "limitation": "Repeated research still reuses training labels and splits; this is not untouched holdout."
+}

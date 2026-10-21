@@ -1,0 +1,9 @@
+{
+  "notebook": "notebooks/06_submission_v5.ipynb",
+  "code_cells": 65,
+  "all_code_cells_executed": true,
+  "error_outputs": 0,
+  "canonical_file": "submission_v5.csv",
+  "exact_csv_reproduction": true,
+  "sha256": "2b97dcdc26f38cabc6ab1a3f3053903975b488a5480df8ff739415a7bc750526"
+}

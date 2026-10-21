@@ -1,0 +1,101 @@
+{
+  "rebuilt_from_raw_without_target": true,
+  "python": "3.11.13",
+  "numpy": "2.2.6",
+  "pandas": "2.3.3",
+  "columns": {
+    "fit_price_latent": {
+      "re_price_log_gls": {
+        "max_abs_difference": 0.0,
+        "matches_rtol_1e_6": true
+      },
+      "re_price_log_posterior": {
+        "max_abs_difference": 0.0,
+        "matches_rtol_1e_6": true
+      },
+      "re_price_posterior_sd": {
+        "max_abs_difference": 0.0,
+        "matches_rtol_1e_6": true
+      },
+      "re_price_measurement_sd": {
+        "max_abs_difference": 0.0,
+        "matches_rtol_1e_6": true
+      },
+      "re_price_latent_multiplier": {
+        "max_abs_difference": 0.0,
+        "matches_rtol_1e_6": true
+      },
+      "re_price_order_noise_sd": {
+        "max_abs_difference": 0.0,
+        "matches_rtol_1e_6": true
+      }
+    },
+    "fit_bureau_latent": {
+      "re_bureau_score_gls": {
+        "max_abs_difference": 0.0,
+        "matches_rtol_1e_6": true
+      },
+      "re_bureau_score_posterior": {
+        "max_abs_difference": 0.0,
+        "matches_rtol_1e_6": true
+      },
+      "re_bureau_posterior_sd": {
+        "max_abs_difference": 0.0,
+        "matches_rtol_1e_6": true
+      }
+    },
+    "fit_account_latent": {
+      "re_income_geometric_mean": {
+        "max_abs_difference": 0.0,
+        "matches_rtol_1e_6": true
+      },
+      "re_income_log_mean": {
+        "max_abs_difference": 0.0,
+        "matches_rtol_1e_6": true
+      },
+      "re_income_log_sd": {
+        "max_abs_difference": 0.0,
+        "matches_rtol_1e_6": true
+      },
+      "re_income_log_measurement_sd": {
+        "max_abs_difference": 0.0,
+        "matches_rtol_1e_6": true
+      },
+      "re_declared_income_log_gap": {
+        "max_abs_difference": 0.0,
+        "matches_rtol_1e_6": true
+      },
+      "re_outflow_income_geometric_ratio": {
+        "max_abs_difference": 0.0,
+        "matches_rtol_1e_6": true
+      }
+    },
+    "fit_repayment_latent": {
+      "re_late_1_posterior": {
+        "max_abs_difference": 3.9875316748538836e-07,
+        "matches_rtol_1e_6": true
+      },
+      "re_late_1_posterior_sd": {
+        "max_abs_difference": 2.0746408929683824e-07,
+        "matches_rtol_1e_6": true
+      },
+      "re_late_7_posterior": {
+        "max_abs_difference": 2.32673647238002e-07,
+        "matches_rtol_1e_6": true
+      },
+      "re_late_7_posterior_sd": {
+        "max_abs_difference": 1.2347626837660997e-07,
+        "matches_rtol_1e_6": true
+      },
+      "re_late_30_posterior": {
+        "max_abs_difference": 3.88418729846407e-07,
+        "matches_rtol_1e_6": true
+      },
+      "re_late_30_posterior_sd": {
+        "max_abs_difference": 1.7732776907974923e-07,
+        "matches_rtol_1e_6": true
+      }
+    }
+  },
+  "elapsed_seconds": 527.2002165317535
+}

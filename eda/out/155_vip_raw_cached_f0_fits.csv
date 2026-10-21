@@ -1,0 +1,2 @@
+seed,fold,rows,ks,path,sha256
+42,0,14000,0.5227017383632202,results/v48/vip_raw_cached_f0/s42_f0_outer.parquet,2529534aef7fe8666fc363db9f61f3f9753e13952a184af6978ffcec7e72716c

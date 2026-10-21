@@ -1,0 +1,48 @@
+{
+  "inputs_sha256": "e62f3d58b8e8e01b66c3e8f7f293ffd704222162e3bedf1a52d42b32267fb111",
+  "winner_union_weight": 0.0,
+  "search": [
+    {
+      "union_weight": 0.0,
+      "ks": 0.5460765361785889,
+      "auc": 0.8494135527722597
+    },
+    {
+      "union_weight": 0.1,
+      "ks": 0.5467897894202436,
+      "auc": 0.8497068163402943
+    },
+    {
+      "union_weight": 0.2,
+      "ks": 0.5440713080620578,
+      "auc": 0.8499031244689426
+    },
+    {
+      "union_weight": 0.3,
+      "ks": 0.543859284628674,
+      "auc": 0.8499955517696764
+    },
+    {
+      "union_weight": 0.4,
+      "ks": 0.5449391125167873,
+      "auc": 0.8500136643242873
+    },
+    {
+      "union_weight": 0.5,
+      "ks": 0.548699598487282,
+      "auc": 0.8499832991592047
+    }
+  ],
+  "confirmation": [
+    {
+      "union_weight": 0.0,
+      "ks": 0.4929044246673584,
+      "auc": 0.8315633638423333
+    }
+  ],
+  "outer_seen": false,
+  "smoke_only": false,
+  "min_inner_gain": 0.003,
+  "confirmation_reuse": "same inner split as prior input experiments; not independent project evidence",
+  "outer_status": "No outer predictions read/materialized; nested refit required for any promotion"
+}

@@ -1,0 +1,3 @@
+# Core runtime snapshot. Causilo is installed separately without dependency
+# resolution because its historical constraints conflict with this environment.
+-r environments/utama/requirements-core.txt

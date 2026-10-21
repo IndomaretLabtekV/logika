@@ -1,0 +1,30 @@
+{
+  "config": {
+    "out": "../results/v46/vip_raw_f0",
+    "rounds": 40,
+    "batch": 8,
+    "taus": "1,0.5,0.25",
+    "d": 100,
+    "nctx": 20000,
+    "nq": 4000,
+    "confirm_nctx": 56000,
+    "confirm_nq": 4000,
+    "confirm_est": 4,
+    "seeds": "42",
+    "folds": "0",
+    "mode": "raw",
+    "evaluate": true,
+    "chunk": 1000
+  },
+  "packages": {
+    "numpy": "2.5.4",
+    "pandas": "3.0.6",
+    "polars": "2.0.0",
+    "torch": "2.14.1",
+    "structured-data-models": "0.2.1",
+    "scikit-learn": "1.9.1"
+  },
+  "features_sha256": "bd7ca1d8d88c53f22cd1589e60ddf9bbb5686d1fb5f6e214ff251505f8b9b034",
+  "source_sha256": "65cc1ca0ea82bb7c63c7220eab8780a4b5b0f993805e3565f005103b5510c4ba",
+  "method": "VIP-COp-inspired ridge; disjoint inner search/confirmation, full inner context e4 KS selection"
+}

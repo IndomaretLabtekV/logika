@@ -43,3 +43,87 @@ research/papers/
 checkpoints/
 lightning_logs/
 *.ckpt
+
+# credentials (shared by both research sources)
+.env
+.env.*
+secrets.env
+*kaggle*.json
+.kaggle/
+
+# additional local model formats and isolated environments
+.venv-*/
+*.joblib
+*.safetensors
+*.onnx
+
+# teammate pipeline: retain reports, tables, figures and provenance, exclude caches
+artifacts/**
+!artifacts/**/
+!artifacts/**/*.md
+!artifacts/**/*.html
+!artifacts/**/*.json
+!artifacts/figures/*.png
+!artifacts/tables/*.csv
+artifacts/notebook_runs/
+eda/out/integration_build_smoke/
+
+# GitHub contains source, compact reports and archived recipes. Keep the large
+# local experiment store and submissions on disk without publishing predictions.
+/results/
+/submissions/**/*.csv
+/submissions/*.csv
+/log/
+*.log
+*.parquet
+*.npy
+*.npz
+*.arrow
+*.feather
+*.duckdb
+*.duckdb.wal
+*.sqlite
+*.sqlite3
+*.zip
+*.tar
+*.tar.gz
+*.tmp
+*.swp
+*~
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.repo-checks/
+
+# Compact migrated training summaries are publication artifacts, not caches.
+!artifacts/history_utama/**/*.csv
+
+# Local row-level diagnostics and hardware telemetry are reproducible outputs.
+/eda/out/*_examples.csv
+/eda/out/*_telemetry.csv
+/eda/out/gpu_watch_probe.csv
+
+# Private keys / service credentials must never be staged.
+*.pem
+*.key
+credentials.json
+service-account*.json
+
+# Diagnostics containing row identifiers (kept locally).
+/eda/deep/out/00_do_not_deduplicate_items_examples.csv
+/eda/deep/out/04_class_samples_before_after.csv
+/eda/out/153_kumo_input_audit_examples.csv
+/eda/out/175_inner_s42_f0.csv
+/eda/out/66b_class_samples_d2.csv
+/eda/out/66b_class_samples_d3.csv
+/eda/out/81_class_samples.csv
+/eda/v5_review/out/01_transformed_samples.csv
+/eda/v6_review/out/00_error_examples.csv
+/eda/v6_review/out/01_class_samples.csv
+/eda/v6_review/out/02_class_samples.csv
+/eda/v6_review/out/03_class_samples.csv
+/eda/v7_review/out/01_error_examples.csv
+/eda/v7_review/out/02_class_samples.csv
+/eda/v7_review/out/03_class_samples.csv
+/eda/v8_review/out/01_ambiguous_examples.csv
+/eda/v8_review/out/03_class_samples.csv

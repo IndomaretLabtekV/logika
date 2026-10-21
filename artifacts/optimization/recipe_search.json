@@ -1,0 +1,163 @@
+[
+  {
+    "recipe": {
+      "extended/lgb_leaves31": 1.0
+    },
+    "ks": 0.5109317777068152,
+    "roc_auc": 0.8308957887477159,
+    "average_precision": 0.4666204981172158,
+    "log_loss": 0.30579274672508844
+  },
+  {
+    "recipe": {
+      "extended/xgb_depth3": 1.0
+    },
+    "ks": 0.5085915061481396,
+    "roc_auc": 0.8317856205529661,
+    "average_precision": 0.4706751141836088,
+    "log_loss": 0.3042918903308251
+  },
+  {
+    "recipe": {
+      "extended/xgb_depth3": 0.3333333333333333,
+      "extended/lgb_leaves31": 0.3333333333333333,
+      "compact/cat_depth5": 0.3333333333333333
+    },
+    "ks": 0.5057958855364386,
+    "roc_auc": 0.8329135600351295,
+    "average_precision": 0.47237314825880095,
+    "log_loss": 0.3036925863255056
+  },
+  {
+    "recipe": {
+      "extended/xgb_depth3": 0.25,
+      "extended/lgb_leaves31": 0.25,
+      "compact/cat_depth5": 0.5
+    },
+    "ks": 0.5055457990572142,
+    "roc_auc": 0.8327654092994456,
+    "average_precision": 0.4722508426958625,
+    "log_loss": 0.30380574939464783
+  },
+  {
+    "recipe": {
+      "extended/lgb_leaves31": 0.75,
+      "compact/cat_depth5": 0.25
+    },
+    "ks": 0.505521377757018,
+    "roc_auc": 0.8322864890547752,
+    "average_precision": 0.4702414460864767,
+    "log_loss": 0.30446477307343134
+  },
+  {
+    "recipe": {
+      "extended/xgb_depth3": 0.75,
+      "compact/cat_depth5": 0.25
+    },
+    "ks": 0.5053352812669153,
+    "roc_auc": 0.8324885830421582,
+    "average_precision": 0.47202373010274734,
+    "log_loss": 0.30382426841630594
+  },
+  {
+    "recipe": {
+      "extended/xgb_depth3": 0.5,
+      "compact/cat_depth5": 0.5
+    },
+    "ks": 0.5051539762977371,
+    "roc_auc": 0.832417328489054,
+    "average_precision": 0.4717344925656686,
+    "log_loss": 0.30391626551619794
+  },
+  {
+    "recipe": {
+      "extended/xgb_depth3": 0.75,
+      "extended/lgb_leaves31": 0.25
+    },
+    "ks": 0.5049048172096594,
+    "roc_auc": 0.8321554177727095,
+    "average_precision": 0.47131584092361467,
+    "log_loss": 0.30410567898385443
+  },
+  {
+    "recipe": {
+      "extended/lgb_leaves31": 0.25,
+      "compact/cat_depth5": 0.75
+    },
+    "ks": 0.5046933720282136,
+    "roc_auc": 0.8319029355330227,
+    "average_precision": 0.47069729483571715,
+    "log_loss": 0.3044603855580749
+  },
+  {
+    "recipe": {
+      "compact/cat_depth5": 1.0
+    },
+    "ks": 0.5046604496425062,
+    "roc_auc": 0.8300386474803865,
+    "average_precision": 0.467866721636929,
+    "log_loss": 0.30565555547692386
+  },
+  {
+    "recipe": {
+      "extended/xgb_depth3": 0.5,
+      "extended/lgb_leaves31": 0.25,
+      "compact/cat_depth5": 0.25
+    },
+    "ks": 0.5045337061857916,
+    "roc_auc": 0.832840450699732,
+    "average_precision": 0.47250660116278714,
+    "log_loss": 0.30367502539378016
+  },
+  {
+    "recipe": {
+      "extended/xgb_depth3": 0.25,
+      "extended/lgb_leaves31": 0.75
+    },
+    "ks": 0.504391969905539,
+    "roc_auc": 0.8317417240386895,
+    "average_precision": 0.46936489614752225,
+    "log_loss": 0.30483610553882323
+  },
+  {
+    "recipe": {
+      "extended/xgb_depth3": 0.25,
+      "extended/lgb_leaves31": 0.5,
+      "compact/cat_depth5": 0.25
+    },
+    "ks": 0.504248378842993,
+    "roc_auc": 0.8327515757148408,
+    "average_precision": 0.47189319449521017,
+    "log_loss": 0.30388392355267585
+  },
+  {
+    "recipe": {
+      "extended/lgb_leaves31": 0.5,
+      "compact/cat_depth5": 0.5
+    },
+    "ks": 0.504246987756273,
+    "roc_auc": 0.8326260687796554,
+    "average_precision": 0.4715158575910561,
+    "log_loss": 0.30405645315621804
+  },
+  {
+    "recipe": {
+      "extended/xgb_depth3": 0.25,
+      "compact/cat_depth5": 0.75
+    },
+    "ks": 0.5034716887576389,
+    "roc_auc": 0.8316012242799657,
+    "average_precision": 0.4704371622802124,
+    "log_loss": 0.3045278842838355
+  },
+  {
+    "recipe": {
+      "extended/xgb_depth3": 0.5,
+      "extended/lgb_leaves31": 0.5
+    },
+    "ks": 0.503367202688445,
+    "roc_auc": 0.8321514763603359,
+    "average_precision": 0.4708298187412059,
+    "log_loss": 0.30428297962796397
+  }
+]

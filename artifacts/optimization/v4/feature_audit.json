@@ -1,0 +1,28 @@
+{
+  "training_target_used": false,
+  "normalization_population": "Training customer histories; no target labels.",
+  "future_transaction_rows": 0,
+  "category_log_price_reference": {
+    "education": 11.502885230075814,
+    "electronics": 13.963931425151141,
+    "fashion": 12.031725210748633,
+    "groceries": 10.950824090522445,
+    "health": 11.652696102959753,
+    "home": 12.587931300962664,
+    "personal_care": 11.19822841866684
+  },
+  "future_due_rows": 0,
+  "future_payment_rows": 0,
+  "mature_late_1_prior": 0.3390122153108941,
+  "mature_late_7_prior": 0.3387991930031886,
+  "mature_late_30_prior": 0.25729090042494673,
+  "mature_late_90_prior": 0.06493097797512368,
+  "future_bureau_report_rows": 0,
+  "future_bureau_available_rows": 0,
+  "bureau_score_reference": {
+    "Bureau_A": 668.8576860510374,
+    "Bureau_B": 668.8631331337448,
+    "Bureau_C": 668.8045982637211
+  },
+  "added_columns": 113
+}

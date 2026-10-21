@@ -1,5 +1,10 @@
 # Noise public dan kalibrasi perkiraan (17–18 Okt)
 
+**Koreksi21Okt:** Kaggle30%public/70%private dikonfirmasi user. Sejumlahscriptlama
+(termasuk131) memakai30% dari70kOOF=21k,sehingga bukan ukuranpublic9k. Tabel di
+bawah riwayat, bukan kalibrasiterkini. Diagnosis167 memakai9k/21k;lihat
+[hasil dan batasannya](../../docs/integration/diagnosis_public_private.md).
+
 ## Metode perkiraan sebelum submit (`eda/107_public_noise.py`)
 OOF cross-fit bersih dinilai di subset acak 30% (asumsi public = 9.000 dari 30.000 test; proporsi sebenarnya tidak
 diketahui) → distribusi KS(kandidat) − KS(resep v8). Perkiraan public = 0,56145 (v8) + rata-rata selisih, dengan sd

@@ -1,0 +1,58 @@
+{
+  "policy": {
+    "mode": "fixed_policy",
+    "primary": "KS/Spearman100+4raw",
+    "union": "LGBgain400+Spearman100+4raw",
+    "fusion": "0.5rank(primary)+0.5rank(union); cohort average-ties float64",
+    "matched_baseline": "rank(primary) on the same cohort; raw probability retained separately",
+    "estimators": 4,
+    "real_context": "all outer training rows",
+    "chunk": 128,
+    "gpu_memory_fraction": 0.7,
+    "generator": "100*seed+fold",
+    "outer_used_for_policy_choice": false,
+    "inner_gate_not_applied": true
+  },
+  "seed": 42,
+  "fold": 3,
+  "sources_sha256": {
+    "189_fixed_kumo_union_rank.py": "fbfe5b23a37f9bdcc5207965c85c0f57cdf0b9ed1884af7f3d68516f27e23ff6",
+    "conditional_input_pools.py": "9a88a260641024398e961788e334159bca5b2cd94ba04773a357ad3fe9b5a464",
+    "nested_input_pools.py": "bedb0c9d72aaf22c4888998b54f2edbbefedb482c89fca846585a8ab12243843",
+    "teammate_feature_adapter.py": "4fe88267e65ae3d66ba9c4e67844f777ca244a18bde7ca23af731e77f26847cc",
+    "166_teammate_nested_features.py": "94f776a0ccd6dbdfe2b6474483dbfa6126190dfe36e5f77671d50241d046d797",
+    "183_kumo_group_retrieval.py": "62faf3ec71c9d3d82e8a4919ea97c5206679e954b096d843c1b177d3f4a82986",
+    "grouped_context.py": "8f5c6b3f0834611ea4cdd004682d07b689a268d310906e29c3e6ae0af13f64bf",
+    "173_nested_kumo_inputs.py": "dd9da3e65a441593c2b0a2caa51203218b345a98a3716de2c6e008961d2c18f1",
+    "152_vipcop_kumo.py": "67c3f1dab4f4663b4e9d2383c75977caee7cb80a6ba524c7b38dad6db23e93ba",
+    "valid2.py": "3f1bfe40ae9e32d70577f537e6b7a29e2a103d7a423eb03026e62ab37d01f8fc",
+    "common.py": "679d20a7beb3d5e3946232d1dcea66f21b871ab1a41c8879e15d3d5a615f92e7"
+  },
+  "features_sha256": "bd7ca1d8d88c53f22cd1589e60ddf9bbb5686d1fb5f6e214ff251505f8b9b034",
+  "teammate_reference": {
+    "manifest_sha256": "3890e78f87643b95bdc002441be49c412fbd34a0300ea585c915ebe7cde92414",
+    "output_sha256": "48a63375d4e93c12c9716f242c7886466eb1efb09b4a71ca9839ba10a8296df3",
+    "inputs_sha256": "ae5086b5b3ebf07f8e7749d36d01478d8823deba8d026943ad82a571bca3fc4e",
+    "partition": "outer"
+  },
+  "checkpoint": {
+    "repository": "nvidia/Kumo-Tabular",
+    "revision": "v1.0.1",
+    "snapshot_commit": "3c3e10bbdb590ace29e7026847f92db3c603096d",
+    "checkpoint_sha256": "cc21484316949641cc3d65a7bb6c36cdea854cc569435755ff23b850018ec613",
+    "model_loader_sha256": "1bdc0ebb4ed74d4025cd64412d6235bde236fb9e49e890e5fa8830c0a9b0e281",
+    "downloader_sha256": "271ff59eadc33c27df71cfe8e47bc496a5fea284f034d9f7f68463339f6a5e07"
+  },
+  "packages": {
+    "numpy": "2.5.4",
+    "pandas": "3.0.6",
+    "polars": "2.0.0",
+    "torch": "2.14.1",
+    "structured-data-models": "0.2.1",
+    "scikit-learn": "1.9.1",
+    "lightgbm": "4.7.0"
+  },
+  "protocol_sha256": "1f40a5cdeff993e6be8dfd4b6b3e9bf097e7c5413affc7ca642eff734c107d91",
+  "development_inner_choice_sha256": "c34f395a56ec0e97298080e4bc72a5f5298d13cf222e2c4e10fc8fbbee37d1c9",
+  "smoke_only": false
+}

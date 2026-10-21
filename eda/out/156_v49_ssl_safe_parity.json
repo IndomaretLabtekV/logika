@@ -1,0 +1,60 @@
+{
+  "config_change": "query chunk500 to128; allocator .9 to .7",
+  "checks": [
+    {
+      "file": "inner_confirmation_asym_n0.02_p0.7_cap64_predictions.parquet",
+      "rows": 128,
+      "max_abs_difference": 0.0
+    },
+    {
+      "file": "inner_search_asym_n0.02_p0.7_cap64_predictions.parquet",
+      "rows": 128,
+      "max_abs_difference": 0.0
+    },
+    {
+      "file": "inner_search_asym_n0.02_p0.9_cap64_predictions.parquet",
+      "rows": 128,
+      "max_abs_difference": 0.0
+    },
+    {
+      "file": "inner_search_asym_n0.05_p0.7_cap64_predictions.parquet",
+      "rows": 128,
+      "max_abs_difference": 0.0
+    },
+    {
+      "file": "inner_search_asym_n0.05_p0.9_cap64_predictions.parquet",
+      "rows": 128,
+      "max_abs_difference": 0.0
+    },
+    {
+      "file": "inner_search_confidence_0.02_cap64_predictions.parquet",
+      "rows": 128,
+      "max_abs_difference": 0.0
+    },
+    {
+      "file": "inner_search_confidence_0.05_cap64_predictions.parquet",
+      "rows": 128,
+      "max_abs_difference": 0.0
+    },
+    {
+      "file": "inner_teacher_predictions.parquet",
+      "rows": 768,
+      "max_abs_difference": 0.00020138919353485107
+    },
+    {
+      "file": "outer_selected_predictions.parquet",
+      "rows": 128,
+      "max_abs_difference": 0.0
+    },
+    {
+      "file": "outer_teacher_predictions.parquet",
+      "rows": 640,
+      "max_abs_difference": 0.0002829432487487793
+    }
+  ],
+  "fit_ids_labels_columns_unchanged": true,
+  "max_abs_difference": 0.0002829432487487793,
+  "max_allocated_gib": 1.212996006011963,
+  "max_reserved_gib": 1.638671875,
+  "quality_claim": false
+}

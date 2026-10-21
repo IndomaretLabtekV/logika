@@ -1,0 +1,25 @@
+{
+  "untracked_from_git": 1444,
+  "bytes_excluded_from_current_tree": 583223208,
+  "local_files_preserved": true,
+  "row_level_diagnostic_csvs_ignored": [
+    "eda/out/66b_class_samples_d2.csv",
+    "eda/out/66b_class_samples_d3.csv",
+    "eda/out/81_class_samples.csv",
+    "eda/out/153_kumo_input_audit_examples.csv",
+    "eda/out/175_inner_s42_f0.csv",
+    "eda/v8_review/out/01_ambiguous_examples.csv",
+    "eda/v8_review/out/03_class_samples.csv",
+    "eda/v7_review/out/01_error_examples.csv",
+    "eda/v7_review/out/02_class_samples.csv",
+    "eda/v7_review/out/03_class_samples.csv",
+    "eda/v6_review/out/00_error_examples.csv",
+    "eda/v6_review/out/01_class_samples.csv",
+    "eda/v6_review/out/02_class_samples.csv",
+    "eda/v6_review/out/03_class_samples.csv",
+    "eda/v5_review/out/01_transformed_samples.csv",
+    "eda/deep/out/00_do_not_deduplicate_items_examples.csv",
+    "eda/deep/out/04_class_samples_before_after.csv"
+  ],
+  "backup_directory": "/home/veinsan/Projects/.logika-cleanup-21okt-yvx1eri6"
+}

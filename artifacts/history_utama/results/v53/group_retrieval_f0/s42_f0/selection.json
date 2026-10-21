@@ -1,0 +1,38 @@
+{
+  "run_sha256": "b66d946481294495c40a8b13a825db59d35b50323f0c0652d769385da21a2316",
+  "winner": "utama_raw",
+  "search": [
+    {
+      "name": "utama_raw",
+      "ks": 0.5460765361785889,
+      "auc": 0.8494135527722597
+    },
+    {
+      "name": "retrieval",
+      "ks": 0.541785929847945,
+      "auc": 0.8475096036493602
+    },
+    {
+      "name": "probability_blend",
+      "ks": 0.5485344546070081,
+      "auc": 0.849365874135858
+    },
+    {
+      "name": "rank_blend",
+      "ks": 0.5473486150022028,
+      "auc": 0.849311536472026
+    }
+  ],
+  "confirmation": [
+    {
+      "name": "utama_raw",
+      "ks": 0.4929044246673584,
+      "auc": 0.8315633638423333
+    }
+  ],
+  "outer_seen": false,
+  "min_inner_gain": 0.003,
+  "confirmation_reuse": "same inner split as prior research; not independent project evidence",
+  "context_per_group": 12000,
+  "clusters": 8
+}

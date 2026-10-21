@@ -1,0 +1,37 @@
+{
+  "run_sha256": "cc62d26e24938fce628644f44a2c38b2e3c287efa55c86df5a4a534aa90008ed",
+  "winner": "utama_raw",
+  "search": [
+    {
+      "name": "utama_raw",
+      "ks": 0.5460765361785889,
+      "auc": 0.8494135527722597
+    },
+    {
+      "name": "mix2000",
+      "ks": 0.5418738126754761,
+      "auc": 0.8475591468134424
+    },
+    {
+      "name": "mix8000",
+      "ks": 0.5355584025382996,
+      "auc": 0.8472768040503933
+    },
+    {
+      "name": "probability_blend",
+      "ks": 0.5400609970092773,
+      "auc": 0.8486205957858478
+    }
+  ],
+  "confirmation": [
+    {
+      "name": "utama_raw",
+      "ks": 0.4929044246673584,
+      "auc": 0.8315633638423333
+    }
+  ],
+  "outer_seen": false,
+  "min_inner_gain": 0.003,
+  "confirmation_reuse": "same inner split as prior research; not independent project evidence",
+  "all_real_context_retained": true
+}

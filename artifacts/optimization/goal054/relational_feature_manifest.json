@@ -1,0 +1,137 @@
+{
+  "rows": 100000,
+  "customer_ids_unique": true,
+  "targets_in_related_tables": false,
+  "ids_are_graph_links_only": true,
+  "builder_sha256": "fe22715a11f53c3a95a610c10869b06e8e97beebd8415e4f44b20fee3fbdb329",
+  "tables": {
+    "accounts": {
+      "raw_rows": 1084418,
+      "selected_rows": 796008,
+      "customers": 70000,
+      "columns": [
+        "customer_id",
+        "opening_balance",
+        "closing_balance",
+        "inflows",
+        "outflows",
+        "income_like_credits",
+        "average_balance",
+        "minimum_balance",
+        "low_balance_days",
+        "month_end",
+        "net_flow",
+        "outflow_income_ratio"
+      ],
+      "eligibility": "All months end strictly before decision; retain last 12",
+      "maximum_rows_per_customer": 12
+    },
+    "bureau": {
+      "raw_rows": 797563,
+      "selected_rows": 732152,
+      "customers": 100000,
+      "columns": [
+        "customer_id",
+        "bureau_provider",
+        "report_datetime",
+        "score",
+        "active_accounts",
+        "outstanding_balance",
+        "revolving_credit_limit",
+        "revolving_outstanding_balance",
+        "utilization",
+        "inquiries_last_6m",
+        "delinquent_accounts_last_12m",
+        "availability_lag_days"
+      ],
+      "eligibility": "Report and availability strictly before decision; retain last 4 per provider",
+      "maximum_rows_per_customer": 12
+    },
+    "ecommerce": {
+      "raw_rows": 4359817,
+      "selected_rows": 1836081,
+      "customers": 100000,
+      "columns": [
+        "customer_id",
+        "transaction_datetime",
+        "product_category",
+        "quantity",
+        "item_total",
+        "order_total",
+        "payment_method",
+        "order_status",
+        "unit_price",
+        "log_unit_price"
+      ],
+      "eligibility": "Event strictly before decision; up to 16 history-spanning item rows plus last 4; cancelled baskets remain known preferences",
+      "maximum_rows_per_customer": 20
+    },
+    "repayment": {
+      "raw_rows": 1361341,
+      "selected_rows": 872803,
+      "customers": 66157,
+      "columns": [
+        "customer_id",
+        "due_date",
+        "amount_due",
+        "amount_paid",
+        "days_past_due",
+        "max_days_past_due",
+        "payment_fraction",
+        "payment_delay_days"
+      ],
+      "eligibility": "Last allocation before cutoff or missing; 0 future scheduled due rows excluded; retain last 16 past-due rows",
+      "maximum_rows_per_customer": 16
+    },
+    "users": {
+      "raw_rows": 100000,
+      "selected_rows": 100000,
+      "customers": 100000,
+      "columns": [
+        "customer_id",
+        "age",
+        "region",
+        "employment_type",
+        "employment_tenure_months",
+        "declared_monthly_income",
+        "dependents",
+        "housing_status",
+        "history_account_rows",
+        "history_bureau_rows",
+        "history_ecommerce_rows",
+        "history_repayment_rows"
+      ],
+      "eligibility": "Profile at selected decision; history row counts computed without targets",
+      "maximum_rows_per_customer": 1
+    }
+  },
+  "raw_sha256": {
+    "account_behavior.csv": "2f46be03496583b0231591194e13bea7593e87323056dfead6b9b19c48871924",
+    "bureau_observations.csv": "e37b8a76fe4f97ee6f1fd78ab26ffb0e78e464714f77d961062e03d757d057a0",
+    "customer_profiles.csv": "bcffa8c5558e81d9b359d2785345af218c459704f1c416b1ecbbe3a0ccf73f5d",
+    "ecommerce_transactions.csv": "495b3859f2146f87e7f8a383b308770af3d48342e3e1acdb45d7f1bed2bab742",
+    "repayment_history.csv": "b0b00e18de2c05233653b3627bc7f9d679644e84c56680284766d71c5e279877",
+    "test_applications.csv": "113f6ee4ff15e4c8bf14fb9a85fc399b906d1c569f6a715675a5814da2e02dfe",
+    "train_applications.csv": "b60df5704bcd3713314a31c5382db22f41d38971bd76906b15f45a38edff509b"
+  },
+  "output_sha256": {
+    "accounts.parquet": "7f1190cea7069c92f3d261675a086897cdce1a42e8f6b5d059a587b24ff311d8",
+    "bureau.parquet": "bf9cc08fa141bd8e1437aa7f20786f5377993cb2ba0d363a36b848d2f785bb4b",
+    "ecommerce.parquet": "098574cef6ff16563686a9948b3d62e8c44c949811adcf466f2d1a910f2cedf4",
+    "repayment.parquet": "6dd7096fb89cc38bfd509307feb5daf2fed6a92ba8bc416cdc1c223fa20cf018",
+    "users.parquet": "5ee92e84ee77dad9fbaa5a86be7e491a6ea8c26536574b9bf5d6045882b65670"
+  },
+  "profile_feature_columns": [
+    "age",
+    "region",
+    "employment_type",
+    "employment_tenure_months",
+    "declared_monthly_income",
+    "dependents",
+    "housing_status"
+  ],
+  "cutoff_range": [
+    "2025-01-01 08:00:00",
+    "2025-12-28 20:59:00"
+  ]
+}

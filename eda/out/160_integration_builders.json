@@ -1,0 +1,53 @@
+{
+  "builders": [
+    {
+      "builder": "build_review_notebooks.py",
+      "exit_code": 0,
+      "output": "Created: 01_baseline_xgboost.ipynb\nCreated: 02_tuning_ks_v2.ipynb\nCreated: 03_ensemble_ks.ipynb\nCreated: 04_submission_v3.ipynb\nCreated: 05_submission_v4.ipynb\n"
+    },
+    {
+      "builder": "build_review_notebook_v5.py",
+      "exit_code": 0,
+      "output": "Created: /tmp/logika-build-check-s2cxov07/notebook/06_submission_v5.ipynb\n"
+    },
+    {
+      "builder": "build_reverse_notebook.py",
+      "exit_code": 0,
+      "output": "Created: /tmp/logika-build-check-s2cxov07/notebook/07_reverse_engineering_rng.ipynb\n"
+    },
+    {
+      "builder": "build_kumo_notebook.py",
+      "exit_code": 0,
+      "output": "/tmp/logika-build-check-s2cxov07/notebook/08_kumo_tabular.ipynb\n"
+    },
+    {
+      "builder": "build_kumo_improvement_notebook.py",
+      "exit_code": 0,
+      "output": "/tmp/logika-build-check-s2cxov07/notebook/09_kumo_improvement.ipynb\n"
+    },
+    {
+      "builder": "build_hybrid_kumo_notebook.py",
+      "exit_code": 0,
+      "output": "/tmp/logika-build-check-s2cxov07/notebook/10_kumo_spline.ipynb\n"
+    },
+    {
+      "builder": "build_finetune_pilot_notebook.py",
+      "exit_code": 0,
+      "output": "/tmp/logika-build-check-s2cxov07/notebook/11_kumo_finetune_pilot.ipynb\n"
+    },
+    {
+      "builder": "build_goal054_notebook.py",
+      "exit_code": 0,
+      "output": "/tmp/logika-build-check-s2cxov07/notebook/12_goal054_research.ipynb\n"
+    },
+    {
+      "builder": "reporting.create_notebook",
+      "exit_code": 0,
+      "output": ""
+    }
+  ],
+  "compiled_cells": 637,
+  "original_notebooks_unchanged": true,
+  "model_execution": false,
+  "temporary_mirror_removed": true
+}

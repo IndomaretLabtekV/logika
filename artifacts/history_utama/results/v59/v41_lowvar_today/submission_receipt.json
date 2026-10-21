@@ -1,0 +1,9 @@
+{
+  "ref": 57486639,
+  "fileName": "submission.csv",
+  "date": "2026-10-21T14:48:28.407000",
+  "description": "v59 fixed low-variance ensemble (recipe set Oct18): 6 GBDT / Causilo5-seeds / Kumo70k3-draws, equal family ranks. Local OOF analogue 0.52622 vs v31 0.52613; weak gain, P=0.365. Expected public 0.56362 +/- 0.00223. Production ensemble candidate; no weight tuning on LB.",
+  "status": "SubmissionStatus.COMPLETE",
+  "publicScore": "0.56296",
+  "privateScore": ""
+}

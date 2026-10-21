@@ -34,7 +34,7 @@ Tidak ada leakage atau duplikasi yang bisa "dieksploitasi". Data bersih dan sint
 | account_behavior memuat bulan berjalan? | bulan terakhir per customer selalu tepat 1 bulan sebelum bulan keputusan (70.000/70.000) → bersih |
 | Bureau memuat pinjaman lender sendiri? | tidak (outstanding korelasi 0,14; delinquency 0,01–0,02) → tidak ada konstruksi "eksternal = bureau − internal" |
 | Kebocoran lewat seleksi fitur FM | `fm_select` dihitung per train fold (validation_v2) |
-| Pseudo-label / fitting distribusi test | tidak dipakai (dilarang); Kumo-70k memakai train saja sebagai context, test hanya query |
+| Pseudo-label / fitting distribusi test | s.d. 19 Okt tidak dipakai (saat itu dilarang user). **20 Okt: semi-supervised diizinkan panitia** (hanya data panitia); syarat bersih: pseudo-label dibuat di dalam tiap outer fold dari model train fold saja. Kumo-70k s.d. kini memakai train saja sebagai context, test hanya query |
 | Bobot blend | dipilih cross-fit (4 fold → fold ke-5), tidak pernah di baris yang dinilai; tidak disetel dari public |
 
 Desain fitur dari EDA di seluruh label train tidak bisa dihindari; karena itu fitur baru wajib dikonfirmasi lewat model
@@ -50,3 +50,10 @@ cross-fit, bukan dari skor EDA.
 | Kebocoran seleksi fitur (winner's curse) | **terjadi** di `eda/145` (30 dari 7.080 dipilih dengan residual label semua baris → +0,0036 palsu); versi bersarang `eda/146` −0,0005. Aturan: seleksi fitur dari banyak kandidat wajib bersarang per outer fold |
 | Normalisasi lintas customer di kohort bulan keputusan | memakai data customer lain yang keputusannya lebih lambat di bulan yang sama → tidak patuh cutoff; versi patuh = persentil per bulan akun di seluruh populasi (`eda/138`) |
 | Snapshot cutoff mundur (`eda/142`) | patuh by construction (hanya data lebih lama) |
+> Audit tambahan21Okt:162 menemukan30,0570%–30,1146%event referenceharga `pp_*`
+> berasal dari histori customer test. Ini bukan bukti target/future leakage;
+> normalisasi memakai event sebelum awal bulan keputusan. Setelah pembaruan user,
+> SSL data panitia diperbolehkan. Nyatakan preprocessing ini sebagai transduktif,
+> pertahankan kontroltrain-only terpisah,dan jangan tuning policy dari outer-score.
+> Bukti: eda/out/162_reference_population_audit.json. Update izin terbaru dan
+> risetSSLthresholdkelas ada di jurnal_21okt_integrasi.md.

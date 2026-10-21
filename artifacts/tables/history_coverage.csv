@@ -1,0 +1,17 @@
+table,split,covered_customers,coverage_pct
+train_applications,train,70000,100.0
+train_applications,test,0,0.0
+test_applications,train,0,0.0
+test_applications,test,30000,100.0
+customer_profiles,train,70000,100.0
+customer_profiles,test,30000,100.0
+previous_applications,train,49000,70.0
+previous_applications,test,21000,70.0
+repayment_history,train,46312,66.16
+repayment_history,test,19845,66.14999999999999
+account_behavior,train,49000,70.0
+account_behavior,test,21000,70.0
+bureau_observations,train,70000,100.0
+bureau_observations,test,30000,100.0
+ecommerce_transactions,train,70000,100.0
+ecommerce_transactions,test,30000,100.0

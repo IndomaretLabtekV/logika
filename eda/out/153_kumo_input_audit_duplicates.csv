@@ -1,0 +1,6 @@
+split,rows,duplicate_application_ids,duplicate_customer_ids,duplicate_predictor_rows_exact,duplicate_row_hashes
+train,70000,0,0,0,0
+test,30000,0,0,0,0
+inner_fit,48000,0,0,0,0
+inner_stop,8000,0,0,0,0
+outer_valid,14000,0,0,0,0

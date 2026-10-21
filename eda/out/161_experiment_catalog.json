@@ -1,0 +1,9 @@
+{
+  "entry_points": {
+    "utama": 198,
+    "teman": 69
+  },
+  "reported_metric_objects": 1439,
+  "oof_combined": false,
+  "model_executed": false
+}

@@ -1,0 +1,15 @@
+{
+  "passed": true,
+  "context_rows": 512,
+  "query_rows": 32,
+  "estimators": 1,
+  "maximum_probability_difference": 0.0019527971744537354,
+  "mean_probability_difference": 0.00029733183328062296,
+  "absolute_tolerance": 0.003,
+  "backend_sha256": "bac503746c4e26b311332f565438d7c89fac3b701ed405d5fdc526d31c8cc7c6",
+  "context_ids_sha256": "c000b38066e82b7208007e20424fb5b0eee144da06f030d9ccbe7a1abe1078e9",
+  "query_ids_sha256": "e274d4820cb8adc7efc383c65db2cff59720fdb3f24c393027457db89cc84082",
+  "validation_labels_used": false,
+  "validation_scores_computed": false,
+  "caveat": "Real-data technical parity at 512 context rows; original full graph exceeds the memory budget, so full-scale bit identity is not claimed."
+}

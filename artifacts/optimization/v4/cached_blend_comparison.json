@@ -1,0 +1,418 @@
+[
+  {
+    "version": "selection",
+    "mode": "probability",
+    "weights": [
+      0.3333333333333333,
+      0.3333333333333333,
+      0.3333333333333333
+    ],
+    "ks": 0.5196953983607824,
+    "mean_fold_ks": 0.5228502051175808,
+    "fold_wins": 0,
+    "roc_auc": 0.8412413276500286
+  },
+  {
+    "version": "selection",
+    "mode": "probability",
+    "weights": [
+      0.5,
+      0.5,
+      0
+    ],
+    "ks": 0.5191208530532958,
+    "mean_fold_ks": 0.5201632498109496,
+    "fold_wins": 0,
+    "roc_auc": 0.8409229781679337
+  },
+  {
+    "version": "selection",
+    "mode": "probability",
+    "weights": [
+      0.375,
+      0.375,
+      0.25
+    ],
+    "ks": 0.5202990721633618,
+    "mean_fold_ks": 0.522328831313617,
+    "fold_wins": 0,
+    "roc_auc": 0.8413246043343336
+  },
+  {
+    "version": "selection",
+    "mode": "probability",
+    "weights": [
+      0.25,
+      0.5,
+      0.25
+    ],
+    "ks": 0.5198557980913711,
+    "mean_fold_ks": 0.5213984717887953,
+    "fold_wins": 0,
+    "roc_auc": 0.8410452197786077
+  },
+  {
+    "version": "selection",
+    "mode": "probability",
+    "weights": [
+      0.5,
+      0.25,
+      0.25
+    ],
+    "ks": 0.5199847532359246,
+    "mean_fold_ks": 0.5218646988433601,
+    "fold_wins": 0,
+    "roc_auc": 0.8414329267948634
+  },
+  {
+    "version": "selection",
+    "mode": "probability",
+    "weights": [
+      0.25,
+      0.25,
+      0.5
+    ],
+    "ks": 0.5201651944561525,
+    "mean_fold_ks": 0.5225176157335002,
+    "fold_wins": 1,
+    "roc_auc": 0.8407745031758449
+  },
+  {
+    "version": "selection",
+    "mode": "probability",
+    "weights": [
+      1,
+      0,
+      0
+    ],
+    "ks": 0.5168064922240871,
+    "mean_fold_ks": 0.5184296553188846,
+    "fold_wins": 1,
+    "roc_auc": 0.8400500692261673
+  },
+  {
+    "version": "selection",
+    "mode": "probability",
+    "weights": [
+      0,
+      1,
+      0
+    ],
+    "ks": 0.5172853475039985,
+    "mean_fold_ks": 0.5179092072381383,
+    "fold_wins": 0,
+    "roc_auc": 0.8388681360243201
+  },
+  {
+    "version": "selection",
+    "mode": "logit",
+    "weights": [
+      0.3333333333333333,
+      0.3333333333333333,
+      0.3333333333333333
+    ],
+    "ks": 0.5195676812468226,
+    "mean_fold_ks": 0.522943346895159,
+    "fold_wins": 1,
+    "roc_auc": 0.8413358909306593
+  },
+  {
+    "version": "selection",
+    "mode": "logit",
+    "weights": [
+      0.5,
+      0.5,
+      0
+    ],
+    "ks": 0.5186732823891742,
+    "mean_fold_ks": 0.5203497296599243,
+    "fold_wins": 0,
+    "roc_auc": 0.8409969678839788
+  },
+  {
+    "version": "selection",
+    "mode": "logit",
+    "weights": [
+      0.375,
+      0.375,
+      0.25
+    ],
+    "ks": 0.5203682540780141,
+    "mean_fold_ks": 0.5225883505358216,
+    "fold_wins": 2,
+    "roc_auc": 0.8413833203695706
+  },
+  {
+    "version": "selection",
+    "mode": "logit",
+    "weights": [
+      0.25,
+      0.5,
+      0.25
+    ],
+    "ks": 0.5201154124113516,
+    "mean_fold_ks": 0.5212018053655965,
+    "fold_wins": 0,
+    "roc_auc": 0.8410900323129635
+  },
+  {
+    "version": "selection",
+    "mode": "logit",
+    "weights": [
+      0.5,
+      0.25,
+      0.25
+    ],
+    "ks": 0.5200615233043845,
+    "mean_fold_ks": 0.5220770616518376,
+    "fold_wins": 0,
+    "roc_auc": 0.841477478508167
+  },
+  {
+    "version": "selection",
+    "mode": "logit",
+    "weights": [
+      0.25,
+      0.25,
+      0.5
+    ],
+    "ks": 0.5199264805964761,
+    "mean_fold_ks": 0.5220204722307228,
+    "fold_wins": 1,
+    "roc_auc": 0.8409421189555402
+  },
+  {
+    "version": "selection",
+    "mode": "logit",
+    "weights": [
+      1,
+      0,
+      0
+    ],
+    "ks": 0.5168064922240871,
+    "mean_fold_ks": 0.5184296553188846,
+    "fold_wins": 1,
+    "roc_auc": 0.8400500692261673
+  },
+  {
+    "version": "selection",
+    "mode": "logit",
+    "weights": [
+      0,
+      1,
+      0
+    ],
+    "ks": 0.5172853475039985,
+    "mean_fold_ks": 0.5179092072381383,
+    "fold_wins": 0,
+    "roc_auc": 0.8388681360243201
+  },
+  {
+    "version": "tenfold",
+    "mode": "probability",
+    "weights": [
+      0.3333333333333333,
+      0.3333333333333333,
+      0.3333333333333333
+    ],
+    "ks": 0.5190088512771254,
+    "mean_fold_ks": 0.5235242661078392,
+    "fold_wins": 0,
+    "roc_auc": 0.8418171822791967
+  },
+  {
+    "version": "tenfold",
+    "mode": "probability",
+    "weights": [
+      0.5,
+      0.5,
+      0
+    ],
+    "ks": 0.5176287810160722,
+    "mean_fold_ks": 0.5227759570080378,
+    "fold_wins": 3,
+    "roc_auc": 0.8416239990811727
+  },
+  {
+    "version": "tenfold",
+    "mode": "probability",
+    "weights": [
+      0.375,
+      0.375,
+      0.25
+    ],
+    "ks": 0.5192771752814374,
+    "mean_fold_ks": 0.5232894878393194,
+    "fold_wins": 3,
+    "roc_auc": 0.8419376277022255
+  },
+  {
+    "version": "tenfold",
+    "mode": "probability",
+    "weights": [
+      0.25,
+      0.5,
+      0.25
+    ],
+    "ks": 0.5198053900760452,
+    "mean_fold_ks": 0.5234821186443562,
+    "fold_wins": 4,
+    "roc_auc": 0.8418093002670036
+  },
+  {
+    "version": "tenfold",
+    "mode": "probability",
+    "weights": [
+      0.5,
+      0.25,
+      0.25
+    ],
+    "ks": 0.518742653833791,
+    "mean_fold_ks": 0.5234392783834402,
+    "fold_wins": 5,
+    "roc_auc": 0.8419124741199658
+  },
+  {
+    "version": "tenfold",
+    "mode": "probability",
+    "weights": [
+      0.25,
+      0.25,
+      0.5
+    ],
+    "ks": 0.5194639666248791,
+    "mean_fold_ks": 0.524061657487398,
+    "fold_wins": 8,
+    "roc_auc": 0.8412609396543356
+  },
+  {
+    "version": "tenfold",
+    "mode": "probability",
+    "weights": [
+      1,
+      0,
+      0
+    ],
+    "ks": 0.515737638858759,
+    "mean_fold_ks": 0.5223663441020474,
+    "fold_wins": 3,
+    "roc_auc": 0.8403900181689858
+  },
+  {
+    "version": "tenfold",
+    "mode": "probability",
+    "weights": [
+      0,
+      1,
+      0
+    ],
+    "ks": 0.5189977820316765,
+    "mean_fold_ks": 0.5225327445178582,
+    "fold_wins": 4,
+    "roc_auc": 0.8403715520385007
+  },
+  {
+    "version": "tenfold",
+    "mode": "logit",
+    "weights": [
+      0.3333333333333333,
+      0.3333333333333333,
+      0.3333333333333333
+    ],
+    "ks": 0.5190814847236996,
+    "mean_fold_ks": 0.5233930967026496,
+    "fold_wins": 4,
+    "roc_auc": 0.8419289284507361
+  },
+  {
+    "version": "tenfold",
+    "mode": "logit",
+    "weights": [
+      0.5,
+      0.5,
+      0
+    ],
+    "ks": 0.5173191812108701,
+    "mean_fold_ks": 0.5229795592987692,
+    "fold_wins": 4,
+    "roc_auc": 0.8416591542813748
+  },
+  {
+    "version": "tenfold",
+    "mode": "logit",
+    "weights": [
+      0.375,
+      0.375,
+      0.25
+    ],
+    "ks": 0.5190616188535686,
+    "mean_fold_ks": 0.5242682643973849,
+    "fold_wins": 7,
+    "roc_auc": 0.8420115339555336
+  },
+  {
+    "version": "tenfold",
+    "mode": "logit",
+    "weights": [
+      0.25,
+      0.5,
+      0.25
+    ],
+    "ks": 0.5197817370842385,
+    "mean_fold_ks": 0.5238034393250665,
+    "fold_wins": 5,
+    "roc_auc": 0.8418818085194731
+  },
+  {
+    "version": "tenfold",
+    "mode": "logit",
+    "weights": [
+      0.5,
+      0.25,
+      0.25
+    ],
+    "ks": 0.5188646033248866,
+    "mean_fold_ks": 0.5239203997104049,
+    "fold_wins": 5,
+    "roc_auc": 0.8419658937490393
+  },
+  {
+    "version": "tenfold",
+    "mode": "logit",
+    "weights": [
+      0.25,
+      0.25,
+      0.5
+    ],
+    "ks": 0.5197749644309202,
+    "mean_fold_ks": 0.5246871234647881,
+    "fold_wins": 8,
+    "roc_auc": 0.8414401637096539
+  },
+  {
+    "version": "tenfold",
+    "mode": "logit",
+    "weights": [
+      1,
+      0,
+      0
+    ],
+    "ks": 0.515737638858759,
+    "mean_fold_ks": 0.5223663441020474,
+    "fold_wins": 3,
+    "roc_auc": 0.8403900181689858
+  },
+  {
+    "version": "tenfold",
+    "mode": "logit",
+    "weights": [
+      0,
+      1,
+      0
+    ],
+    "ks": 0.5189977820316765,
+    "mean_fold_ks": 0.5225327445178582,
+    "fold_wins": 4,
+    "roc_auc": 0.8403715520385007
+  }
+]

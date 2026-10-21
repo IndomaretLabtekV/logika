@@ -1,0 +1,43 @@
+{
+  "repository": "nvidia/Kumo-Tabular",
+  "revision": "v1.0.1",
+  "snapshot_commit": "3c3e10bbdb590ace29e7026847f92db3c603096d",
+  "size": "large",
+  "checkpoint_bytes": 854850034,
+  "checkpoint_sha256": "cc21484316949641cc3d65a7bb6c36cdea854cc569435755ff23b850018ec613",
+  "local_content_address_verified": true,
+  "config_sha256": "de7d618ec4019293e976e37371612ff9b8e71c22336c463a7225b0f130e78318",
+  "sdm_version": "0.2.1",
+  "model_loader_sha256": "1bdc0ebb4ed74d4025cd64412d6235bde236fb9e49e890e5fa8830c0a9b0e281",
+  "downloader_sha256": "271ff59eadc33c27df71cfe8e47bc496a5fea284f034d9f7f68463339f6a5e07",
+  "teammate_declarations": [
+    {
+      "path": "artifacts/optimization/kumo/large_v5_ctx50000_e8/fold0_oof.json",
+      "sha256": "e1abe8b67efebbef559d6c07a0b125502c0e12057f3ff2ffa83fc57e5cc56514",
+      "declared_commit": "3c3e10bbdb590ace29e7026847f92db3c603096d",
+      "declared_sdm": "0.2.1"
+    },
+    {
+      "path": "artifacts/optimization/kumo/large_v5_ctx50000_e8/fold1_oof.json",
+      "sha256": "adbb3d426cf6df5240dbba289f69532cb8002bc247737bf05a25b43e6e94c104",
+      "declared_commit": "3c3e10bbdb590ace29e7026847f92db3c603096d",
+      "declared_sdm": "0.2.1"
+    },
+    {
+      "path": "artifacts/optimization/kumo/large_v5_ctx50000_e8/fold2_oof.json",
+      "sha256": "4fae49261980470006ff389ac15d3e7257fe28538a3555799bfec1307796868c",
+      "declared_commit": "3c3e10bbdb590ace29e7026847f92db3c603096d",
+      "declared_sdm": "0.2.1"
+    }
+  ],
+  "source_sha256": "c1e42579d229fa5cfdd0bbef1ed4c00068c16d38d7acf361c4a11ba62ed424ce",
+  "model_loaded": false,
+  "gpu_used": false,
+  "network_used": false,
+  "limits": [
+    "Current loader/cache is pinned to the same revision/commit declared by the teammate.",
+    "Teammate weight files are absent: historical byte equality cannot be proven.",
+    "Equal package version does not prove equal runtime kernels or predictions.",
+    "This audit cannot identify the cause of a score difference or demonstrate a gain."
+  ]
+}

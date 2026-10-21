@@ -1,0 +1,26 @@
+{
+  "file": "submission_kumo_blend.csv",
+  "rows": 30000,
+  "kumo_variant": "large_v5_ctx50000_e8",
+  "kumo_weight": 0.25,
+  "v5_weight": 0.75,
+  "sha256": "056245bc9ac8fb1cc272c72b30335ad1500cee99a941302b62a84377d309f28b",
+  "baseline_test_source": "artifacts/optimization/v5/selection_test_tabm.parquet",
+  "baseline_test_models": "Three-fold selection models, matching the OOF comparison; not the ten-fold public V5 file.",
+  "validation": {
+    "name": "v5_plus_large_v5_ctx50000_e8_w0.25",
+    "ks": 0.52674350653084,
+    "auc": 0.8463288231061565,
+    "fold_ks": [
+      0.5111603490202359,
+      0.5379665693662864,
+      0.5388447579328834
+    ],
+    "mean_fold_ks": 0.5293238921064686,
+    "delta_pooled_vs_v5": 0.0014581653004572814,
+    "delta_mean_vs_v5": 0.0017999692455126226,
+    "fold_wins_vs_v5": 3
+  },
+  "public_score": null,
+  "replaces_default": false
+}

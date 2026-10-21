@@ -1,0 +1,21 @@
+{
+  "source_files": 10,
+  "download_sizes_verified": true,
+  "unique_selected_application_and_customer_ids": true,
+  "train_test_customer_overlap": 0,
+  "history_timestamps_before_decision": true,
+  "validation_probabilities_valid": true,
+  "independent_raw_spot_check_customers": 25,
+  "raw_spot_checks": [
+    "order counts",
+    "deduplicated completed spend",
+    "90-day completed spend",
+    "latest available bureau score",
+    "latest account balance"
+  ],
+  "standalone_report_charts": 6,
+  "source_and_report_api_key_scan": "passed",
+  "notebook_code_cells_verified": true,
+  "saved_notebook_executed_cells": 7,
+  "saved_notebook_errors": 0
+}

@@ -1,0 +1,19 @@
+{
+  "run_sha256": "914d95212fbc1646002d9a7a56b32d2285c742654785573b4c1a57a376e7d458",
+  "winner": "asym_n0.02_p0.7_cap64",
+  "smoke_only": true,
+  "baseline": {
+    "ks": 0.7742448449134827,
+    "auc": 0.9231584525702172
+  },
+  "selected": {
+    "ks": 0.7832538485527039,
+    "auc": 0.9236883942766295
+  },
+  "selection_sha256": "cd55c7ce4fd369c1a1848f7fb9a2c97afa559def5716fbdb76aefcf3cd992fd9",
+  "outer_rows": 128,
+  "outer_predictions": "results/v49/ssl_asymmetric_smoke/s42_f0_outer.parquet",
+  "outer_predictions_sha256": "07beafb5a2be8efd73b414061b16acda8565f22e8ccc8af6161ee3659bf4def3",
+  "evaluation_role": "untouched outer-only; never used for pseudo selection",
+  "delta_ks": 0.009009003639221191
+}

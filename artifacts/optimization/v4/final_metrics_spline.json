@@ -1,0 +1,183 @@
+{
+  "candidate": "spline",
+  "definition": {
+    "name": "spline",
+    "family": "spline",
+    "columns": [
+      "age",
+      "employment_tenure_months",
+      "declared_monthly_income",
+      "dependents",
+      "loan_amount",
+      "proposed_monthly_installment",
+      "annual_interest_rate",
+      "installment_observed_income_ratio",
+      "bureau_score_mean",
+      "v2_bureau_history_score_mean",
+      "v2_bureau_history_score_min",
+      "v2_bureau_history_score_max",
+      "bureau_utilization_max",
+      "bureau_inquiries_max",
+      "bureau_delinquent_accounts_max",
+      "bureau_debt_income_ratio",
+      "repayment_installment_count",
+      "repayment_loan_count",
+      "repayment_historical_dpd_mean",
+      "v3_repay_all_late_1_posterior_24",
+      "v3_repay_all_late_7_posterior_24",
+      "v3_repay_all_late_30_posterior_24",
+      "v3_repay_all_late_90_posterior_24",
+      "v3_repay_180d_late_1_posterior_24",
+      "v3_repay_all_fully_paid_share",
+      "v2_existing_total_burden_observed",
+      "v2_installment_disposable_income_ratio",
+      "v2_existing_future_installments",
+      "v2_existing_future_scheduled_amount",
+      "v2_account_3m_income_like_credits_mean",
+      "v2_account_3m_minimum_balance_min",
+      "v2_account_3m_average_balance_mean",
+      "v2_account_3m_outflows_mean",
+      "v3_cash_deficit_monthly_income_share",
+      "v3_income_after_installments_per_dependent",
+      "ecom_last_purchase_recency_days",
+      "v2_ecom_30d_orders",
+      "v2_ecom_60d_orders",
+      "v2_ecom_30d_spend",
+      "v2_ecom_60d_spend",
+      "v2_ecom_completed_per_observed_month",
+      "v3_ecom_category_entropy",
+      "v3_ecom_monthly_spend_cv",
+      "v4_price_all_mean",
+      "v4_price_all_equal_category_mean",
+      "v4_price_all_std",
+      "v4_price_180d_mean",
+      "v4_price_90d_mean",
+      "v4_bureau_all_equal_provider_mean_mean",
+      "v4_bureau_all_equal_provider_mean_std",
+      "v4_loan_late_1_mean",
+      "v4_weighted_late_1_365d",
+      "v4_last12_late_1_posterior",
+      "loan_purpose",
+      "region",
+      "employment_type",
+      "housing_status"
+    ],
+    "params": {
+      "C": 0.05,
+      "n_knots": 5,
+      "degree": 3
+    }
+  },
+  "feature_sha256": "d862150f52880bfe141668ef941e7ce378c6f6c3e121a61e5a2ef3ce016d3035",
+  "fold_count": 10,
+  "fold_seed": 9173,
+  "model_seed": "2026 + fold",
+  "metrics": {
+    "ks": 0.519884330175658,
+    "roc_auc": 0.8405501744665924,
+    "average_precision": 0.4945691169435489,
+    "log_loss": 0.29759406947067896
+  },
+  "fold_metrics": [
+    {
+      "fold": 1,
+      "candidate": "spline",
+      "ks": 0.5404871683340582,
+      "roc_auc": 0.8446411483253589,
+      "average_precision": 0.5071357100062756,
+      "log_loss": 0.29441732388866837
+    },
+    {
+      "fold": 2,
+      "candidate": "spline",
+      "ks": 0.5278990865593736,
+      "roc_auc": 0.8428015658982168,
+      "average_precision": 0.497655853231342,
+      "log_loss": 0.29583799966648816
+    },
+    {
+      "fold": 3,
+      "candidate": "spline",
+      "ks": 0.5163375380600261,
+      "roc_auc": 0.8359417137886037,
+      "average_precision": 0.4929588883946054,
+      "log_loss": 0.30030003243441417
+    },
+    {
+      "fold": 4,
+      "candidate": "spline",
+      "ks": 0.5197059624701809,
+      "roc_auc": 0.8403587665331791,
+      "average_precision": 0.494142036050107,
+      "log_loss": 0.29753042511959343
+    },
+    {
+      "fold": 5,
+      "candidate": "spline",
+      "ks": 0.5256627482638716,
+      "roc_auc": 0.8445365303578436,
+      "average_precision": 0.49755078405782116,
+      "log_loss": 0.29568235932556125
+    },
+    {
+      "fold": 6,
+      "candidate": "spline",
+      "ks": 0.5046512020045201,
+      "roc_auc": 0.8328597213190074,
+      "average_precision": 0.48126708878581187,
+      "log_loss": 0.30259179396128805
+    },
+    {
+      "fold": 7,
+      "candidate": "spline",
+      "ks": 0.5487312778102558,
+      "roc_auc": 0.8519199756492674,
+      "average_precision": 0.521905691856896,
+      "log_loss": 0.2889581488116586
+    },
+    {
+      "fold": 8,
+      "candidate": "spline",
+      "ks": 0.5373459891781089,
+      "roc_auc": 0.8430067870192238,
+      "average_precision": 0.5027383728726467,
+      "log_loss": 0.2952935198594005
+    },
+    {
+      "fold": 9,
+      "candidate": "spline",
+      "ks": 0.5040982345545031,
+      "roc_auc": 0.8285717464401742,
+      "average_precision": 0.4539100625922766,
+      "log_loss": 0.30881638257736777
+    },
+    {
+      "fold": 10,
+      "candidate": "spline",
+      "ks": 0.5117408670411409,
+      "roc_auc": 0.8407839656475274,
+      "average_precision": 0.5054580235186341,
+      "log_loss": 0.2965127090623489
+    }
+  ],
+  "baseline": {
+    "ks": 0.5190088512771254,
+    "roc_auc": 0.8418171822791967,
+    "average_precision": 0.4957139740720494,
+    "log_loss": 0.29705753424235787
+  },
+  "blends": {
+    "0.25": {
+      "ks": 0.5210472999482143,
+      "roc_auc": 0.8436148548654909,
+      "average_precision": 0.5000280005325652,
+      "log_loss": 0.29555864380002533
+    },
+    "0.5": {
+      "ks": 0.5223176114941445,
+      "roc_auc": 0.8439182314803912,
+      "average_precision": 0.5008058208550595,
+      "log_loss": 0.2951369817624275
+    }
+  }
+}

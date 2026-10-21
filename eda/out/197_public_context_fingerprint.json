@@ -1,0 +1,44 @@
+{
+  "submitted_file": "results/v31/kumo_only.csv",
+  "submitted_sha256": "7e93e41acebad33784c71328796bd8c78b3de0fc2967e5f5480db8a1ddb49221",
+  "historical_public_score": 0.56056,
+  "public_score_source": "handoff/04_riwayat_versi/v31_v35_submission.md (historical, not a new submission)",
+  "comparisons": [
+    {
+      "recipe": "56k fold ensemble",
+      "path": "results/v28m/test_kumo_large_c56000.parquet",
+      "sha256": "541c9673fcb481d8466054ba07e8a229a70c4460700a8d270919fdca311db7f1",
+      "spearman": 1.0,
+      "rank_order_exact_match": true,
+      "max_percentile_rank_difference": 0.0,
+      "max_raw_score_difference": 0.571429716149966,
+      "max_rank_score_difference": 0.0
+    },
+    {
+      "recipe": "70k single fit v30",
+      "path": "results/v30/v30/test_kumo_full70k.parquet",
+      "sha256": "5cedd99943e0f77471616a63f4e369092880cdc06eac519e75a1004c8474729f",
+      "spearman": 0.9986873036721389,
+      "rank_order_exact_match": false,
+      "max_percentile_rank_difference": 0.07268333333333334,
+      "max_raw_score_difference": 0.6118856654723486,
+      "max_rank_score_difference": 0.0726833298683166
+    },
+    {
+      "recipe": "70k production v34",
+      "path": "results/v34/test_kumo_full70k.parquet",
+      "sha256": "5cedd99943e0f77471616a63f4e369092880cdc06eac519e75a1004c8474729f",
+      "spearman": 0.9986873036721389,
+      "rank_order_exact_match": false,
+      "max_percentile_rank_difference": 0.07268333333333334,
+      "max_raw_score_difference": 0.6118856654723486,
+      "max_rank_score_difference": 0.0726833298683166
+    }
+  ],
+  "uses_56k_fold_ensemble_ranks": true,
+  "limits": [
+    "File equality/order supports recipe identity, not a causal explanation of public labels.",
+    "A pretraining context limit is not evidence that a particular competition score was caused by it.",
+    "No private/public target values are available; scores for other hypothetical exports are unknown."
+  ]
+}

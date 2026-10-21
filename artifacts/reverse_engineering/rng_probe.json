@@ -1,0 +1,187 @@
+{
+  "numpy_version": "1.24.1",
+  "age_stream": {
+    "seed_count_per_family": 10006,
+    "integer_support": [
+      23,
+      60
+    ],
+    "prefix_length": 12,
+    "stream_length": 512,
+    "strides": [
+      1,
+      16
+    ],
+    "families": [
+      "PCG64",
+      "MT19937_RandomState"
+    ],
+    "hits": [],
+    "elapsed_seconds": 28.036690350971185,
+    "inferred_generator_seed": null,
+    "limitations": "Only direct uniform integer streams and fixed offsets/strides. Unknown interleaved calls, shuffled rows, other RNGs and seeds outside the tested set are not ruled out."
+  },
+  "id_templates": {
+    "templates_tested": 6000,
+    "confirmed_three_row_matches": [],
+    "id_model_features_used": false,
+    "limitations": "Truncated hexadecimal IDs alone do not reveal an RNG or seed. Template search is intentionally bounded."
+  },
+  "per_customer_seed_probe": {
+    "customers": 1000,
+    "offsets": [
+      0,
+      127
+    ],
+    "results": [
+      {
+        "family": "PCG64",
+        "seed_mapping": "id_low32",
+        "best_offset": 27,
+        "age_match_fraction_at_best_offset": 0.038,
+        "all_rows_match": false
+      },
+      {
+        "family": "PCG64",
+        "seed_mapping": "id_high32",
+        "best_offset": 113,
+        "age_match_fraction_at_best_offset": 0.043,
+        "all_rows_match": false
+      },
+      {
+        "family": "PCG64",
+        "seed_mapping": "profile_index_zero",
+        "best_offset": 59,
+        "age_match_fraction_at_best_offset": 0.038,
+        "all_rows_match": false
+      },
+      {
+        "family": "PCG64",
+        "seed_mapping": "profile_index_one",
+        "best_offset": 31,
+        "age_match_fraction_at_best_offset": 0.04,
+        "all_rows_match": false
+      },
+      {
+        "family": "PCG64",
+        "seed_mapping": "id_uint64",
+        "best_offset": 117,
+        "age_match_fraction_at_best_offset": 0.04,
+        "all_rows_match": false
+      },
+      {
+        "family": "MT19937_RandomState",
+        "seed_mapping": "id_low32",
+        "best_offset": 10,
+        "age_match_fraction_at_best_offset": 0.041,
+        "all_rows_match": false
+      },
+      {
+        "family": "MT19937_RandomState",
+        "seed_mapping": "id_high32",
+        "best_offset": 82,
+        "age_match_fraction_at_best_offset": 0.045,
+        "all_rows_match": false
+      },
+      {
+        "family": "MT19937_RandomState",
+        "seed_mapping": "profile_index_zero",
+        "best_offset": 12,
+        "age_match_fraction_at_best_offset": 0.038,
+        "all_rows_match": false
+      },
+      {
+        "family": "MT19937_RandomState",
+        "seed_mapping": "profile_index_one",
+        "best_offset": 127,
+        "age_match_fraction_at_best_offset": 0.041,
+        "all_rows_match": false
+      }
+    ],
+    "null_single_offset_expected_match_fraction": 0.02631578947368421,
+    "max_offset_selection_inflates_null_match_rate": true,
+    "id_values_used_only_for_diagnostic_seed_hypotheses": true
+  },
+  "original_generator_seed_recovered": false,
+  "raw_identifier_stream_probe": {
+    "families_prefix_probe": [
+      "PCG64",
+      "PCG64DXSM",
+      "NumPy_RandomState_uint64",
+      "NumPy_RandomState_bytes",
+      "Python_random_getrandbits64"
+    ],
+    "seed_count_per_family": 10006,
+    "prefix_raw_outputs": 512,
+    "extra_long_stream_families": [
+      "PCG64",
+      "PCG64DXSM",
+      "NumPy_RandomState_uint64",
+      "NumPy_RandomState_bytes",
+      "Python_random_getrandbits64",
+      "Philox",
+      "SFC64"
+    ],
+    "extra_long_stream_seeds": [
+      0,
+      1,
+      7,
+      17,
+      42,
+      123,
+      1234,
+      2025,
+      2026,
+      20261010,
+      20260101,
+      20261013,
+      171327,
+      9173,
+      8247
+    ],
+    "long_stream_length": 1000000,
+    "first_id_exact_matches": [],
+    "any_three_ordered_id_match": false,
+    "limitations": "Only IDs formed directly from integer outputs or raw bytes. Hashes, UUIDs, separate cryptographic RNGs, other seeds and later call states are not ruled out."
+  },
+  "mt_state_clone_probe": {
+    "python_positive_control_passed": true,
+    "numpy_positive_control_passed": true,
+    "results": [
+      {
+        "encoding": "big",
+        "word_order": "low_high",
+        "fitting_words": 624,
+        "independent_test_words": 1376,
+        "matching_words": 0,
+        "all_test_words_match": false
+      },
+      {
+        "encoding": "big",
+        "word_order": "high_low",
+        "fitting_words": 624,
+        "independent_test_words": 1376,
+        "matching_words": 0,
+        "all_test_words_match": false
+      },
+      {
+        "encoding": "little",
+        "word_order": "low_high",
+        "fitting_words": 624,
+        "independent_test_words": 1376,
+        "matching_words": 0,
+        "all_test_words_match": false
+      },
+      {
+        "encoding": "little",
+        "word_order": "high_low",
+        "fitting_words": 624,
+        "independent_test_words": 1376,
+        "matching_words": 0,
+        "all_test_words_match": false
+      }
+    ],
+    "any_consecutive_mt_stream_detected": false,
+    "limitations": "Requires consecutive unmodified 32-bit MT outputs. Hashing, interleaved calls, row permutation or another RNG defeats this particular test."
+  }
+}

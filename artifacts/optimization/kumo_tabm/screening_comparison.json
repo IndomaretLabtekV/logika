@@ -1,0 +1,88 @@
+{
+  "plan": {
+    "candidates": [
+      "v5_tabm_weight1",
+      "v5_tabm_weight6_prior_corrected"
+    ],
+    "weights": [
+      0.25,
+      0.5
+    ],
+    "arithmetic": "float64",
+    "selection_rule": "Positive pooled/mean KS and at least 2/3 fold wins, followed by same-fold five-fold comparison.",
+    "reason": "Test neural TabM directly as a frozen-Kumo complement, rather than the older V5 ensemble."
+  },
+  "comparisons": [
+    {
+      "name": "frozen_baseline",
+      "ks": 0.5280675176537729,
+      "auc": 0.8473424615241696,
+      "mean_fold_ks": 0.5290713916543162,
+      "fold_ks": [
+        0.5124609319281908,
+        0.5370138734262919,
+        0.5377393696084658
+      ]
+    },
+    {
+      "name": "v5_tabm_weight1",
+      "weight": 0.25,
+      "ks": 0.5276096793342357,
+      "auc": 0.847190282003738,
+      "mean_fold_ks": 0.5291388637692039,
+      "fold_ks": [
+        0.5148759089671773,
+        0.5349621428677398,
+        0.537578539472695
+      ],
+      "delta_ks": -0.0004578383195371627,
+      "delta_mean_fold_ks": 6.747211488785283e-05,
+      "fold_wins": 1
+    },
+    {
+      "name": "v5_tabm_weight1",
+      "weight": 0.5,
+      "ks": 0.5268636650507116,
+      "auc": 0.8466840396439583,
+      "mean_fold_ks": 0.5286911456365327,
+      "fold_ks": [
+        0.5136719257667318,
+        0.5338135149145264,
+        0.53858799622834
+      ],
+      "delta_ks": -0.0012038526030613284,
+      "delta_mean_fold_ks": -0.0003802460177834144,
+      "fold_wins": 2
+    },
+    {
+      "name": "v5_tabm_weight6_prior_corrected",
+      "weight": 0.25,
+      "ks": 0.5276032996513026,
+      "auc": 0.8473293100573219,
+      "mean_fold_ks": 0.5287949270548614,
+      "fold_ks": [
+        0.5127853773738071,
+        0.5366939189526287,
+        0.5369054848381486
+      ],
+      "delta_ks": -0.00046421800247031797,
+      "delta_mean_fold_ks": -0.0002764645994546659,
+      "fold_wins": 1
+    },
+    {
+      "name": "v5_tabm_weight6_prior_corrected",
+      "weight": 0.5,
+      "ks": 0.5274192469289073,
+      "auc": 0.8472270056078666,
+      "mean_fold_ks": 0.529854274787711,
+      "fold_ks": [
+        0.5137138018103564,
+        0.537234234343076,
+        0.5386147882097003
+      ],
+      "delta_ks": -0.0006482707248656183,
+      "delta_mean_fold_ks": 0.0007828831333947702,
+      "fold_wins": 3
+    }
+  ]
+}

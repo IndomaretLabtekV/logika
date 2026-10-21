@@ -1,0 +1,87 @@
+{
+  "train_applications": {
+    "duplicate_rows": 0,
+    "duplicate_primary_keys": 0,
+    "orphan_customers": 0
+  },
+  "test_applications": {
+    "duplicate_rows": 0,
+    "duplicate_primary_keys": 0,
+    "orphan_customers": 0
+  },
+  "sample_submission": {
+    "duplicate_rows": 0,
+    "duplicate_primary_keys": 0
+  },
+  "submission": {
+    "same_id_set_as_test": true,
+    "same_row_order_as_test": false,
+    "target_column": "default_probability"
+  },
+  "customer_profiles": {
+    "duplicate_rows": 0,
+    "duplicate_primary_keys": 0,
+    "orphan_customers": 0
+  },
+  "applications": {
+    "train_test_customer_overlap": 0,
+    "train_test_application_overlap": 0,
+    "decision_before_application": 0,
+    "nonpositive_income": 0,
+    "installment_formula_max_rounding_difference_idr": 1.0,
+    "term_months_values": [
+      12
+    ]
+  },
+  "previous_applications": {
+    "duplicate_rows": 0,
+    "duplicate_primary_keys": 0,
+    "orphan_customers": 0,
+    "overlap_with_selected_application_ids": 0,
+    "application_datetime_at_or_after_cutoff": 0,
+    "decision_datetime_at_or_after_cutoff": 0
+  },
+  "repayment_history": {
+    "duplicate_rows": 0,
+    "duplicate_primary_keys": 0,
+    "orphan_customers": 0,
+    "loans_not_in_approved_history": 0,
+    "loan_customer_mismatches": 0,
+    "amount_paid_above_due": 0,
+    "max_dpd_below_current_dpd": 0,
+    "due_date_at_or_after_cutoff": 0,
+    "last_payment_datetime_at_or_after_cutoff": 0
+  },
+  "account_behavior": {
+    "duplicate_rows": 0,
+    "duplicate_primary_keys": 0,
+    "orphan_customers": 0,
+    "month_at_or_after_cutoff": 0,
+    "incomplete_month_at_cutoff": 0,
+    "balance_identity_mismatches": 0,
+    "negative_amount_cells": 0
+  },
+  "bureau_observations": {
+    "duplicate_rows": 0,
+    "duplicate_primary_keys": 0,
+    "orphan_customers": 0,
+    "unknown_application_ids": 0,
+    "availability_before_report": 0,
+    "score_out_of_range": 0,
+    "utilization_max_absolute_difference": 1.1102230246251565e-16,
+    "report_datetime_at_or_after_cutoff": 0,
+    "available_datetime_at_or_after_cutoff": 0
+  },
+  "ecommerce_transactions": {
+    "duplicate_rows": 0,
+    "duplicate_primary_keys": 0,
+    "orphan_customers": 0,
+    "inconsistent_order_fields": 0,
+    "order_total_mismatches": 0,
+    "orders": 2986855,
+    "items": 4359817,
+    "naive_completed_spend_idr": 2227626045000,
+    "correct_completed_spend_idr": 1280526569000,
+    "transaction_datetime_at_or_after_cutoff": 0
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "notebook": "notebooks/10_kumo_spline.ipynb",
+  "executed_code_cells": 59,
+  "errors": 0,
+  "notebook_sha256": "40387b146aecc70b04d0836dfb8963fed7c06dadff0ad8a5c6a458839aa9147e",
+  "existing_files_preserved": {
+    "analisis_logika.ipynb": "556f22c757857c4b5a97d2ca3989a8526af480af2e80acbfb5b4d831295f4e7a",
+    "submission.csv": "890e05a3f0b09500142395d5498e939928328b2770c509ca035f760a8dea8344",
+    "submission_v3.csv": "bfd1b620ddaa85cd45ea2e8ce2c4f2ce3bcab660f09657dfbaae74aaa59525db",
+    "submission_v4.csv": "890e05a3f0b09500142395d5498e939928328b2770c509ca035f760a8dea8344",
+    "submission_v5.csv": "2b97dcdc26f38cabc6ab1a3f3053903975b488a5480df8ff739415a7bc750526",
+    "submission_kumo.csv": "85ac74d1b4325eba4830fd1d31bb1c21b9b9a3a6fb180d48c0c9d4b921d59d40",
+    "submission_kumo_blend.csv": "056245bc9ac8fb1cc272c72b30335ad1500cee99a941302b62a84377d309f28b"
+  },
+  "exported_csv_matches_candidate": true,
+  "submission_file": "submission_kumo_spline_exploratory.csv",
+  "export_mode": "exploratory"
+}

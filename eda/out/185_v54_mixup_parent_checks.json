@@ -1,0 +1,35 @@
+{
+  "checks": [
+    {
+      "name": "clone8000",
+      "synthetic_rows": 8000,
+      "positive_rows": 1087,
+      "same_parent_rows": 8000,
+      "exact_anchor_feature_copies": 8000,
+      "max_formula_error": 0.0,
+      "parents_fit_only": true
+    },
+    {
+      "name": "mix2000",
+      "synthetic_rows": 2000,
+      "positive_rows": 272,
+      "same_parent_rows": 0,
+      "exact_anchor_feature_copies": 0,
+      "max_formula_error": 0.0,
+      "parents_fit_only": true
+    },
+    {
+      "name": "mix8000",
+      "synthetic_rows": 8000,
+      "positive_rows": 1087,
+      "same_parent_rows": 0,
+      "exact_anchor_feature_copies": 3,
+      "max_formula_error": 0.0,
+      "parents_fit_only": true
+    }
+  ],
+  "query_labels_used": false,
+  "score_predictions_read": false,
+  "gpu_used": false,
+  "synthetic_labels_are_assumptions": true
+}

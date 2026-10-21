@@ -1,0 +1,54 @@
+{
+  "config": {
+    "seed": 42,
+    "fold": 0,
+    "category_type": "numerical",
+    "chunk": 128,
+    "gpu_memory_fraction": 0.7,
+    "caps": [
+      64
+    ],
+    "positive_thresholds": "0.7,0.9",
+    "group_coalitions": 0,
+    "min_inner_gain": 0.003,
+    "smoke": true,
+    "smoke_fit": 512,
+    "smoke_query": 128,
+    "smoke_test": 512,
+    "model": "KumoTabular-large",
+    "estimators": 4,
+    "n_numeric": 100,
+    "context": "all-real-plus-capped-pseudo",
+    "pseudo_label": "teacher_probability>=0.5"
+  },
+  "config_sha256": "0a588ab62772fdaaa46b3e6d056381c365d5956a8624d3407de3dde29b16a5d5",
+  "sources_sha256": {
+    "156_kumo_ssl_context.py": "21ee03aa8404ff58bb66e968f68326f9e4256408b8388c195cfdf0c340df414c",
+    "ssl_policies.py": "ab1c0f69c89e1603db005fd614260107d689134954b375572763f19386f31796",
+    "152_vipcop_kumo.py": "67c3f1dab4f4663b4e9d2383c75977caee7cb80a6ba524c7b38dad6db23e93ba",
+    "154_kumo_recipe_audit.py": "c65ca3d1f4480818495abb9a00f5b3112b2fff0c3477263dff7cbcd63780eded",
+    "valid2.py": "3f1bfe40ae9e32d70577f537e6b7a29e2a103d7a423eb03026e62ab37d01f8fc",
+    "common.py": "679d20a7beb3d5e3946232d1dcea66f21b871ab1a41c8879e15d3d5a615f92e7"
+  },
+  "packages": {
+    "numpy": "2.5.4",
+    "pandas": "3.0.6",
+    "polars": "2.0.0",
+    "torch": "2.14.1",
+    "structured-data-models": "0.2.1",
+    "scikit-learn": "1.9.1",
+    "matplotlib": "3.11.2"
+  },
+  "packages_sha256": "9da243e8974281710b7ee25463168fcc6e47e023d08b6f92f409527d4e9d9fec",
+  "features_sha256": "bd7ca1d8d88c53f22cd1589e60ddf9bbb5686d1fb5f6e214ff251505f8b9b034",
+  "method": "Kumo teacher / hard-pseudo context SSL; nested search and disjoint confirmation",
+  "research_status": "new transductive SSL hypothesis; NOT VIP-COP sample-augmentation reproduction",
+  "smoke_only": true,
+  "external_data": false,
+  "assumptions": [
+    "Organizer test features are permitted for transductive SSL; test labels unavailable",
+    "Inherited valid2 stratified application folds, not customer-group folds",
+    "Confidence shells are not calibrated correctness probabilities",
+    "No OOM recovery that removes real rows; lower pseudo cap in a NEW experiment"
+  ]
+}

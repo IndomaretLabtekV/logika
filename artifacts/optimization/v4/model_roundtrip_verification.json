@@ -1,0 +1,12 @@
+{
+  "spline": {
+    "roundtrip_max_difference": 0.0,
+    "features": 57,
+    "fit_signature_present": true
+  },
+  "v4_cat5_balanced_500": {
+    "roundtrip_max_difference": 0.0,
+    "features": 501,
+    "fit_signature_present": true
+  }
+}

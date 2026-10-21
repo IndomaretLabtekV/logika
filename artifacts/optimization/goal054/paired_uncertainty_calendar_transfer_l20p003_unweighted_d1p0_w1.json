@@ -1,0 +1,26 @@
+{
+  "candidate": "calendar_transfer_l20p003_unweighted_d1p0",
+  "new_model_weight": 1.0,
+  "audited_report_sha256": "26e20e5b3033cfb70b3d625c0fd2ab23ac0f7c467bf9d7eb02ca31eed27c9435",
+  "point_baseline_ks": 0.5285099762252743,
+  "point_candidate_ks": 0.52917303028737,
+  "point_delta_ks": 0.0006630540620956582,
+  "repetitions": 300,
+  "seed": 192026,
+  "percentile_interval_95": {
+    "baseline_ks": [
+      0.521613682078414,
+      0.537968570605922
+    ],
+    "candidate_ks": [
+      0.5225416593860643,
+      0.5388574381880493
+    ],
+    "delta_ks": [
+      -0.0013321191800375692,
+      0.0026073191210654236
+    ]
+  },
+  "fraction_positive_delta": 0.7866666666666666,
+  "caveat": "Paired bootstrap conditional on fitted OOF predictions, stratified by fold and outcome. It omits retraining uncertainty and does not correct repeated model/feature/weight selection. The fraction is not a selection-corrected p-value."
+}

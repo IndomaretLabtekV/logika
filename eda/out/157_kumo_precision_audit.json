@@ -1,0 +1,16 @@
+{
+  "rows": 48000,
+  "numeric_features": 228,
+  "actual_table_dtype": "torch.float32",
+  "columns_with_added_ties": 99,
+  "max_abs_ks_delta": 0.0028752122391750845,
+  "monetary_max_abs_ks_delta": 0.0,
+  "monetary_log_max_abs_ks_delta": 0.0,
+  "features_sha256": "bd7ca1d8d88c53f22cd1589e60ddf9bbb5686d1fb5f6e214ff251505f8b9b034",
+  "source_sha256": "542ff4d33c5d0d358534b5889ac987d536dd86feb7eabccedbc74d1291b68cb8",
+  "limits": [
+    "No model inference and no improvement claim.",
+    "No new feature or fitted transform was created.",
+    "Cutoff and duplication follow unchanged cache; this audit only casts row values."
+  ]
+}

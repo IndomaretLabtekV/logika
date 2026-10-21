@@ -1,0 +1,11 @@
+# Python 3.11; install in a separate environment from the existing checkpoints.
+-r requirements-kumo.txt
+tabpfn==9.2.0
+interpret-core==0.7.8
+skrub==0.10.1
+lightgbm==4.6.0
+pydantic==2.12.4
+pydantic-settings==2.12.0
+einops==0.8.1
+safetensors==0.8.0
+huggingface-hub==2.2.0

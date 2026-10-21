@@ -1,0 +1,26 @@
+{
+  "removed": [
+    {
+      "path": "eda/__pycache__",
+      "bytes": 915509,
+      "reason": "Regenerable interpreter/editor cache"
+    },
+    {
+      "path": "scripts/__pycache__",
+      "bytes": 46154,
+      "reason": "Regenerable interpreter/editor cache"
+    },
+    {
+      "path": "results/v56/recovery_21okt1840/__pycache__",
+      "bytes": 1471,
+      "reason": "Regenerable interpreter cache, source files retained"
+    },
+    {
+      "path": "results/final/pipeline/__pycache__",
+      "bytes": 116437,
+      "reason": "Regenerable interpreter cache, source files retained"
+    }
+  ],
+  "bytes_removed": 1079571,
+  "research_data_or_models_deleted": false
+}

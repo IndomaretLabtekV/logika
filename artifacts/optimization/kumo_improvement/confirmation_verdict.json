@@ -1,0 +1,35 @@
+{
+  "selected": {
+    "name": "v5_fullcontext_e8",
+    "ks": 0.52704977130419,
+    "auc": 0.8471765384731023,
+    "fold_ks": [
+      0.5244844620692195,
+      0.5378192162598245,
+      0.5427150434654935,
+      0.5279080811994717,
+      0.5286248876377443
+    ],
+    "mean_fold_ks": 0.5323103381263508,
+    "delta_ks": -0.00017301303666572565,
+    "delta_mean_fold_ks": 0.0003265212700733322,
+    "fold_wins": 3,
+    "fold_deltas": [
+      0.0016839854298652535,
+      0.0004856914498869713,
+      -0.0004124312141821074,
+      0.00010708203370335401,
+      -0.0002317213489068104
+    ],
+    "components": [
+      {
+        "name": "v5_fullcontext_e8",
+        "weight": 1.0
+      }
+    ]
+  },
+  "passed": false,
+  "criterion": "Positive pooled and mean-fold KS deltas; at least 3/5 fold wins.",
+  "warning": "A second candidate is assessed on the same five splits after blend failure. This is repeated local model selection, not an untouched holdout.",
+  "prior_failed_confirmation": "confirmation_verdict_blend_failed.json"
+}

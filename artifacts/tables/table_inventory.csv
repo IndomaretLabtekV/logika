@@ -1,0 +1,10 @@
+table,rows,columns,customers,size_mb
+train_applications,70000,10,70000.0,8.218128
+test_applications,30000,9,30000.0,3.4625
+sample_submission,30000,2,,0.780036
+customer_profiles,100000,8,100000.0,6.415774
+previous_applications,201984,11,70000.0,26.68801
+repayment_history,1361341,9,66157.0,159.687932
+account_behavior,1084418,10,70000.0,99.958562
+bureau_observations,797563,14,100000.0,114.740593
+ecommerce_transactions,4359817,10,100000.0,528.846939

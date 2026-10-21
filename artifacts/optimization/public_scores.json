@@ -1,0 +1,20 @@
+[
+  {
+    "file": "submission_baseline_0_52623.csv",
+    "score": 0.52623,
+    "source": "Kaggle API"
+  },
+  {
+    "file": "submission_public_0_54710.csv",
+    "score": 0.5471,
+    "source": "Kaggle API confirmed",
+    "sha256": "a7240b5f276a80301012db7b98dd2c1caee214a79eb7a190c64b48930dc5d08a",
+    "submission_datetime": "2026-10-12T13:49:27.163Z"
+  },
+  {
+    "file": "submission_public_0_55845.csv",
+    "score": 0.55845,
+    "source": "Kaggle API confirmed",
+    "sha256": "bfd1b620ddaa85cd45ea2e8ce2c4f2ce3bcab660f09657dfbaae74aaa59525db"
+  }
+]

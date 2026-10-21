@@ -1,0 +1,48 @@
+{
+  "config": {
+    "seed": 42,
+    "fold": 0,
+    "steps": 2,
+    "episode_context": 512,
+    "episode_query": 64,
+    "optimizer": "SGD",
+    "lr": 0.01,
+    "momentum": 0,
+    "weight_decay": 0,
+    "foreach": false,
+    "amp": "float16",
+    "grad_scaler_initial_scale": 128.0,
+    "clip_norm": 1.0,
+    "estimators": 1,
+    "gpu_memory_fraction": 0.7
+  },
+  "sources_sha256": {
+    "187_kumo_sgd_preflight.py": "71fd136389faab7c521aa9c381c46347e980debc97614376e462858d4560eeaf",
+    "173_nested_kumo_inputs.py": "dd9da3e65a441593c2b0a2caa51203218b345a98a3716de2c6e008961d2c18f1",
+    "152_vipcop_kumo.py": "67c3f1dab4f4663b4e9d2383c75977caee7cb80a6ba524c7b38dad6db23e93ba",
+    "nested_input_pools.py": "bedb0c9d72aaf22c4888998b54f2edbbefedb482c89fca846585a8ab12243843",
+    "valid2.py": "3f1bfe40ae9e32d70577f537e6b7a29e2a103d7a423eb03026e62ab37d01f8fc",
+    "common.py": "679d20a7beb3d5e3946232d1dcea66f21b871ab1a41c8879e15d3d5a615f92e7"
+  },
+  "features_sha256": "bd7ca1d8d88c53f22cd1589e60ddf9bbb5686d1fb5f6e214ff251505f8b9b034",
+  "checkpoint": {
+    "repository": "nvidia/Kumo-Tabular",
+    "revision": "v1.0.1",
+    "snapshot_commit": "3c3e10bbdb590ace29e7026847f92db3c603096d",
+    "checkpoint_sha256": "cc21484316949641cc3d65a7bb6c36cdea854cc569435755ff23b850018ec613",
+    "model_loader_sha256": "1bdc0ebb4ed74d4025cd64412d6235bde236fb9e49e890e5fa8830c0a9b0e281",
+    "downloader_sha256": "271ff59eadc33c27df71cfe8e47bc496a5fea284f034d9f7f68463339f6a5e07"
+  },
+  "packages": {
+    "numpy": "2.5.4",
+    "pandas": "3.0.6",
+    "polars": "2.0.0",
+    "torch": "2.14.1",
+    "structured-data-models": "0.2.1",
+    "scikit-learn": "1.9.1"
+  },
+  "protocol_sha256": "0938cbdb4a62f33816771943fe7c1a0d4d136619a386b072ec4f26342d44fc57",
+  "small_episode_protocol_sha256": "11993f0d4671154bcc352983f0e54892a11c57abdb19cc9b7aea6c7afac876e1",
+  "model_quality_evaluated": false,
+  "heldout_labels_used_for_training": false
+}

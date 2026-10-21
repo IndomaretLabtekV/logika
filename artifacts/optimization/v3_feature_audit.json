@@ -1,0 +1,8 @@
+{
+  "future_due_rows": 0,
+  "future_payment_rows": 0,
+  "future_transaction_rows": 0,
+  "new_columns": 188,
+  "training_labels_used_for_features": false,
+  "repayment_priors": "Global historical late-event frequency among training customers only; no target labels."
+}

@@ -1,0 +1,306 @@
+{
+  "run_sha256": "1c932086610552419ca5fbe1afae554bb7bd333a0536938da78732a5c744b6ab",
+  "winner": "noSSL",
+  "policy": {
+    "kind": "none",
+    "cap": 0
+  },
+  "reason": "no inner-search challenger exceeds the predetermined KS gain gate",
+  "min_inner_gain": 0.003,
+  "search": [
+    {
+      "name": "noSSL",
+      "policy": {
+        "kind": "none",
+        "cap": 0
+      },
+      "ks": 0.5460765361785889,
+      "auc": 0.8494135527722597,
+      "n_pseudo": 0
+    },
+    {
+      "name": "confidence_0.02_cap2000",
+      "policy": {
+        "kind": "confidence",
+        "threshold": 0.02,
+        "cap": 2000
+      },
+      "ks": 0.5448421835899353,
+      "auc": 0.8493789258296216,
+      "n_pseudo": 2000,
+      "pseudo_positive": 0,
+      "pseudo_negative": 2000
+    },
+    {
+      "name": "confidence_0.02_cap10000",
+      "policy": {
+        "kind": "confidence",
+        "threshold": 0.02,
+        "cap": 10000
+      },
+      "ks": 0.5450254082679749,
+      "auc": 0.8494809421298553,
+      "n_pseudo": 7144,
+      "pseudo_positive": 0,
+      "pseudo_negative": 7144
+    },
+    {
+      "name": "confidence_0.05_cap2000",
+      "policy": {
+        "kind": "confidence",
+        "threshold": 0.05,
+        "cap": 2000
+      },
+      "ks": 0.5449966788291931,
+      "auc": 0.8494063610226348,
+      "n_pseudo": 2000,
+      "pseudo_positive": 2,
+      "pseudo_negative": 1998
+    },
+    {
+      "name": "confidence_0.05_cap10000",
+      "policy": {
+        "kind": "confidence",
+        "threshold": 0.05,
+        "cap": 10000
+      },
+      "ks": 0.5430005788803101,
+      "auc": 0.8492500070585691,
+      "n_pseudo": 10000,
+      "pseudo_positive": 6,
+      "pseudo_negative": 9994
+    },
+    {
+      "name": "asym_n0.02_p0.7_cap2000",
+      "policy": {
+        "kind": "asymmetric",
+        "negative_threshold": 0.02,
+        "positive_threshold": 0.7,
+        "cap": 2000
+      },
+      "ks": 0.5445528626441956,
+      "auc": 0.8494124873278708,
+      "n_pseudo": 2000,
+      "pseudo_positive": 129,
+      "pseudo_negative": 1871
+    },
+    {
+      "name": "asym_n0.02_p0.7_cap10000",
+      "policy": {
+        "kind": "asymmetric",
+        "negative_threshold": 0.02,
+        "positive_threshold": 0.7,
+        "cap": 10000
+      },
+      "ks": 0.5453343391418457,
+      "auc": 0.8493419016371085,
+      "n_pseudo": 7609,
+      "pseudo_positive": 465,
+      "pseudo_negative": 7144
+    },
+    {
+      "name": "asym_n0.02_p0.9_cap2000",
+      "policy": {
+        "kind": "asymmetric",
+        "negative_threshold": 0.02,
+        "positive_threshold": 0.9,
+        "cap": 2000
+      },
+      "ks": 0.5445528626441956,
+      "auc": 0.849315265527387,
+      "n_pseudo": 2000,
+      "pseudo_positive": 21,
+      "pseudo_negative": 1979
+    },
+    {
+      "name": "asym_n0.02_p0.9_cap10000",
+      "policy": {
+        "kind": "asymmetric",
+        "negative_threshold": 0.02,
+        "positive_threshold": 0.9,
+        "cap": 10000
+      },
+      "ks": 0.5446786284446716,
+      "auc": 0.849470820408161,
+      "n_pseudo": 7187,
+      "pseudo_positive": 43,
+      "pseudo_negative": 7144
+    },
+    {
+      "name": "asym_n0.05_p0.7_cap2000",
+      "policy": {
+        "kind": "asymmetric",
+        "negative_threshold": 0.05,
+        "positive_threshold": 0.7,
+        "cap": 2000
+      },
+      "ks": 0.544369637966156,
+      "auc": 0.8492713159463464,
+      "n_pseudo": 2000,
+      "pseudo_positive": 70,
+      "pseudo_negative": 1930
+    },
+    {
+      "name": "asym_n0.05_p0.7_cap10000",
+      "policy": {
+        "kind": "asymmetric",
+        "negative_threshold": 0.05,
+        "positive_threshold": 0.7,
+        "cap": 10000
+      },
+      "ks": 0.5445725917816162,
+      "auc": 0.8491629069797795,
+      "n_pseudo": 10000,
+      "pseudo_positive": 351,
+      "pseudo_negative": 9649
+    },
+    {
+      "name": "asym_n0.05_p0.9_cap2000",
+      "policy": {
+        "kind": "asymmetric",
+        "negative_threshold": 0.05,
+        "positive_threshold": 0.9,
+        "cap": 2000
+      },
+      "ks": 0.5432125329971313,
+      "auc": 0.8493546869697749,
+      "n_pseudo": 2000,
+      "pseudo_positive": 8,
+      "pseudo_negative": 1992
+    },
+    {
+      "name": "asym_n0.05_p0.9_cap10000",
+      "policy": {
+        "kind": "asymmetric",
+        "negative_threshold": 0.05,
+        "positive_threshold": 0.9,
+        "cap": 10000
+      },
+      "ks": 0.5436275005340576,
+      "auc": 0.8492841012790127,
+      "n_pseudo": 10000,
+      "pseudo_positive": 32,
+      "pseudo_negative": 9968
+    }
+  ],
+  "confirmation": [
+    {
+      "name": "noSSL",
+      "policy": {
+        "kind": "none",
+        "cap": 0
+      },
+      "ks": 0.4929044246673584,
+      "auc": 0.8315633638423333
+    }
+  ],
+  "inner_columns": [
+    "pp_mean",
+    "pp_90",
+    "rp_frac_dpd1",
+    "pp_30",
+    "ec_accel_30d",
+    "rp_frac_dpd30",
+    "ec_accel_90d",
+    "ec2_ewm28_exc",
+    "ec2_ewm7_rel",
+    "ec2_ewm56_rel",
+    "ec_orders_14d",
+    "ec_spend_30d",
+    "pp_old",
+    "ec_spend_90d",
+    "ec_orders_60d",
+    "ec2_gap_min_28",
+    "pp_cat_groceries",
+    "rp_maxdpd_max",
+    "ec_recency_d",
+    "ec_orders_7d",
+    "rp_maxdpd_12m",
+    "sv_maxdpd_mean_late",
+    "ec_spend_90d_ratio",
+    "rp_n_dpd60",
+    "rp_frac_dpd1_6m",
+    "sv_late_d_mean",
+    "rp_maxdpd_last3",
+    "ec_orders_90d",
+    "rq_lastloan_late",
+    "rp_n_dpd30",
+    "bc_score_mean",
+    "pp_cat_fashion",
+    "rp_maxdpd_6m",
+    "rq_streak_max",
+    "rp_n_dpd90",
+    "bz_newest",
+    "rp_paid_ratio",
+    "ec2_items_per_order_28",
+    "pp_cat_personal_care",
+    "annual_interest_rate",
+    "bp_score_a",
+    "pp_min",
+    "rq_first_inst_late",
+    "pp_max",
+    "rp_days_since_delinq",
+    "sv_share30_of_late",
+    "pp_cat_home",
+    "rq_lastloan_maxdpd",
+    "ec2_aov_shift",
+    "pp_cat_health",
+    "ec_aov",
+    "bh_score_mean",
+    "bh_last_score",
+    "bp_score_c",
+    "bp_score_b",
+    "rq_frac_1_29",
+    "pp_cat_education",
+    "ec2_base",
+    "ec_spend_per_month",
+    "ec2_night_share_90",
+    "pv_rate_mean",
+    "pp_cat_electronics",
+    "pv_rate_last",
+    "pv_rate_max",
+    "ec_spend",
+    "pp_qty_item_90",
+    "cf_out_l3",
+    "ec_cancel_90d",
+    "ac_out_in_delta",
+    "ac_out_in_l1",
+    "cf_inst_to_free",
+    "ac_out_in_l3",
+    "bp_out_a",
+    "rq_late_trend",
+    "cf_out_to_inc_l3",
+    "ec_base_wk",
+    "debt_to_income",
+    "ecspend_to_income",
+    "bh_inq_mean",
+    "bh_last_outstanding",
+    "dti_total",
+    "bh_delinq_max",
+    "ec2_cancel_28",
+    "ob_remaining",
+    "cf_free_min",
+    "bz_delinq_all_mean",
+    "bp_out_b",
+    "bp_out_c",
+    "pv_days_since_last",
+    "pv_rej_rate",
+    "bz_trend",
+    "dti_verified",
+    "ec_pm_COD",
+    "bc_active_max",
+    "pv_n_180d",
+    "bc_util_mean",
+    "bh_pulls_180d",
+    "inst_to_avgbal",
+    "dti_declared",
+    "ac_bal_trend",
+    "loan_purpose",
+    "region",
+    "employment_type",
+    "housing_status"
+  ],
+  "outer_seen": false,
+  "pseudo_cap_fixed_before_outer": 0,
+  "outer_feature_policy": "refit fm_select and categorical vocabulary on outer-train only"
+}

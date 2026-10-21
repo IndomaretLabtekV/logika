@@ -1,0 +1,115 @@
+{
+  "parameters": {
+    "C": 0.05,
+    "n_knots": 5,
+    "degree": 3,
+    "feature_columns": [
+      "age",
+      "employment_tenure_months",
+      "declared_monthly_income",
+      "dependents",
+      "loan_amount",
+      "proposed_monthly_installment",
+      "annual_interest_rate",
+      "installment_observed_income_ratio",
+      "bureau_score_mean",
+      "v2_bureau_history_score_mean",
+      "v2_bureau_history_score_min",
+      "v2_bureau_history_score_max",
+      "bureau_utilization_max",
+      "bureau_inquiries_max",
+      "bureau_delinquent_accounts_max",
+      "bureau_debt_income_ratio",
+      "repayment_installment_count",
+      "repayment_loan_count",
+      "repayment_historical_dpd_mean",
+      "v3_repay_all_late_1_posterior_24",
+      "v3_repay_all_late_7_posterior_24",
+      "v3_repay_all_late_30_posterior_24",
+      "v3_repay_all_late_90_posterior_24",
+      "v3_repay_180d_late_1_posterior_24",
+      "v3_repay_all_fully_paid_share",
+      "v2_existing_total_burden_observed",
+      "v2_installment_disposable_income_ratio",
+      "v2_existing_future_installments",
+      "v2_existing_future_scheduled_amount",
+      "v2_account_3m_income_like_credits_mean",
+      "v2_account_3m_minimum_balance_min",
+      "v2_account_3m_average_balance_mean",
+      "v2_account_3m_outflows_mean",
+      "v3_cash_deficit_monthly_income_share",
+      "v3_income_after_installments_per_dependent",
+      "ecom_last_purchase_recency_days",
+      "v2_ecom_30d_orders",
+      "v2_ecom_60d_orders",
+      "v2_ecom_30d_spend",
+      "v2_ecom_60d_spend",
+      "v2_ecom_completed_per_observed_month",
+      "v3_ecom_category_entropy",
+      "v3_ecom_monthly_spend_cv",
+      "v4_price_all_mean",
+      "v4_price_all_equal_category_mean",
+      "v4_price_all_std",
+      "v4_price_180d_mean",
+      "v4_price_90d_mean",
+      "v4_bureau_all_equal_provider_mean_mean",
+      "v4_bureau_all_equal_provider_mean_std",
+      "v4_loan_late_1_mean",
+      "v4_weighted_late_1_365d",
+      "v4_last12_late_1_posterior",
+      "loan_purpose",
+      "region",
+      "employment_type",
+      "housing_status"
+    ]
+  },
+  "metrics": {
+    "ks": 0.5185483908366115,
+    "roc_auc": 0.8399284327203341,
+    "average_precision": 0.4932694112554307,
+    "log_loss": 0.29803986786030473
+  },
+  "folds": [
+    {
+      "fold": 1,
+      "ks": 0.5021881406449803,
+      "roc_auc": 0.8355425267575948,
+      "average_precision": 0.48317257855975826,
+      "log_loss": 0.3012675908493182
+    },
+    {
+      "fold": 2,
+      "ks": 0.5284966837724288,
+      "roc_auc": 0.8415862912442365,
+      "average_precision": 0.49874557889611076,
+      "log_loss": 0.2969471865417718
+    },
+    {
+      "fold": 3,
+      "ks": 0.528654994335186,
+      "roc_auc": 0.8427677988427993,
+      "average_precision": 0.49889279015052745,
+      "log_loss": 0.29590468785686297
+    }
+  ],
+  "baseline": {
+    "ks": 0.5196953983607824,
+    "roc_auc": 0.8412413276500286,
+    "average_precision": 0.4945409578795754,
+    "log_loss": 0.2976465869019474
+  },
+  "blends": {
+    "0.25": {
+      "ks": 0.5231263845392125,
+      "roc_auc": 0.8432300047091589,
+      "average_precision": 0.49902453274888375,
+      "log_loss": 0.29593580280182713
+    },
+    "0.5": {
+      "ks": 0.5231919253919781,
+      "roc_auc": 0.8435480603328684,
+      "average_precision": 0.49995174260101627,
+      "log_loss": 0.2954346662040787
+    }
+  }
+}

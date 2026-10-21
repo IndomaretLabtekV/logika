@@ -1,0 +1,3 @@
+threshold,negative_candidates,positive_candidates,eligible,teacher_positive_fraction_in_tail,lgb_hard_agreement_in_tail,cat_hard_agreement_in_tail
+0.02,7058,1,7059,0.00014166312508853945,1.0,1.0
+0.05,12725,8,12733,0.0006282886986570329,1.0,1.0

@@ -1,0 +1,17 @@
+feature,label,current_float_code,inner_count,inner_vocab_code
+loan_purpose,education,0.0,9527,0
+loan_purpose,home_improvement,1.0,9631,1
+loan_purpose,household,2.0,9616,2
+loan_purpose,medical,3.0,9631,3
+loan_purpose,working_capital,4.0,9595,4
+region,Region_A,0.0,9524,0
+region,Region_B,1.0,9596,1
+region,Region_C,2.0,9549,2
+region,Region_D,3.0,9625,3
+region,Region_E,4.0,9706,4
+employment_type,salaried,0.0,23006,0
+employment_type,self_employed,1.0,14293,1
+employment_type,variable_income,2.0,10701,2
+housing_status,family,0.0,13932,0
+housing_status,owned,1.0,13444,1
+housing_status,rented,2.0,20624,2

@@ -1,0 +1,24 @@
+{
+  "variant": "large_v5_ctx50000_e8",
+  "file": "submission_kumo.csv",
+  "rows": 30000,
+  "sha256": "85ac74d1b4325eba4830fd1d31bb1c21b9b9a3a6fb180d48c0c9d4b921d59d40",
+  "test_ensemble": "Mean of the same three Kumo fold models used for OOF.",
+  "validation": {
+    "name": "large_v5_ctx50000_e8",
+    "ks": 0.5280675176537729,
+    "auc": 0.8473424615241696,
+    "fold_ks": [
+      0.5124609319281908,
+      0.5370138734262919,
+      0.5377393696084658
+    ],
+    "mean_fold_ks": 0.5290713916543162,
+    "delta_pooled_vs_v5": 0.0027821764233901813,
+    "delta_mean_vs_v5": 0.0015474687933602072,
+    "fold_wins_vs_v5": 3
+  },
+  "public_score": 0.56262,
+  "replaces_default": false,
+  "public_score_verified_via_kaggle_api": true
+}

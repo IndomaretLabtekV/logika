@@ -1,0 +1,93 @@
+{
+  "file": "submission_v2.csv",
+  "sha256": "12c28ca24cce695a107a78b948aa48d47e0053f0993e4a3809006d6a8ba97d00",
+  "metric": "Kolmogorov-Smirnov statistic (KS), supplied by user from Evaluation",
+  "recipe": {
+    "extended/lgb_leaves31": 1.0
+  },
+  "confirmation": {
+    "tune": {
+      "recipe": {
+        "extended/lgb_leaves31": 1.0
+      },
+      "ks": 0.5109317777068152,
+      "roc_auc": 0.8308957887477159,
+      "average_precision": 0.4666204981172158,
+      "log_loss": 0.30579274672508844
+    },
+    "members": {
+      "extended/xgb_depth3": {
+        "ks": 0.521270359381775,
+        "roc_auc": 0.8379791390029606,
+        "average_precision": 0.48850687299238665,
+        "log_loss": 0.299390009868116
+      },
+      "extended/lgb_leaves31": {
+        "ks": 0.5170306056595906,
+        "roc_auc": 0.8379830892222966,
+        "average_precision": 0.4883648089372653,
+        "log_loss": 0.2995285704536943
+      },
+      "compact/cat_depth5": {
+        "ks": 0.5249301263227288,
+        "roc_auc": 0.8358597072370049,
+        "average_precision": 0.4854401166902961,
+        "log_loss": 0.301034038286133
+      },
+      "old_baseline": {
+        "ks": 0.5067069577911553,
+        "roc_auc": 0.830195829898103,
+        "average_precision": 0.4704869876338473,
+        "log_loss": 0.3048451741123258
+      },
+      "locked_recipe": {
+        "ks": 0.5170306056595906,
+        "roc_auc": 0.8379830892222966,
+        "average_precision": 0.4883648089372653,
+        "log_loss": 0.2995285704536943
+      }
+    },
+    "ks_difference": 0.010323647868435315,
+    "paired_bootstrap_95_interval": [
+      -0.0014966414372834178,
+      0.018840781151979118
+    ],
+    "validation_rows": 17500,
+    "protocol": "Parameters and ensemble weights selected on separate 10,500-row tuning set. Confirmation has 17,500 rows and was not used for tuning."
+  },
+  "temporal": {
+    "old_baseline": {
+      "ks": 0.4861227544590523,
+      "roc_auc": 0.8257613032411806,
+      "average_precision": 0.47016442093967714,
+      "log_loss": 0.31483750213451805
+    },
+    "new_recipe": {
+      "ks": 0.5038081844135489,
+      "roc_auc": 0.8357089321976355,
+      "average_precision": 0.4933212064497929,
+      "log_loss": 0.30868108845945536
+    },
+    "validation_rows": 17587
+  },
+  "train_rows": 70000,
+  "test_rows": 30000,
+  "old_public_score": 0.52623,
+  "new_public_score": null,
+  "probability_summary": {
+    "count": 30000.0,
+    "mean": 0.13454778059108502,
+    "std": 0.16806728469492827,
+    "min": 0.002186262325,
+    "25%": 0.0239429702695,
+    "50%": 0.0608486836775,
+    "75%": 0.176052965621,
+    "max": 0.924797558689
+  },
+  "checks": {
+    "sample_id_order": true,
+    "no_missing": true,
+    "unique_ids": true,
+    "valid_probability_range": true
+  }
+}

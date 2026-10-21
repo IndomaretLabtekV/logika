@@ -1,0 +1,13 @@
+{
+  "created_at_utc": "2026-10-19T04:10:49.913565+00:00",
+  "relational_candidate": "kumo_relational_v5_e8_ctx50000_h1_readout_b8192",
+  "correction_candidate": "kumo_offset_l20p003_unweighted_d0p5",
+  "relational_weights": [
+    0.25,
+    0.5,
+    0.75
+  ],
+  "relational_fold_scores_observed_at_freeze": false,
+  "rationale": "Combine relational histories with the improved matching-fold context correction; fixed scalar weights, no supervised OOF stacking.",
+  "caveat": "Selection reuses the same labels/folds, so OOF selection optimism remains."
+}

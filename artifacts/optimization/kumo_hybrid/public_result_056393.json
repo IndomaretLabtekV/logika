@@ -1,0 +1,13 @@
+{
+  "file": "submission_kumo_spline_exploratory.csv",
+  "sha256": "3de98287976a7137ad63c946e9932b6ac3ba3a7ee6df607d74cde1aa6a8fc417",
+  "public_score": 0.56393,
+  "source": "User-reported Kaggle result in this conversation",
+  "reported_date": "2026-10-18",
+  "api_verified": false,
+  "previous_best_public_score": 0.56262,
+  "public_delta": 0.00131,
+  "validation_pooled_ks": 0.5285099762252743,
+  "validation_mean_fold_ks": 0.5309545883623841,
+  "note": "This receipt records feedback after export. Original export and validation metadata remain historical records. The same bytes are preserved as a public checkpoint; no new candidate inherits this score."
+}

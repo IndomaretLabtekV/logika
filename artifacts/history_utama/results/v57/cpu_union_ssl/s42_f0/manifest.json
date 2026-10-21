@@ -1,0 +1,23 @@
+{
+  "seed": 42,
+  "fold": 0,
+  "sources_sha256": {
+    "204_cpu_union_soft_ssl.py": "07f6d33234774e1a6d55e4272877e218f38063f90a6ffaccef028c7250780735",
+    "valid2.py": "3f1bfe40ae9e32d70577f537e6b7a29e2a103d7a423eb03026e62ab37d01f8fc",
+    "common.py": "679d20a7beb3d5e3946232d1dcea66f21b871ab1a41c8879e15d3d5a615f92e7",
+    "173_nested_kumo_inputs.py": "dd9da3e65a441593c2b0a2caa51203218b345a98a3716de2c6e008961d2c18f1",
+    "nested_input_pools.py": "bedb0c9d72aaf22c4888998b54f2edbbefedb482c89fca846585a8ab12243843",
+    "teammate_feature_adapter.py": "4fe88267e65ae3d66ba9c4e67844f777ca244a18bde7ca23af731e77f26847cc"
+  },
+  "protocol_sha256": "4bfd86ca975213e80735b267c386ad4f2fa37bfaae82dacd5c6db9985cfb1bd5",
+  "features_sha256": "bd7ca1d8d88c53f22cd1589e60ddf9bbb5686d1fb5f6e214ff251505f8b9b034",
+  "packages": {
+    "lightgbm": "4.7.0",
+    "pandas": "3.0.6",
+    "polars": "2.0.0",
+    "numpy": "2.5.4",
+    "scikit-learn": "1.9.1"
+  },
+  "outer_recipe": "0.75*v31+0.25*rank(union_policy); no outer selection",
+  "gpu_used": false
+}

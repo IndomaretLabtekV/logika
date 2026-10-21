@@ -1,0 +1,15 @@
+table,timestamp,split,rows,customers,missing_timestamp_rows,after_cutoff_rows,median_last_gap_days
+previous_applications,decision_datetime,train,141455,49000,0,0,177.20833333333331
+previous_applications,decision_datetime,test,60529,21000,0,0,178.08333333333331
+repayment_history,due_date,train,952493,46312,0,0,15.291666666666666
+repayment_history,due_date,test,408848,19845,0,0,15.25
+repayment_history,last_payment_datetime,train,952493,46312,22258,0,16.041666666666664
+repayment_history,last_payment_datetime,test,408848,19845,9456,0,15.291666666666666
+bureau_observations,available_datetime,train,558200,70000,0,0,0.05277777777777778
+bureau_observations,available_datetime,test,239363,30000,0,0,0.05555555555555555
+bureau_observations,report_datetime,train,558200,70000,0,0,28.05763888888889
+bureau_observations,report_datetime,test,239363,30000,0,0,28.242013888888888
+ecommerce_transactions,transaction_datetime,train,3049631,70000,0,0,11.11111111111111
+ecommerce_transactions,transaction_datetime,test,1310186,30000,0,0,11.075347222222222
+account_behavior,month + 1 month,train,759392,49000,0,0,14.380902777777777
+account_behavior,month + 1 month,test,325026,21000,0,0,13.835763888888888

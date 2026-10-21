@@ -1,0 +1,12 @@
+{
+  "date": "2026-10-18",
+  "initial_preflight": "Passed: fast model, 1024 training rows, 32 query rows, one estimator",
+  "checkpoint_loading": "TabPFN 9.2 resolves Hub snapshot symlinks to extensionless blob names and then misidentifies SafeTensors as a torch pickle. Materializing the same checksum-verified bytes with a .safetensors suffix resolves this without enabling pickle deserialization.",
+  "original_large_context_execution": "Stopped during first-fold inference before any complete OOF fold was saved. No scores or partial queries are used for selection.",
+  "original_fit_mode": "fit_preprocessors",
+  "new_fit_mode": "fit_with_cache",
+  "cache_location": "CPU between queries; move per-estimator cache to GPU for inference",
+  "kv_cache_precision": "auto (unquantized)",
+  "reason": "Avoid recomputing the transformer context for every prediction batch. Keep all data, split seeds, features, pretrained weights, and estimator counts fixed.",
+  "new_candidate_names": "Include _cache_ to keep the aborted execution definition separate."
+}

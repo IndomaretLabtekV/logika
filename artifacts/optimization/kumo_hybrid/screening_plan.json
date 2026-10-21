@@ -1,0 +1,14 @@
+{
+  "baseline": "Frozen Kumo Large, 90 features, original three folds seed 8247",
+  "candidates": [
+    "reverse_spline",
+    "reverse_cat5_prior_corrected"
+  ],
+  "weights": [
+    0.25,
+    0.5
+  ],
+  "rule": "Positive pooled/mean KS and at least 2/3 fold wins; confirm a fixed recipe against matching five-fold Kumo.",
+  "cat_probability_correction": "Invert positive class weight 6: p/(6-5p).",
+  "scope": "Reuse existing honest OOF predictions; no new training labels or test feedback."
+}

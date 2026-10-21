@@ -1,8 +1,0 @@
-stack_fit: gb_stk sd context 1.534 query 1.525
-/home/veinsan/Projects/logika/eda/valid2.py:273: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
-  preds, _ = base(X.assign(gb_stk=g), y, tr, fi, st, [r.assign(gb_stk=q) for r, q in zip(rest, gq)], seed)
-/home/veinsan/Projects/logika/.venv/lib/python3.13/site-packages/sdm/tensor/string.py:502: RuntimeWarning: Falling back to a CPU-based string sort because cuDF is not installed. Install cuDF to enable faster CUDA-based string sorting without device synchronization. This warning will be suppressed for the remainder of this process.
-  warn_once(
-{'model': 'stk_kumo_large_c56000', 'seed': 42, 'fold': 0, 'ks': 0.525823175907135, 'budget': 638, 'sec': 1321.9}
-stk_kumo_large_c56000: OOF KS 0.52582 on 14000 rows
-done in 1324s

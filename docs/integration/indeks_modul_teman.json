@@ -1,0 +1,1943 @@
+[
+  {
+    "path": "scripts/analyze.py",
+    "functions": [
+      "safe_ratio",
+      "read",
+      "build_features",
+      "main",
+      "inspect",
+      "at_cutoff",
+      "attach"
+    ],
+    "imports": [
+      "from __future__ import annotations",
+      "import argparse",
+      "import gc",
+      "import json",
+      "from pathlib import Path",
+      "import numpy as np",
+      "import pandas as pd",
+      "from reporting import make_report"
+    ],
+    "path_literals": [
+      "data/processed",
+      "sample_submission",
+      "submission"
+    ]
+  },
+  {
+    "path": "scripts/blend_relational054.py",
+    "functions": [
+      "audit_blend",
+      "run"
+    ],
+    "imports": [
+      "from __future__ import annotations",
+      "import json",
+      "import numpy as np",
+      "import pandas as pd",
+      "from sklearn.model_selection import StratifiedKFold",
+      "import research_goal054 as r"
+    ],
+    "path_literals": []
+  },
+  {
+    "path": "scripts/build_features_v3.py",
+    "functions": [
+      "ratio",
+      "main"
+    ],
+    "imports": [
+      "from __future__ import annotations",
+      "import json",
+      "from pathlib import Path",
+      "import numpy as np",
+      "import pandas as pd"
+    ],
+    "path_literals": [
+      "artifacts/optimization/v3_feature_audit.json",
+      "data/processed/application_features_extended.parquet",
+      "data/processed/application_features_v3.parquet",
+      "data/processed/bureau_latest.parquet"
+    ]
+  },
+  {
+    "path": "scripts/build_features_v4.py",
+    "functions": [
+      "main"
+    ],
+    "imports": [
+      "from __future__ import annotations",
+      "import json",
+      "from pathlib import Path",
+      "import numpy as np",
+      "import pandas as pd"
+    ],
+    "path_literals": [
+      "artifacts/optimization/v4",
+      "data/bureau_observations.csv",
+      "data/ecommerce_transactions.csv",
+      "data/processed/application_features_v3.parquet",
+      "data/processed/application_features_v4.parquet",
+      "data/repayment_history.csv"
+    ]
+  },
+  {
+    "path": "scripts/build_features_v5.py",
+    "functions": [
+      "main"
+    ],
+    "imports": [
+      "from __future__ import annotations",
+      "import json",
+      "import numpy as np",
+      "import pandas as pd",
+      "from optimize_ks import ROOT, OUT"
+    ],
+    "path_literals": [
+      "data/ecommerce_transactions.csv",
+      "data/processed/application_features_v4.parquet",
+      "data/processed/application_features_v5.parquet"
+    ]
+  },
+  {
+    "path": "scripts/build_finetune_pilot_notebook.py",
+    "functions": [
+      "build",
+      "main",
+      "md",
+      "code"
+    ],
+    "imports": [
+      "import argparse",
+      "import ast",
+      "import copy",
+      "import hashlib",
+      "import json",
+      "from pathlib import Path",
+      "import pprint",
+      "import nbformat as nbf",
+      "from build_kumo_notebook import function",
+      "from nbclient import NotebookClient"
+    ],
+    "path_literals": [
+      "DEST = ROOT / 'artifacts/optimization/kumo_finetune'\nNAME = 'v5_last2_ft128_e8'\nCHECKPOINT_STEPS = [0,32,64,128]\n_MODEL_POOL = None\nDERIVED_COLUMNS = []\nBASELINE_SPEC = ",
+      "artifacts/optimization/kumo_finetune",
+      "artifacts/optimization/v5/confirmation_recipe_v5_tabm_weight1.json",
+      "notebook/08_kumo_tabular.ipynb",
+      "notebook/11_kumo_finetune_pilot.ipynb",
+      "print(\"Output notebook:\", OUT / \"submission.csv\")",
+      "results/teman/submission_kumo.csv"
+    ]
+  },
+  {
+    "path": "scripts/build_goal054_notebook.py",
+    "functions": [
+      "Rename",
+      "module_cells",
+      "build",
+      "main",
+      "__init__",
+      "visit_Name",
+      "visit_FunctionDef",
+      "visit_ImportFrom",
+      "md",
+      "code"
+    ],
+    "imports": [
+      "from __future__ import annotations",
+      "import argparse",
+      "import ast",
+      "import copy",
+      "import hashlib",
+      "import json",
+      "from pathlib import Path",
+      "import nbformat as nbf",
+      "from nbclient import NotebookClient"
+    ],
+    "path_literals": [
+      "artifacts/optimization/goal054",
+      "b_OUT = ROOT/'data/processed/relational_goal054'",
+      "notebook/10_kumo_spline.ipynb",
+      "notebook/12_goal054_research.ipynb",
+      "submission*.csv"
+    ]
+  },
+  {
+    "path": "scripts/build_hybrid_kumo_notebook.py",
+    "functions": [
+      "build",
+      "main",
+      "md",
+      "code"
+    ],
+    "imports": [
+      "import argparse",
+      "import ast",
+      "import copy",
+      "import hashlib",
+      "import json",
+      "from pathlib import Path",
+      "import nbformat as nbf",
+      "from build_kumo_notebook import function",
+      "from nbclient import NotebookClient"
+    ],
+    "path_literals": [
+      "Build the visible EDA-to-submission pipeline for the Kumo/spline hybrid.",
+      "DEST = ROOT / 'artifacts/optimization/kumo_hybrid'\nDEST.mkdir(parents=True, exist_ok=True)\nWEIGHT = 0.25\nFORCE_RERUN_HYBRID = False\n",
+      "artifacts/notebook_runs/10_kumo_spline/submission.csv",
+      "artifacts/optimization/kumo_hybrid",
+      "exploratory_submission_metadata.json",
+      "notebook/09_kumo_improvement.ipynb",
+      "notebook/10_kumo_spline.ipynb",
+      "submission.csv",
+      "submission_kumo.csv",
+      "submission_kumo_blend.csv",
+      "submission_kumo_v2.csv",
+      "submission_metadata.json",
+      "submission_v3.csv",
+      "submission_v4.csv",
+      "submission_v5.csv"
+    ]
+  },
+  {
+    "path": "scripts/build_kumo_improvement_notebook.py",
+    "functions": [
+      "assignments",
+      "build",
+      "main",
+      "md",
+      "code"
+    ],
+    "imports": [
+      "from __future__ import annotations",
+      "import argparse",
+      "import ast",
+      "import copy",
+      "import hashlib",
+      "import json",
+      "import pprint",
+      "from pathlib import Path",
+      "import nbformat as nbf",
+      "from build_kumo_notebook import function",
+      "from nbclient import NotebookClient"
+    ],
+    "path_literals": [
+      "CANONICAL_FILE = \"submission_kumo.csv\"",
+      "CANONICAL_FILE = \"submission_kumo_v2.csv\"",
+      "DEST = ROOT / 'artifacts/optimization/kumo_improvement'\nDEST.mkdir(parents=True, exist_ok=True)\n",
+      "artifacts/notebook_runs/09_kumo_improvement/submission.csv",
+      "artifacts/optimization/kumo_improvement",
+      "notebook/08_kumo_tabular.ipynb",
+      "notebook/09_kumo_improvement.ipynb",
+      "results/teman/submission_kumo_v2.csv",
+      "submission.csv",
+      "submission_kumo.csv",
+      "submission_kumo_blend.csv",
+      "submission_kumo_v2.csv",
+      "submission_v3.csv",
+      "submission_v4.csv",
+      "submission_v5.csv"
+    ]
+  },
+  {
+    "path": "scripts/build_kumo_notebook.py",
+    "functions": [
+      "function",
+      "build",
+      "main",
+      "md",
+      "code"
+    ],
+    "imports": [
+      "from __future__ import annotations",
+      "import argparse",
+      "import ast",
+      "import copy",
+      "import hashlib",
+      "import json",
+      "from pathlib import Path",
+      "import nbformat as nbf"
+    ],
+    "path_literals": [
+      "Build an Indonesian EDA-to-submission notebook with visible Kumo code.",
+      "CANONICAL_FILE = \"submission_kumo.csv\"",
+      "CANONICAL_FILE = \"submission_v5.csv\"",
+      "OUT = ROOT / 'artifacts/optimization/kumo'\nOUT.mkdir(parents=True, exist_ok=True)\n",
+      "artifacts/optimization/kumo/public_leaderboard_result.json",
+      "metadata = export(VARIANT)\ndisplay(metadata)\ndisplay(pd.read_csv(ROOT / 'results/teman/submission_kumo.csv').head())",
+      "notebook/06_submission_v5.ipynb",
+      "notebook/08_kumo_tabular.ipynb",
+      "results/teman/submission_kumo.csv"
+    ]
+  },
+  {
+    "path": "scripts/build_relational054.py",
+    "functions": [
+      "spans_and_recent",
+      "main",
+      "save"
+    ],
+    "imports": [
+      "from __future__ import annotations",
+      "import gc",
+      "import json",
+      "import numpy as np",
+      "import pandas as pd",
+      "import research_goal054 as r"
+    ],
+    "path_literals": [
+      "data/processed/relational_goal054"
+    ]
+  },
+  {
+    "path": "scripts/build_reverse_notebook.py",
+    "functions": [
+      "build",
+      "main"
+    ],
+    "imports": [
+      "from __future__ import annotations",
+      "import argparse",
+      "from pathlib import Path",
+      "import nbformat as nbf",
+      "from build_review_notebooks import ROOT, DEST, source, md, code, section",
+      "from nbclient import NotebookClient"
+    ],
+    "path_literals": [
+      "changes_submission"
+    ]
+  },
+  {
+    "path": "scripts/build_review_notebook_v5.py",
+    "functions": [
+      "build",
+      "main"
+    ],
+    "imports": [
+      "from __future__ import annotations",
+      "import argparse",
+      "import hashlib",
+      "import json",
+      "import nbformat as nbf",
+      "from build_review_notebooks import ROOT, DEST, source, body, md, code, section, literal, validation_plot, EXPORT",
+      "from nbclient import NotebookClient"
+    ],
+    "path_literals": [
+      "\"submission_v4.csv\"",
+      "\"submission_v5.csv\"",
+      "'submission_v4.csv'",
+      "'submission_v5.csv'",
+      "05_submission_v4.ipynb",
+      "06_submission_v5.ipynb",
+      "CSV mengikuti header dan urutan sample submission. Output disimpan di folder notebook dan dibandingkan dengan checkpoint versi 5. File root tidak ditimpa dan tidak ada submit otomatis.",
+      "ROOT / {q}data/ecommerce_transactions.csv{q}",
+      "ROOT / {q}data/processed/application_features_v4.parquet{q}",
+      "ROOT / {q}data/processed/application_features_v5.parquet{q}",
+      "Terakhir: hasilkan submission.csv",
+      "artifacts/optimization/v5/confirmation_recipe_v5_tabm_weight1.json",
+      "artifacts/optimization/v5/public_leaderboard_result.json",
+      "results/teman/submission_v5.csv",
+      "submission_v5.csv"
+    ]
+  },
+  {
+    "path": "scripts/build_review_notebooks.py",
+    "functions": [
+      "source",
+      "body",
+      "md",
+      "code",
+      "section",
+      "literal",
+      "feature_cells",
+      "split_feature_code",
+      "common_cells",
+      "legacy_specs",
+      "legacy_cells",
+      "version3_cells",
+      "validation_plot",
+      "search_cells",
+      "build",
+      "main"
+    ],
+    "imports": [
+      "from __future__ import annotations",
+      "import argparse",
+      "import ast",
+      "import hashlib",
+      "import json",
+      "from pathlib import Path",
+      "import pprint",
+      "import textwrap",
+      "import nbformat as nbf",
+      "import black",
+      "from nbclient import NotebookClient"
+    ],
+    "path_literals": [
+      " \u2014 EDA sampai submission.csv\n\n    Notebook ini mereview pipeline yang menghasilkan **",
+      "(ROOT/'artifacts/extended_feature_audit.json')",
+      "04_submission_v3.ipynb",
+      "05_submission_v4.ipynb",
+      "Create readable, executable notebooks for all five historical submissions.",
+      "ROOT / 'artifacts/optimization/v4'",
+      "ROOT / 'data/processed/application_features_v3.parquet'",
+      "ROOT / 'data/processed/application_features_v4.parquet'",
+      "ROOT/'artifacts/optimization/v3_feature_audit.json'",
+      "ROOT/'data/processed/application_features_extended.parquet'",
+      "ROOT/'data/processed/application_features_v3.parquet'",
+      "ROOT/'data/processed/bureau_latest.parquet'",
+      "Terakhir: hasilkan submission.csv",
+      "Tuning KS dan submission versi 2",
+      "artifacts/model_config.json",
+      "artifacts/optimization/",
+      "artifacts/optimization/compact_manifest.json",
+      "artifacts/optimization/submission_baseline_0_52623.csv",
+      "artifacts/optimization/tenfold/selection_oof.parquet",
+      "artifacts/optimization/v4",
+      "artifacts/optimization/v4/definitions.json",
+      "artifacts/optimization/v4/selection_oof.parquet",
+      "submission_ks.csv",
+      "submission_v2.csv",
+      "submission_v3.csv",
+      "submission_v4.csv"
+    ]
+  },
+  {
+    "path": "scripts/check_context_source054.py",
+    "functions": [
+      "main"
+    ],
+    "imports": [
+      "import json",
+      "import numpy as np",
+      "from sklearn.model_selection import StratifiedKFold",
+      "import research_goal054 as r"
+    ],
+    "path_literals": [
+      "artifacts/optimization/kumo_hybrid/cv5_seed31027/reverse_spline"
+    ]
+  },
+  {
+    "path": "scripts/compare_finetune_kumo.py",
+    "functions": [
+      "compare",
+      "export",
+      "main",
+      "add"
+    ],
+    "imports": [
+      "from __future__ import annotations",
+      "import argparse",
+      "import hashlib",
+      "import json",
+      "import re",
+      "import numpy as np",
+      "import pandas as pd",
+      "from sklearn.model_selection import StratifiedKFold",
+      "from finetune_kumo import DEST, NAME, ROOT, frozen_sources",
+      "from kumo_tabular import ks, metrics",
+      "from summarize_kumo_improvement import read_oof"
+    ],
+    "path_literals": [
+      "data/processed/application_features_v5.parquet",
+      "data/sample_submission.csv",
+      "submission_kumo.csv",
+      "submission_kumo_v2.csv",
+      "submission_metadata.json"
+    ]
+  },
+  {
+    "path": "scripts/complete_relational054.py",
+    "functions": [
+      "process_identity",
+      "write_status",
+      "completed_folds",
+      "main"
+    ],
+    "imports": [
+      "from __future__ import annotations",
+      "import argparse",
+      "from datetime import datetime, timezone",
+      "import json",
+      "import os",
+      "from pathlib import Path",
+      "import subprocess",
+      "import sys",
+      "import time"
+    ],
+    "path_literals": [
+      "artifacts/optimization/goal054"
+    ]
+  },
+  {
+    "path": "scripts/create_submission.py",
+    "functions": [
+      "main"
+    ],
+    "imports": [
+      "from __future__ import annotations",
+      "import hashlib",
+      "import json",
+      "from datetime import datetime, timezone",
+      "from pathlib import Path",
+      "import joblib",
+      "import numpy as np",
+      "import pandas as pd",
+      "from sklearn.compose import ColumnTransformer",
+      "from sklearn.impute import SimpleImputer",
+      "from sklearn.pipeline import Pipeline",
+      "from sklearn.preprocessing import OneHotEncoder",
+      "from xgboost import XGBClassifier"
+    ],
+    "path_literals": [
+      "Fit the validated all-history baseline on every label and export submission.csv.",
+      "artifacts/model_config.json",
+      "data/processed/application_features.parquet",
+      "data/sample_submission.csv",
+      "data/test_applications.csv",
+      "data/train_applications.csv",
+      "results/teman/submission.csv",
+      "submission.csv",
+      "submission_metadata.json",
+      "submission_model.joblib"
+    ]
+  },
+  {
+    "path": "scripts/crossvalidate_ks.py",
+    "functions": [
+      "baseline_bundle",
+      "main"
+    ],
+    "imports": [
+      "from __future__ import annotations",
+      "import hashlib",
+      "import itertools",
+      "import json",
+      "from pathlib import Path",
+      "import shutil",
+      "import joblib",
+      "import numpy as np",
+      "import pandas as pd",
+      "from sklearn.model_selection import StratifiedKFold",
+      "from optimize_ks import OUT, ROOT, fit_candidate, metrics, predict_bundle",
+      "from sklearn.pipeline import Pipeline",
+      "from xgboost import XGBClassifier",
+      "from optimize_ks import make_encoder"
+    ],
+    "path_literals": [
+      "Created submission_ks.csv; promoted to submission.csv:",
+      "artifacts/model_config.json",
+      "artifacts/submission_metadata.json",
+      "data/processed",
+      "data/sample_submission.csv",
+      "promoted_to_submission_csv",
+      "results/teman/submission.csv",
+      "results/teman/submission_ks.csv",
+      "submission.csv",
+      "submission_baseline_metadata.json",
+      "submission_ks.csv"
+    ]
+  },
+  {
+    "path": "scripts/diagnose_calendar054.py",
+    "functions": [
+      "calendar_features",
+      "main"
+    ],
+    "imports": [
+      "from __future__ import annotations",
+      "import json",
+      "import numpy as np",
+      "import pandas as pd",
+      "from sklearn.model_selection import StratifiedKFold",
+      "import research_goal054 as r",
+      "from hybrid_kumo import read_data"
+    ],
+    "path_literals": [
+      "artifacts/optimization/kumo_hybrid/cv5_seed31027/reverse_spline",
+      "artifacts/tables/goal054_calendar_diagnostic.csv",
+      "data/train_applications.csv"
+    ]
+  },
+  {
+    "path": "scripts/download_data.py",
+    "functions": [
+      "main"
+    ],
+    "imports": [
+      "from __future__ import annotations",
+      "import argparse",
+      "import json",
+      "import os",
+      "from pathlib import Path",
+      "import zipfile",
+      "from kaggle.api.kaggle_api_extended import KaggleApi"
+    ],
+    "path_literals": []
+  },
+  {
+    "path": "scripts/evaluate_spline_v4.py",
+    "functions": [
+      "main"
+    ],
+    "imports": [
+      "import json",
+      "import time",
+      "import joblib",
+      "import numpy as np",
+      "import pandas as pd",
+      "from sklearn.model_selection import StratifiedKFold",
+      "from optimize_ks import ROOT, OUT, metrics",
+      "from spline_model import fit, predict, FEATURES"
+    ],
+    "path_literals": [
+      "data/processed/application_features_v4.parquet"
+    ]
+  },
+  {
+    "path": "scripts/evaluate_v4.py",
+    "functions": [
+      "definitions",
+      "main",
+      "train_one"
+    ],
+    "imports": [
+      "from __future__ import annotations",
+      "from concurrent.futures import ThreadPoolExecutor, as_completed",
+      "import json",
+      "import time",
+      "import joblib",
+      "import numpy as np",
+      "import pandas as pd",
+      "from sklearn.model_selection import StratifiedKFold",
+      "from optimize_ks import ROOT, OUT, EXCLUDED, fit_candidate, metrics",
+      "from refine_ks import stage_probability"
+    ],
+    "path_literals": [
+      "data/processed/application_features_v4.parquet"
+    ]
+  },
+  {
+    "path": "scripts/evaluate_v5.py",
+    "functions": [
+      "main"
+    ],
+    "imports": [
+      "from __future__ import annotations",
+      "import argparse",
+      "import json",
+      "import time",
+      "import joblib",
+      "import numpy as np",
+      "import pandas as pd",
+      "from sklearn.model_selection import StratifiedKFold",
+      "from optimize_ks import ROOT, OUT, metrics",
+      "from model_v5 import definitions, basket_definitions, shallow_definitions, neural_definitions, core_neural_definitions, smoothing_definitions, fit_model, predict_model, REVISED_FEATURES"
+    ],
+    "path_literals": [
+      "data/processed"
+    ]
+  },
+  {
+    "path": "scripts/export_v4_submission.py",
+    "functions": [
+      "write_figure",
+      "main"
+    ],
+    "imports": [
+      "from __future__ import annotations",
+      "import hashlib",
+      "import json",
+      "import shutil",
+      "import numpy as np",
+      "import pandas as pd",
+      "from scipy.stats import ks_2samp",
+      "from sklearn.metrics import roc_curve",
+      "from sklearn.model_selection import StratifiedKFold",
+      "from optimize_ks import ROOT, OUT, ks, metrics",
+      "import matplotlib",
+      "import matplotlib.pyplot as plt"
+    ],
+    "path_literals": [
+      "artifacts/figures",
+      "artifacts/figures/ks_v3_v4.png",
+      "artifacts/submission_metadata.json",
+      "data/processed/application_features_v4.parquet",
+      "data/sample_submission.csv",
+      "laporan_submission_v4.md",
+      "promoted_to_submission_csv",
+      "python scripts/export_v4_submission.py\n```\n",
+      "results/teman/submission.csv",
+      "results/teman/submission_v4.csv",
+      "submission.csv",
+      "submission_public_0_55845.csv",
+      "submission_public_0_55845_metadata.json",
+      "submission_v3.csv",
+      "submission_v4.csv",
+      "submission_v4_metadata.json"
+    ]
+  },
+  {
+    "path": "scripts/export_v5_submission.py",
+    "functions": [
+      "write_figure",
+      "main"
+    ],
+    "imports": [
+      "from __future__ import annotations",
+      "import argparse",
+      "import hashlib",
+      "import json",
+      "import shutil",
+      "import numpy as np",
+      "import pandas as pd",
+      "from scipy.stats import ks_2samp",
+      "from sklearn.metrics import roc_curve",
+      "from sklearn.model_selection import StratifiedKFold",
+      "from optimize_ks import ROOT, OUT, metrics, ks",
+      "import matplotlib",
+      "import matplotlib.pyplot as plt"
+    ],
+    "path_literals": [
+      "artifacts/figures/ks_v4_v5.png",
+      "artifacts/submission_metadata.json",
+      "data/sample_submission.csv",
+      "laporan_submission_v5.md",
+      "promoted_to_submission_csv",
+      "results/teman/submission.csv",
+      "results/teman/submission_v4.csv",
+      "results/teman/submission_v5.csv",
+      "submission.csv",
+      "submission_v5_metadata.json"
+    ]
+  },
+  {
+    "path": "scripts/extend_features.py",
+    "functions": [
+      "ratio",
+      "main",
+      "attach",
+      "history",
+      "stats"
+    ],
+    "imports": [
+      "from __future__ import annotations",
+      "import gc",
+      "import json",
+      "from pathlib import Path",
+      "import numpy as np",
+      "import pandas as pd"
+    ],
+    "path_literals": [
+      "artifacts/extended_feature_audit.json",
+      "data/processed"
+    ]
+  },
+  {
+    "path": "scripts/finalize_ks_submission.py",
+    "functions": [
+      "main"
+    ],
+    "imports": [
+      "from __future__ import annotations",
+      "import hashlib",
+      "import itertools",
+      "import json",
+      "from pathlib import Path",
+      "import shutil",
+      "import joblib",
+      "import numpy as np",
+      "import pandas as pd",
+      "from optimize_ks import OUT, ROOT, fit_candidate, ks, metrics, predict_bundle"
+    ],
+    "path_literals": [
+      "Confirm a recipe selected on tuning data, then refit and export submission_v2.csv.",
+      "Created submission_v2.csv and updated submission.csv; all export checks passed.",
+      "artifacts/validation_predictions.parquet",
+      "data/processed",
+      "data/sample_submission.csv",
+      "results/teman/submission.csv",
+      "results/teman/submission_v2.csv",
+      "submission_baseline_0_52623.csv",
+      "submission_v2.csv",
+      "submission_v2_metadata.json"
+    ]
+  },
+  {
+    "path": "scripts/finetune_kumo.py",
+    "functions": [
+      "id_hash",
+      "parameter_snapshot",
+      "restore_parameters",
+      "model_bundle",
+      "training_recipe",
+      "inner_metrics",
+      "fit_inner",
+      "frozen_sources",
+      "ensure_frozen",
+      "evaluate",
+      "main"
+    ],
+    "imports": [
+      "from __future__ import annotations",
+      "import argparse",
+      "import gc",
+      "import hashlib",
+      "import importlib.metadata",
+      "import json",
+      "import time",
+      "import numpy as np",
+      "import pandas as pd",
+      "from sklearn.model_selection import StratifiedKFold, train_test_split",
+      "from improve_kumo import ROOT, definitions, fingerprint, load_frame",
+      "from kumo_tabular import context_indices, make_tables, metrics, predict_batches",
+      "import torch",
+      "import sdm",
+      "import sdm.processing as sp",
+      "import torch",
+      "import torch",
+      "import torch.nn.functional as F",
+      "import sdm",
+      "import torch, sdm",
+      "import torch, sdm"
+    ],
+    "path_literals": [
+      "artifacts/optimization/kumo/large_v5_ctx50000_e8",
+      "artifacts/optimization/kumo_finetune",
+      "artifacts/optimization/kumo_improvement"
+    ]
+  },
+  {
+    "path": "scripts/hybrid_kumo.py",
+    "functions": [
+      "specifications",
+      "read_data",
+      "ids_hash",
+      "baseline_directory",
+      "ensure_baseline",
+      "prepare",
+      "fit_spline",
+      "predict_spline",
+      "evaluate",
+      "export",
+      "main"
+    ],
+    "imports": [
+      "from __future__ import annotations",
+      "import argparse",
+      "import gc",
+      "import hashlib",
+      "import importlib.metadata",
+      "import json",
+      "import joblib",
+      "import numpy as np",
+      "import pandas as pd",
+      "from sklearn.compose import ColumnTransformer",
+      "from sklearn.impute import SimpleImputer, MissingIndicator",
+      "from sklearn.linear_model import LogisticRegression",
+      "from sklearn.model_selection import StratifiedKFold",
+      "from sklearn.pipeline import Pipeline",
+      "from sklearn.preprocessing import OneHotEncoder, SplineTransformer, StandardScaler",
+      "from threadpoolctl import threadpool_limits",
+      "from improve_kumo import ROOT, fingerprint",
+      "from kumo_tabular import EXCLUDED, context_indices, make_tables, metrics, ks, predict_batches",
+      "from summarize_kumo_improvement import read_oof",
+      "import torch, sdm"
+    ],
+    "path_literals": [
+      "artifacts/optimization/kumo/large_v5_ctx50000_e8",
+      "artifacts/optimization/kumo_hybrid",
+      "artifacts/optimization/kumo_improvement",
+      "artifacts/optimization/v5/confirmation_recipe_v5_tabm_weight1.json",
+      "artifacts/reverse_engineering/validation_definitions.json",
+      "data/processed/application_features_reverse.parquet",
+      "data/sample_submission.csv",
+      "exploratory_submission",
+      "exploratory_submission_metadata.json",
+      "submission",
+      "submission_kumo_spline_exploratory.csv",
+      "submission_kumo_v2.csv",
+      "submission_metadata.json"
+    ]
+  },
+  {
+    "path": "scripts/improve_kumo.py",
+    "functions": [
+      "definitions",
+      "load_frame",
+      "fingerprint",
+      "fit_context",
+      "restore_population_prior",
+      "predict_context_batches",
+      "evaluate",
+      "main"
+    ],
+    "imports": [
+      "from __future__ import annotations",
+      "import argparse",
+      "import gc",
+      "import hashlib",
+      "import importlib.metadata",
+      "import json",
+      "from pathlib import Path",
+      "import time",
+      "import numpy as np",
+      "import pandas as pd",
+      "from sklearn.model_selection import StratifiedKFold",
+      "from kumo_tabular import CORE_COLUMNS, EXCLUDED, ROOT, make_tables, context_indices, metrics, ks, predict_batches",
+      "import torch",
+      "import torch",
+      "import sdm",
+      "import torch",
+      "from huggingface_hub import hf_hub_download",
+      "from sdm.models.tabiclv2.ckpt import remap_ckpt"
+    ],
+    "path_literals": [
+      "Controlled Kumo experiments; preserve the public-0.56262 checkpoint.\n\nScreen on the original three folds. Confirm a locked recipe on new folds before\nexporting a candidate. All inference stays local; no Kaggle submission is sent.\n",
+      "artifacts/optimization/kumo_improvement",
+      "artifacts/optimization/v5/confirmation_recipe_v5_tabm_weight1.json",
+      "data/processed"
+    ]
+  },
+  {
+    "path": "scripts/kumo_tabular.py",
+    "functions": [
+      "ks",
+      "metrics",
+      "read_data",
+      "make_tables",
+      "context_indices",
+      "predict_batches",
+      "run",
+      "main"
+    ],
+    "imports": [
+      "from __future__ import annotations",
+      "import argparse",
+      "import gc",
+      "import hashlib",
+      "import importlib.metadata",
+      "import json",
+      "from pathlib import Path",
+      "import time",
+      "import numpy as np",
+      "import pandas as pd",
+      "from sklearn.metrics import roc_auc_score, roc_curve",
+      "from sklearn.model_selection import StratifiedKFold, train_test_split",
+      "import sdm",
+      "import torch",
+      "import sdm",
+      "import torch"
+    ],
+    "path_literals": [
+      "artifacts/optimization/kumo",
+      "artifacts/optimization/v5/confirmation_recipe_v5_tabm_weight1.json",
+      "artifacts/optimization/v5/selection_oof_tabm.parquet",
+      "data/processed/application_features_v5.parquet"
+    ]
+  },
+  {
+    "path": "scripts/model_v5.py",
+    "functions": [
+      "definitions",
+      "basket_definitions",
+      "shallow_definitions",
+      "neural_definitions",
+      "core_neural_definitions",
+      "smoothing_definitions",
+      "fit_spline_plus",
+      "fit_ebm",
+      "fit_model",
+      "predict_model"
+    ],
+    "imports": [
+      "from __future__ import annotations",
+      "from pathlib import Path",
+      "import sys",
+      "import numpy as np",
+      "import pandas as pd",
+      "from sklearn.compose import ColumnTransformer",
+      "from sklearn.impute import MissingIndicator, SimpleImputer",
+      "from sklearn.linear_model import LogisticRegression",
+      "from sklearn.pipeline import Pipeline",
+      "from sklearn.preprocessing import OneHotEncoder, PolynomialFeatures, SplineTransformer, StandardScaler",
+      "from threadpoolctl import threadpool_limits",
+      "from spline_model import FEATURES as V4_FEATURES, prepare",
+      "from optimize_ks import EXCLUDED, fit_candidate, predict_bundle",
+      "from interpret.glassbox import ExplainableBoostingClassifier",
+      "from neural_v5 import fit_neural",
+      "from neural_v5 import predict_neural"
+    ],
+    "path_literals": []
+  },
+  {
+    "path": "scripts/neural_v5.py",
+    "functions": [
+      "neural_imports",
+      "make_neural_encoder",
+      "make_neural_model",
+      "train_neural",
+      "fit_neural",
+      "predict_neural"
+    ],
+    "imports": [
+      "from __future__ import annotations",
+      "import os",
+      "from pathlib import Path",
+      "import sys",
+      "import warnings",
+      "import numpy as np",
+      "from sklearn.compose import ColumnTransformer",
+      "from sklearn.impute import MissingIndicator, SimpleImputer",
+      "from sklearn.model_selection import train_test_split",
+      "from sklearn.pipeline import Pipeline",
+      "from sklearn.preprocessing import OneHotEncoder, StandardScaler",
+      "from spline_model import prepare",
+      "import torch",
+      "from tabm import TabM",
+      "from rtdl_num_embeddings import PiecewiseLinearEmbeddings, compute_bins"
+    ],
+    "path_literals": []
+  },
+  {
+    "path": "scripts/optimize_ks.py",
+    "functions": [
+      "ks",
+      "lgb_ks",
+      "metrics",
+      "make_encoder",
+      "candidates",
+      "weighted_probability",
+      "fit_candidate",
+      "predict_bundle",
+      "tune",
+      "main"
+    ],
+    "imports": [
+      "from __future__ import annotations",
+      "import argparse",
+      "import itertools",
+      "import json",
+      "from pathlib import Path",
+      "import sys",
+      "import time",
+      "import joblib",
+      "import numpy as np",
+      "import pandas as pd",
+      "from scipy.stats import ks_2samp",
+      "from sklearn.compose import ColumnTransformer",
+      "from sklearn.impute import SimpleImputer",
+      "from sklearn.metrics import average_precision_score, log_loss, roc_auc_score, roc_curve",
+      "from sklearn.model_selection import train_test_split",
+      "from sklearn.pipeline import Pipeline",
+      "from sklearn.preprocessing import OneHotEncoder",
+      "from xgboost import XGBClassifier",
+      "from xgboost.callback import EarlyStopping",
+      "from lightgbm import LGBMClassifier, early_stopping, log_evaluation",
+      "from catboost import CatBoostClassifier"
+    ],
+    "path_literals": [
+      "artifacts/model_config.json",
+      "artifacts/optimization",
+      "data/processed"
+    ]
+  },
+  {
+    "path": "scripts/plot_context_correction054.py",
+    "functions": [
+      "main"
+    ],
+    "imports": [
+      "import hashlib",
+      "import json",
+      "from pathlib import Path",
+      "import matplotlib",
+      "import matplotlib.pyplot as plt",
+      "import numpy as np"
+    ],
+    "path_literals": [
+      "artifacts/figures/goal054_context_correction.png",
+      "artifacts/optimization/goal054"
+    ]
+  },
+  {
+    "path": "scripts/preflight_relational054.py",
+    "functions": [
+      "table",
+      "related",
+      "main"
+    ],
+    "imports": [
+      "from __future__ import annotations",
+      "import json",
+      "from pathlib import Path",
+      "import numpy as np",
+      "import pandas as pd",
+      "import research_goal054 as r",
+      "import sdm",
+      "import sdm",
+      "import torch",
+      "import sdm",
+      "from huggingface_hub import hf_hub_download"
+    ],
+    "path_literals": []
+  },
+  {
+    "path": "scripts/refine_ks.py",
+    "functions": [
+      "stage_probability",
+      "definitions",
+      "main"
+    ],
+    "imports": [
+      "from __future__ import annotations",
+      "import hashlib",
+      "import argparse",
+      "import json",
+      "from pathlib import Path",
+      "import sys",
+      "import time",
+      "from optimize_ks import ROOT, OUT, fit_candidate, make_encoder, metrics, predict_bundle",
+      "import joblib",
+      "import numpy as np",
+      "import pandas as pd",
+      "from sklearn.model_selection import StratifiedKFold"
+    ],
+    "path_literals": [
+      "data/processed/application_features_v3.parquet"
+    ]
+  },
+  {
+    "path": "scripts/relational_readout054.py",
+    "functions": [
+      "readout_forward",
+      "install_gnn",
+      "install",
+      "verify"
+    ],
+    "imports": [
+      "import torch",
+      "import torch.nn.functional as functional",
+      "from sdm._kernels import segment_multi_reduce",
+      "from types import MethodType",
+      "import copy",
+      "import torch",
+      "from sdm.cache import Cache",
+      "from sdm.models.kumo.relational.graph import HomogeneousGraph",
+      "from sdm.models.kumo.relational.invariant_gnn import InvariantGNN",
+      "import json",
+      "from pathlib import Path",
+      "import research_goal054 as r"
+    ],
+    "path_literals": []
+  },
+  {
+    "path": "scripts/report_goal054.py",
+    "functions": [
+      "audit",
+      "export",
+      "report_markdown",
+      "main",
+      "independent_metrics"
+    ],
+    "imports": [
+      "from __future__ import annotations",
+      "import argparse",
+      "from datetime import datetime, timezone",
+      "import json",
+      "import numpy as np",
+      "import pandas as pd",
+      "from sklearn.metrics import roc_curve",
+      "from sklearn.model_selection import StratifiedKFold",
+      "import research_goal054 as r",
+      "from research_calendar054 import add_calendar",
+      "from research_context_correction054 import audit_correction",
+      "from research_calendar054 import audit_calendar",
+      "from research_relational054 import audit_relational",
+      "from blend_relational054 import audit_blend"
+    ],
+    "path_literals": [
+      "**Target tercapai pada validasi utama. Audit/notebook/submission harus lengkap sebelum goal selesai.**",
+      "Model and feature selection reuse training labels and folds. This is not an untouched holdout; changed submissions have unknown public score.",
+      "artifacts/optimization/kumo_hybrid/cv5_seed31027/reverse_spline",
+      "artifacts/reverse_engineering/validation_definitions.json",
+      "data/sample_submission.csv",
+      "submission_goal054_",
+      "submission_metadata.json"
+    ]
+  },
+  {
+    "path": "scripts/report_hybrid_kumo.py",
+    "functions": [
+      "verify",
+      "verify_export",
+      "report",
+      "main",
+      "independent"
+    ],
+    "imports": [
+      "from __future__ import annotations",
+      "import hashlib",
+      "import json",
+      "import shutil",
+      "import joblib",
+      "import matplotlib",
+      "import matplotlib.pyplot as plt",
+      "import numpy as np",
+      "import pandas as pd",
+      "from scipy.stats import ks_2samp",
+      "from sklearn.model_selection import StratifiedKFold",
+      "from hybrid_kumo import DEST, ROOT, WEIGHT, baseline_directory, read_data, ids_hash, predict_spline, fingerprint"
+    ],
+    "path_literals": [
+      "Audit menghitung ulang KS dengan SciPy, memeriksa hash input baseline dan batas fold, serta menghitung ulang prediksi OOF/test spline dari model tersimpan. CSV diperiksa terhadap sample submission dan sumber ensemble.",
+      "Audit spline checkpoints and independently verify the Kumo/spline submission.",
+      "Gunakan Python 3.11 dan environments/teman/requirements-kumo.txt. Notebook [10_kumo_spline.ipynb](../../../notebook/10_kumo_spline.ipynb) memuat EDA, seluruh agregasi, kode Kumo/spline, validasi dan ekspor.",
+      "Skor tiga dan lima fold tidak dibandingkan langsung. Checkpoint public yang sudah dikonfirmasi tetap submission_kumo.csv dengan skor **0,56262**. Public kandidat baru **belum diketahui**.",
+      "artifacts/figures/kumo_hybrid_confirmation.png",
+      "artifacts/tables",
+      "data/sample_submission.csv",
+      "exploratory_submission_metadata.json",
+      "results/teman/submission_kumo.csv",
+      "submission",
+      "submission_metadata.json"
+    ]
+  },
+  {
+    "path": "scripts/report_kumo.py",
+    "functions": [
+      "compare",
+      "export",
+      "export_blend",
+      "main",
+      "add"
+    ],
+    "imports": [
+      "from __future__ import annotations",
+      "import argparse",
+      "import hashlib",
+      "import json",
+      "import numpy as np",
+      "import pandas as pd",
+      "from sklearn.model_selection import StratifiedKFold",
+      "from kumo_tabular import ROOT, OUT, ks, metrics"
+    ],
+    "path_literals": [
+      "Also export submission_kumo_blend.csv using the matching V5 selection ensemble.",
+      "Complete variant folder name; creates submission_kumo.csv.",
+      "artifacts/optimization/v5/selection_oof_tabm.parquet",
+      "artifacts/optimization/v5/selection_test_tabm.parquet",
+      "blend_submission_metadata.json",
+      "data/processed/application_features_v5.parquet",
+      "data/sample_submission.csv",
+      "results/teman/submission_kumo.csv",
+      "results/teman/submission_kumo_blend.csv",
+      "submission_metadata.json"
+    ]
+  },
+  {
+    "path": "scripts/report_kumo_improvement.py",
+    "functions": [
+      "main"
+    ],
+    "imports": [
+      "from __future__ import annotations",
+      "import json",
+      "import shutil",
+      "import matplotlib",
+      "import matplotlib.pyplot as plt",
+      "import numpy as np",
+      "import pandas as pd",
+      "from improve_kumo import DEST",
+      "from kumo_tabular import ROOT"
+    ],
+    "path_literals": [
+      ") memiliki 30.000 probabilitas dalam urutan sample submission.",
+      "Checkpoint Kaggle yang sudah terkonfirmasi tetap `submission_kumo.csv`, public **0,56262**.",
+      "Notebook [09_kumo_improvement.ipynb](../../../notebook/09_kumo_improvement.ipynb) memuat EDA, agregasi, semua kode model, perbandingan dan ekspor.",
+      "artifacts/figures/kumo_improvement_confirmation.png",
+      "artifacts/tables",
+      "submission_metadata.json"
+    ]
+  },
+  {
+    "path": "scripts/report_reverse_engineering.py",
+    "functions": [
+      "main"
+    ],
+    "imports": [
+      "from __future__ import annotations",
+      "import json",
+      "from pathlib import Path"
+    ],
+    "path_literals": [
+      "artifacts/reverse_engineering"
+    ]
+  },
+  {
+    "path": "scripts/reporting.py",
+    "functions": [
+      "table",
+      "md_table",
+      "group_risk",
+      "save_figure",
+      "run_benchmarks",
+      "make_report",
+      "create_notebook",
+      "fmt",
+      "inline_chart",
+      "cell"
+    ],
+    "imports": [
+      "from __future__ import annotations",
+      "from datetime import datetime, timezone",
+      "import base64",
+      "import importlib.metadata",
+      "import json",
+      "import re",
+      "import matplotlib",
+      "import matplotlib.pyplot as plt",
+      "import numpy as np",
+      "import pandas as pd",
+      "from scipy.stats import ks_2samp",
+      "from analyze import OUT, PROCESSED, ROOT, TABLES",
+      "from sklearn.compose import ColumnTransformer",
+      "from sklearn.impute import SimpleImputer",
+      "from sklearn.metrics import average_precision_score, brier_score_loss, log_loss, roc_auc_score, roc_curve",
+      "from sklearn.model_selection import train_test_split",
+      "from sklearn.pipeline import Pipeline",
+      "from sklearn.preprocessing import OneHotEncoder",
+      "from sklearn.calibration import calibration_curve",
+      "from xgboost import XGBClassifier",
+      "import markdown"
+    ],
+    "path_literals": [
+      " kali** nilai yang benar.\n- `sample_submission.csv` dan test mempunyai ID yang sama, **urutan berbeda**. Penyusunan prediksi harus menggunakan join pada `application_id`.\n\n## Struktur dan skala data\n\n",
+      "## Pemeriksaan yang dapat dijalankan ulang\n\nAssertion ini memeriksa integritas hasil, batas waktu, serta risiko salah urutan submission.",
+      "## Template penyusunan submission\n\nIsi `predictions` dengan probabilitas model yang Anda latih. Join dengan validasi one-to-one; kode template tidak mengirim submission.",
+      "Reports saved to artifacts/laporan_analisis.md and .html",
+      "notebook/analisis_logika.ipynb"
+    ]
+  },
+  {
+    "path": "scripts/research_calendar054.py",
+    "functions": [
+      "add_calendar",
+      "specifications",
+      "fit",
+      "predict",
+      "source_training_prediction",
+      "run",
+      "audit_calendar"
+    ],
+    "imports": [
+      "from __future__ import annotations",
+      "import argparse",
+      "import importlib.metadata",
+      "import json",
+      "import joblib",
+      "import numpy as np",
+      "import pandas as pd",
+      "from scipy.optimize import minimize",
+      "from scipy.special import expit, logit",
+      "from sklearn.model_selection import StratifiedKFold",
+      "from sklearn.preprocessing import OneHotEncoder",
+      "from threadpoolctl import threadpool_limits",
+      "import research_goal054 as r",
+      "from diagnose_calendar054 import calendar_features",
+      "from hybrid_kumo import read_data, predict_spline",
+      "from research_context_correction054 import objective",
+      "from report_goal054 import audit, report_markdown"
+    ],
+    "path_literals": [
+      "artifacts/optimization/kumo_hybrid/cv5_seed31027/reverse_spline",
+      "artifacts/optimization/kumo_hybrid/cv5_seed31027/reverse_spline/fold",
+      "data/"
+    ]
+  },
+  {
+    "path": "scripts/research_context_correction054.py",
+    "functions": [
+      "specifications",
+      "offset_probability",
+      "prepare",
+      "fit_encoder",
+      "design",
+      "objective",
+      "fit_correction",
+      "predict_correction",
+      "context_recipe",
+      "ensure_context",
+      "run",
+      "audit_correction",
+      "main"
+    ],
+    "imports": [
+      "from __future__ import annotations",
+      "import argparse",
+      "import gc",
+      "import importlib.metadata",
+      "import json",
+      "import time",
+      "import joblib",
+      "import numpy as np",
+      "import pandas as pd",
+      "from scipy.optimize import minimize",
+      "from scipy.special import expit, logit",
+      "from sklearn.compose import ColumnTransformer",
+      "from sklearn.impute import MissingIndicator, SimpleImputer",
+      "from sklearn.model_selection import StratifiedKFold",
+      "from sklearn.pipeline import Pipeline",
+      "from sklearn.preprocessing import OneHotEncoder, SplineTransformer, StandardScaler",
+      "from threadpoolctl import threadpool_limits",
+      "import research_goal054 as r",
+      "from hybrid_kumo import read_data",
+      "from kumo_tabular import make_tables, predict_batches",
+      "import torch",
+      "import sdm",
+      "import torch",
+      "from report_goal054 import audit, report_markdown"
+    ],
+    "path_literals": [
+      "artifacts/optimization/kumo_hybrid/cv5_seed31027/reverse_spline"
+    ]
+  },
+  {
+    "path": "scripts/research_ebm054.py",
+    "functions": [
+      "run",
+      "compare",
+      "main",
+      "metrics",
+      "corrected"
+    ],
+    "imports": [
+      "from __future__ import annotations",
+      "import argparse",
+      "import importlib.metadata",
+      "import json",
+      "import time",
+      "import joblib",
+      "import numpy as np",
+      "import pandas as pd",
+      "from sklearn.model_selection import StratifiedKFold",
+      "import research_goal054 as r",
+      "from interpret.glassbox import ExplainableBoostingClassifier"
+    ],
+    "path_literals": [
+      "artifacts/optimization/kumo_hybrid/cv5_seed31027/reverse_spline"
+    ]
+  },
+  {
+    "path": "scripts/research_goal054.py",
+    "functions": [
+      "write_json",
+      "checksum",
+      "specifications",
+      "scores",
+      "inputs",
+      "model_features",
+      "checkpoint_path",
+      "classifier",
+      "predict",
+      "run",
+      "read_oof",
+      "compare",
+      "main",
+      "row"
+    ],
+    "imports": [
+      "from __future__ import annotations",
+      "import argparse",
+      "import gc",
+      "import hashlib",
+      "import importlib.metadata",
+      "import json",
+      "import os",
+      "import shutil",
+      "import time",
+      "from pathlib import Path",
+      "import numpy as np",
+      "import pandas as pd",
+      "from scipy.stats import ks_2samp",
+      "from sklearn.metrics import roc_auc_score",
+      "from sklearn.model_selection import StratifiedKFold",
+      "from improve_kumo import definitions, fingerprint, load_frame",
+      "from kumo_tabular import EXCLUDED, ROOT, context_indices",
+      "from hybrid_kumo import baseline_directory, ids_hash",
+      "from huggingface_hub import hf_hub_download",
+      "from tabpfn import TabPFNClassifier",
+      "import torch",
+      "from pydantic import TypeAdapter"
+    ],
+    "path_literals": [
+      "artifacts/optimization/goal054",
+      "artifacts/optimization/kumo_hybrid/cv5_seed31027/reverse_spline",
+      "data/weights/tabpfn35",
+      "submission_kumo_spline_exploratory.csv"
+    ]
+  },
+  {
+    "path": "scripts/research_relational054.py",
+    "functions": [
+      "add_decision",
+      "load_inputs",
+      "recipe_for",
+      "task_features",
+      "predictions",
+      "fit_context",
+      "audit_relational",
+      "run"
+    ],
+    "imports": [
+      "from __future__ import annotations",
+      "import argparse",
+      "import gc",
+      "import importlib.metadata",
+      "import json",
+      "import time",
+      "import numpy as np",
+      "import pandas as pd",
+      "from sklearn.model_selection import StratifiedKFold",
+      "import research_goal054 as r",
+      "from hybrid_kumo import read_data",
+      "from preflight_relational054 import REVISION, related, table",
+      "from relational_readout054 import install",
+      "from huggingface_hub import hf_hub_download",
+      "from pathlib import Path",
+      "import torch",
+      "import sdm",
+      "import torch",
+      "import sdm",
+      "import torch"
+    ],
+    "path_literals": [
+      "data/",
+      "data/processed/relational_goal054"
+    ]
+  },
+  {
+    "path": "scripts/reverse_rng_probe.py",
+    "functions": [
+      "probe_age_sequence",
+      "probe_id_hashes",
+      "probe_per_customer_rng",
+      "probe_raw_identifier_stream",
+      "untemper_mt_word",
+      "predict_mt_after_observed_words",
+      "probe_mt_state_clone",
+      "main",
+      "draws",
+      "inspect",
+      "undo_right",
+      "undo_left"
+    ],
+    "imports": [
+      "from __future__ import annotations",
+      "import hashlib",
+      "import itertools",
+      "import time",
+      "import json",
+      "import argparse",
+      "import random",
+      "from pathlib import Path",
+      "import numpy as np",
+      "import pandas as pd"
+    ],
+    "path_literals": [
+      "artifacts/reverse_engineering",
+      "data/customer_profiles.csv"
+    ]
+  },
+  {
+    "path": "scripts/reverse_synthetic_patterns.py",
+    "functions": [
+      "distribution_summary",
+      "aggregate_ratio_grid",
+      "reconstruct_basic_rules",
+      "fit_price_latent",
+      "fit_bureau_latent",
+      "fit_account_latent",
+      "beta_binomial_prior",
+      "fit_repayment_latent",
+      "write_figures",
+      "main",
+      "objective"
+    ],
+    "imports": [
+      "from __future__ import annotations",
+      "import json",
+      "from pathlib import Path",
+      "import numpy as np",
+      "import pandas as pd",
+      "from scipy import optimize, special, stats",
+      "import matplotlib",
+      "import matplotlib.pyplot as plt"
+    ],
+    "path_literals": [
+      "artifacts/figures/synthetic_noise_patterns.png",
+      "artifacts/reverse_engineering",
+      "data/account_behavior.csv",
+      "data/bureau_observations.csv",
+      "data/customer_profiles.csv",
+      "data/ecommerce_transactions.csv",
+      "data/processed/application_features_reverse.parquet",
+      "data/processed/application_features_v5.parquet",
+      "data/repayment_history.csv",
+      "data/test_applications.csv",
+      "data/train_applications.csv"
+    ]
+  },
+  {
+    "path": "scripts/run_kumo_finetune.py",
+    "functions": [
+      "arguments",
+      "eligible",
+      "main"
+    ],
+    "imports": [
+      "import argparse",
+      "import json",
+      "import time",
+      "from finetune_kumo import DEST, NAME, ensure_frozen, evaluate",
+      "from compare_finetune_kumo import compare, export"
+    ],
+    "path_literals": [
+      "submission"
+    ]
+  },
+  {
+    "path": "scripts/run_kumo_improvement.py",
+    "functions": [
+      "run_candidates",
+      "eligible",
+      "best_eligible",
+      "main"
+    ],
+    "imports": [
+      "from __future__ import annotations",
+      "import argparse",
+      "import json",
+      "import time",
+      "from improve_kumo import DEST, evaluate",
+      "from summarize_kumo_improvement import export, summarize"
+    ],
+    "path_literals": [
+      "submission"
+    ]
+  },
+  {
+    "path": "scripts/run_relational054.py",
+    "functions": [],
+    "imports": [
+      "import gc",
+      "import torch",
+      "from research_relational054 import run"
+    ],
+    "path_literals": []
+  },
+  {
+    "path": "scripts/run_research054.py",
+    "functions": [
+      "preflight",
+      "main"
+    ],
+    "imports": [
+      "from __future__ import annotations",
+      "import argparse",
+      "import gc",
+      "import json",
+      "import time",
+      "import numpy as np",
+      "from sklearn.model_selection import train_test_split",
+      "import research_goal054 as r",
+      "import torch",
+      "from pydantic import TypeAdapter",
+      "import torch"
+    ],
+    "path_literals": [
+      "Run the declared TabPFN queue, stopping after a full OOF target result.\n\nStopping the queue does not mark the goal complete: independent verification,\nthe review notebook, and candidate submission still have to be produced.\n",
+      "TARGET REACHED: independent audit, notebook and submission still required."
+    ]
+  },
+  {
+    "path": "scripts/select_refinement.py",
+    "functions": [
+      "main"
+    ],
+    "imports": [
+      "from __future__ import annotations",
+      "import itertools",
+      "import json",
+      "from pathlib import Path",
+      "import numpy as np",
+      "import pandas as pd",
+      "from sklearn.model_selection import StratifiedKFold",
+      "from optimize_ks import ROOT, OUT, metrics"
+    ],
+    "path_literals": []
+  },
+  {
+    "path": "scripts/select_v4.py",
+    "functions": [
+      "main"
+    ],
+    "imports": [
+      "from __future__ import annotations",
+      "import json",
+      "import numpy as np",
+      "import pandas as pd",
+      "from sklearn.model_selection import StratifiedKFold",
+      "from optimize_ks import ROOT, OUT, metrics"
+    ],
+    "path_literals": [
+      "submission_v3.csv"
+    ]
+  },
+  {
+    "path": "scripts/select_v5.py",
+    "functions": [
+      "main"
+    ],
+    "imports": [
+      "from __future__ import annotations",
+      "import json",
+      "import numpy as np",
+      "import pandas as pd",
+      "from sklearn.model_selection import StratifiedKFold",
+      "from optimize_ks import ROOT, OUT, metrics, ks"
+    ],
+    "path_literals": []
+  },
+  {
+    "path": "scripts/spline_model.py",
+    "functions": [
+      "prepare",
+      "fit",
+      "predict"
+    ],
+    "imports": [
+      "from __future__ import annotations",
+      "import numpy as np",
+      "import pandas as pd",
+      "from sklearn.compose import ColumnTransformer",
+      "from sklearn.impute import SimpleImputer, MissingIndicator",
+      "from sklearn.linear_model import LogisticRegression",
+      "from sklearn.pipeline import Pipeline",
+      "from sklearn.preprocessing import OneHotEncoder, SplineTransformer, StandardScaler",
+      "from threadpoolctl import threadpool_limits"
+    ],
+    "path_literals": []
+  },
+  {
+    "path": "scripts/summarize_kumo_improvement.py",
+    "functions": [
+      "read_oof",
+      "summarize",
+      "export",
+      "main",
+      "add"
+    ],
+    "imports": [
+      "from __future__ import annotations",
+      "import argparse",
+      "import hashlib",
+      "import json",
+      "import re",
+      "import numpy as np",
+      "import pandas as pd",
+      "from sklearn.model_selection import StratifiedKFold",
+      "from improve_kumo import DEST",
+      "from kumo_tabular import ROOT, ks, metrics"
+    ],
+    "path_literals": [
+      "artifacts/optimization/kumo/large_v5_ctx50000_e8",
+      "data/processed/application_features_v5.parquet",
+      "data/sample_submission.csv",
+      "submission_kumo_v2",
+      "submission_kumo_v2.csv",
+      "submission_metadata.json"
+    ]
+  },
+  {
+    "path": "scripts/synthetic_generator_prototype.py",
+    "functions": [
+      "simulate_workflow",
+      "simulate_price_measurements"
+    ],
+    "imports": [
+      "from __future__ import annotations",
+      "import numpy as np",
+      "import pandas as pd"
+    ],
+    "path_literals": []
+  },
+  {
+    "path": "scripts/train_tenfold_submission.py",
+    "functions": [
+      "main",
+      "export_submission",
+      "train_one"
+    ],
+    "imports": [
+      "from __future__ import annotations",
+      "from concurrent.futures import ThreadPoolExecutor, as_completed",
+      "import hashlib",
+      "import json",
+      "from pathlib import Path",
+      "import shutil",
+      "from optimize_ks import ROOT, OUT, fit_candidate, metrics, predict_bundle",
+      "import joblib",
+      "import numpy as np",
+      "import pandas as pd",
+      "from sklearn.model_selection import StratifiedKFold"
+    ],
+    "path_literals": [
+      ".\n\nReproduksi:\n\n```bash\npython scripts/build_features_v3.py\npython scripts/refine_ks.py\npython scripts/refine_ks.py --balanced\npython scripts/select_refinement.py\npython scripts/train_tenfold_submission.py\n```\n",
+      "Created submission_v3.csv; format checks passed; promoted=",
+      "artifacts/submission_metadata.json",
+      "data/processed",
+      "data/sample_submission.csv",
+      "laporan_submission_v3.md",
+      "results/teman/submission.csv",
+      "results/teman/submission_v3.csv",
+      "submission.csv",
+      "submission_public_0_54710.csv",
+      "submission_public_0_54710_metadata.json",
+      "submission_v3.csv",
+      "submission_v3_metadata.json"
+    ]
+  },
+  {
+    "path": "scripts/train_v4_candidate.py",
+    "functions": [
+      "main",
+      "train_one"
+    ],
+    "imports": [
+      "from __future__ import annotations",
+      "import argparse",
+      "from concurrent.futures import ThreadPoolExecutor, as_completed",
+      "import hashlib",
+      "import json",
+      "import time",
+      "import joblib",
+      "import numpy as np",
+      "import pandas as pd",
+      "from sklearn.model_selection import StratifiedKFold",
+      "from optimize_ks import ROOT, OUT, EXCLUDED, fit_candidate, metrics, predict_bundle",
+      "from spline_model import fit as fit_spline, predict as predict_spline, FEATURES"
+    ],
+    "path_literals": [
+      "data/processed/application_features_v4.parquet"
+    ]
+  },
+  {
+    "path": "scripts/train_v5_candidate.py",
+    "functions": [
+      "main"
+    ],
+    "imports": [
+      "from __future__ import annotations",
+      "import argparse",
+      "import json",
+      "import time",
+      "import joblib",
+      "import numpy as np",
+      "import pandas as pd",
+      "from sklearn.model_selection import StratifiedKFold",
+      "from optimize_ks import ROOT, OUT, metrics, ks",
+      "from model_v5 import fit_model, predict_model"
+    ],
+    "path_literals": [
+      "data/processed/application_features_v5.parquet"
+    ]
+  },
+  {
+    "path": "scripts/uncertainty_goal054.py",
+    "functions": [
+      "ordered_ks",
+      "run",
+      "calculate"
+    ],
+    "imports": [
+      "from __future__ import annotations",
+      "import argparse",
+      "import hashlib",
+      "import json",
+      "import numpy as np",
+      "from sklearn.model_selection import StratifiedKFold",
+      "import research_goal054 as r"
+    ],
+    "path_literals": [
+      "artifacts/optimization/kumo_hybrid/cv5_seed31027/reverse_spline"
+    ]
+  },
+  {
+    "path": "scripts/validate_reverse_features.py",
+    "functions": [
+      "main"
+    ],
+    "imports": [
+      "from __future__ import annotations",
+      "import json",
+      "import time",
+      "import joblib",
+      "import numpy as np",
+      "import pandas as pd",
+      "from sklearn.model_selection import StratifiedKFold",
+      "from optimize_ks import ROOT, OUT, metrics, ks",
+      "from model_v5 import fit_model, predict_model",
+      "from spline_model import FEATURES"
+    ],
+    "path_literals": [
+      "artifacts/reverse_engineering",
+      "data/processed/application_features_reverse.parquet",
+      "submission_changed"
+    ]
+  },
+  {
+    "path": "scripts/verify_kumo_improvement.py",
+    "functions": [
+      "main"
+    ],
+    "imports": [
+      "from __future__ import annotations",
+      "import hashlib",
+      "import json",
+      "import numpy as np",
+      "import pandas as pd",
+      "from scipy.stats import ks_2samp",
+      "from sklearn.model_selection import StratifiedKFold",
+      "from improve_kumo import DEST",
+      "from kumo_tabular import EXCLUDED, ROOT, context_indices"
+    ],
+    "path_literals": [
+      "Independently audit held-out predictions, KS, contexts and submission alignment.",
+      "data/processed/application_features_v5.parquet",
+      "data/sample_submission.csv",
+      "results/teman/submission_kumo.csv",
+      "submission_metadata.json"
+    ]
+  },
+  {
+    "path": "scripts/verify_relational_predictions054.py",
+    "functions": [
+      "verify"
+    ],
+    "imports": [
+      "from __future__ import annotations",
+      "import json",
+      "import numpy as np",
+      "from sklearn.model_selection import StratifiedKFold",
+      "import research_goal054 as r",
+      "from research_relational054 import load_inputs, fit_context, predictions",
+      "from relational_readout054 import install",
+      "import torch",
+      "import sdm"
+    ],
+    "path_literals": []
+  }
+]

@@ -1,0 +1,12 @@
+{
+  "status": "stopped_before_any_score",
+  "model_pid": 309963,
+  "process_start_ticks": "152802697",
+  "monitor_pid": 310371,
+  "candidate": "kumo_relational_v5_e8_ctx50000_h1_readout",
+  "target_pooled_ks": 0.54,
+  "kaggle_upload": false,
+  "completed_folds": [],
+  "updated_at_utc": "2026-10-19T04:02:29.507931+00:00",
+  "reason": "1024-query batches incurred excessive CPU join/cache overhead. Increase to 8192 using the same graph, context, weights and seeds; no validation score was observed."
+}

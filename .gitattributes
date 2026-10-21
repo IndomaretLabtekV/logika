@@ -1,0 +1,7 @@
+# CSV reports use csv.writer's CRLF; keep their exact historical bytes and
+# recognize CR as a line ending during whitespace checks.
+*.csv -text whitespace=cr-at-eol
+
+# Patch context contains significant single-space lines. Never strip or
+# normalize these audit/recovery records just to satisfy whitespace checks.
+*.patch -text -whitespace

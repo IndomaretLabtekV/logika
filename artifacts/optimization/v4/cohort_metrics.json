@@ -1,0 +1,37 @@
+[
+  {
+    "group": "has_repayments",
+    "value": "0",
+    "rows": 23688,
+    "baseline_ks": 0.48547836259028465,
+    "new_ks": 0.4971147671493532
+  },
+  {
+    "group": "has_repayments",
+    "value": "1",
+    "rows": 46312,
+    "baseline_ks": 0.5349728701330803,
+    "new_ks": 0.5370839244199298
+  },
+  {
+    "group": "employment_type",
+    "value": "salaried",
+    "rows": 33473,
+    "baseline_ks": 0.516643654676191,
+    "new_ks": 0.5246647898644976
+  },
+  {
+    "group": "employment_type",
+    "value": "self_employed",
+    "rows": 20987,
+    "baseline_ks": 0.517723613371992,
+    "new_ks": 0.5250373164677027
+  },
+  {
+    "group": "employment_type",
+    "value": "variable_income",
+    "rows": 15540,
+    "baseline_ks": 0.5320077734439378,
+    "new_ks": 0.5319356699445146
+  }
+]

@@ -1,0 +1,50 @@
+feature,selected100,max_abs,q01,q99,name_keyword_match,manual_monetary_units,source_definition,units,inner_max_abs_gt100,inner_tail_abs_gt100,money_candidate
+ac_avgbal_b,False,552309227.1666666,642034.0983333333,202623846.41666645,False,True,features.py:131-151,"IDR balance, flow, or IDR/month slope",True,True,True
+ac_avgbal_l3,False,684751648.3333334,418139.82,302859096.4633331,False,True,features.py:131-151,"IDR balance, flow, or IDR/month slope",True,True,True
+ac_avgbal_mean,False,504753316.65,840733.4924999999,190181655.33361837,False,True,features.py:131-151,"IDR balance, flow, or IDR/month slope",True,True,True
+ac_close_slope,False,40940295.125,-1536211.6551818035,16941087.93004511,False,True,features.py:131-151,"IDR balance, flow, or IDR/month slope",True,True,True
+ac_income_cv,False,1.2648677169439513,0.1196321757360487,0.7115753356175538,True,False,,not monetary: ratio/count/score/other,False,False,False
+ac_income_l3,False,65804565.666666664,800057.2566666666,19861904.849999994,True,True,features.py:131-151,"IDR balance, flow, or IDR/month slope",True,True,True
+ac_income_mean,False,39563727.8,1066544.3424786325,17776548.041513134,True,True,features.py:131-151,"IDR balance, flow, or IDR/month slope",True,True,True
+ac_income_min,False,27378938.0,339563.57,10417485.319999987,True,True,features.py:131-151,"IDR balance, flow, or IDR/month slope",True,True,True
+ac_income_std,False,29407102.64083845,314078.5905291672,6797101.6605817,True,True,features.py:131-151,"IDR balance, flow, or IDR/month slope",True,True,True
+ac_income_trend,False,2.7872974499151573,0.4114772724540028,1.7411394926153705,True,False,,not monetary: ratio/count/score/other,False,False,False
+ac_inflow_mean,False,60686171.9,2259434.2962105265,30034159.892538644,False,True,features.py:131-151,"IDR balance, flow, or IDR/month slope",True,True,True
+ac_last_close,False,709678198.0,0.0,324673074.8499985,False,True,features.py:131-151,"IDR balance, flow, or IDR/month slope",True,True,True
+ac_minbal_mean,False,493089729.65,77072.53133333333,181973874.63176098,False,True,features.py:131-151,"IDR balance, flow, or IDR/month slope",True,True,True
+ac_minbal_min,False,241619548.0,0.0,60640504.399999745,False,True,features.py:131-151,"IDR balance, flow, or IDR/month slope",True,True,True
+ac_net_flow_mean,False,38267328.23529412,-1187232.8367521367,16933509.766428564,False,True,features.py:131-151,"IDR balance, flow, or IDR/month slope",True,True,True
+ac_outflow_mean,False,45450861.625,1644153.7433333334,18535284.278499965,False,True,features.py:131-151,"IDR balance, flow, or IDR/month slope",True,True,True
+bc_outstanding_max,False,340319999.0,0.0,102330575.42000012,True,True,"features.py:50-52,61-65,73,79",IDR balance or balance change,True,True,True
+bc_revbal_max,False,82956477.0,0.0,30922239.990000006,False,True,"features.py:50-52,61-65,73,79",IDR balance or balance change,True,True,True
+bc_revlimit_max,False,102354667.0,0.0,51846214.25000002,True,True,"features.py:50-52,61-65,73,79",IDR balance or balance change,True,True,True
+bh_last_outstanding,True,256773393.0,0.0,90777204.40999953,True,True,"features.py:50-52,61-65,73,79",IDR balance or balance change,True,True,True
+bh_outstanding_delta,False,260138301.0,-10399635.65,32305067.38999996,True,True,"features.py:50-52,61-65,73,79",IDR balance or balance change,True,True,True
+bp_out_a,True,340319999.0,0.0,92086807.81000006,False,True,"features.py:50-52,61-65,73,79",IDR balance or balance change,True,True,True
+bp_out_b,True,314249260.0,0.0,93064698.50000004,False,True,"features.py:50-52,61-65,73,79",IDR balance or balance change,True,True,True
+bp_out_c,True,316324403.0,0.0,89030806.53999995,False,True,"features.py:50-52,61-65,73,79",IDR balance or balance change,True,True,True
+cf_free_min,True,50037267.0,-15617096.84,6944131.039999979,False,True,features.py:291-293,IDR flow or minimum balance,True,True,True
+cf_minbal_l3,False,667324353.0,0.0,280226283.2199996,False,True,features.py:291-293,IDR flow or minimum balance,True,True,True
+cf_nonincome_l3,False,0.9505447786836817,0.1692320578450224,0.7972234054616005,True,False,,not monetary: ratio/count/score/other,False,False,False
+cf_nonincome_share,False,0.8737427451459249,0.2808649935125785,0.7133054418903098,True,False,,not monetary: ratio/count/score/other,False,False,False
+cf_out_l3,True,53344740.0,1301092.5766666667,23256085.11333332,False,True,features.py:291-293,IDR flow or minimum balance,True,True,True
+debt_to_income,True,46.37148251957841,0.0,11.78788888350143,True,False,,not monetary: ratio/count/score/other,False,False,False
+declared_monthly_income,False,91954431.0,1698170.89,31517032.30000007,True,True,"features.py:19,28",IDR or IDR/month,True,True,True
+ec_aov,True,3641166.6666666665,146894.71804511276,1275465.2941176493,False,True,"features.py:171-180,190",IDR spend or IDR/month,True,True,True
+ec_spend,True,99758000.0,2369970.0,42598210.000000045,False,True,"features.py:171-180,190",IDR spend or IDR/month,True,True,True
+ec_spend_30d,True,45636000.0,0.0,11213000.0,False,True,"features.py:171-180,190",IDR spend or IDR/month,True,True,True
+ec_spend_90d,True,67949000.0,0.0,18161030.000000007,False,True,"features.py:171-180,190",IDR spend or IDR/month,True,True,True
+ec_spend_per_month,True,9019704.22919509,187207.43220783575,2944908.103837455,False,True,"features.py:171-180,190",IDR spend or IDR/month,True,True,True
+ecspend_to_income,True,3.952419542067318,0.014886462668498834,0.667599040206644,True,False,,not monetary: ratio/count/score/other,False,False,False
+income_per_head,False,85340951.0,533965.765,21775397.740000017,True,True,"features.py:19,28",IDR or IDR/month,True,True,True
+income_verif_ratio,False,4.867906210552468,0.1922277955062045,1.7013181291555413,True,False,,not monetary: ratio/count/score/other,False,False,False
+loan_amount,False,224900000.0,3500000.0,89600000.0,True,True,"features.py:19,28",IDR or IDR/month,True,True,True
+ob_amt_90d,False,251100000.0,0.0,65983999.99999965,False,True,"features.py:215-216,254-255","IDR requested, approved, or remaining",True,True,True
+ob_remaining,True,309878971.0,0.0,96947908.88,False,True,"features.py:215-216,254-255","IDR requested, approved, or remaining",True,True,True
+proposed_monthly_installment,False,21704197.0,324221.0,8410751.0,True,True,"features.py:19,28",IDR or IDR/month,True,True,True
+pv_appr_max,False,272400000.0,4700000.0,99183999.99999966,False,True,"features.py:215-216,254-255","IDR requested, approved, or remaining",True,True,True
+pv_appr_sum,False,811500000.0,0.0,222298999.9999998,False,True,"features.py:215-216,254-255","IDR requested, approved, or remaining",True,True,True
+pv_req_mean,False,176866666.66666666,4875000.0,77624499.9999999,False,True,"features.py:215-216,254-255","IDR requested, approved, or remaining",True,True,True
+rp_active_inst,False,39434870.0,0.0,13797957.879999999,False,True,"features.py:99,117-118",IDR obligation or installment,True,True,True
+rp_remaining_oblig,False,309878971.0,0.0,90512806.47999977,False,True,"features.py:99,117-118",IDR obligation or installment,True,True,True
+rp_unpaid_amt,False,120108442.0,0.0,20918880.319999997,False,True,"features.py:99,117-118",IDR obligation or installment,True,True,True

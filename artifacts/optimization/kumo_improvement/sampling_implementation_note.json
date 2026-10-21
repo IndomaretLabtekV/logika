@@ -1,0 +1,9 @@
+{
+  "preprocessing_preflight_passed": true,
+  "ensemble_members": 8,
+  "context_rows_per_member": 19014,
+  "query_rows": 32,
+  "fix": "Materialized leading ensemble dimension for both fit and query; positions align for fitted processors.",
+  "failed_attempts_before_fix": 2,
+  "failed_attempt_scores_used": false
+}

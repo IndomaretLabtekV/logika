@@ -1,4 +1,158 @@
-# Status per 19 Oktober 2026 malam
+# Status sekarang — 21 Oktober 2026
+
+**Riset dipause atas permintaan user.** Pekerjaan terakhir sesudah pause hanya
+merapikan repository untuk GitHub. Jangan otomatis menjalankan model, melanjutkan
+checkpoint, melakukan submission atau push.
+
+- Dua sumber terintegrasi pada root yang sama;508file dipetakan, checksum sesuai,
+  lisensi utuh. `Logika-main/` sudah dihapus; dataset tetap satu di `data/`.
+- Public terbaik: **v31,0,56405**. Submission terakhir **v59,0,56296**, ID57486639,
+ 21Okt21.48WIB, memakai resep v41 yang sudah tersedia sebelumnya. Bukan breakthrough.
+  OOF analogue0,526220 vs0,526126,P>0=0,365,2/5fold. Private belum tersedia.
+- Notebook builder sekarang menghasilkan resep v59;5sel kode replay dijalankan
+  lokal dan CSV byte-identik. Fresh training GPU tidak diulang. Resep v34 lama
+  dipertahankan pada `notebook/archive/production_v34_21okt/`.
+- Kumo v56 berhenti pada11/15fit. Pacing parity bit-exact dan inhibitor sementara
+  belum mengatasi hang. Seluruh checkpoint tetap lokal; penyebab sistem belum terbukti.
+- CPU v57/v58 juga berhenti setelah screening: fullunion0,514859/SSL0,506236;
+  cappedunion0,517464/SSL0,512431 vs main0,524007. Tidak diteruskan keouter.
+- Pseudo-labeling diizinkan kembali; outer target tetap tidak boleh masuk teacher,
+  seleksi, threshold atau stopping. Seluruh run lokal, tanpa data eksternal/LBprobes.
+- File besar `results/`, prediksi, dataset, log dan cache dikeluarkan dari Git,
+  **bukan dihapus dari disk**. Kode historis dan ringkasan disalin byte-identik
+  ke `research/snapshots/` serta `artifacts/history_utama/` sebelum untracking.
+- Bukti submission: `artifacts/history_utama/results/v59/v41_lowvar_today/`.
+  Cek GitHub ringan: `python3 tools/check_repository.py`; tidak melatih model.
+
+## Riwayat detail konsolidasi dan run21Oktober
+
+Catatan di bawah merupakan snapshot saat eksperimen berlangsung; kata
+"berjalan" di bagian historis tidak berarti proses masih hidup sekarang.
+
+- Konsolidasi508 file snapshot teman:69 script→`scripts/`,13 notebook→`notebook/`,
+  metadata→`artifacts/`,10 checkpointCSV→`results/teman/`,requirements historis
+  terpisah,NOTICE/LICENSE utuh. Tidak ada dataset mentah/OOF/model teman dalam snapshot.
+- Inventaris2391file utama+508teman,SHA256:68kelompok duplikat,0lintas sumber.
+  Bukti asal/git awal di `docs/integration/`; perubahan awal user dipertahankan.
+- Audit struktural159:508checksum,632sel kode notebook,10CSV30k/ID/range,
+  15baseline hash lolos. Build-only160:9entrypoint,637sel; tidak melatih model.
+- VIPv48 selesai screening fold0: kandidat tau0,5 KS **0,522702** versus baseline
+  matched **0,528798**, Δ **−0,006096**, bootstrap SD0,004195/P>0=0,147.
+  Inner confirmation+0,003055 tidak bertahan. Tidak diteruskan5fold×3seed;
+  tidak ada breakthrough/submission. Source152 dan data historis tetap utuh.
+- SmokeSSL156 awal lolos10fit dan replay. Run penuh lama terputus saat laptop
+  hang lalu user force-shutdown; bukan hasil null/OOM yang sudah terbukti.
+  Amendemen **f142e08** menurunkan chunk500→128,allocator90%→70%,tanpa
+  mengurangi context/e4. Smoke parity maxerror0,000283. Preflight170 dengan
+  realcontext48k/e4/query128 selesai:allocated3,79GiB,reserved5,38GiB;
+  ini pemeriksaan teknis, bukan kualitas/diagnosis penyebab hang.
+- Screening SSL konfigurasi baru **selesai, exit0**. Semua 12 policy kalah pada
+  inner-search: baseline **0,546077**, pseudo terbaik **0,545334**. Kebijakan
+  dibekukan menjadi noSSL; outer baseline/candidate sama **0,524362**, Δ0.
+  Tidak diteruskan ke 15 fit. Out`results/v49/ssl_asymmetric_safe_f0`,
+  log`eda/out/156_v49_ssl_asymmetric_safe_f0.log`; seluruh real context/e4 tetap.
+  Watcher selesai otomatis dengan632 sampel durabel. Penyebab hang pada run
+  sebelumnya belum teridentifikasi; hasil run baru tidak membuktikan penyebabnya.
+- Diagnosis167:setelah user mengonfirmasi9kpublic/21kprivate,bobotrubrik45/45,
+  1.000splitpaired menunjukkan analogΔlokal+0,002175 berbalikpublic24,5%,kalah
+  ≥0,003sebanyak12,8%. Bukan probabilitas pasangan teman. Proxy131lama21k
+  terlalu besar;ZKumo−pohon kini−1,16,Causilo−2,10. Lihat
+  [diagnosis](../../docs/integration/diagnosis_public_private.md).
+- Pembaruan user 21 Okt setelah audit162: **pseudo-labeling dan teknik
+  semi-supervised kembali diizinkan**, hanya data panitia. Teacher/threshold/
+  sampling nested; tanpa LB probing, push kernel/git push. Gerbang submit tetap.
+- Prioritas: uji kategori native/input dan pool fitur teman secara nested.
+  Protokolinput commit621e359, amendemen chunk128/allocator0,7 **b356ee9**.
+  Build fitur inner166 selesai:100k aplikasi,1.000numerik+6kategori,
+  48kfit/52kquery;137,64detik,peakRSS6,31GiB. Out
+  `results/v50/teammate_features/inner_s42_f0`. Audit175 independen:7median
+  kategori dan24contoh mean/median/std/count cocok,0event e-commerce setelah
+  cutoff,9counter cutoff sumber0. Tidak membuktikan semua formula sekaligus.
+  Shortlist lama hanya memberi71 numerik teman; amendemen sebelum skor
+  **ca261e5** memperluas shortlist sampai100. Prepare173 lolos104kolom kedua
+  keluarga;kolom utama persis baselineSSL. Adapter172 lulus8checks,1745checks.
+  Smoke dan full173 terminal exit0. Inner-search:utama_raw0,546077,
+  utama_native0,547050 (+0,000974),teman_raw0,527689,teman_native0,527244.
+  Ketiga blend tetap176 juga kalah (terbaik0,543078). Fallback baseline;
+  tidak lanjut15fit,outer keluarga input belum dibuka. Daftar90historis metadata.
+- User menargetkan kenaikan/submission hari ini, kuota tersisa **2**. Belum ada
+  submission dari sesi ini; gerbang breakthrough tetap berlaku.
+- Seleksi177: selector gain LightGBM400round fit-only untuk poolutama,
+  teman dan union,100numerik+4kategori/e4/context48k,baselinecache173 diverifikasi.
+  Protokol sebelumrun **a170272**;4checks178 lulus.177 terminal null:
+  utama_gain0,538016,teman_gain0,537118,union_gain0,537014. Blend179 terbaik
+  union_rank0,548700 (Δ+0,002623),belum>0,003. Grid bobot180 juga gagal;
+  tidak lanjut15fit/outer. Semua artefak tetap di`results/v51/`.
+- Geometri181: signed-log12uang terpilih dari daftar42yang diaudit,
+  raw/native104kolom,baselinecache173. Protokol **3c8ed1b**,3checks182 lulus.
+  Preflight232fitur/context48k/e4 padaallocator0,7 terminal **OOM**;bukan null
+  kualitas,all_raw dilewati. Dua money policy selesai:rawsearch0,549461
+  (+0,003385),native0,549384. Raw menang search tetapi confirmation0,490192
+  vsbaseline0,492904 (−0,002713). Fallbackbaseline;tidak lanjutouter/15fit.
+  SourceSDK fit sudah estimator_batch_size1;tidak ada perbaikan batching sederhana.
+- Retrieval183:8kelompok query dengan nearestcontext12k,geometrifit-only,
+  baselinefull48k+controluniform12k. Protokolb0dacf1/editorial228a5ee;3checks184
+  lulus. PrepareCPU selesai,coverage8kquerytepatsekali,12kcontextsubsetfit tiap
+  kelompok. Full selesai:retrieval0,541786,probblend0,548534
+  (Δ+0,002458),rankblend0,547349 vsfull0,546077;uniformcontrol0,537206.
+  Tidak ada>0,003,fallbackbaseline,outerbelumdibuka. Outresults/v53/group_retrieval_f0.
+- Augmentasi185: supervised same-class mixup dari real inner-fit,cap2k/8k,
+  kontrol8kcloneanchor,seluruh48kreal tetap. Protokol **e2f2333**;4checks186lulus.
+  Tidak memakai test/pseudo-label. Sameclass/kategori/history serta missingmask
+  anchor dijaga,kolom biner tidakdiinterpolasi. Ini adaptasi augmentasi, bukan
+  reproduksi persisVIP-COp atau target baru yang diamati. Full selesai null:
+  mix2k0,541874,mix8k0,535558,probblend0,540061;clonecontrol0,546010
+  vsbaseline0,546077. Tidaklanjutouter. Outresults/v54/sameclass_mixup_f0.
+- EngineeringSGD187:full213,67Mparameter trainable,duaepisode1024/128 dan512/64
+  sama-samaOOM di forwardstep0 padaallocator0,7. TidakadaSGDupdate atauKSrun.
+  Source pertama diarsipbyteidentik;duaoutputresults/v55 tetap. Janganmenganggap
+  preflightini fullfine-tuning yang sudahterbuktinull kualitas.
+- Langkahaktif189 **fixedpolicy baru**,preregister **c641a7c**:rankmean50:50
+  utama_raw+union_gain,baselinejugarankpercohort/rawdisimpanterpisah. Bukan
+  mengubahfallbacklama. Ambang>0,003 user tetapuntukbuktilokalbesar;filterdua
+  inner4k>0,003sebelumnya aturanagen. Evaluasiouterf0 dilakukanagar tidak
+  menolaksemuagainsubthresholdsebelumbuktibesar. Outerpolicytidakdituning.
+  Referencecache166outer56k/44ktargethapus selesai;selector189104kolomtiapmodel,
+  union65numerikteman+35utama.3checks190lulus. FullGPU session**82442**,
+  PID**15426**,scope`logika-v56-fixed-union-full-21okt.scope`,out
+  `results/v56/fixed_union_rank`,log`eda/out/189_v56_fixed_union_f0.log`.
+  Fullf0 selesai:blend **0,529800** vsbaseline **0,524362**,Δ **+0,005438**,
+  matchedbootstrapSD0,002981/P>0=**0,906**. Vs v31historicalΔ+0,005512/P0,826.
+  Masihscreening1fold1seed;belumforecast/submission. Plot/sourcehash diverifikasi.
+- **Aktif sekarang:5fold×3seed fixed189**,orchestrator191,session**28308**,
+  wrapperPID**16158**,scope`logika-v56-validation15-21okt.scope`,log
+  `eda/out/191_v56_validation15.log`. Seeds42/7/2026,fold0–4;166→189 berurutan,
+  source/recipe dibekukan,cachef0 direplaytanpainferensiganda. Status/PIDchild/log
+  di`results/v56/validation_progress.json`,plan di`validation_plan.json`,
+  telemetryperchild di`validation_logs/`. ~17:29WIB sedangmodel_s42_f1.
+  PeriksaPID/session/scopeaktual;**jangan mulai jobberat lain**. Cgroup16/20/1GiB,
+  CPU400%,NI10,affinity0–11,OMP4,allocator0,7.191otomatis155aggregate setelah15fit,
+  **tidak** melakukan submission. Semua gate user danforecast≥0,570 tetap.
+- Audit162: 30,0570%–30,1146% event reference harga legacy berasal dari customer
+  test. Reference train-only menjadi kontrol penting untuk eksperimen transduktif;
+  kebijakan preprocessing harus dinyatakan dan dipertahankan sebanding.
+  Audit ini tidak membuktikan target/future leakage atau besaran optimisme KS.
+
+Detail [jurnal21Okt](../04_riwayat_versi/jurnal_21okt_integrasi.md),
+[audit](../../docs/integration/perbandingan_repository.md),
+[indeks lintas sumber](../../docs/integration/indeks_eksperimen.md).
+
+---
+
+
+### Checkpoint17:57WIB: kelanjutan aktif
+
+191 tetap berjalan pada scope yang sama, seed7fold0 sedang inferensi.
+Seed42 lengkap: pooledcandidate0,527810 vsbaseline0,526741, Δ+0,001069;
+3/5fold menang, belum>0,003 dan baru1seed. Auditor192 sudah memverifikasi lima fit lengkap,
+termasuk target nonfit benar NaN dan fusion identik. Exporter193 ditulis dengan
+blokir GPU sebelum gate155+audit192 lengkap; lima checks194 lulus. Inference
+export belum dijalankan. Rencana ada di
+[eksekusi sore](../../docs/integration/rencana_eksekusi_21okt_sore.md).
+Wrapper activation checkpointing195 disiapkan sebagai cadangan OOM187; lima
+checks196 CPU lolos, belum GPU/KS. Jangan menjalankan selama191 masih aktif.
+
+## Status historis per19Oktober2026 malam
 
 Ringkasan satu halaman. Log mentah: `04_riwayat_versi/jurnal_17_18okt.md` (17–18 Okt) dan
 `04_riwayat_versi/jurnal_18okt_sore.md` (18 Okt sore – 19 Okt, 35 siklus). Kronologi semua chat:
@@ -17,6 +171,7 @@ Ringkasan satu halaman. Log mentah: `04_riwayat_versi/jurnal_17_18okt.md` (17–
 | Kuota | Submit 3/hari reset 07:00 WIB; window 19 Okt **habis** (3 probe). **Kuota GPU Kaggle habis** → semua run lokal |
 | Arahan submit aktif | Sampai **21 Okt 06:00 WIB**: submit hanya bila breakthrough. Setelah itu (tanpa breakthrough) slot boleh untuk analisis (rencana sudah ditetapkan di `09_langkah_berikutnya/rekomendasi.md`) |
 | Deadline notebook | **30 Okt 2026 23:59 WIB** (telat −1 poin/menit) |
+| Semi-supervised | **Diizinkan panitia (20 Okt)**, hanya data panitia; pipeline SSL di dalam tiap outer fold |
 
 ## Perjalanan singkat (detail `04_riwayat_versi/`)
 1. 12–14 Okt (v1–v8): fitur perilaku v2 (+0,011 public), **price premium `pp_*` v5 (+0,016)** — dua lompatan terbesar.

@@ -1,13 +1,0 @@
-Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Fetching 2 files: 100%|██████████| 2/2 [00:04<00:00,  2.21s/it]Fetching 2 files: 100%|██████████| 2/2 [00:04<00:00,  2.21s/it]
-/usr/local/lib/python3.13/dist-packages/torch/nn/functional.py:2954: UserWarning: Mismatch dtype between input and weight: input dtype = c10::Half, weight dtype = float, Cannot dispatch to fused implementation. (Triggered internally at /pytorch/aten/src/ATen/native/layer_norm.cpp:344.)
-  return torch.rms_norm(input, normalized_shape, weight, eps)
-Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Fetching 2 files: 100%|██████████| 2/2 [00:00<00:00, 932.59it/s]
-{'model': 'seg_causilo', 'seed': 42, 'fold': 0, 'ks': 0.5247484163071807, 'budget': 104, 'sec': 205.0}
-Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Fetching 2 files: 100%|██████████| 2/2 [00:00<00:00, 839.45it/s]
-Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Fetching 2 files: 100%|██████████| 2/2 [00:00<00:00, 829.73it/s]
-{'model': 'seg_causilo', 'seed': 42, 'fold': 1, 'ks': 0.5314003587534177, 'budget': 104, 'sec': 203.2}
-Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Fetching 2 files: 100%|██████████| 2/2 [00:00<00:00, 993.68it/s]
-Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Fetching 2 files: 100%|██████████| 2/2 [00:00<00:00, 997.93it/s]
-{'model': 'seg_causilo', 'seed': 42, 'fold': 2, 'ks': 0.522333567635654, 'budget': 104, 'sec': 208.3}
-seg_causilo: OOF KS 0.52255 on 42000 rows
-done in 626s

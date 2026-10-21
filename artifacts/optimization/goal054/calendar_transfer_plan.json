@@ -1,0 +1,15 @@
+{
+  "date": "2026-10-18",
+  "motivation": "Descriptive OOF diagnostics found calendar residual differences, particularly application month. This motivated a hypothesis; it does not provide an unbiased test or establish causality.",
+  "family": "calendar_transfer",
+  "calendar_columns": ["cal_month", "cal_year"],
+  "penalties": [0.0003, 0.003],
+  "correction_strengths": [0.5, 1.0],
+  "loss_variants": ["unweighted", "balanced"],
+  "encoding": "One-hot month/year fitted on outer training; unpenalized intercept and L2-penalized category coefficients",
+  "training": "Use the matching-fold spline's in-sample outer-training probabilities as a frozen logistic offset. Fit calendar coefficients using all 56,000 outer-training labels only. The spline itself also excludes outer validation. This is another training stage, not stacking predictions from other OOF folds.",
+  "prediction": "Transfer the learned calendar log-odds adjustment, with strength 0.5 or 1.0, onto logit(0.75*frozen_Kumo + 0.25*spline) for this fold's validation/test. Remove the balanced-loss prior shift from the output.",
+  "protocol": {"n_splits": 5, "seed": 31027, "shuffle": true},
+  "audit": "Check source model/train/validation hashes, recompute the training objective gradient, rebuild all OOF/test probabilities and compute full-five-fold KS. No outer-validation label is a fitting input.",
+  "selection_limitations": "Feature hypotheses and repeated model selection use training labels and OOF diagnostics. These reused splits are not an untouched holdout; results may be optimistic."
+}

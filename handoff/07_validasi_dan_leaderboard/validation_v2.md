@@ -1,5 +1,12 @@
 # validation_v2 (dibangun 17 Okt; dipakai untuk semua kandidat sejak v22)
 
+**Koreksi21Okt:** user mengonfirmasi public9k/private21k (30%/70%test),rubrik45/45.
+Analisis131 lama memakai21k sebagai proxypublic;167 menghitung ulang ukuran9k:
+ZKumo−pohon−1,16,Causilo−pohon−2,10,bukan−1,7/−3,3. Bukti penaltiICL lebihlemah
+dari narasilama dan bukan pembuktian penyebab. Lihat
+[diagnosis167](../../docs/integration/diagnosis_public_private.md). Angka historis
+di bawah tetap dicatat sebagai riwayat; jangan pakaiZlama untuk melarang semuaICL.
+
 Kode: `eda/valid2.py` (protokol), `eda/run_valid2.py` (driver), `eda/blend2.py` (blend). Cara pakai:
 `02_proyek_dan_tools/validation_v2_dan_tool.md`.
 

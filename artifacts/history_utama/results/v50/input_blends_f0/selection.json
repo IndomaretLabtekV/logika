@@ -1,0 +1,53 @@
+{
+  "inputs_sha256": "c437b8aba96eb5dccfb22a91c5de47564c730e229cc40acb8af9d3f65f480645",
+  "winner": "utama_raw",
+  "search": [
+    {
+      "name": "utama_raw",
+      "ks": 0.5460765361785889,
+      "auc": 0.8494135527722597
+    },
+    {
+      "name": "utama_native",
+      "ks": 0.5470502972602844,
+      "auc": 0.8493123355553176
+    },
+    {
+      "name": "teman_raw",
+      "ks": 0.5276889801025391,
+      "auc": 0.8429289918605376
+    },
+    {
+      "name": "teman_native",
+      "ks": 0.5272436738014221,
+      "auc": 0.8431580624041433
+    },
+    {
+      "name": "pair_probability",
+      "ks": 0.5429717898368835,
+      "auc": 0.849333910804192
+    },
+    {
+      "name": "all4_probability",
+      "ks": 0.5430580377578735,
+      "auc": 0.8492497406974718
+    },
+    {
+      "name": "pair_rank",
+      "ks": 0.5430777668952942,
+      "auc": 0.8494513760480643
+    }
+  ],
+  "confirmation": [
+    {
+      "name": "utama_raw",
+      "ks": 0.4929044246673584,
+      "auc": 0.8315633638423333
+    }
+  ],
+  "outer_seen": false,
+  "smoke_only": false,
+  "min_inner_gain": 0.003,
+  "confirmation_reuse": "same inner split as173; not independent evidence across projects",
+  "outer_status": "No outer predictions read/materialized by176; refit required if promoted"
+}

@@ -1,5 +1,8 @@
 # Research papers for LOGIKA UI 2026 credit risk
 
+Catatan lanjutan 21 Okt: [SSL dan geometri context](notes/ssl_context_followups_21okt.md).
+Ini arah penelitian cadangan, bukan hasil model LOGIKA atau perubahan protokol 156.
+
 This is a curated local library for the contest's multi-table, point-in-time credit-risk task. The PDFs support method selection and notebook design; they are not training data and must not be joined to competition records. The [EDA and research report](../docs/reports/EDA_RESEARCH_REPORT.md) connects these papers to the measured dataset.
 
 PDF tidak di-commit (lihat `.gitignore`); unduh ulang dengan `python research/download_papers.py`.

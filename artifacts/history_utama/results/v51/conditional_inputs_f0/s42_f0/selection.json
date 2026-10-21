@@ -1,0 +1,36 @@
+{
+  "run_sha256": "5cdddd08cea190dd4f48d8616da00d405f9754cb51769e366bdebf36a20c181e",
+  "winner": "utama_raw",
+  "search": [
+    {
+      "name": "utama_raw",
+      "ks": 0.5460765361785889,
+      "auc": 0.8494135527722597
+    },
+    {
+      "name": "utama_gain",
+      "ks": 0.5380163788795471,
+      "auc": 0.8486594845060415
+    },
+    {
+      "name": "teman_gain",
+      "ks": 0.5371181964874268,
+      "auc": 0.8494210108829817
+    },
+    {
+      "name": "union_gain",
+      "ks": 0.537013828754425,
+      "auc": 0.8488360819134955
+    }
+  ],
+  "confirmation": [
+    {
+      "name": "utama_raw",
+      "ks": 0.4929044246673584,
+      "auc": 0.8315633638423333
+    }
+  ],
+  "outer_seen": false,
+  "min_inner_gain": 0.003,
+  "confirmation_reuse": "same inner split as173/176; not independent evidence across projects"
+}

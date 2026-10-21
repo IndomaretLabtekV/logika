@@ -1,0 +1,51 @@
+{
+  "recipe": {
+    "public_055845": 0.3333333333333333,
+    "v4_cat5_balanced_500": 0.3333333333333333,
+    "spline": 0.3333333333333333
+  },
+  "selection": {
+    "recipe": {
+      "public_055845": 0.3333333333333333,
+      "v4_cat5_balanced_500": 0.3333333333333333,
+      "spline": 0.3333333333333333
+    },
+    "ks": 0.524109452121715,
+    "roc_auc": 0.8442298396076942,
+    "average_precision": 0.5005246562522989,
+    "log_loss": 0.29510448753000823,
+    "fold_ks": [
+      0.5121610550134004,
+      0.5356312851218306,
+      0.5344193861518884
+    ],
+    "mean_fold_ks": 0.5274039087623731,
+    "fold_gains": [
+      0.003752303201960294,
+      0.0013562814582774863,
+      0.008552526274138827
+    ],
+    "eligible": true
+  },
+  "baseline": {
+    "ks": 0.5196953983607824,
+    "roc_auc": 0.8412413276500286,
+    "average_precision": 0.4945409578795754,
+    "log_loss": 0.2976465869019474,
+    "fold_ks": [
+      0.5084087518114401,
+      0.5342750036635531,
+      0.5258668598777496
+    ],
+    "mean_fold_ks": 0.5228502051175808
+  },
+  "selection_fold_seed": 8247,
+  "final_fold_seed": 9173,
+  "final_folds": 10,
+  "baseline_public_score": 0.55845,
+  "new_public_score": null,
+  "baseline_file": "submission_v3.csv",
+  "baseline_sha256": "bfd1b620ddaa85cd45ea2e8ce2c4f2ce3bcab660f09657dfbaae74aaa59525db",
+  "rule": "Coarse weights; at least .002 pooled KS and .001 mean fold KS gain; at least two fold wins; worst fold loss at most .0025.",
+  "caveat": "Feature, tree-count and blend selection reuse training labels. Validation results contain selection optimism and do not guarantee leaderboard scores."
+}

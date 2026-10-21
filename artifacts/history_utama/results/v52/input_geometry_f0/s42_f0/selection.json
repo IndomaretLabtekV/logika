@@ -1,0 +1,42 @@
+{
+  "run_sha256": "b954fdcb3bb62389d965852ab90c31e950f03078ad33b846485fdd7548690680",
+  "winner": "utama_raw",
+  "search": [
+    {
+      "name": "utama_raw",
+      "ks": 0.5460765361785889,
+      "auc": 0.8494135527722597
+    },
+    {
+      "name": "utama_native",
+      "ks": 0.5470502972602844,
+      "auc": 0.8493123355553176
+    },
+    {
+      "name": "money_raw",
+      "ks": 0.5494613647460938,
+      "auc": 0.8494569696311058
+    },
+    {
+      "name": "money_native",
+      "ks": 0.5493841171264648,
+      "auc": 0.8494319316879676
+    }
+  ],
+  "confirmation": [
+    {
+      "name": "utama_raw",
+      "ks": 0.4929044246673584,
+      "auc": 0.8315633638423333
+    },
+    {
+      "name": "money_raw",
+      "ks": 0.49019181728363037,
+      "auc": 0.8315881354243746
+    }
+  ],
+  "outer_seen": false,
+  "min_inner_gain": 0.003,
+  "full_features_feasible": false,
+  "confirmation_reuse": "same inner split as prior input projects, not independent evidence"
+}

@@ -1,0 +1,194 @@
+{
+  "rows": 70000,
+  "baseline_ks": 0.5285099762252743,
+  "ranges": {
+    "application_min": "2024-12-27 11:26:46",
+    "application_max": "2025-12-28 20:40:48",
+    "decision_min": "2025-01-01 08:00:00",
+    "decision_max": "2025-12-28 20:59:00"
+  },
+  "largest_absolute_residuals": [
+    {
+      "feature": "cal_month",
+      "value": "5",
+      "rows": 5868,
+      "positive_rate": 0.12082481254260395,
+      "mean_baseline_probability": 0.13899420327204692,
+      "mean_residual": -0.018169390729442965,
+      "descriptive_residual_z": -4.635327930660381
+    },
+    {
+      "feature": "cal_year_month",
+      "value": "2025-05",
+      "rows": 5868,
+      "positive_rate": 0.12082481254260395,
+      "mean_baseline_probability": 0.13899420327204692,
+      "mean_residual": -0.018169390729442965,
+      "descriptive_residual_z": -4.635327930660381
+    },
+    {
+      "feature": "cal_year",
+      "value": "2024",
+      "rows": 184,
+      "positive_rate": 0.21195652173913043,
+      "mean_baseline_probability": 0.14533346158475816,
+      "mean_residual": 0.06662306015437226,
+      "descriptive_residual_z": 3.041830342526219
+    },
+    {
+      "feature": "cal_year_month",
+      "value": "2024-12",
+      "rows": 184,
+      "positive_rate": 0.21195652173913043,
+      "mean_baseline_probability": 0.14533346158475816,
+      "mean_residual": 0.06662306015437226,
+      "descriptive_residual_z": 3.041830342526219
+    },
+    {
+      "feature": "cal_decision_day",
+      "value": "6",
+      "rows": 2416,
+      "positive_rate": 0.11713576158940397,
+      "mean_baseline_probability": 0.13309487309099938,
+      "mean_residual": -0.015959111501595406,
+      "descriptive_residual_z": -2.6442515930022057
+    },
+    {
+      "feature": "cal_decision_day",
+      "value": "9",
+      "rows": 2434,
+      "positive_rate": 0.12243221035332785,
+      "mean_baseline_probability": 0.13808408086427637,
+      "mean_residual": -0.015651870510948497,
+      "descriptive_residual_z": -2.5934174530355905
+    },
+    {
+      "feature": "cal_month",
+      "value": "2",
+      "rows": 5886,
+      "positive_rate": 0.14763846415222562,
+      "mean_baseline_probability": 0.13801240109941304,
+      "mean_residual": 0.009626063052812595,
+      "descriptive_residual_z": 2.4524160118113545
+    },
+    {
+      "feature": "cal_year_month",
+      "value": "2025-02",
+      "rows": 5886,
+      "positive_rate": 0.14763846415222562,
+      "mean_baseline_probability": 0.13801240109941304,
+      "mean_residual": 0.009626063052812595,
+      "descriptive_residual_z": 2.4524160118113545
+    },
+    {
+      "feature": "cal_hour",
+      "value": "11",
+      "rows": 3965,
+      "positive_rate": 0.14174022698612862,
+      "mean_baseline_probability": 0.13134365212007335,
+      "mean_residual": 0.010396574866055318,
+      "descriptive_residual_z": 2.216258644050812
+    },
+    {
+      "feature": "cal_month",
+      "value": "3",
+      "rows": 5847,
+      "positive_rate": 0.1383615529331281,
+      "mean_baseline_probability": 0.13005289373939544,
+      "mean_residual": 0.008308659193732661,
+      "descriptive_residual_z": 2.161709317921861
+    },
+    {
+      "feature": "cal_year_month",
+      "value": "2025-03",
+      "rows": 5847,
+      "positive_rate": 0.1383615529331281,
+      "mean_baseline_probability": 0.13005289373939544,
+      "mean_residual": 0.008308659193732661,
+      "descriptive_residual_z": 2.161709317921861
+    },
+    {
+      "feature": "cal_hour",
+      "value": "4",
+      "rows": 1547,
+      "positive_rate": 0.14738202973497092,
+      "mean_baseline_probability": 0.13194623797757996,
+      "mean_residual": 0.015435791757390977,
+      "descriptive_residual_z": 2.076365756568889
+    },
+    {
+      "feature": "cal_month",
+      "value": "4",
+      "rows": 5893,
+      "positive_rate": 0.13185134905820464,
+      "mean_baseline_probability": 0.13958419095491284,
+      "mean_residual": -0.0077328418967081885,
+      "descriptive_residual_z": -1.9764025397652587
+    },
+    {
+      "feature": "cal_year_month",
+      "value": "2025-04",
+      "rows": 5893,
+      "positive_rate": 0.13185134905820464,
+      "mean_baseline_probability": 0.13958419095491284,
+      "mean_residual": -0.0077328418967081885,
+      "descriptive_residual_z": -1.9764025397652587
+    },
+    {
+      "feature": "cal_month",
+      "value": "12",
+      "rows": 5916,
+      "positive_rate": 0.14148073022312374,
+      "mean_baseline_probability": 0.1342879049619274,
+      "mean_residual": 0.007192825261196316,
+      "descriptive_residual_z": 1.8723271677600786
+    },
+    {
+      "feature": "cal_decision_day",
+      "value": "4",
+      "rows": 2494,
+      "positive_rate": 0.14274258219727345,
+      "mean_baseline_probability": 0.13195075587462485,
+      "mean_residual": 0.010791826322648591,
+      "descriptive_residual_z": 1.835311369824359
+    },
+    {
+      "feature": "cal_day",
+      "value": "8",
+      "rows": 2379,
+      "positive_rate": 0.14754098360655737,
+      "mean_baseline_probability": 0.136380751232094,
+      "mean_residual": 0.011160232374463374,
+      "descriptive_residual_z": 1.810915427345923
+    },
+    {
+      "feature": "cal_hour",
+      "value": "9",
+      "rows": 3927,
+      "positive_rate": 0.12146676852559206,
+      "mean_baseline_probability": 0.12991810904691523,
+      "mean_residual": -0.008451340521323167,
+      "descriptive_residual_z": -1.8012745114505948
+    },
+    {
+      "feature": "cal_decision_day",
+      "value": "27",
+      "rows": 2519,
+      "positive_rate": 0.12266772528781263,
+      "mean_baseline_probability": 0.13278021478947777,
+      "mean_residual": -0.010112489501665127,
+      "descriptive_residual_z": -1.7128864823132517
+    },
+    {
+      "feature": "cal_hour",
+      "value": "13",
+      "rows": 4089,
+      "positive_rate": 0.13768647591098068,
+      "mean_baseline_probability": 0.1299289055333879,
+      "mean_residual": 0.007757570377592738,
+      "descriptive_residual_z": 1.6841636850465842
+    }
+  ],
+  "table": "artifacts/tables/goal054_calendar_diagnostic.csv",
+  "interpretation": "Descriptive diagnostics reuse training labels and OOF. Z values ignore dependence and repeated comparisons, so are not formal significance tests. Do not fit a correction using these global residuals and score it on these same rows."
+}

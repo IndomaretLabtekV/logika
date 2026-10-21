@@ -1,0 +1,80 @@
+{
+  "initial_primary_files": 2391,
+  "byte_unchanged": 2379,
+  "intentional_changes_or_live_checkpoints": [
+    {
+      "path": ".gitignore",
+      "expected": true,
+      "initial_sha256": "3b187c4744461a3cc4673b63e218583b9cef5d9e8259f74d568d9685f08cec63",
+      "current_sha256": "17abbec525155a58519b0d2e40ff91cc718122e33a91992a91ff8e0f541ed556"
+    },
+    {
+      "path": "README.md",
+      "expected": true,
+      "initial_sha256": "dd90422b74b5d12d8161764d2ef854e5466954b7c3eb40a65548254886d89ca3",
+      "current_sha256": "5127d7cdac5f3ca40f948592dec9a57b1561cba7903262f4ef46f5802946c2cf"
+    },
+    {
+      "path": "eda/156_kumo_ssl_context.py",
+      "expected": true,
+      "initial_sha256": "8efef07192e5ffa5969a30d5978be34e26a6a6335ddd36725faf990739a5cde8",
+      "current_sha256": "21ee03aa8404ff58bb66e968f68326f9e4256408b8388c195cfdf0c340df414c"
+    },
+    {
+      "path": "handoff/00_mulai_di_sini/prompt_untuk_chat_baru.md",
+      "expected": true,
+      "initial_sha256": "ac24d2bc161c7c78660ab32475bf590414c44494f06d5bb9cc6c8eba59a9cec0",
+      "current_sha256": "59ee26fe9113a519feb1fa07a0202b8ac813e5e3db755bb354d3e7e27edefb79"
+    },
+    {
+      "path": "handoff/00_mulai_di_sini/status_sekarang.md",
+      "expected": true,
+      "initial_sha256": "416b6b2e4ee691268f5b3abe10c7156d490d6209028d25009b3d905104acdfd2",
+      "current_sha256": "6c276433a8bdd9cd3147ee51d1109918c491a9c0055d087ac0f62daadf5be39b"
+    },
+    {
+      "path": "handoff/01_kompetisi_dan_aturan/aturan_kerja_user.md",
+      "expected": true,
+      "initial_sha256": "506286503e5e4df64f8a8e520e48705864904a51bcf991e12b3f52223d5d597d",
+      "current_sha256": "69764d9e3535b15364c6e049a8d83f4aa4778c23e64e99fced7ce8cab80623c2"
+    },
+    {
+      "path": "handoff/03_data_dan_fitur/leakage_dan_duplikasi.md",
+      "expected": true,
+      "initial_sha256": "1d3c0bfd531a56084b62304405ee2410d6ed0a4e6d84fb5d00ec5df93dcb309e",
+      "current_sha256": "e34bf48f9e5266a5bb254fe461ee142fc5aa1661d606ef4975abbd1d98b1e72e"
+    },
+    {
+      "path": "handoff/09_langkah_berikutnya/rekomendasi.md",
+      "expected": true,
+      "initial_sha256": "a66c13f928ed977a1481255b86be70ffe58119df56b071ada4b78cb76d41b983",
+      "current_sha256": "ba1a0dbf92eb2750dc485c0da96f764a135d2b9a40d4d2be7bde14aca6d096c6"
+    },
+    {
+      "path": "handoff/10_ide_belum_dicoba/README.md",
+      "expected": true,
+      "initial_sha256": "ad1657d0879438d3aad315782e4ac022f890f96deff797218f6ccb34edbdc171",
+      "current_sha256": "eeb07d5daa1db0e5ac654e37fbd32cce1246040ea01cff3097cfd54e5b217a76"
+    },
+    {
+      "path": "handoff/README.md",
+      "expected": true,
+      "initial_sha256": "e6d4c05e016c3c0c4bae92782c9f79701324782e72b9f9527047f47d6b1774c9",
+      "current_sha256": "de7321d8e39c27e18130fd9dcee1c2fe04ec5d267c0ac7f3a092638cf9a3d189"
+    },
+    {
+      "path": "results/v48/vip_raw_cached_f0/s42_f0_search.csv",
+      "expected": true,
+      "initial_sha256": "45a4faa259076d80d4280f1401c97a7e8e104bf51919344a9094393eaad4ba3b",
+      "current_sha256": "cb926cc282cf859363ad4fee8270b31d1160a8675c630a224bc372856fa74f99"
+    },
+    {
+      "path": "results/v48/vip_raw_cached_f0/s42_f0_tau1_state.npz",
+      "expected": true,
+      "initial_sha256": "5e3a50ff6946780e5733ad5423c63a8c7cf14c3616819b69f45cc5e6faf762ce",
+      "current_sha256": "7036f0233e3bd21c6b705a9eabc82a9a8b341e063fdb90e662016149e969ae1f"
+    }
+  ],
+  "unexpected_changes": [],
+  "note": "Checkpoint hashes are point-in-time; SSL156 initial source is preserved byte-identical in research/locked_recipes."
+}

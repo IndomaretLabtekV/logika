@@ -1,5 +1,36 @@
 # Aturan kerja dari user
 
+## Pembaruan user terbaru 21 Oktober, setelah audit162
+
+User: "Ada update dari panitia bahwa boleh melakukan pseudo-labeling dan teknik
+semi-supervised lainnya. Jadi, coba kembangkan dan pikirkan apapun caranya agar
+mendapatkan skor publik dan val KS setinggi mungkin."
+
+Jalur SSL/pseudo-label data panitia diizinkan kembali. Ini mengatasi larangan
+pseudo-label pada lampiran awal yang dicatat sesudah bagian ini. Teacher,
+threshold, sampling, bobot dan stopping tetap di inner split; outer hanya evaluasi.
+Eksperimen transduktif harus menyatakan penggunaan covariate tak berlabel dan
+memiliki kontrol sebanding. Tetap tanpa data eksternal, future leakage, LB probing,
+push kernel/git push; satu job berat lokal dan gerbang submission tetap berlaku.
+
+## Instruksi lampiran awal 21 Oktober — SSL kemudian diperbarui di atas
+
+Lampiran user7336e7d7: konsolidasi dan riset secara otonom,tanpa menunggu
+persetujuan rutin. Semua run lokalRTX3070Ti8GB,satu job berat,taskset0–11,nice10,
+OMP4–8. **Dilarang pseudo-label test,fitting distribusi test,LB probing,
+data eksternal,leakage masa depan,push kernel,dan git push.** Pretrained publik boleh.
+Jangan menjalankan156_SSLtest meskipun izin panitia historis dicatat di bawah.
+
+Submission hanya breakthrough yang lolos gain>0,003 vs pembanding relevan,
+5fold×minimal3seed,mayoritasfold,pairedbootstrapP≥0,9,audit leakage/seleksi bersih,
+serta alasan kuat perkiraan public≥0,570. Maks3/hari reset07WIB,tulis forecast±sd
+sebelum submit;satu per satu. Tanpa breakthrough/ragu: jangan submit.
+Pertanyaan user dijawab dahulu;bukan izin runbaru. Bila user minta berhenti,hentikan.
+Jangan menyebut kandidat/hasil sebagai kata terlarang yang pernah ditegur user.
+Jaga perubahan awal,OOF,hasil unik,resep,bukti skor,lisensi,dataset/environment.
+
+Bagian setelah ini merupakan riwayat; aturan yang bertentangan tidak berlaku.
+
 > ⚠ Sejak 17 Okt 2026 laptop diganti (CachyOS, RTX 3070 Ti 8 GB) dan aturan "jangan run model lokal" **tidak berlaku
 > lagi**: screening model lokal di GPU diperbolehkan. Lihat bagian "Tambahan 17–18 Okt" di bawah. Bagian berikut
 > dipertahankan sebagai riwayat.
@@ -79,7 +110,8 @@ Tafsiran yang dipakai sepanjang chat dan tidak pernah dikoreksi user:
   `! kaggle auth login --force`.
 - EDA: setiap analisis satu file `.py` di `eda/` yang mencetak angka dan menyimpan gambar ke `eda/out/`; fitur baru lewat
   `eda/features.py` lalu diverifikasi (sampel per kelas, uji leakage cutoff `decision_datetime`).
-- **Larangan (verbatim):** "data eksternal, leakage masa depan, pseudo-label test, fitting distribusi test, LB probing
+- **Larangan (verbatim, 17 Okt; dua butir pseudo-label/fitting test DICABUT 20 Okt oleh izin panitia, lihat bawah):**
+  "data eksternal, leakage masa depan, pseudo-label test, fitting distribusi test, LB probing
   (rule 11). Pretrained publik boleh."
 - Submission: CSV 30.000 baris, disimpan di `results/vN/`; nama `submission.csv` hanya untuk kandidat yang dipromosikan.
   Maks 3/hari, reset 07:00 WIB; satu per satu; description berisi isi dan pertanyaan riset; tulis perkiraan ± sd sebelum
@@ -142,3 +174,12 @@ Indonesia, jujur, klaim berangka, jangan git push.
 - User marah bila arahan eksplisit (lokasi run, jendela submit, "jangan jalankan") dilanggar walau dengan niat baik.
   Arahan user > dorongan Stop hook `/goal`.
 - User memberi petunjuk dari luar (teman tim lain, paper) dan ingin jawaban jujur "sudah/belum" lebih dulu.
+
+## 20 Okt: izin panitia untuk semi-supervised
+User meneruskan jawaban panitia: "Maaf ya baru menjawab untuk chatnya, Untuk penggunaan teknik semi-supervised learning diperbolehkan yaa dan hanya menggunakan data yang disediakan oleh panitia saja."
+- Pseudo-labeling, self-training, dan teknik semi-supervised lain **boleh**, dengan **data panitia saja** (train + test
+  yang disediakan). Larangan user 17 Okt "pseudo-label test, fitting distribusi test" dicabut.
+- Tetap dilarang: data eksternal, leakage masa depan (cutoff `decision_datetime`), LB probing / manipulasi leaderboard.
+- Syarat validasi: seluruh pipeline SSL dijalankan di dalam tiap outer fold (pseudo-label dari model train fold); label
+  outer fold tidak boleh dipakai untuk membuat, memilih, atau memberi threshold pseudo-label. Pipeline SSL harus ada di
+  notebook submission.

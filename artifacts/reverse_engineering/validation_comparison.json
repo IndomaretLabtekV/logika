@@ -1,0 +1,130 @@
+{
+  "fold_seed": 8247,
+  "fold_count": 3,
+  "model_seed": 2026,
+  "baseline": "75% version4 + 25% TabM on the original three folds",
+  "new_variable_features": [
+    "re_price_log_gls",
+    "re_price_log_posterior",
+    "re_price_posterior_sd",
+    "re_price_measurement_sd",
+    "re_price_latent_multiplier",
+    "re_bureau_score_gls",
+    "re_bureau_score_posterior",
+    "re_bureau_posterior_sd",
+    "re_income_geometric_mean",
+    "re_income_log_mean",
+    "re_income_log_sd",
+    "re_income_log_measurement_sd",
+    "re_declared_income_log_gap",
+    "re_outflow_income_geometric_ratio",
+    "re_late_1_posterior",
+    "re_late_1_posterior_sd",
+    "re_late_7_posterior",
+    "re_late_7_posterior_sd",
+    "re_late_30_posterior",
+    "re_late_30_posterior_sd"
+  ],
+  "comparison": [
+    {
+      "name": "version5",
+      "new_model_weight": 0,
+      "ks": 0.5252853412303827,
+      "roc_auc": 0.8451757680111922,
+      "average_precision": 0.5025937344290552,
+      "log_loss": 0.294322612311168,
+      "fold_ks": [
+        0.5107093521677464,
+        0.535382911560984,
+        0.5364795048541373
+      ],
+      "mean_fold_ks": 0.527523922860956
+    },
+    {
+      "name": "reverse_cat5",
+      "new_model_weight": 0.25,
+      "ks": 0.5248472522809067,
+      "roc_auc": 0.8451660654680558,
+      "average_precision": 0.5023787154598782,
+      "log_loss": 0.29439706291249573,
+      "fold_ks": [
+        0.5097091156369544,
+        0.5343430008358723,
+        0.5349601084299028
+      ],
+      "mean_fold_ks": 0.5263374083009098
+    },
+    {
+      "name": "reverse_cat5",
+      "new_model_weight": 0.5,
+      "ks": 0.5238056634095525,
+      "roc_auc": 0.8448280639890927,
+      "average_precision": 0.5013348629154838,
+      "log_loss": 0.2947074659117429,
+      "fold_ks": [
+        0.5093287572227764,
+        0.5319362139262089,
+        0.5358000182661218
+      ],
+      "mean_fold_ks": 0.5256883298050357
+    },
+    {
+      "name": "reverse_cat5",
+      "new_model_weight": 1.0,
+      "ks": 0.5203120054099294,
+      "roc_auc": 0.8431172934997267,
+      "average_precision": 0.49687756401079264,
+      "log_loss": 0.29609055961751896,
+      "fold_ks": [
+        0.5067193914640944,
+        0.5283870745215832,
+        0.5306502927180459
+      ],
+      "mean_fold_ks": 0.5219189195679078
+    },
+    {
+      "name": "reverse_spline",
+      "new_model_weight": 0.25,
+      "ks": 0.525505164690663,
+      "roc_auc": 0.8452285425428635,
+      "average_precision": 0.5028545454826134,
+      "log_loss": 0.29416634984943607,
+      "fold_ks": [
+        0.5109771960999883,
+        0.5336715737515955,
+        0.5363591443817998
+      ],
+      "mean_fold_ks": 0.5270026380777946
+    },
+    {
+      "name": "reverse_spline",
+      "new_model_weight": 0.5,
+      "ks": 0.5246512852528538,
+      "roc_auc": 0.8445536037348295,
+      "average_precision": 0.5015383059065834,
+      "log_loss": 0.29459297320148903,
+      "fold_ks": [
+        0.5107194143112631,
+        0.5307806688843499,
+        0.5349205307892135
+      ],
+      "mean_fold_ks": 0.5254735379949422
+    },
+    {
+      "name": "reverse_spline",
+      "new_model_weight": 1.0,
+      "ks": 0.5175052874643485,
+      "roc_auc": 0.8410363188255049,
+      "average_precision": 0.49444497442910107,
+      "log_loss": 0.29739878541041853,
+      "fold_ks": [
+        0.506228146037538,
+        0.5255390023955662,
+        0.5267172705431116
+      ],
+      "mean_fold_ks": 0.5194948063254052
+    }
+  ],
+  "submission_changed": false,
+  "caveat": "Local screening; feature/model/weight selection reuses labels. Latent feature parameters use unlabeled histories, not target labels."
+}

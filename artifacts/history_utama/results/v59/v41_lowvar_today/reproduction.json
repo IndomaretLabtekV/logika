@@ -1,0 +1,51 @@
+{
+  "recipe": "rank(mean6tree-ranks)/3 + rank(mean5Causilo-seeds)/3 + rank(mean3Kumo70k-draws)/3",
+  "inputs_sha256": {
+    "results/v22/v22/gbdt/test_lgb.parquet": "2f6863b37b233e7b3caa7be3b163ada6c272e062279d0287b3983f43651628a6",
+    "results/v22/v22/gbdt/test_lgb_s.parquet": "b676885d5d264c7d2526dbeae482c96e50f847c517474ad63dd581c1a96db70f",
+    "results/v22/v22/gbdt/test_xgb.parquet": "1f072d604de5c9b2ed5a821f8467c93b622dc2bc697f128252a64244e6bf0a9e",
+    "results/v22/v22/gbdt/test_xgb_s.parquet": "c2ef66369abef118345c83a6c697acd78f9fe95d776adb0e5a777da34981b66f",
+    "results/v22/v22/gbdt/test_cat.parquet": "582655127d5cdd08222eea8d3c521ed1998d806ebe2eeb7b86b5893934d8954c",
+    "results/v22/v22/gbdt/test_cat_s.parquet": "89613bfe30ef8d661d433283f43ec8ae34efe899b79e841f1e9ca1de5322ac38",
+    "results/v22/v22/fm/test_causilo.parquet": "0bc32912aff477f576dd30775e1dd21a36ea627ef1978c5883dc23eab1bf4527",
+    "results/v37/test_causilo.parquet": "f65a76d2e192855b1f313824fdb4c23d355e5610d62c1f4fe2c60cc7cf53d585",
+    "results/v41/causilo_s12/test_causilo.parquet": "f333c91b211cb0ce4d78dbbed88abe712c0ffd0e5ad7f10a8e2c1b5b8eb6acb2",
+    "results/v34/test_kumo_full70k.parquet": "5cedd99943e0f77471616a63f4e369092880cdc06eac519e75a1004c8474729f",
+    "results/v41/test_kumo_full70k_g1.parquet": "7c3e769766dfa6df0a75d42fe39bbe1e958b611bae1ac8b69608db7a0abc2186",
+    "results/v41/test_kumo_full70k_g2.parquet": "81360ea7cc10e4f4c415a32ec4c0222983626a9d77314f532909422f74a2b2ee"
+  },
+  "submission_sha256": "d7e17b079e5ccf235e7ae60a537cb54b01529e41990da0370b1d6a39c9627d92",
+  "sample_sha256": "e1d1c105de6bc0906025366f9839e5f97e19f8efb2167e6cb5fef710ad91679d",
+  "rows": 30000,
+  "columns": [
+    "application_id",
+    "default_probability"
+  ],
+  "exact_replay": true,
+  "submission_performed": false,
+  "mode": "replay",
+  "reproducer_sha256": "51e18206ad761ca3d72ab5f6a31aae1026f7395accd5c95a5e6199071191c552",
+  "source_sha256": {
+    "features.py": "d394a09c031e4a53a9b2e5fd9a0ccb4883dca3a333bc7370570bb2460d31df44",
+    "nn_prep.py": "c9bc377bd20940e9ca51d0b85046871e16fa41d95c4bca31701e4184f5b1ec33",
+    "valid2.py": "3f1bfe40ae9e32d70577f537e6b7a29e2a103d7a423eb03026e62ab37d01f8fc",
+    "run_valid2.py": "742aebae015060c8ba5bfeec1347e9029abda1078ae72c00558167f8c4167e40",
+    "kumo_fulltrain.py": "270daf80687c5fb6d7bb43bafc930c193abd4c041fb673f6d1ab0dd28aa169d0",
+    "common.py": "679d20a7beb3d5e3946232d1dcea66f21b871ab1a41c8879e15d3d5a615f92e7"
+  },
+  "fresh_training_commands": [],
+  "training_repeated_today": false,
+  "packages": {
+    "numpy": "2.5.4",
+    "polars": "2.0.0",
+    "pandas": "3.0.6",
+    "scipy": "1.18.1"
+  },
+  "audit_sha256": "1fab7b03c1041e32e108b87d95b4332663161aa847e5a973bbda6e7182a71641",
+  "local_ks": 0.5262199378285728,
+  "local_reference_ks": 0.5261264039216942,
+  "bootstrap_p_gt_zero": 0.365,
+  "breakthrough": false,
+  "public_forecast_mean": 0.56362064735855,
+  "public_forecast_sd": 0.002228989838079634
+}

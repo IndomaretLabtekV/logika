@@ -1,0 +1,48 @@
+{
+  "original_checkpoint_recipe": {
+    "ks": 0.5285099762252743,
+    "auc": 0.8473211411419717,
+    "fold_ks": [
+      0.526691703841345,
+      0.5348103292497599,
+      0.5394277675597503,
+      0.5268633360329826,
+      0.5269798051280821
+    ],
+    "mean_fold_ks": 0.5309545883623841
+  },
+  "rebuilt_without_correction": {
+    "ks": 0.5284874447639913,
+    "auc": 0.8473225043666704,
+    "fold_ks": [
+      0.5264437494649503,
+      0.5348929807085583,
+      0.5392909426566266,
+      0.526780677742356,
+      0.5269798051280821
+    ],
+    "mean_fold_ks": 0.5308776311401147
+  },
+  "rebuilt_with_correction": {
+    "ks": 0.5292994659005608,
+    "auc": 0.8472026883917805,
+    "fold_ks": [
+      0.5281879952429976,
+      0.537456002011113,
+      0.5400632838002837,
+      0.5302198189027255,
+      0.5286058527632467
+    ],
+    "mean_fold_ks": 0.5329065905440732
+  },
+  "numerical_source_pooled_delta": -2.2531461282948584e-05,
+  "correction_alone_pooled_delta": 0.0008120211365694185,
+  "correction_alone_fold_deltas": [
+    0.0017442457780473264,
+    0.002563021302554702,
+    0.0007723411436570959,
+    0.0034391411603694744,
+    0.001626047635164607
+  ],
+  "interpretation": "Diagnostic attribution only, evaluated after all correction recipes were completed. No source draw was chosen or rejected using these metrics. The rebuilt source is numerically distinct from the public checkpoint."
+}

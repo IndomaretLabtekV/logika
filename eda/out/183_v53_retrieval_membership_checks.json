@@ -1,0 +1,97 @@
+{
+  "plan_sha256": "01b15467bec31e334858ca94bfb44045ea544cc142d0e9df7e32243625b78c95",
+  "checks": [
+    {
+      "group": 0,
+      "queries": 1171,
+      "context": 12000,
+      "unknown_to_actual_context": {
+        "loan_purpose": 0,
+        "region": 0,
+        "employment_type": 0,
+        "housing_status": 0
+      }
+    },
+    {
+      "group": 1,
+      "queries": 1102,
+      "context": 12000,
+      "unknown_to_actual_context": {
+        "loan_purpose": 0,
+        "region": 0,
+        "employment_type": 0,
+        "housing_status": 0
+      }
+    },
+    {
+      "group": 2,
+      "queries": 891,
+      "context": 12000,
+      "unknown_to_actual_context": {
+        "loan_purpose": 0,
+        "region": 0,
+        "employment_type": 0,
+        "housing_status": 0
+      }
+    },
+    {
+      "group": 3,
+      "queries": 1054,
+      "context": 12000,
+      "unknown_to_actual_context": {
+        "loan_purpose": 0,
+        "region": 0,
+        "employment_type": 0,
+        "housing_status": 0
+      }
+    },
+    {
+      "group": 4,
+      "queries": 975,
+      "context": 12000,
+      "unknown_to_actual_context": {
+        "loan_purpose": 0,
+        "region": 0,
+        "employment_type": 0,
+        "housing_status": 0
+      }
+    },
+    {
+      "group": 5,
+      "queries": 1004,
+      "context": 12000,
+      "unknown_to_actual_context": {
+        "loan_purpose": 0,
+        "region": 0,
+        "employment_type": 0,
+        "housing_status": 0
+      }
+    },
+    {
+      "group": 6,
+      "queries": 742,
+      "context": 12000,
+      "unknown_to_actual_context": {
+        "loan_purpose": 0,
+        "region": 0,
+        "employment_type": 0,
+        "housing_status": 0
+      }
+    },
+    {
+      "group": 7,
+      "queries": 1061,
+      "context": 12000,
+      "unknown_to_actual_context": {
+        "loan_purpose": 0,
+        "region": 0,
+        "employment_type": 0,
+        "housing_status": 0
+      }
+    }
+  ],
+  "query_coverage": 8000,
+  "context_query_disjoint": true,
+  "outer_predictions_read": false,
+  "gpu_used": false
+}

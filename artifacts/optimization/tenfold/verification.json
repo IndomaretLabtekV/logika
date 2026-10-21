@@ -1,0 +1,15 @@
+{
+  "submission_rows": 30000,
+  "columns": [
+    "application_id",
+    "default_probability"
+  ],
+  "sample_order_verified": true,
+  "valid_probability_range": true,
+  "unique_ids": true,
+  "saved_new_models": 20,
+  "known_champion_retained": true,
+  "independent_ks": 0.5190088512771253,
+  "sha256": "bfd1b620ddaa85cd45ea2e8ce2c4f2ce3bcab660f09657dfbaae74aaa59525db",
+  "api_key_scan": "passed"
+}

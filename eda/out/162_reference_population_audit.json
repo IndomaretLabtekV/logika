@@ -1,0 +1,16 @@
+{
+  "train_customers": 70000,
+  "test_customers": 30000,
+  "source_event_rows": 4359817,
+  "test_reference_fraction_min": 0.30056991634642016,
+  "test_reference_fraction_max": 0.30114621050351253,
+  "legacy_main_reference_includes_test_customers": true,
+  "legacy_teammate_reference_population": "all training customers; not refit per outer fold",
+  "target_loaded": false,
+  "model_executed": false,
+  "means_or_std_fit": false,
+  "source_sha256": "d394a09c031e4a53a9b2e5fd9a0ccb4883dca3a333bc7370570bb2460d31df44",
+  "evidence": "eda/features.py v5_features builds raw monthly reference before joining cutoff; no customer train filter",
+  "decision": "Preserve legacy baseline; new candidate must fit reference only from its fitting partition and respect time cutoff.",
+  "limitation": "Counting reference population does not quantify model-score optimism or prove a quality gain."
+}

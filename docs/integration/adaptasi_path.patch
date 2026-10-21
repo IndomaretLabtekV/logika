@@ -1,0 +1,2063 @@
+--- Logika-main/README.md
++++ docs/integration/riset_teman.md
+@@ -4,33 +4,33 @@
+ 
+ ## Hasil yang dapat dibuka
+ 
+-- [Notebook pipeline: EDA sampai submission](notebooks/README.md), dengan kode langsung di sel dan penjelasan per versi
+-- [Notebook reverse engineering RNG dan jitter](notebooks/07_reverse_engineering_rng.ipynb), dengan probe seed, inferensi noise, dan generator pendekatan
+-- [Checkpoint Kumo Large: public **0,56262**](submission_kumo.csv), dikonfirmasi melalui API Kaggle; [notebook 08](notebooks/08_kumo_tabular.ipynb)
+-- [Eksperimen lanjutan Kumo](notebooks/09_kumo_improvement.ipynb): fitur laten, TabICLv2, sampling kelas, ensemble lebih besar, dan konteks penuh; [laporan](artifacts/optimization/kumo_improvement/laporan_improvement.md)
+-- [Checkpoint Kumo–spline: public **0,56393**](submission_kumo_spline_exploratory.csv), menurut laporan pengguna 18 Oktober 2026; [bukti pencatatan file](artifacts/optimization/kumo_hybrid/public_result_056393.json). Pooled KS lima fold 0,52851 vs 0,52722; rata-rata KS turun dan hanya 1/5 fold membaik; [notebook 10](notebooks/10_kumo_spline.ipynb)
+-- [Riset target KS OOF 0,54](notebooks/12_goal054_research.ipynb): lima fold identik, kandidat interim KS **0,52930** vs **0,52851** (5/5 fold membaik), kode model dan audit; [progres dan batas interpretasi](artifacts/optimization/goal054/README.md). Target belum tercapai.
+-- [Kandidat versi 5](submission_v5.csv), versi 5; KS OOF 0,52446 dibanding versi 4 0,52293, public **0,55680** menurut laporan pengguna
+-- [Submission default](submission_v4.csv), versi 4; `submission.csv` berisi prediksi yang sama. Versi 5 belum memenuhi syarat promosi minimal enam fold membaik
+-- [Checkpoint public 0,55845](submission_v3.csv), terkonfirmasi melalui API Kaggle
+-- [Laporan validasi versi 4](artifacts/optimization/v4/laporan_submission_v4.md)
+-- [Laporan bergrafik](artifacts/laporan_analisis.html), satu berkas HTML dengan grafik tertanam
+-- [Laporan Markdown](artifacts/laporan_analisis.md)
+-- [Notebook analisis](analisis_logika.ipynb)
++- [Notebook pipeline: EDA sampai submission](../../notebook/README_teman.md), dengan kode langsung di sel dan penjelasan per versi
++- [Notebook reverse engineering RNG dan jitter](../../notebook/07_reverse_engineering_rng.ipynb), dengan probe seed, inferensi noise, dan generator pendekatan
++- [Checkpoint Kumo Large: public **0,56262**](../../results/teman/submission_kumo.csv), dikonfirmasi melalui API Kaggle; [notebook 08](../../notebook/08_kumo_tabular.ipynb)
++- [Eksperimen lanjutan Kumo](../../notebook/09_kumo_improvement.ipynb): fitur laten, TabICLv2, sampling kelas, ensemble lebih besar, dan konteks penuh; [laporan](../../artifacts/optimization/kumo_improvement/laporan_improvement.md)
++- [Checkpoint Kumo–spline: public **0,56393**](../../results/teman/submission_kumo_spline_exploratory.csv), menurut laporan pengguna 18 Oktober 2026; [bukti pencatatan file](../../artifacts/optimization/kumo_hybrid/public_result_056393.json). Pooled KS lima fold 0,52851 vs 0,52722; rata-rata KS turun dan hanya 1/5 fold membaik; [notebook 10](../../notebook/10_kumo_spline.ipynb)
++- [Riset target KS OOF 0,54](../../notebook/12_goal054_research.ipynb): lima fold identik, kandidat interim KS **0,52930** vs **0,52851** (5/5 fold membaik), kode model dan audit; [progres dan batas interpretasi](../../artifacts/optimization/goal054/README.md). Target belum tercapai.
++- [Kandidat versi 5](../../results/teman/submission_v5.csv), versi 5; KS OOF 0,52446 dibanding versi 4 0,52293, public **0,55680** menurut laporan pengguna
++- [Submission default](../../results/teman/submission_v4.csv), versi 4; `submission.csv` berisi prediksi yang sama. Versi 5 belum memenuhi syarat promosi minimal enam fold membaik
++- [Checkpoint public 0,55845](../../results/teman/submission_v3.csv), terkonfirmasi melalui API Kaggle
++- [Laporan validasi versi 4](../../artifacts/optimization/v4/laporan_submission_v4.md)
++- [Laporan bergrafik](../../artifacts/laporan_analisis.html), satu berkas HTML dengan grafik tertanam
++- [Laporan Markdown](../../artifacts/laporan_analisis.md)
++- [Notebook analisis](../../notebook/analisis_logika.ipynb)
+ - [Tabel hasil lengkap](artifacts/tables/)
+-- [Audit kualitas dan waktu](artifacts/quality_audit.json)
+-- [Ringkasan JSON](artifacts/summary.json)
++- [Audit kualitas dan waktu](../../artifacts/quality_audit.json)
++- [Ringkasan JSON](../../artifacts/summary.json)
+ 
+ Ada 70.000 aplikasi latih, 30.000 aplikasi uji, dan 9.507 target positif pada train (13,58%). Pada baseline XGBoost berparameter tetap, ROC-AUC holdout stratified meningkat dari 0,6411 untuk aplikasi saja menjadi 0,8302 dengan seluruh riwayat; ROC-AUC temporal 0,8258. Metrik resmi kompetisi adalah **Kolmogorov-Smirnov (KS)** sesuai Evaluation yang diberikan pengguna. KS baseline holdout 0,50671, sedangkan skor publik yang diperoleh pengguna adalah 0,52623. Tidak ada submission yang dikirim otomatis oleh skrip.
+ 
+-Eksperimen tambahan: [Kumo Large](artifacts/optimization/kumo/laporan_kumo.md), KS OOF tiga fold **0,52807**, dibanding V5 **0,52529** pada fold identik. [CSV Kumo](submission_kumo.csv) dan [notebook 08](notebooks/08_kumo_tabular.ipynb) tersedia; public **0,56262**, dikonfirmasi melalui API Kaggle pada 18 Oktober 2026.
++Eksperimen tambahan: [Kumo Large](../../artifacts/optimization/kumo/laporan_kumo.md), KS OOF tiga fold **0,52807**, dibanding V5 **0,52529** pada fold identik. [CSV Kumo](../../results/teman/submission_kumo.csv) dan [notebook 08](../../notebook/08_kumo_tabular.ipynb) tersedia; public **0,56262**, dikonfirmasi melalui API Kaggle pada 18 Oktober 2026.
+ 
+ ## Reproduksi
+ 
+ Lingkungan yang dipakai tercatat pada `artifacts/summary.json`; gunakan Python 3.10 atau 3.11 dengan versi paket yang tercantum.
+ 
+ ```bash
+-python -m pip install -r requirements.txt
++python -m pip install -r environments/teman/requirements.txt
+ python scripts/download_data.py
+ python scripts/analyze.py
+ ```
+@@ -41,7 +41,7 @@
+ python scripts/download_data.py --credentials '/path/to/kaggle.json'
+ ```
+ 
+-Kredensial juga dapat disediakan melalui environment Kaggle. Isi kredensial tidak dicetak atau dimasukkan ke laporan/notebook. Data mentah sekitar 949 MB; berkas yang sudah lengkap dilewati saat unduh ulang. Manifest unduhan disimpan di `data/raw/download_manifest.json`.
++Kredensial juga dapat disediakan melalui environment Kaggle. Isi kredensial tidak dicetak atau dimasukkan ke laporan/notebook. Data mentah sekitar 949 MB; berkas yang sudah lengkap dilewati saat unduh ulang. Manifest unduhan disimpan di `data/download_manifest.json`.
+ 
+ ```bash
+ # Gunakan agregasi yang sudah tersedia, jalankan ulang EDA dan baseline:
+@@ -54,10 +54,10 @@
+ python scripts/analyze.py --reuse-features --skip-model
+ 
+ # Dependensi tambahan untuk menjalankan notebook:
+-python -m pip install -r requirements-notebook.txt
+-```
+-
+-`--report-only` menggunakan fitur dan benchmark yang sudah ada; gunakan setelah keduanya dibangun dari versi data yang sama. `--skip-model` menghasilkan laporan tanpa bagian baseline. Notebook EDA lama di root adalah pembaca hasil. [Notebook pipeline baru](notebooks/README.md) memuat EDA, kode agregasi, training, validasi, prediksi test, dan ekspor CSV untuk seluruh versi.
++python -m pip install -r environments/teman/requirements-notebook.txt
++```
++
++`--report-only` menggunakan fitur dan benchmark yang sudah ada; gunakan setelah keduanya dibangun dari versi data yang sama. `--skip-model` menghasilkan laporan tanpa bagian baseline. Notebook EDA lama di root adalah pembaca hasil. [Notebook pipeline baru](../../notebook/README_teman.md) memuat EDA, kode agregasi, training, validasi, prediksi test, dan ekspor CSV untuk seluruh versi.
+ 
+ ## Aturan agregasi
+ 
+@@ -80,7 +80,7 @@
+ ## Optimasi untuk KS
+ 
+ ```bash
+-python -m pip install -r requirements-optimization.txt
++python -m pip install -r environments/teman/requirements-optimization.txt
+ python scripts/extend_features.py
+ python scripts/optimize_ks.py --features base
+ python scripts/optimize_ks.py --features extended
+@@ -133,7 +133,7 @@
+ python scripts/export_v4_submission.py
+ ```
+ 
+-[Laporan versi 4](artifacts/optimization/v4/laporan_submission_v4.md) memuat perbandingan pada fold yang sama, grafik KS/ROC, bobot gabungan, dan checksum. [Metadata submission](artifacts/optimization/v4/submission_v4_metadata.json), [audit fitur](artifacts/optimization/v4/feature_audit.json), dan [perbandingan kelompok customer](artifacts/optimization/v4/cohort_metrics.json) juga disertakan. Model akhir dan prediksi validasi per baris disimpan lokal dan dikecualikan dari Git.
++[Laporan versi 4](../../artifacts/optimization/v4/laporan_submission_v4.md) memuat perbandingan pada fold yang sama, grafik KS/ROC, bobot gabungan, dan checksum. [Metadata submission](../../artifacts/optimization/v4/submission_v4_metadata.json), [audit fitur](../../artifacts/optimization/v4/feature_audit.json), dan [perbandingan kelompok customer](../../artifacts/optimization/v4/cohort_metrics.json) juga disertakan. Model akhir dan prediksi validasi per baris disimpan lokal dan dikecualikan dari Git.
+ 
+ ## Kandidat submission versi 5
+ 
+@@ -141,11 +141,11 @@
+ 
+ Pada sepuluh fold yang sama, KS OOF meningkat dari **0,522934 menjadi 0,524464**, rata-rata KS fold dari **0,529401 menjadi 0,530121**, dan ROC-AUC dari 0,844598 menjadi 0,845405. Lima dari sepuluh fold membaik. Kandidat ini belum memenuhi syarat promosi enam fold, sehingga **`submission_v5.csv` disediakan terpisah dan `submission.csv` tetap versi 4**. Bootstrap berpasangan masih mencakup nol; peningkatan kecil ini belum membuktikan keuntungan yang stabil atau skor public lebih tinggi. Public versi 5 **0,55680**, dilaporkan pengguna pada 2026-10-15, turun **0,00165** dibanding versi 3 (0,55845). Kenaikan validasi lokal belum diikuti kenaikan public. Versi 3 tetap checkpoint public terbaik yang tercatat; skor public versi 4 belum tersedia. Tidak ada submit otomatis.
+ 
+-[Notebook 06](notebooks/06_submission_v5.ipynb) memuat seluruh pipeline hingga CSV. [Laporan versi 5](artifacts/optimization/v5/laporan_submission_v5.md) menjelaskan pemilihan eksploratif, hasil eksperimen yang tidak dipromosikan, dan keterbatasan validasi. Model tersimpan berhasil mereproduksi OOF dan prediksi test secara persis.
++[Notebook 06](../../notebook/06_submission_v5.ipynb) memuat seluruh pipeline hingga CSV. [Laporan versi 5](../../artifacts/optimization/v5/laporan_submission_v5.md) menjelaskan pemilihan eksploratif, hasil eksperimen yang tidak dipromosikan, dan keterbatasan validasi. Model tersimpan berhasil mereproduksi OOF dan prediksi test secara persis.
+ 
+ ```bash
+ # Python 3.10; setelah fitur dan model versi 4 tersedia:
+-python -m pip install -r requirements-v5.txt -r requirements-notebook.txt
++python -m pip install -r environments/teman/requirements-v5.txt -r environments/teman/requirements-notebook.txt
+ python scripts/build_features_v5.py
+ python scripts/evaluate_v5.py --group tabm
+ python scripts/train_v5_candidate.py --candidate v5_tabm_weight1 --new-weight .25
+@@ -159,7 +159,7 @@
+ 
+ ## Reverse engineering generator dan jitter
+ 
+-[Notebook 07](notebooks/07_reverse_engineering_rng.ipynb) dan [laporan rinci](artifacts/reverse_engineering/laporan_reverse_engineering.md) memisahkan aturan observasi yang terkonfirmasi dari estimasi noise dan hipotesis generator. **Seed RNG asli belum ditemukan.** Probe mencakup stream usia, template hash ID, RNG per customer, ID sebagai raw output, dan uji cloning state MT19937 dengan positive control.
++[Notebook 07](../../notebook/07_reverse_engineering_rng.ipynb) dan [laporan rinci](../../artifacts/reverse_engineering/laporan_reverse_engineering.md) memisahkan aturan observasi yang terkonfirmasi dari estimasi noise dan hipotesis generator. **Seed RNG asli belum ditemukan.** Probe mencakup stream usia, template hash ID, RNG per customer, ID sebagai raw output, dan uji cloning state MT19937 dengan positive control.
+ 
+ Cicilan terpilih tepat sama dengan `ceil` formula anuitas. Semua unit price merupakan kelipatan Rp1.000 sebelum dikalikan quantity. Delay keputusan cocok dengan tiga rentang uniform 0,2–3, 6–30, dan 36–120 jam, dengan proporsi sekitar 45%/35%/20% dan dua celah tanpa observasi. SD noise pada log harga diperkirakan 0,654; pada skor biro sekitar 23 poin. Angka noise dan efek laten adalah estimasi, bukan nilai RNG asli yang diketahui.
+ 
+@@ -177,15 +177,15 @@
+ 
+ ## Eksperimen Kumo Tabular
+ 
+-[Submission Kumo murni](submission_kumo.csv) memakai Kumo Large, 90 fitur, delapan
++[Submission Kumo murni](../../results/teman/submission_kumo.csv) memakai Kumo Large, 90 fitur, delapan
+ anggota ensemble, dan seluruh training setiap fold (46.666–46.667 konteks). Pada
+ tiga fold yang identik dengan seleksi V5, KS OOF naik dari **0,52529** ke **0,52807**;
+ rata-rata KS fold naik dari **0,52752** ke **0,52907**, dengan **3/3 fold membaik**.
+ Ini berbeda dari validasi akhir V5 sepuluh fold. Skor public Kumo murni adalah **0,56262**,
+ dikonfirmasi melalui API Kaggle pada 18 Oktober 2026: naik **0,00417** terhadap V3
+ (0,55845) dan **0,00582** terhadap V5 (0,55680). Skor public campuran belum diketahui.
+-[Campuran 75% V5 + 25% Kumo](submission_kumo_blend.csv) tersedia terpisah.
+-[Laporan lengkap](artifacts/optimization/kumo/laporan_kumo.md) mencatat seluruh konfigurasi.
++[Campuran 75% V5 + 25% Kumo](../../results/teman/submission_kumo_blend.csv) tersedia terpisah.
++[Laporan lengkap](../../artifacts/optimization/kumo/laporan_kumo.md) mencatat seluruh konfigurasi.
+ 
+ Kumo dijalankan lokal memakai bobot pretrained NVIDIA `nvidia/Kumo-Tabular`, revisi
+ `v1.0.1`, melalui `structured-data-models==0.2.1`. Lingkungan Python 3.11 terpisah
+@@ -195,14 +195,14 @@
+ ```bash
+ python3.11 -m venv .venv
+ .venv/bin/python -m pip install torch==2.8.0 --index-url https://download.pytorch.org/whl/cu128
+-.venv/bin/python -m pip install -r requirements-kumo.txt
++.venv/bin/python -m pip install -r environments/teman/requirements-kumo.txt
+ # Setelah fitur V5 tersedia (OOF V5 opsional untuk perbandingan):
+ .venv/bin/python scripts/kumo_tabular.py --size large --features v5 --context 50000 --estimators 8 --batch-size 8192 --test
+ .venv/bin/python scripts/report_kumo.py --export large_v5_ctx50000_e8 --blend-weight 0.25
+ .venv/bin/python -m ipykernel install --user --name logika-kumo --display-name "LOGIKA Kumo (Python 3.11)"
+ ```
+ 
+-[Notebook 08](notebooks/08_kumo_tabular.ipynb) menampilkan EDA, seluruh kode agregasi
++[Notebook 08](../../notebook/08_kumo_tabular.ipynb) menampilkan EDA, seluruh kode agregasi
+ fitur, konteks Kumo, validasi, dan ekspor. Tiga fold identik dengan seleksi V5
+ (`StratifiedKFold`, seed 8247). Baris validation tidak masuk konteks prediksinya.
+ Preprocessing dipelajari dari konteks, dan proporsi kelas konteks mengikuti data asli.
+@@ -214,7 +214,7 @@
+ 
+ ## Eksperimen lanjutan Kumo
+ 
+-[Notebook 09](notebooks/09_kumo_improvement.ipynb) memperlihatkan delapan kandidat
++[Notebook 09](../../notebook/09_kumo_improvement.ipynb) memperlihatkan delapan kandidat
+ pada tiga fold awal, lalu dua uji pada lima fold yang sama dengan baseline.
+ Campuran 75% Kumo baseline + 25% konteks seimbang menaikkan rata-rata KS lima fold
+ sebesar 0,00029, tetapi pooled KS turun 0,00020. Konteks penuh 56.000 baris
+@@ -225,7 +225,7 @@
+ Baseline pooled KS lima fold adalah **0,52722**. Angka tersebut hanya dibandingkan
+ dengan kandidat pada lima fold identik. Uji konteks penuh dilakukan setelah
+ campuran awal gagal dan memakai lima split yang sama, sehingga hasil tetap
+-mengandung optimisme pemilihan model. [Laporan lengkap](artifacts/optimization/kumo_improvement/laporan_improvement.md)
++mengandung optimisme pemilihan model. [Laporan lengkap](../../artifacts/optimization/kumo_improvement/laporan_improvement.md)
+ dan metadata menyimpan percobaan yang tidak lolos.
+ 
+ ```bash
+@@ -238,32 +238,32 @@
+ 
+ ## Gabungan Kumo–spline dan pilot fine-tuning
+ 
+-[Notebook 10](notebooks/10_kumo_spline.ipynb) melatih spline dengan fitur laten dan
++[Notebook 10](../../notebook/10_kumo_spline.ipynb) melatih spline dengan fitur laten dan
+ menggabungkannya dengan Kumo, masing-masing 25% dan 75%. Tiga fold awal menaikkan
+ pooled KS dari 0,52807 menjadi 0,52914 serta rata-rata KS dari 0,52907 menjadi
+ 0,53037. Pada lima fold, pooled KS naik dari **0,52722 menjadi 0,52851**, tetapi
+ rata-rata KS turun dari **0,53198 menjadi 0,53095**, dengan hanya **1/5 fold membaik**.
+ 
+-[submission_kumo_spline_exploratory.csv](submission_kumo_spline_exploratory.csv)
++[submission_kumo_spline_exploratory.csv](../../results/teman/submission_kumo_spline_exploratory.csv)
+ awalnya disediakan sebagai kandidat **eksploratif** karena belum memenuhi aturan
+ promosi lokal. Pengguna kemudian melaporkan public **0,56393** pada 18 Oktober 2026,
+ naik **0,00131** dari Kumo murni. CSV dengan checksum yang sama dipertahankan sebagai
+-checkpoint public terbaru. CSV berisi 30.000 probabilitas. [Laporan](artifacts/optimization/kumo_hybrid/laporan_hybrid.md)
++checkpoint public terbaru. CSV berisi 30.000 probabilitas. [Laporan](../../artifacts/optimization/kumo_hybrid/laporan_hybrid.md)
+ mencatat semua metrik dan batas interpretasi. Campuran TabM langsung juga diuji
+ dari OOF historis dan belum lolos screening.
+ 
+-[Notebook 11](notebooks/11_kumo_finetune_pilot.ipynb) mendokumentasikan satu pilot
++[Notebook 11](../../notebook/11_kumo_finetune_pilot.ipynb) mendokumentasikan satu pilot
+ fine-tuning dua layer ICL terakhir dan kepala klasifikasi. Validasi internal memilih
+ checkpoint langkah 0, sehingga pilot memakai kembali bobot pretrained dan tidak
+ membuat submission baru. Hasil ini hanya mencakup satu outer fold.
+ 
+ Keterangan "public belum diketahui" pada metadata ekspor, notebook, dan laporan
+ awal mencatat keadaan
+-saat eksperimen dibuat; [pencatatan hasil baru](artifacts/optimization/kumo_hybrid/public_result_056393.json)
++saat eksperimen dibuat; [pencatatan hasil baru](../../artifacts/optimization/kumo_hybrid/public_result_056393.json)
+ memisahkan umpan balik Kaggle dari skor validasi.
+ 
+ Riset berikutnya menargetkan **pooled KS OOF ≥ 0,54** pada lima fold seed 31027.
+-[Rencana riset](artifacts/optimization/goal054/research_plan.json) memuat baseline,
++[Rencana riset](../../artifacts/optimization/goal054/research_plan.json) memuat baseline,
+ protokol, dan keluarga eksperimen awal. Target belum tercapai.
+ 
+ ```bash
+--- Logika-main/analisis_logika.ipynb
++++ notebook/analisis_logika.ipynb
+@@ -7,7 +7,7 @@
+    "source": [
+     "# Analisis LOGIKA UI 2026\n",
+     "\n",
+-    "Notebook ini membaca hasil analisis yang telah dijalankan. Gunakan `python scripts/analyze.py` untuk membangun ulang seluruh tabel, fitur, dan baseline. Definisi data tersedia pada `data/raw/DATA_DICTIONARY.md`. Kredensial tidak diperlukan untuk membaca hasil lokal."
++    "Notebook ini membaca hasil analisis yang telah dijalankan. Gunakan `python scripts/analyze.py` untuk membangun ulang seluruh tabel, fitur, dan baseline. Definisi data tersedia pada `data/DATA_DICTIONARY.md`. Kredensial tidak diperlukan untuk membaca hasil lokal."
+    ]
+   },
+   {
+@@ -1859,7 +1859,7 @@
+    "outputs": [],
+    "source": [
+     "def align_submission(predictions):\n",
+-    "    sample = pd.read_csv(ROOT / 'data/raw/sample_submission.csv')\n",
++    "    sample = pd.read_csv(ROOT / 'data/sample_submission.csv')\n",
+     "    assert predictions['application_id'].is_unique\n",
+     "    assert set(predictions['application_id']) == set(test['application_id'])\n",
+     "    result = sample[['application_id']].merge(\n",
+--- Logika-main/artifacts/laporan_analisis.md
++++ artifacts/laporan_analisis.md
+@@ -176,7 +176,7 @@
+ ## Menjalankan ulang
+ 
+ ```bash
+-python -m pip install -r requirements.txt
++python -m pip install -r environments/teman/requirements.txt
+ python scripts/download_data.py
+ python scripts/analyze.py
+ # Untuk memakai agregasi yang sudah tersedia:
+@@ -185,4 +185,4 @@
+ python scripts/analyze.py --report-only
+ ```
+ 
+-`analisis_logika.ipynb` adalah notebook pembaca hasil dan contoh reproduksi. `data/raw/` berisi data asli; `data/processed/application_features.parquet` berisi agregasi; `artifacts/tables/` berisi tabel lengkap; `artifacts/figures/` berisi PNG yang dapat diekspor. Kredensial hanya digunakan oleh skrip unduh, tidak disalin ke notebook atau laporan, dan dikecualikan melalui `.gitignore`. Tidak ada submission yang dikirim ke Kaggle.
++`analisis_logika.ipynb` adalah notebook pembaca hasil dan contoh reproduksi. `data/` berisi data asli; `data/processed/application_features.parquet` berisi agregasi; `artifacts/tables/` berisi tabel lengkap; `artifacts/figures/` berisi PNG yang dapat diekspor. Kredensial hanya digunakan oleh skrip unduh, tidak disalin ke notebook atau laporan, dan dikecualikan melalui `.gitignore`. Tidak ada submission yang dikirim ke Kaggle.
+--- Logika-main/artifacts/optimization/goal054/README.md
++++ artifacts/optimization/goal054/README.md
+@@ -28,7 +28,7 @@
+ ## Reproduksi
+ 
+ Siapkan fitur V5 dan reverse menggunakan notebook 09/10. Gunakan lingkungan Python
+-3.11 terpisah dan `requirements-goal054.txt`.
++3.11 terpisah dan `environments/teman/requirements-goal054.txt`.
+ 
+ ```bash
+ python scripts/run_research054.py
+@@ -56,7 +56,7 @@
+ 
+ ## Lanjutan 19 Oktober 2026
+ 
+-[Notebook 12](../../../notebooks/12_goal054_research.ipynb) memuat EDA, pembentukan
++[Notebook 12](../../../notebook/12_goal054_research.ipynb) memuat EDA, pembentukan
+ fitur, baseline, TabPFN, EBM, koreksi konteks/kalender dan Kumo Relational sebagai
+ kode sel yang dapat direview. Flag training default nonaktif untuk review cache;
+ aktifkan keluarga yang ingin dihitung ulang. Ekspor otomatis goal baru berjalan
+@@ -96,7 +96,7 @@
+ Koreksi Kumo `kumo_offset_l20p003_unweighted_d0p5` menghasilkan pooled KS
+ **0,529299** (baseline **0,528510**, delta **+0,000789**) dan rata-rata KS fold
+ **0,532907** (baseline **0,530955**). Seluruh **5/5 fold membaik**. CSV interim:
+-[submission_goal054_kumo_offset_l20p003_unweighted_d0p5_w1.csv](../../../submission_goal054_kumo_offset_l20p003_unweighted_d0p5_w1.csv).
++[submission_goal054_kumo_offset_l20p003_unweighted_d0p5_w1.csv](../../../results/teman/submission_goal054_kumo_offset_l20p003_unweighted_d0p5_w1.csv).
+ 30.000 ID diurutkan sesuai sample; [metadata dan checksum](submission_metadata.json).
+ Public belum diketahui dan target 0,54 belum tercapai. Flag `EXPORT_INTERIM_CANDIDATE`
+ pada notebook menghasilkan file ini; ekspor interim memerlukan kenaikan pooled
+--- Logika-main/artifacts/optimization/kumo/laporan_kumo.md
++++ artifacts/optimization/kumo/laporan_kumo.md
+@@ -30,7 +30,7 @@
+ - `submission_kumo_blend.csv`: 75% baseline V5 dari model seleksi tiga fold + 25% Kumo Large. Ini berbeda dari mencampur CSV V5 public yang memakai sepuluh fold.
+ - Bobot campuran 25% sudah digunakan sebagai kandidat saat eksperimen Medium, sebelum seluruh hasil Large tersedia. Bobot 50% ditampilkan sebagai diagnosis, bukan dipromosikan hanya karena memaksimalkan rata-rata OOF.
+ - Masing-masing CSV berisi 30.000 probabilitas dan urutan `application_id` sama dengan sample. `submission.csv` dan checkpoint V3/V4/V5 dipertahankan.
+-- [Notebook 08](../../../notebooks/08_kumo_tabular.ipynb) memuat EDA, seluruh kode fitur, inferensi kedua konfigurasi, perbandingan OOF, dan ekspor. `FORCE_RERUN_KUMO=True` mengulang inferensi; aktifkan juga ketika mengubah kode preprocessing.
++- [Notebook 08](../../../notebook/08_kumo_tabular.ipynb) memuat EDA, seluruh kode fitur, inferensi kedua konfigurasi, perbandingan OOF, dan ekspor. `FORCE_RERUN_KUMO=True` mengulang inferensi; aktifkan juga ketika mengubah kode preprocessing.
+ - Data mentah, bobot model, dan prediksi per baris tetap lokal serta dikecualikan dari Git. Metadata konfigurasi, metrik, checksum CSV, dan verifikasi disertakan.
+ 
+ Sumber model: [NVIDIA Kumo Tabular](https://huggingface.co/nvidia/Kumo-Tabular); [implementasi SDM](https://github.com/NVIDIA/structured-data-models).
+--- Logika-main/artifacts/optimization/kumo_hybrid/laporan_hybrid.md
++++ artifacts/optimization/kumo_hybrid/laporan_hybrid.md
+@@ -34,7 +34,7 @@
+ 
+ ## Reproduksi dan audit
+ 
+-Gunakan Python 3.11 dan requirements-kumo.txt. Notebook [10_kumo_spline.ipynb](../../../notebooks/10_kumo_spline.ipynb) memuat EDA, seluruh agregasi, kode Kumo/spline, validasi dan ekspor.
++Gunakan Python 3.11 dan environments/teman/requirements-kumo.txt. Notebook [10_kumo_spline.ipynb](../../../notebook/10_kumo_spline.ipynb) memuat EDA, seluruh agregasi, kode Kumo/spline, validasi dan ekspor.
+ ```bash
+ python scripts/hybrid_kumo.py
+ python scripts/report_hybrid_kumo.py
+@@ -46,7 +46,7 @@
+ 
+ ## Submission kandidat
+ 
+-[`submission_kumo_spline_exploratory.csv`](../../../submission_kumo_spline_exploratory.csv) — 30.000 probabilitas; public score belum diketahui.
++[`submission_kumo_spline_exploratory.csv`](../../../results/teman/submission_kumo_spline_exploratory.csv) — 30.000 probabilitas; public score belum diketahui.
+ 
+ SHA-256: `3de98287976a7137ad63c946e9932b6ac3ba3a7ee6df607d74cde1aa6a8fc417`.
+ 
+--- Logika-main/artifacts/optimization/kumo_improvement/laporan_improvement.md
++++ artifacts/optimization/kumo_improvement/laporan_improvement.md
+@@ -71,8 +71,8 @@
+ Estimasi noise tidak memakai target, tetapi parameter unsupervised memanfaatkan fitur seluruh train seperti audit sebelumnya.
+ Pemeriksaan ulang fitur dari data mentah cocok dalam toleransi rtol=1e-6 dan atol=1e-7; seed RNG asli belum diketahui.
+ 
+-Gunakan Python 3.11 dan `requirements-kumo.txt`, dengan GPU CUDA. Bobot Kumo v1.0.1 serta TabICLv2 resmi dijalankan lokal.
+-Notebook [09_kumo_improvement.ipynb](../../../notebooks/09_kumo_improvement.ipynb) memuat EDA, agregasi, semua kode model, perbandingan dan ekspor.
++Gunakan Python 3.11 dan `environments/teman/requirements-kumo.txt`, dengan GPU CUDA. Bobot Kumo v1.0.1 serta TabICLv2 resmi dijalankan lokal.
++Notebook [09_kumo_improvement.ipynb](../../../notebook/09_kumo_improvement.ipynb) memuat EDA, agregasi, semua kode model, perbandingan dan ekspor.
+ 
+ ```bash
+ python scripts/run_kumo_improvement.py
+--- Logika-main/artifacts/optimization/laporan_validasi_silang_ks.md
++++ artifacts/optimization/laporan_validasi_silang_ks.md
+@@ -25,7 +25,7 @@
+ Reproduksi:
+ 
+ ```bash
+-python -m pip install -r requirements-optimization.txt
++python -m pip install -r environments/teman/requirements-optimization.txt
+ python scripts/extend_features.py
+ python scripts/optimize_ks.py --features base
+ python scripts/optimize_ks.py --features extended
+--- Logika-main/artifacts/optimization/v5/laporan_submission_v5.md
++++ artifacts/optimization/v5/laporan_submission_v5.md
+@@ -24,7 +24,7 @@
+ SHA-256: `2b97dcdc26f38cabc6ab1a3f3053903975b488a5480df8ff739415a7bc750526`.
+ 
+ ```bash
+-python -m pip install -r requirements-v5.txt
++python -m pip install -r environments/teman/requirements-v5.txt
+ python scripts/build_features_v5.py
+ python scripts/evaluate_v5.py --group tabm
+ python scripts/train_v5_candidate.py --candidate v5_tabm_weight1 --new-weight .25
+--- Logika-main/artifacts/reverse_engineering/laporan_reverse_engineering.md
++++ artifacts/reverse_engineering/laporan_reverse_engineering.md
+@@ -92,7 +92,7 @@
+ 
+ ## Reproduksi
+ 
+-Notebook [07 — Reverse engineering](../../notebooks/07_reverse_engineering_rng.ipynb) berisi EDA, probe seed, inferensi jitter, simulasi pendekatan dan review validasi dengan kode di sel. Paket analisis sama dengan requirements-optimization dan requirements-notebook.
++Notebook [07 — Reverse engineering](../../notebook/07_reverse_engineering_rng.ipynb) berisi EDA, probe seed, inferensi jitter, simulasi pendekatan dan review validasi dengan kode di sel. Paket analisis sama dengan requirements-optimization dan requirements-notebook.
+ 
+ ```bash
+ python scripts/reverse_rng_probe.py --seed-limit 10000
+--- Logika-main/notebooks/01_baseline_xgboost.ipynb
++++ notebook/01_baseline_xgboost.ipynb
+@@ -22,8 +22,8 @@
+     "    **submission.csv**, agar hasil beberapa versi bisa dibandingkan.\n",
+     "    Notebook tidak mengirim submission ke Kaggle.\n",
+     "\n",
+-    "    Instal dependensi dari direktori proyek: `python -m pip install -r requirements-optimization.txt -r requirements-notebook.txt`.\n",
+-    "    Data mentah harus tersedia di `data/raw/`; unduh sekali dengan `python scripts/download_data.py`.\n",
++    "    Instal dependensi dari direktori proyek: `python -m pip install -r environments/teman/requirements-optimization.txt -r environments/teman/requirements-notebook.txt`.\n",
++    "    Data mentah harus tersedia di `data/`; unduh sekali dengan `python scripts/download_data.py`.\n",
+     "    Kredensial tidak perlu ditulis dalam notebook."
+    ]
+   },
+@@ -94,7 +94,7 @@
+     "ROOT = Path(os.environ.get(\"LOGIKA_PROJECT_DIR\", Path.cwd())).resolve()\n",
+     "if not (ROOT / \"scripts/analyze.py\").exists():\n",
+     "    ROOT = next(p for p in ROOT.parents if (p / \"scripts/analyze.py\").exists())\n",
+-    "RAW = ROOT / \"data/raw\"\n",
++    "RAW = ROOT / \"data\"\n",
+     "PROCESSED = Path(os.environ.get(\"LOGIKA_FEATURE_DIR\", ROOT / \"data/processed\"))\n",
+     "OUT = ROOT / \"artifacts/notebook_runs\" / RUN_NAME\n",
+     "TABLES = OUT / \"tables\"\n",
+@@ -2134,7 +2134,7 @@
+     "    \"historical_file\": CANONICAL_FILE,\n",
+     "    \"historical_public_score\": PUBLIC_SCORE,\n",
+     "}\n",
+-    "historical = ROOT / CANONICAL_FILE\n",
++    "historical = ROOT / \"results/teman\" / CANONICAL_FILE\n",
+     "if historical.exists():\n",
+     "    checkpoint = pd.read_csv(historical)\n",
+     "    assert checkpoint.application_id.equals(reloaded.application_id)\n",
+--- Logika-main/notebooks/02_tuning_ks_v2.ipynb
++++ notebook/02_tuning_ks_v2.ipynb
+@@ -22,8 +22,8 @@
+     "    **submission.csv**, agar hasil beberapa versi bisa dibandingkan.\n",
+     "    Notebook tidak mengirim submission ke Kaggle.\n",
+     "\n",
+-    "    Instal dependensi dari direktori proyek: `python -m pip install -r requirements-optimization.txt -r requirements-notebook.txt`.\n",
+-    "    Data mentah harus tersedia di `data/raw/`; unduh sekali dengan `python scripts/download_data.py`.\n",
++    "    Instal dependensi dari direktori proyek: `python -m pip install -r environments/teman/requirements-optimization.txt -r environments/teman/requirements-notebook.txt`.\n",
++    "    Data mentah harus tersedia di `data/`; unduh sekali dengan `python scripts/download_data.py`.\n",
+     "    Kredensial tidak perlu ditulis dalam notebook."
+    ]
+   },
+@@ -94,7 +94,7 @@
+     "ROOT = Path(os.environ.get(\"LOGIKA_PROJECT_DIR\", Path.cwd())).resolve()\n",
+     "if not (ROOT / \"scripts/analyze.py\").exists():\n",
+     "    ROOT = next(p for p in ROOT.parents if (p / \"scripts/analyze.py\").exists())\n",
+-    "RAW = ROOT / \"data/raw\"\n",
++    "RAW = ROOT / \"data\"\n",
+     "PROCESSED = Path(os.environ.get(\"LOGIKA_FEATURE_DIR\", ROOT / \"data/processed\"))\n",
+     "OUT = ROOT / \"artifacts/notebook_runs\" / RUN_NAME\n",
+     "TABLES = OUT / \"tables\"\n",
+@@ -3564,7 +3564,7 @@
+     "    \"historical_file\": CANONICAL_FILE,\n",
+     "    \"historical_public_score\": PUBLIC_SCORE,\n",
+     "}\n",
+-    "historical = ROOT / CANONICAL_FILE\n",
++    "historical = ROOT / \"results/teman\" / CANONICAL_FILE\n",
+     "if historical.exists():\n",
+     "    checkpoint = pd.read_csv(historical)\n",
+     "    assert checkpoint.application_id.equals(reloaded.application_id)\n",
+--- Logika-main/notebooks/03_ensemble_ks.ipynb
++++ notebook/03_ensemble_ks.ipynb
+@@ -22,8 +22,8 @@
+     "    **submission.csv**, agar hasil beberapa versi bisa dibandingkan.\n",
+     "    Notebook tidak mengirim submission ke Kaggle.\n",
+     "\n",
+-    "    Instal dependensi dari direktori proyek: `python -m pip install -r requirements-optimization.txt -r requirements-notebook.txt`.\n",
+-    "    Data mentah harus tersedia di `data/raw/`; unduh sekali dengan `python scripts/download_data.py`.\n",
++    "    Instal dependensi dari direktori proyek: `python -m pip install -r environments/teman/requirements-optimization.txt -r environments/teman/requirements-notebook.txt`.\n",
++    "    Data mentah harus tersedia di `data/`; unduh sekali dengan `python scripts/download_data.py`.\n",
+     "    Kredensial tidak perlu ditulis dalam notebook."
+    ]
+   },
+@@ -94,7 +94,7 @@
+     "ROOT = Path(os.environ.get(\"LOGIKA_PROJECT_DIR\", Path.cwd())).resolve()\n",
+     "if not (ROOT / \"scripts/analyze.py\").exists():\n",
+     "    ROOT = next(p for p in ROOT.parents if (p / \"scripts/analyze.py\").exists())\n",
+-    "RAW = ROOT / \"data/raw\"\n",
++    "RAW = ROOT / \"data\"\n",
+     "PROCESSED = Path(os.environ.get(\"LOGIKA_FEATURE_DIR\", ROOT / \"data/processed\"))\n",
+     "OUT = ROOT / \"artifacts/notebook_runs\" / RUN_NAME\n",
+     "TABLES = OUT / \"tables\"\n",
+@@ -3354,7 +3354,7 @@
+     "    \"historical_file\": CANONICAL_FILE,\n",
+     "    \"historical_public_score\": PUBLIC_SCORE,\n",
+     "}\n",
+-    "historical = ROOT / CANONICAL_FILE\n",
++    "historical = ROOT / \"results/teman\" / CANONICAL_FILE\n",
+     "if historical.exists():\n",
+     "    checkpoint = pd.read_csv(historical)\n",
+     "    assert checkpoint.application_id.equals(reloaded.application_id)\n",
+--- Logika-main/notebooks/04_submission_v3.ipynb
++++ notebook/04_submission_v3.ipynb
+@@ -22,8 +22,8 @@
+     "    **submission.csv**, agar hasil beberapa versi bisa dibandingkan.\n",
+     "    Notebook tidak mengirim submission ke Kaggle.\n",
+     "\n",
+-    "    Instal dependensi dari direktori proyek: `python -m pip install -r requirements-optimization.txt -r requirements-notebook.txt`.\n",
+-    "    Data mentah harus tersedia di `data/raw/`; unduh sekali dengan `python scripts/download_data.py`.\n",
++    "    Instal dependensi dari direktori proyek: `python -m pip install -r environments/teman/requirements-optimization.txt -r environments/teman/requirements-notebook.txt`.\n",
++    "    Data mentah harus tersedia di `data/`; unduh sekali dengan `python scripts/download_data.py`.\n",
+     "    Kredensial tidak perlu ditulis dalam notebook."
+    ]
+   },
+@@ -94,7 +94,7 @@
+     "ROOT = Path(os.environ.get(\"LOGIKA_PROJECT_DIR\", Path.cwd())).resolve()\n",
+     "if not (ROOT / \"scripts/analyze.py\").exists():\n",
+     "    ROOT = next(p for p in ROOT.parents if (p / \"scripts/analyze.py\").exists())\n",
+-    "RAW = ROOT / \"data/raw\"\n",
++    "RAW = ROOT / \"data\"\n",
+     "PROCESSED = Path(os.environ.get(\"LOGIKA_FEATURE_DIR\", ROOT / \"data/processed\"))\n",
+     "OUT = ROOT / \"artifacts/notebook_runs\" / RUN_NAME\n",
+     "TABLES = OUT / \"tables\"\n",
+@@ -1975,7 +1975,7 @@
+     "    cutoff = base[[\"decision_datetime\"]].rename(columns={\"decision_datetime\": \"cutoff\"})\n",
+     "    blocks = []\n",
+     "    audits = {}\n",
+-    "    raw = ROOT / \"data/raw\"\n",
++    "    raw = ROOT / \"data\"\n",
+     "\n",
+     "    repayments = pd.read_csv(\n",
+     "        raw / \"repayment_history.csv\", parse_dates=[\"due_date\", \"last_payment_datetime\"]\n",
+@@ -4361,7 +4361,7 @@
+     "    \"historical_file\": CANONICAL_FILE,\n",
+     "    \"historical_public_score\": PUBLIC_SCORE,\n",
+     "}\n",
+-    "historical = ROOT / CANONICAL_FILE\n",
++    "historical = ROOT / \"results/teman\" / CANONICAL_FILE\n",
+     "if historical.exists():\n",
+     "    checkpoint = pd.read_csv(historical)\n",
+     "    assert checkpoint.application_id.equals(reloaded.application_id)\n",
+--- Logika-main/notebooks/05_submission_v4.ipynb
++++ notebook/05_submission_v4.ipynb
+@@ -22,8 +22,8 @@
+     "    **submission.csv**, agar hasil beberapa versi bisa dibandingkan.\n",
+     "    Notebook tidak mengirim submission ke Kaggle.\n",
+     "\n",
+-    "    Instal dependensi dari direktori proyek: `python -m pip install -r requirements-optimization.txt -r requirements-notebook.txt`.\n",
+-    "    Data mentah harus tersedia di `data/raw/`; unduh sekali dengan `python scripts/download_data.py`.\n",
++    "    Instal dependensi dari direktori proyek: `python -m pip install -r environments/teman/requirements-optimization.txt -r environments/teman/requirements-notebook.txt`.\n",
++    "    Data mentah harus tersedia di `data/`; unduh sekali dengan `python scripts/download_data.py`.\n",
+     "    Kredensial tidak perlu ditulis dalam notebook."
+    ]
+   },
+@@ -94,7 +94,7 @@
+     "ROOT = Path(os.environ.get(\"LOGIKA_PROJECT_DIR\", Path.cwd())).resolve()\n",
+     "if not (ROOT / \"scripts/analyze.py\").exists():\n",
+     "    ROOT = next(p for p in ROOT.parents if (p / \"scripts/analyze.py\").exists())\n",
+-    "RAW = ROOT / \"data/raw\"\n",
++    "RAW = ROOT / \"data\"\n",
+     "PROCESSED = Path(os.environ.get(\"LOGIKA_FEATURE_DIR\", ROOT / \"data/processed\"))\n",
+     "OUT = ROOT / \"artifacts/notebook_runs\" / RUN_NAME\n",
+     "TABLES = OUT / \"tables\"\n",
+@@ -1975,7 +1975,7 @@
+     "    cutoff = base[[\"decision_datetime\"]].rename(columns={\"decision_datetime\": \"cutoff\"})\n",
+     "    blocks = []\n",
+     "    audits = {}\n",
+-    "    raw = ROOT / \"data/raw\"\n",
++    "    raw = ROOT / \"data\"\n",
+     "\n",
+     "    repayments = pd.read_csv(\n",
+     "        raw / \"repayment_history.csv\", parse_dates=[\"due_date\", \"last_payment_datetime\"]\n",
+@@ -2334,7 +2334,7 @@
+     "    blocks = []\n",
+     "\n",
+     "    transactions = pd.read_csv(\n",
+-    "        ROOT / \"data/raw/ecommerce_transactions.csv\", parse_dates=[\"transaction_datetime\"]\n",
++    "        ROOT / \"data/ecommerce_transactions.csv\", parse_dates=[\"transaction_datetime\"]\n",
+     "    )\n",
+     "    transactions = transactions.merge(\n",
+     "        cutoff, left_on=\"customer_id\", right_index=True, validate=\"many_to_one\"\n",
+@@ -2412,7 +2412,7 @@
+    "source": [
+     "if NEED_V4:\n",
+     "    repayments = pd.read_csv(\n",
+-    "        ROOT / \"data/raw/repayment_history.csv\",\n",
++    "        ROOT / \"data/repayment_history.csv\",\n",
+     "        parse_dates=[\"due_date\", \"last_payment_datetime\"],\n",
+     "    )\n",
+     "    repayments = repayments.merge(\n",
+@@ -2506,7 +2506,7 @@
+    "source": [
+     "if NEED_V4:\n",
+     "    bureau = pd.read_csv(\n",
+-    "        ROOT / \"data/raw/bureau_observations.csv\",\n",
++    "        ROOT / \"data/bureau_observations.csv\",\n",
+     "        parse_dates=[\"report_datetime\", \"available_datetime\"],\n",
+     "    )\n",
+     "    bureau = bureau.merge(\n",
+@@ -5192,7 +5192,7 @@
+     "    \"historical_file\": CANONICAL_FILE,\n",
+     "    \"historical_public_score\": PUBLIC_SCORE,\n",
+     "}\n",
+-    "historical = ROOT / CANONICAL_FILE\n",
++    "historical = ROOT / \"results/teman\" / CANONICAL_FILE\n",
+     "if historical.exists():\n",
+     "    checkpoint = pd.read_csv(historical)\n",
+     "    assert checkpoint.application_id.equals(reloaded.application_id)\n",
+--- Logika-main/notebooks/06_submission_v5.ipynb
++++ notebook/06_submission_v5.ipynb
+@@ -16,7 +16,7 @@
+     "\n",
+     "Catatan: output eksekusi notebook berasal dari run sebelum skor public dilaporkan.\n",
+     "\n",
+-    "Instal `requirements-v5.txt` dan `requirements-notebook.txt` dengan Python 3.10.\n",
++    "Instal `environments/teman/requirements-v5.txt` dan `environments/teman/requirements-notebook.txt` dengan Python 3.10.\n",
+     "GPU mempercepat training; CPU juga didukung. Default memakai cache jika tersedia,\n",
+     "tetapi probabilitas test tetap dihitung kembali dari model.\n"
+    ]
+@@ -88,7 +88,7 @@
+     "ROOT = Path(os.environ.get(\"LOGIKA_PROJECT_DIR\", Path.cwd())).resolve()\n",
+     "if not (ROOT / \"scripts/analyze.py\").exists():\n",
+     "    ROOT = next(p for p in ROOT.parents if (p / \"scripts/analyze.py\").exists())\n",
+-    "RAW = ROOT / \"data/raw\"\n",
++    "RAW = ROOT / \"data\"\n",
+     "PROCESSED = Path(os.environ.get(\"LOGIKA_FEATURE_DIR\", ROOT / \"data/processed\"))\n",
+     "OUT = ROOT / \"artifacts/notebook_runs\" / RUN_NAME\n",
+     "TABLES = OUT / \"tables\"\n",
+@@ -1969,7 +1969,7 @@
+     "    cutoff = base[[\"decision_datetime\"]].rename(columns={\"decision_datetime\": \"cutoff\"})\n",
+     "    blocks = []\n",
+     "    audits = {}\n",
+-    "    raw = ROOT / \"data/raw\"\n",
++    "    raw = ROOT / \"data\"\n",
+     "\n",
+     "    repayments = pd.read_csv(\n",
+     "        raw / \"repayment_history.csv\", parse_dates=[\"due_date\", \"last_payment_datetime\"]\n",
+@@ -2328,7 +2328,7 @@
+     "    blocks = []\n",
+     "\n",
+     "    transactions = pd.read_csv(\n",
+-    "        ROOT / \"data/raw/ecommerce_transactions.csv\", parse_dates=[\"transaction_datetime\"]\n",
++    "        ROOT / \"data/ecommerce_transactions.csv\", parse_dates=[\"transaction_datetime\"]\n",
+     "    )\n",
+     "    transactions = transactions.merge(\n",
+     "        cutoff, left_on=\"customer_id\", right_index=True, validate=\"many_to_one\"\n",
+@@ -2406,7 +2406,7 @@
+    "source": [
+     "if NEED_V4:\n",
+     "    repayments = pd.read_csv(\n",
+-    "        ROOT / \"data/raw/repayment_history.csv\",\n",
++    "        ROOT / \"data/repayment_history.csv\",\n",
+     "        parse_dates=[\"due_date\", \"last_payment_datetime\"],\n",
+     "    )\n",
+     "    repayments = repayments.merge(\n",
+@@ -2500,7 +2500,7 @@
+    "source": [
+     "if NEED_V4:\n",
+     "    bureau = pd.read_csv(\n",
+-    "        ROOT / \"data/raw/bureau_observations.csv\",\n",
++    "        ROOT / \"data/bureau_observations.csv\",\n",
+     "        parse_dates=[\"report_datetime\", \"available_datetime\"],\n",
+     "    )\n",
+     "    bureau = bureau.merge(\n",
+@@ -6475,7 +6475,7 @@
+     "    \"historical_file\": CANONICAL_FILE,\n",
+     "    \"historical_public_score\": PUBLIC_SCORE,\n",
+     "}\n",
+-    "historical = ROOT / CANONICAL_FILE\n",
++    "historical = ROOT / \"results/teman\" / CANONICAL_FILE\n",
+     "if historical.exists():\n",
+     "    checkpoint = pd.read_csv(historical)\n",
+     "    assert checkpoint.application_id.equals(reloaded.application_id)\n",
+--- Logika-main/notebooks/07_reverse_engineering_rng.ipynb
++++ notebook/07_reverse_engineering_rng.ipynb
+@@ -12,7 +12,7 @@
+     "\n",
+     "Kode probe seed, inferensi efek customer, uncertainty, simulasi pendekatan, dan\n",
+     "validasi model terlihat di sel. Data mentah diunduh melalui skrip proyek. Paket:\n",
+-    "`requirements-optimization.txt` dan `requirements-notebook.txt`.\n",
++    "`environments/teman/requirements-optimization.txt` dan `environments/teman/requirements-notebook.txt`.\n",
+     "\n",
+     "Seed untuk simulasi dan pembagian audit dipilih oleh kita; tidak sama dengan seed asli\n",
+     "dataset. Notebook ini tidak mengirim atau mengganti submission."
+@@ -87,7 +87,7 @@
+     "    ROOT = next(\n",
+     "        p for p in ROOT.parents if (p / \"scripts/reverse_synthetic_patterns.py\").exists()\n",
+     "    )\n",
+-    "RAW = ROOT / \"data/raw\"\n",
++    "RAW = ROOT / \"data\"\n",
+     "OUT = ROOT / \"artifacts/notebook_runs/07_reverse\"\n",
+     "OUT.mkdir(parents=True, exist_ok=True)\n",
+     "EXCLUDED = {\n",
+@@ -1445,7 +1445,7 @@
+     "        \"transaction_datetime\",\n",
+     "    ]\n",
+     "    events = pd.read_csv(\n",
+-    "        ROOT / \"data/raw/ecommerce_transactions.csv\",\n",
++    "        ROOT / \"data/ecommerce_transactions.csv\",\n",
+     "        usecols=columns,\n",
+     "        parse_dates=[\"transaction_datetime\"],\n",
+     "        dtype={\"customer_id\": \"category\", \"product_category\": \"category\"},\n",
+@@ -1620,7 +1620,7 @@
+    "source": [
+     "def fit_bureau_latent(base):\n",
+     "    bureau = pd.read_csv(\n",
+-    "        ROOT / \"data/raw/bureau_observations.csv\",\n",
++    "        ROOT / \"data/bureau_observations.csv\",\n",
+     "        parse_dates=[\"report_datetime\", \"available_datetime\"],\n",
+     "    )\n",
+     "    bureau = bureau.merge(\n",
+@@ -1733,7 +1733,7 @@
+    "outputs": [],
+    "source": [
+     "def fit_account_latent(base):\n",
+-    "    account = pd.read_csv(ROOT / \"data/raw/account_behavior.csv\", parse_dates=[\"month\"])\n",
++    "    account = pd.read_csv(ROOT / \"data/account_behavior.csv\", parse_dates=[\"month\"])\n",
+     "    account = account.merge(\n",
+     "        base[[\"decision_datetime\", \"employment_type\"]],\n",
+     "        left_on=\"customer_id\",\n",
+@@ -1870,7 +1870,7 @@
+    "source": [
+     "def fit_repayment_latent(base):\n",
+     "    repayment = pd.read_csv(\n",
+-    "        ROOT / \"data/raw/repayment_history.csv\",\n",
++    "        ROOT / \"data/repayment_history.csv\",\n",
+     "        parse_dates=[\"due_date\", \"last_payment_datetime\"],\n",
+     "    )\n",
+     "    repayment = repayment.merge(\n",
+--- Logika-main/notebooks/08_kumo_tabular.ipynb
++++ notebook/08_kumo_tabular.ipynb
+@@ -11,7 +11,7 @@
+     "`fit` menyiapkan preprocessing dan cache konteks berlabel, tanpa gradient training.\n",
+     "Validasi memakai tiga fold yang sama dengan seleksi V5 (seed 8247).\n",
+     "\n",
+-    "Gunakan lingkungan **Python 3.11** terpisah dengan `requirements-kumo.txt` dan GPU CUDA.\n",
++    "Gunakan lingkungan **Python 3.11** terpisah dengan `environments/teman/requirements-kumo.txt` dan GPU CUDA.\n",
+     "Model lokal: [NVIDIA Kumo Tabular](https://huggingface.co/nvidia/Kumo-Tabular),\n",
+     "checkpoint `v1.0.1`, paket `structured-data-models==0.2.1`.\n",
+     "Data kompetisi tetap diproses di mesin lokal.\n",
+@@ -98,7 +98,7 @@
+     "ROOT = Path(os.environ.get(\"LOGIKA_PROJECT_DIR\", Path.cwd())).resolve()\n",
+     "if not (ROOT / \"scripts/analyze.py\").exists():\n",
+     "    ROOT = next(p for p in ROOT.parents if (p / \"scripts/analyze.py\").exists())\n",
+-    "RAW = ROOT / \"data/raw\"\n",
++    "RAW = ROOT / \"data\"\n",
+     "PROCESSED = Path(os.environ.get(\"LOGIKA_FEATURE_DIR\", ROOT / \"data/processed\"))\n",
+     "OUT = ROOT / \"artifacts/notebook_runs\" / RUN_NAME\n",
+     "TABLES = OUT / \"tables\"\n",
+@@ -1981,7 +1981,7 @@
+     "    cutoff = base[[\"decision_datetime\"]].rename(columns={\"decision_datetime\": \"cutoff\"})\n",
+     "    blocks = []\n",
+     "    audits = {}\n",
+-    "    raw = ROOT / \"data/raw\"\n",
++    "    raw = ROOT / \"data\"\n",
+     "\n",
+     "    repayments = pd.read_csv(\n",
+     "        raw / \"repayment_history.csv\", parse_dates=[\"due_date\", \"last_payment_datetime\"]\n",
+@@ -2340,7 +2340,7 @@
+     "    blocks = []\n",
+     "\n",
+     "    transactions = pd.read_csv(\n",
+-    "        ROOT / \"data/raw/ecommerce_transactions.csv\", parse_dates=[\"transaction_datetime\"]\n",
++    "        ROOT / \"data/ecommerce_transactions.csv\", parse_dates=[\"transaction_datetime\"]\n",
+     "    )\n",
+     "    transactions = transactions.merge(\n",
+     "        cutoff, left_on=\"customer_id\", right_index=True, validate=\"many_to_one\"\n",
+@@ -2418,7 +2418,7 @@
+    "source": [
+     "if NEED_V4:\n",
+     "    repayments = pd.read_csv(\n",
+-    "        ROOT / \"data/raw/repayment_history.csv\",\n",
++    "        ROOT / \"data/repayment_history.csv\",\n",
+     "        parse_dates=[\"due_date\", \"last_payment_datetime\"],\n",
+     "    )\n",
+     "    repayments = repayments.merge(\n",
+@@ -2512,7 +2512,7 @@
+    "source": [
+     "if NEED_V4:\n",
+     "    bureau = pd.read_csv(\n",
+-    "        ROOT / \"data/raw/bureau_observations.csv\",\n",
++    "        ROOT / \"data/bureau_observations.csv\",\n",
+     "        parse_dates=[\"report_datetime\", \"available_datetime\"],\n",
+     "    )\n",
+     "    bureau = bureau.merge(\n",
+@@ -3683,7 +3683,7 @@
+     "            test.prediction = 0.0\n",
+     "        assert test.application_id.equals(frame.application_id)\n",
+     "        test.prediction += frame.prediction / 3\n",
+-    "    sample = pd.read_csv(ROOT / \"data/raw/sample_submission.csv\")\n",
++    "    sample = pd.read_csv(ROOT / \"data/sample_submission.csv\")\n",
+     "    submission = sample[[\"application_id\"]].merge(\n",
+     "        test, on=\"application_id\", validate=\"one_to_one\"\n",
+     "    )\n",
+@@ -3692,7 +3692,7 @@
+     "    assert list(submission.columns) == [\"application_id\", \"default_probability\"]\n",
+     "    assert np.isfinite(submission.default_probability).all()\n",
+     "    assert submission.default_probability.between(0, 1).all()\n",
+-    "    path = ROOT / \"submission_kumo.csv\"\n",
++    "    path = ROOT / \"results/teman/submission_kumo.csv\"\n",
+     "    submission.to_csv(path, index=False)\n",
+     "    result = {\n",
+     "        \"variant\": variant,\n",
+@@ -3827,7 +3827,7 @@
+    "source": [
+     "metadata = export(VARIANT)\n",
+     "display(metadata)\n",
+-    "display(pd.read_csv(ROOT/'submission_kumo.csv').head())"
++    "display(pd.read_csv(ROOT / 'results/teman/submission_kumo.csv').head())"
+    ]
+   },
+   {
+@@ -3879,7 +3879,7 @@
+     "    submission = joined[[\"application_id\", \"default_probability\"]]\n",
+     "    assert len(submission) == 30000 and submission.application_id.is_unique\n",
+     "    assert submission.default_probability.between(0, 1).all()\n",
+-    "    path = ROOT / \"submission_kumo_blend.csv\"\n",
++    "    path = ROOT / \"results/teman/submission_kumo_blend.csv\"\n",
+     "    submission.to_csv(path, index=False)\n",
+     "    summary = json.loads((OUT / \"comparison.json\").read_text())\n",
+     "    result = {\n",
+@@ -4027,7 +4027,7 @@
+     "if all((ROOT/'artifacts/optimization/v5'/f).exists() for f in ['selection_test_tabm.parquet','selection_oof_tabm.parquet']):\n",
+     "    blend_metadata = export_blend(VARIANT, weight=0.25)\n",
+     "    display(blend_metadata)\n",
+-    "    display(pd.read_csv(ROOT/'submission_kumo_blend.csv').head())\n",
++    "    display(pd.read_csv(ROOT / 'results/teman/submission_kumo_blend.csv').head())\n",
+     "else:\n",
+     "    print('Kumo murni selesai; baseline V5 tidak tersedia untuk membuat campuran.')\n"
+    ]
+--- Logika-main/notebooks/09_kumo_improvement.ipynb
++++ notebook/09_kumo_improvement.ipynb
+@@ -9,7 +9,7 @@
+     "\n",
+     "Notebook ini memperlihatkan eksperimen setelah checkpoint Kumo public **0,56262**.\n",
+     "Semua kode fitur, konteks model, validasi, dan ekspor tersedia di sel.\n",
+-    "Gunakan Python 3.11, `requirements-kumo.txt`, GPU CUDA, dan data mentah kompetisi.\n",
++    "Gunakan Python 3.11, `environments/teman/requirements-kumo.txt`, GPU CUDA, dan data mentah kompetisi.\n",
+     "\n",
+     "Enam kandidat pertama diuji pada tiga fold seed 8247. Resep dikunci sebelum\n",
+     "konfirmasi pada lima fold seed 31027, melawan baseline pada **fold yang sama**.\n",
+@@ -99,7 +99,7 @@
+     "ROOT = Path(os.environ.get(\"LOGIKA_PROJECT_DIR\", Path.cwd())).resolve()\n",
+     "if not (ROOT / \"scripts/analyze.py\").exists():\n",
+     "    ROOT = next(p for p in ROOT.parents if (p / \"scripts/analyze.py\").exists())\n",
+-    "RAW = ROOT / \"data/raw\"\n",
++    "RAW = ROOT / \"data\"\n",
+     "PROCESSED = Path(os.environ.get(\"LOGIKA_FEATURE_DIR\", ROOT / \"data/processed\"))\n",
+     "OUT = ROOT / \"artifacts/notebook_runs\" / RUN_NAME\n",
+     "TABLES = OUT / \"tables\"\n",
+@@ -1984,7 +1984,7 @@
+     "    cutoff = base[[\"decision_datetime\"]].rename(columns={\"decision_datetime\": \"cutoff\"})\n",
+     "    blocks = []\n",
+     "    audits = {}\n",
+-    "    raw = ROOT / \"data/raw\"\n",
++    "    raw = ROOT / \"data\"\n",
+     "\n",
+     "    repayments = pd.read_csv(\n",
+     "        raw / \"repayment_history.csv\", parse_dates=[\"due_date\", \"last_payment_datetime\"]\n",
+@@ -2343,7 +2343,7 @@
+     "    blocks = []\n",
+     "\n",
+     "    transactions = pd.read_csv(\n",
+-    "        ROOT / \"data/raw/ecommerce_transactions.csv\", parse_dates=[\"transaction_datetime\"]\n",
++    "        ROOT / \"data/ecommerce_transactions.csv\", parse_dates=[\"transaction_datetime\"]\n",
+     "    )\n",
+     "    transactions = transactions.merge(\n",
+     "        cutoff, left_on=\"customer_id\", right_index=True, validate=\"many_to_one\"\n",
+@@ -2421,7 +2421,7 @@
+    "source": [
+     "if NEED_V4:\n",
+     "    repayments = pd.read_csv(\n",
+-    "        ROOT / \"data/raw/repayment_history.csv\",\n",
++    "        ROOT / \"data/repayment_history.csv\",\n",
+     "        parse_dates=[\"due_date\", \"last_payment_datetime\"],\n",
+     "    )\n",
+     "    repayments = repayments.merge(\n",
+@@ -2515,7 +2515,7 @@
+    "source": [
+     "if NEED_V4:\n",
+     "    bureau = pd.read_csv(\n",
+-    "        ROOT / \"data/raw/bureau_observations.csv\",\n",
++    "        ROOT / \"data/bureau_observations.csv\",\n",
+     "        parse_dates=[\"report_datetime\", \"available_datetime\"],\n",
+     "    )\n",
+     "    bureau = bureau.merge(\n",
+@@ -2922,7 +2922,7 @@
+     "        \"transaction_datetime\",\n",
+     "    ]\n",
+     "    events = pd.read_csv(\n",
+-    "        ROOT / \"data/raw/ecommerce_transactions.csv\",\n",
++    "        ROOT / \"data/ecommerce_transactions.csv\",\n",
+     "        usecols=columns,\n",
+     "        parse_dates=[\"transaction_datetime\"],\n",
+     "        dtype={\"customer_id\": \"category\", \"product_category\": \"category\"},\n",
+@@ -3082,7 +3082,7 @@
+     "\n",
+     "def fit_bureau_latent(base):\n",
+     "    bureau = pd.read_csv(\n",
+-    "        ROOT / \"data/raw/bureau_observations.csv\",\n",
++    "        ROOT / \"data/bureau_observations.csv\",\n",
+     "        parse_dates=[\"report_datetime\", \"available_datetime\"],\n",
+     "    )\n",
+     "    bureau = bureau.merge(\n",
+@@ -3186,7 +3186,7 @@
+     "    )\n",
+     "\n",
+     "def fit_account_latent(base):\n",
+-    "    account = pd.read_csv(ROOT / \"data/raw/account_behavior.csv\", parse_dates=[\"month\"])\n",
++    "    account = pd.read_csv(ROOT / \"data/account_behavior.csv\", parse_dates=[\"month\"])\n",
+     "    account = account.merge(\n",
+     "        base[[\"decision_datetime\", \"employment_type\"]],\n",
+     "        left_on=\"customer_id\",\n",
+@@ -3303,7 +3303,7 @@
+     "\n",
+     "def fit_repayment_latent(base):\n",
+     "    repayment = pd.read_csv(\n",
+-    "        ROOT / \"data/raw/repayment_history.csv\",\n",
++    "        ROOT / \"data/repayment_history.csv\",\n",
+     "        parse_dates=[\"due_date\", \"last_payment_datetime\"],\n",
+     "    )\n",
+     "    repayment = repayment.merge(\n",
+@@ -4400,7 +4400,7 @@
+     "    summary = summarize(stage)\n",
+     "    row = next(r for r in summary[\"comparisons\"] if r[\"name\"] == name)\n",
+     "    splits = int(re.fullmatch(r\"cv(\\d+)_seed(\\d+)\", stage).group(1))\n",
+-    "    sample = pd.read_csv(ROOT / \"data/raw/sample_submission.csv\")\n",
++    "    sample = pd.read_csv(ROOT / \"data/sample_submission.csv\")\n",
+     "    pred = np.zeros(len(sample), dtype=np.float64)\n",
+     "    source_hashes = {}\n",
+     "    for component in row[\"components\"]:\n",
+--- Logika-main/notebooks/10_kumo_spline.ipynb
++++ notebook/10_kumo_spline.ipynb
+@@ -17,7 +17,7 @@
+     "pernah dilihat. Skor public kandidat baru **belum diketahui**. Checkpoint Kumo\n",
+     "`submission_kumo.csv` dengan public 0,56262 tetap disimpan.\n",
+     "\n",
+-    "Gunakan Python 3.11, requirements-kumo.txt, GPU CUDA dan data mentah kompetisi.\n",
++    "Gunakan Python 3.11, environments/teman/requirements-kumo.txt, GPU CUDA dan data mentah kompetisi.\n",
+     "Semua kode fitur, konteks Kumo, fitting spline, prediksi dan ekspor terlihat di sel.\n"
+    ]
+   },
+@@ -98,7 +98,7 @@
+     "ROOT = Path(os.environ.get(\"LOGIKA_PROJECT_DIR\", Path.cwd())).resolve()\n",
+     "if not (ROOT / \"scripts/analyze.py\").exists():\n",
+     "    ROOT = next(p for p in ROOT.parents if (p / \"scripts/analyze.py\").exists())\n",
+-    "RAW = ROOT / \"data/raw\"\n",
++    "RAW = ROOT / \"data\"\n",
+     "PROCESSED = Path(os.environ.get(\"LOGIKA_FEATURE_DIR\", ROOT / \"data/processed\"))\n",
+     "OUT = ROOT / \"artifacts/notebook_runs\" / RUN_NAME\n",
+     "TABLES = OUT / \"tables\"\n",
+@@ -1985,7 +1985,7 @@
+     "    cutoff = base[[\"decision_datetime\"]].rename(columns={\"decision_datetime\": \"cutoff\"})\n",
+     "    blocks = []\n",
+     "    audits = {}\n",
+-    "    raw = ROOT / \"data/raw\"\n",
++    "    raw = ROOT / \"data\"\n",
+     "\n",
+     "    repayments = pd.read_csv(\n",
+     "        raw / \"repayment_history.csv\", parse_dates=[\"due_date\", \"last_payment_datetime\"]\n",
+@@ -2344,7 +2344,7 @@
+     "    blocks = []\n",
+     "\n",
+     "    transactions = pd.read_csv(\n",
+-    "        ROOT / \"data/raw/ecommerce_transactions.csv\", parse_dates=[\"transaction_datetime\"]\n",
++    "        ROOT / \"data/ecommerce_transactions.csv\", parse_dates=[\"transaction_datetime\"]\n",
+     "    )\n",
+     "    transactions = transactions.merge(\n",
+     "        cutoff, left_on=\"customer_id\", right_index=True, validate=\"many_to_one\"\n",
+@@ -2422,7 +2422,7 @@
+    "source": [
+     "if NEED_V4:\n",
+     "    repayments = pd.read_csv(\n",
+-    "        ROOT / \"data/raw/repayment_history.csv\",\n",
++    "        ROOT / \"data/repayment_history.csv\",\n",
+     "        parse_dates=[\"due_date\", \"last_payment_datetime\"],\n",
+     "    )\n",
+     "    repayments = repayments.merge(\n",
+@@ -2516,7 +2516,7 @@
+    "source": [
+     "if NEED_V4:\n",
+     "    bureau = pd.read_csv(\n",
+-    "        ROOT / \"data/raw/bureau_observations.csv\",\n",
++    "        ROOT / \"data/bureau_observations.csv\",\n",
+     "        parse_dates=[\"report_datetime\", \"available_datetime\"],\n",
+     "    )\n",
+     "    bureau = bureau.merge(\n",
+@@ -2923,7 +2923,7 @@
+     "        \"transaction_datetime\",\n",
+     "    ]\n",
+     "    events = pd.read_csv(\n",
+-    "        ROOT / \"data/raw/ecommerce_transactions.csv\",\n",
++    "        ROOT / \"data/ecommerce_transactions.csv\",\n",
+     "        usecols=columns,\n",
+     "        parse_dates=[\"transaction_datetime\"],\n",
+     "        dtype={\"customer_id\": \"category\", \"product_category\": \"category\"},\n",
+@@ -3083,7 +3083,7 @@
+     "\n",
+     "def fit_bureau_latent(base):\n",
+     "    bureau = pd.read_csv(\n",
+-    "        ROOT / \"data/raw/bureau_observations.csv\",\n",
++    "        ROOT / \"data/bureau_observations.csv\",\n",
+     "        parse_dates=[\"report_datetime\", \"available_datetime\"],\n",
+     "    )\n",
+     "    bureau = bureau.merge(\n",
+@@ -3187,7 +3187,7 @@
+     "    )\n",
+     "\n",
+     "def fit_account_latent(base):\n",
+-    "    account = pd.read_csv(ROOT / \"data/raw/account_behavior.csv\", parse_dates=[\"month\"])\n",
++    "    account = pd.read_csv(ROOT / \"data/account_behavior.csv\", parse_dates=[\"month\"])\n",
+     "    account = account.merge(\n",
+     "        base[[\"decision_datetime\", \"employment_type\"]],\n",
+     "        left_on=\"customer_id\",\n",
+@@ -3304,7 +3304,7 @@
+     "\n",
+     "def fit_repayment_latent(base):\n",
+     "    repayment = pd.read_csv(\n",
+-    "        ROOT / \"data/raw/repayment_history.csv\",\n",
++    "        ROOT / \"data/repayment_history.csv\",\n",
+     "        parse_dates=[\"due_date\", \"last_payment_datetime\"],\n",
+     "    )\n",
+     "    repayment = repayment.merge(\n",
+@@ -4641,7 +4641,7 @@
+     "    assert promotion_passed or (\n",
+     "        exploratory and row[\"delta_ks\"] > 0\n",
+     "    ), \"Exploratory export still requires a positive pooled KS delta.\"\n",
+-    "    sample = pd.read_csv(ROOT / \"data/raw/sample_submission.csv\")\n",
++    "    sample = pd.read_csv(ROOT / \"data/sample_submission.csv\")\n",
+     "    p = np.zeros(len(sample), dtype=np.float64)\n",
+     "    sources = {}\n",
+     "    for directory, weight in [\n",
+--- Logika-main/notebooks/11_kumo_finetune_pilot.ipynb
++++ notebook/11_kumo_finetune_pilot.ipynb
+@@ -18,7 +18,7 @@
+     "Pilot tidak mengekspor submission baru; checkpoint public 0,56262 tetap disimpan.\n",
+     "\n",
+     "Kode mengikuti contoh resmi [NVIDIA SDM fine-tuning](https://github.com/NVIDIA/structured-data-models/blob/main/examples/tabular/finetune.py).\n",
+-    "Gunakan Python 3.11, requirements-kumo.txt dan GPU CUDA. Sel berikut memuat EDA,\n",
++    "Gunakan Python 3.11, environments/teman/requirements-kumo.txt dan GPU CUDA. Sel berikut memuat EDA,\n",
+     "agregasi V5, training dan prediksi pilot secara langsung untuk direview.\n"
+    ]
+   },
+@@ -99,7 +99,7 @@
+     "ROOT = Path(os.environ.get(\"LOGIKA_PROJECT_DIR\", Path.cwd())).resolve()\n",
+     "if not (ROOT / \"scripts/analyze.py\").exists():\n",
+     "    ROOT = next(p for p in ROOT.parents if (p / \"scripts/analyze.py\").exists())\n",
+-    "RAW = ROOT / \"data/raw\"\n",
++    "RAW = ROOT / \"data\"\n",
+     "PROCESSED = Path(os.environ.get(\"LOGIKA_FEATURE_DIR\", ROOT / \"data/processed\"))\n",
+     "OUT = ROOT / \"artifacts/notebook_runs\" / RUN_NAME\n",
+     "TABLES = OUT / \"tables\"\n",
+@@ -1982,7 +1982,7 @@
+     "    cutoff = base[[\"decision_datetime\"]].rename(columns={\"decision_datetime\": \"cutoff\"})\n",
+     "    blocks = []\n",
+     "    audits = {}\n",
+-    "    raw = ROOT / \"data/raw\"\n",
++    "    raw = ROOT / \"data\"\n",
+     "\n",
+     "    repayments = pd.read_csv(\n",
+     "        raw / \"repayment_history.csv\", parse_dates=[\"due_date\", \"last_payment_datetime\"]\n",
+@@ -2341,7 +2341,7 @@
+     "    blocks = []\n",
+     "\n",
+     "    transactions = pd.read_csv(\n",
+-    "        ROOT / \"data/raw/ecommerce_transactions.csv\", parse_dates=[\"transaction_datetime\"]\n",
++    "        ROOT / \"data/ecommerce_transactions.csv\", parse_dates=[\"transaction_datetime\"]\n",
+     "    )\n",
+     "    transactions = transactions.merge(\n",
+     "        cutoff, left_on=\"customer_id\", right_index=True, validate=\"many_to_one\"\n",
+@@ -2419,7 +2419,7 @@
+    "source": [
+     "if NEED_V4:\n",
+     "    repayments = pd.read_csv(\n",
+-    "        ROOT / \"data/raw/repayment_history.csv\",\n",
++    "        ROOT / \"data/repayment_history.csv\",\n",
+     "        parse_dates=[\"due_date\", \"last_payment_datetime\"],\n",
+     "    )\n",
+     "    repayments = repayments.merge(\n",
+@@ -2513,7 +2513,7 @@
+    "source": [
+     "if NEED_V4:\n",
+     "    bureau = pd.read_csv(\n",
+-    "        ROOT / \"data/raw/bureau_observations.csv\",\n",
++    "        ROOT / \"data/bureau_observations.csv\",\n",
+     "        parse_dates=[\"report_datetime\", \"available_datetime\"],\n",
+     "    )\n",
+     "    bureau = bureau.merge(\n",
+--- Logika-main/notebooks/12_goal054_research.ipynb
++++ notebook/12_goal054_research.ipynb
+@@ -20,7 +20,7 @@
+     "\n",
+     "Pemilihan berulang memakai training labels dan split yang pernah digunakan.\n",
+     "Angka OOF tetap mengandung optimisme seleksi; ini bukan untouched holdout.\n",
+-    "Gunakan Python 3.11, requirements-goal054.txt dan GPU CUDA untuk training.\n"
++    "Gunakan Python 3.11, environments/teman/requirements-goal054.txt dan GPU CUDA untuk training.\n"
+    ]
+   },
+   {
+@@ -100,7 +100,7 @@
+     "ROOT = Path(os.environ.get(\"LOGIKA_PROJECT_DIR\", Path.cwd())).resolve()\n",
+     "if not (ROOT / \"scripts/analyze.py\").exists():\n",
+     "    ROOT = next(p for p in ROOT.parents if (p / \"scripts/analyze.py\").exists())\n",
+-    "RAW = ROOT / \"data/raw\"\n",
++    "RAW = ROOT / \"data\"\n",
+     "PROCESSED = Path(os.environ.get(\"LOGIKA_FEATURE_DIR\", ROOT / \"data/processed\"))\n",
+     "OUT = ROOT / \"artifacts/notebook_runs\" / RUN_NAME\n",
+     "TABLES = OUT / \"tables\"\n",
+@@ -1987,7 +1987,7 @@
+     "    cutoff = base[[\"decision_datetime\"]].rename(columns={\"decision_datetime\": \"cutoff\"})\n",
+     "    blocks = []\n",
+     "    audits = {}\n",
+-    "    raw = ROOT / \"data/raw\"\n",
++    "    raw = ROOT / \"data\"\n",
+     "\n",
+     "    repayments = pd.read_csv(\n",
+     "        raw / \"repayment_history.csv\", parse_dates=[\"due_date\", \"last_payment_datetime\"]\n",
+@@ -2346,7 +2346,7 @@
+     "    blocks = []\n",
+     "\n",
+     "    transactions = pd.read_csv(\n",
+-    "        ROOT / \"data/raw/ecommerce_transactions.csv\", parse_dates=[\"transaction_datetime\"]\n",
++    "        ROOT / \"data/ecommerce_transactions.csv\", parse_dates=[\"transaction_datetime\"]\n",
+     "    )\n",
+     "    transactions = transactions.merge(\n",
+     "        cutoff, left_on=\"customer_id\", right_index=True, validate=\"many_to_one\"\n",
+@@ -2424,7 +2424,7 @@
+    "source": [
+     "if NEED_V4:\n",
+     "    repayments = pd.read_csv(\n",
+-    "        ROOT / \"data/raw/repayment_history.csv\",\n",
++    "        ROOT / \"data/repayment_history.csv\",\n",
+     "        parse_dates=[\"due_date\", \"last_payment_datetime\"],\n",
+     "    )\n",
+     "    repayments = repayments.merge(\n",
+@@ -2518,7 +2518,7 @@
+    "source": [
+     "if NEED_V4:\n",
+     "    bureau = pd.read_csv(\n",
+-    "        ROOT / \"data/raw/bureau_observations.csv\",\n",
++    "        ROOT / \"data/bureau_observations.csv\",\n",
+     "        parse_dates=[\"report_datetime\", \"available_datetime\"],\n",
+     "    )\n",
+     "    bureau = bureau.merge(\n",
+@@ -2925,7 +2925,7 @@
+     "        \"transaction_datetime\",\n",
+     "    ]\n",
+     "    events = pd.read_csv(\n",
+-    "        ROOT / \"data/raw/ecommerce_transactions.csv\",\n",
++    "        ROOT / \"data/ecommerce_transactions.csv\",\n",
+     "        usecols=columns,\n",
+     "        parse_dates=[\"transaction_datetime\"],\n",
+     "        dtype={\"customer_id\": \"category\", \"product_category\": \"category\"},\n",
+@@ -3085,7 +3085,7 @@
+     "\n",
+     "def fit_bureau_latent(base):\n",
+     "    bureau = pd.read_csv(\n",
+-    "        ROOT / \"data/raw/bureau_observations.csv\",\n",
++    "        ROOT / \"data/bureau_observations.csv\",\n",
+     "        parse_dates=[\"report_datetime\", \"available_datetime\"],\n",
+     "    )\n",
+     "    bureau = bureau.merge(\n",
+@@ -3189,7 +3189,7 @@
+     "    )\n",
+     "\n",
+     "def fit_account_latent(base):\n",
+-    "    account = pd.read_csv(ROOT / \"data/raw/account_behavior.csv\", parse_dates=[\"month\"])\n",
++    "    account = pd.read_csv(ROOT / \"data/account_behavior.csv\", parse_dates=[\"month\"])\n",
+     "    account = account.merge(\n",
+     "        base[[\"decision_datetime\", \"employment_type\"]],\n",
+     "        left_on=\"customer_id\",\n",
+@@ -3306,7 +3306,7 @@
+     "\n",
+     "def fit_repayment_latent(base):\n",
+     "    repayment = pd.read_csv(\n",
+-    "        ROOT / \"data/raw/repayment_history.csv\",\n",
++    "        ROOT / \"data/repayment_history.csv\",\n",
+     "        parse_dates=[\"due_date\", \"last_payment_datetime\"],\n",
+     "    )\n",
+     "    repayment = repayment.merge(\n",
+@@ -6023,7 +6023,7 @@
+     "def k_add_calendar(data, test):\n",
+     "    frames = []\n",
+     "    for frame, split in [(data, 'train'), (test, 'test')]:\n",
+-    "        apps = pd.read_csv(r.ROOT / f'data/raw/{split}_applications.csv')\n",
++    "        apps = pd.read_csv(r.ROOT / f'data/{split}_applications.csv')\n",
+     "        features = d_calendar_features(apps)\n",
+     "        result = frame.merge(features, on='application_id', validate='one_to_one')\n",
+     "        assert result.application_id.equals(frame.application_id)\n",
+@@ -6343,7 +6343,7 @@
+    "source": [
+     "def b_main():\n",
+     "    b_OUT.mkdir(parents=True, exist_ok=True)\n",
+-    "    raw = r.ROOT / 'data/raw'\n",
++    "    raw = r.ROOT / 'data'\n",
+     "    manifest_file = b_OUT / 'manifest.json'\n",
+     "    if manifest_file.exists():\n",
+     "        manifest = json.loads(manifest_file.read_text())\n",
+@@ -6703,7 +6703,7 @@
+     "    result = []\n",
+     "    for split, frame in [('train', data), ('test', test)]:\n",
+     "        frame = frame.drop(columns='decision_datetime', errors='ignore')\n",
+-    "        dates = pd.read_csv(r.ROOT / f'data/raw/{split}_applications.csv', usecols=['application_id', 'customer_id', 'decision_datetime'], parse_dates=['decision_datetime'])\n",
++    "        dates = pd.read_csv(r.ROOT / f'data/{split}_applications.csv', usecols=['application_id', 'customer_id', 'decision_datetime'], parse_dates=['decision_datetime'])\n",
+     "        joined = frame.merge(dates, on=['application_id', 'customer_id'], how='left', validate='one_to_one', sort=False)\n",
+     "        assert joined.application_id.equals(frame.application_id)\n",
+     "        assert joined.decision_datetime.notna().all()\n",
+@@ -7144,7 +7144,7 @@
+     "    baseline = report['comparisons'][0]\n",
+     "    assert row['ks'] > baseline['ks'], 'Export requires a positive pooled KS delta.'\n",
+     "    assert r.checksum(r.ROOT / r.PUBLIC_CHECKPOINT) == r.PUBLIC_SHA256\n",
+-    "    sample = pd.read_csv(r.ROOT / 'data/raw/sample_submission.csv')\n",
++    "    sample = pd.read_csv(r.ROOT / 'data/sample_submission.csv')\n",
+     "    assert len(sample) == 30000 and sample.application_id.is_unique\n",
+     "    stage = r.DEST / f'cv{r.SPLITS}_seed{r.FOLD_SEED}'\n",
+     "    components = [(stage / candidate, weight)]\n",
+--- Logika-main/notebooks/README.md
++++ notebook/README_teman.md
+@@ -15,12 +15,12 @@
+ 
+ ## Cara menjalankan
+ 
+-1. Instal paket dari direktori proyek: `python -m pip install -r requirements-optimization.txt -r requirements-notebook.txt`.
++1. Instal paket dari direktori proyek: `python -m pip install -r environments/teman/requirements-optimization.txt -r environments/teman/requirements-notebook.txt`.
+ 2. Unduh data sekali: `python scripts/download_data.py`. Kredensial Kaggle tetap di file lokal yang dikecualikan dari Git; jangan menyalin key ke sel notebook.
+ 3. Buka notebook melalui Jupyter atau VS Code, pilih kernel Python yang memiliki paket tersebut, lalu **Restart & Run All**.
+ 4. Ambil `submission.csv` pada folder output yang ditampilkan sel terakhir.
+ 
+-Untuk **06**, gunakan Python 3.10 dan tambahkan `requirements-v5.txt`. Lingkungan referensi memakai PyTorch 1.13.1+cu116 dan GPU A100. CPU dapat dipakai, dengan durasi dan kemungkinan pembulatan berbeda. Skor validasi versi 5 naik dibanding versi 4, tetapi hanya lima fold membaik dari syarat enam; file kandidat terpisah belum mengganti `submission.csv` di root.
++Untuk **06**, gunakan Python 3.10 dan tambahkan `environments/teman/requirements-v5.txt`. Lingkungan referensi memakai PyTorch 1.13.1+cu116 dan GPU A100. CPU dapat dipakai, dengan durasi dan kemungkinan pembulatan berbeda. Skor validasi versi 5 naik dibanding versi 4, tetapi hanya lima fold membaik dari syarat enam; file kandidat terpisah belum mengganti `submission.csv` di root.
+ 
+ | Notebook | Lokasi output dari direktori proyek |
+ |---|---|
+@@ -81,7 +81,7 @@
+ ## 08 — Kumo Tabular
+ 
+ [08_kumo_tabular.ipynb](08_kumo_tabular.ipynb) memakai lingkungan Python 3.11 terpisah
+-(`requirements-kumo.txt`) dan GPU CUDA. Kode EDA dan agregasi fitur terlihat di sel,
++(`environments/teman/requirements-kumo.txt`) dan GPU CUDA. Kode EDA dan agregasi fitur terlihat di sel,
+ dilanjutkan inferensi Kumo pretrained dan perbandingan dengan tiga fold seleksi V5.
+ `fit` membentuk cache konteks berlabel; bobot model tidak dilatih ulang. Data tetap lokal.
+ 
+@@ -187,7 +187,7 @@
+ [12_goal054_research.ipynb](12_goal054_research.ipynb) menyertakan EDA hingga kode
+ prediksi, audit, dan ekspor kandidat. Memuat TabPFN 3.5, EBM, koreksi Kumo dan
+ kalender, serta Kumo Relational dengan riwayat sebelum keputusan. Gunakan
+-Python 3.11, `requirements-goal054.txt` dan GPU CUDA. Flag training default `False`
++Python 3.11, `environments/teman/requirements-goal054.txt` dan GPU CUDA. Flag training default `False`
+ untuk review hasil yang tersedia. Aktifkan `BUILD_RELATED_TABLES` untuk membuat
+ riwayat graf dari raw data; preflight relasional tidak menghitung KS.
+ 
+--- Logika-main/scripts/analyze.py
++++ scripts/analyze.py
+@@ -10,7 +10,7 @@
+ import pandas as pd
+ 
+ ROOT = Path(__file__).resolve().parents[1]
+-RAW = ROOT / "data/raw"
++RAW = ROOT / "data"
+ PROCESSED = ROOT / "data/processed"
+ OUT = ROOT / "artifacts"
+ TABLES = OUT / "tables"
+--- Logika-main/scripts/build_features_v3.py
++++ scripts/build_features_v3.py
+@@ -18,7 +18,7 @@
+     cutoff=base[['decision_datetime']].rename(columns={'decision_datetime':'cutoff'})
+     blocks=[]
+     audits={}
+-    raw=ROOT/'data/raw'
++    raw=ROOT/'data'
+ 
+     repayments=pd.read_csv(raw/'repayment_history.csv',parse_dates=['due_date','last_payment_datetime'])
+     repayments=repayments.merge(cutoff,left_on='customer_id',right_index=True,validate='many_to_one')
+--- Logika-main/scripts/build_features_v4.py
++++ scripts/build_features_v4.py
+@@ -17,7 +17,7 @@
+     audit = {'training_target_used': False, 'normalization_population': 'Training customer histories; no target labels.'}
+     blocks = []
+ 
+-    transactions = pd.read_csv(ROOT / 'data/raw/ecommerce_transactions.csv', parse_dates=['transaction_datetime'])
++    transactions = pd.read_csv(ROOT / 'data/ecommerce_transactions.csv', parse_dates=['transaction_datetime'])
+     transactions = transactions.merge(cutoff, left_on='customer_id', right_index=True, validate='many_to_one')
+     audit['future_transaction_rows'] = int(transactions.transaction_datetime.ge(transactions.cutoff).sum())
+     assert audit['future_transaction_rows'] == 0
+@@ -47,7 +47,7 @@
+     print('Normalized category prices complete.', flush=True)
+     del transactions, part, grouped, feature, categories, orders, order_summary
+ 
+-    repayments = pd.read_csv(ROOT / 'data/raw/repayment_history.csv', parse_dates=['due_date', 'last_payment_datetime'])
++    repayments = pd.read_csv(ROOT / 'data/repayment_history.csv', parse_dates=['due_date', 'last_payment_datetime'])
+     repayments = repayments.merge(cutoff, left_on='customer_id', right_index=True, validate='many_to_one')
+     audit['future_due_rows'] = int(repayments.due_date.ge(repayments.cutoff).sum())
+     audit['future_payment_rows'] = int(repayments.last_payment_datetime.ge(repayments.cutoff).sum())
+@@ -83,7 +83,7 @@
+     print('Mature events and equal-loan delinquency rates complete.', flush=True)
+     del repayments, recent, eligible, features, loan_rates, loan_summary, last, counts, weighted, positive
+ 
+-    bureau = pd.read_csv(ROOT / 'data/raw/bureau_observations.csv', parse_dates=['report_datetime', 'available_datetime'])
++    bureau = pd.read_csv(ROOT / 'data/bureau_observations.csv', parse_dates=['report_datetime', 'available_datetime'])
+     bureau = bureau.merge(cutoff, left_on='customer_id', right_index=True, validate='many_to_one')
+     audit['future_bureau_report_rows'] = int(bureau.report_datetime.ge(bureau.cutoff).sum())
+     audit['future_bureau_available_rows'] = int(bureau.available_datetime.ge(bureau.cutoff).sum())
+--- Logika-main/scripts/build_features_v5.py
++++ scripts/build_features_v5.py
+@@ -15,7 +15,7 @@
+         ROOT / "data/processed/application_features_v4.parquet"
+     ).set_index("customer_id")
+     events = pd.read_csv(
+-        ROOT / "data/raw/ecommerce_transactions.csv",
++        ROOT / "data/ecommerce_transactions.csv",
+         parse_dates=["transaction_datetime"],
+     )
+     events = events.merge(
+--- Logika-main/scripts/build_finetune_pilot_notebook.py
++++ scripts/build_finetune_pilot_notebook.py
+@@ -16,7 +16,7 @@
+ 
+ 
+ def build():
+-    previous = nbf.read(ROOT / "notebooks/08_kumo_tabular.ipynb", as_version=4)
++    previous = nbf.read(ROOT / "notebook/08_kumo_tabular.ipynb", as_version=4)
+     cells = copy.deepcopy(previous.cells[:67])
+     cells[
+         0
+@@ -33,7 +33,7 @@
+ Pilot tidak mengekspor submission baru; checkpoint public 0,56262 tetap disimpan.
+ 
+ Kode mengikuti contoh resmi [NVIDIA SDM fine-tuning](https://github.com/NVIDIA/structured-data-models/blob/main/examples/tabular/finetune.py).
+-Gunakan Python 3.11, requirements-kumo.txt dan GPU CUDA. Sel berikut memuat EDA,
++Gunakan Python 3.11, environments/teman/requirements-kumo.txt dan GPU CUDA. Sel berikut memuat EDA,
+ agregasi V5, training dan prediksi pilot secara langsung untuk direview.
+ """
+     cells[2].source = (
+@@ -150,7 +150,7 @@
+         },
+     )
+     nbf.validate(nb)
+-    path = ROOT / "notebooks/11_kumo_finetune_pilot.ipynb"
++    path = ROOT / "notebook/11_kumo_finetune_pilot.ipynb"
+     nbf.write(nb, path)
+     return path
+ 
+@@ -163,7 +163,7 @@
+     if args.execute:
+         from nbclient import NotebookClient
+ 
+-        checkpoint = ROOT / "submission_kumo.csv"
++        checkpoint = ROOT / "results/teman/submission_kumo.csv"
+         before = hashlib.sha256(checkpoint.read_bytes()).hexdigest()
+         nb = nbf.read(path, as_version=4)
+         NotebookClient(
+--- Logika-main/scripts/build_goal054_notebook.py
++++ scripts/build_goal054_notebook.py
+@@ -73,7 +73,7 @@
+ 
+ 
+ def build():
+-    previous = nbf.read(ROOT / "notebooks/10_kumo_spline.ipynb", as_version=4)
++    previous = nbf.read(ROOT / "notebook/10_kumo_spline.ipynb", as_version=4)
+     cutoff = next(
+         i
+         for i, c in enumerate(previous.cells)
+@@ -97,7 +97,7 @@
+ 
+ Pemilihan berulang memakai training labels dan split yang pernah digunakan.
+ Angka OOF tetap mengandung optimisme seleksi; ini bukan untouched holdout.
+-Gunakan Python 3.11, requirements-goal054.txt dan GPU CUDA untuk training.
++Gunakan Python 3.11, environments/teman/requirements-goal054.txt dan GPU CUDA untuk training.
+ """
+     cells[2].source = cells[2].source.replace(
+         'RUN_NAME = "10_kumo_spline"', 'RUN_NAME = "12_goal054"'
+@@ -469,7 +469,7 @@
+         },
+     )
+     nbf.validate(nb)
+-    path = ROOT / "notebooks/12_goal054_research.ipynb"
++    path = ROOT / "notebook/12_goal054_research.ipynb"
+     nbf.write(nb, path)
+     return path
+ 
+--- Logika-main/scripts/build_hybrid_kumo_notebook.py
++++ scripts/build_hybrid_kumo_notebook.py
+@@ -15,7 +15,7 @@
+ 
+ 
+ def build():
+-    previous = nbf.read(ROOT / "notebooks/09_kumo_improvement.ipynb", as_version=4)
++    previous = nbf.read(ROOT / "notebook/09_kumo_improvement.ipynb", as_version=4)
+     cutoff = next(
+         i
+         for i, c in enumerate(previous.cells)
+@@ -36,7 +36,7 @@
+ pernah dilihat. Skor public kandidat baru **belum diketahui**. Checkpoint Kumo
+ `submission_kumo.csv` dengan public 0,56262 tetap disimpan.
+ 
+-Gunakan Python 3.11, requirements-kumo.txt, GPU CUDA dan data mentah kompetisi.
++Gunakan Python 3.11, environments/teman/requirements-kumo.txt, GPU CUDA dan data mentah kompetisi.
+ Semua kode fitur, konteks Kumo, fitting spline, prediksi dan ekspor terlihat di sel.
+ """
+     cells[2].source = cells[2].source.replace(
+@@ -247,7 +247,7 @@
+         },
+     )
+     nbf.validate(nb)
+-    path = ROOT / "notebooks/10_kumo_spline.ipynb"
++    path = ROOT / "notebook/10_kumo_spline.ipynb"
+     nbf.write(nb, path)
+     return path
+ 
+--- Logika-main/scripts/build_kumo_improvement_notebook.py
++++ scripts/build_kumo_improvement_notebook.py
+@@ -40,7 +40,7 @@
+     for key in ["reason", "prior_failed_confirmation"]:
+         if key in lock:
+             notebook_lock[key] = lock[key]
+-    previous = nbf.read(ROOT / "notebooks/08_kumo_tabular.ipynb", as_version=4)
++    previous = nbf.read(ROOT / "notebook/08_kumo_tabular.ipynb", as_version=4)
+     cells = copy.deepcopy(previous.cells[:67])
+     cells[
+         0
+@@ -48,7 +48,7 @@
+ 
+ Notebook ini memperlihatkan eksperimen setelah checkpoint Kumo public **0,56262**.
+ Semua kode fitur, konteks model, validasi, dan ekspor tersedia di sel.
+-Gunakan Python 3.11, `requirements-kumo.txt`, GPU CUDA, dan data mentah kompetisi.
++Gunakan Python 3.11, `environments/teman/requirements-kumo.txt`, GPU CUDA, dan data mentah kompetisi.
+ 
+ Enam kandidat pertama diuji pada tiga fold seed 8247. Resep dikunci sebelum
+ konfirmasi pada lima fold seed 31027, melawan baseline pada **fold yang sama**.
+@@ -269,7 +269,7 @@
+         },
+     )
+     nbf.validate(nb)
+-    path = ROOT / "notebooks/09_kumo_improvement.ipynb"
++    path = ROOT / "notebook/09_kumo_improvement.ipynb"
+     nbf.write(nb, path)
+     return path
+ 
+@@ -316,7 +316,7 @@
+         code_cells = [c for c in nb.cells if c.cell_type == "code"]
+         assert all(c.execution_count is not None for c in code_cells)
+         assert not any(o.output_type == "error" for c in code_cells for o in c.outputs)
+-        candidate = ROOT / "submission_kumo_v2.csv"
++        candidate = ROOT / "results/teman/submission_kumo_v2.csv"
+         exported = ROOT / "artifacts/notebook_runs/09_kumo_improvement/submission.csv"
+         if exported.exists():
+             assert candidate.read_bytes() == exported.read_bytes()
+--- Logika-main/scripts/build_kumo_notebook.py
++++ scripts/build_kumo_notebook.py
+@@ -29,7 +29,7 @@
+     public_result = (
+         json.loads(public_path.read_text()) if public_path.exists() else None
+     )
+-    canonical = ROOT / "submission_kumo.csv"
++    canonical = ROOT / "results/teman/submission_kumo.csv"
+     if public_result and (
+         public_result.get("variant") != variant
+         or not canonical.exists()
+@@ -41,7 +41,7 @@
+     context, estimators = int(context.removeprefix("ctx")), int(
+         estimators.removeprefix("e")
+     )
+-    previous = nbf.read(ROOT / "notebooks/06_submission_v5.ipynb", as_version=4)
++    previous = nbf.read(ROOT / "notebook/06_submission_v5.ipynb", as_version=4)
+     cells = [
+         nbf.v4.new_markdown_cell(
+             """# 08 — Kumo Tabular: EDA hingga submission
+@@ -50,7 +50,7 @@
+ `fit` menyiapkan preprocessing dan cache konteks berlabel, tanpa gradient training.
+ Validasi memakai tiga fold yang sama dengan seleksi V5 (seed 8247).
+ 
+-Gunakan lingkungan **Python 3.11** terpisah dengan `requirements-kumo.txt` dan GPU CUDA.
++Gunakan lingkungan **Python 3.11** terpisah dengan `environments/teman/requirements-kumo.txt` dan GPU CUDA.
+ Model lokal: [NVIDIA Kumo Tabular](https://huggingface.co/nvidia/Kumo-Tabular),
+ checkpoint `v1.0.1`, paket `structured-data-models==0.2.1`.
+ Data kompetisi tetap diproses di mesin lokal.
+@@ -204,7 +204,7 @@
+     )
+     code(function("report_kumo.py", "export"))
+     code(
+-        "metadata = export(VARIANT)\ndisplay(metadata)\ndisplay(pd.read_csv(ROOT/'submission_kumo.csv').head())"
++        "metadata = export(VARIANT)\ndisplay(metadata)\ndisplay(pd.read_csv(ROOT / 'results/teman/submission_kumo.csv').head())"
+     )
+     md(
+         """## Kandidat campuran dengan V5
+@@ -220,7 +220,7 @@
+         """if all((ROOT/'artifacts/optimization/v5'/f).exists() for f in ['selection_test_tabm.parquet','selection_oof_tabm.parquet']):
+     blend_metadata = export_blend(VARIANT, weight=0.25)
+     display(blend_metadata)
+-    display(pd.read_csv(ROOT/'submission_kumo_blend.csv').head())
++    display(pd.read_csv(ROOT / 'results/teman/submission_kumo_blend.csv').head())
+ else:
+     print('Kumo murni selesai; baseline V5 tidak tersedia untuk membuat campuran.')
+ """
+@@ -240,7 +240,7 @@
+             "language_info": {"name": "python", "version": "3.11.13"},
+         },
+     )
+-    path = ROOT / "notebooks/08_kumo_tabular.ipynb"
++    path = ROOT / "notebook/08_kumo_tabular.ipynb"
+     nbf.write(nb, path)
+     return path
+ 
+--- Logika-main/scripts/build_relational054.py
++++ scripts/build_relational054.py
+@@ -33,7 +33,7 @@
+ 
+ def main():
+     OUT.mkdir(parents=True, exist_ok=True)
+-    raw = r.ROOT / "data/raw"
++    raw = r.ROOT / "data"
+     manifest_file = OUT / "manifest.json"
+     if manifest_file.exists():
+         manifest = json.loads(manifest_file.read_text())
+--- Logika-main/scripts/build_reverse_notebook.py
++++ scripts/build_reverse_notebook.py
+@@ -21,7 +21,7 @@
+ 
+ Kode probe seed, inferensi efek customer, uncertainty, simulasi pendekatan, dan
+ validasi model terlihat di sel. Data mentah diunduh melalui skrip proyek. Paket:
+-`requirements-optimization.txt` dan `requirements-notebook.txt`.
++`environments/teman/requirements-optimization.txt` dan `environments/teman/requirements-notebook.txt`.
+ 
+ Seed untuk simulasi dan pembagian audit dipilih oleh kita; tidak sama dengan seed asli
+ dataset. Notebook ini tidak mengirim atau mengganti submission.
+@@ -63,7 +63,7 @@
+ ROOT = Path(os.environ.get('LOGIKA_PROJECT_DIR',Path.cwd())).resolve()
+ if not (ROOT/'scripts/reverse_synthetic_patterns.py').exists():
+     ROOT = next(p for p in ROOT.parents if (p/'scripts/reverse_synthetic_patterns.py').exists())
+-RAW = ROOT/'data/raw'
++RAW = ROOT/'data'
+ OUT = ROOT/'artifacts/notebook_runs/07_reverse'
+ OUT.mkdir(parents=True,exist_ok=True)
+ EXCLUDED = {'application_id','customer_id','application_datetime','decision_datetime','target','split'}
+--- Logika-main/scripts/build_review_notebook_v5.py
++++ scripts/build_review_notebook_v5.py
+@@ -27,7 +27,7 @@
+     public_result = (
+         json.loads(public_file.read_text()) if public_file.exists() else None
+     )
+-    canonical_file = ROOT / "submission_v5.csv"
++    canonical_file = ROOT / "results/teman/submission_v5.csv"
+     if public_result and (
+         not canonical_file.exists()
+         or public_result.get("sha256")
+@@ -48,7 +48,7 @@
+ TabM dilatih dari data kompetisi. Early stopping berada di dalam training setiap fold.
+ Bobot akhir dikunci sebelum validasi sepuluh fold. Skor public versi 5 belum diketahui.
+ 
+-Instal `requirements-v5.txt` dan `requirements-notebook.txt` dengan Python 3.10.
++Instal `environments/teman/requirements-v5.txt` dan `environments/teman/requirements-notebook.txt` dengan Python 3.10.
+ GPU mempercepat training; CPU juga didukung. Default memakai cache jika tersedia,
+ tetapi probabilitas test tetap dihitung kembali dari model.
+ """
+@@ -81,7 +81,7 @@
+                 "PROCESSED / 'application_features_v4.parquet'",
+             ),
+             (
+-                "ROOT / {q}data/raw/ecommerce_transactions.csv{q}",
++                "ROOT / {q}data/ecommerce_transactions.csv{q}",
+                 "RAW / 'ecommerce_transactions.csv'",
+             ),
+             (
+--- Logika-main/scripts/build_review_notebooks.py
++++ scripts/build_review_notebooks.py
+@@ -16,7 +16,7 @@
+     black = None
+ 
+ ROOT = Path(__file__).resolve().parents[1]
+-DEST = ROOT / 'notebooks'
++DEST = ROOT / 'notebook'
+ 
+ 
+ def source(filename, name):
+@@ -85,7 +85,7 @@
+ ROOT = Path(os.environ.get('LOGIKA_PROJECT_DIR', Path.cwd())).resolve()
+ if not (ROOT / 'scripts/analyze.py').exists():
+     ROOT = next(p for p in ROOT.parents if (p / 'scripts/analyze.py').exists())
+-RAW = ROOT / 'data/raw'
++RAW = ROOT / 'data'
+ PROCESSED = Path(os.environ.get('LOGIKA_FEATURE_DIR', ROOT / 'data/processed'))
+ OUT = ROOT / 'artifacts/notebook_runs' / RUN_NAME
+ TABLES = OUT / 'tables'
+@@ -309,7 +309,7 @@
+ result = {'file': str(destination.relative_to(ROOT)), 'rows': len(reloaded),
+           'sha256': hashlib.sha256(destination.read_bytes()).hexdigest(),
+           'historical_file': CANONICAL_FILE, 'historical_public_score': PUBLIC_SCORE}
+-historical = ROOT / CANONICAL_FILE
++historical = ROOT / "results/teman" / CANONICAL_FILE
+ if historical.exists():
+     checkpoint = pd.read_csv(historical)
+     assert checkpoint.application_id.equals(reloaded.application_id)
+@@ -437,8 +437,8 @@
+     **submission.csv**, agar hasil beberapa versi bisa dibandingkan.
+     Notebook tidak mengirim submission ke Kaggle.
+ 
+-    Instal dependensi dari direktori proyek: `python -m pip install -r requirements-optimization.txt -r requirements-notebook.txt`.
+-    Data mentah harus tersedia di `data/raw/`; unduh sekali dengan `python scripts/download_data.py`.
++    Instal dependensi dari direktori proyek: `python -m pip install -r environments/teman/requirements-optimization.txt -r environments/teman/requirements-notebook.txt`.
++    Data mentah harus tersedia di `data/`; unduh sekali dengan `python scripts/download_data.py`.
+     Kredensial tidak perlu ditulis dalam notebook.
+     ''')
+     section(cells, '1. Persiapan lingkungan', 'Semua jalur relatif terhadap proyek. Cache mempercepat review; kode training tetap ada di sel notebook.',
+--- Logika-main/scripts/compare_finetune_kumo.py
++++ scripts/compare_finetune_kumo.py
+@@ -89,7 +89,7 @@
+     summary = compare(stage)
+     selected = next(r for r in summary["comparisons"] if r["name"] == name)
+     splits = int(re.fullmatch(r"cv(\d+)_seed(\d+)", stage).group(1))
+-    sample = pd.read_csv(ROOT / "data/raw/sample_submission.csv")
++    sample = pd.read_csv(ROOT / "data/sample_submission.csv")
+     prediction = np.zeros(len(sample), dtype=np.float64)
+     sources = {}
+     for component in selected["components"]:
+--- Logika-main/scripts/create_submission.py
++++ scripts/create_submission.py
+@@ -23,9 +23,9 @@
+     frame = pd.read_parquet(ROOT / "data/processed/application_features.parquet")
+     train = frame[frame.split.eq("train")].copy()
+     test = frame[frame.split.eq("test")].copy()
+-    raw_train = pd.read_csv(ROOT / "data/raw/train_applications.csv", usecols=["application_id", "target"])
+-    raw_test = pd.read_csv(ROOT / "data/raw/test_applications.csv", usecols=["application_id"])
+-    sample = pd.read_csv(ROOT / "data/raw/sample_submission.csv")
++    raw_train = pd.read_csv(ROOT / "data/train_applications.csv", usecols=["application_id", "target"])
++    raw_test = pd.read_csv(ROOT / "data/test_applications.csv", usecols=["application_id"])
++    sample = pd.read_csv(ROOT / "data/sample_submission.csv")
+     columns = config["all_feature_columns"]
+ 
+     assert len(train) == len(raw_train) == 70000
+@@ -69,7 +69,7 @@
+     assert submission.columns.tolist() == sample.columns.tolist()
+     assert submission.default_probability.notna().all()
+ 
+-    destination = ROOT / "submission.csv"
++    destination = ROOT / "results/teman/submission.csv"
+     temporary = destination.with_suffix(".csv.tmp")
+     submission.to_csv(temporary, index=False, float_format="%.12f")
+     reread = pd.read_csv(temporary)
+--- Logika-main/scripts/crossvalidate_ks.py
++++ scripts/crossvalidate_ks.py
+@@ -106,14 +106,14 @@
+ 
+     p=sum(weight*test_pred[name] for name,weight in recipe.items())
+     pred=pd.DataFrame({'application_id':test_reference.application_id,'default_probability':p})
+-    sample=pd.read_csv(ROOT/'data/raw/sample_submission.csv')
++    sample=pd.read_csv(ROOT/'data/sample_submission.csv')
+     assert set(sample.application_id)==set(pred.application_id)
+     submission=sample[['application_id']].merge(pred,on='application_id',how='left',validate='one_to_one',sort=False)
+     assert submission.application_id.equals(sample.application_id)
+     assert submission.application_id.is_unique and len(submission)==30000
+     assert np.isfinite(submission.default_probability).all()
+     assert submission.default_probability.between(0,1).all()
+-    destination=ROOT/'submission_ks.csv'
++    destination=ROOT / 'results/teman/submission_ks.csv'
+     submission.to_csv(destination,index=False,float_format='%.12f')
+     reread=pd.read_csv(destination)
+     assert reread.shape==(30000,2) and reread.columns.tolist()==sample.columns.tolist()
+@@ -122,7 +122,7 @@
+     # Keep the full-data tuned alternative; promote CV only when its fold KS improves.
+     promoted=best['mean_fold_ks']>baseline['mean_fold_ks'] and best['ks']>baseline['ks']
+     if promoted:
+-        shutil.copy2(destination,ROOT/'submission.csv')
++        shutil.copy2(destination,ROOT / 'results/teman/submission.csv')
+     report={'metric':'KS','seed':8247,'folds':3,'candidate_count':len(definitions),
+             'fixed_model_names':names,'baseline':baseline,'selected':best,
+             'recipe_selection':'highest mean per-fold KS among fixed coarse blend weights',
+@@ -166,7 +166,7 @@
+ Reproduksi:
+ 
+ ```bash
+-python -m pip install -r requirements-optimization.txt
++python -m pip install -r environments/teman/requirements-optimization.txt
+ python scripts/extend_features.py
+ python scripts/optimize_ks.py --features base
+ python scripts/optimize_ks.py --features extended
+--- Logika-main/scripts/diagnose_calendar054.py
++++ scripts/diagnose_calendar054.py
+@@ -49,7 +49,7 @@
+         folds,
+     )
+     probability = 0.75 * pk + 0.25 * ps
+-    apps = pd.read_csv(r.ROOT / "data/raw/train_applications.csv")
++    apps = pd.read_csv(r.ROOT / "data/train_applications.csv")
+     calendar = calendar_features(apps)
+     anchor = data[["application_id", "target"]].copy()
+     anchor["baseline_probability"] = probability
+--- Logika-main/scripts/download_data.py
++++ scripts/download_data.py
+@@ -30,7 +30,7 @@
+ 
+     api = KaggleApi()
+     api.authenticate()
+-    raw = ROOT / "data/raw"
++    raw = ROOT / "data"
+     raw.mkdir(parents=True, exist_ok=True)
+     manifest = api.competition_list_files(COMPETITION).to_dict()
+     (raw / "download_manifest.json").write_text(json.dumps(manifest, indent=2, default=str))
+--- Logika-main/scripts/export_v4_submission.py
++++ scripts/export_v4_submission.py
+@@ -95,7 +95,7 @@
+                  'p05': float(np.quantile(bootstrap_gains, .05)), 'p95': float(np.quantile(bootstrap_gains, .95)),
+                  'fraction_positive': float(np.mean(np.array(bootstrap_gains) > 0)),
+                  'caveat': 'Paired row bootstrap of fixed OOF predictions; it does not correct selection optimism or certify a leaderboard gain.'}
+-    sample = pd.read_csv(ROOT / 'data/raw/sample_submission.csv')
++    sample = pd.read_csv(ROOT / 'data/sample_submission.csv')
+     raw_prediction = pd.DataFrame({'application_id': predicted.application_id, 'default_probability': test_probability})
+     assert set(raw_prediction.application_id) == set(sample.application_id)
+     submission = sample[['application_id']].merge(raw_prediction, on='application_id', how='left', sort=False, validate='one_to_one')
+@@ -109,7 +109,7 @@
+     if not checkpoint.exists():
+         shutil.copy2(original, checkpoint)
+     assert hashlib.sha256(checkpoint.read_bytes()).hexdigest() == config['baseline_sha256']
+-    path = ROOT / 'submission_v4.csv'
++    path = ROOT / 'results/teman/submission_v4.csv'
+     submission.to_csv(path, index=False, float_format='%.12f')
+     reread = pd.read_csv(path)
+     assert reread.columns.tolist() == sample.columns.tolist()
+@@ -119,7 +119,7 @@
+     old_metadata = DESTINATION / 'submission_public_0_55845_metadata.json'
+     if not old_metadata.exists():
+         shutil.copy2(ROOT / 'artifacts/submission_metadata.json', old_metadata)
+-    shutil.copy2(path, ROOT / 'submission.csv')
++    shutil.copy2(path, ROOT / 'results/teman/submission.csv')
+     report = {'file': 'submission_v4.csv', 'sha256': hashlib.sha256(path.read_bytes()).hexdigest(),
+               'recipe': config['recipe'], 'baseline_public_score': .55845, 'new_public_score': None,
+               'selection_3fold': {'baseline': config['baseline'], 'new': config['selection']},
+--- Logika-main/scripts/export_v5_submission.py
++++ scripts/export_v5_submission.py
+@@ -66,7 +66,7 @@
+         confirmation["version5"]["mean_fold_ks"]
+         > confirmation["baseline"]["mean_fold_ks"]
+     )
+-    old_file = ROOT / "submission_v4.csv"
++    old_file = ROOT / "results/teman/submission_v4.csv"
+     old_digest = hashlib.sha256(old_file.read_bytes()).hexdigest()
+     assert (
+         old_digest == "890e05a3f0b09500142395d5498e939928328b2770c509ca035f760a8dea8344"
+@@ -93,7 +93,7 @@
+         )
+         < 1e-12
+     )
+-    sample = pd.read_csv(ROOT / "data/raw/sample_submission.csv")
++    sample = pd.read_csv(ROOT / "data/sample_submission.csv")
+     assert set(sample.application_id) == set(predicted.application_id)
+     submission = sample[["application_id"]].merge(
+         predicted[["application_id", "version5"]],
+@@ -144,7 +144,7 @@
+         "fraction_positive": float(np.mean(np.array(gains) > 0)),
+         "caveat": "Fixed OOF predictions; conditional on selected features/models/weights. Does not remove selection optimism.",
+     }
+-    file = ROOT / "submission_v5.csv"
++    file = ROOT / "results/teman/submission_v5.csv"
+     submission.to_csv(file, index=False, float_format="%.12f")
+     digest = hashlib.sha256(file.read_bytes()).hexdigest()
+     public_result_file = DESTINATION / "public_leaderboard_result.json"
+@@ -169,7 +169,7 @@
+         < 5.1e-13
+     )
+     if confirmation["promote"]:
+-        shutil.copy2(file, ROOT / "submission.csv")
++        shutil.copy2(file, ROOT / "results/teman/submission.csv")
+     metadata = {
+         "file": file.name,
+         "sha256": digest,
+@@ -267,7 +267,7 @@
+ SHA-256: `{metadata['sha256']}`.
+ 
+ ```bash
+-python -m pip install -r requirements-v5.txt
++python -m pip install -r environments/teman/requirements-v5.txt
+ python scripts/build_features_v5.py
+ python scripts/evaluate_v5.py --group tabm
+ python scripts/train_v5_candidate.py --candidate v5_tabm_weight1 --new-weight .25
+--- Logika-main/scripts/extend_features.py
++++ scripts/extend_features.py
+@@ -9,7 +9,7 @@
+ import pandas as pd
+ 
+ ROOT=Path(__file__).resolve().parents[1]
+-RAW=ROOT/'data/raw'
++RAW=ROOT/'data'
+ PROCESSED=ROOT/'data/processed'
+ 
+ 
+--- Logika-main/scripts/finalize_ks_submission.py
++++ scripts/finalize_ks_submission.py
+@@ -141,7 +141,7 @@
+     print('Temporal comparison:',json.dumps(temporal),flush=True)
+ 
+     # Refit on all 70,000 labels, using fixed iterations and the locked recipe.
+-    sample=pd.read_csv(ROOT/'data/raw/sample_submission.csv')
++    sample=pd.read_csv(ROOT/'data/sample_submission.csv')
+     test_reference=testing['application_features.parquet']
+     test_probability=np.zeros(len(test_reference))
+     for name,weight in chosen.items():
+@@ -162,12 +162,12 @@
+     assert len(submission)==30000 and submission.application_id.is_unique
+     assert np.isfinite(submission.default_probability).all()
+     assert submission.default_probability.between(0,1).all()
+-    destination=ROOT/'submission_v2.csv'
++    destination=ROOT / 'results/teman/submission_v2.csv'
+     submission.to_csv(destination,index=False,float_format='%.12f')
+     reread=pd.read_csv(destination)
+     assert reread.application_id.equals(sample.application_id)
+     assert reread.shape==(30000,2) and reread.default_probability.between(0,1).all()
+-    original=ROOT/'submission.csv'
++    original=ROOT / 'results/teman/submission.csv'
+     if original.exists():
+         backup=OUT/'submission_baseline_0_52623.csv'
+         if not backup.exists():shutil.copy2(original,backup)
+--- Logika-main/scripts/hybrid_kumo.py
++++ scripts/hybrid_kumo.py
+@@ -412,7 +412,7 @@
+     assert promotion_passed or (
+         exploratory and row["delta_ks"] > 0
+     ), "Exploratory export still requires a positive pooled KS delta."
+-    sample = pd.read_csv(ROOT / "data/raw/sample_submission.csv")
++    sample = pd.read_csv(ROOT / "data/sample_submission.csv")
+     p = np.zeros(len(sample), dtype=np.float64)
+     sources = {}
+     for directory, weight in [
+--- Logika-main/scripts/kumo_tabular.py
++++ scripts/kumo_tabular.py
+@@ -1,6 +1,6 @@
+ """Local pretrained Kumo Tabular: leakage-safe context, matching V5 OOF folds.
+ 
+-Run with the separate Python 3.11 / requirements-kumo.txt environment.
++Run with the separate Python 3.11 / environments/teman/requirements-kumo.txt environment.
+ No training data is sent to an API. Weights are downloaded from NVIDIA's Hub.
+ """
+ 
+--- Logika-main/scripts/report_goal054.py
++++ scripts/report_goal054.py
+@@ -205,7 +205,7 @@
+     baseline = report["comparisons"][0]
+     assert row["ks"] > baseline["ks"], "Export requires a positive pooled KS delta."
+     assert r.checksum(r.ROOT / r.PUBLIC_CHECKPOINT) == r.PUBLIC_SHA256
+-    sample = pd.read_csv(r.ROOT / "data/raw/sample_submission.csv")
++    sample = pd.read_csv(r.ROOT / "data/sample_submission.csv")
+     assert len(sample) == 30000 and sample.application_id.is_unique
+     stage = r.DEST / f"cv{r.SPLITS}_seed{r.FOLD_SEED}"
+     components = [(stage / candidate, weight)]
+--- Logika-main/scripts/report_hybrid_kumo.py
++++ scripts/report_hybrid_kumo.py
+@@ -30,7 +30,7 @@
+ 
+ def verify():
+     assert (
+-        hashlib.sha256((ROOT / "submission_kumo.csv").read_bytes()).hexdigest()
++        hashlib.sha256((ROOT / "results/teman/submission_kumo.csv").read_bytes()).hexdigest()
+         == "85ac74d1b4325eba4830fd1d31bb1c21b9b9a3a6fb180d48c0c9d4b921d59d40"
+     )
+     data, test, spec, kumo_columns = read_data()
+@@ -126,7 +126,7 @@
+         meta = json.loads(meta_file.read_text())
+         file = ROOT / meta["file"]
+         assert hashlib.sha256(file.read_bytes()).hexdigest() == meta["sha256"]
+-        sample = pd.read_csv(ROOT / "data/raw/sample_submission.csv")
++        sample = pd.read_csv(ROOT / "data/sample_submission.csv")
+         actual = pd.read_csv(file)
+         assert (
+             actual.columns.tolist() == sample.columns.tolist()
+@@ -185,7 +185,7 @@
+     meta = json.loads(path.read_text())
+     file = ROOT / meta["file"]
+     assert hashlib.sha256(file.read_bytes()).hexdigest() == meta["sha256"]
+-    sample = pd.read_csv(ROOT / "data/raw/sample_submission.csv")
++    sample = pd.read_csv(ROOT / "data/sample_submission.csv")
+     actual = pd.read_csv(file)
+     assert (
+         actual.columns.tolist() == sample.columns.tolist()
+@@ -358,7 +358,7 @@
+         "",
+         "## Reproduksi dan audit",
+         "",
+-        "Gunakan Python 3.11 dan requirements-kumo.txt. Notebook [10_kumo_spline.ipynb](../../../notebooks/10_kumo_spline.ipynb) memuat EDA, seluruh agregasi, kode Kumo/spline, validasi dan ekspor.",
++        "Gunakan Python 3.11 dan environments/teman/requirements-kumo.txt. Notebook [10_kumo_spline.ipynb](../../../notebook/10_kumo_spline.ipynb) memuat EDA, seluruh agregasi, kode Kumo/spline, validasi dan ekspor.",
+         "```bash",
+         "python scripts/hybrid_kumo.py",
+         "python scripts/report_hybrid_kumo.py",
+--- Logika-main/scripts/report_kumo.py
++++ scripts/report_kumo.py
+@@ -112,7 +112,7 @@
+             test.prediction = 0.0
+         assert test.application_id.equals(frame.application_id)
+         test.prediction += frame.prediction / 3
+-    sample = pd.read_csv(ROOT / "data/raw/sample_submission.csv")
++    sample = pd.read_csv(ROOT / "data/sample_submission.csv")
+     submission = sample[["application_id"]].merge(
+         test, on="application_id", validate="one_to_one"
+     )
+@@ -121,7 +121,7 @@
+     assert list(submission.columns) == ["application_id", "default_probability"]
+     assert np.isfinite(submission.default_probability).all()
+     assert submission.default_probability.between(0, 1).all()
+-    path = ROOT / "submission_kumo.csv"
++    path = ROOT / "results/teman/submission_kumo.csv"
+     submission.to_csv(path, index=False)
+     result = {
+         "variant": variant,
+@@ -170,7 +170,7 @@
+     submission = joined[["application_id", "default_probability"]]
+     assert len(submission) == 30000 and submission.application_id.is_unique
+     assert submission.default_probability.between(0, 1).all()
+-    path = ROOT / "submission_kumo_blend.csv"
++    path = ROOT / "results/teman/submission_kumo_blend.csv"
+     submission.to_csv(path, index=False)
+     summary = json.loads((OUT / "comparison.json").read_text())
+     result = {
+--- Logika-main/scripts/report_kumo_improvement.py
++++ scripts/report_kumo_improvement.py
+@@ -123,8 +123,8 @@
+         "Estimasi noise tidak memakai target, tetapi parameter unsupervised memanfaatkan fitur seluruh train seperti audit sebelumnya.",
+         "Pemeriksaan ulang fitur dari data mentah cocok dalam toleransi rtol=1e-6 dan atol=1e-7; seed RNG asli belum diketahui.",
+         "",
+-        "Gunakan Python 3.11 dan `requirements-kumo.txt`, dengan GPU CUDA. Bobot Kumo v1.0.1 serta TabICLv2 resmi dijalankan lokal.",
+-        "Notebook [09_kumo_improvement.ipynb](../../../notebooks/09_kumo_improvement.ipynb) memuat EDA, agregasi, semua kode model, perbandingan dan ekspor.",
++        "Gunakan Python 3.11 dan `environments/teman/requirements-kumo.txt`, dengan GPU CUDA. Bobot Kumo v1.0.1 serta TabICLv2 resmi dijalankan lokal.",
++        "Notebook [09_kumo_improvement.ipynb](../../../notebook/09_kumo_improvement.ipynb) memuat EDA, agregasi, semua kode model, perbandingan dan ekspor.",
+         "",
+         "```bash",
+         "python scripts/run_kumo_improvement.py",
+--- Logika-main/scripts/report_reverse_engineering.py
++++ scripts/report_reverse_engineering.py
+@@ -98,7 +98,7 @@
+ 
+ ## Reproduksi
+ 
+-Notebook [07 — Reverse engineering](../../notebooks/07_reverse_engineering_rng.ipynb) berisi EDA, probe seed, inferensi jitter, simulasi pendekatan dan review validasi dengan kode di sel. Paket analisis sama dengan requirements-optimization dan requirements-notebook.
++Notebook [07 — Reverse engineering](../../notebook/07_reverse_engineering_rng.ipynb) berisi EDA, probe seed, inferensi jitter, simulasi pendekatan dan review validasi dengan kode di sel. Paket analisis sama dengan requirements-optimization dan requirements-notebook.
+ 
+ ```bash
+ python scripts/reverse_rng_probe.py --seed-limit 10000
+--- Logika-main/scripts/reporting.py
++++ scripts/reporting.py
+@@ -407,7 +407,7 @@
+ ## Menjalankan ulang
+ 
+ ```bash
+-python -m pip install -r requirements.txt
++python -m pip install -r environments/teman/requirements.txt
+ python scripts/download_data.py
+ python scripts/analyze.py
+ # Untuk memakai agregasi yang sudah tersedia:
+@@ -416,7 +416,7 @@
+ python scripts/analyze.py --report-only
+ ```
+ 
+-`analisis_logika.ipynb` adalah notebook pembaca hasil dan contoh reproduksi. `data/raw/` berisi data asli; `data/processed/application_features.parquet` berisi agregasi; `artifacts/tables/` berisi tabel lengkap; `artifacts/figures/` berisi PNG yang dapat diekspor. Kredensial hanya digunakan oleh skrip unduh, tidak disalin ke notebook atau laporan, dan dikecualikan melalui `.gitignore`. Tidak ada submission yang dikirim ke Kaggle.
++`analisis_logika.ipynb` adalah notebook pembaca hasil dan contoh reproduksi. `data/` berisi data asli; `data/processed/application_features.parquet` berisi agregasi; `artifacts/tables/` berisi tabel lengkap; `artifacts/figures/` berisi PNG yang dapat diekspor. Kredensial hanya digunakan oleh skrip unduh, tidak disalin ke notebook atau laporan, dan dikecualikan melalui `.gitignore`. Tidak ada submission yang dikirim ke Kaggle.
+ """
+     (OUT / "laporan_analisis.md").write_text(text)
+     import markdown
+@@ -441,7 +441,7 @@
+             value.update(execution_count=None, outputs=[])
+         return value
+     cells = [
+-        cell("markdown", "# Analisis LOGIKA UI 2026\n\nNotebook ini membaca hasil analisis yang telah dijalankan. Gunakan `python scripts/analyze.py` untuk membangun ulang seluruh tabel, fitur, dan baseline. Definisi data tersedia pada `data/raw/DATA_DICTIONARY.md`. Kredensial tidak diperlukan untuk membaca hasil lokal."),
++        cell("markdown", "# Analisis LOGIKA UI 2026\n\nNotebook ini membaca hasil analisis yang telah dijalankan. Gunakan `python scripts/analyze.py` untuk membangun ulang seluruh tabel, fitur, dan baseline. Definisi data tersedia pada `data/DATA_DICTIONARY.md`. Kredensial tidak diperlukan untuk membaca hasil lokal."),
+         cell("code", "from pathlib import Path\nimport json\nimport pandas as pd\nfrom IPython.display import display, Image, Markdown\n\nROOT = Path.cwd()\nif not (ROOT / 'artifacts').exists():\n    ROOT = ROOT.parent\nART = ROOT / 'artifacts'\nsummary = json.loads((ART / 'summary.json').read_text())\nfeatures = pd.read_parquet(ROOT / 'data/processed/application_features.parquet')\ntrain = features[features['split'].eq('train')].copy()\ntest = features[features['split'].eq('test')].copy()\ndisplay(pd.Series({k: v for k, v in summary.items() if k not in ['benchmarks', 'top_model_gain_features', 'versions']}))"),
+         cell("markdown", "## Struktur dan kualitas\n\nNilai kosong struktural, misalnya pinjaman ditolak atau utilization tanpa limit, mempunyai arti berbeda dari nol."),
+         cell("code", "display(pd.read_csv(ART / 'tables/table_inventory.csv'))\ndisplay(pd.read_csv(ART / 'tables/history_coverage.csv'))\nquality = pd.read_csv(ART / 'tables/column_quality.csv')\ndisplay(quality[quality['missing'].gt(0)])\naudit = json.loads((ART / 'quality_audit.json').read_text())\ndisplay(audit)"),
+@@ -454,7 +454,7 @@
+         cell("markdown", "## Pemeriksaan yang dapat dijalankan ulang\n\nAssertion ini memeriksa integritas hasil, batas waktu, serta risiko salah urutan submission."),
+         cell("code", "assert len(train) == 70000 and len(test) == 30000\nassert features['application_id'].is_unique and features['customer_id'].is_unique\nassert set(train['customer_id']).isdisjoint(test['customer_id'])\nassert train['target'].isin([0, 1]).all() and test['target'].isna().all()\nassert audit['submission']['same_id_set_as_test']\nfor checks in audit.values():\n    for name, value in checks.items():\n        if name.endswith('_at_or_after_cutoff') or name == 'incomplete_month_at_cutoff':\n            assert value == 0, (name, value)\nprint('Integritas dasar dan batas waktu: OK')"),
+         cell("markdown", "## Template penyusunan submission\n\nIsi `predictions` dengan probabilitas model yang Anda latih. Join dengan validasi one-to-one; kode template tidak mengirim submission."),
+-        cell("code", "def align_submission(predictions):\n    sample = pd.read_csv(ROOT / 'data/raw/sample_submission.csv')\n    assert predictions['application_id'].is_unique\n    assert set(predictions['application_id']) == set(test['application_id'])\n    result = sample[['application_id']].merge(\n        predictions[['application_id', 'default_probability']],\n        on='application_id', how='left', validate='one_to_one', sort=False\n    )\n    assert result['application_id'].equals(sample['application_id'])\n    assert result['default_probability'].notna().all()\n    assert result['default_probability'].between(0, 1).all()\n    return result"),
++        cell("code", "def align_submission(predictions):\n    sample = pd.read_csv(ROOT / 'data/sample_submission.csv')\n    assert predictions['application_id'].is_unique\n    assert set(predictions['application_id']) == set(test['application_id'])\n    result = sample[['application_id']].merge(\n        predictions[['application_id', 'default_probability']],\n        on='application_id', how='left', validate='one_to_one', sort=False\n    )\n    assert result['application_id'].equals(sample['application_id'])\n    assert result['default_probability'].notna().all()\n    assert result['default_probability'].between(0, 1).all()\n    return result"),
+         cell("markdown", "## Laporan lengkap\n\nBuka `artifacts/laporan_analisis.html` untuk laporan dengan seluruh grafik; CSV lengkap tersedia di `artifacts/tables/`.\n\nReproduksi dari terminal: `python scripts/analyze.py --reuse-features`. Untuk membangun agregasi ulang, hilangkan `--reuse-features`."),
+     ]
+     notebook = {"cells": cells, "metadata": {"kernelspec": {"display_name": "Python 3", "language": "python", "name": "python3"}, "language_info": {"name": "python", "version": "3"}}, "nbformat": 4, "nbformat_minor": 5}
+--- Logika-main/scripts/research_calendar054.py
++++ scripts/research_calendar054.py
+@@ -33,7 +33,7 @@
+ def add_calendar(data, test):
+     frames = []
+     for frame, split in [(data, "train"), (test, "test")]:
+-        apps = pd.read_csv(r.ROOT / f"data/raw/{split}_applications.csv")
++        apps = pd.read_csv(r.ROOT / f"data/{split}_applications.csv")
+         features = calendar_features(apps)
+         result = frame.merge(features, on="application_id", validate="one_to_one")
+         assert result.application_id.equals(frame.application_id)
+--- Logika-main/scripts/research_relational054.py
++++ scripts/research_relational054.py
+@@ -30,7 +30,7 @@
+     for split, frame in [("train", data), ("test", test)]:
+         frame = frame.drop(columns="decision_datetime", errors="ignore")
+         dates = pd.read_csv(
+-            r.ROOT / f"data/raw/{split}_applications.csv",
++            r.ROOT / f"data/{split}_applications.csv",
+             usecols=["application_id", "customer_id", "decision_datetime"],
+             parse_dates=["decision_datetime"],
+         )
+--- Logika-main/scripts/reverse_rng_probe.py
++++ scripts/reverse_rng_probe.py
+@@ -373,7 +373,7 @@
+     parser.add_argument("--seed-limit", type=int, default=10000)
+     args = parser.parse_args()
+     root = Path(__file__).resolve().parents[1]
+-    profiles = pd.read_csv(root / "data/raw/customer_profiles.csv")
++    profiles = pd.read_csv(root / "data/customer_profiles.csv")
+     destination = root / "artifacts/reverse_engineering"
+     destination.mkdir(parents=True, exist_ok=True)
+     result = {
+--- Logika-main/scripts/reverse_synthetic_patterns.py
++++ scripts/reverse_synthetic_patterns.py
+@@ -144,7 +144,7 @@
+         "transaction_datetime",
+     ]
+     events = pd.read_csv(
+-        ROOT / "data/raw/ecommerce_transactions.csv",
++        ROOT / "data/ecommerce_transactions.csv",
+         usecols=columns,
+         parse_dates=["transaction_datetime"],
+         dtype={"customer_id": "category", "product_category": "category"},
+@@ -305,7 +305,7 @@
+ 
+ def fit_bureau_latent(base):
+     bureau = pd.read_csv(
+-        ROOT / "data/raw/bureau_observations.csv",
++        ROOT / "data/bureau_observations.csv",
+         parse_dates=["report_datetime", "available_datetime"],
+     )
+     bureau = bureau.merge(
+@@ -410,7 +410,7 @@
+ 
+ 
+ def fit_account_latent(base):
+-    account = pd.read_csv(ROOT / "data/raw/account_behavior.csv", parse_dates=["month"])
++    account = pd.read_csv(ROOT / "data/account_behavior.csv", parse_dates=["month"])
+     account = account.merge(
+         base[["decision_datetime", "employment_type"]],
+         left_on="customer_id",
+@@ -529,7 +529,7 @@
+ 
+ def fit_repayment_latent(base):
+     repayment = pd.read_csv(
+-        ROOT / "data/raw/repayment_history.csv",
++        ROOT / "data/repayment_history.csv",
+         parse_dates=["due_date", "last_payment_datetime"],
+     )
+     repayment = repayment.merge(
+@@ -639,11 +639,11 @@
+     DESTINATION.mkdir(parents=True, exist_ok=True)
+     full = pd.read_parquet(ROOT / "data/processed/application_features_v5.parquet")
+     base = full.set_index("customer_id")
+-    profiles = pd.read_csv(ROOT / "data/raw/customer_profiles.csv")
++    profiles = pd.read_csv(ROOT / "data/customer_profiles.csv")
+     apps = pd.concat(
+         [
+-            pd.read_csv(ROOT / "data/raw/train_applications.csv"),
+-            pd.read_csv(ROOT / "data/raw/test_applications.csv"),
++            pd.read_csv(ROOT / "data/train_applications.csv"),
++            pd.read_csv(ROOT / "data/test_applications.csv"),
+         ],
+         ignore_index=True,
+     )
+--- Logika-main/scripts/summarize_kumo_improvement.py
++++ scripts/summarize_kumo_improvement.py
+@@ -112,7 +112,7 @@
+     summary = summarize(stage)
+     row = next(r for r in summary["comparisons"] if r["name"] == name)
+     splits = int(re.fullmatch(r"cv(\d+)_seed(\d+)", stage).group(1))
+-    sample = pd.read_csv(ROOT / "data/raw/sample_submission.csv")
++    sample = pd.read_csv(ROOT / "data/sample_submission.csv")
+     pred = np.zeros(len(sample), dtype=np.float64)
+     source_hashes = {}
+     for component in row["components"]:
+--- Logika-main/scripts/train_tenfold_submission.py
++++ scripts/train_tenfold_submission.py
+@@ -83,7 +83,7 @@
+ 
+ 
+ def export_submission(data,test,predicted,config,report):
+-    sample=pd.read_csv(ROOT/'data/raw/sample_submission.csv')
++    sample=pd.read_csv(ROOT/'data/sample_submission.csv')
+     probability=sum(weight*predicted[name] for name,weight in config['recipe'].items())
+     raw_prediction=pd.DataFrame({'application_id':test.application_id,'default_probability':probability})
+     assert set(raw_prediction.application_id)==set(sample.application_id)
+@@ -92,7 +92,7 @@
+     assert submission.application_id.equals(sample.application_id)
+     assert submission.shape==(30000,2) and submission.application_id.is_unique
+     assert np.isfinite(submission.default_probability).all() and submission.default_probability.between(0,1).all()
+-    path=ROOT/'submission_v3.csv'
++    path=ROOT / 'results/teman/submission_v3.csv'
+     submission.to_csv(path,index=False,float_format='%.12f')
+     reread=pd.read_csv(path)
+     assert reread.columns.tolist()==sample.columns.tolist()
+@@ -103,7 +103,7 @@
+     new=report['tenfold_aggregate_oof']['new']
+     old=report['tenfold_aggregate_oof']['champion']
+     promote=new['ks']>old['ks']
+-    if promote:shutil.copy2(path,ROOT/'submission.csv')
++    if promote:shutil.copy2(path,ROOT / 'results/teman/submission.csv')
+     metadata=dict(report,file='submission_v3.csv',sha256=hashlib.sha256(path.read_bytes()).hexdigest(),
+                   training_rows=70000,test_rows=30000,source_file='submission_v3.csv',
+                   probability_summary=reread.default_probability.describe().to_dict(),promoted_to_submission_csv=promote,
+--- Logika-main/scripts/verify_kumo_improvement.py
++++ scripts/verify_kumo_improvement.py
+@@ -15,7 +15,7 @@
+ 
+ 
+ def main():
+-    checkpoint = ROOT / "submission_kumo.csv"
++    checkpoint = ROOT / "results/teman/submission_kumo.csv"
+     assert (
+         hashlib.sha256(checkpoint.read_bytes()).hexdigest()
+         == "85ac74d1b4325eba4830fd1d31bb1c21b9b9a3a6fb180d48c0c9d4b921d59d40"
+@@ -93,7 +93,7 @@
+         meta = json.loads(metafile.read_text())
+         source = ROOT / meta["file"]
+         assert hashlib.sha256(source.read_bytes()).hexdigest() == meta["sha256"]
+-        sample = pd.read_csv(ROOT / "data/raw/sample_submission.csv")
++        sample = pd.read_csv(ROOT / "data/sample_submission.csv")
+         actual = pd.read_csv(source)
+         assert actual.columns.tolist() == sample.columns.tolist()
+         assert (

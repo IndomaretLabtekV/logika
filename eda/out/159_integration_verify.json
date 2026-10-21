@@ -1,0 +1,190 @@
+{
+  "files_checked": 508,
+  "adapted_files": 60,
+  "sources_parsed": 69,
+  "notebooks": [
+    {
+      "path": "notebook/analisis_logika.ipynb",
+      "code_cells_compiled": 7
+    },
+    {
+      "path": "notebook/01_baseline_xgboost.ipynb",
+      "code_cells_compiled": 20
+    },
+    {
+      "path": "notebook/02_tuning_ks_v2.ipynb",
+      "code_cells_compiled": 32
+    },
+    {
+      "path": "notebook/03_ensemble_ks.ipynb",
+      "code_cells_compiled": 31
+    },
+    {
+      "path": "notebook/04_submission_v3.ipynb",
+      "code_cells_compiled": 44
+    },
+    {
+      "path": "notebook/05_submission_v4.ipynb",
+      "code_cells_compiled": 55
+    },
+    {
+      "path": "notebook/06_submission_v5.ipynb",
+      "code_cells_compiled": 65
+    },
+    {
+      "path": "notebook/07_reverse_engineering_rng.ipynb",
+      "code_cells_compiled": 25
+    },
+    {
+      "path": "notebook/08_kumo_tabular.ipynb",
+      "code_cells_compiled": 48
+    },
+    {
+      "path": "notebook/09_kumo_improvement.ipynb",
+      "code_cells_compiled": 58
+    },
+    {
+      "path": "notebook/10_kumo_spline.ipynb",
+      "code_cells_compiled": 59
+    },
+    {
+      "path": "notebook/11_kumo_finetune_pilot.ipynb",
+      "code_cells_compiled": 51
+    },
+    {
+      "path": "notebook/12_goal054_research.ipynb",
+      "code_cells_compiled": 137
+    }
+  ],
+  "submissions": [
+    {
+      "path": "results/teman/submission.csv",
+      "rows": 30000,
+      "sha256": "890e05a3f0b09500142395d5498e939928328b2770c509ca035f760a8dea8344",
+      "sample_order": true,
+      "minimum": 0.00084930321,
+      "maximum": 0.928239336638
+    },
+    {
+      "path": "results/teman/submission_goal054_kumo_offset_l20p003_unweighted_d0p5_w1.csv",
+      "rows": 30000,
+      "sha256": "5d4d8b81e781354a3d1302aadfe93a1534e42e35279ba4867a7b4d0e1990dd33",
+      "sample_order": true,
+      "minimum": 6.309199559555462e-05,
+      "maximum": 0.9827128923348472
+    },
+    {
+      "path": "results/teman/submission_ks.csv",
+      "rows": 30000,
+      "sha256": "a7240b5f276a80301012db7b98dd2c1caee214a79eb7a190c64b48930dc5d08a",
+      "sample_order": true,
+      "minimum": 0.003055839624,
+      "maximum": 0.932234122418
+    },
+    {
+      "path": "results/teman/submission_kumo.csv",
+      "rows": 30000,
+      "sha256": "85ac74d1b4325eba4830fd1d31bb1c21b9b9a3a6fb180d48c0c9d4b921d59d40",
+      "sample_order": true,
+      "minimum": 0.0001030150124279,
+      "maximum": 0.9784967005252838
+    },
+    {
+      "path": "results/teman/submission_kumo_blend.csv",
+      "rows": 30000,
+      "sha256": "056245bc9ac8fb1cc272c72b30335ad1500cee99a941302b62a84377d309f28b",
+      "sample_order": true,
+      "minimum": 0.0005516125783657,
+      "maximum": 0.9454040498504503
+    },
+    {
+      "path": "results/teman/submission_kumo_spline_exploratory.csv",
+      "rows": 30000,
+      "sha256": "3de98287976a7137ad63c946e9932b6ac3ba3a7ee6df607d74cde1aa6a8fc417",
+      "sample_order": true,
+      "minimum": 7.637597602662531e-05,
+      "maximum": 0.9816501268926832
+    },
+    {
+      "path": "results/teman/submission_v2.csv",
+      "rows": 30000,
+      "sha256": "12c28ca24cce695a107a78b948aa48d47e0053f0993e4a3809006d6a8ba97d00",
+      "sample_order": true,
+      "minimum": 0.002186262325,
+      "maximum": 0.924797558689
+    },
+    {
+      "path": "results/teman/submission_v3.csv",
+      "rows": 30000,
+      "sha256": "bfd1b620ddaa85cd45ea2e8ce2c4f2ce3bcab660f09657dfbaae74aaa59525db",
+      "sample_order": true,
+      "minimum": 0.001756753202,
+      "maximum": 0.881607763754
+    },
+    {
+      "path": "results/teman/submission_v4.csv",
+      "rows": 30000,
+      "sha256": "890e05a3f0b09500142395d5498e939928328b2770c509ca035f760a8dea8344",
+      "sample_order": true,
+      "minimum": 0.00084930321,
+      "maximum": 0.928239336638
+    },
+    {
+      "path": "results/teman/submission_v5.csv",
+      "rows": 30000,
+      "sha256": "2b97dcdc26f38cabc6ab1a3f3053903975b488a5480df8ff739415a7bc750526",
+      "sample_order": true,
+      "minimum": 0.000655043093,
+      "maximum": 0.940347791485
+    }
+  ],
+  "baseline_byte_identity": {
+    "eda/common.py": true,
+    "eda/features.py": true,
+    "eda/valid2.py": true,
+    "eda/run_valid2.py": true,
+    "eda/blend2.py": true,
+    "eda/152_vipcop_kumo.py": true,
+    "eda/153_kumo_input_audit.py": true,
+    "eda/154_kumo_recipe_audit.py": true,
+    "eda/155_kumo_nested_eval.py": true,
+    "eda/157_kumo_precision_audit.py": true,
+    "results/v31/submission.csv": true,
+    "data_pq/features.parquet": true,
+    "notebook/archive/production_v34_21okt/build_production_v34.py": true,
+    "notebook/archive/production_v34_21okt/production_v34.ipynb": true,
+    "research/locked_recipes/156_kumo_ssl_context_pre_class_threshold.py": true
+  },
+  "licenses_preserved": [
+    "third_party/structured-data-models/LICENSE",
+    "third_party/structured-data-models/NOTICE"
+  ],
+  "errors": [],
+  "model_executed": false,
+  "intentional_research_extension": {
+    "path": "eda/156_kumo_ssl_context.py",
+    "reason": "Optional asymmetric class thresholds after user reauthorized SSL; original source archived byte-identical",
+    "current_sha256": "21ee03aa8404ff58bb66e968f68326f9e4256408b8388c195cfdf0c340df414c",
+    "original_archive": "research/locked_recipes/156_kumo_ssl_context_pre_class_threshold.py"
+  },
+  "intentional_production_update": {
+    "original_archive": {
+      "notebook/build_final.py": "notebook/archive/production_v34_21okt/build_production_v34.py",
+      "notebook/final.ipynb": "notebook/archive/production_v34_21okt/production_v34.ipynb"
+    },
+    "current_recipe": "v41 low-variance released as v59",
+    "reproduction_checks": {
+      "builder_current": true,
+      "notebook_current": true,
+      "all_code_cells_executed": true,
+      "csv_current": true,
+      "embedded_sources_current": true
+    },
+    "verification_mode": "actual local replay; no fresh GPU training today"
+  },
+  "limits": [
+    "Notebook cells compiled, not trained or fully executed.",
+    "Snapshot lacks OOF/test per-fold predictions, model files and feature cache.",
+    "Historical experiment JSON metrics are reports, not rerun validation_v2 results."
+  ]
+}

@@ -1,0 +1,237 @@
+{
+  "run_sha256": "aeb1f119039b11299b66bcb4cfebd576f13f694b35f18ed1c14b4650c2430646",
+  "winner": "asym_n0.02_p0.7_cap64",
+  "policy": {
+    "kind": "asymmetric",
+    "negative_threshold": 0.02,
+    "positive_threshold": 0.7,
+    "cap": 64
+  },
+  "reason": "search and disjoint confirmation exceed the predetermined KS gain gate",
+  "min_inner_gain": 0.003,
+  "search": [
+    {
+      "name": "noSSL",
+      "policy": {
+        "kind": "none",
+        "cap": 0
+      },
+      "ks": 0.44939059019088745,
+      "auc": 0.7329093799682035,
+      "n_pseudo": 0
+    },
+    {
+      "name": "confidence_0.02_cap64",
+      "policy": {
+        "kind": "confidence",
+        "threshold": 0.02,
+        "cap": 64
+      },
+      "ks": 0.44939059019088745,
+      "auc": 0.7307896131425543,
+      "n_pseudo": 64,
+      "pseudo_positive": 0,
+      "pseudo_negative": 64
+    },
+    {
+      "name": "confidence_0.05_cap64",
+      "policy": {
+        "kind": "confidence",
+        "threshold": 0.05,
+        "cap": 64
+      },
+      "ks": 0.44939059019088745,
+      "auc": 0.7276099629040805,
+      "n_pseudo": 64,
+      "pseudo_positive": 0,
+      "pseudo_negative": 64
+    },
+    {
+      "name": "asym_n0.02_p0.7_cap64",
+      "policy": {
+        "kind": "asymmetric",
+        "negative_threshold": 0.02,
+        "positive_threshold": 0.7,
+        "cap": 64
+      },
+      "ks": 0.46740859746932983,
+      "auc": 0.7318494965553789,
+      "n_pseudo": 64,
+      "pseudo_positive": 1,
+      "pseudo_negative": 63
+    },
+    {
+      "name": "asym_n0.02_p0.9_cap64",
+      "policy": {
+        "kind": "asymmetric",
+        "negative_threshold": 0.02,
+        "positive_threshold": 0.9,
+        "cap": 64
+      },
+      "ks": 0.44939059019088745,
+      "auc": 0.7307896131425543,
+      "n_pseudo": 64,
+      "pseudo_positive": 0,
+      "pseudo_negative": 64
+    },
+    {
+      "name": "asym_n0.05_p0.7_cap64",
+      "policy": {
+        "kind": "asymmetric",
+        "negative_threshold": 0.05,
+        "positive_threshold": 0.7,
+        "cap": 64
+      },
+      "ks": 0.46740859746932983,
+      "auc": 0.7323794382617912,
+      "n_pseudo": 64,
+      "pseudo_positive": 0,
+      "pseudo_negative": 64
+    },
+    {
+      "name": "asym_n0.05_p0.9_cap64",
+      "policy": {
+        "kind": "asymmetric",
+        "negative_threshold": 0.05,
+        "positive_threshold": 0.9,
+        "cap": 64
+      },
+      "ks": 0.44939059019088745,
+      "auc": 0.7276099629040805,
+      "n_pseudo": 64,
+      "pseudo_positive": 0,
+      "pseudo_negative": 64
+    }
+  ],
+  "confirmation": [
+    {
+      "name": "noSSL",
+      "policy": {
+        "kind": "none",
+        "cap": 0
+      },
+      "ks": 0.5574986934661865,
+      "auc": 0.8081611022787494
+    },
+    {
+      "name": "asym_n0.02_p0.7_cap64",
+      "policy": {
+        "kind": "asymmetric",
+        "negative_threshold": 0.02,
+        "positive_threshold": 0.7,
+        "cap": 64
+      },
+      "ks": 0.5665076971054077,
+      "auc": 0.7991520932697403
+    }
+  ],
+  "inner_columns": [
+    "ec_accel_90d",
+    "pp_30",
+    "ec_spend_90d_ratio",
+    "pp_mean",
+    "ec_spend_90d",
+    "ec_recency_d",
+    "ec_accel_30d",
+    "pp_90",
+    "ec_orders_90d",
+    "ec_spend_30d",
+    "ec_orders_7d",
+    "ec2_ewm7_rel",
+    "rp_frac_dpd30",
+    "pp_old",
+    "pp_cat_fashion",
+    "ec2_ewm56_rel",
+    "ec_orders_60d",
+    "bp_score_c",
+    "ec2_ewm28_exc",
+    "rp_paid_ratio",
+    "rp_n_dpd30",
+    "ec2_gap_min_28",
+    "bc_score_min",
+    "sv_maxdpd_mean_late",
+    "bz_newest",
+    "rq_lastloan_late",
+    "rp_maxdpd_max",
+    "ec_orders_14d",
+    "rp_maxdpd_last3",
+    "rp_frac_dpd1_6m",
+    "sv_late_d_mean",
+    "pp_cat_personal_care",
+    "rp_n_dpd60",
+    "ec_spend",
+    "ec2_aov_shift",
+    "ec2_items_per_order_28",
+    "bc_score_max",
+    "rp_days_since_delinq",
+    "rp_maxdpd_6m",
+    "dec_month",
+    "rp_maxdpd_12m",
+    "rq_first_inst_late",
+    "sv_share30_of_late",
+    "rq_streak_max",
+    "pp_cat_electronics",
+    "bp_score_a",
+    "annual_interest_rate",
+    "rp_n_dpd90",
+    "rp_late_mean_6m",
+    "pp_cat_groceries",
+    "pp_cat_health",
+    "ec_aov",
+    "rq_lastloan_maxdpd",
+    "pp_max",
+    "ec_base_wk",
+    "bc_score_std",
+    "pp_cat_education",
+    "pp_min",
+    "rq_frac_1_29",
+    "bp_out_c",
+    "bp_score_b",
+    "ec_spend_per_month",
+    "pv_rate_mean",
+    "pp_cat_home",
+    "ecspend_to_income",
+    "ec_pm_bank_transfer",
+    "ec2_night_share_90",
+    "ac_income_trend",
+    "bc_n_reports",
+    "ec2_cancel_28",
+    "ac_out_in_delta",
+    "ec2_base",
+    "ac_income_cv",
+    "bc_n_scored",
+    "bp_delinq_c",
+    "bp_inq_c",
+    "age",
+    "bz_delinq_all_mean",
+    "ec_cat_personal_care",
+    "bc_util_mean",
+    "pp_qty_item_90",
+    "bp_util_a",
+    "bz_range",
+    "ac_out_in_b",
+    "bh_last_score",
+    "cf_nonincome_share",
+    "cf_out_l3",
+    "bh_delinq_max",
+    "ec_cancel_90d",
+    "bc_util_max",
+    "ec_pm_e_wallet",
+    "rp_days_since_due",
+    "bh_score_min",
+    "ac_avgbal_b",
+    "bp_util_c",
+    "bp_out_a",
+    "pv_rate_max",
+    "bc_stale_max",
+    "bc_revbal_max",
+    "cf_inst_to_free",
+    "loan_purpose",
+    "region",
+    "employment_type",
+    "housing_status"
+  ],
+  "outer_seen": false,
+  "pseudo_cap_fixed_before_outer": 64,
+  "outer_feature_policy": "refit fm_select and categorical vocabulary on outer-train only"
+}

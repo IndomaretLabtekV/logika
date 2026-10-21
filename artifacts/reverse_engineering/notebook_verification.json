@@ -1,0 +1,14 @@
+{
+  "notebook": "notebooks/07_reverse_engineering_rng.ipynb",
+  "code_cells": 25,
+  "all_code_cells_executed": true,
+  "error_outputs": 0,
+  "raw_latent_rows": 100000,
+  "raw_latent_features": 21,
+  "exact_latent_feature_reproduction": true,
+  "exact_validation_oof_reproduction": true,
+  "exact_validation_metric_reproduction": true,
+  "default_submission_unchanged": true,
+  "version5_submission_unchanged": true,
+  "original_rng_seed_recovered": false
+}

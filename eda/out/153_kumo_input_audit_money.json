@@ -1,0 +1,102 @@
+{
+  "selection_protocol": "Manual monetary units from current features.py; inner-fit max_abs > 100; no held-out fit.",
+  "columns": [
+    "ac_avgbal_b",
+    "ac_avgbal_l3",
+    "ac_avgbal_mean",
+    "ac_close_slope",
+    "ac_income_l3",
+    "ac_income_mean",
+    "ac_income_min",
+    "ac_income_std",
+    "ac_inflow_mean",
+    "ac_last_close",
+    "ac_minbal_mean",
+    "ac_minbal_min",
+    "ac_net_flow_mean",
+    "ac_outflow_mean",
+    "bc_outstanding_max",
+    "bc_revbal_max",
+    "bc_revlimit_max",
+    "bh_last_outstanding",
+    "bh_outstanding_delta",
+    "bp_out_a",
+    "bp_out_b",
+    "bp_out_c",
+    "cf_free_min",
+    "cf_minbal_l3",
+    "cf_out_l3",
+    "declared_monthly_income",
+    "ec_aov",
+    "ec_spend",
+    "ec_spend_30d",
+    "ec_spend_90d",
+    "ec_spend_per_month",
+    "income_per_head",
+    "loan_amount",
+    "ob_amt_90d",
+    "ob_remaining",
+    "proposed_monthly_installment",
+    "pv_appr_max",
+    "pv_appr_sum",
+    "pv_req_mean",
+    "rp_active_inst",
+    "rp_remaining_oblig",
+    "rp_unpaid_amt"
+  ],
+  "selected100_columns": [
+    "bh_last_outstanding",
+    "bp_out_a",
+    "bp_out_b",
+    "bp_out_c",
+    "cf_free_min",
+    "cf_out_l3",
+    "ec_aov",
+    "ec_spend",
+    "ec_spend_30d",
+    "ec_spend_90d",
+    "ec_spend_per_month",
+    "ob_remaining"
+  ],
+  "n_candidates": 42,
+  "n_selected100": 12,
+  "checks_all_true": {
+    "nan_preserved": true,
+    "sign_preserved": true,
+    "finite_preserved": true,
+    "nondecreasing_unique": true,
+    "strict_monotone_unique": false,
+    "rank_equal": false
+  },
+  "rank_tie_findings": [
+    {
+      "feature": "ec_spend_per_month",
+      "unique_before": 48000,
+      "unique_after": 47999,
+      "ks_delta": 0.0
+    }
+  ],
+  "max_abs_ks_delta": 0.0,
+  "excluded_keyword_columns": [
+    "ac_income_cv",
+    "ac_income_trend",
+    "cf_nonincome_l3",
+    "cf_nonincome_share",
+    "debt_to_income",
+    "ecspend_to_income",
+    "income_verif_ratio"
+  ],
+  "source_fingerprint_at_money_audit": {
+    "path": "eda/features.py",
+    "bytes": 27124,
+    "mtime_utc": "2026-10-17T00:41:15.562812+00:00",
+    "sha256": "d394a09c031e4a53a9b2e5fd9a0ccb4883dca3a333bc7370570bb2460d31df44"
+  },
+  "audit_script_fingerprint": {
+    "path": "eda/153_kumo_input_audit.py",
+    "bytes": 27596,
+    "mtime_utc": "2026-10-19T13:57:31.856102+00:00",
+    "sha256": "5224decbd74e797098eebb9835824076c064970288decb1a1273ab6adc375ac0"
+  },
+  "note": "Audit of Float64 values, not assurance of model-internal precision; no exception repaired."
+}

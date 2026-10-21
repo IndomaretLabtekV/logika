@@ -1,0 +1,22 @@
+{
+  "variant": "large_v5_ctx50000_e8",
+  "file": "submission_kumo.csv",
+  "sha256": "85ac74d1b4325eba4830fd1d31bb1c21b9b9a3a6fb180d48c0c9d4b921d59d40",
+  "public_score": 0.56262,
+  "reported_on": "2026-10-18",
+  "source": "user_report_confirmed_via_kaggle_api",
+  "verified_via_kaggle_api": true,
+  "api_file_name": "submission_kumo.csv",
+  "api_submitted_at": "2026-10-18T09:36:34.000Z",
+  "api_status": "COMPLETE",
+  "reference_file": "submission_v3.csv",
+  "reference_public_score": 0.55845,
+  "delta_vs_reference": 0.00417,
+  "v5_public_score": 0.5568,
+  "delta_vs_v5": 0.00582,
+  "previous_account_score_observed": 0.56188,
+  "delta_vs_previous_account_score_observed": 0.00074,
+  "previous_account_submission_at": "2026-10-17T03:54:34.153Z",
+  "previous_account_model_identified": false,
+  "note": "Kaggle API confirms the public score, filename and submission time. Local CSV SHA is recorded separately; the API does not expose an uploaded-file checksum. Other account submissions named submission.csv cannot be attributed to this repository default file from the name alone."
+}

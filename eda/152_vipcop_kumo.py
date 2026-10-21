@@ -1,114 +1,301 @@
-"""VIP-COP (Chen, Ding & Akoglu, arXiv 2605.12904) for Kumo-Tabular large, feature-level hard context optimisation,
-validation_v2-clean fold-0 screen (seed 42).
-Items = the 228 numeric features (the 4 categoricals always kept); the context gets d_C = 100 of them. Each round
-samples B feature sets with P(i) = softmax(z(phi)/tau) (without replacement), scores each with ONE frozen-Kumo forward
-pass (search context = 20k stratified inner-fit rows, query = 4,000 fixed inner-stop rows, AUROC), and refits phi by
-ridge regression of AUROC on the inclusion indicators over all coalitions so far (closed-form KernelSHAP-style
-surrogate). Several temperature chains run; each returns its top-100 by phi; the chain whose selection scores best on
-the inner-stop query wins. Only training-fold labels are used. The outer fold is scored ONCE with the whole training
-fold as context (e4, generator seed 0) and compared paired with the same Kumo on fm_select features
-(eda/out/kumo_finetune_f0_base.parquet, same context / generator / estimators).
-Usage: cd eda && ../.venv/bin/python 152_vipcop_kumo.py [--rounds 40 --batch 8 --taus 1,0.5,0.25]"""
-import argparse
-import time
+"""VIP-COp-inspired Kumo large feature search; validation_v2 outer folds remain evaluation-only.
 
+Adaptation, not a paper reproduction: fixed-size coalition ridge surrogate, standardized
+softmax temperatures, serial GPU calls. Search AUROC on half the inner-stop rows; select
+among top-VIP contexts and the untouched baseline by KS on the other half with full
+inner-fit context/e4. No test distribution or outer label enters selection.
+Run from eda: ../.venv/bin/python 152_vipcop_kumo.py --out ../results/v46/vip_raw
+"""
+import argparse
+import hashlib
+import importlib.metadata
+import json
+import os
+import resource
+import time
+from pathlib import Path
+
+import matplotlib
+matplotlib.use("Agg")
+import matplotlib.pyplot as plt
 import numpy as np
+import pandas as pd
 import polars as pl
 import torch
+from scipy.special import softmax
 from sklearn.linear_model import Ridge
 from sklearn.metrics import roc_auc_score
+from sklearn.model_selection import train_test_split
 
 import sdm
 import valid2 as v
-from common import OUT, features
-
-ap = argparse.ArgumentParser()
-ap.add_argument("--rounds", type=int, default=40)
-ap.add_argument("--batch", type=int, default=8)
-ap.add_argument("--taus", default="1,0.5,0.25")
-ap.add_argument("--d", type=int, default=100)
-ap.add_argument("--nctx", type=int, default=20000)
-ap.add_argument("--nq", type=int, default=4000)
-a = ap.parse_args()
-
-X, Xt, y, ids, tids = v.frames(features())
-tr, va = v.outer(y, 42)[0]
-fi, st = v.inner(y[tr], 42, 0)
-fi, st = tr[fi], tr[st]
-nums = [c for c in X.columns if c not in v.CAT_COLS]
-F = X[nums + v.CAT_COLS].copy()
-for c in v.CAT_COLS:
-    F[c] = F[c].cat.codes.astype(float).replace(-1, np.nan)
-F = F.astype(float).reset_index(drop=True).assign(target=y.astype(str))
-stypes = sdm.infer_stypes(F, overrides={"target": "categorical", **{c: "numerical" for c in nums + v.CAT_COLS}})
-dev = torch.device("cuda")
-T = sdm.TableTensor.from_pandas(df=F, stypes=stypes, device=dev)
-model = sdm.models.KumoTabular(task="classification", size="large", device=dev)
-rng = np.random.default_rng(0)
-strat = lambda pool, n, r: np.sort(np.concatenate([r.choice(pool[y[pool] == c], int(round(n * (y[pool] == c).mean())), replace=False) for c in (0, 1)]))  # noqa: E731
-ctx_search = strat(fi, a.nctx, np.random.default_rng(1))
-q_search = np.sort(np.random.default_rng(2).choice(st, a.nq, replace=False))
-C0, Q0 = T[torch.as_tensor(ctx_search, device=dev)], T[torch.as_tensor(q_search, device=dev)]
+from common import OUT, PQ, features
 
 
-def predict(C, Q, cols, n_est=1, seed=0, chunk=2000):
-    xc, yc = C.select_columns(cols), C[:, "target"]
-    g = torch.Generator(device=dev).manual_seed(seed)
-    out = []
-    with torch.no_grad(), torch.amp.autocast("cuda", dtype=torch.float16):
-        for i in range(0, Q.size(0), chunk):
-            r = model(x_context=xc, y_context=yc, x_query=Q[i:i + chunk].select_columns(cols), num_estimators=n_est, generator=g)
-            out.append(r.to_pandas()["1"].to_numpy())  # by label name (class order varies per call, eda/112)
-    return np.concatenate(out)
+def strat(pool, y, n, rng):
+    n = min(n, len(pool))
+    n1 = int(round(n * y[pool].mean()))
+    return np.sort(np.concatenate([rng.choice(pool[y[pool] == c], k, replace=False)
+                                  for c, k in ((0, n - n1), (1, n1))]))
 
 
-def score(idx):
-    cols = [nums[i] for i in idx] + v.CAT_COLS
-    return roc_auc_score(y[q_search], predict(C0, Q0, cols))
+def prepare(X, fit_rows, mode):
+    """Row-wise transforms only; categorical vocabulary comes from fit rows, never queries."""
+    F = X.copy()
+    for c in v.CAT_COLS:
+        cats = sorted(X.iloc[fit_rows][c].dropna().unique())
+        F[c] = pd.Categorical(X[c], categories=cats)
+        if mode != "categorical":
+            F[c] = F[c].cat.codes.astype(float).replace(-1, np.nan)
+    if mode == "log":
+        for c in F.columns:
+            if c not in v.CAT_COLS:
+                x = F[c].to_numpy(dtype=float)
+                F[c] = np.sign(x) * np.log1p(np.abs(x))
+    return F.reset_index(drop=True)
 
 
-S = len(nums)
-t0 = time.time()
-fm = [c for c in v.fm_select(X, y, tr, a.d) if c not in v.CAT_COLS]
-auc_fm = score([nums.index(c) for c in fm])
-print(f"fm_select (KS-ranked) features on the search query: AUROC {auc_fm:.5f}", flush=True)
-chains = []
-for tau in [float(t) for t in a.taus.split(",")]:
-    Cm, P = [], []
-    phi = np.full(S, 1.0 / S)
-    for t in range(a.rounds):
-        z = (phi - phi.mean()) / (phi.std() + 1e-12)
-        pr = np.exp(z / tau)
-        pr /= pr.sum()
-        for _ in range(a.batch):
-            idx = rng.choice(S, a.d, replace=False, p=pr)
-            c = np.zeros(S)
-            c[idx] = 1
-            Cm.append(c)
-            P.append(score(idx))
-        phi = Ridge(alpha=1.0).fit(np.array(Cm), np.array(P)).coef_
-        if t % 10 == 9:
-            print(f"tau {tau} round {t + 1}: coalitions {len(P)}, mean AUROC {np.mean(P[-a.batch:]):.5f}, best so far "
-                  f"{np.max(P):.5f}, {time.time() - t0:.0f} s", flush=True)
-    sel = np.argsort(-phi)[: a.d]
-    chains.append((score(sel), tau, sel, phi))
-    print(f"tau {tau}: selected top-{a.d} AUROC {chains[-1][0]:.5f} (fm_select {auc_fm:.5f}); overlap with fm_select "
-          f"{len(set(nums[i] for i in sel) & set(fm))}", flush=True)
-best = max(chains, key=lambda c: c[0])
-cols = [nums[i] for i in best[2]] + v.CAT_COLS
-pl.DataFrame({"feature": nums, "phi": best[3]}).sort("phi", descending=True).write_csv(OUT / "152_vipcop_phi.csv")
-print("top 15 by VIP:", [nums[i] for i in np.argsort(-best[3])[:15]])
-# outer fold, scored once: whole training fold as context, e4, generator seed 0 (same as the cached baseline)
-Ctr, Qva = T[torch.as_tensor(tr, device=dev)], T[torch.as_tensor(va, device=dev)]
-p_vip = predict(Ctr, Qva, cols, n_est=4, seed=0, chunk=1000)
-base = pl.read_parquet(OUT / "kumo_finetune_f0_base.parquet").sort("application_id")
-assert (base["application_id"] == pl.Series(ids.to_numpy()[va]).sort()).all()
-order = np.argsort(ids.to_numpy()[va])
-b = base["base"].to_numpy()[np.argsort(order)]
-r = np.random.default_rng(0)
-d = np.array([(lambda i: v.ks(y[va][i], p_vip[i]) - v.ks(y[va][i], b[i]))(r.choice(len(va), len(va))) for _ in range(1000)])
-print(f"outer fold 0: VIP-COP features KS {v.ks(y[va], p_vip):.5f} vs fm_select Kumo {v.ks(y[va], b):.5f}  "
-      f"d {d.mean():+.5f} sd {d.std():.5f} P>0 {(d > 0).mean():.2f}  ({time.time() - t0:.0f} s total)")
-oof = np.full(len(y), np.nan)
-oof[va] = p_vip
-pl.DataFrame({"application_id": ids, "target": y, "kumo_vipcop": oof}).write_parquet(OUT / "152_oof_kumo_vipcop_f0.parquet")
+class Predictor:
+    def __init__(self, F, y, model):
+        self.dev = torch.device("cuda")
+        self.model = model
+        stypes = {c: "categorical" if isinstance(F[c].dtype, pd.CategoricalDtype) else "numerical"
+                  for c in F.columns}
+        self.T = sdm.TableTensor.from_pandas(df=F, stypes=sdm.infer_stypes(F, overrides=stypes), device=self.dev)
+        labels = pd.DataFrame({"target": y.astype(str)})
+        self.Y = sdm.TableTensor.from_pandas(df=labels, stypes=sdm.infer_stypes(labels, overrides={"target": "categorical"}),
+                                           device=self.dev)
+
+    def predict(self, ctx, query, cols, n_est=1, seed=0, chunk=2000):
+        ci = torch.as_tensor(ctx, device=self.dev)
+        xc, yc = self.T[ci].select_columns(cols), self.Y[ci]
+        g = torch.Generator(device=self.dev).manual_seed(seed)
+        out = []
+        with torch.inference_mode(), torch.amp.autocast("cuda", dtype=torch.float16):
+            for start in range(0, len(query), chunk):
+                qi = torch.as_tensor(query[start:start + chunk], device=self.dev)
+                r = self.model(x_context=xc, y_context=yc, x_query=self.T[qi].select_columns(cols),
+                               num_estimators=n_est, generator=g)
+                p = r.to_pandas()["1"].to_numpy()
+                assert np.isfinite(p).all() and ((p >= 0) & (p <= 1)).all()
+                out.append(p)
+        return np.concatenate(out)
+
+    def predict_cached(self, ctx, query, cols, n_est=1, seed=0, chunk=500):
+        """Reuse a fixed context/estimator draw across query chunks; always clear it."""
+        ci = torch.as_tensor(ctx, device=self.dev)
+        try:
+            with torch.inference_mode(), torch.amp.autocast("cuda", dtype=torch.float16):
+                self.model.fit(self.T[ci].select_columns(cols), self.Y[ci], num_estimators=n_est,
+                               generator=torch.Generator(device=self.dev).manual_seed(seed))
+                out = []
+                for start in range(0, len(query), chunk):
+                    qi = torch.as_tensor(query[start:start + chunk], device=self.dev)
+                    p = self.model.predict(self.T[qi].select_columns(cols)).to_pandas()["1"].to_numpy()
+                    assert np.isfinite(p).all() and ((p >= 0) & (p <= 1)).all()
+                    out.append(p)
+                return np.concatenate(out)
+        finally:
+            self.model.clear()
+
+
+def plot_search(history, phi, nums, path):
+    fig, axes = plt.subplots(1, 2, figsize=(13, 5))
+    h = pd.DataFrame(history)
+    if len(h):
+        for tau, g in h.groupby("tau"):
+            axes[0].plot(g["round"], g["best_auc"], label=f"tau={tau:g}")
+        axes[0].legend()
+    axes[0].set(xlabel="Round", ylabel="Best search AUROC", title="Inner search only")
+    ix = np.argsort(phi)[-15:]
+    axes[1].barh(np.array(nums)[ix], phi[ix])
+    axes[1].set(title="Selected chain surrogate coefficients", xlabel="Ridge coefficient (not causal importance)")
+    fig.tight_layout()
+    fig.savefig(path, dpi=120)
+    plt.close(fig)
+
+
+def save_state(path, **state):
+    """Atomic durable round checkpoint; interruption loses at most one round."""
+    temporary = path.with_suffix(path.suffix + ".tmp")
+    with temporary.open("wb") as stream:
+        np.savez_compressed(stream, **state)
+        stream.flush()
+        os.fsync(stream.fileno())
+    temporary.replace(path)
+
+
+def main():
+    ap = argparse.ArgumentParser(description=__doc__)
+    ap.add_argument("--out", type=Path, required=True)
+    ap.add_argument("--rounds", type=int, default=40)
+    ap.add_argument("--batch", type=int, default=8)
+    ap.add_argument("--taus", default="1,0.5,0.25")
+    ap.add_argument("--d", type=int, default=100)
+    ap.add_argument("--nctx", type=int, default=20000)
+    ap.add_argument("--nq", type=int, default=4000)
+    ap.add_argument("--confirm-nctx", type=int, default=56000)
+    ap.add_argument("--confirm-nq", type=int, default=4000)
+    ap.add_argument("--confirm-est", type=int, default=4)
+    ap.add_argument("--search-est", type=int, default=1)
+    ap.add_argument("--threads", type=int, default=4)
+    ap.add_argument("--gpu-memory-fraction", type=float, default=.9)
+    ap.add_argument("--seeds", default="42")
+    ap.add_argument("--folds", default="0")
+    ap.add_argument("--mode", choices=["raw", "log", "categorical"], default="raw")
+    ap.add_argument("--evaluate", action="store_true", help="Score outer only after inner selection is saved")
+    ap.add_argument("--chunk", type=int, default=500)
+    a = ap.parse_args()
+    assert a.rounds > 0 and a.batch > 0
+    assert 1 <= a.threads <= 8 and 0 < a.gpu_memory_fraction < 1
+    torch.set_num_threads(a.threads)
+    torch.cuda.set_per_process_memory_fraction(a.gpu_memory_fraction)
+    a.out.mkdir(parents=True, exist_ok=True)
+    f = features()
+    X, _, y, ids, _ = v.frames(f)
+    assert ids.n_unique() == len(y)
+    nums = [c for c in X.columns if c not in v.CAT_COLS]
+    assert 0 < a.d <= len(nums)
+    config = {**vars(a), "out": str(a.out)}
+    manifest = {"config": config, "packages": {p: importlib.metadata.version(p) for p in
+                ("numpy", "pandas", "polars", "torch", "structured-data-models", "scikit-learn")},
+                "features_sha256": hashlib.sha256((PQ / "features.parquet").read_bytes()).hexdigest(),
+                "source_sha256": hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
+                "method": "VIP-COp-inspired ridge; fixed cached estimator draw; disjoint inner search/confirmation; per-round resume"}
+    mp = a.out / "manifest.json"
+    if mp.exists():
+        previous = json.loads(mp.read_text())
+        # --evaluate may be added after inspecting saved inner results, not after inspecting outer scores.
+        assert {k: val for k, val in previous["config"].items() if k != "evaluate"} == {
+            k: val for k, val in config.items() if k != "evaluate"}, "Use a new output directory for a new experiment"
+        assert previous["features_sha256"] == manifest["features_sha256"]
+        assert previous["source_sha256"] == manifest["source_sha256"], "Source changed; use a new run directory"
+        assert previous["packages"] == manifest["packages"], "Package versions changed"
+    else:
+        mp.write_text(json.dumps(manifest, indent=2))
+    model = sdm.models.KumoTabular(task="classification", size="large", device="cuda")
+    model.eval()
+    torch.cuda.reset_peak_memory_stats()
+    for seed in map(int, a.seeds.split(",")):
+        for fold in map(int, a.folds.split(",")):
+            t0 = time.time()
+            prefix = a.out / f"s{seed}_f{fold}"
+            selection_path = prefix.with_name(prefix.name + "_selection.json")
+            tr, va = v.outer(y, seed)[fold]
+            fi, st = v.inner(y[tr], seed, fold)
+            fi, st = tr[fi], tr[st]
+            qs, qc = train_test_split(st, train_size=min(a.nq, len(st) // 2), stratify=y[st], random_state=seed + fold)
+            qs, qc = np.sort(qs), np.sort(qc)
+            assert not np.intersect1d(fi, st).size and not np.intersect1d(tr, va).size
+            assert not np.intersect1d(qs, qc).size
+            qc = strat(qc, y, a.confirm_nq, np.random.default_rng(seed + fold + 3))
+            cc = strat(fi, y, a.confirm_nctx, np.random.default_rng(seed + fold + 4))
+            ctx = strat(fi, y, a.nctx, np.random.default_rng(seed + fold + 1))
+            pr = Predictor(prepare(X, fi, a.mode), y, model)
+            if selection_path.exists():
+                selection = json.loads(selection_path.read_text())
+                print(f"resume saved inner choice s{seed} f{fold}: {selection['winner']}", flush=True)
+            else:
+                print(f"s{seed} f{fold} inner fit={len(fi)} search={len(qs)} confirm={len(qc)} outer={len(va)} "
+                      f"context={len(ctx)} mode={a.mode}", flush=True)
+                fm = v.fm_select(X, y, fi, a.d)
+                def score(idx):
+                    # Fixed source-column order avoids feature permutation masquerading as feature selection.
+                    cols = [nums[i] for i in sorted(idx)] + v.CAT_COLS
+                    return float(roc_auc_score(y[qs], pr.predict_cached(ctx, qs, cols, n_est=a.search_est, chunk=a.chunk)))
+                fm_idx = [nums.index(c) for c in fm if c not in v.CAT_COLS]
+                base_auc = score(fm_idx)
+                print(f"inner-fit fm_select canonical search AUROC={base_auc:.6f}", flush=True)
+                candidates = [("fm_legacy", fm), ("fm_canonical", sorted(fm[:-len(v.CAT_COLS)]) + v.CAT_COLS)]
+                rng = np.random.default_rng(seed * 100 + fold)
+                history, phis = [], {}
+                coalitions, responses = [], []
+                for tau in map(float, a.taus.split(",")):
+                    assert tau > 0
+                    state_path = prefix.with_name(prefix.name + f"_tau{tau:g}_state.npz")
+                    if state_path.exists():
+                        with np.load(state_path, allow_pickle=False) as state:
+                            C, P = list(state["masks"].astype(float)), state["auc"].tolist()
+                            phi = state["phi"]
+                            first_round = int(state["round"])
+                            rng.bit_generator.state = json.loads(state["rng_json"].item())
+                        assert len(P) == len(C) == first_round * a.batch
+                        assert np.asarray(C).shape == (len(P), len(nums))
+                        print(f"resume tau={tau:g} after round={first_round}", flush=True)
+                        for t in range(first_round):
+                            end = (t + 1) * a.batch
+                            history.append(dict(tau=tau, round=t + 1, mean_auc=float(np.mean(P[end-a.batch:end])),
+                                                best_auc=float(max(P[:end]))))
+                    else:
+                        C, P, first_round = [], [], 0
+                        phi = np.zeros(len(nums))
+                    for t in range(first_round, a.rounds):
+                        z = (phi - phi.mean()) / max(phi.std(), 1e-12)
+                        prob = softmax(z / tau)
+                        for _ in range(a.batch):
+                            idx = rng.choice(len(nums), a.d, replace=False, p=prob)
+                            mask = np.zeros(len(nums))
+                            mask[idx] = 1
+                            C.append(mask)
+                            P.append(score(idx))
+                        phi = Ridge(alpha=1.0).fit(np.asarray(C), np.asarray(P)).coef_
+                        history.append(dict(tau=tau, round=t + 1, mean_auc=float(np.mean(P[-a.batch:])),
+                                            best_auc=float(max(P))))
+                        save_state(state_path, masks=np.asarray(C, dtype=np.uint8), auc=np.asarray(P), phi=phi,
+                                   round=np.asarray(t + 1), rng_json=np.asarray(json.dumps(rng.bit_generator.state)))
+                        pd.DataFrame(history).to_csv(prefix.with_name(prefix.name + "_search.csv"), index=False)
+                        print(f"tau={tau:g} round={t+1} best={max(P):.6f} mean={np.mean(P[-a.batch:]):.6f} "
+                              f"elapsed={time.time()-t0:.0f}s gpu_peak={torch.cuda.max_memory_allocated()/2**30:.2f}GiB "
+                              f"rss_peak={resource.getrusage(resource.RUSAGE_SELF).ru_maxrss/2**20:.2f}GiB", flush=True)
+                    top = np.argsort(-phi)[:a.d]
+                    name = f"vip_tau{tau:g}"
+                    candidates.append((name, [nums[i] for i in sorted(top)] + v.CAT_COLS))
+                    phis[name] = phi.copy()
+                    coalitions.extend(C)
+                    responses.extend(P)
+                    pd.DataFrame(history).to_csv(prefix.with_name(prefix.name + "_search.csv"), index=False)
+                    np.savez_compressed(prefix.with_name(prefix.name + "_coalitions.npz"),
+                                        masks=np.asarray(coalitions, dtype=np.uint8), auc=np.asarray(responses))
+                confirm = []
+                for name, cols in candidates:
+                    p = pr.predict_cached(cc, qc, cols, n_est=a.confirm_est, seed=seed * 100, chunk=a.chunk)
+                    row = {"name": name, "ks": v.ks(y[qc], p), "auc": float(roc_auc_score(y[qc], p)), "cols": cols}
+                    confirm.append(row)
+                    print(f"confirm {name}: KS={row['ks']:.6f} AUC={row['auc']:.6f} elapsed={time.time()-t0:.0f}s", flush=True)
+                # Stable tie break preserves the pre-existing baseline. Selection is entirely inside outer-train.
+                winner = max(confirm, key=lambda row: row["ks"])
+                selection = {"winner": winner["name"], "cols": winner["cols"], "confirmation": confirm,
+                             "search_fm_auc": base_auc, "seed": seed, "fold": fold, "mode": a.mode,
+                             "fit_ids_sha256": hashlib.sha256(ids[fi].to_numpy().tobytes()).hexdigest(),
+                             "search_ids": ids[qs].to_list(), "confirmation_ids": ids[qc].to_list(),
+                             "seconds": time.time() - t0}
+                selection_path.write_text(json.dumps(selection, indent=2))
+                phi = phis.get(winner["name"], next(iter(phis.values())))
+                pd.DataFrame({"feature": nums, "phi": phi}).to_csv(prefix.with_name(prefix.name + "_phi.csv"), index=False)
+                plot_search(history, phi, nums, OUT / f"152_{a.out.name}_s{seed}_f{fold}.png")
+                print(f"saved inner winner={winner['name']} before any outer evaluation", flush=True)
+            del pr
+            torch.cuda.empty_cache()
+            if a.evaluate:
+                op = prefix.with_name(prefix.name + "_outer.parquet")
+                if op.exists():
+                    print(f"skip existing outer {op}", flush=True)
+                    continue
+                # Policy frozen inner; refit the baseline feature ranking only on outer-train.
+                pr = Predictor(prepare(X, tr, a.mode), y, model)
+                base_cols = v.fm_select(X, y, tr, a.d)
+                baseline = pr.predict_cached(tr, va, base_cols, n_est=4, seed=seed * 100, chunk=a.chunk)
+                cols = base_cols if selection["winner"] == "fm_legacy" else (
+                    sorted(base_cols[:-len(v.CAT_COLS)]) + v.CAT_COLS if selection["winner"] == "fm_canonical" else selection["cols"])
+                p = baseline if cols == base_cols else pr.predict_cached(
+                    tr, va, cols, n_est=4, seed=seed * 100, chunk=a.chunk)
+                pl.DataFrame({"application_id": ids[va], "target": y[va], "candidate": p, "baseline": baseline}).write_parquet(op)
+                print(f"outer s{seed} f{fold} KS={v.ks(y[va], p):.6f} baseline={v.ks(y[va], baseline):.6f} "
+                      f"winner={selection['winner']} peak={torch.cuda.max_memory_allocated()/2**30:.2f}GiB "
+                      f"elapsed={time.time()-t0:.0f}s", flush=True)
+                del pr
+                torch.cuda.empty_cache()
+
+
+if __name__ == "__main__":
+    main()

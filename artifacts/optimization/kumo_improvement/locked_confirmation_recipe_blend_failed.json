@@ -1,0 +1,35 @@
+{
+  "screen_stage": "cv3_seed8247",
+  "confirmation_stage": "cv5_seed31027",
+  "selected": {
+    "name": "baseline_plus_v5_balanced1_e8_w0.25",
+    "ks": 0.5285590297099365,
+    "auc": 0.8474273605154183,
+    "fold_ks": [
+      0.513114971256775,
+      0.5372890389684987,
+      0.536995876476196
+    ],
+    "mean_fold_ks": 0.5291332955671565,
+    "delta_ks": 0.000491512056163601,
+    "delta_mean_fold_ks": 6.190391284037015e-05,
+    "fold_wins": 2,
+    "fold_deltas": [
+      0.0006540393285842105,
+      0.0002751655422067456,
+      -0.0007434931322698457
+    ],
+    "components": [
+      {
+        "name": "baseline_e8",
+        "weight": 0.75
+      },
+      {
+        "name": "v5_balanced1_e8",
+        "weight": 0.25
+      }
+    ]
+  },
+  "rule": "Positive pooled and mean-fold KS deltas; at least 3/5 fold wins.",
+  "warning": "The new split reuses labels; it is a consistency check, not an untouched holdout."
+}

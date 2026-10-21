@@ -1,0 +1,6 @@
+{
+  "passed": true,
+  "numerical_gradient_max_abs_difference": 1.0558593573420372e-07,
+  "balanced_zero_correction_gradient": 0.0,
+  "source_sha256": "89965c32674134d96046fbbfc2a29ad4f41e9446295dfa0a23ae5961c6d630e2"
+}

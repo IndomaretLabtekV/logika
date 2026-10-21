@@ -101,3 +101,11 @@ Causilo yang menambah.
 - Pohon jenuh: fitur, hyperparameter, seed, keragaman, agregasi tidak menaikkan keluarga 6 GBDT.
 - Info luar: tim 0,57065 memakai ensemble Kumo 3 seed → kemungkinan setup Kumo kita (fitur `fm_select` 100 numerik
   top-KS + 4 kategori sebagai kode, context train fold) jauh dari optimal untuk public.
+
+21Okt, klarifikasi audit gabungan GNN: baris KumoRelational tidak dijalankan
+di atas berlaku untuk repo utama. Snapshot teman menyimpan percobaan
+KumoRelational ber-GNN: preflight/parity, kendala memori, lalu readouthemat
+dengan1/5fold tersimpan. Tidak ada pooled5fold×3seed yang terbukti;status
+training pada metadata19Okt adalah historis, bukan proses aktif saat ini.
+Bukti:artifacts/optimization/goal054/relational_queue_status.json dan
+relational_initial_oom.json. GNN mandiriGCN/GraphSAGE belum ditemukan.

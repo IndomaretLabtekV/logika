@@ -1,0 +1,58 @@
+{
+  "inputs_sha256": "f91fbe230abea5b591f4cb9dbd75a2b722e910268d9e77214ca9504ba211577a",
+  "winner": "utama_raw",
+  "search": [
+    {
+      "name": "utama_raw",
+      "ks": 0.5460765361785889,
+      "auc": 0.8494135527722597
+    },
+    {
+      "name": "utama_gain",
+      "ks": 0.5380163788795471,
+      "auc": 0.8486594845060415
+    },
+    {
+      "name": "teman_gain",
+      "ks": 0.5371181964874268,
+      "auc": 0.8494210108829817
+    },
+    {
+      "name": "union_gain",
+      "ks": 0.537013828754425,
+      "auc": 0.8488360819134955
+    },
+    {
+      "name": "teman_gain_probability",
+      "ks": 0.5450541973114014,
+      "auc": 0.8502443330344763
+    },
+    {
+      "name": "teman_gain_rank",
+      "ks": 0.54366534948349,
+      "auc": 0.8504688754394292
+    },
+    {
+      "name": "union_gain_probability",
+      "ks": 0.5472820401191711,
+      "auc": 0.849944410439011
+    },
+    {
+      "name": "union_gain_rank",
+      "ks": 0.5486995577812195,
+      "auc": 0.8499832991592047
+    }
+  ],
+  "confirmation": [
+    {
+      "name": "utama_raw",
+      "ks": 0.4929044246673584,
+      "auc": 0.8315633638423333
+    }
+  ],
+  "outer_seen": false,
+  "smoke_only": false,
+  "min_inner_gain": 0.003,
+  "confirmation_reuse": "same inner split as173/176/177; not independent evidence across projects",
+  "outer_status": "No outer predictions read/materialized; refit required for any promoted constituents"
+}

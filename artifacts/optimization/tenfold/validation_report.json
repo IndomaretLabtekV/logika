@@ -1,0 +1,75 @@
+{
+  "recipe": {
+    "price_lgb31_balanced_250": 0.3333333333333333,
+    "price_cat5_balanced_700": 0.3333333333333333,
+    "public_054710": 0.3333333333333333
+  },
+  "selection_comparison_3fold": {
+    "champion": {
+      "recipe": {
+        "public_054710": 1.0
+      },
+      "ks": 0.5114712115520927,
+      "roc_auc": 0.8368977546925876,
+      "average_precision": 0.4874708240389328,
+      "log_loss": 0.30013178755691355,
+      "mean_fold_ks": 0.5149154061383592,
+      "fold_ks": [
+        0.4996374889803489,
+        0.5231640622628119,
+        0.5219446671719167
+      ]
+    },
+    "new": {
+      "recipe": {
+        "price_lgb31_balanced_250": 0.3333333333333333,
+        "price_cat5_balanced_700": 0.3333333333333333,
+        "public_054710": 0.3333333333333333
+      },
+      "ks": 0.5196953983607824,
+      "roc_auc": 0.8412413276500286,
+      "average_precision": 0.4945409578795754,
+      "log_loss": 0.2976465869019474,
+      "mean_fold_ks": 0.5228502051175808,
+      "fold_ks": [
+        0.5084087518114401,
+        0.5342750036635531,
+        0.5258668598777496
+      ]
+    }
+  },
+  "tenfold_aggregate_oof": {
+    "champion": {
+      "ks": 0.5114712115520927,
+      "roc_auc": 0.8368977546925876,
+      "average_precision": 0.4874708240389328,
+      "log_loss": 0.30013178755691355,
+      "mean_on_same_tenfold_groups": 0.5168362765948811
+    },
+    "new": {
+      "ks": 0.5190088512771254,
+      "roc_auc": 0.8418171822791967,
+      "average_precision": 0.4957139740720494,
+      "log_loss": 0.29705753424235787,
+      "mean_fold_ks": 0.5235242661078392,
+      "fold_ks": [
+        0.5397999130056547,
+        0.5227490213136146,
+        0.5141713788603741,
+        0.5201775753880985,
+        0.5377715359613977,
+        0.5115567763370956,
+        0.5383324997970482,
+        0.5283431019613917,
+        0.5185812534473548,
+        0.5037596050063632
+      ]
+    }
+  },
+  "final_folds": 10,
+  "fold_seed": 9173,
+  "model_seeds": "2026 + fold",
+  "champion_public_score": 0.5471,
+  "new_public_score": null,
+  "caveat": "Feature selection and parameters were previously selected on these training labels. Scores are validation estimates, not an unbiased final test. New OOF models use 90% training rows per fold; champion OOF used 67%."
+}

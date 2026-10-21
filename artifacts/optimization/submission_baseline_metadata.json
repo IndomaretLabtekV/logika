@@ -1,0 +1,46 @@
+{
+  "generated_at_utc": "2026-10-12T12:38:10.720857+00:00",
+  "competition": "data-science-competition-logika-ui-2026",
+  "file": "submission.csv",
+  "sha256": "60c12b5e13ba0bf14645fbd9d1247a4d6570892fd6ef833ac2e51b83cbeca940",
+  "train_rows": 70000,
+  "test_rows": 30000,
+  "feature_count": 115,
+  "model": "XGBoost all-history baseline, fitted on all training labels",
+  "parameters": {
+    "n_estimators": 300,
+    "max_depth": 4,
+    "min_child_weight": 40,
+    "learning_rate": 0.05,
+    "subsample": 0.85,
+    "colsample_bytree": 0.85,
+    "reg_lambda": 20,
+    "n_jobs": 8,
+    "tree_method": "hist",
+    "objective": "binary:logistic",
+    "eval_metric": "logloss",
+    "random_state": 2026
+  },
+  "columns": [
+    "application_id",
+    "default_probability"
+  ],
+  "probability_summary": {
+    "count": 30000.0,
+    "mean": 0.13580450136285907,
+    "std": 0.15849108331894776,
+    "min": 0.002286544302,
+    "25%": 0.029590524733499997,
+    "50%": 0.0713415667415,
+    "75%": 0.17994999140475,
+    "max": 0.920055508614
+  },
+  "checks": {
+    "matches_sample_order": true,
+    "unique_ids": true,
+    "matches_test_id_set": true,
+    "no_missing": true,
+    "all_probabilities_between_0_and_1": true,
+    "no_exported_index": true
+  }
+}

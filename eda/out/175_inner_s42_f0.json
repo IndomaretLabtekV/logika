@@ -1,0 +1,52 @@
+{
+  "cache_manifest_sha256": "596d79d51ae14108b6ec05c1feae701b1e59cb5e2da01d06090f32493c49bdd5",
+  "feature_output_sha256": "cd65d837cf9be5d973eea638b593c8611e7f2fab424cad7e55a08611dba7790e",
+  "source_sha256": "a567bcc004010137f98a31fd67a9f626082affdad53cbc74223c31e9dd1be7cf",
+  "rows": 100000,
+  "unique_customers": 100000,
+  "numeric_features": 1000,
+  "fitting_rows": 48000,
+  "erased_query_targets": 52000,
+  "categorical_features": [
+    "loan_purpose",
+    "region",
+    "employment_type",
+    "housing_status",
+    "v2_prev_last_decision",
+    "v2_ecom_last_payment_method"
+  ],
+  "dtype_counts": {
+    "Float64": 917,
+    "Int64": 83,
+    "String": 9,
+    "Datetime(time_unit='us', time_zone=None)": 2,
+    "Int32": 1
+  },
+  "missing_numeric_cells": 21111766,
+  "max_numeric_missing_fraction": 0.9037,
+  "zero_missing_numeric_features": 193,
+  "cutoff_checks": {
+    "previous_applications.application_datetime_at_or_after_cutoff": 0,
+    "previous_applications.decision_datetime_at_or_after_cutoff": 0,
+    "repayment_history.due_date_at_or_after_cutoff": 0,
+    "repayment_history.last_payment_datetime_at_or_after_cutoff": 0,
+    "account_behavior.month_at_or_after_cutoff": 0,
+    "account_behavior.incomplete_month_at_cutoff": 0,
+    "bureau_observations.report_datetime_at_or_after_cutoff": 0,
+    "bureau_observations.available_datetime_at_or_after_cutoff": 0,
+    "ecommerce_transactions.transaction_datetime_at_or_after_cutoff": 0
+  },
+  "independent_future_ecommerce_rows": 0,
+  "reference_categories": 7,
+  "max_reference_abs_error": 0.0,
+  "example_applications": 6,
+  "independent_summary_checks": 24,
+  "max_example_abs_error": 0,
+  "model_executed": false,
+  "quality_scores_used": false,
+  "limits": [
+    "Examples verify V5 price summaries, not every numerical feature formula.",
+    "Cutoff counters for other tables come from the preserved source builders.",
+    "Customer-history references are fit-only, not expanding-time cross-customer references."
+  ]
+}

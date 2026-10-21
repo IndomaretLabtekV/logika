@@ -1,0 +1,17 @@
+{
+  "screen_stage": "cv3_seed8247",
+  "confirmation_stage": "cv5_seed31027",
+  "selected": {
+    "name": "v5_fullcontext_e8",
+    "components": [
+      {
+        "name": "v5_fullcontext_e8",
+        "weight": 1.0
+      }
+    ]
+  },
+  "reason": "Selected 75/25 blend failed the pooled-KS criterion. Test the predefined full-context alternative: baseline cap 50,000 versus all 56,000 outer-training rows.",
+  "prior_failed_confirmation": "confirmation_verdict_blend_failed.json",
+  "rule": "Positive pooled and mean-fold KS deltas; at least 3/5 fold wins.",
+  "warning": "A second candidate is assessed on the same five splits after blend failure. This is repeated local model selection, not an untouched holdout."
+}

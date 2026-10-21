@@ -1,7 +1,0 @@
-/home/veinsan/Projects/logika/.venv/lib/python3.13/site-packages/sdm/tensor/string.py:502: RuntimeWarning: Falling back to a CPU-based string sort because cuDF is not installed. Install cuDF to enable faster CUDA-based string sorting without device synchronization. This warning will be suppressed for the remainder of this process.
-  warn_once(
-{'model': 'kumo_large_c56000_g1', 'seed': 42, 'fold': 0, 'ks': 0.526188850402832, 'budget': 56000, 'sec': 3842.4}
-{'model': 'kumo_large_c56000_g1', 'seed': 42, 'fold': 1, 'ks': 0.5384610891342163, 'budget': 56000, 'sec': 3585.3}
-{'model': 'kumo_large_c56000_g1', 'seed': 42, 'fold': 2, 'ks': 0.5196077227592468, 'budget': 56000, 'sec': 3427.2}
-kumo_large_c56000_g1: OOF KS 0.52383 on 42000 rows
-done in 10857s

@@ -1,0 +1,38 @@
+{
+  "checks": [
+    {
+      "name": "inner_teman_native",
+      "context": 48000,
+      "queries": 128,
+      "columns": 104,
+      "max_allocated_gib": 3.7846031188964844,
+      "max_reserved_gib": 5.37109375
+    },
+    {
+      "name": "inner_teman_raw",
+      "context": 48000,
+      "queries": 128,
+      "columns": 104,
+      "max_allocated_gib": 3.786538600921631,
+      "max_reserved_gib": 5.373046875
+    },
+    {
+      "name": "inner_utama_native",
+      "context": 48000,
+      "queries": 128,
+      "columns": 104,
+      "max_allocated_gib": 3.7846031188964844,
+      "max_reserved_gib": 5.37109375
+    },
+    {
+      "name": "inner_utama_raw",
+      "context": 48000,
+      "queries": 128,
+      "columns": 104,
+      "max_allocated_gib": 3.788358211517334,
+      "max_reserved_gib": 5.37890625
+    }
+  ],
+  "smoke_only": true,
+  "quality_promotion": false
+}

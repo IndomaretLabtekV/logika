@@ -1,0 +1,50 @@
+{
+  "tune": {
+    "recipe": {
+      "extended/lgb_leaves31": 1.0
+    },
+    "ks": 0.5109317777068152,
+    "roc_auc": 0.8308957887477159,
+    "average_precision": 0.4666204981172158,
+    "log_loss": 0.30579274672508844
+  },
+  "members": {
+    "extended/xgb_depth3": {
+      "ks": 0.521270359381775,
+      "roc_auc": 0.8379791390029606,
+      "average_precision": 0.48850687299238665,
+      "log_loss": 0.299390009868116
+    },
+    "extended/lgb_leaves31": {
+      "ks": 0.5170306056595906,
+      "roc_auc": 0.8379830892222966,
+      "average_precision": 0.4883648089372653,
+      "log_loss": 0.2995285704536943
+    },
+    "compact/cat_depth5": {
+      "ks": 0.5249301263227288,
+      "roc_auc": 0.8358597072370049,
+      "average_precision": 0.4854401166902961,
+      "log_loss": 0.301034038286133
+    },
+    "old_baseline": {
+      "ks": 0.5067069577911553,
+      "roc_auc": 0.830195829898103,
+      "average_precision": 0.4704869876338473,
+      "log_loss": 0.3048451741123258
+    },
+    "locked_recipe": {
+      "ks": 0.5170306056595906,
+      "roc_auc": 0.8379830892222966,
+      "average_precision": 0.4883648089372653,
+      "log_loss": 0.2995285704536943
+    }
+  },
+  "ks_difference": 0.010323647868435315,
+  "paired_bootstrap_95_interval": [
+    -0.0014966414372834178,
+    0.018840781151979118
+  ],
+  "validation_rows": 17500,
+  "protocol": "Parameters and ensemble weights selected on separate 10,500-row tuning set. Confirmation has 17,500 rows and was not used for tuning."
+}

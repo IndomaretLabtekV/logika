@@ -1,0 +1,13 @@
+{
+  "repayment_history_due_date_at_or_after_cutoff": 0,
+  "repayment_history_last_payment_datetime_at_or_after_cutoff": 0,
+  "previous_applications_application_datetime_at_or_after_cutoff": 0,
+  "previous_applications_decision_datetime_at_or_after_cutoff": 0,
+  "bureau_observations_report_datetime_at_or_after_cutoff": 0,
+  "bureau_observations_available_datetime_at_or_after_cutoff": 0,
+  "account_behavior_month_at_or_after_cutoff": 0,
+  "account_incomplete_month": 0,
+  "ecommerce_transactions_transaction_datetime_at_or_after_cutoff": 0,
+  "base_columns": 122,
+  "extended_columns": 683
+}

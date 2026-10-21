@@ -1,0 +1,55 @@
+{
+  "file": "submission_goal054_kumo_offset_l20p003_unweighted_d0p5_w1.csv",
+  "sha256": "5d4d8b81e781354a3d1302aadfe93a1534e42e35279ba4867a7b4d0e1990dd33",
+  "rows": 30000,
+  "validation": {
+    "candidate": "kumo_offset_l20p003_unweighted_d0p5",
+    "new_model_weight": 1.0,
+    "ks": 0.5292994659005608,
+    "auc": 0.8472026883917805,
+    "fold_ks": [
+      0.5281879952429976,
+      0.537456002011113,
+      0.5400632838002837,
+      0.5302198189027255,
+      0.5286058527632467
+    ],
+    "mean_fold_ks": 0.5329065905440732,
+    "name": "kumo_offset_l20p003_unweighted_d0p5_w1.0",
+    "delta_ks": 0.00078948967528647,
+    "delta_mean_fold_ks": 0.0019520021816891164,
+    "fold_wins": 5,
+    "target_reached": false
+  },
+  "target_reached": false,
+  "public_score": null,
+  "sources": [
+    {
+      "path": "artifacts/optimization/goal054/cv5_seed31027/kumo_offset_l20p003_unweighted_d0p5/fold0_test.parquet",
+      "sha256": "b8f8d801ebed1edb7312b9aa349a666dc6f17a18988eff66a96a4fbfcd98d0ec",
+      "weight": 0.2
+    },
+    {
+      "path": "artifacts/optimization/goal054/cv5_seed31027/kumo_offset_l20p003_unweighted_d0p5/fold1_test.parquet",
+      "sha256": "38c48e661fb95a1097b4d970a2084a061af185d6aa16363e0c28dbf864be9009",
+      "weight": 0.2
+    },
+    {
+      "path": "artifacts/optimization/goal054/cv5_seed31027/kumo_offset_l20p003_unweighted_d0p5/fold2_test.parquet",
+      "sha256": "921ec6a0ffbf54be979d8b1d85571dfc01a448b08ec2d04e5e44f273595c3a48",
+      "weight": 0.2
+    },
+    {
+      "path": "artifacts/optimization/goal054/cv5_seed31027/kumo_offset_l20p003_unweighted_d0p5/fold3_test.parquet",
+      "sha256": "079984e4ee798ed8c8163523eb2ba1f68fb42670d4b170a6872c9370566fad22",
+      "weight": 0.2
+    },
+    {
+      "path": "artifacts/optimization/goal054/cv5_seed31027/kumo_offset_l20p003_unweighted_d0p5/fold4_test.parquet",
+      "sha256": "2a3402441bb690f7b1cbb5b460a170fdb6edd8052f928988ec5f0fb68fa54ddf",
+      "weight": 0.2
+    }
+  ],
+  "preserved_public_checkpoint": "submission_kumo_spline_exploratory.csv",
+  "preserved_public_sha256": "3de98287976a7137ad63c946e9932b6ac3ba3a7ee6df607d74cde1aa6a8fc417"
+}

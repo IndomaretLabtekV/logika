@@ -1,0 +1,165 @@
+{
+  "generated_at_utc": "2026-10-12T13:09:07.164618+00:00",
+  "train_rows": 70000,
+  "test_rows": 30000,
+  "defaults": 9507,
+  "default_rate": 0.13581428571428572,
+  "majority_accuracy": 0.8641857142857143,
+  "total_raw_rows": 8035123,
+  "raw_size_mb": 948.798474,
+  "feature_columns": 116,
+  "naive_ecommerce_spend_inflation_factor": 1.7396172003987525,
+  "max_train_test_ks": 0.014424308836926525,
+  "max_absolute_smd": 0.027254364587406744,
+  "benchmarks": [
+    {
+      "model": "Prior konstan",
+      "validation": "Stratified 25%",
+      "train_n": 52500,
+      "validation_n": 17500,
+      "feature_n": 0,
+      "validation_positive_rate": 0.1358285714285714,
+      "roc_auc": 0.5,
+      "average_precision": 0.1358285714285714,
+      "log_loss": 0.3973182613752176,
+      "brier_score": 0.1173791709750566,
+      "ks_statistic": 0.0
+    },
+    {
+      "model": "Aplikasi",
+      "validation": "Stratified 25%",
+      "train_n": 52500,
+      "validation_n": 17500,
+      "feature_n": 5,
+      "validation_positive_rate": 0.1358285714285714,
+      "roc_auc": 0.6410693566436333,
+      "average_precision": 0.2178496962202583,
+      "log_loss": 0.3823477921408746,
+      "brier_score": 0.1136854579073763,
+      "ks_statistic": 0.2167136784495311
+    },
+    {
+      "model": "Aplikasi + profil",
+      "validation": "Stratified 25%",
+      "train_n": 52500,
+      "validation_n": 17500,
+      "feature_n": 15,
+      "validation_positive_rate": 0.1358285714285714,
+      "roc_auc": 0.6460211374011189,
+      "average_precision": 0.223242921654972,
+      "log_loss": 0.3814198367207587,
+      "brier_score": 0.1134306851349725,
+      "ks_statistic": 0.2184130794989152
+    },
+    {
+      "model": "Semua riwayat",
+      "validation": "Stratified 25%",
+      "train_n": 52500,
+      "validation_n": 17500,
+      "feature_n": 115,
+      "validation_positive_rate": 0.1358285714285714,
+      "roc_auc": 0.830195829898103,
+      "average_precision": 0.4704869876338473,
+      "log_loss": 0.3048451740091212,
+      "brier_score": 0.0920518068010452,
+      "ks_statistic": 0.5067069577911553
+    },
+    {
+      "model": "Prior konstan",
+      "validation": "Temporal Okt–Des",
+      "train_n": 52413,
+      "validation_n": 17587,
+      "feature_n": 0,
+      "validation_positive_rate": 0.1410132484221299,
+      "roc_auc": 0.5,
+      "average_precision": 0.1410132484221299,
+      "log_loss": 0.4070032568485797,
+      "brier_score": 0.1211767237807997,
+      "ks_statistic": 0.0
+    },
+    {
+      "model": "Semua riwayat",
+      "validation": "Temporal Okt–Des",
+      "train_n": 52413,
+      "validation_n": 17587,
+      "feature_n": 115,
+      "validation_positive_rate": 0.1410132484221299,
+      "roc_auc": 0.8257613032411806,
+      "average_precision": 0.4701644209396771,
+      "log_loss": 0.3148375020324806,
+      "brier_score": 0.0956333528498112,
+      "ks_statistic": 0.4861227544590523
+    }
+  ],
+  "top_model_gain_features": [
+    {
+      "feature": "repayment_late_share",
+      "gain_importance": 0.12789571
+    },
+    {
+      "feature": "repayment_historical_dpd_mean",
+      "gain_importance": 0.07892499
+    },
+    {
+      "feature": "repayment_dpd30_share",
+      "gain_importance": 0.045814604
+    },
+    {
+      "feature": "ecom_spend_90d",
+      "gain_importance": 0.04462087
+    },
+    {
+      "feature": "ecom_last_purchase_recency_days",
+      "gain_importance": 0.03468207
+    },
+    {
+      "feature": "repayment_paid_ratio",
+      "gain_importance": 0.032578517
+    },
+    {
+      "feature": "bureau_score_min",
+      "gain_importance": 0.027162729
+    },
+    {
+      "feature": "bureau_score_mean",
+      "gain_importance": 0.025570946
+    },
+    {
+      "feature": "repayment_current_dpd_max",
+      "gain_importance": 0.024208691
+    },
+    {
+      "feature": "bureau_score_max",
+      "gain_importance": 0.02395376
+    },
+    {
+      "feature": "annual_interest_rate",
+      "gain_importance": 0.020202024
+    },
+    {
+      "feature": "ecom_completed_count_90d",
+      "gain_importance": 0.014114424
+    },
+    {
+      "feature": "installment_observed_income_ratio",
+      "gain_importance": 0.010592121
+    },
+    {
+      "feature": "repayment_historical_dpd_max",
+      "gain_importance": 0.010039737
+    },
+    {
+      "feature": "repayment_installment_count",
+      "gain_importance": 0.009460745
+    }
+  ],
+  "versions": {
+    "numpy": "1.24.1",
+    "pandas": "1.5.3",
+    "matplotlib": "3.6.3",
+    "scipy": "1.10.0",
+    "scikit-learn": "1.2.1",
+    "xgboost": "3.0.2",
+    "kaggle": "1.7.4.5"
+  }
+}

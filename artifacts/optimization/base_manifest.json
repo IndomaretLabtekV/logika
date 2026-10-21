@@ -1,0 +1,251 @@
+{
+  "feature_set": "base",
+  "feature_file": "application_features.parquet",
+  "columns": [
+    "loan_amount",
+    "annual_interest_rate",
+    "proposed_monthly_installment",
+    "loan_purpose",
+    "age",
+    "region",
+    "employment_type",
+    "employment_tenure_months",
+    "declared_monthly_income",
+    "dependents",
+    "housing_status",
+    "installment_income_ratio",
+    "loan_income_ratio",
+    "income_per_dependent",
+    "decision_delay_hours",
+    "previous_count",
+    "previous_approved_count",
+    "previous_rejection_rate",
+    "previous_cancel_rate",
+    "previous_requested_mean",
+    "previous_approved_amount_mean",
+    "previous_installment_mean",
+    "previous_last_recency_days",
+    "previous_count_90d",
+    "previous_count_180d",
+    "has_previous",
+    "repayment_installment_count",
+    "repayment_loan_count",
+    "repayment_amount_due",
+    "repayment_amount_paid",
+    "repayment_unpaid_amount",
+    "repayment_current_dpd_max",
+    "repayment_historical_dpd_max",
+    "repayment_historical_dpd_mean",
+    "repayment_late_share",
+    "repayment_dpd30_share",
+    "repayment_dpd90_share",
+    "repayment_paid_ratio",
+    "repayment_dpd_mean_180d",
+    "repayment_unpaid_180d",
+    "has_repayments",
+    "account_month_count",
+    "account_income_mean",
+    "account_income_std",
+    "account_inflow_mean",
+    "account_outflow_mean",
+    "account_net_inflow_mean",
+    "account_average_balance_mean",
+    "account_minimum_balance_min",
+    "account_low_balance_days_mean",
+    "account_last_recency_days",
+    "account_income_cv",
+    "account_last_closing_balance",
+    "account_last_income_like_credits",
+    "account_last_average_balance",
+    "account_last_low_balance_days",
+    "account_income_mean_3m",
+    "account_outflow_mean_3m",
+    "account_balance_mean_3m",
+    "account_low_balance_days_mean_3m",
+    "has_account",
+    "observed_declared_income_ratio",
+    "installment_observed_income_ratio",
+    "balance_installment_ratio",
+    "bureau_provider_count",
+    "bureau_scored_count",
+    "bureau_score_mean",
+    "bureau_score_min",
+    "bureau_score_max",
+    "bureau_debt_max",
+    "bureau_debt_mean",
+    "bureau_active_accounts_max",
+    "bureau_utilization_max",
+    "bureau_inquiries_max",
+    "bureau_delinquent_accounts_max",
+    "bureau_report_age_mean",
+    "bureau_delivery_lag_mean",
+    "bureau_score_spread",
+    "bureau_Bureau_A_score",
+    "bureau_Bureau_B_score",
+    "bureau_Bureau_C_score",
+    "bureau_Bureau_A_utilization",
+    "bureau_Bureau_B_utilization",
+    "bureau_Bureau_C_utilization",
+    "bureau_Bureau_A_outstanding_balance",
+    "bureau_Bureau_B_outstanding_balance",
+    "bureau_Bureau_C_outstanding_balance",
+    "bureau_Bureau_A_report_age_days",
+    "bureau_Bureau_B_report_age_days",
+    "bureau_Bureau_C_report_age_days",
+    "bureau_debt_income_ratio",
+    "ecom_order_count",
+    "ecom_cancel_rate",
+    "ecom_completed_count",
+    "ecom_spend_sum",
+    "ecom_order_value_mean",
+    "ecom_order_value_std",
+    "ecom_last_purchase_recency_days",
+    "ecom_completed_count_90d",
+    "ecom_spend_90d",
+    "ecom_completed_count_180d",
+    "ecom_spend_180d",
+    "ecom_payment_share_COD",
+    "ecom_payment_share_bank_transfer",
+    "ecom_payment_share_credit_card",
+    "ecom_payment_share_debit_card",
+    "ecom_payment_share_e_wallet",
+    "ecom_category_share_education",
+    "ecom_category_share_electronics",
+    "ecom_category_share_fashion",
+    "ecom_category_share_groceries",
+    "ecom_category_share_health",
+    "ecom_category_share_home",
+    "ecom_category_share_personal_care",
+    "ecom_spend90_income_ratio"
+  ],
+  "train_n": 42000,
+  "tune_n": 10500,
+  "confirmation_n": 17500,
+  "candidates": [
+    {
+      "name": "xgb_depth3",
+      "family": "xgb",
+      "params": {
+        "max_depth": 3,
+        "min_child_weight": 30,
+        "reg_lambda": 20,
+        "scale_pos_weight": 1
+      },
+      "iterations": 806,
+      "feature_set": "base",
+      "metrics": {
+        "ks": 0.49592643438815837,
+        "roc_auc": 0.821908827558108,
+        "average_precision": 0.4526251877535319,
+        "log_loss": 0.31052697895214354
+      }
+    },
+    {
+      "name": "xgb_depth4_weight3",
+      "family": "xgb",
+      "params": {
+        "max_depth": 4,
+        "min_child_weight": 70,
+        "reg_lambda": 25,
+        "scale_pos_weight": 3
+      },
+      "iterations": 343,
+      "feature_set": "base",
+      "metrics": {
+        "ks": 0.49435110596031195,
+        "roc_auc": 0.8199191871354772,
+        "average_precision": 0.4489686712732321,
+        "log_loss": 0.31155121225176297
+      }
+    },
+    {
+      "name": "lgb_leaves15",
+      "family": "lgb",
+      "params": {
+        "num_leaves": 15,
+        "min_child_samples": 100,
+        "reg_lambda": 10,
+        "scale_pos_weight": 1
+      },
+      "iterations": 936,
+      "feature_set": "base",
+      "metrics": {
+        "ks": 0.49430118140358176,
+        "roc_auc": 0.8212721735359044,
+        "average_precision": 0.4485991318614476,
+        "log_loss": 0.3116784519436446
+      }
+    },
+    {
+      "name": "lgb_leaves31",
+      "family": "lgb",
+      "params": {
+        "num_leaves": 31,
+        "min_child_samples": 180,
+        "reg_lambda": 20,
+        "scale_pos_weight": 1
+      },
+      "iterations": 642,
+      "feature_set": "base",
+      "metrics": {
+        "ks": 0.49752772976811205,
+        "roc_auc": 0.8217032558539247,
+        "average_precision": 0.44621183708637846,
+        "log_loss": 0.3121871020026949
+      }
+    },
+    {
+      "name": "lgb_leaves31_weight3",
+      "family": "lgb",
+      "params": {
+        "num_leaves": 31,
+        "min_child_samples": 200,
+        "reg_lambda": 20,
+        "scale_pos_weight": 3
+      },
+      "iterations": 243,
+      "feature_set": "base",
+      "metrics": {
+        "ks": 0.4948055276221907,
+        "roc_auc": 0.8214476050278202,
+        "average_precision": 0.4494876929074871,
+        "log_loss": 0.3112034097209928
+      }
+    },
+    {
+      "name": "cat_depth5",
+      "family": "cat",
+      "params": {
+        "depth": 5,
+        "l2_leaf_reg": 12
+      },
+      "iterations": 1175,
+      "feature_set": "base",
+      "metrics": {
+        "ks": 0.4997431126523665,
+        "roc_auc": 0.8207651997090465,
+        "average_precision": 0.44909780023051343,
+        "log_loss": 0.31157320666512106
+      }
+    },
+    {
+      "name": "cat_depth6",
+      "family": "cat",
+      "params": {
+        "depth": 6,
+        "l2_leaf_reg": 15
+      },
+      "iterations": 600,
+      "feature_set": "base",
+      "metrics": {
+        "ks": 0.4997134361356723,
+        "roc_auc": 0.8210990605218553,
+        "average_precision": 0.4491656370411068,
+        "log_loss": 0.3113163902878698
+      }
+    }
+  ],
+  "selection_metric": "KS statistic",
+  "tuning_seed": 4917,
+  "confirmation_seed": 2026
+}

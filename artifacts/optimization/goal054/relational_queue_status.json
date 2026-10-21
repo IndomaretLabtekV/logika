@@ -1,0 +1,13 @@
+{
+  "status": "training",
+  "model_pid": 314299,
+  "process_start_ticks": "152906466",
+  "monitor_pid": 315897,
+  "candidate": "kumo_relational_v5_e8_ctx50000_h1_readout_b8192",
+  "target_pooled_ks": 0.54,
+  "kaggle_upload": false,
+  "completed_folds": [
+    0
+  ],
+  "updated_at_utc": "2026-10-19T04:17:11.809959+00:00"
+}

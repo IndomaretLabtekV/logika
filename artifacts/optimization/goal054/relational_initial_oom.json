@@ -1,0 +1,12 @@
+{
+  "status": "failed",
+  "model_pid": 307883,
+  "process_start_ticks": "152736477",
+  "monitor_pid": 308392,
+  "candidate": "kumo_relational_v5_e8_ctx50000_h1",
+  "target_pooled_ks": 0.54,
+  "kaggle_upload": false,
+  "completed_folds": [],
+  "updated_at_utc": "2026-10-19T03:39:49.314134+00:00",
+  "error": "AssertionError('Model terminated before five folds completed; inspect relational_cv5.log.')"
+}

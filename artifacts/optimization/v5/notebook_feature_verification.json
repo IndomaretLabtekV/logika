@@ -1,0 +1,8 @@
+{
+  "rows": 100000,
+  "columns": 1012,
+  "new_features": 28,
+  "isolated_notebook_raw_rebuild_exact": true,
+  "destination": "/tmp/logika-v5-feature-check-4ifcwmn_",
+  "root_features_untouched": true
+}

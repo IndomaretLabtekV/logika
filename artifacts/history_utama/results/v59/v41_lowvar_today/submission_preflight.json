@@ -1,0 +1,15 @@
+{
+  "timestamp_utc": "2026-10-21T14:48:04.439874+00:00",
+  "all_cached_audit_inputs_unchanged": true,
+  "notebook_replay_verified": true,
+  "fresh_training_repeated": false,
+  "csv_sha256": "d7e17b079e5ccf235e7ae60a537cb54b01529e41990da0370b1d6a39c9627d92",
+  "policy_sha256": "9913eae0b1178106f25825d2581bc0d7b130237b804fd4d2df7edefeec740533",
+  "description": "v59 fixed low-variance ensemble (recipe set Oct18): 6 GBDT / Causilo5-seeds / Kumo70k3-draws, equal family ranks. Local OOF analogue 0.52622 vs v31 0.52613; weak gain, P=0.365. Expected public 0.56362 +/- 0.00223. Production ensemble candidate; no weight tuning on LB.",
+  "public_forecast_mean": 0.56362064735855,
+  "public_forecast_sd": 0.002228989838079634,
+  "breakthrough": false,
+  "submission_performed": true,
+  "authorization": "Latest user explicitly requests an actual submission today; pre-existing candidate released with weak-evidence limitation disclosed.",
+  "submission_ref": 57486639
+}

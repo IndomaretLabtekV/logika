@@ -1,0 +1,6 @@
+-r requirements-optimization.txt
+torch==1.13.1
+tabm==0.0.3
+rtdl_num_embeddings==0.0.12
+# Only needed to repeat the EBM screening experiments:
+interpret-core==0.6.10

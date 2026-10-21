@@ -1,0 +1,42 @@
+{
+  "date": "2026-10-18",
+  "status": "Planned next avenue; no experiment from this plan has run yet",
+  "purpose": "Learn a supervised correction to a frozen foundation model without leaking outer-validation labels through ordinary OOF stacking",
+  "protocol": {"n_splits": 5, "shuffle": true, "seed": 31027},
+  "outer_training_rows": 56000,
+  "foundation_context_rows": 50000,
+  "meta_training_rows": 6000,
+  "procedure": [
+    "Choose the 50,000 context rows only from outer training using the recorded stratified context sampler.",
+    "Fit frozen Kumo or TabPFN on those context labels only.",
+    "Predict the 6,000 outer-training rows excluded from the context, the outer validation, and test.",
+    "Fit a regularized correction using the 6,000 excluded context rows and their labels. No outer-validation label or probability from a model trained on an outer-validation label is a correction-training input.",
+    "Evaluate the corrected predictions on the 14,000 outer-validation rows, then assemble all five OOF partitions."
+  ],
+  "initial_correction_families": [
+    "Strongly regularized logistic model on foundation logit and prespecified raw/latent risk features",
+    "Small smooth EBM with foundation logit as an initial score, learning residual structure from context-holdout rows"
+  ],
+  "prespecified_risk_features": [
+    "re_price_log_posterior",
+    "re_price_posterior_sd",
+    "re_bureau_score_posterior",
+    "re_bureau_posterior_sd",
+    "re_income_geometric_mean",
+    "re_declared_income_log_gap",
+    "re_outflow_income_geometric_ratio",
+    "re_late_1_posterior",
+    "re_late_30_posterior",
+    "installment_observed_income_ratio",
+    "v2_existing_total_burden_observed",
+    "employment_type"
+  ],
+  "audit_requirements": [
+    "Context, correction-training and outer-validation IDs must be pairwise disjoint.",
+    "Context union correction-training must exactly equal outer training.",
+    "Save context/correction/validation ID hashes and every prediction-source hash.",
+    "No shared correction model may be trained using all-fold OOF labels and then evaluated on those same rows.",
+    "Any correction early stopping uses only the 6,000 correction-training rows."
+  ],
+  "selection_limitations": "Research still reuses the existing training labels and outer splits. This design prevents direct outer-label leakage; it does not remove the optimism from repeated research."
+}

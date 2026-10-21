@@ -1,0 +1,89 @@
+{
+  "plan": {
+    "baseline": "Frozen Kumo Large, 90 features, original three folds seed 8247",
+    "candidates": [
+      "reverse_spline",
+      "reverse_cat5_prior_corrected"
+    ],
+    "weights": [
+      0.25,
+      0.5
+    ],
+    "rule": "Positive pooled/mean KS and at least 2/3 fold wins; confirm a fixed recipe against matching five-fold Kumo.",
+    "cat_probability_correction": "Invert positive class weight 6: p/(6-5p).",
+    "scope": "Reuse existing honest OOF predictions; no new training labels or test feedback."
+  },
+  "comparisons": [
+    {
+      "name": "frozen_baseline",
+      "ks": 0.5280675176537729,
+      "auc": 0.8473424615241696,
+      "mean_fold_ks": 0.5290713916543162,
+      "fold_ks": [
+        0.5124609319281908,
+        0.5370138734262919,
+        0.5377393696084658
+      ]
+    },
+    {
+      "name": "reverse_spline",
+      "weight": 0.25,
+      "ks": 0.5291441487028732,
+      "auc": 0.8473776297654241,
+      "mean_fold_ks": 0.5303724356678842,
+      "fold_ks": [
+        0.5159229352477592,
+        0.5363115854849809,
+        0.5388827862709125
+      ],
+      "delta_ks": 0.001076631049100274,
+      "delta_mean_fold_ks": 0.001301044013568046,
+      "fold_wins": 2
+    },
+    {
+      "name": "reverse_spline",
+      "weight": 0.5,
+      "ks": 0.5270376100879365,
+      "auc": 0.8463857516477834,
+      "mean_fold_ks": 0.5284497437810206,
+      "fold_ks": [
+        0.5135236226032673,
+        0.5343950354959325,
+        0.5374305732438623
+      ],
+      "delta_ks": -0.0010299075658364298,
+      "delta_mean_fold_ks": -0.0006216478732954389,
+      "fold_wins": 1
+    },
+    {
+      "name": "reverse_cat5_prior_corrected",
+      "weight": 0.25,
+      "ks": 0.5277696130645445,
+      "auc": 0.847404715162276,
+      "mean_fold_ks": 0.5284980270027445,
+      "fold_ks": [
+        0.5129390637058091,
+        0.5358391890192438,
+        0.5367158282831805
+      ],
+      "delta_ks": -0.0002979045892284038,
+      "delta_mean_fold_ks": -0.0005733646515716876,
+      "fold_wins": 1
+    },
+    {
+      "name": "reverse_cat5_prior_corrected",
+      "weight": 0.5,
+      "ks": 0.5274224654606896,
+      "auc": 0.8473870419277892,
+      "mean_fold_ks": 0.5291041122677217,
+      "fold_ks": [
+        0.5141921683191613,
+        0.5357280304657379,
+        0.537392138018266
+      ],
+      "delta_ks": -0.0006450521930833064,
+      "delta_mean_fold_ks": 3.2720613405571676e-05,
+      "fold_wins": 1
+    }
+  ]
+}

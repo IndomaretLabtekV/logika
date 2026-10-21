@@ -1,0 +1,25 @@
+{
+  "source_run_sha256": "11814abd32caee94bb7c47ceb82cbf607fa13739a756ce0cbc965c1315b6ec48",
+  "source_sha256": "4165e45c7524b06bc8e4c60512be3afc2fe1adf5dca5aeaaa8fb0155fec152cb",
+  "fits": {
+    "utama_raw": {
+      "fit_sha256": "903001f001026f2f9b55b5776403b24a88e3254882f1aca8e530b98e3c1cc63d",
+      "predictions_sha256": "96ba5855efde8d289a4af399a55c74807d36bc3504c2c2d89db05ac52acfc1ee"
+    },
+    "utama_native": {
+      "fit_sha256": "88de4b9811de937ab134e1424ec7da0c59c572b27bf79f599214abff5d54642a",
+      "predictions_sha256": "9f01e19ae1e2f30690bc8934a8cf221bac4dd65a6c0a227db6b8d61122ab8775"
+    },
+    "teman_raw": {
+      "fit_sha256": "214bca6fd75e83cb95787fa4d3d75dc2c8a2d408ecafbd1423000b41705370b4",
+      "predictions_sha256": "eb885779daf6f6d73bb0a9723c38c2fe6472cdddfb118fa8586e02c89d9540e8"
+    },
+    "teman_native": {
+      "fit_sha256": "b3de46c47e970730c0730a1759c1c40af2d2c537bace600a177d21ce62e3bbfa",
+      "predictions_sha256": "3db99f3469f62ce3f170defcce5655700ffcc2f1b500a4fd910b5a8491a9f211"
+    }
+  },
+  "protocol_sha256": "65c085f73e850d7223ec242390cfe0ef9fb51ac080a600b718a41b732376d37c",
+  "min_inner_gain": 0.003,
+  "smoke_only": true
+}

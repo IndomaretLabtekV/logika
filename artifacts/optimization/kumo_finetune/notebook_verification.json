@@ -1,0 +1,9 @@
+{
+  "notebook": "notebooks/11_kumo_finetune_pilot.ipynb",
+  "executed_code_cells": 51,
+  "errors": 0,
+  "notebook_sha256": "d0eb19c8b51f52a3b347fcd332ab7131762aab4027977589ddd89df7a043065f",
+  "checkpoint_056262_unchanged": true,
+  "pilot_fold_count": 1,
+  "submission_exported": false
+}

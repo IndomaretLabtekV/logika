@@ -1,0 +1,60 @@
+{
+  "metric": "KS",
+  "seed": 8247,
+  "folds": 3,
+  "candidate_count": 18,
+  "fixed_model_names": [
+    "extended/xgb_depth3",
+    "extended/lgb_leaves31",
+    "compact/cat_depth5"
+  ],
+  "baseline": {
+    "ks": 0.4929433169031546,
+    "roc_auc": 0.826232537571955,
+    "average_precision": 0.4635453139805404,
+    "log_loss": 0.3073106185415606,
+    "mean_fold_ks": 0.49455014477594955,
+    "fold_ks": [
+      0.48614805106217035,
+      0.4958145979866327,
+      0.5016877852790458
+    ]
+  },
+  "selected": {
+    "recipe": {
+      "extended/lgb_leaves31": 0.25,
+      "compact/cat_depth5": 0.75
+    },
+    "ks": 0.5114712115520927,
+    "roc_auc": 0.8368977546925876,
+    "average_precision": 0.4874708240389328,
+    "log_loss": 0.30013178755691355,
+    "mean_fold_ks": 0.5149154061383592,
+    "fold_ks": [
+      0.4996374889803489,
+      0.5231640622628119,
+      0.5219446671719167
+    ]
+  },
+  "recipe_selection": "highest mean per-fold KS among fixed coarse blend weights",
+  "caveat": "Parameters were fixed before this CV. CV predictions were used to select blend weights, so these metrics are validation estimates, not an unbiased final test score.",
+  "test_prediction_method": "Mean of three held-out-fold training models per selected family, then the selected family blend.",
+  "train_rows": 70000,
+  "test_rows": 30000,
+  "file": "submission_ks.csv",
+  "promoted_to_submission_csv": true,
+  "sha256": "a7240b5f276a80301012db7b98dd2c1caee214a79eb7a190c64b48930dc5d08a",
+  "public_score": 0.5471,
+  "probability_summary": {
+    "count": 30000.0,
+    "mean": 0.1346707419465128,
+    "std": 0.15982126525811027,
+    "min": 0.003055839624,
+    "25%": 0.02985581177,
+    "50%": 0.06877235870750001,
+    "75%": 0.1743731534175,
+    "max": 0.932234122418
+  },
+  "public_score_source": "Reported by user",
+  "public_score_reported_at_utc": "2026-10-12T13:56:46.047663+00:00"
+}

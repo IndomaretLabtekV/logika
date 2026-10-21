@@ -1,0 +1,72 @@
+{
+  "smoke_only": true,
+  "fits_checked": 10,
+  "max_allocated_gib": 1.38291597366333,
+  "fits": [
+    {
+      "fit": "inner_confirmation_asym_n0.02_p0.7_cap64",
+      "real_rows": 512,
+      "pseudo_rows": 64,
+      "query_rows": 128
+    },
+    {
+      "fit": "inner_search_asym_n0.02_p0.7_cap64",
+      "real_rows": 512,
+      "pseudo_rows": 64,
+      "query_rows": 128
+    },
+    {
+      "fit": "inner_search_asym_n0.02_p0.9_cap64",
+      "real_rows": 512,
+      "pseudo_rows": 64,
+      "query_rows": 128
+    },
+    {
+      "fit": "inner_search_asym_n0.05_p0.7_cap64",
+      "real_rows": 512,
+      "pseudo_rows": 64,
+      "query_rows": 128
+    },
+    {
+      "fit": "inner_search_asym_n0.05_p0.9_cap64",
+      "real_rows": 512,
+      "pseudo_rows": 64,
+      "query_rows": 128
+    },
+    {
+      "fit": "inner_search_confidence_0.02_cap64",
+      "real_rows": 512,
+      "pseudo_rows": 64,
+      "query_rows": 128
+    },
+    {
+      "fit": "inner_search_confidence_0.05_cap64",
+      "real_rows": 512,
+      "pseudo_rows": 64,
+      "query_rows": 128
+    },
+    {
+      "fit": "inner_teacher",
+      "real_rows": 512,
+      "pseudo_rows": 0,
+      "query_rows": 768
+    },
+    {
+      "fit": "outer_selected",
+      "real_rows": 512,
+      "pseudo_rows": 64,
+      "query_rows": 128
+    },
+    {
+      "fit": "outer_teacher",
+      "real_rows": 512,
+      "pseudo_rows": 0,
+      "query_rows": 640
+    }
+  ],
+  "source_hashes_match_preregistered_protocol": true,
+  "id_label_pseudo_cache_checks_pass": true,
+  "quality_claim": false,
+  "cache_replay_verified": true,
+  "outer_prediction_sha256": "07beafb5a2be8efd73b414061b16acda8565f22e8ccc8af6161ee3659bf4def3"
+}

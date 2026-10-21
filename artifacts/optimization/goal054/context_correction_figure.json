@@ -1,0 +1,14 @@
+{
+  "candidate": "kumo_offset_l20p003_unweighted_d0p5",
+  "baseline_pooled_ks": 0.5285099762252743,
+  "candidate_pooled_ks": 0.5292994659005608,
+  "fold_deltas": [
+    0.0014962914016526385,
+    0.0026456727613530795,
+    0.0006355162405333736,
+    0.003356482869742883,
+    0.001626047635164607
+  ],
+  "source_report_sha256": "22ac659a07d333a02b363e2c5e7de4ab712e4ac90aeae8cc8595a7ed2cc0e0ea",
+  "figure_sha256": "0bba2d8a5f3740c312454a810a408f9bb2032a263048375ef429162c2ae11d2a"
+}

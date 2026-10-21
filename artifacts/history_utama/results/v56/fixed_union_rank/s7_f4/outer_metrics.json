@@ -1,0 +1,29 @@
+{
+  "run_sha256": "17bfd7657bb2a069d7dc8e380ac1802f9ae452824e1d679a1d23759308a6ccb7",
+  "mode": "fixed_policy",
+  "seed": 7,
+  "fold": 4,
+  "rows": 14000,
+  "baseline": {
+    "ks": 0.5189919373834331,
+    "auc": 0.8447362878935243
+  },
+  "baseline_raw": {
+    "ks": 0.5189919471740723,
+    "auc": 0.8447362878935243
+  },
+  "union": {
+    "ks": 0.5210122466087341,
+    "auc": 0.8431319912964558
+  },
+  "candidate": {
+    "ks": 0.5228917398900914,
+    "auc": 0.8449279186677187
+  },
+  "outer_predictions_sha256": "982fc600a045b6c400b26bcb92b4d390d086ff6492218cdb0a1bd4e1734a184a",
+  "frozen_policy_sha256": "ef5b39dd1a1303116a06cbada5c63c28fd4c0734c83676d5e4e9d3e3839fb0af",
+  "smoke_only": false,
+  "complete_5fold_3seed": false,
+  "submission_allowed": false,
+  "delta_ks": 0.003899802506658334
+}

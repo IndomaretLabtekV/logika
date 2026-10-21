@@ -1,4 +1,82 @@
-# Langkah berikutnya (per 19 Okt 2026 malam; deadline notebook 30 Okt 23:59 WIB)
+# Rekomendasi saat riset dipause
+
+User menghentikan riset21Oktober karena waktu dan hasil belum memenuhi target.
+Tidak ada eksperimen atau submission lanjutan tanpa instruksi baru. Pekerjaan
+cleanup hanya menyiapkan repository untuk GitHub; user melakukan push sendiri.
+
+Saat user meminta melanjutkan, baca status terbaru dan hasil null terlebih dahulu.
+Public terbaikv31=0,56405; v59 terakhir0,56296. Validasi v56baru11/15 dan terputus
+hang; jangan blindretry GPU. Data serta checkpoint tetap tersimpan lokal.
+Dokumentasi entrypoint dan ketersediaan artefak: [README](../../README.md).
+
+## Rekomendasi historis sebelum pause
+
+Bagian berikut dipertahankan sebagai riwayat ide, bukan jadwal atau izin aktif.
+
+# Langkah berikutnya aktif21Okt
+
+**Steering terbaru user setelah audit162:** aktifkan kembali pseudo-labeling dan
+semi-supervised data panitia. Prioritas setelah VIP adalah smoke156, kemudian
+screening SSL penuh yang dipilih dari inner. Reference train-only menjadi kontrol
+untuk penggunaan covariate tak berlabel, bukan alasan menghentikan jalur SSL.
+Gerbang validation_v2 dan submission tetap berlaku. Daftar di bawah merekam urutan
+sebelum pembaruan; larangan SSL pada butir4 sudah diganti izin terbaru ini.
+
+1. VIPv48 fold0 selesai dan null: Δouter−0,006096 vs baseline matched,
+   P>0=0,147. Jangan lanjut15fit untuk kandidat ini atau memilih tau lain dari
+   outer. Screening SSL156 selesai di
+   `results/v49/ssl_asymmetric_safe_f0`:12policy kalah di inner-search, pilihan
+   noSSL, Δouter0. Jangan lanjut15fit untuk kebijakan ini. Runlama sempat hang/force-shutdown;
+   amendemenf142e08 memakai chunk128/allocator0,7 dengan context/e4 tetap.
+   Smokeparity dan preflight48k lulus;telemetriCSV dicatat selama model hidup.
+   Source/config/data harus tetap sesuai manifest untuk replay.
+2. Uji perbedaan konkret teman: kategori native dengan fitur/context/e4/cache
+   matched,kemudian pool fitur teman yang direbuild dan reference fit nested.
+   Null teman balanced/full56k/e16/latent menghindarkan pengulangan tanpa alasan baru.
+   Cache `pp_*` lama mengikutsertakan histori customer test; penggunaannya
+   kini diizinkan sebagai transduksi yang dinyatakan. Reference fit-only tetap
+   kontrol ilmiah, bukan larangan otomatis SSL. Protokolinput baru621e359
+   membatasi atribusi gain antarkeluarga fitur;daftar90historis bukan selector
+   bersarang. Runner166 menyimpan dua kategori histori tambahan tanpa otomatis
+   memasukkannya ke model. Lihat docs/integration/protokol_fitur_teman_validation_v2.md.
+   Build166 inner100k selesai (48kfit/52kquery,1.000numerik+6kategori).
+   Prepare173 awal menemukan shortlist200 hanya menghasilkan71 numerik teman;
+   amendemen **ca261e5** sebelum inferensi mengisi100 dengan perluasan shortlist
+   KS/Spearman yang sama, berlaku pada kedua keluarga. Delapan checks172 lulus.
+   Full173 dan blend176 sekarang selesai null: nativeutama+0,000974 saja,
+   kedua poolteman−0,018lebih,ketigablend kalah. Outer belumdibuka untuk keluarga
+   input. Jangan lanjut15fit untuk pilihanfallback ini. Seleksi177
+   menguji gainselector400round fit-only padautama/teman/union;protokol a170272,
+   4checks178 lulus;semuasingle kalah. Blend179–180 terbaik+0,002623<0,003.
+   Log-uang181 search+0,003385 tetapi confirmation−0,002713;tidaklanjutouter.
+   All232engineeringOOM padaallocator0,7;SDK sudahestimatorbatch1,takadajalan
+   batching sederhana. Langkahaktif183 adalahretrieval8kelompok/context12k,
+   baselinefull48k danuniform12kcontrol. Protokolb0dacf1;3checks184lulus,
+   selesai:bestprobblend+0,002458<0,003. Mixup185 juga kalah. FullSGD187 belum
+   menghasilkanupdatekarenaOOMforward padaepisode1024/128 dan512/64.
+   **Sekarang189fixedblend** utama_raw+union_gain50:50,referenceouter56k:
+   outerf0+0,005438,matchedP0,906. Prosedurbaru tidakmemakai innergatebuatanagen
+   yangterlaluketat;gateuserberlaku padafullvalidation. **191sedang5fold×3seed**
+   diresults/v56;lihatstatus/progresssebelumrunbaru,janganjobberatparalel.
+3. Seleksi hanya inner; screeningfold0→kandidat menjanjikan5fold×3seed.
+   ΔKS>0,003,mayoritas fold,pairedP≥0,9,audit bersih. Laporkan pooled,perfold,seed.
+4. Tanpa breakthrough jangan submit. SSL/pseudo-label data panitia kembali boleh
+   sesuai pembaruan user; semua teacher/threshold/sampling nested. LB probing tetap
+   dilarang, termasuk rencana slot analisis historis19Okt di bawah.
+5. Bila resep berubah,update builder submission dan notebook,run penuh lokal.
+   Banner/nama peserta masih memerlukan informasiuser menjelang pengumpulan30Okt23:59.
+6. Steeringuser21Okt15:35:targetkenaikan/submissionhariini,kuota tersisa **2**.
+   Belum ada submission dari sesi ini;prioritaskan kandidat beralasan dan gate
+   tetap, tanpa menggunakan slot untuk null/probing.
+
+Konsolidasi dan verifikasi structural sudah bergerak; lihat
+[audit](../../docs/integration/perbandingan_repository.md),
+[pemetaan](../../docs/integration/pemetaan_file.md),
+[jurnal21](../04_riwayat_versi/jurnal_21okt_integrasi.md).
+
+---
+
+## Rekomendasi historis19Okt (bukan izin menjalankan probe/SSL sekarang)
 
 Status rekomendasi lama (16 Okt dan 18 Okt) ada di `status_rekomendasi_lama.md`. Ide yang belum dicoba beserta rencana
 implementasinya ada di `../10_ide_belum_dicoba/`.
@@ -9,6 +87,8 @@ implementasinya ada di `../10_ide_belum_dicoba/`.
 - **Jendela submit**: sampai 21 Okt 06:00 WIB hanya breakthrough (lolos validation_v2 dengan gain jelas > 0,002 vs v31,
   idealnya dengan rata-rata seed). Setelah 06:00 tanpa breakthrough, slot boleh untuk analisis (rencana di bawah).
 - Jangan menyebut "final".
+- **Semi-supervised diizinkan panitia (20 Okt)**, hanya data panitia; pipeline SSL wajib di dalam tiap outer fold
+  (lihat `01_kompetisi_dan_aturan/aturan_kerja_user.md`).
 
 ## Inti situasi
 - Public 0,56405 (#33/118). Top-1 0,57788; 9 tim > 0,570. Plafon pendekatan kita ~0,564–0,565.

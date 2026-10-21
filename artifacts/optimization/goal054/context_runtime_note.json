@@ -1,0 +1,23 @@
+{
+  "date": "2026-10-18",
+  "event": "Context correction worker stopped on zero-indexed fold 3 because the 1e-3 maximum absolute probability reproduction guard failed",
+  "previous_completed_context_folds": [
+    0,
+    1,
+    2
+  ],
+  "previous_folds_max_abs_difference": {
+    "0": 0.0005912184715270996,
+    "2": 0.0006064176559448242
+  },
+  "initial_failed_attempt": "The initial guard did not log the failing difference or persist its arrays. No correction model was fitted for that fold, and no complete five-fold correction score was produced.",
+  "next_action": "Repeat the missing context with the same weights, data, sampler seed and model parameters. On another guard failure, persist source arrays and distributional difference diagnostics before raising. Do not loosen the guard without evidence, change folds, or use validation labels to choose a reproduction.",
+  "target_status": "Goal remains active; incomplete correction candidates have no pooled score.",
+  "resolution_2026_10_19": {
+    "decision": "Preserve and reuse saved attempt1 arrays as a distinct rebuilt context source; no further retries or score-based acceptance",
+    "evidence": "Exact context IDs and feature fingerprints; maximum probability delta 0.001904606819152832, mean 0.00005119365792035585, correlation 0.9999998800424952",
+    "limitation": "The runtime cause is not proved. Newly computed FP16 probabilities are not bit-identical to baseline. No claim of exact reproduction.",
+    "validation_labels_used_to_choose_source": false,
+    "preserved_attempt2": "Duplicate diagnostic copy created by already-running code; same attempt1 predictions, not a second inference draw."
+  }
+}

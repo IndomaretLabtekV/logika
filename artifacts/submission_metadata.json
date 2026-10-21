@@ -1,0 +1,143 @@
+{
+  "file": "submission.csv",
+  "sha256": "890e05a3f0b09500142395d5498e939928328b2770c509ca035f760a8dea8344",
+  "recipe": {
+    "public_055845": 0.3333333333333333,
+    "v4_cat5_balanced_500": 0.3333333333333333,
+    "spline": 0.3333333333333333
+  },
+  "baseline_public_score": 0.55845,
+  "new_public_score": null,
+  "selection_3fold": {
+    "baseline": {
+      "ks": 0.5196953983607824,
+      "roc_auc": 0.8412413276500286,
+      "average_precision": 0.4945409578795754,
+      "log_loss": 0.2976465869019474,
+      "fold_ks": [
+        0.5084087518114401,
+        0.5342750036635531,
+        0.5258668598777496
+      ],
+      "mean_fold_ks": 0.5228502051175808
+    },
+    "new": {
+      "recipe": {
+        "public_055845": 0.3333333333333333,
+        "v4_cat5_balanced_500": 0.3333333333333333,
+        "spline": 0.3333333333333333
+      },
+      "ks": 0.524109452121715,
+      "roc_auc": 0.8442298396076942,
+      "average_precision": 0.5005246562522989,
+      "log_loss": 0.29510448753000823,
+      "fold_ks": [
+        0.5121610550134004,
+        0.5356312851218306,
+        0.5344193861518884
+      ],
+      "mean_fold_ks": 0.5274039087623731,
+      "fold_gains": [
+        0.003752303201960294,
+        0.0013562814582774863,
+        0.008552526274138827
+      ],
+      "eligible": true
+    }
+  },
+  "confirmation_10fold": {
+    "baseline": {
+      "ks": 0.5190088512771254,
+      "roc_auc": 0.8418171822791967,
+      "average_precision": 0.4957139740720494,
+      "log_loss": 0.29705753424235787,
+      "mean_fold_ks": 0.5235242661078392,
+      "fold_ks": [
+        0.5397999130056547,
+        0.5227490213136146,
+        0.5141713788603741,
+        0.5201775753880985,
+        0.5377715359613977,
+        0.5115567763370956,
+        0.5383324997970482,
+        0.5283431019613917,
+        0.5185812534473548,
+        0.5037596050063632
+      ]
+    },
+    "new": {
+      "ks": 0.522934175073116,
+      "roc_auc": 0.8445984006199223,
+      "average_precision": 0.5013924338699591,
+      "log_loss": 0.2947411281297949,
+      "mean_fold_ks": 0.5294011424976501,
+      "fold_ks": [
+        0.542418442801218,
+        0.5310569812962158,
+        0.52131361461505,
+        0.5251586283000084,
+        0.5410696973663556,
+        0.5134374914712463,
+        0.5488152398594096,
+        0.5375168684624114,
+        0.5176244685228364,
+        0.5155999922817496
+      ]
+    },
+    "fold_wins": 9
+  },
+  "paired_bootstrap": {
+    "replicates": 200,
+    "mean_gain": 0.004169268769627509,
+    "p05": 0.0015061820214376687,
+    "p95": 0.007019844818394504,
+    "fraction_positive": 0.99,
+    "caveat": "Paired row bootstrap of fixed OOF predictions; it does not correct selection optimism or certify a leaderboard gain."
+  },
+  "training_rows": 70000,
+  "test_rows": 30000,
+  "probability_summary": {
+    "count": 30000.0,
+    "mean": 0.13139337320166478,
+    "std": 0.16039568491342604,
+    "min": 0.00084930321,
+    "25%": 0.0236618290245,
+    "50%": 0.064729140796,
+    "75%": 0.17530676929325,
+    "max": 0.928239336638
+  },
+  "new_model_paths": [
+    "artifacts/optimization/v4/final_models/fold1_v4_cat5_balanced_500.joblib",
+    "artifacts/optimization/v4/final_models/fold2_v4_cat5_balanced_500.joblib",
+    "artifacts/optimization/v4/final_models/fold3_v4_cat5_balanced_500.joblib",
+    "artifacts/optimization/v4/final_models/fold4_v4_cat5_balanced_500.joblib",
+    "artifacts/optimization/v4/final_models/fold5_v4_cat5_balanced_500.joblib",
+    "artifacts/optimization/v4/final_models/fold6_v4_cat5_balanced_500.joblib",
+    "artifacts/optimization/v4/final_models/fold7_v4_cat5_balanced_500.joblib",
+    "artifacts/optimization/v4/final_models/fold8_v4_cat5_balanced_500.joblib",
+    "artifacts/optimization/v4/final_models/fold9_v4_cat5_balanced_500.joblib",
+    "artifacts/optimization/v4/final_models/fold10_v4_cat5_balanced_500.joblib",
+    "artifacts/optimization/v4/final_models/fold1_spline.joblib",
+    "artifacts/optimization/v4/final_models/fold2_spline.joblib",
+    "artifacts/optimization/v4/final_models/fold3_spline.joblib",
+    "artifacts/optimization/v4/final_models/fold4_spline.joblib",
+    "artifacts/optimization/v4/final_models/fold5_spline.joblib",
+    "artifacts/optimization/v4/final_models/fold6_spline.joblib",
+    "artifacts/optimization/v4/final_models/fold7_spline.joblib",
+    "artifacts/optimization/v4/final_models/fold8_spline.joblib",
+    "artifacts/optimization/v4/final_models/fold9_spline.joblib",
+    "artifacts/optimization/v4/final_models/fold10_spline.joblib"
+  ],
+  "baseline_file": "submission_v3.csv",
+  "promoted_to_submission_csv": true,
+  "checks": {
+    "correct_header": true,
+    "sample_id_order": true,
+    "unique_ids": true,
+    "finite_probability": true,
+    "probability_bounds": true,
+    "baseline_prediction_reproduction": true,
+    "independent_ks_check": true
+  },
+  "caveat": "Feature, tree-count and blend selection reuse training labels. Validation results contain selection optimism and do not guarantee leaderboard scores."
+}

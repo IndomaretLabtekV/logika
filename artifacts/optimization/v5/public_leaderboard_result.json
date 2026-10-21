@@ -1,0 +1,13 @@
+{
+  "file": "submission_v5.csv",
+  "sha256": "2b97dcdc26f38cabc6ab1a3f3053903975b488a5480df8ff739415a7bc750526",
+  "public_score": 0.5568,
+  "reported_on": "2026-10-15",
+  "source": "user_report",
+  "verified_via_kaggle_api": false,
+  "reference_file": "submission_v3.csv",
+  "reference_public_score": 0.55845,
+  "delta_vs_reference": -0.00165,
+  "reference_status": "Best recorded public checkpoint; previously verified through Kaggle API.",
+  "note": "Score reported by user for version 5; actual upload timestamp is not known. The local prediction file and reported score are associated by conversation context."
+}

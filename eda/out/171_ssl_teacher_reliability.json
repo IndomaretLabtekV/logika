@@ -1,0 +1,90 @@
+{
+  "inner_search_rows": 4000,
+  "test_rows": 30000,
+  "inner_search_positive_rate": 0.13575,
+  "rows": [
+    {
+      "pseudo_label": 0,
+      "threshold": 0.02,
+      "inner_search_rows": 940,
+      "inner_correct": 930,
+      "inner_incorrect": 10,
+      "inner_precision": 0.9893617021276596,
+      "precision_wilson_lo": 0.9805286095568103,
+      "precision_wilson_hi": 0.9942113654698396,
+      "mean_teacher_correct_class_probability": 0.9909249544143677,
+      "test_eligible_rows": 7144
+    },
+    {
+      "pseudo_label": 0,
+      "threshold": 0.05,
+      "inner_search_rows": 1725,
+      "inner_correct": 1695,
+      "inner_incorrect": 30,
+      "inner_precision": 0.9826086956521739,
+      "precision_wilson_lo": 0.9752816616540935,
+      "precision_wilson_hi": 0.9877910316255768,
+      "mean_teacher_correct_class_probability": 0.9796023964881897,
+      "test_eligible_rows": 12817
+    },
+    {
+      "pseudo_label": 1,
+      "threshold": 0.7,
+      "inner_search_rows": 71,
+      "inner_correct": 61,
+      "inner_incorrect": 10,
+      "inner_precision": 0.8591549295774648,
+      "precision_wilson_lo": 0.7597825071652419,
+      "precision_wilson_hi": 0.9216579778764283,
+      "mean_teacher_correct_class_probability": 0.7997486591339111,
+      "test_eligible_rows": 465
+    },
+    {
+      "pseudo_label": 1,
+      "threshold": 0.9,
+      "inner_search_rows": 5,
+      "inner_correct": 5,
+      "inner_incorrect": 0,
+      "inner_precision": 1.0,
+      "precision_wilson_lo": 0.5655175352168251,
+      "precision_wilson_hi": 1.0,
+      "mean_teacher_correct_class_probability": 0.9297674894332886,
+      "test_eligible_rows": 43
+    },
+    {
+      "pseudo_label": 1,
+      "threshold": 0.95,
+      "inner_search_rows": 1,
+      "inner_correct": 1,
+      "inner_incorrect": 0,
+      "inner_precision": 1.0,
+      "precision_wilson_lo": 0.20654931437723745,
+      "precision_wilson_hi": 1.0,
+      "mean_teacher_correct_class_probability": 0.9626993536949158,
+      "test_eligible_rows": 6
+    },
+    {
+      "pseudo_label": 1,
+      "threshold": 0.98,
+      "inner_search_rows": 0,
+      "inner_correct": 0,
+      "inner_incorrect": 0,
+      "inner_precision": null,
+      "precision_wilson_lo": null,
+      "precision_wilson_hi": null,
+      "mean_teacher_correct_class_probability": null,
+      "test_eligible_rows": 0
+    }
+  ],
+  "teacher_predictions_sha256": "751c75fee266f1a0a2bbe8eb56f63dca56e6585d7f7263c8b8ffcf61e557e651",
+  "source_sha256": "9b2899f6c91ffaa2d54bed945f003d6ef2f7cfb46509e923974bbb4827867d42",
+  "outer_labels_used": false,
+  "confirmation_labels_used": false,
+  "thresholds_changed": false,
+  "limits": [
+    "Search labels describe teacher reliability; the running selection uses its locked thresholds.",
+    "Search is not a fresh confirmation of a chosen policy or an estimate of test correctness.",
+    "Wilson intervals treat unique customer rows as independent and do not include teacher-training variance.",
+    "Unlabeled test counts are eligibility only, not precision."
+  ]
+}

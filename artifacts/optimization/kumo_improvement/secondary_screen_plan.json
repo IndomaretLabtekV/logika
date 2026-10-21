@@ -1,0 +1,9 @@
+{
+  "candidates": [
+    "v5_balanced2_e8",
+    "v5_balanced1_e8"
+  ],
+  "reason": "No initial candidate passed both KS criteria and 2/3 fold wins.",
+  "class_sampling": "All outer-training positives; independent negative subsets per ensemble member.",
+  "probability_correction": "Population odds divided by sampled-context odds."
+}

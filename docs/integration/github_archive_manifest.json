@@ -1,0 +1,2669 @@
+{
+  "records": [
+    {
+      "source": "results/final/executed_notebook_local.ipynb",
+      "published_archive": "research/snapshots/results/final/executed_notebook_local.ipynb",
+      "sha256": "47c67137112aaa226e328b152d19c86d68cafda7828868b954fbf38058e49496",
+      "reason": "Immutable historical implementation; original local path retained"
+    },
+    {
+      "source": "results/final/pipeline/features.py",
+      "published_archive": "research/snapshots/results/final/pipeline/features.py",
+      "sha256": "d394a09c031e4a53a9b2e5fd9a0ccb4883dca3a333bc7370570bb2460d31df44",
+      "reason": "Immutable historical implementation; original local path retained"
+    },
+    {
+      "source": "results/final/pipeline/kumo_fulltrain.py",
+      "published_archive": "research/snapshots/results/final/pipeline/kumo_fulltrain.py",
+      "sha256": "270daf80687c5fb6d7bb43bafc930c193abd4c041fb673f6d1ab0dd28aa169d0",
+      "reason": "Immutable historical implementation; original local path retained"
+    },
+    {
+      "source": "results/final/pipeline/nn_prep.py",
+      "published_archive": "research/snapshots/results/final/pipeline/nn_prep.py",
+      "sha256": "c9bc377bd20940e9ca51d0b85046871e16fa41d95c4bca31701e4184f5b1ec33",
+      "reason": "Immutable historical implementation; original local path retained"
+    },
+    {
+      "source": "results/final/pipeline/run_valid2.py",
+      "published_archive": "research/snapshots/results/final/pipeline/run_valid2.py",
+      "sha256": "f38fcf99171592071f17ca0dd7842f31a691af0cd82a176d08759429d21db371",
+      "reason": "Immutable historical implementation; original local path retained"
+    },
+    {
+      "source": "results/final/pipeline/valid2.py",
+      "published_archive": "research/snapshots/results/final/pipeline/valid2.py",
+      "sha256": "c6820fe3e94c55c070eeeab32e3c43ff2a945b28b9663251457f529dff9889ab",
+      "reason": "Immutable historical implementation; original local path retained"
+    },
+    {
+      "source": "results/final/run/fm/log_causilo.csv",
+      "published_archive": "artifacts/history_utama/results/final/run/fm/log_causilo.csv",
+      "sha256": "af0576745a7287709aefd73eb760740afe0d249d230c31ca9a51b6ab7fad736f",
+      "reason": "Per-fit aggregate training metrics; no predictions"
+    },
+    {
+      "source": "results/final/run/fm/manifest.json",
+      "published_archive": "artifacts/history_utama/results/final/run/fm/manifest.json",
+      "sha256": "27b303f2dc3a206cf021c17f082266561933ef7eb704a11ab57a507fdb45c644",
+      "reason": "Small historical model configuration/metrics"
+    },
+    {
+      "source": "results/final/run/gbdt/log_cat.csv",
+      "published_archive": "artifacts/history_utama/results/final/run/gbdt/log_cat.csv",
+      "sha256": "fd0d3dfbc333b2bcec8a875b073e20e7f89ff02aee10e6440eb5c39673ad2e11",
+      "reason": "Per-fit aggregate training metrics; no predictions"
+    },
+    {
+      "source": "results/final/run/gbdt/log_cat_s.csv",
+      "published_archive": "artifacts/history_utama/results/final/run/gbdt/log_cat_s.csv",
+      "sha256": "7308fbaf4f3728127fd2470b9b81b0a34df35dc93db1a1617512a21558723e7b",
+      "reason": "Per-fit aggregate training metrics; no predictions"
+    },
+    {
+      "source": "results/final/run/gbdt/log_lgb.csv",
+      "published_archive": "artifacts/history_utama/results/final/run/gbdt/log_lgb.csv",
+      "sha256": "937efd5224e2328270270f3927a0e02fbf3d4ce7383b43e9ffeda515bbc7429d",
+      "reason": "Per-fit aggregate training metrics; no predictions"
+    },
+    {
+      "source": "results/final/run/gbdt/log_lgb_s.csv",
+      "published_archive": "artifacts/history_utama/results/final/run/gbdt/log_lgb_s.csv",
+      "sha256": "d280d190190e1905658c912983b9e21fb8b6e494c24f1761deaa60b1e6733b39",
+      "reason": "Per-fit aggregate training metrics; no predictions"
+    },
+    {
+      "source": "results/final/run/gbdt/log_xgb.csv",
+      "published_archive": "artifacts/history_utama/results/final/run/gbdt/log_xgb.csv",
+      "sha256": "2f3a0f411488e3d46288692966b7aa4bd579ff9f76440b8e7c182a2ed1af5c52",
+      "reason": "Per-fit aggregate training metrics; no predictions"
+    },
+    {
+      "source": "results/final/run/gbdt/log_xgb_s.csv",
+      "published_archive": "artifacts/history_utama/results/final/run/gbdt/log_xgb_s.csv",
+      "sha256": "f02cd970e0b246f2b5410c3a6dfbb7d22dadcebdd7a5799387e60ae52c92e7a7",
+      "reason": "Per-fit aggregate training metrics; no predictions"
+    },
+    {
+      "source": "results/final/run/gbdt/manifest.json",
+      "published_archive": "artifacts/history_utama/results/final/run/gbdt/manifest.json",
+      "sha256": "d8a741f7fd0c0303ab887393c33a8d116c4383abfab934995b025dd35f201044",
+      "reason": "Small historical model configuration/metrics"
+    },
+    {
+      "source": "results/final_kaggle/pipeline/features.py",
+      "published_archive": "research/snapshots/results/final_kaggle/pipeline/features.py",
+      "sha256": "d394a09c031e4a53a9b2e5fd9a0ccb4883dca3a333bc7370570bb2460d31df44",
+      "reason": "Immutable historical implementation; original local path retained"
+    },
+    {
+      "source": "results/final_kaggle/pipeline/kumo_fulltrain.py",
+      "published_archive": "research/snapshots/results/final_kaggle/pipeline/kumo_fulltrain.py",
+      "sha256": "0940a2508e86424f5208e104567a4b6b57941f6c77383d57222a0fa5dcc5be1d",
+      "reason": "Immutable historical implementation; original local path retained"
+    },
+    {
+      "source": "results/final_kaggle/pipeline/nn_prep.py",
+      "published_archive": "research/snapshots/results/final_kaggle/pipeline/nn_prep.py",
+      "sha256": "c9bc377bd20940e9ca51d0b85046871e16fa41d95c4bca31701e4184f5b1ec33",
+      "reason": "Immutable historical implementation; original local path retained"
+    },
+    {
+      "source": "results/final_kaggle/pipeline/run_valid2.py",
+      "published_archive": "research/snapshots/results/final_kaggle/pipeline/run_valid2.py",
+      "sha256": "e63e83190157165e68e602520a83ac0d6cd42ebf0ef5ea1d49dd335411529909",
+      "reason": "Immutable historical implementation; original local path retained"
+    },
+    {
+      "source": "results/final_kaggle/pipeline/valid2.py",
+      "published_archive": "research/snapshots/results/final_kaggle/pipeline/valid2.py",
+      "sha256": "a9d0506a02e7b7a25a70d89a945c3dc2b5ab9c2df2a873e185a8d8968c057088",
+      "reason": "Immutable historical implementation; original local path retained"
+    },
+    {
+      "source": "results/final_kaggle/run/fm/log_causilo.csv",
+      "published_archive": "artifacts/history_utama/results/final_kaggle/run/fm/log_causilo.csv",
+      "sha256": "80058b4381d05eabb9910939451bcf65bcb80cc430e3b3772e57ddf74b0c4823",
+      "reason": "Per-fit aggregate training metrics; no predictions"
+    },
+    {
+      "source": "results/final_kaggle/run/fm/manifest.json",
+      "published_archive": "artifacts/history_utama/results/final_kaggle/run/fm/manifest.json",
+      "sha256": "77ec1ecaac126dcb4613e569229d5f30dea441c2f0d78e8b758ec4f65d2ce413",
+      "reason": "Small historical model configuration/metrics"
+    },
+    {
+      "source": "results/final_kaggle/run/gbdt/log_cat.csv",
+      "published_archive": "artifacts/history_utama/results/final_kaggle/run/gbdt/log_cat.csv",
+      "sha256": "1ab6dbcab4abec7d49f1e973cbbc758f5ed1d49bf4960080f4c7423f74e27024",
+      "reason": "Per-fit aggregate training metrics; no predictions"
+    },
+    {
+      "source": "results/final_kaggle/run/gbdt/log_cat_s.csv",
+      "published_archive": "artifacts/history_utama/results/final_kaggle/run/gbdt/log_cat_s.csv",
+      "sha256": "6d6a69c2007ece8355d3cce3cb31ad0e274c3e9205b457e8f93faee1cddf65a1",
+      "reason": "Per-fit aggregate training metrics; no predictions"
+    },
+    {
+      "source": "results/final_kaggle/run/gbdt/log_lgb.csv",
+      "published_archive": "artifacts/history_utama/results/final_kaggle/run/gbdt/log_lgb.csv",
+      "sha256": "728acc6155743673b40d7de295a387e9471b8d4be9531d3c1d6116307276d259",
+      "reason": "Per-fit aggregate training metrics; no predictions"
+    },
+    {
+      "source": "results/final_kaggle/run/gbdt/log_lgb_s.csv",
+      "published_archive": "artifacts/history_utama/results/final_kaggle/run/gbdt/log_lgb_s.csv",
+      "sha256": "0bc9da427e56a823e594624f2d4adaf5fe0d3bf029dcbc6b46b16ca70348f30a",
+      "reason": "Per-fit aggregate training metrics; no predictions"
+    },
+    {
+      "source": "results/final_kaggle/run/gbdt/log_xgb.csv",
+      "published_archive": "artifacts/history_utama/results/final_kaggle/run/gbdt/log_xgb.csv",
+      "sha256": "b465e7bb2ddc69876e735bc34f43084c42ec4eb04343e2335b0501df9e628327",
+      "reason": "Per-fit aggregate training metrics; no predictions"
+    },
+    {
+      "source": "results/final_kaggle/run/gbdt/log_xgb_s.csv",
+      "published_archive": "artifacts/history_utama/results/final_kaggle/run/gbdt/log_xgb_s.csv",
+      "sha256": "805c376cef076bd0d235ef00bd88a927ceee935b7d187f6a8893c22550d40fa4",
+      "reason": "Per-fit aggregate training metrics; no predictions"
+    },
+    {
+      "source": "results/final_kaggle/run/gbdt/manifest.json",
+      "published_archive": "artifacts/history_utama/results/final_kaggle/run/gbdt/manifest.json",
+      "sha256": "cebc194489d0d8827aa09b549a63efb01c2e54eb313d0e88818c00c7119e89c7",
+      "reason": "Small historical model configuration/metrics"
+    },
+    {
+      "source": "results/finalk/kernel-metadata.json",
+      "published_archive": "artifacts/history_utama/results/finalk/kernel-metadata.json",
+      "sha256": "2d05bb75fd17b6268b9e4dcf84a05e8b672e8c96cf2c73e4073741ecfc831d7a",
+      "reason": "Small historical model configuration/metrics"
+    },
+    {
+      "source": "results/screen/causilo_f0/log_causilo.csv",
+      "published_archive": "artifacts/history_utama/results/screen/causilo_f0/log_causilo.csv",
+      "sha256": "7f776a9a884be176dfb8468f71978ab35c243a3c242c495c08d40c1eee9fbe62",
+      "reason": "Per-fit aggregate training metrics; no predictions"
+    },
+    {
+      "source": "results/screen/causilo_f0/log_causilo_e16.csv",
+      "published_archive": "artifacts/history_utama/results/screen/causilo_f0/log_causilo_e16.csv",
+      "sha256": "0e672de4d23f41c1c82f82167e5bc9fedbbf1777fe7118c9d2203210f0698c13",
+      "reason": "Per-fit aggregate training metrics; no predictions"
+    },
+    {
+      "source": "results/screen/causilo_f0/log_causilo_f150.csv",
+      "published_archive": "artifacts/history_utama/results/screen/causilo_f0/log_causilo_f150.csv",
+      "sha256": "fd4f81cbba776617b73da91f7b0e6a5a53451fb281991fe1b92d40a15e81bd5a",
+      "reason": "Per-fit aggregate training metrics; no predictions"
+    },
+    {
+      "source": "results/screen/causilo_f0/log_causilo_f300.csv",
+      "published_archive": "artifacts/history_utama/results/screen/causilo_f0/log_causilo_f300.csv",
+      "sha256": "4d043a4d293e92ac05b0b588cb7230e5a4ff82773466fc314ae9769958f8bc25",
+      "reason": "Per-fit aggregate training metrics; no predictions"
+    },
+    {
+      "source": "results/screen/causilo_f0/log_causilo_f60.csv",
+      "published_archive": "artifacts/history_utama/results/screen/causilo_f0/log_causilo_f60.csv",
+      "sha256": "bcd283e395ba75856d318c98f4aafe1f9d4af51356199f7c2c5575c2251fbc76",
+      "reason": "Per-fit aggregate training metrics; no predictions"
+    },
+    {
+      "source": "results/screen/causilo_f0/manifest.json",
+      "published_archive": "artifacts/history_utama/results/screen/causilo_f0/manifest.json",
+      "sha256": "3c536dff7b3d21136ab6405b40415ca2de60e8c9fbbe4fbc26bedef99f4acc42",
+      "reason": "Small historical model configuration/metrics"
+    },
+    {
+      "source": "results/screen/causilo_x_f0/log_causilo.csv",
+      "published_archive": "artifacts/history_utama/results/screen/causilo_x_f0/log_causilo.csv",
+      "sha256": "1a2ed91e74a4ab642e5cafcfa68f9c17e49eb2a601eeedf994dc4be9eebecbda",
+      "reason": "Per-fit aggregate training metrics; no predictions"
+    },
+    {
+      "source": "results/screen/causilo_x_f0/manifest.json",
+      "published_archive": "artifacts/history_utama/results/screen/causilo_x_f0/manifest.json",
+      "sha256": "b5727278f11a1d86e508fac68c7f753b5308d31e41374d64cb4a88ca8013cf01",
+      "reason": "Small historical model configuration/metrics"
+    },
+    {
+      "source": "results/screen/fbag/log_causilo_r1.csv",
+      "published_archive": "artifacts/history_utama/results/screen/fbag/log_causilo_r1.csv",
+      "sha256": "6084ba3fa82b8f384165096b107a6352f0458e0bc0fb93a2019b7da72c698f70",
+      "reason": "Per-fit aggregate training metrics; no predictions"
+    },
+    {
+      "source": "results/screen/fbag/log_causilo_r2.csv",
+      "published_archive": "artifacts/history_utama/results/screen/fbag/log_causilo_r2.csv",
+      "sha256": "ac602efda45dc70d931c908c97cc78ffde8adaea4d9c19c32a02d892a8b5f15f",
+      "reason": "Per-fit aggregate training metrics; no predictions"
+    },
+    {
+      "source": "results/screen/fbag/log_causilo_r3.csv",
+      "published_archive": "artifacts/history_utama/results/screen/fbag/log_causilo_r3.csv",
+      "sha256": "00b6e803fb9fb2adec8795b75463b2da1f709b3adb58446a6af8135744eb939d",
+      "reason": "Per-fit aggregate training metrics; no predictions"
+    },
+    {
+      "source": "results/screen/fbag/manifest.json",
+      "published_archive": "artifacts/history_utama/results/screen/fbag/manifest.json",
+      "sha256": "3094bb70ec684d37f27baafcb791b1107341dbc44ba18831ce4682b1de370634",
+      "reason": "Small historical model configuration/metrics"
+    },
+    {
+      "source": "results/screen/gainsel/log_causilo_r-1.csv",
+      "published_archive": "artifacts/history_utama/results/screen/gainsel/log_causilo_r-1.csv",
+      "sha256": "f8fd9702cb364f9f45beddd928cbae7fd2758c461da974668c58462041d13a4d",
+      "reason": "Per-fit aggregate training metrics; no predictions"
+    },
+    {
+      "source": "results/screen/gainsel/manifest.json",
+      "published_archive": "artifacts/history_utama/results/screen/gainsel/manifest.json",
+      "sha256": "5ef0429cec9fb9b1c567280760b01dfc28d4abffc108ad3cda4f0efb10b566a6",
+      "reason": "Small historical model configuration/metrics"
+    },
+    {
+      "source": "results/screen/icl_f0/log_tabpfn.csv",
+      "published_archive": "artifacts/history_utama/results/screen/icl_f0/log_tabpfn.csv",
+      "sha256": "487da6a58e48a2a31525d445d9eaf51388cb564ed98a776adf6585c227240ffa",
+      "reason": "Per-fit aggregate training metrics; no predictions"
+    },
+    {
+      "source": "results/screen/icl_f0/manifest.json",
+      "published_archive": "artifacts/history_utama/results/screen/icl_f0/manifest.json",
+      "sha256": "91c4d1f818033d2f8c29b1d51d9f2da4ae03df3248067f8683c1a8fd62cc13b5",
+      "reason": "Small historical model configuration/metrics"
+    },
+    {
+      "source": "results/screen/kumo_f0/log_kumo_large_c20000_b3.csv",
+      "published_archive": "artifacts/history_utama/results/screen/kumo_f0/log_kumo_large_c20000_b3.csv",
+      "sha256": "6ce12243815e4653bd3d148461cf1f57d4aab0c487ce07040679d389512f1b3f",
+      "reason": "Per-fit aggregate training metrics; no predictions"
+    },
+    {
+      "source": "results/screen/kumo_f0/log_kumo_large_c20000_e4.csv",
+      "published_archive": "artifacts/history_utama/results/screen/kumo_f0/log_kumo_large_c20000_e4.csv",
+      "sha256": "8cc4efb25e628a27293cee055b9a6ec7ffee0c05991c2b61a364746868400a7c",
+      "reason": "Per-fit aggregate training metrics; no predictions"
+    },
+    {
+      "source": "results/screen/kumo_f0/log_kumo_large_c20000_e8.csv",
+      "published_archive": "artifacts/history_utama/results/screen/kumo_f0/log_kumo_large_c20000_e8.csv",
+      "sha256": "724956df76618595778a1ac48b3c9966da5789a2fdd23594fa4082f8a33f245e",
+      "reason": "Per-fit aggregate training metrics; no predictions"
+    },
+    {
+      "source": "results/screen/kumo_f0/manifest.json",
+      "published_archive": "artifacts/history_utama/results/screen/kumo_f0/manifest.json",
+      "sha256": "7e21794e9ae64f17d9f7dd6c2603027764045802e3d7e08ff0c1677bab5fbe76",
+      "reason": "Small historical model configuration/metrics"
+    },
+    {
+      "source": "results/screen/lgb_nested/log_lgb_nested.csv",
+      "published_archive": "artifacts/history_utama/results/screen/lgb_nested/log_lgb_nested.csv",
+      "sha256": "88ccf3cca2eaa9316b2f0dc39ab430af3269cdff464d11d73a418bc0289932cd",
+      "reason": "Per-fit aggregate training metrics; no predictions"
+    },
+    {
+      "source": "results/screen/lgb_nested/manifest.json",
+      "published_archive": "artifacts/history_utama/results/screen/lgb_nested/manifest.json",
+      "sha256": "96d5ed61c74d1fa61e011723060b729feaa1e315714ef9907335fc12c3b95895",
+      "reason": "Small historical model configuration/metrics"
+    },
+    {
+      "source": "results/screen/lin_5f/log_lr_q.csv",
+      "published_archive": "artifacts/history_utama/results/screen/lin_5f/log_lr_q.csv",
+      "sha256": "9f951b8e7b11ee6aee065166aca3bba2cad004714ab4ed13f9177c634d5ede07",
+      "reason": "Per-fit aggregate training metrics; no predictions"
+    },
+    {
+      "source": "results/screen/lin_5f/manifest.json",
+      "published_archive": "artifacts/history_utama/results/screen/lin_5f/manifest.json",
+      "sha256": "2ce6e3d05b67979bd69e1566303d3153be1fbe07260b10d1f3f9ef8590907aa5",
+      "reason": "Small historical model configuration/metrics"
+    },
+    {
+      "source": "results/screen/lin_f0/log_woe_lr.csv",
+      "published_archive": "artifacts/history_utama/results/screen/lin_f0/log_woe_lr.csv",
+      "sha256": "89f84bf7e4bac938e38e6406f7888a3d18cfb480f8587de2d489d72c8f8fbeac",
+      "reason": "Per-fit aggregate training metrics; no predictions"
+    },
+    {
+      "source": "results/screen/lin_f0/manifest.json",
+      "published_archive": "artifacts/history_utama/results/screen/lin_f0/manifest.json",
+      "sha256": "0010c5fb5109f305ce5b6fbb3538e77ce446441e7dcd1364b1e704904f20bfca",
+      "reason": "Small historical model configuration/metrics"
+    },
+    {
+      "source": "results/screen/nn_f0/log_realmlp.csv",
+      "published_archive": "artifacts/history_utama/results/screen/nn_f0/log_realmlp.csv",
+      "sha256": "91bf5a8c385d2119cb180396e7d1570bc10e2c77a4f4cab089bcec641077cded",
+      "reason": "Per-fit aggregate training metrics; no predictions"
+    },
+    {
+      "source": "results/screen/nn_f0/manifest.json",
+      "published_archive": "artifacts/history_utama/results/screen/nn_f0/manifest.json",
+      "sha256": "ed575b1c15857507cd497c87b73aee7088f12b425a0042ac081123c209c26de4",
+      "reason": "Small historical model configuration/metrics"
+    },
+    {
+      "source": "results/screen/pca20/log_pca_lgb.csv",
+      "published_archive": "artifacts/history_utama/results/screen/pca20/log_pca_lgb.csv",
+      "sha256": "a1aeea365758870c9d782d8eb8cc14146acdebb1775e1c429b6e02cddddabe26",
+      "reason": "Per-fit aggregate training metrics; no predictions"
+    },
+    {
+      "source": "results/screen/pca20/log_pca_lgb_s.csv",
+      "published_archive": "artifacts/history_utama/results/screen/pca20/log_pca_lgb_s.csv",
+      "sha256": "925f1ef80b8a9a3e76d1b1bc776b269d7470768c4a4b095bf950b35cccab8808",
+      "reason": "Per-fit aggregate training metrics; no predictions"
+    },
+    {
+      "source": "results/screen/pca20/manifest.json",
+      "published_archive": "artifacts/history_utama/results/screen/pca20/manifest.json",
+      "sha256": "fe4fe357ec9d9f03e7190b9e6965d6f2a4f014edf9453b7e2fc74b10bfd3d3aa",
+      "reason": "Small historical model configuration/metrics"
+    },
+    {
+      "source": "results/screen/peer6/log_lgb.csv",
+      "published_archive": "artifacts/history_utama/results/screen/peer6/log_lgb.csv",
+      "sha256": "62c928921f278e0c552e1f92db90a02986f7d45b913bbe7cf59b6e40b8568620",
+      "reason": "Per-fit aggregate training metrics; no predictions"
+    },
+    {
+      "source": "results/screen/peer6/log_lgb_s.csv",
+      "published_archive": "artifacts/history_utama/results/screen/peer6/log_lgb_s.csv",
+      "sha256": "219d73afbb826b4ac213ee905aeec60d0b96840913824fd7cf2a798aeb3f41f0",
+      "reason": "Per-fit aggregate training metrics; no predictions"
+    },
+    {
+      "source": "results/screen/peer6/manifest.json",
+      "published_archive": "artifacts/history_utama/results/screen/peer6/manifest.json",
+      "sha256": "f141e118d23981c6c1a5a551963546d34d3dfdc341a91ceca7622bcf7aae10b4",
+      "reason": "Small historical model configuration/metrics"
+    },
+    {
+      "source": "results/screen/peer6_s2026/log_lgb.csv",
+      "published_archive": "artifacts/history_utama/results/screen/peer6_s2026/log_lgb.csv",
+      "sha256": "a3354acb3f7c9cb7ef889da698051653a3f95c9779f420c4386c1dd92eae1786",
+      "reason": "Per-fit aggregate training metrics; no predictions"
+    },
+    {
+      "source": "results/screen/peer6_s2026/log_lgb_s.csv",
+      "published_archive": "artifacts/history_utama/results/screen/peer6_s2026/log_lgb_s.csv",
+      "sha256": "8db6bcf297b8cd1008dbb5f9eeb1b9c22f11763b22678dee8d439ac205795dc4",
+      "reason": "Per-fit aggregate training metrics; no predictions"
+    },
+    {
+      "source": "results/screen/peer6_s2026/manifest.json",
+      "published_archive": "artifacts/history_utama/results/screen/peer6_s2026/manifest.json",
+      "sha256": "46d251773758d5e4e68b9081070ad87cae1394abd703d165f483ec8a90cdd44a",
+      "reason": "Small historical model configuration/metrics"
+    },
+    {
+      "source": "results/screen/peer6_s7/log_lgb.csv",
+      "published_archive": "artifacts/history_utama/results/screen/peer6_s7/log_lgb.csv",
+      "sha256": "f22a16857ae85ac5d230518d1565209a9b285afcade42b6604061ee403eda17d",
+      "reason": "Per-fit aggregate training metrics; no predictions"
+    },
+    {
+      "source": "results/screen/peer6_s7/log_lgb_s.csv",
+      "published_archive": "artifacts/history_utama/results/screen/peer6_s7/log_lgb_s.csv",
+      "sha256": "bbd01628916ff71855d63a2026f17b03fdbf0ab053a3de705dda7c8278f7aa63",
+      "reason": "Per-fit aggregate training metrics; no predictions"
+    },
+    {
+      "source": "results/screen/peer6_s7/manifest.json",
+      "published_archive": "artifacts/history_utama/results/screen/peer6_s7/manifest.json",
+      "sha256": "241bb87a2fc989fd0878d323101a5a98d3ec253e34ab6302b2d3a77bea33e375",
+      "reason": "Small historical model configuration/metrics"
+    },
+    {
+      "source": "results/screen/peer_hr2/log_lgb.csv",
+      "published_archive": "artifacts/history_utama/results/screen/peer_hr2/log_lgb.csv",
+      "sha256": "65fca676ab26f5fadf10e3259576649f3c7a1240baebeb605194c7959072ca9a",
+      "reason": "Per-fit aggregate training metrics; no predictions"
+    },
+    {
+      "source": "results/screen/peer_hr2/log_lgb_s.csv",
+      "published_archive": "artifacts/history_utama/results/screen/peer_hr2/log_lgb_s.csv",
+      "sha256": "26c1cc98991d86c4c9fb8a30d9090ca962a8325a722e745c487b3d1950890fd8",
+      "reason": "Per-fit aggregate training metrics; no predictions"
+    },
+    {
+      "source": "results/screen/peer_hr2/manifest.json",
+      "published_archive": "artifacts/history_utama/results/screen/peer_hr2/manifest.json",
+      "sha256": "93d39b3be55899cb340fff6f5db7eae7301601f97cf0f7c2114c52ce26ff8cc3",
+      "reason": "Small historical model configuration/metrics"
+    },
+    {
+      "source": "results/screen/peer_m4/log_lgb.csv",
+      "published_archive": "artifacts/history_utama/results/screen/peer_m4/log_lgb.csv",
+      "sha256": "76822bdf59e13fa7a23001bd0fce450731dcddd5556b2b0950f03e0e42e2535c",
+      "reason": "Per-fit aggregate training metrics; no predictions"
+    },
+    {
+      "source": "results/screen/peer_m4/log_lgb_s.csv",
+      "published_archive": "artifacts/history_utama/results/screen/peer_m4/log_lgb_s.csv",
+      "sha256": "883c9532542312947c6c2106db7b01da33e6a090b0e669338cbe0f207a07f1d4",
+      "reason": "Per-fit aggregate training metrics; no predictions"
+    },
+    {
+      "source": "results/screen/peer_m4/manifest.json",
+      "published_archive": "artifacts/history_utama/results/screen/peer_m4/manifest.json",
+      "sha256": "872a25a3e9cafe026dffbcb0521b3fb3c09887ccfdc5d640d0e03ce0cc3e152f",
+      "reason": "Small historical model configuration/metrics"
+    },
+    {
+      "source": "results/screen/pw30/log_lgb.csv",
+      "published_archive": "artifacts/history_utama/results/screen/pw30/log_lgb.csv",
+      "sha256": "620df15be1b85290b2e3182b30a9fb6da818ede0a1a076b5cf8411f287233867",
+      "reason": "Per-fit aggregate training metrics; no predictions"
+    },
+    {
+      "source": "results/screen/pw30/log_lgb_s.csv",
+      "published_archive": "artifacts/history_utama/results/screen/pw30/log_lgb_s.csv",
+      "sha256": "04f3736de304cb1cde31792aef3c2825cc62ab55e2ba0b0bae2f5099c2fd2dd5",
+      "reason": "Per-fit aggregate training metrics; no predictions"
+    },
+    {
+      "source": "results/screen/pw30/manifest.json",
+      "published_archive": "artifacts/history_utama/results/screen/pw30/manifest.json",
+      "sha256": "a316ccce96d48adc87db8ed9563befcef07f88097a608a7bff57cdd28e0e5733",
+      "reason": "Small historical model configuration/metrics"
+    },
+    {
+      "source": "results/screen/re_base/log_lgb.csv",
+      "published_archive": "artifacts/history_utama/results/screen/re_base/log_lgb.csv",
+      "sha256": "40f440230b6ed1f91bbd1edd55c78259edb8b89396e28901e85e540f2dce4783",
+      "reason": "Per-fit aggregate training metrics; no predictions"
+    },
+    {
+      "source": "results/screen/re_base/log_lgb_s.csv",
+      "published_archive": "artifacts/history_utama/results/screen/re_base/log_lgb_s.csv",
+      "sha256": "8652a759ecab2d1b8980da497be6b22cfc5e421201f4e2772fea2b4e6ea2fb1e",
+      "reason": "Per-fit aggregate training metrics; no predictions"
+    },
+    {
+      "source": "results/screen/re_base/manifest.json",
+      "published_archive": "artifacts/history_utama/results/screen/re_base/manifest.json",
+      "sha256": "efb62d156c9a704f1b05987b5e45c28b410d38c421127f08aa062036565b1195",
+      "reason": "Small historical model configuration/metrics"
+    },
+    {
+      "source": "results/screen/re_x4/log_causilo.csv",
+      "published_archive": "artifacts/history_utama/results/screen/re_x4/log_causilo.csv",
+      "sha256": "d8ed7a7822e8a82ea6898992feeea2c61ca80ab66e5ce67127d5380fca2d2cf4",
+      "reason": "Per-fit aggregate training metrics; no predictions"
+    },
+    {
+      "source": "results/screen/re_x4/log_lgb.csv",
+      "published_archive": "artifacts/history_utama/results/screen/re_x4/log_lgb.csv",
+      "sha256": "2d3371ca9322fe6f2daab283e935d2ecfffab73c0195a89729a101eed717903c",
+      "reason": "Per-fit aggregate training metrics; no predictions"
+    },
+    {
+      "source": "results/screen/re_x4/log_lgb_s.csv",
+      "published_archive": "artifacts/history_utama/results/screen/re_x4/log_lgb_s.csv",
+      "sha256": "69df5404199dae4a8f32cc28ffe32f24cfeae112bef731de479642d03bafe6a7",
+      "reason": "Per-fit aggregate training metrics; no predictions"
+    },
+    {
+      "source": "results/screen/re_x4/manifest.json",
+      "published_archive": "artifacts/history_utama/results/screen/re_x4/manifest.json",
+      "sha256": "a489351c0c8391b90abe6353f63be302c86b4084049ff047919bc64fed02cd2e",
+      "reason": "Small historical model configuration/metrics"
+    },
+    {
+      "source": "results/screen/ref_f0/log_cat.csv",
+      "published_archive": "artifacts/history_utama/results/screen/ref_f0/log_cat.csv",
+      "sha256": "26ea15c8c74af801a61b98c3d858f252ce6be6e0b8c87f9a0c2e767c681339dd",
+      "reason": "Per-fit aggregate training metrics; no predictions"
+    },
+    {
+      "source": "results/screen/ref_f0/log_cat_s.csv",
+      "published_archive": "artifacts/history_utama/results/screen/ref_f0/log_cat_s.csv",
+      "sha256": "c29f5d90944ba75142fa3412fadd26f04c4d5cfdc493ac9fde6412bd65a4321c",
+      "reason": "Per-fit aggregate training metrics; no predictions"
+    },
+    {
+      "source": "results/screen/ref_f0/log_lgb.csv",
+      "published_archive": "artifacts/history_utama/results/screen/ref_f0/log_lgb.csv",
+      "sha256": "81060a9ea3cd24eb472deb1fefa609f4f5809e2bf0ca7270201ffe9e5a6cd3e1",
+      "reason": "Per-fit aggregate training metrics; no predictions"
+    },
+    {
+      "source": "results/screen/ref_f0/log_lgb_s.csv",
+      "published_archive": "artifacts/history_utama/results/screen/ref_f0/log_lgb_s.csv",
+      "sha256": "249b74b1601b5b868475edd7dea701379a15bbaaf5dd7ea975064599bd0f5f6b",
+      "reason": "Per-fit aggregate training metrics; no predictions"
+    },
+    {
+      "source": "results/screen/ref_f0/log_tabm.csv",
+      "published_archive": "artifacts/history_utama/results/screen/ref_f0/log_tabm.csv",
+      "sha256": "77f48450479b60bda22d496212fff3f6b1e2d3bd9cec4c2e49f7f024eaba5196",
+      "reason": "Per-fit aggregate training metrics; no predictions"
+    },
+    {
+      "source": "results/screen/ref_f0/log_xgb.csv",
+      "published_archive": "artifacts/history_utama/results/screen/ref_f0/log_xgb.csv",
+      "sha256": "89ab4154a388f9b036703223177f423de977f208193e1ac0454b4342ecca0b8b",
+      "reason": "Per-fit aggregate training metrics; no predictions"
+    },
+    {
+      "source": "results/screen/ref_f0/log_xgb_s.csv",
+      "published_archive": "artifacts/history_utama/results/screen/ref_f0/log_xgb_s.csv",
+      "sha256": "06fd972b2f3c2ea68a39e694101372bc0803ca3dded1af85b00999796d60f13d",
+      "reason": "Per-fit aggregate training metrics; no predictions"
+    },
+    {
+      "source": "results/screen/ref_f0/manifest.json",
+      "published_archive": "artifacts/history_utama/results/screen/ref_f0/manifest.json",
+      "sha256": "5ab3ff5a4b645b6aefcf95feb5a1b221af84bdbedc4c8533da5d43e64bcfa936",
+      "reason": "Small historical model configuration/metrics"
+    },
+    {
+      "source": "results/screen/seeds/s1/log_causilo.csv",
+      "published_archive": "artifacts/history_utama/results/screen/seeds/s1/log_causilo.csv",
+      "sha256": "82476879b6162ce50f7e61e31a453789e1598200d7e593b85e151cf436083e6a",
+      "reason": "Per-fit aggregate training metrics; no predictions"
+    },
+    {
+      "source": "results/screen/seeds/s1/log_lgb.csv",
+      "published_archive": "artifacts/history_utama/results/screen/seeds/s1/log_lgb.csv",
+      "sha256": "86635411a182c1e5fb40b5a2ebb17e852a75df17212e1356ce536646e4306f1c",
+      "reason": "Per-fit aggregate training metrics; no predictions"
+    },
+    {
+      "source": "results/screen/seeds/s1/log_lgb_s.csv",
+      "published_archive": "artifacts/history_utama/results/screen/seeds/s1/log_lgb_s.csv",
+      "sha256": "ba5b39d8e7f77b5f6951ea0861d080eb465a5055087a42080b37a3031056d3f2",
+      "reason": "Per-fit aggregate training metrics; no predictions"
+    },
+    {
+      "source": "results/screen/seeds/s1/manifest.json",
+      "published_archive": "artifacts/history_utama/results/screen/seeds/s1/manifest.json",
+      "sha256": "98f8d64ece36df484b499b2ced5614d9037a451ded849bb4e0761c212ecbd06d",
+      "reason": "Small historical model configuration/metrics"
+    },
+    {
+      "source": "results/screen/seeds/s2/log_causilo.csv",
+      "published_archive": "artifacts/history_utama/results/screen/seeds/s2/log_causilo.csv",
+      "sha256": "1d7e830908e42f3bc5ac862f6d2b1f74fc6524281d2c2a80dbf7ff455259a1bd",
+      "reason": "Per-fit aggregate training metrics; no predictions"
+    },
+    {
+      "source": "results/screen/seeds/s2/log_lgb.csv",
+      "published_archive": "artifacts/history_utama/results/screen/seeds/s2/log_lgb.csv",
+      "sha256": "a6bf02fa2432c9db408156eff1040245c620fb586fa6bba97e5b55bb603e2e97",
+      "reason": "Per-fit aggregate training metrics; no predictions"
+    },
+    {
+      "source": "results/screen/seeds/s2/log_lgb_s.csv",
+      "published_archive": "artifacts/history_utama/results/screen/seeds/s2/log_lgb_s.csv",
+      "sha256": "d9c77f8a002fa40d3befa6806d7e589344fa879b19971843c4a0b632d9cc5d84",
+      "reason": "Per-fit aggregate training metrics; no predictions"
+    },
+    {
+      "source": "results/screen/seeds/s2/manifest.json",
+      "published_archive": "artifacts/history_utama/results/screen/seeds/s2/manifest.json",
+      "sha256": "c397b9f51fe307460afcbac65c5133fd0df7d7349a0f9a77a74d24472b8299b3",
+      "reason": "Small historical model configuration/metrics"
+    },
+    {
+      "source": "results/screen/seeds/s2026/log_causilo.csv",
+      "published_archive": "artifacts/history_utama/results/screen/seeds/s2026/log_causilo.csv",
+      "sha256": "603f710bb708292f896aa012b992c556cb2329f9f801e34022905f178d0d63d4",
+      "reason": "Per-fit aggregate training metrics; no predictions"
+    },
+    {
+      "source": "results/screen/seeds/s2026/log_lgb.csv",
+      "published_archive": "artifacts/history_utama/results/screen/seeds/s2026/log_lgb.csv",
+      "sha256": "1afee7bc3a0154b63182931debbd327b0e396141df01eb36c191a677c387d16e",
+      "reason": "Per-fit aggregate training metrics; no predictions"
+    },
+    {
+      "source": "results/screen/seeds/s2026/log_lgb_s.csv",
+      "published_archive": "artifacts/history_utama/results/screen/seeds/s2026/log_lgb_s.csv",
+      "sha256": "847e7ddb4b5ecb28fffb0a43b8bfe28a5a1803e5250af164920e443f59d728ef",
+      "reason": "Per-fit aggregate training metrics; no predictions"
+    },
+    {
+      "source": "results/screen/seeds/s2026/manifest.json",
+      "published_archive": "artifacts/history_utama/results/screen/seeds/s2026/manifest.json",
+      "sha256": "6f88de3c3822370e6ffa16700d826104f7d3e8210a903fa196a83acffd07bf1f",
+      "reason": "Small historical model configuration/metrics"
+    },
+    {
+      "source": "results/screen/seeds/s3/log_lgb.csv",
+      "published_archive": "artifacts/history_utama/results/screen/seeds/s3/log_lgb.csv",
+      "sha256": "c577f66aadba99971e96cca54c2f2a4fbd2da29525c0fbaca44c6e7fdcc5c3ac",
+      "reason": "Per-fit aggregate training metrics; no predictions"
+    },
+    {
+      "source": "results/screen/seeds/s3/log_lgb_s.csv",
+      "published_archive": "artifacts/history_utama/results/screen/seeds/s3/log_lgb_s.csv",
+      "sha256": "465a2332491a9795f8ccb317f25e5b90210e6e0e3c70776c8361b1d7f6dd2f7f",
+      "reason": "Per-fit aggregate training metrics; no predictions"
+    },
+    {
+      "source": "results/screen/seeds/s3/manifest.json",
+      "published_archive": "artifacts/history_utama/results/screen/seeds/s3/manifest.json",
+      "sha256": "9149a590b91d750250f8cd1af75091d6d9481d6fa10a0afa6bc721df234cdd2a",
+      "reason": "Small historical model configuration/metrics"
+    },
+    {
+      "source": "results/screen/seeds/s4/log_lgb.csv",
+      "published_archive": "artifacts/history_utama/results/screen/seeds/s4/log_lgb.csv",
+      "sha256": "6fedccca8a6d33632831c79af1c37eca7a58fe9e897cc40d9f3349159d03b4fd",
+      "reason": "Per-fit aggregate training metrics; no predictions"
+    },
+    {
+      "source": "results/screen/seeds/s4/log_lgb_s.csv",
+      "published_archive": "artifacts/history_utama/results/screen/seeds/s4/log_lgb_s.csv",
+      "sha256": "89cb6e8f40aa9361a99e2b1b778f8376fa8cf617eb98e56125cd49f2a17c1828",
+      "reason": "Per-fit aggregate training metrics; no predictions"
+    },
+    {
+      "source": "results/screen/seeds/s4/manifest.json",
+      "published_archive": "artifacts/history_utama/results/screen/seeds/s4/manifest.json",
+      "sha256": "7e71eade2ed01abafff51a4abfeaa3ec5e44791c87d807d98b8276f23b4ea8b8",
+      "reason": "Small historical model configuration/metrics"
+    },
+    {
+      "source": "results/screen/seeds/s42/log_lgb.csv",
+      "published_archive": "artifacts/history_utama/results/screen/seeds/s42/log_lgb.csv",
+      "sha256": "4cc8c8fef4c7e2a9a60c1b765a0d2581f3552dfcc3abc45b4edb575ce367d4ac",
+      "reason": "Per-fit aggregate training metrics; no predictions"
+    },
+    {
+      "source": "results/screen/seeds/s42/log_lgb_s.csv",
+      "published_archive": "artifacts/history_utama/results/screen/seeds/s42/log_lgb_s.csv",
+      "sha256": "bd7f9cc7e9003e8a00f909e548db56ab1868884159d95d1d98b3e88d76472667",
+      "reason": "Per-fit aggregate training metrics; no predictions"
+    },
+    {
+      "source": "results/screen/seeds/s42/manifest.json",
+      "published_archive": "artifacts/history_utama/results/screen/seeds/s42/manifest.json",
+      "sha256": "efb62d156c9a704f1b05987b5e45c28b410d38c421127f08aa062036565b1195",
+      "reason": "Small historical model configuration/metrics"
+    },
+    {
+      "source": "results/screen/seeds/s5/log_lgb.csv",
+      "published_archive": "artifacts/history_utama/results/screen/seeds/s5/log_lgb.csv",
+      "sha256": "421b52f3cc9f4535ad6b73342b22258de58a6f308f37461ede6749c27d7b1040",
+      "reason": "Per-fit aggregate training metrics; no predictions"
+    },
+    {
+      "source": "results/screen/seeds/s5/log_lgb_s.csv",
+      "published_archive": "artifacts/history_utama/results/screen/seeds/s5/log_lgb_s.csv",
+      "sha256": "6ab1d2ea50ddbef2b10a105821c36a2dc799186aa8fe2f398a7b9c2f3322a6e2",
+      "reason": "Per-fit aggregate training metrics; no predictions"
+    },
+    {
+      "source": "results/screen/seeds/s5/manifest.json",
+      "published_archive": "artifacts/history_utama/results/screen/seeds/s5/manifest.json",
+      "sha256": "017486c536cfc20980c26153ade37314f057ed31f8b99bd140e86b67b3a1fbbf",
+      "reason": "Small historical model configuration/metrics"
+    },
+    {
+      "source": "results/screen/seeds/s7/log_causilo.csv",
+      "published_archive": "artifacts/history_utama/results/screen/seeds/s7/log_causilo.csv",
+      "sha256": "438bc43667ed10a6b03c117b3efedb59297eb39a47a024e451a3aefece39a436",
+      "reason": "Per-fit aggregate training metrics; no predictions"
+    },
+    {
+      "source": "results/screen/seeds/s7/log_lgb.csv",
+      "published_archive": "artifacts/history_utama/results/screen/seeds/s7/log_lgb.csv",
+      "sha256": "6f5707307a044eb71fe460cfdd24a5c31b0132c5654af837a6b46d27a26f05c0",
+      "reason": "Per-fit aggregate training metrics; no predictions"
+    },
+    {
+      "source": "results/screen/seeds/s7/log_lgb_s.csv",
+      "published_archive": "artifacts/history_utama/results/screen/seeds/s7/log_lgb_s.csv",
+      "sha256": "3004f91eb7e2f7aaa39a9126c5742425f52220f6114382801b3cf3b0aea334be",
+      "reason": "Per-fit aggregate training metrics; no predictions"
+    },
+    {
+      "source": "results/screen/seeds/s7/manifest.json",
+      "published_archive": "artifacts/history_utama/results/screen/seeds/s7/manifest.json",
+      "sha256": "abc3fba334930d2bbd680492908b2ddea867b8b7dc8a459672e46e7282013697",
+      "reason": "Small historical model configuration/metrics"
+    },
+    {
+      "source": "results/screen/slr/log_slr_lgb.csv",
+      "published_archive": "artifacts/history_utama/results/screen/slr/log_slr_lgb.csv",
+      "sha256": "4f485587667655aefd1891114660bfe717f913ab0d8d17be37db13468c7a9be4",
+      "reason": "Per-fit aggregate training metrics; no predictions"
+    },
+    {
+      "source": "results/screen/slr/log_slr_lgb_s.csv",
+      "published_archive": "artifacts/history_utama/results/screen/slr/log_slr_lgb_s.csv",
+      "sha256": "812954ed2d8eec5c4be6f57ea6d60157f1eff22af652a4730b863d620b58e73e",
+      "reason": "Per-fit aggregate training metrics; no predictions"
+    },
+    {
+      "source": "results/screen/slr/manifest.json",
+      "published_archive": "artifacts/history_utama/results/screen/slr/manifest.json",
+      "sha256": "56981aa7629aa036fbfe82a264fbaa464144dd1d14acb181ab2ddb6ed628116e",
+      "reason": "Small historical model configuration/metrics"
+    },
+    {
+      "source": "results/screen/snap2_s2026/log_lgb.csv",
+      "published_archive": "artifacts/history_utama/results/screen/snap2_s2026/log_lgb.csv",
+      "sha256": "87a5d0a6f30b3cb54dbb9a29e2fd2105c7c12d1d3ac95c377beadf4ed9bca2ec",
+      "reason": "Per-fit aggregate training metrics; no predictions"
+    },
+    {
+      "source": "results/screen/snap2_s2026/log_lgb_s.csv",
+      "published_archive": "artifacts/history_utama/results/screen/snap2_s2026/log_lgb_s.csv",
+      "sha256": "c96f04a20cceb2978eb5410d2379f82cd2203416accc10f7de0829d7fc874e82",
+      "reason": "Per-fit aggregate training metrics; no predictions"
+    },
+    {
+      "source": "results/screen/snap2_s2026/log_xgb.csv",
+      "published_archive": "artifacts/history_utama/results/screen/snap2_s2026/log_xgb.csv",
+      "sha256": "534cadbfdf610586224c517de2705eff18c9acec5c68b09ec5595545daebe979",
+      "reason": "Per-fit aggregate training metrics; no predictions"
+    },
+    {
+      "source": "results/screen/snap2_s2026/log_xgb_s.csv",
+      "published_archive": "artifacts/history_utama/results/screen/snap2_s2026/log_xgb_s.csv",
+      "sha256": "53b259ada400c01a5f148913e6ca072865e224284f4ac7e28e41cf9b48084776",
+      "reason": "Per-fit aggregate training metrics; no predictions"
+    },
+    {
+      "source": "results/screen/snap2_s2026/manifest.json",
+      "published_archive": "artifacts/history_utama/results/screen/snap2_s2026/manifest.json",
+      "sha256": "3807cff99cd71165ebdf05eeb2f9327c904df92164a8938560a30ce71b490de5",
+      "reason": "Small historical model configuration/metrics"
+    },
+    {
+      "source": "results/screen/snap2_s42/log_lgb.csv",
+      "published_archive": "artifacts/history_utama/results/screen/snap2_s42/log_lgb.csv",
+      "sha256": "6a620e82faa338edfebae2cdea5121638d04430fe9ab5efd4b46af9945499b32",
+      "reason": "Per-fit aggregate training metrics; no predictions"
+    },
+    {
+      "source": "results/screen/snap2_s42/log_lgb_s.csv",
+      "published_archive": "artifacts/history_utama/results/screen/snap2_s42/log_lgb_s.csv",
+      "sha256": "76ae352bcd08b7fb680bb2a9e3bedb9880a1b2de72c5618b46b619923fafebf6",
+      "reason": "Per-fit aggregate training metrics; no predictions"
+    },
+    {
+      "source": "results/screen/snap2_s42/log_xgb.csv",
+      "published_archive": "artifacts/history_utama/results/screen/snap2_s42/log_xgb.csv",
+      "sha256": "15c8f39dcc62a1c7c9aa46d8f91d65d09605b404a4eabeb670c2aff548121b03",
+      "reason": "Per-fit aggregate training metrics; no predictions"
+    },
+    {
+      "source": "results/screen/snap2_s42/log_xgb_s.csv",
+      "published_archive": "artifacts/history_utama/results/screen/snap2_s42/log_xgb_s.csv",
+      "sha256": "85afa7b96d318ca3ddad89648b9e414479f4449155fea7cff58fb7a59fd4c011",
+      "reason": "Per-fit aggregate training metrics; no predictions"
+    },
+    {
+      "source": "results/screen/snap2_s42/manifest.json",
+      "published_archive": "artifacts/history_utama/results/screen/snap2_s42/manifest.json",
+      "sha256": "f98be47765c78ee47ea6aa048af6f4546fa0458bfdedfce454266a09d92d0839",
+      "reason": "Small historical model configuration/metrics"
+    },
+    {
+      "source": "results/screen/snap2_s7/log_lgb.csv",
+      "published_archive": "artifacts/history_utama/results/screen/snap2_s7/log_lgb.csv",
+      "sha256": "85c34cf91ef020bcaf165151afa91437b56e67957bc863f873ab4e19ddc00efc",
+      "reason": "Per-fit aggregate training metrics; no predictions"
+    },
+    {
+      "source": "results/screen/snap2_s7/log_lgb_s.csv",
+      "published_archive": "artifacts/history_utama/results/screen/snap2_s7/log_lgb_s.csv",
+      "sha256": "11b1d58d7d719b4fc901663ddf1df611a2f193f4be7d8e3ac88d226a840e4ebb",
+      "reason": "Per-fit aggregate training metrics; no predictions"
+    },
+    {
+      "source": "results/screen/snap2_s7/log_xgb.csv",
+      "published_archive": "artifacts/history_utama/results/screen/snap2_s7/log_xgb.csv",
+      "sha256": "748509d9b9723405877e73cd019cb45eb9d819ea3442d3a1ce8dc5ab294445e5",
+      "reason": "Per-fit aggregate training metrics; no predictions"
+    },
+    {
+      "source": "results/screen/snap2_s7/log_xgb_s.csv",
+      "published_archive": "artifacts/history_utama/results/screen/snap2_s7/log_xgb_s.csv",
+      "sha256": "278534bf653ac218626664a61c35d498fc3ed9818c261299429e675e127de386",
+      "reason": "Per-fit aggregate training metrics; no predictions"
+    },
+    {
+      "source": "results/screen/snap2_s7/manifest.json",
+      "published_archive": "artifacts/history_utama/results/screen/snap2_s7/manifest.json",
+      "sha256": "4d712c3848450cdbe53b370b5d818b6c287d149c1b03d996ab703e91f1d35923",
+      "reason": "Small historical model configuration/metrics"
+    },
+    {
+      "source": "results/screen/snapd/log_cat.csv",
+      "published_archive": "artifacts/history_utama/results/screen/snapd/log_cat.csv",
+      "sha256": "34f79f71440b6d6ae3840d732ca254847035d336227096ef041d10bea65f4261",
+      "reason": "Per-fit aggregate training metrics; no predictions"
+    },
+    {
+      "source": "results/screen/snapd/log_cat_s.csv",
+      "published_archive": "artifacts/history_utama/results/screen/snapd/log_cat_s.csv",
+      "sha256": "588da03920fbeb5f533eb5d0d599f9992b8f3b1b90201d375e59b39a6b7d4580",
+      "reason": "Per-fit aggregate training metrics; no predictions"
+    },
+    {
+      "source": "results/screen/snapd/log_lgb.csv",
+      "published_archive": "artifacts/history_utama/results/screen/snapd/log_lgb.csv",
+      "sha256": "25233d83875786daad89ec1a164a01675be8ba6509f8ff51dd6ca2b4ed4ca7b1",
+      "reason": "Per-fit aggregate training metrics; no predictions"
+    },
+    {
+      "source": "results/screen/snapd/log_lgb_s.csv",
+      "published_archive": "artifacts/history_utama/results/screen/snapd/log_lgb_s.csv",
+      "sha256": "d0aad14a7a7ae3b42e6d30a21d1ab137d37ecbe2f93969a662172d6596f500c8",
+      "reason": "Per-fit aggregate training metrics; no predictions"
+    },
+    {
+      "source": "results/screen/snapd/log_xgb.csv",
+      "published_archive": "artifacts/history_utama/results/screen/snapd/log_xgb.csv",
+      "sha256": "697b52c2908c290f907ef672d60124df3c6f1b875deddd25b061bffa0194b511",
+      "reason": "Per-fit aggregate training metrics; no predictions"
+    },
+    {
+      "source": "results/screen/snapd/log_xgb_s.csv",
+      "published_archive": "artifacts/history_utama/results/screen/snapd/log_xgb_s.csv",
+      "sha256": "9c74f7b32de540804be32e02a2e9a590aebf3134100ff4644c90bdda78a8770f",
+      "reason": "Per-fit aggregate training metrics; no predictions"
+    },
+    {
+      "source": "results/screen/snapd/manifest.json",
+      "published_archive": "artifacts/history_utama/results/screen/snapd/manifest.json",
+      "sha256": "10ae1076d6a8ed923c0ab6bfd6a088c15e08bfc999b766ed36ac22f29e9316e1",
+      "reason": "Small historical model configuration/metrics"
+    },
+    {
+      "source": "results/screen/snapd_s2026/log_cat.csv",
+      "published_archive": "artifacts/history_utama/results/screen/snapd_s2026/log_cat.csv",
+      "sha256": "b130d0cb7bbb0073adb69e57d0cbe00fd9a7757acb7d79b270cee27124081dc9",
+      "reason": "Per-fit aggregate training metrics; no predictions"
+    },
+    {
+      "source": "results/screen/snapd_s2026/log_cat_s.csv",
+      "published_archive": "artifacts/history_utama/results/screen/snapd_s2026/log_cat_s.csv",
+      "sha256": "794533708e3dcb06dc16ae5b8f6601f7522714bebd93774ec5f8e2f0e1056e87",
+      "reason": "Per-fit aggregate training metrics; no predictions"
+    },
+    {
+      "source": "results/screen/snapd_s2026/log_lgb.csv",
+      "published_archive": "artifacts/history_utama/results/screen/snapd_s2026/log_lgb.csv",
+      "sha256": "3b72e2444db6190e6aaef0f05d4002cf53242c3360816452a6ee5eb4789dde83",
+      "reason": "Per-fit aggregate training metrics; no predictions"
+    },
+    {
+      "source": "results/screen/snapd_s2026/log_lgb_s.csv",
+      "published_archive": "artifacts/history_utama/results/screen/snapd_s2026/log_lgb_s.csv",
+      "sha256": "b04a9cc4e9b6b32a7f998c06f4b4110d69b72bf58d9aa1f997803b4dc82ea700",
+      "reason": "Per-fit aggregate training metrics; no predictions"
+    },
+    {
+      "source": "results/screen/snapd_s2026/log_xgb.csv",
+      "published_archive": "artifacts/history_utama/results/screen/snapd_s2026/log_xgb.csv",
+      "sha256": "027652bfc65ae0daf57295c10b7a2747e505cb402a981088c051762ad45ed26e",
+      "reason": "Per-fit aggregate training metrics; no predictions"
+    },
+    {
+      "source": "results/screen/snapd_s2026/log_xgb_s.csv",
+      "published_archive": "artifacts/history_utama/results/screen/snapd_s2026/log_xgb_s.csv",
+      "sha256": "cb831bc96b5658d23e1d7ff2ee1c8b8f132bb25a4b605368392aa41001fa7b7d",
+      "reason": "Per-fit aggregate training metrics; no predictions"
+    },
+    {
+      "source": "results/screen/snapd_s2026/manifest.json",
+      "published_archive": "artifacts/history_utama/results/screen/snapd_s2026/manifest.json",
+      "sha256": "924bc0e4a4765ccce3b0abd8ec9d2a875c6830baeba4800fd2ca1941cbe53719",
+      "reason": "Small historical model configuration/metrics"
+    },
+    {
+      "source": "results/screen/snapd_s7/log_cat.csv",
+      "published_archive": "artifacts/history_utama/results/screen/snapd_s7/log_cat.csv",
+      "sha256": "3e4d6f96e2d473e2acf5c02d286a20b7b4dfd8605cb870e7c732e84fe0cdf707",
+      "reason": "Per-fit aggregate training metrics; no predictions"
+    },
+    {
+      "source": "results/screen/snapd_s7/log_cat_s.csv",
+      "published_archive": "artifacts/history_utama/results/screen/snapd_s7/log_cat_s.csv",
+      "sha256": "b6a925fc28a950e98871af6160b1bcc4a744f5c1d0099372448e4ab616bcf770",
+      "reason": "Per-fit aggregate training metrics; no predictions"
+    },
+    {
+      "source": "results/screen/snapd_s7/log_lgb.csv",
+      "published_archive": "artifacts/history_utama/results/screen/snapd_s7/log_lgb.csv",
+      "sha256": "ebf41f2c1d125bb9566baa8fc599104de272adc8487582eebf2523c7141b75ea",
+      "reason": "Per-fit aggregate training metrics; no predictions"
+    },
+    {
+      "source": "results/screen/snapd_s7/log_lgb_s.csv",
+      "published_archive": "artifacts/history_utama/results/screen/snapd_s7/log_lgb_s.csv",
+      "sha256": "e49f740e9237969cf7084de98ae179bfe681082887c367a8907d5c9ca02a08c8",
+      "reason": "Per-fit aggregate training metrics; no predictions"
+    },
+    {
+      "source": "results/screen/snapd_s7/log_xgb.csv",
+      "published_archive": "artifacts/history_utama/results/screen/snapd_s7/log_xgb.csv",
+      "sha256": "177d5a0082b80765e58922cd9f1f6445cc06ef3cab9b58d49c4ef4b2621c161b",
+      "reason": "Per-fit aggregate training metrics; no predictions"
+    },
+    {
+      "source": "results/screen/snapd_s7/log_xgb_s.csv",
+      "published_archive": "artifacts/history_utama/results/screen/snapd_s7/log_xgb_s.csv",
+      "sha256": "b9094fd390e7bc1dfdbd0849f7bece913ea5b86e0427f33dc72de8236bf14b3e",
+      "reason": "Per-fit aggregate training metrics; no predictions"
+    },
+    {
+      "source": "results/screen/snapd_s7/manifest.json",
+      "published_archive": "artifacts/history_utama/results/screen/snapd_s7/manifest.json",
+      "sha256": "71aadef1b682e87696d189281f6b79a87e477e5080465188c36bb3fca3a34d11",
+      "reason": "Small historical model configuration/metrics"
+    },
+    {
+      "source": "results/screen/stk_f0/log_stk_causilo.csv",
+      "published_archive": "artifacts/history_utama/results/screen/stk_f0/log_stk_causilo.csv",
+      "sha256": "98a81f084a18fe064250a3d06b665fc6a0ff3f9d1af431c87213e759f825208f",
+      "reason": "Per-fit aggregate training metrics; no predictions"
+    },
+    {
+      "source": "results/screen/stk_f0/log_stk_causilo_refit.csv",
+      "published_archive": "artifacts/history_utama/results/screen/stk_f0/log_stk_causilo_refit.csv",
+      "sha256": "b63fbcafb0a687abd6906ca2003d3bb547febbcbde693e05f03f60445ef12d69",
+      "reason": "Per-fit aggregate training metrics; no predictions"
+    },
+    {
+      "source": "results/screen/stk_f0/log_stk_kumo_large_c56000.csv",
+      "published_archive": "artifacts/history_utama/results/screen/stk_f0/log_stk_kumo_large_c56000.csv",
+      "sha256": "7eead3d0b47de1164aa089abde1a3a18119eff7331226a33c06c5499ab6554e9",
+      "reason": "Per-fit aggregate training metrics; no predictions"
+    },
+    {
+      "source": "results/screen/stk_f0/manifest.json",
+      "published_archive": "artifacts/history_utama/results/screen/stk_f0/manifest.json",
+      "sha256": "9fc27d7589512c88fd00588242159f4e473fec7521e87c4df7d2a695ea2d8eb8",
+      "reason": "Small historical model configuration/metrics"
+    },
+    {
+      "source": "results/screen/tabr_f0/log_tabr.csv",
+      "published_archive": "artifacts/history_utama/results/screen/tabr_f0/log_tabr.csv",
+      "sha256": "fd9e6d8d2cf3195aed8e22d89ee47510f5a35cc1078f3fbcf5a0f9195bf31a9c",
+      "reason": "Per-fit aggregate training metrics; no predictions"
+    },
+    {
+      "source": "results/screen/tabr_f0/manifest.json",
+      "published_archive": "artifacts/history_utama/results/screen/tabr_f0/manifest.json",
+      "sha256": "1a5f38a5daa8c75916b9152f0963e74755b84e36cc6e8066879a73efa3a5435d",
+      "reason": "Small historical model configuration/metrics"
+    },
+    {
+      "source": "results/screen/thinview/log_cat.csv",
+      "published_archive": "artifacts/history_utama/results/screen/thinview/log_cat.csv",
+      "sha256": "be4d438bc220517eed4f38734e09c8a6563edaab5e4b7e3f5983e372f2a411d2",
+      "reason": "Per-fit aggregate training metrics; no predictions"
+    },
+    {
+      "source": "results/screen/thinview/log_cat_s.csv",
+      "published_archive": "artifacts/history_utama/results/screen/thinview/log_cat_s.csv",
+      "sha256": "004042b3ffb95bd428c1a147a23e8b5c587445cee9a34f90e0a07d16b1cda6f3",
+      "reason": "Per-fit aggregate training metrics; no predictions"
+    },
+    {
+      "source": "results/screen/thinview/log_causilo.csv",
+      "published_archive": "artifacts/history_utama/results/screen/thinview/log_causilo.csv",
+      "sha256": "fba661d00bc98fd7ba3f676b73fac20e42dbef0a06e236181160511fd5b69213",
+      "reason": "Per-fit aggregate training metrics; no predictions"
+    },
+    {
+      "source": "results/screen/thinview/log_lgb.csv",
+      "published_archive": "artifacts/history_utama/results/screen/thinview/log_lgb.csv",
+      "sha256": "0537187de81dde23b6db99b78f81783541ffc06d3875b5a10a66671ab241a1ce",
+      "reason": "Per-fit aggregate training metrics; no predictions"
+    },
+    {
+      "source": "results/screen/thinview/log_lgb_s.csv",
+      "published_archive": "artifacts/history_utama/results/screen/thinview/log_lgb_s.csv",
+      "sha256": "7963caf3d357317723cd30c1b2dc129739b618554c8edffe1030071b9527809a",
+      "reason": "Per-fit aggregate training metrics; no predictions"
+    },
+    {
+      "source": "results/screen/thinview/log_xgb.csv",
+      "published_archive": "artifacts/history_utama/results/screen/thinview/log_xgb.csv",
+      "sha256": "5a64e5fbb6335571a49ba716a1a612acd16b1c3dd68dfcd78bb3dfee92f854b8",
+      "reason": "Per-fit aggregate training metrics; no predictions"
+    },
+    {
+      "source": "results/screen/thinview/log_xgb_s.csv",
+      "published_archive": "artifacts/history_utama/results/screen/thinview/log_xgb_s.csv",
+      "sha256": "244a8c7f699abf0da85eec630b69b90861c2b35d89e9551d00a46eed63758699",
+      "reason": "Per-fit aggregate training metrics; no predictions"
+    },
+    {
+      "source": "results/screen/thinview/manifest.json",
+      "published_archive": "artifacts/history_utama/results/screen/thinview/manifest.json",
+      "sha256": "32f9c5325e04bf773c68fa135b634fd30fe707a6b35d5e86ee02849d2454a555",
+      "reason": "Small historical model configuration/metrics"
+    },
+    {
+      "source": "results/v10/kernel-metadata.json",
+      "published_archive": "artifacts/history_utama/results/v10/kernel-metadata.json",
+      "sha256": "1252321686b53d15967be3d1dbffa394c2f882b297e1cdd27d13b75c877b2310",
+      "reason": "Small historical model configuration/metrics"
+    },
+    {
+      "source": "results/v10/logika-v10-nested-tuning.ipynb",
+      "published_archive": "research/snapshots/results/v10/logika-v10-nested-tuning.ipynb",
+      "sha256": "f3c6383198095bb2eab5bfb1ba081a501d3126b22ca394dbeeebcc4311aac6d0",
+      "reason": "Immutable historical implementation; original local path retained"
+    },
+    {
+      "source": "results/v10/v10/manifest.json",
+      "published_archive": "artifacts/history_utama/results/v10/v10/manifest.json",
+      "sha256": "d2bf37fa3e19f3d0af4e504e47e26a9334a000528424c7e6897af4bd6fffcaa3",
+      "reason": "Small historical model configuration/metrics"
+    },
+    {
+      "source": "results/v10/v10/metrics.json",
+      "published_archive": "artifacts/history_utama/results/v10/v10/metrics.json",
+      "sha256": "d7f1e6a7fd19828e938a8a3812d27da2d27ac024616995bc7b2e5529d5b9606c",
+      "reason": "Small historical model configuration/metrics"
+    },
+    {
+      "source": "results/v10/v10/v8_review/comparison.json",
+      "published_archive": "artifacts/history_utama/results/v10/v10/v8_review/comparison.json",
+      "sha256": "1e820dde6f3c33186e40520c5e98faefc67abd26df08dcbb90f7a6dce8bd3372",
+      "reason": "Small historical model configuration/metrics"
+    },
+    {
+      "source": "results/v11/kernel-metadata.json",
+      "published_archive": "artifacts/history_utama/results/v11/kernel-metadata.json",
+      "sha256": "723271b0b59ce2b8457235c90a820b087c57d6907ce0bdf3b5d7c17b5c868ef6",
+      "reason": "Small historical model configuration/metrics"
+    },
+    {
+      "source": "results/v11/logika-v11-tabm-tuning.ipynb",
+      "published_archive": "research/snapshots/results/v11/logika-v11-tabm-tuning.ipynb",
+      "sha256": "d0d8f1ff02712ba523e31e1c06b1f914c38a295ac27fc304637159fb5e75c239",
+      "reason": "Immutable historical implementation; original local path retained"
+    },
+    {
+      "source": "results/v11/v11/manifest.json",
+      "published_archive": "artifacts/history_utama/results/v11/v11/manifest.json",
+      "sha256": "46bb975bb6e1d1f6ea13eb6eac054e6655b109890ce2dcc50240cc22b15392b2",
+      "reason": "Small historical model configuration/metrics"
+    },
+    {
+      "source": "results/v11/v11/metrics.json",
+      "published_archive": "artifacts/history_utama/results/v11/v11/metrics.json",
+      "sha256": "1aed9282aec119e915451d1a7293680aa1d3d97b5367a1e5b80211867fdd1108",
+      "reason": "Small historical model configuration/metrics"
+    },
+    {
+      "source": "results/v11/v11/v8_review/comparison.json",
+      "published_archive": "artifacts/history_utama/results/v11/v11/v8_review/comparison.json",
+      "sha256": "5f18811250fbc202f39a43d0b3bba92ba1850a17c496f5d2c3aeb70538895bd3",
+      "reason": "Small historical model configuration/metrics"
+    },
+    {
+      "source": "results/v12/v12/manifest.json",
+      "published_archive": "artifacts/history_utama/results/v12/v12/manifest.json",
+      "sha256": "e3cb471403ec285f19210f47f1d1c667a1afe6e5c95693bc229e0123597045fe",
+      "reason": "Small historical model configuration/metrics"
+    },
+    {
+      "source": "results/v12/v12/metrics.json",
+      "published_archive": "artifacts/history_utama/results/v12/v12/metrics.json",
+      "sha256": "4fa2194bca60498e7719846fde307fa36f80c29041f09388304079e478b8d6b7",
+      "reason": "Small historical model configuration/metrics"
+    },
+    {
+      "source": "results/v13/v13/fit_stats.json",
+      "published_archive": "artifacts/history_utama/results/v13/v13/fit_stats.json",
+      "sha256": "b52faca0f6d30ce20a90c6d265057b79faae1e1ff468e7def3e3b2d4d97079be",
+      "reason": "Small historical model configuration/metrics"
+    },
+    {
+      "source": "results/v13/v13/manifest.json",
+      "published_archive": "artifacts/history_utama/results/v13/v13/manifest.json",
+      "sha256": "2d653d7f2eb06b0a7ad3c7ab0663dd21678065513e1ee5e971df70d03dc1d7a4",
+      "reason": "Small historical model configuration/metrics"
+    },
+    {
+      "source": "results/v13/v13/metrics.json",
+      "published_archive": "artifacts/history_utama/results/v13/v13/metrics.json",
+      "sha256": "c898786db9f8a106948570a608a96072c39a12fa6009adb6efd2f75d7887a934",
+      "reason": "Small historical model configuration/metrics"
+    },
+    {
+      "source": "results/v13/v13/v8_review/comparison.json",
+      "published_archive": "artifacts/history_utama/results/v13/v13/v8_review/comparison.json",
+      "sha256": "e32b6d1f8b565fca3ff59b742e39ff417f1c0c14492b2b82e6c1c8d645cce5cb",
+      "reason": "Small historical model configuration/metrics"
+    },
+    {
+      "source": "results/v14/v14/metrics.json",
+      "published_archive": "artifacts/history_utama/results/v14/v14/metrics.json",
+      "sha256": "292958961743b8060b6cabd2c4880e2282f9a554b9f84a47e2d2af43602de5bd",
+      "reason": "Small historical model configuration/metrics"
+    },
+    {
+      "source": "results/v14k/kernel-metadata.json",
+      "published_archive": "artifacts/history_utama/results/v14k/kernel-metadata.json",
+      "sha256": "56ebbf2978d346d6ccd6621482e0af32482ac7688e6548202fc42c653a8a90ae",
+      "reason": "Small historical model configuration/metrics"
+    },
+    {
+      "source": "results/v15/v15/metrics.json",
+      "published_archive": "artifacts/history_utama/results/v15/v15/metrics.json",
+      "sha256": "f70b3358cabff9b3fb40bd84d8148b3ccc2260fad507e6e36f78106ff45d291e",
+      "reason": "Small historical model configuration/metrics"
+    },
+    {
+      "source": "results/v15k/kernel-metadata.json",
+      "published_archive": "artifacts/history_utama/results/v15k/kernel-metadata.json",
+      "sha256": "996ab4922e9a72148fddac49fc8983fe1febc88978f568a80032171c050ce532",
+      "reason": "Small historical model configuration/metrics"
+    },
+    {
+      "source": "results/v16/v16/metrics.json",
+      "published_archive": "artifacts/history_utama/results/v16/v16/metrics.json",
+      "sha256": "3da2e763f8d5538de70a31d8474db2d0a6a0b538b5b5b55138790f3dc61c0eee",
+      "reason": "Small historical model configuration/metrics"
+    },
+    {
+      "source": "results/v16k/kernel-metadata.json",
+      "published_archive": "artifacts/history_utama/results/v16k/kernel-metadata.json",
+      "sha256": "75062dd052e621961d0ede9cf9ea30982e315e81c548bf5018fbc8a554cc8592",
+      "reason": "Small historical model configuration/metrics"
+    },
+    {
+      "source": "results/v17/v17/metrics.json",
+      "published_archive": "artifacts/history_utama/results/v17/v17/metrics.json",
+      "sha256": "355bfc2bd78b02deb8bd14f306b37316c1d20f010204ebb54dc0d60ad92d3eca",
+      "reason": "Small historical model configuration/metrics"
+    },
+    {
+      "source": "results/v17k/kernel-metadata.json",
+      "published_archive": "artifacts/history_utama/results/v17k/kernel-metadata.json",
+      "sha256": "d68e3d2f50ae464152cf80839c69a6ed4ba0fbcdcd1babd863f22aedcac43ef4",
+      "reason": "Small historical model configuration/metrics"
+    },
+    {
+      "source": "results/v18/v18/metrics.json",
+      "published_archive": "artifacts/history_utama/results/v18/v18/metrics.json",
+      "sha256": "3028d4ff596e8ddfa2fda6fbc595f2c04ba838335f603514d936666f6d81fbeb",
+      "reason": "Small historical model configuration/metrics"
+    },
+    {
+      "source": "results/v18k/kernel-metadata.json",
+      "published_archive": "artifacts/history_utama/results/v18k/kernel-metadata.json",
+      "sha256": "c9a039fb71dba2a1688825a97451fb1d73d1766a5a83aa4bdb313727f2acc853",
+      "reason": "Small historical model configuration/metrics"
+    },
+    {
+      "source": "results/v19/v19/metrics.json",
+      "published_archive": "artifacts/history_utama/results/v19/v19/metrics.json",
+      "sha256": "7d6a0acf5ffaaafd4a4134e88dee58f24724650256f9dd27f39ba208c0534ca6",
+      "reason": "Small historical model configuration/metrics"
+    },
+    {
+      "source": "results/v19k/kernel-metadata.json",
+      "published_archive": "artifacts/history_utama/results/v19k/kernel-metadata.json",
+      "sha256": "89585a60daa130ab6d1e8bd8e018729f724eb43f3b87288ec13d5ad65faea45e",
+      "reason": "Small historical model configuration/metrics"
+    },
+    {
+      "source": "results/v20k/kernel-metadata.json",
+      "published_archive": "artifacts/history_utama/results/v20k/kernel-metadata.json",
+      "sha256": "85b0d9e1a5d222e0f15532927074f4d3ec030ac57432feedda4eb34bcb194d3b",
+      "reason": "Small historical model configuration/metrics"
+    },
+    {
+      "source": "results/v21/v21/metrics.json",
+      "published_archive": "artifacts/history_utama/results/v21/v21/metrics.json",
+      "sha256": "9dbc54b1d962afeca03a30886312d81ebc9a2c0d63eac1877f6bf547d28ae9d4",
+      "reason": "Small historical model configuration/metrics"
+    },
+    {
+      "source": "results/v21k/kernel-metadata.json",
+      "published_archive": "artifacts/history_utama/results/v21k/kernel-metadata.json",
+      "sha256": "090b3b551a166f9e7fb222e0004814120bcf6c15d19a6ee02fc166e8ee920bfd",
+      "reason": "Small historical model configuration/metrics"
+    },
+    {
+      "source": "results/v22/code/features.py",
+      "published_archive": "research/snapshots/results/v22/code/features.py",
+      "sha256": "d394a09c031e4a53a9b2e5fd9a0ccb4883dca3a333bc7370570bb2460d31df44",
+      "reason": "Immutable historical implementation; original local path retained"
+    },
+    {
+      "source": "results/v22/code/nn_prep.py",
+      "published_archive": "research/snapshots/results/v22/code/nn_prep.py",
+      "sha256": "c9bc377bd20940e9ca51d0b85046871e16fa41d95c4bca31701e4184f5b1ec33",
+      "reason": "Immutable historical implementation; original local path retained"
+    },
+    {
+      "source": "results/v22/code/run_valid2.py",
+      "published_archive": "research/snapshots/results/v22/code/run_valid2.py",
+      "sha256": "e08fd94d1b4b399bfb6ec16bbe82e1161ad5802b1ac1dddb637a5242d021163b",
+      "reason": "Immutable historical implementation; original local path retained"
+    },
+    {
+      "source": "results/v22/code/valid2.py",
+      "published_archive": "research/snapshots/results/v22/code/valid2.py",
+      "sha256": "936a2d608dab4c3330e6f9ce844722b9134c4c8e3ae5bd5e47c9617cb8a57507",
+      "reason": "Immutable historical implementation; original local path retained"
+    },
+    {
+      "source": "results/v22/v22/fm/log_causilo.csv",
+      "published_archive": "artifacts/history_utama/results/v22/v22/fm/log_causilo.csv",
+      "sha256": "6c1522058efcb68bfa029d415cbbecfd6b7e47f90e01f03b2d966eeb65787f78",
+      "reason": "Per-fit aggregate training metrics; no predictions"
+    },
+    {
+      "source": "results/v22/v22/fm/manifest.json",
+      "published_archive": "artifacts/history_utama/results/v22/v22/fm/manifest.json",
+      "sha256": "a20c20a626179647355e5306be30a03c4c5b84e3e21585aa61c368914222ffc1",
+      "reason": "Small historical model configuration/metrics"
+    },
+    {
+      "source": "results/v22/v22/gbdt/log_cat.csv",
+      "published_archive": "artifacts/history_utama/results/v22/v22/gbdt/log_cat.csv",
+      "sha256": "8a0ca9218125e5688d7f3f95a95b36dea2e7da3e88c5311c9d41454d67fee5e0",
+      "reason": "Per-fit aggregate training metrics; no predictions"
+    },
+    {
+      "source": "results/v22/v22/gbdt/log_cat_s.csv",
+      "published_archive": "artifacts/history_utama/results/v22/v22/gbdt/log_cat_s.csv",
+      "sha256": "5009d2ab648e96ebbf6370894060d6e87cff517413019c9945a4add079ad5ad1",
+      "reason": "Per-fit aggregate training metrics; no predictions"
+    },
+    {
+      "source": "results/v22/v22/gbdt/log_lgb.csv",
+      "published_archive": "artifacts/history_utama/results/v22/v22/gbdt/log_lgb.csv",
+      "sha256": "f1f0a9c47abae71a9bfc71790cd064beef4f7977032346e13b0fcf80ab671571",
+      "reason": "Per-fit aggregate training metrics; no predictions"
+    },
+    {
+      "source": "results/v22/v22/gbdt/log_lgb_s.csv",
+      "published_archive": "artifacts/history_utama/results/v22/v22/gbdt/log_lgb_s.csv",
+      "sha256": "b7faceee7db2d2fee516332d7482b0c499cb45143aab0fb12e13092f83660475",
+      "reason": "Per-fit aggregate training metrics; no predictions"
+    },
+    {
+      "source": "results/v22/v22/gbdt/log_xgb.csv",
+      "published_archive": "artifacts/history_utama/results/v22/v22/gbdt/log_xgb.csv",
+      "sha256": "f0bbd4274593b5cb0794993f9ef833915b43b6ec23ca9512ea00abee6c5de272",
+      "reason": "Per-fit aggregate training metrics; no predictions"
+    },
+    {
+      "source": "results/v22/v22/gbdt/log_xgb_s.csv",
+      "published_archive": "artifacts/history_utama/results/v22/v22/gbdt/log_xgb_s.csv",
+      "sha256": "374c6ebac9a5cc33bf3dd0fe346e1569f4f23da57879cfd547f2cf0fcf4be00d",
+      "reason": "Per-fit aggregate training metrics; no predictions"
+    },
+    {
+      "source": "results/v22/v22/gbdt/manifest.json",
+      "published_archive": "artifacts/history_utama/results/v22/v22/gbdt/manifest.json",
+      "sha256": "59e912fb62cda14ff15ffb903aa99ae35d3498d4e8025f05f76f6b166631cfcd",
+      "reason": "Small historical model configuration/metrics"
+    },
+    {
+      "source": "results/v22/v22/nn/log_tabm.csv",
+      "published_archive": "artifacts/history_utama/results/v22/v22/nn/log_tabm.csv",
+      "sha256": "a2e96c8da55f3d7caf0e68440e232a4b3340b5294f4a74a91277ae599e2f4756",
+      "reason": "Per-fit aggregate training metrics; no predictions"
+    },
+    {
+      "source": "results/v22/v22/nn/manifest.json",
+      "published_archive": "artifacts/history_utama/results/v22/v22/nn/manifest.json",
+      "sha256": "b7662d94a55d5d0f672e71d5f4b28e55be474fc8eb529c71087cb8a2340543ce",
+      "reason": "Small historical model configuration/metrics"
+    },
+    {
+      "source": "results/v22k/kernel-metadata.json",
+      "published_archive": "artifacts/history_utama/results/v22k/kernel-metadata.json",
+      "sha256": "830cc006c1eae98f906fc871774891b82ab61e8135ffee89a1b48ca1002c657c",
+      "reason": "Small historical model configuration/metrics"
+    },
+    {
+      "source": "results/v23/code/features.py",
+      "published_archive": "research/snapshots/results/v23/code/features.py",
+      "sha256": "d394a09c031e4a53a9b2e5fd9a0ccb4883dca3a333bc7370570bb2460d31df44",
+      "reason": "Immutable historical implementation; original local path retained"
+    },
+    {
+      "source": "results/v23/code/nn_prep.py",
+      "published_archive": "research/snapshots/results/v23/code/nn_prep.py",
+      "sha256": "c9bc377bd20940e9ca51d0b85046871e16fa41d95c4bca31701e4184f5b1ec33",
+      "reason": "Immutable historical implementation; original local path retained"
+    },
+    {
+      "source": "results/v23/code/valid2.py",
+      "published_archive": "research/snapshots/results/v23/code/valid2.py",
+      "sha256": "6d6539ad081ff15e1d6a1c284c7e0e3f10c1c198743d99a7624f52fef349bef4",
+      "reason": "Immutable historical implementation; original local path retained"
+    },
+    {
+      "source": "results/v23/code/zoo_screen.py",
+      "published_archive": "research/snapshots/results/v23/code/zoo_screen.py",
+      "sha256": "61698a9deec97fc9d3d793658e61ebf2cc7097b7acc972c5c2e0f60293f858ff",
+      "reason": "Immutable historical implementation; original local path retained"
+    },
+    {
+      "source": "results/v23k/kernel-metadata.json",
+      "published_archive": "artifacts/history_utama/results/v23k/kernel-metadata.json",
+      "sha256": "a3a64ec119b61e8e32b30048f5875aab344474d1100122976151d95e2e5189d2",
+      "reason": "Small historical model configuration/metrics"
+    },
+    {
+      "source": "results/v25/code/features.py",
+      "published_archive": "research/snapshots/results/v25/code/features.py",
+      "sha256": "d394a09c031e4a53a9b2e5fd9a0ccb4883dca3a333bc7370570bb2460d31df44",
+      "reason": "Immutable historical implementation; original local path retained"
+    },
+    {
+      "source": "results/v25/code/nn_prep.py",
+      "published_archive": "research/snapshots/results/v25/code/nn_prep.py",
+      "sha256": "c9bc377bd20940e9ca51d0b85046871e16fa41d95c4bca31701e4184f5b1ec33",
+      "reason": "Immutable historical implementation; original local path retained"
+    },
+    {
+      "source": "results/v25/code/valid2.py",
+      "published_archive": "research/snapshots/results/v25/code/valid2.py",
+      "sha256": "6d6539ad081ff15e1d6a1c284c7e0e3f10c1c198743d99a7624f52fef349bef4",
+      "reason": "Immutable historical implementation; original local path retained"
+    },
+    {
+      "source": "results/v25/code/zoo_screen.py",
+      "published_archive": "research/snapshots/results/v25/code/zoo_screen.py",
+      "sha256": "61698a9deec97fc9d3d793658e61ebf2cc7097b7acc972c5c2e0f60293f858ff",
+      "reason": "Immutable historical implementation; original local path retained"
+    },
+    {
+      "source": "results/v25k/kernel-metadata.json",
+      "published_archive": "artifacts/history_utama/results/v25k/kernel-metadata.json",
+      "sha256": "e1641d16c5a0c1f22af117782f3e62419c4f45bec19305f59584d690d2973df9",
+      "reason": "Small historical model configuration/metrics"
+    },
+    {
+      "source": "results/v26/code/features.py",
+      "published_archive": "research/snapshots/results/v26/code/features.py",
+      "sha256": "d394a09c031e4a53a9b2e5fd9a0ccb4883dca3a333bc7370570bb2460d31df44",
+      "reason": "Immutable historical implementation; original local path retained"
+    },
+    {
+      "source": "results/v26/code/nn_prep.py",
+      "published_archive": "research/snapshots/results/v26/code/nn_prep.py",
+      "sha256": "c9bc377bd20940e9ca51d0b85046871e16fa41d95c4bca31701e4184f5b1ec33",
+      "reason": "Immutable historical implementation; original local path retained"
+    },
+    {
+      "source": "results/v26/code/run_valid2.py",
+      "published_archive": "research/snapshots/results/v26/code/run_valid2.py",
+      "sha256": "fcf1668337174429b0251820415f21fa676183d80a3b7aa7d9db1208e81ebee5",
+      "reason": "Immutable historical implementation; original local path retained"
+    },
+    {
+      "source": "results/v26/code/valid2.py",
+      "published_archive": "research/snapshots/results/v26/code/valid2.py",
+      "sha256": "665a63370f969b46be91f8e5ea487f4e8b8e80d8aedcac76f3ef5a56930ce7c9",
+      "reason": "Immutable historical implementation; original local path retained"
+    },
+    {
+      "source": "results/v26/v26/kumo_a/log_kumo_large_c20000_b2.csv",
+      "published_archive": "artifacts/history_utama/results/v26/v26/kumo_a/log_kumo_large_c20000_b2.csv",
+      "sha256": "c8fc646fae716c44288af7c8be3e750235fec87150503f8a0edff4d3619512fd",
+      "reason": "Per-fit aggregate training metrics; no predictions"
+    },
+    {
+      "source": "results/v26/v26/kumo_a/manifest.json",
+      "published_archive": "artifacts/history_utama/results/v26/v26/kumo_a/manifest.json",
+      "sha256": "5821715ff9e926e8c4456329fbe0a4b2f2591abc4feac4227465617847648bdc",
+      "reason": "Small historical model configuration/metrics"
+    },
+    {
+      "source": "results/v26/v26/kumo_b/log_kumo_large_c20000_b2.csv",
+      "published_archive": "artifacts/history_utama/results/v26/v26/kumo_b/log_kumo_large_c20000_b2.csv",
+      "sha256": "489cd9e043955164abdc8b9d68a45969bc67a9226d2f2547b58b268bc81b1ce8",
+      "reason": "Per-fit aggregate training metrics; no predictions"
+    },
+    {
+      "source": "results/v26/v26/kumo_b/manifest.json",
+      "published_archive": "artifacts/history_utama/results/v26/v26/kumo_b/manifest.json",
+      "sha256": "a29b1cf4aef2f0e5e630d61761315e0bb8ab89579637bcf8dcb1c17c8a3d271b",
+      "reason": "Small historical model configuration/metrics"
+    },
+    {
+      "source": "results/v26_local/log_kumo_large_c20000_b2.csv",
+      "published_archive": "artifacts/history_utama/results/v26_local/log_kumo_large_c20000_b2.csv",
+      "sha256": "1acb4b98be28a8566e4b8f27c27a18649efaf9975543bf78f4f2cee756c86d4a",
+      "reason": "Per-fit aggregate training metrics; no predictions"
+    },
+    {
+      "source": "results/v26_local/manifest.json",
+      "published_archive": "artifacts/history_utama/results/v26_local/manifest.json",
+      "sha256": "29c915ed4e423187b9e6ba1fbffd979c9228e0eb40574f2ad5e3175c201cb2b7",
+      "reason": "Small historical model configuration/metrics"
+    },
+    {
+      "source": "results/v26k/kernel-metadata.json",
+      "published_archive": "artifacts/history_utama/results/v26k/kernel-metadata.json",
+      "sha256": "06eb4b5f6f901c32abf5032b9f3d852342aa66259a8fd86e3d64f52c7b6b455a",
+      "reason": "Small historical model configuration/metrics"
+    },
+    {
+      "source": "results/v27/code/features.py",
+      "published_archive": "research/snapshots/results/v27/code/features.py",
+      "sha256": "d394a09c031e4a53a9b2e5fd9a0ccb4883dca3a333bc7370570bb2460d31df44",
+      "reason": "Immutable historical implementation; original local path retained"
+    },
+    {
+      "source": "results/v27/code/nn_prep.py",
+      "published_archive": "research/snapshots/results/v27/code/nn_prep.py",
+      "sha256": "c9bc377bd20940e9ca51d0b85046871e16fa41d95c4bca31701e4184f5b1ec33",
+      "reason": "Immutable historical implementation; original local path retained"
+    },
+    {
+      "source": "results/v27/code/sdm_screen.py",
+      "published_archive": "research/snapshots/results/v27/code/sdm_screen.py",
+      "sha256": "da578e37f896a4d9691e4865a250462cd82a2106f945a26fd57ab18497bb781e",
+      "reason": "Immutable historical implementation; original local path retained"
+    },
+    {
+      "source": "results/v27/code/valid2.py",
+      "published_archive": "research/snapshots/results/v27/code/valid2.py",
+      "sha256": "a61c3ada75da4b8d24e6acddd384180fbe40774b11009555053a0011b7968ff3",
+      "reason": "Immutable historical implementation; original local path retained"
+    },
+    {
+      "source": "results/v27k/kernel-metadata.json",
+      "published_archive": "artifacts/history_utama/results/v27k/kernel-metadata.json",
+      "sha256": "4519dc66ffaeaeedb844ebc789c596b6f02fd6f4a6d045ca7876e5ab289a4993",
+      "reason": "Small historical model configuration/metrics"
+    },
+    {
+      "source": "results/v28_local/log_kumo_large_c56000.csv",
+      "published_archive": "artifacts/history_utama/results/v28_local/log_kumo_large_c56000.csv",
+      "sha256": "cf2af7e857170899db316995d9ec62f1f4de56c855e432469226be9301fc2d92",
+      "reason": "Per-fit aggregate training metrics; no predictions"
+    },
+    {
+      "source": "results/v28_local/manifest.json",
+      "published_archive": "artifacts/history_utama/results/v28_local/manifest.json",
+      "sha256": "2add4b264810878d2f21152ede8ea1767edc2e57dbc35f5324adf46347bd2658",
+      "reason": "Small historical model configuration/metrics"
+    },
+    {
+      "source": "results/v28_local_f2/log_kumo_large_c56000.csv",
+      "published_archive": "artifacts/history_utama/results/v28_local_f2/log_kumo_large_c56000.csv",
+      "sha256": "e6f8a0fa045f8e6a47ca48c3cbeba764fc81413ccb415cd6483a933065fd9a17",
+      "reason": "Per-fit aggregate training metrics; no predictions"
+    },
+    {
+      "source": "results/v28_local_f2/manifest.json",
+      "published_archive": "artifacts/history_utama/results/v28_local_f2/manifest.json",
+      "sha256": "2add4b264810878d2f21152ede8ea1767edc2e57dbc35f5324adf46347bd2658",
+      "reason": "Small historical model configuration/metrics"
+    },
+    {
+      "source": "results/v28k/kernel-metadata.json",
+      "published_archive": "artifacts/history_utama/results/v28k/kernel-metadata.json",
+      "sha256": "5e66e48264e67ac97b0eb5eb58bd27dc8276bfdbd1c694d943e71b456b59810a",
+      "reason": "Small historical model configuration/metrics"
+    },
+    {
+      "source": "results/v28m/log_kumo_large_c56000.csv",
+      "published_archive": "artifacts/history_utama/results/v28m/log_kumo_large_c56000.csv",
+      "sha256": "b4797ce04776dfad8f6ba12f562f6f93eed6a316478fe39e29bf6ced879f3894",
+      "reason": "Per-fit aggregate training metrics; no predictions"
+    },
+    {
+      "source": "results/v29/code/features.py",
+      "published_archive": "research/snapshots/results/v29/code/features.py",
+      "sha256": "d394a09c031e4a53a9b2e5fd9a0ccb4883dca3a333bc7370570bb2460d31df44",
+      "reason": "Immutable historical implementation; original local path retained"
+    },
+    {
+      "source": "results/v29/code/nn_prep.py",
+      "published_archive": "research/snapshots/results/v29/code/nn_prep.py",
+      "sha256": "c9bc377bd20940e9ca51d0b85046871e16fa41d95c4bca31701e4184f5b1ec33",
+      "reason": "Immutable historical implementation; original local path retained"
+    },
+    {
+      "source": "results/v29/code/run_valid2.py",
+      "published_archive": "research/snapshots/results/v29/code/run_valid2.py",
+      "sha256": "98c4ba66ed4bfeb1e7e7fe3b5c1508a0fd7c5bfefb3175bdff018fafdb27eac8",
+      "reason": "Immutable historical implementation; original local path retained"
+    },
+    {
+      "source": "results/v29/code/valid2.py",
+      "published_archive": "research/snapshots/results/v29/code/valid2.py",
+      "sha256": "a61c3ada75da4b8d24e6acddd384180fbe40774b11009555053a0011b7968ff3",
+      "reason": "Immutable historical implementation; original local path retained"
+    },
+    {
+      "source": "results/v29/v29/seg_a/log_seg_causilo.csv",
+      "published_archive": "artifacts/history_utama/results/v29/v29/seg_a/log_seg_causilo.csv",
+      "sha256": "c31b20d8d1d4f97fd01a2eff2bdecd80783bdf0d85ea26250199804597420c52",
+      "reason": "Per-fit aggregate training metrics; no predictions"
+    },
+    {
+      "source": "results/v29/v29/seg_a/manifest.json",
+      "published_archive": "artifacts/history_utama/results/v29/v29/seg_a/manifest.json",
+      "sha256": "8a5651a59fa89e2195d9ecba65ff0f96074492997dd97e8d47642670be0187e6",
+      "reason": "Small historical model configuration/metrics"
+    },
+    {
+      "source": "results/v29/v29/seg_b/log_seg_causilo.csv",
+      "published_archive": "artifacts/history_utama/results/v29/v29/seg_b/log_seg_causilo.csv",
+      "sha256": "b22add20b103cdb17efab960e4017f3bfb383718d4b995189af12a4b3231e7e2",
+      "reason": "Per-fit aggregate training metrics; no predictions"
+    },
+    {
+      "source": "results/v29/v29/seg_b/manifest.json",
+      "published_archive": "artifacts/history_utama/results/v29/v29/seg_b/manifest.json",
+      "sha256": "0674b200d7a6280ffc1ced801a3837ea5ae11ae847716adf3933317c91ff4f19",
+      "reason": "Small historical model configuration/metrics"
+    },
+    {
+      "source": "results/v29k/kernel-metadata.json",
+      "published_archive": "artifacts/history_utama/results/v29k/kernel-metadata.json",
+      "sha256": "9fa3df1370e3ff8b6f1978759c526d7098df47872e52f36ec758911da7547ade",
+      "reason": "Small historical model configuration/metrics"
+    },
+    {
+      "source": "results/v29m/log_seg_causilo.csv",
+      "published_archive": "artifacts/history_utama/results/v29m/log_seg_causilo.csv",
+      "sha256": "d1bf8c5a09c007315471d472e3365404a260de3618ad42eba5024748575a7034",
+      "reason": "Per-fit aggregate training metrics; no predictions"
+    },
+    {
+      "source": "results/v30/code/features.py",
+      "published_archive": "research/snapshots/results/v30/code/features.py",
+      "sha256": "d394a09c031e4a53a9b2e5fd9a0ccb4883dca3a333bc7370570bb2460d31df44",
+      "reason": "Immutable historical implementation; original local path retained"
+    },
+    {
+      "source": "results/v30/code/kumo_fulltrain.py",
+      "published_archive": "research/snapshots/results/v30/code/kumo_fulltrain.py",
+      "sha256": "0940a2508e86424f5208e104567a4b6b57941f6c77383d57222a0fa5dcc5be1d",
+      "reason": "Immutable historical implementation; original local path retained"
+    },
+    {
+      "source": "results/v30/code/nn_prep.py",
+      "published_archive": "research/snapshots/results/v30/code/nn_prep.py",
+      "sha256": "c9bc377bd20940e9ca51d0b85046871e16fa41d95c4bca31701e4184f5b1ec33",
+      "reason": "Immutable historical implementation; original local path retained"
+    },
+    {
+      "source": "results/v30/code/run_valid2.py",
+      "published_archive": "research/snapshots/results/v30/code/run_valid2.py",
+      "sha256": "98c4ba66ed4bfeb1e7e7fe3b5c1508a0fd7c5bfefb3175bdff018fafdb27eac8",
+      "reason": "Immutable historical implementation; original local path retained"
+    },
+    {
+      "source": "results/v30/code/valid2.py",
+      "published_archive": "research/snapshots/results/v30/code/valid2.py",
+      "sha256": "a61c3ada75da4b8d24e6acddd384180fbe40774b11009555053a0011b7968ff3",
+      "reason": "Immutable historical implementation; original local path retained"
+    },
+    {
+      "source": "results/v30k/kernel-metadata.json",
+      "published_archive": "artifacts/history_utama/results/v30k/kernel-metadata.json",
+      "sha256": "e2e1703583e08cdfcea08241810a99a3786b4c8c8f4daf9091531315c8d77bcb",
+      "reason": "Small historical model configuration/metrics"
+    },
+    {
+      "source": "results/v33/code/features.py",
+      "published_archive": "research/snapshots/results/v33/code/features.py",
+      "sha256": "d394a09c031e4a53a9b2e5fd9a0ccb4883dca3a333bc7370570bb2460d31df44",
+      "reason": "Immutable historical implementation; original local path retained"
+    },
+    {
+      "source": "results/v33/code/nn_prep.py",
+      "published_archive": "research/snapshots/results/v33/code/nn_prep.py",
+      "sha256": "c9bc377bd20940e9ca51d0b85046871e16fa41d95c4bca31701e4184f5b1ec33",
+      "reason": "Immutable historical implementation; original local path retained"
+    },
+    {
+      "source": "results/v33/code/run_valid2.py",
+      "published_archive": "research/snapshots/results/v33/code/run_valid2.py",
+      "sha256": "e63e83190157165e68e602520a83ac0d6cd42ebf0ef5ea1d49dd335411529909",
+      "reason": "Immutable historical implementation; original local path retained"
+    },
+    {
+      "source": "results/v33/code/valid2.py",
+      "published_archive": "research/snapshots/results/v33/code/valid2.py",
+      "sha256": "a9d0506a02e7b7a25a70d89a945c3dc2b5ab9c2df2a873e185a8d8968c057088",
+      "reason": "Immutable historical implementation; original local path retained"
+    },
+    {
+      "source": "results/v33/v33/kumo_a/log_kumo_large_c56000_g1.csv",
+      "published_archive": "artifacts/history_utama/results/v33/v33/kumo_a/log_kumo_large_c56000_g1.csv",
+      "sha256": "6b42a5e917ec1d75c6932a50dc69d9ce1349dedc669fda89452a651c9ff4187e",
+      "reason": "Per-fit aggregate training metrics; no predictions"
+    },
+    {
+      "source": "results/v33/v33/kumo_a/manifest.json",
+      "published_archive": "artifacts/history_utama/results/v33/v33/kumo_a/manifest.json",
+      "sha256": "c4eee245e18e3a05f4bd3e7dc2e5dc9824c452ec380bea73a77603a27bcd0ae7",
+      "reason": "Small historical model configuration/metrics"
+    },
+    {
+      "source": "results/v33/v33/kumo_b/log_kumo_large_c56000_g1.csv",
+      "published_archive": "artifacts/history_utama/results/v33/v33/kumo_b/log_kumo_large_c56000_g1.csv",
+      "sha256": "2955a12751e652993a039dad7877ab7f9dd35884977f1d1051eb5ff15a97743a",
+      "reason": "Per-fit aggregate training metrics; no predictions"
+    },
+    {
+      "source": "results/v33/v33/kumo_b/manifest.json",
+      "published_archive": "artifacts/history_utama/results/v33/v33/kumo_b/manifest.json",
+      "sha256": "42c6b0d454e6ff6f2089d31e0bc3014a0d3d336312d66c2abb81c56b56f29b6a",
+      "reason": "Small historical model configuration/metrics"
+    },
+    {
+      "source": "results/v33_local/log_kumo_large_c56000_g1.csv",
+      "published_archive": "artifacts/history_utama/results/v33_local/log_kumo_large_c56000_g1.csv",
+      "sha256": "43b79b45d1ef4e2e72a0d82e594dde5ee5b6b6ddca3ae5dd6fe5c42cf388ad01",
+      "reason": "Per-fit aggregate training metrics; no predictions"
+    },
+    {
+      "source": "results/v33_local/manifest.json",
+      "published_archive": "artifacts/history_utama/results/v33_local/manifest.json",
+      "sha256": "6d087a337319047c389ae7875a93dfa395d7da7edd376fdea8b4463d783930c5",
+      "reason": "Small historical model configuration/metrics"
+    },
+    {
+      "source": "results/v33k/kernel-metadata.json",
+      "published_archive": "artifacts/history_utama/results/v33k/kernel-metadata.json",
+      "sha256": "aa0c29c28a897c96ce8cd61c3b349323e6385eaa412bfc3d9e3248ee411aa153",
+      "reason": "Small historical model configuration/metrics"
+    },
+    {
+      "source": "results/v33m/log_kumo_large_c56000_g1.csv",
+      "published_archive": "artifacts/history_utama/results/v33m/log_kumo_large_c56000_g1.csv",
+      "sha256": "f4a369b38fbc386aa6b8a8a82664216448f6d82a1c05e0e2a89bce7c86a38d9e",
+      "reason": "Per-fit aggregate training metrics; no predictions"
+    },
+    {
+      "source": "results/v37/log_causilo.csv",
+      "published_archive": "artifacts/history_utama/results/v37/log_causilo.csv",
+      "sha256": "f1f57e822771471c67ba22749fd496c48d6ebae2377bcd0943ef3fd37e6b3ab4",
+      "reason": "Per-fit aggregate training metrics; no predictions"
+    },
+    {
+      "source": "results/v37/manifest.json",
+      "published_archive": "artifacts/history_utama/results/v37/manifest.json",
+      "sha256": "c26867cfa8ccf8d8c716fafbd01b08d25e84df5cc0eb1966bc3fe69ba75aab8a",
+      "reason": "Small historical model configuration/metrics"
+    },
+    {
+      "source": "results/v38/log_kumo_large_c56000.csv",
+      "published_archive": "artifacts/history_utama/results/v38/log_kumo_large_c56000.csv",
+      "sha256": "01307985b3b09eb2b890cd2a56704fd3deeb2ce562aef48257f885c050589eef",
+      "reason": "Per-fit aggregate training metrics; no predictions"
+    },
+    {
+      "source": "results/v38/manifest.json",
+      "published_archive": "artifacts/history_utama/results/v38/manifest.json",
+      "sha256": "a98842a04ed520d256bdb94af6b39aaa1e48bce5301584643454505f453cc534",
+      "reason": "Small historical model configuration/metrics"
+    },
+    {
+      "source": "results/v4/v4/config.json",
+      "published_archive": "artifacts/history_utama/results/v4/v4/config.json",
+      "sha256": "f92dffb8808fb71b25477e3ccd20e5f967d262eae538e1d32075a7829e95af65",
+      "reason": "Small historical model configuration/metrics"
+    },
+    {
+      "source": "results/v4/v4/input_sha256.json",
+      "published_archive": "artifacts/history_utama/results/v4/v4/input_sha256.json",
+      "sha256": "1e7ad06168c6b3c3a81653ccb96bb1d211527c6f0a8404a95d568f04aa76a7d2",
+      "reason": "Small historical model configuration/metrics"
+    },
+    {
+      "source": "results/v4/v4/lgb_combined/seed42_fold0_categories.json",
+      "published_archive": "artifacts/history_utama/results/v4/v4/lgb_combined/seed42_fold0_categories.json",
+      "sha256": "0cb31a717bb3b67eee219c50f9e48606b9c133cf7e9aa5c6e990f196d9990fd4",
+      "reason": "Small historical model configuration/metrics"
+    },
+    {
+      "source": "results/v4/v4/lgb_combined/seed42_fold1_categories.json",
+      "published_archive": "artifacts/history_utama/results/v4/v4/lgb_combined/seed42_fold1_categories.json",
+      "sha256": "0cbc59c699140bbba866d57d6e1b3c1785f702f1dca6e72f787ff9afe6a36696",
+      "reason": "Small historical model configuration/metrics"
+    },
+    {
+      "source": "results/v4/v4/lgb_combined/seed42_fold2_categories.json",
+      "published_archive": "artifacts/history_utama/results/v4/v4/lgb_combined/seed42_fold2_categories.json",
+      "sha256": "0cbc59c699140bbba866d57d6e1b3c1785f702f1dca6e72f787ff9afe6a36696",
+      "reason": "Small historical model configuration/metrics"
+    },
+    {
+      "source": "results/v4/v4/lgb_combined/seed42_fold3_categories.json",
+      "published_archive": "artifacts/history_utama/results/v4/v4/lgb_combined/seed42_fold3_categories.json",
+      "sha256": "92a1267ec58b72ab91b166eeb1d8f3126c45e6924b0ae7a43b098aeec50d7343",
+      "reason": "Small historical model configuration/metrics"
+    },
+    {
+      "source": "results/v4/v4/lgb_combined/seed42_fold4_categories.json",
+      "published_archive": "artifacts/history_utama/results/v4/v4/lgb_combined/seed42_fold4_categories.json",
+      "sha256": "0cbc59c699140bbba866d57d6e1b3c1785f702f1dca6e72f787ff9afe6a36696",
+      "reason": "Small historical model configuration/metrics"
+    },
+    {
+      "source": "results/v4/v4/lgb_combined/seed7_fold0_categories.json",
+      "published_archive": "artifacts/history_utama/results/v4/v4/lgb_combined/seed7_fold0_categories.json",
+      "sha256": "0cb31a717bb3b67eee219c50f9e48606b9c133cf7e9aa5c6e990f196d9990fd4",
+      "reason": "Small historical model configuration/metrics"
+    },
+    {
+      "source": "results/v4/v4/lgb_combined/seed7_fold1_categories.json",
+      "published_archive": "artifacts/history_utama/results/v4/v4/lgb_combined/seed7_fold1_categories.json",
+      "sha256": "0cbc59c699140bbba866d57d6e1b3c1785f702f1dca6e72f787ff9afe6a36696",
+      "reason": "Small historical model configuration/metrics"
+    },
+    {
+      "source": "results/v4/v4/lgb_combined/seed7_fold2_categories.json",
+      "published_archive": "artifacts/history_utama/results/v4/v4/lgb_combined/seed7_fold2_categories.json",
+      "sha256": "0cbc59c699140bbba866d57d6e1b3c1785f702f1dca6e72f787ff9afe6a36696",
+      "reason": "Small historical model configuration/metrics"
+    },
+    {
+      "source": "results/v4/v4/lgb_combined/seed7_fold3_categories.json",
+      "published_archive": "artifacts/history_utama/results/v4/v4/lgb_combined/seed7_fold3_categories.json",
+      "sha256": "92a1267ec58b72ab91b166eeb1d8f3126c45e6924b0ae7a43b098aeec50d7343",
+      "reason": "Small historical model configuration/metrics"
+    },
+    {
+      "source": "results/v4/v4/lgb_combined/seed7_fold4_categories.json",
+      "published_archive": "artifacts/history_utama/results/v4/v4/lgb_combined/seed7_fold4_categories.json",
+      "sha256": "0cbc59c699140bbba866d57d6e1b3c1785f702f1dca6e72f787ff9afe6a36696",
+      "reason": "Small historical model configuration/metrics"
+    },
+    {
+      "source": "results/v4/v4/lgb_raw/seed42_fold0_categories.json",
+      "published_archive": "artifacts/history_utama/results/v4/v4/lgb_raw/seed42_fold0_categories.json",
+      "sha256": "e545221447aa9bb07cc14a7ad13c702231aa860c1477dab3c1d405d295fcd4e3",
+      "reason": "Small historical model configuration/metrics"
+    },
+    {
+      "source": "results/v4/v4/lgb_raw/seed42_fold1_categories.json",
+      "published_archive": "artifacts/history_utama/results/v4/v4/lgb_raw/seed42_fold1_categories.json",
+      "sha256": "e545221447aa9bb07cc14a7ad13c702231aa860c1477dab3c1d405d295fcd4e3",
+      "reason": "Small historical model configuration/metrics"
+    },
+    {
+      "source": "results/v4/v4/lgb_raw/seed42_fold2_categories.json",
+      "published_archive": "artifacts/history_utama/results/v4/v4/lgb_raw/seed42_fold2_categories.json",
+      "sha256": "e545221447aa9bb07cc14a7ad13c702231aa860c1477dab3c1d405d295fcd4e3",
+      "reason": "Small historical model configuration/metrics"
+    },
+    {
+      "source": "results/v4/v4/lgb_raw/seed42_fold3_categories.json",
+      "published_archive": "artifacts/history_utama/results/v4/v4/lgb_raw/seed42_fold3_categories.json",
+      "sha256": "e545221447aa9bb07cc14a7ad13c702231aa860c1477dab3c1d405d295fcd4e3",
+      "reason": "Small historical model configuration/metrics"
+    },
+    {
+      "source": "results/v4/v4/lgb_raw/seed42_fold4_categories.json",
+      "published_archive": "artifacts/history_utama/results/v4/v4/lgb_raw/seed42_fold4_categories.json",
+      "sha256": "e545221447aa9bb07cc14a7ad13c702231aa860c1477dab3c1d405d295fcd4e3",
+      "reason": "Small historical model configuration/metrics"
+    },
+    {
+      "source": "results/v4/v4/lgb_raw/seed7_fold0_categories.json",
+      "published_archive": "artifacts/history_utama/results/v4/v4/lgb_raw/seed7_fold0_categories.json",
+      "sha256": "e545221447aa9bb07cc14a7ad13c702231aa860c1477dab3c1d405d295fcd4e3",
+      "reason": "Small historical model configuration/metrics"
+    },
+    {
+      "source": "results/v4/v4/lgb_raw/seed7_fold1_categories.json",
+      "published_archive": "artifacts/history_utama/results/v4/v4/lgb_raw/seed7_fold1_categories.json",
+      "sha256": "e545221447aa9bb07cc14a7ad13c702231aa860c1477dab3c1d405d295fcd4e3",
+      "reason": "Small historical model configuration/metrics"
+    },
+    {
+      "source": "results/v4/v4/lgb_raw/seed7_fold2_categories.json",
+      "published_archive": "artifacts/history_utama/results/v4/v4/lgb_raw/seed7_fold2_categories.json",
+      "sha256": "e545221447aa9bb07cc14a7ad13c702231aa860c1477dab3c1d405d295fcd4e3",
+      "reason": "Small historical model configuration/metrics"
+    },
+    {
+      "source": "results/v4/v4/lgb_raw/seed7_fold3_categories.json",
+      "published_archive": "artifacts/history_utama/results/v4/v4/lgb_raw/seed7_fold3_categories.json",
+      "sha256": "e545221447aa9bb07cc14a7ad13c702231aa860c1477dab3c1d405d295fcd4e3",
+      "reason": "Small historical model configuration/metrics"
+    },
+    {
+      "source": "results/v4/v4/lgb_raw/seed7_fold4_categories.json",
+      "published_archive": "artifacts/history_utama/results/v4/v4/lgb_raw/seed7_fold4_categories.json",
+      "sha256": "e545221447aa9bb07cc14a7ad13c702231aa860c1477dab3c1d405d295fcd4e3",
+      "reason": "Small historical model configuration/metrics"
+    },
+    {
+      "source": "results/v4/v4/lgb_semantic/seed42_fold0_categories.json",
+      "published_archive": "artifacts/history_utama/results/v4/v4/lgb_semantic/seed42_fold0_categories.json",
+      "sha256": "0cb31a717bb3b67eee219c50f9e48606b9c133cf7e9aa5c6e990f196d9990fd4",
+      "reason": "Small historical model configuration/metrics"
+    },
+    {
+      "source": "results/v4/v4/lgb_semantic/seed42_fold1_categories.json",
+      "published_archive": "artifacts/history_utama/results/v4/v4/lgb_semantic/seed42_fold1_categories.json",
+      "sha256": "0cbc59c699140bbba866d57d6e1b3c1785f702f1dca6e72f787ff9afe6a36696",
+      "reason": "Small historical model configuration/metrics"
+    },
+    {
+      "source": "results/v4/v4/lgb_semantic/seed42_fold2_categories.json",
+      "published_archive": "artifacts/history_utama/results/v4/v4/lgb_semantic/seed42_fold2_categories.json",
+      "sha256": "0cbc59c699140bbba866d57d6e1b3c1785f702f1dca6e72f787ff9afe6a36696",
+      "reason": "Small historical model configuration/metrics"
+    },
+    {
+      "source": "results/v4/v4/lgb_semantic/seed42_fold3_categories.json",
+      "published_archive": "artifacts/history_utama/results/v4/v4/lgb_semantic/seed42_fold3_categories.json",
+      "sha256": "92a1267ec58b72ab91b166eeb1d8f3126c45e6924b0ae7a43b098aeec50d7343",
+      "reason": "Small historical model configuration/metrics"
+    },
+    {
+      "source": "results/v4/v4/lgb_semantic/seed42_fold4_categories.json",
+      "published_archive": "artifacts/history_utama/results/v4/v4/lgb_semantic/seed42_fold4_categories.json",
+      "sha256": "0cbc59c699140bbba866d57d6e1b3c1785f702f1dca6e72f787ff9afe6a36696",
+      "reason": "Small historical model configuration/metrics"
+    },
+    {
+      "source": "results/v4/v4/lgb_semantic/seed7_fold0_categories.json",
+      "published_archive": "artifacts/history_utama/results/v4/v4/lgb_semantic/seed7_fold0_categories.json",
+      "sha256": "0cb31a717bb3b67eee219c50f9e48606b9c133cf7e9aa5c6e990f196d9990fd4",
+      "reason": "Small historical model configuration/metrics"
+    },
+    {
+      "source": "results/v4/v4/lgb_semantic/seed7_fold1_categories.json",
+      "published_archive": "artifacts/history_utama/results/v4/v4/lgb_semantic/seed7_fold1_categories.json",
+      "sha256": "0cbc59c699140bbba866d57d6e1b3c1785f702f1dca6e72f787ff9afe6a36696",
+      "reason": "Small historical model configuration/metrics"
+    },
+    {
+      "source": "results/v4/v4/lgb_semantic/seed7_fold2_categories.json",
+      "published_archive": "artifacts/history_utama/results/v4/v4/lgb_semantic/seed7_fold2_categories.json",
+      "sha256": "0cbc59c699140bbba866d57d6e1b3c1785f702f1dca6e72f787ff9afe6a36696",
+      "reason": "Small historical model configuration/metrics"
+    },
+    {
+      "source": "results/v4/v4/lgb_semantic/seed7_fold3_categories.json",
+      "published_archive": "artifacts/history_utama/results/v4/v4/lgb_semantic/seed7_fold3_categories.json",
+      "sha256": "92a1267ec58b72ab91b166eeb1d8f3126c45e6924b0ae7a43b098aeec50d7343",
+      "reason": "Small historical model configuration/metrics"
+    },
+    {
+      "source": "results/v4/v4/lgb_semantic/seed7_fold4_categories.json",
+      "published_archive": "artifacts/history_utama/results/v4/v4/lgb_semantic/seed7_fold4_categories.json",
+      "sha256": "0cbc59c699140bbba866d57d6e1b3c1785f702f1dca6e72f787ff9afe6a36696",
+      "reason": "Small historical model configuration/metrics"
+    },
+    {
+      "source": "results/v4/v4/lgb_spend/seed42_fold0_categories.json",
+      "published_archive": "artifacts/history_utama/results/v4/v4/lgb_spend/seed42_fold0_categories.json",
+      "sha256": "e545221447aa9bb07cc14a7ad13c702231aa860c1477dab3c1d405d295fcd4e3",
+      "reason": "Small historical model configuration/metrics"
+    },
+    {
+      "source": "results/v4/v4/lgb_spend/seed42_fold1_categories.json",
+      "published_archive": "artifacts/history_utama/results/v4/v4/lgb_spend/seed42_fold1_categories.json",
+      "sha256": "e545221447aa9bb07cc14a7ad13c702231aa860c1477dab3c1d405d295fcd4e3",
+      "reason": "Small historical model configuration/metrics"
+    },
+    {
+      "source": "results/v4/v4/lgb_spend/seed42_fold2_categories.json",
+      "published_archive": "artifacts/history_utama/results/v4/v4/lgb_spend/seed42_fold2_categories.json",
+      "sha256": "e545221447aa9bb07cc14a7ad13c702231aa860c1477dab3c1d405d295fcd4e3",
+      "reason": "Small historical model configuration/metrics"
+    },
+    {
+      "source": "results/v4/v4/lgb_spend/seed42_fold3_categories.json",
+      "published_archive": "artifacts/history_utama/results/v4/v4/lgb_spend/seed42_fold3_categories.json",
+      "sha256": "e545221447aa9bb07cc14a7ad13c702231aa860c1477dab3c1d405d295fcd4e3",
+      "reason": "Small historical model configuration/metrics"
+    },
+    {
+      "source": "results/v4/v4/lgb_spend/seed42_fold4_categories.json",
+      "published_archive": "artifacts/history_utama/results/v4/v4/lgb_spend/seed42_fold4_categories.json",
+      "sha256": "e545221447aa9bb07cc14a7ad13c702231aa860c1477dab3c1d405d295fcd4e3",
+      "reason": "Small historical model configuration/metrics"
+    },
+    {
+      "source": "results/v4/v4/lgb_spend/seed7_fold0_categories.json",
+      "published_archive": "artifacts/history_utama/results/v4/v4/lgb_spend/seed7_fold0_categories.json",
+      "sha256": "e545221447aa9bb07cc14a7ad13c702231aa860c1477dab3c1d405d295fcd4e3",
+      "reason": "Small historical model configuration/metrics"
+    },
+    {
+      "source": "results/v4/v4/lgb_spend/seed7_fold1_categories.json",
+      "published_archive": "artifacts/history_utama/results/v4/v4/lgb_spend/seed7_fold1_categories.json",
+      "sha256": "e545221447aa9bb07cc14a7ad13c702231aa860c1477dab3c1d405d295fcd4e3",
+      "reason": "Small historical model configuration/metrics"
+    },
+    {
+      "source": "results/v4/v4/lgb_spend/seed7_fold2_categories.json",
+      "published_archive": "artifacts/history_utama/results/v4/v4/lgb_spend/seed7_fold2_categories.json",
+      "sha256": "e545221447aa9bb07cc14a7ad13c702231aa860c1477dab3c1d405d295fcd4e3",
+      "reason": "Small historical model configuration/metrics"
+    },
+    {
+      "source": "results/v4/v4/lgb_spend/seed7_fold3_categories.json",
+      "published_archive": "artifacts/history_utama/results/v4/v4/lgb_spend/seed7_fold3_categories.json",
+      "sha256": "e545221447aa9bb07cc14a7ad13c702231aa860c1477dab3c1d405d295fcd4e3",
+      "reason": "Small historical model configuration/metrics"
+    },
+    {
+      "source": "results/v4/v4/lgb_spend/seed7_fold4_categories.json",
+      "published_archive": "artifacts/history_utama/results/v4/v4/lgb_spend/seed7_fold4_categories.json",
+      "sha256": "e545221447aa9bb07cc14a7ad13c702231aa860c1477dab3c1d405d295fcd4e3",
+      "reason": "Small historical model configuration/metrics"
+    },
+    {
+      "source": "results/v4/v4/run_summary.json",
+      "published_archive": "artifacts/history_utama/results/v4/v4/run_summary.json",
+      "sha256": "c676b484f3814a94eda876ab381a997ab49062e3a8310bc212e97be5790e9732",
+      "reason": "Small historical model configuration/metrics"
+    },
+    {
+      "source": "results/v4/v4/selection.json",
+      "published_archive": "artifacts/history_utama/results/v4/v4/selection.json",
+      "sha256": "d94721ca38f830fd6142fbec2c41dbd78cbc33a13b41cec5fc871d6eec94c6f8",
+      "reason": "Small historical model configuration/metrics"
+    },
+    {
+      "source": "results/v4/v4/versions.json",
+      "published_archive": "artifacts/history_utama/results/v4/v4/versions.json",
+      "sha256": "2fe4bea6f0459a215274e527600ea8a1a9c7d908ac6825c7f25ce4ac3e48f77b",
+      "reason": "Small historical model configuration/metrics"
+    },
+    {
+      "source": "results/v4/v4/xgb_combined/seed42_fold0_categories.json",
+      "published_archive": "artifacts/history_utama/results/v4/v4/xgb_combined/seed42_fold0_categories.json",
+      "sha256": "0cb31a717bb3b67eee219c50f9e48606b9c133cf7e9aa5c6e990f196d9990fd4",
+      "reason": "Small historical model configuration/metrics"
+    },
+    {
+      "source": "results/v4/v4/xgb_combined/seed42_fold1_categories.json",
+      "published_archive": "artifacts/history_utama/results/v4/v4/xgb_combined/seed42_fold1_categories.json",
+      "sha256": "0cbc59c699140bbba866d57d6e1b3c1785f702f1dca6e72f787ff9afe6a36696",
+      "reason": "Small historical model configuration/metrics"
+    },
+    {
+      "source": "results/v4/v4/xgb_combined/seed42_fold2_categories.json",
+      "published_archive": "artifacts/history_utama/results/v4/v4/xgb_combined/seed42_fold2_categories.json",
+      "sha256": "0cbc59c699140bbba866d57d6e1b3c1785f702f1dca6e72f787ff9afe6a36696",
+      "reason": "Small historical model configuration/metrics"
+    },
+    {
+      "source": "results/v4/v4/xgb_combined/seed42_fold3_categories.json",
+      "published_archive": "artifacts/history_utama/results/v4/v4/xgb_combined/seed42_fold3_categories.json",
+      "sha256": "92a1267ec58b72ab91b166eeb1d8f3126c45e6924b0ae7a43b098aeec50d7343",
+      "reason": "Small historical model configuration/metrics"
+    },
+    {
+      "source": "results/v4/v4/xgb_combined/seed42_fold4_categories.json",
+      "published_archive": "artifacts/history_utama/results/v4/v4/xgb_combined/seed42_fold4_categories.json",
+      "sha256": "0cbc59c699140bbba866d57d6e1b3c1785f702f1dca6e72f787ff9afe6a36696",
+      "reason": "Small historical model configuration/metrics"
+    },
+    {
+      "source": "results/v4/v4/xgb_combined/seed7_fold0_categories.json",
+      "published_archive": "artifacts/history_utama/results/v4/v4/xgb_combined/seed7_fold0_categories.json",
+      "sha256": "0cb31a717bb3b67eee219c50f9e48606b9c133cf7e9aa5c6e990f196d9990fd4",
+      "reason": "Small historical model configuration/metrics"
+    },
+    {
+      "source": "results/v4/v4/xgb_combined/seed7_fold1_categories.json",
+      "published_archive": "artifacts/history_utama/results/v4/v4/xgb_combined/seed7_fold1_categories.json",
+      "sha256": "0cbc59c699140bbba866d57d6e1b3c1785f702f1dca6e72f787ff9afe6a36696",
+      "reason": "Small historical model configuration/metrics"
+    },
+    {
+      "source": "results/v4/v4/xgb_combined/seed7_fold2_categories.json",
+      "published_archive": "artifacts/history_utama/results/v4/v4/xgb_combined/seed7_fold2_categories.json",
+      "sha256": "0cbc59c699140bbba866d57d6e1b3c1785f702f1dca6e72f787ff9afe6a36696",
+      "reason": "Small historical model configuration/metrics"
+    },
+    {
+      "source": "results/v4/v4/xgb_combined/seed7_fold3_categories.json",
+      "published_archive": "artifacts/history_utama/results/v4/v4/xgb_combined/seed7_fold3_categories.json",
+      "sha256": "92a1267ec58b72ab91b166eeb1d8f3126c45e6924b0ae7a43b098aeec50d7343",
+      "reason": "Small historical model configuration/metrics"
+    },
+    {
+      "source": "results/v4/v4/xgb_combined/seed7_fold4_categories.json",
+      "published_archive": "artifacts/history_utama/results/v4/v4/xgb_combined/seed7_fold4_categories.json",
+      "sha256": "0cbc59c699140bbba866d57d6e1b3c1785f702f1dca6e72f787ff9afe6a36696",
+      "reason": "Small historical model configuration/metrics"
+    },
+    {
+      "source": "results/v4/v4/xgb_raw/seed42_fold0_categories.json",
+      "published_archive": "artifacts/history_utama/results/v4/v4/xgb_raw/seed42_fold0_categories.json",
+      "sha256": "e545221447aa9bb07cc14a7ad13c702231aa860c1477dab3c1d405d295fcd4e3",
+      "reason": "Small historical model configuration/metrics"
+    },
+    {
+      "source": "results/v4/v4/xgb_raw/seed42_fold1_categories.json",
+      "published_archive": "artifacts/history_utama/results/v4/v4/xgb_raw/seed42_fold1_categories.json",
+      "sha256": "e545221447aa9bb07cc14a7ad13c702231aa860c1477dab3c1d405d295fcd4e3",
+      "reason": "Small historical model configuration/metrics"
+    },
+    {
+      "source": "results/v4/v4/xgb_raw/seed42_fold2_categories.json",
+      "published_archive": "artifacts/history_utama/results/v4/v4/xgb_raw/seed42_fold2_categories.json",
+      "sha256": "e545221447aa9bb07cc14a7ad13c702231aa860c1477dab3c1d405d295fcd4e3",
+      "reason": "Small historical model configuration/metrics"
+    },
+    {
+      "source": "results/v4/v4/xgb_raw/seed42_fold3_categories.json",
+      "published_archive": "artifacts/history_utama/results/v4/v4/xgb_raw/seed42_fold3_categories.json",
+      "sha256": "e545221447aa9bb07cc14a7ad13c702231aa860c1477dab3c1d405d295fcd4e3",
+      "reason": "Small historical model configuration/metrics"
+    },
+    {
+      "source": "results/v4/v4/xgb_raw/seed42_fold4_categories.json",
+      "published_archive": "artifacts/history_utama/results/v4/v4/xgb_raw/seed42_fold4_categories.json",
+      "sha256": "e545221447aa9bb07cc14a7ad13c702231aa860c1477dab3c1d405d295fcd4e3",
+      "reason": "Small historical model configuration/metrics"
+    },
+    {
+      "source": "results/v4/v4/xgb_raw/seed7_fold0_categories.json",
+      "published_archive": "artifacts/history_utama/results/v4/v4/xgb_raw/seed7_fold0_categories.json",
+      "sha256": "e545221447aa9bb07cc14a7ad13c702231aa860c1477dab3c1d405d295fcd4e3",
+      "reason": "Small historical model configuration/metrics"
+    },
+    {
+      "source": "results/v4/v4/xgb_raw/seed7_fold1_categories.json",
+      "published_archive": "artifacts/history_utama/results/v4/v4/xgb_raw/seed7_fold1_categories.json",
+      "sha256": "e545221447aa9bb07cc14a7ad13c702231aa860c1477dab3c1d405d295fcd4e3",
+      "reason": "Small historical model configuration/metrics"
+    },
+    {
+      "source": "results/v4/v4/xgb_raw/seed7_fold2_categories.json",
+      "published_archive": "artifacts/history_utama/results/v4/v4/xgb_raw/seed7_fold2_categories.json",
+      "sha256": "e545221447aa9bb07cc14a7ad13c702231aa860c1477dab3c1d405d295fcd4e3",
+      "reason": "Small historical model configuration/metrics"
+    },
+    {
+      "source": "results/v4/v4/xgb_raw/seed7_fold3_categories.json",
+      "published_archive": "artifacts/history_utama/results/v4/v4/xgb_raw/seed7_fold3_categories.json",
+      "sha256": "e545221447aa9bb07cc14a7ad13c702231aa860c1477dab3c1d405d295fcd4e3",
+      "reason": "Small historical model configuration/metrics"
+    },
+    {
+      "source": "results/v4/v4/xgb_raw/seed7_fold4_categories.json",
+      "published_archive": "artifacts/history_utama/results/v4/v4/xgb_raw/seed7_fold4_categories.json",
+      "sha256": "e545221447aa9bb07cc14a7ad13c702231aa860c1477dab3c1d405d295fcd4e3",
+      "reason": "Small historical model configuration/metrics"
+    },
+    {
+      "source": "results/v40/log_tabr.csv",
+      "published_archive": "artifacts/history_utama/results/v40/log_tabr.csv",
+      "sha256": "c9d04bba663bfe10b9d23a9b78c9dd63e8eb758f60fcfea41726ed55e390a15d",
+      "reason": "Per-fit aggregate training metrics; no predictions"
+    },
+    {
+      "source": "results/v40/manifest.json",
+      "published_archive": "artifacts/history_utama/results/v40/manifest.json",
+      "sha256": "286fe32bef73c409860022d610c8796aeb282aca5e7bb7d18f20f2a19de04c2e",
+      "reason": "Small historical model configuration/metrics"
+    },
+    {
+      "source": "results/v41/causilo_s12/log_causilo.csv",
+      "published_archive": "artifacts/history_utama/results/v41/causilo_s12/log_causilo.csv",
+      "sha256": "33e88537eaaa71b7042fc963cfb260241dd674a5f4e3a4b7bbec6f25f1ef64ce",
+      "reason": "Per-fit aggregate training metrics; no predictions"
+    },
+    {
+      "source": "results/v41/causilo_s12/manifest.json",
+      "published_archive": "artifacts/history_utama/results/v41/causilo_s12/manifest.json",
+      "sha256": "adcc74281a217acf43e76fdb0fc2eb9942b6abf379304140fef76670c3c1f8e7",
+      "reason": "Small historical model configuration/metrics"
+    },
+    {
+      "source": "results/v43/log_cat.csv",
+      "published_archive": "artifacts/history_utama/results/v43/log_cat.csv",
+      "sha256": "c5b3f886d28328db4c3eafe31667d091c68bb5dc600bdc6368e11576644f62c9",
+      "reason": "Per-fit aggregate training metrics; no predictions"
+    },
+    {
+      "source": "results/v43/log_cat_s.csv",
+      "published_archive": "artifacts/history_utama/results/v43/log_cat_s.csv",
+      "sha256": "96b97d80cc3ac4121cc4c96dd4ff5d87d57a41011083b2abcb66f81c3e7f5ecc",
+      "reason": "Per-fit aggregate training metrics; no predictions"
+    },
+    {
+      "source": "results/v43/log_lgb.csv",
+      "published_archive": "artifacts/history_utama/results/v43/log_lgb.csv",
+      "sha256": "2d68fabd6c166166fd54e3ba7e4e06ec248117d36eb26f5adc39b9e01557e0c0",
+      "reason": "Per-fit aggregate training metrics; no predictions"
+    },
+    {
+      "source": "results/v43/log_lgb_s.csv",
+      "published_archive": "artifacts/history_utama/results/v43/log_lgb_s.csv",
+      "sha256": "e6dfe8ef09da802ddc5e63944127ff023ecf498f76a5dd85a7cb38aa22ff1e39",
+      "reason": "Per-fit aggregate training metrics; no predictions"
+    },
+    {
+      "source": "results/v43/log_xgb.csv",
+      "published_archive": "artifacts/history_utama/results/v43/log_xgb.csv",
+      "sha256": "8bf855e614648c4a64ca29ef480df9167976845e781bee3343d22002a383a24a",
+      "reason": "Per-fit aggregate training metrics; no predictions"
+    },
+    {
+      "source": "results/v43/log_xgb_s.csv",
+      "published_archive": "artifacts/history_utama/results/v43/log_xgb_s.csv",
+      "sha256": "0b8c7d510cfc3e7c6a7f214d1dcfabd0452c8b3b0a6df1795cd9c02659a7b563",
+      "reason": "Per-fit aggregate training metrics; no predictions"
+    },
+    {
+      "source": "results/v43/manifest.json",
+      "published_archive": "artifacts/history_utama/results/v43/manifest.json",
+      "sha256": "d14eb4625d1078510a06dc159af1736d8c72188023734ea78cc7d6fb7caaa429",
+      "reason": "Small historical model configuration/metrics"
+    },
+    {
+      "source": "results/v44/log_cat.csv",
+      "published_archive": "artifacts/history_utama/results/v44/log_cat.csv",
+      "sha256": "35139e5b2b401b3f882c6115dd34aca4bf89224804705c0b65128f94b27847e4",
+      "reason": "Per-fit aggregate training metrics; no predictions"
+    },
+    {
+      "source": "results/v44/log_cat_s.csv",
+      "published_archive": "artifacts/history_utama/results/v44/log_cat_s.csv",
+      "sha256": "8c22b1d319ea7fe7acf61c3c4f9e6248046a27b49702a3d21de7334dd27ea4d9",
+      "reason": "Per-fit aggregate training metrics; no predictions"
+    },
+    {
+      "source": "results/v44/log_lgb.csv",
+      "published_archive": "artifacts/history_utama/results/v44/log_lgb.csv",
+      "sha256": "026a0b99fdc2d970b3277b88361bc17eb6ae8e25ce7a3e4f67298e5cbb4df84f",
+      "reason": "Per-fit aggregate training metrics; no predictions"
+    },
+    {
+      "source": "results/v44/log_lgb_s.csv",
+      "published_archive": "artifacts/history_utama/results/v44/log_lgb_s.csv",
+      "sha256": "bb03ded738bd7e031d9fbd4db21c778e7b55a5097874630370d679be0859f8c8",
+      "reason": "Per-fit aggregate training metrics; no predictions"
+    },
+    {
+      "source": "results/v44/log_xgb.csv",
+      "published_archive": "artifacts/history_utama/results/v44/log_xgb.csv",
+      "sha256": "e510f743eae7e1a3429227dd3e3b7205e0aeb8ee7b3bf3b2fa164499071c37bf",
+      "reason": "Per-fit aggregate training metrics; no predictions"
+    },
+    {
+      "source": "results/v44/log_xgb_s.csv",
+      "published_archive": "artifacts/history_utama/results/v44/log_xgb_s.csv",
+      "sha256": "3154e71a8d7a12200c53772ef17a3233821deb2757a876a704aa19188082929f",
+      "reason": "Per-fit aggregate training metrics; no predictions"
+    },
+    {
+      "source": "results/v44/manifest.json",
+      "published_archive": "artifacts/history_utama/results/v44/manifest.json",
+      "sha256": "1298c4d41f569e8227f7f9f3fde5b38e3c86f970e78b6a1a567e1772bb5383fc",
+      "reason": "Small historical model configuration/metrics"
+    },
+    {
+      "source": "results/v45/log_cat_d8.csv",
+      "published_archive": "artifacts/history_utama/results/v45/log_cat_d8.csv",
+      "sha256": "dd3dcea5394289ceb0ab1f9c170d80b32660b61daa1f27cfed6184935150cc78",
+      "reason": "Per-fit aggregate training metrics; no predictions"
+    },
+    {
+      "source": "results/v45/log_lgb_x.csv",
+      "published_archive": "artifacts/history_utama/results/v45/log_lgb_x.csv",
+      "sha256": "119ed38943b0ddaa072a61d445c4a640e6e693000eca03ee6d752b2b51b2f6a9",
+      "reason": "Per-fit aggregate training metrics; no predictions"
+    },
+    {
+      "source": "results/v45/log_xgb_d8.csv",
+      "published_archive": "artifacts/history_utama/results/v45/log_xgb_d8.csv",
+      "sha256": "36bf961c0fedbc48744ed0c0809adf630295186d234ed3513314b9e0ee918e21",
+      "reason": "Per-fit aggregate training metrics; no predictions"
+    },
+    {
+      "source": "results/v45/manifest.json",
+      "published_archive": "artifacts/history_utama/results/v45/manifest.json",
+      "sha256": "ad82b36ba0e8998c55b1d81eacda2a28620875b4d69b39abc00e9991d429a800",
+      "reason": "Small historical model configuration/metrics"
+    },
+    {
+      "source": "results/v7/rel_dfs.py",
+      "published_archive": "research/snapshots/results/v7/rel_dfs.py",
+      "sha256": "0fe82839752cd96b82d8d6448c5df4db37f86916610eb76f4d1117a41652f2e9",
+      "reason": "Immutable historical implementation; original local path retained"
+    },
+    {
+      "source": "results/v8/v8_run.ipynb",
+      "published_archive": "research/snapshots/results/v8/v8_run.ipynb",
+      "sha256": "de0479d65d635b92980e05d335c9a1b7fa012b9f54bc109a9e0a12827f37cb66",
+      "reason": "Immutable historical implementation; original local path retained"
+    },
+    {
+      "source": "results/v46/smoke_raw/manifest.json",
+      "published_archive": "artifacts/history_utama/results/v46/smoke_raw/manifest.json",
+      "sha256": "7ccf5cc3accc6ceefd29bf74aebd101586eee901e4d3e807da29ccef9f607cb6",
+      "reason": "Compact experiment summary or actual submission receipt; raw artifacts remain local"
+    },
+    {
+      "source": "results/v46/vip_raw_f0/manifest.json",
+      "published_archive": "artifacts/history_utama/results/v46/vip_raw_f0/manifest.json",
+      "sha256": "045fe4532554e3f13b4bc3a0f3bb730312f99d903fb426c8bce15c194195f1e0",
+      "reason": "Compact experiment summary or actual submission receipt; raw artifacts remain local"
+    },
+    {
+      "source": "results/v47/vip_raw_f0/manifest.json",
+      "published_archive": "artifacts/history_utama/results/v47/vip_raw_f0/manifest.json",
+      "sha256": "471148c4fd6c690c5fda91a40497bedca37238dc734225b930bb4c922f458b32",
+      "reason": "Compact experiment summary or actual submission receipt; raw artifacts remain local"
+    },
+    {
+      "source": "results/v48/smoke_vip_resume/manifest.json",
+      "published_archive": "artifacts/history_utama/results/v48/smoke_vip_resume/manifest.json",
+      "sha256": "8aba177ec86e8a94df92f6b486c51a456f0ab982116870ca46e70a70955f3c17",
+      "reason": "Compact experiment summary or actual submission receipt; raw artifacts remain local"
+    },
+    {
+      "source": "results/v48/vip_raw_cached_f0/manifest.json",
+      "published_archive": "artifacts/history_utama/results/v48/vip_raw_cached_f0/manifest.json",
+      "sha256": "4ee6f4da9d49595248641863905c1185fab4b950107dafe3ad070b922af4cec4",
+      "reason": "Compact experiment summary or actual submission receipt; raw artifacts remain local"
+    },
+    {
+      "source": "results/v49/ssl_asymmetric_safe_f0/s42_f0/manifest.json",
+      "published_archive": "artifacts/history_utama/results/v49/ssl_asymmetric_safe_f0/s42_f0/manifest.json",
+      "sha256": "d44966b5e2558455622e29a6369678aa4c35ebec00e3df712bc57841aab492e0",
+      "reason": "Compact experiment summary or actual submission receipt; raw artifacts remain local"
+    },
+    {
+      "source": "results/v49/ssl_asymmetric_safe_f0/s42_f0/selection.json",
+      "published_archive": "artifacts/history_utama/results/v49/ssl_asymmetric_safe_f0/s42_f0/selection.json",
+      "sha256": "303c0eeb51fe5ce8b9af325feb8857c6f5eac3aaff3e9408a2f4f0af623917d3",
+      "reason": "Compact experiment summary or actual submission receipt; raw artifacts remain local"
+    },
+    {
+      "source": "results/v49/ssl_asymmetric_safe_f0/s42_f0/outer_metrics.json",
+      "published_archive": "artifacts/history_utama/results/v49/ssl_asymmetric_safe_f0/s42_f0/outer_metrics.json",
+      "sha256": "acaddf97644b57841a38f62ad4f2e2af8b074557abb5875d7b911e14d384c599",
+      "reason": "Compact experiment summary or actual submission receipt; raw artifacts remain local"
+    },
+    {
+      "source": "results/v49/ssl_asymmetric_smoke_safe/s42_f0/manifest.json",
+      "published_archive": "artifacts/history_utama/results/v49/ssl_asymmetric_smoke_safe/s42_f0/manifest.json",
+      "sha256": "fda1248eb1af9b31ec1227f06144ad33c4756fde34497cbe9b5d15c5d34f2da7",
+      "reason": "Compact experiment summary or actual submission receipt; raw artifacts remain local"
+    },
+    {
+      "source": "results/v49/ssl_asymmetric_smoke_safe/s42_f0/selection.json",
+      "published_archive": "artifacts/history_utama/results/v49/ssl_asymmetric_smoke_safe/s42_f0/selection.json",
+      "sha256": "870ebc98f290aa6d1b6b3b939e22aa898e1809d371eba2b4560bd31342abab55",
+      "reason": "Compact experiment summary or actual submission receipt; raw artifacts remain local"
+    },
+    {
+      "source": "results/v49/ssl_asymmetric_smoke_safe/s42_f0/outer_metrics.json",
+      "published_archive": "artifacts/history_utama/results/v49/ssl_asymmetric_smoke_safe/s42_f0/outer_metrics.json",
+      "sha256": "24b527e9e7afe72fc321cdbb7df10248d388f5802de8d32e5d480bc03c2cf4e1",
+      "reason": "Compact experiment summary or actual submission receipt; raw artifacts remain local"
+    },
+    {
+      "source": "results/v49/ssl_asymmetric_f0/s42_f0/manifest.json",
+      "published_archive": "artifacts/history_utama/results/v49/ssl_asymmetric_f0/s42_f0/manifest.json",
+      "sha256": "0b83832dda91fd4f9ae15169328a22a480c69eec6b5a97d547db60fcfc7d4192",
+      "reason": "Compact experiment summary or actual submission receipt; raw artifacts remain local"
+    },
+    {
+      "source": "results/v49/ssl_asymmetric_smoke/s42_f0/manifest.json",
+      "published_archive": "artifacts/history_utama/results/v49/ssl_asymmetric_smoke/s42_f0/manifest.json",
+      "sha256": "7e0383a2c94cb5b421236b62b7abd16eea285bdaa2b712cc5e775c494d68ada9",
+      "reason": "Compact experiment summary or actual submission receipt; raw artifacts remain local"
+    },
+    {
+      "source": "results/v49/ssl_asymmetric_smoke/s42_f0/selection.json",
+      "published_archive": "artifacts/history_utama/results/v49/ssl_asymmetric_smoke/s42_f0/selection.json",
+      "sha256": "cd55c7ce4fd369c1a1848f7fb9a2c97afa559def5716fbdb76aefcf3cd992fd9",
+      "reason": "Compact experiment summary or actual submission receipt; raw artifacts remain local"
+    },
+    {
+      "source": "results/v49/ssl_asymmetric_smoke/s42_f0/outer_metrics.json",
+      "published_archive": "artifacts/history_utama/results/v49/ssl_asymmetric_smoke/s42_f0/outer_metrics.json",
+      "sha256": "a458beccb654592b48b0a31b6bf6d36840240e4b7878e94f8ebf40c5bb286852",
+      "reason": "Compact experiment summary or actual submission receipt; raw artifacts remain local"
+    },
+    {
+      "source": "results/v50/input_blends_smoke/manifest.json",
+      "published_archive": "artifacts/history_utama/results/v50/input_blends_smoke/manifest.json",
+      "sha256": "4add0c54ae9189b6d7ca8030310ab6cfbe894589b4e3b32cad422026bff9e06c",
+      "reason": "Compact experiment summary or actual submission receipt; raw artifacts remain local"
+    },
+    {
+      "source": "results/v50/input_blends_smoke/selection.json",
+      "published_archive": "artifacts/history_utama/results/v50/input_blends_smoke/selection.json",
+      "sha256": "447b83aed2fc6ae6833cf8814283e0770d47268872cb21c2374b017991312bbe",
+      "reason": "Compact experiment summary or actual submission receipt; raw artifacts remain local"
+    },
+    {
+      "source": "results/v50/input_blends_f0/manifest.json",
+      "published_archive": "artifacts/history_utama/results/v50/input_blends_f0/manifest.json",
+      "sha256": "52fe4195f0f239b9d289e128ebd07896fb7ba1e8d8e6e22015f3054aee46302e",
+      "reason": "Compact experiment summary or actual submission receipt; raw artifacts remain local"
+    },
+    {
+      "source": "results/v50/input_blends_f0/selection.json",
+      "published_archive": "artifacts/history_utama/results/v50/input_blends_f0/selection.json",
+      "sha256": "47fcdaf110e9a84ef07d159af84d9c4e2860502dc3f0fc1728afa36354e9ad1f",
+      "reason": "Compact experiment summary or actual submission receipt; raw artifacts remain local"
+    },
+    {
+      "source": "results/v50/input_family_smoke/s42_f0/manifest.json",
+      "published_archive": "artifacts/history_utama/results/v50/input_family_smoke/s42_f0/manifest.json",
+      "sha256": "0f1579ec0f0ebe59a8f82fa11051df4579b19c044104a144346eaa720bbe4969",
+      "reason": "Compact experiment summary or actual submission receipt; raw artifacts remain local"
+    },
+    {
+      "source": "results/v50/input_family_smoke/s42_f0/selection.json",
+      "published_archive": "artifacts/history_utama/results/v50/input_family_smoke/s42_f0/selection.json",
+      "sha256": "99b27604e0fc16e5d1343a44ce04725d3e81354ab523f6d0f52edf3ea414de09",
+      "reason": "Compact experiment summary or actual submission receipt; raw artifacts remain local"
+    },
+    {
+      "source": "results/v50/input_family_f0/s42_f0/manifest.json",
+      "published_archive": "artifacts/history_utama/results/v50/input_family_f0/s42_f0/manifest.json",
+      "sha256": "72205aa8e3b38b08c4ec9dc531f28e61a482de12787f5551390712ba82a252ce",
+      "reason": "Compact experiment summary or actual submission receipt; raw artifacts remain local"
+    },
+    {
+      "source": "results/v50/input_family_f0/s42_f0/selection.json",
+      "published_archive": "artifacts/history_utama/results/v50/input_family_f0/s42_f0/selection.json",
+      "sha256": "6c8e15647fa09715e5c071778fe8e641070e1a7f62881a49a8585156bb772407",
+      "reason": "Compact experiment summary or actual submission receipt; raw artifacts remain local"
+    },
+    {
+      "source": "results/v51/conditional_blends_f0/manifest.json",
+      "published_archive": "artifacts/history_utama/results/v51/conditional_blends_f0/manifest.json",
+      "sha256": "fb1cd290aca325a00703fc08e22c24614dcb087e2794f586f26ceb29fa8fd407",
+      "reason": "Compact experiment summary or actual submission receipt; raw artifacts remain local"
+    },
+    {
+      "source": "results/v51/conditional_blends_f0/selection.json",
+      "published_archive": "artifacts/history_utama/results/v51/conditional_blends_f0/selection.json",
+      "sha256": "c34f395a56ec0e97298080e4bc72a5f5298d13cf222e2c4e10fc8fbbee37d1c9",
+      "reason": "Compact experiment summary or actual submission receipt; raw artifacts remain local"
+    },
+    {
+      "source": "results/v51/rankfusion_f0/manifest.json",
+      "published_archive": "artifacts/history_utama/results/v51/rankfusion_f0/manifest.json",
+      "sha256": "82ec49013f8ebbca216fcac14298ca8ad71fbab345833fa60e6e179805d1b1bc",
+      "reason": "Compact experiment summary or actual submission receipt; raw artifacts remain local"
+    },
+    {
+      "source": "results/v51/rankfusion_f0/selection.json",
+      "published_archive": "artifacts/history_utama/results/v51/rankfusion_f0/selection.json",
+      "sha256": "57037578202176250c9b55493bc86f6befad3ab74a3946affe5b7984799c7733",
+      "reason": "Compact experiment summary or actual submission receipt; raw artifacts remain local"
+    },
+    {
+      "source": "results/v51/rankfusion_stable_f0/manifest.json",
+      "published_archive": "artifacts/history_utama/results/v51/rankfusion_stable_f0/manifest.json",
+      "sha256": "3a1a3e13917bdd20be4ff81f9b0ed678d1d3e7ab73970a093f518c4d7d4a24d1",
+      "reason": "Compact experiment summary or actual submission receipt; raw artifacts remain local"
+    },
+    {
+      "source": "results/v51/rankfusion_stable_f0/selection.json",
+      "published_archive": "artifacts/history_utama/results/v51/rankfusion_stable_f0/selection.json",
+      "sha256": "dd9cd3688255796a5fe8aa01fc5dc983287270d1a0d9c42c7ed2eeb0751f83f5",
+      "reason": "Compact experiment summary or actual submission receipt; raw artifacts remain local"
+    },
+    {
+      "source": "results/v51/conditional_inputs_f0/s42_f0/manifest.json",
+      "published_archive": "artifacts/history_utama/results/v51/conditional_inputs_f0/s42_f0/manifest.json",
+      "sha256": "2e76a5d7c2a31f3306fa5c2bc8cc1708e1287e8c0f82572c89614a4fe3d6290d",
+      "reason": "Compact experiment summary or actual submission receipt; raw artifacts remain local"
+    },
+    {
+      "source": "results/v51/conditional_inputs_f0/s42_f0/selection.json",
+      "published_archive": "artifacts/history_utama/results/v51/conditional_inputs_f0/s42_f0/selection.json",
+      "sha256": "1cee831b6cfbdcee91c894736c38e459557faf8a12c999c42f1a401f429a7ee0",
+      "reason": "Compact experiment summary or actual submission receipt; raw artifacts remain local"
+    },
+    {
+      "source": "results/v52/input_geometry_f0/s42_f0/manifest.json",
+      "published_archive": "artifacts/history_utama/results/v52/input_geometry_f0/s42_f0/manifest.json",
+      "sha256": "9dc5996db18b95e3d5d5bdc4487a2b294c856af484ac00a2a4e28d45a8220376",
+      "reason": "Compact experiment summary or actual submission receipt; raw artifacts remain local"
+    },
+    {
+      "source": "results/v52/input_geometry_f0/s42_f0/selection.json",
+      "published_archive": "artifacts/history_utama/results/v52/input_geometry_f0/s42_f0/selection.json",
+      "sha256": "203ce6f0526c364f2e4334e1d5afac9ecdee5f20ac2ccea9590d42348ad9dcec",
+      "reason": "Compact experiment summary or actual submission receipt; raw artifacts remain local"
+    },
+    {
+      "source": "results/v53/group_retrieval_f0/s42_f0/manifest.json",
+      "published_archive": "artifacts/history_utama/results/v53/group_retrieval_f0/s42_f0/manifest.json",
+      "sha256": "43109bbd88a5e82c6e0a466afe2409a017df0f0bf1f79bd925be74cfd6eae9d9",
+      "reason": "Compact experiment summary or actual submission receipt; raw artifacts remain local"
+    },
+    {
+      "source": "results/v53/group_retrieval_f0/s42_f0/selection.json",
+      "published_archive": "artifacts/history_utama/results/v53/group_retrieval_f0/s42_f0/selection.json",
+      "sha256": "f33911c225b287d217d2a1fe69ee2a96d7fe28f47ab724d07b74418c225266a7",
+      "reason": "Compact experiment summary or actual submission receipt; raw artifacts remain local"
+    },
+    {
+      "source": "results/v54/sameclass_mixup_f0/s42_f0/manifest.json",
+      "published_archive": "artifacts/history_utama/results/v54/sameclass_mixup_f0/s42_f0/manifest.json",
+      "sha256": "90a6f2578171700b03c9b6054293b76690477ec45281706c93612fa8abec2300",
+      "reason": "Compact experiment summary or actual submission receipt; raw artifacts remain local"
+    },
+    {
+      "source": "results/v54/sameclass_mixup_f0/s42_f0/selection.json",
+      "published_archive": "artifacts/history_utama/results/v54/sameclass_mixup_f0/s42_f0/selection.json",
+      "sha256": "45a11d15742aea503c5711a3613584b71c0c378a721a0a699b31b56a058db4ff",
+      "reason": "Compact experiment summary or actual submission receipt; raw artifacts remain local"
+    },
+    {
+      "source": "results/v55/sgd_all_preflight/manifest.json",
+      "published_archive": "artifacts/history_utama/results/v55/sgd_all_preflight/manifest.json",
+      "sha256": "016e113af0497e59f76a27f337645e14cb35902459352a3f00076a6d6745fd6c",
+      "reason": "Compact experiment summary or actual submission receipt; raw artifacts remain local"
+    },
+    {
+      "source": "results/v55/sgd_all_preflight_small/manifest.json",
+      "published_archive": "artifacts/history_utama/results/v55/sgd_all_preflight_small/manifest.json",
+      "sha256": "4c153c87d7cf5fbddef3488e935435672c7c74e772bc48924b445ed4ed2151e2",
+      "reason": "Compact experiment summary or actual submission receipt; raw artifacts remain local"
+    },
+    {
+      "source": "results/v56/fixed_union_rank/s42_f0/manifest.json",
+      "published_archive": "artifacts/history_utama/results/v56/fixed_union_rank/s42_f0/manifest.json",
+      "sha256": "325a49bc39c1183e51d5e3d34e9fa3fab53f1436c65e24fccb5c0e4db3f267ac",
+      "reason": "Compact experiment summary or actual submission receipt; raw artifacts remain local"
+    },
+    {
+      "source": "results/v56/fixed_union_rank/s42_f0/outer_metrics.json",
+      "published_archive": "artifacts/history_utama/results/v56/fixed_union_rank/s42_f0/outer_metrics.json",
+      "sha256": "b22a89ebf005e85ebfcfa07835d47caa5c6f2a4e929a047b801f2426e31c3d7d",
+      "reason": "Compact experiment summary or actual submission receipt; raw artifacts remain local"
+    },
+    {
+      "source": "results/v56/fixed_union_rank/s42_f1/manifest.json",
+      "published_archive": "artifacts/history_utama/results/v56/fixed_union_rank/s42_f1/manifest.json",
+      "sha256": "7f1de30fa1c7e951b923db8f006b39e8fab0903853e31dc69c37bf0c5ff150c4",
+      "reason": "Compact experiment summary or actual submission receipt; raw artifacts remain local"
+    },
+    {
+      "source": "results/v56/fixed_union_rank/s42_f1/outer_metrics.json",
+      "published_archive": "artifacts/history_utama/results/v56/fixed_union_rank/s42_f1/outer_metrics.json",
+      "sha256": "00bb64d1b00abccf23b21ba7388a08ff12132093dc212e99885d04ea4db0e251",
+      "reason": "Compact experiment summary or actual submission receipt; raw artifacts remain local"
+    },
+    {
+      "source": "results/v56/fixed_union_rank/s42_f2/manifest.json",
+      "published_archive": "artifacts/history_utama/results/v56/fixed_union_rank/s42_f2/manifest.json",
+      "sha256": "6399878f5a5a0bf6d76e1d8c84481849a438ceae31bd771b88861c14792cefde",
+      "reason": "Compact experiment summary or actual submission receipt; raw artifacts remain local"
+    },
+    {
+      "source": "results/v56/fixed_union_rank/s42_f2/outer_metrics.json",
+      "published_archive": "artifacts/history_utama/results/v56/fixed_union_rank/s42_f2/outer_metrics.json",
+      "sha256": "a11aa2bd74a6ab97eb68ba55ae63ed9993a05cc4c807a61973fa6e59a919d930",
+      "reason": "Compact experiment summary or actual submission receipt; raw artifacts remain local"
+    },
+    {
+      "source": "results/v56/fixed_union_rank/s42_f3/manifest.json",
+      "published_archive": "artifacts/history_utama/results/v56/fixed_union_rank/s42_f3/manifest.json",
+      "sha256": "b638acfd8f9cfcbfda963003aa19f0b18a1d3a8b24bb66b2296654c62c5e0d3d",
+      "reason": "Compact experiment summary or actual submission receipt; raw artifacts remain local"
+    },
+    {
+      "source": "results/v56/fixed_union_rank/s42_f3/outer_metrics.json",
+      "published_archive": "artifacts/history_utama/results/v56/fixed_union_rank/s42_f3/outer_metrics.json",
+      "sha256": "9eb1381eeeaf109b8c4a145c9365cc47848c285c4e6604fa709271b9ea50a88a",
+      "reason": "Compact experiment summary or actual submission receipt; raw artifacts remain local"
+    },
+    {
+      "source": "results/v56/fixed_union_rank/s42_f4/manifest.json",
+      "published_archive": "artifacts/history_utama/results/v56/fixed_union_rank/s42_f4/manifest.json",
+      "sha256": "d988c46f6e58707846dbfad3204531892afeb2076e1a802fedf0803afc601fe3",
+      "reason": "Compact experiment summary or actual submission receipt; raw artifacts remain local"
+    },
+    {
+      "source": "results/v56/fixed_union_rank/s42_f4/outer_metrics.json",
+      "published_archive": "artifacts/history_utama/results/v56/fixed_union_rank/s42_f4/outer_metrics.json",
+      "sha256": "2793d8f060f1d3454c8f86978a27577463465a0af06c434acb51a1cb73aba7f7",
+      "reason": "Compact experiment summary or actual submission receipt; raw artifacts remain local"
+    },
+    {
+      "source": "results/v56/fixed_union_rank/s7_f0/manifest.json",
+      "published_archive": "artifacts/history_utama/results/v56/fixed_union_rank/s7_f0/manifest.json",
+      "sha256": "a7562b7627bbcb87eaaccd973ec727889629e5f7ed76bb244cfbcb50d388a9d9",
+      "reason": "Compact experiment summary or actual submission receipt; raw artifacts remain local"
+    },
+    {
+      "source": "results/v56/fixed_union_rank/s7_f0/outer_metrics.json",
+      "published_archive": "artifacts/history_utama/results/v56/fixed_union_rank/s7_f0/outer_metrics.json",
+      "sha256": "742a1c7e00745193a6413e87c3b6878b325535d058924b2800f9004ed9895466",
+      "reason": "Compact experiment summary or actual submission receipt; raw artifacts remain local"
+    },
+    {
+      "source": "results/v56/fixed_union_rank/s7_f1/manifest.json",
+      "published_archive": "artifacts/history_utama/results/v56/fixed_union_rank/s7_f1/manifest.json",
+      "sha256": "5e8c0e8ec3ad7c5b7914d322c44639ad6bcb3c534156b12f84531d2a52d611b2",
+      "reason": "Compact experiment summary or actual submission receipt; raw artifacts remain local"
+    },
+    {
+      "source": "results/v56/fixed_union_rank/s7_f1/outer_metrics.json",
+      "published_archive": "artifacts/history_utama/results/v56/fixed_union_rank/s7_f1/outer_metrics.json",
+      "sha256": "cc77140b2a253f0522f33c3f02b73b453666f615b9d3862f1a6f772a555958a2",
+      "reason": "Compact experiment summary or actual submission receipt; raw artifacts remain local"
+    },
+    {
+      "source": "results/v56/fixed_union_rank/s7_f2/manifest.json",
+      "published_archive": "artifacts/history_utama/results/v56/fixed_union_rank/s7_f2/manifest.json",
+      "sha256": "f619508a2cd3701cc10c1ea5d08f9c0cd9ed8df9c065701112d14d0157c48a4e",
+      "reason": "Compact experiment summary or actual submission receipt; raw artifacts remain local"
+    },
+    {
+      "source": "results/v56/fixed_union_rank/s7_f2/outer_metrics.json",
+      "published_archive": "artifacts/history_utama/results/v56/fixed_union_rank/s7_f2/outer_metrics.json",
+      "sha256": "01c7d1497a6ae1fa068c98995c6f02477b944214f863fcc1c7e33cc9a69e582c",
+      "reason": "Compact experiment summary or actual submission receipt; raw artifacts remain local"
+    },
+    {
+      "source": "results/v56/fixed_union_rank/s7_f3/manifest.json",
+      "published_archive": "artifacts/history_utama/results/v56/fixed_union_rank/s7_f3/manifest.json",
+      "sha256": "7095a40cd26372f5facbb3526e8e6c0af3050a7a8c59847d4d2b965d3f4a4412",
+      "reason": "Compact experiment summary or actual submission receipt; raw artifacts remain local"
+    },
+    {
+      "source": "results/v56/fixed_union_rank/s7_f3/outer_metrics.json",
+      "published_archive": "artifacts/history_utama/results/v56/fixed_union_rank/s7_f3/outer_metrics.json",
+      "sha256": "bd660fb02a32752cb3f3ebaafd73d3072cbf1a4caa21ee51ece8e56e5915598e",
+      "reason": "Compact experiment summary or actual submission receipt; raw artifacts remain local"
+    },
+    {
+      "source": "results/v56/fixed_union_rank/s7_f4/manifest.json",
+      "published_archive": "artifacts/history_utama/results/v56/fixed_union_rank/s7_f4/manifest.json",
+      "sha256": "78580dfcd06aef340e091e54b31fcfe1028e38af9f81c78a630b9e93cab1e01f",
+      "reason": "Compact experiment summary or actual submission receipt; raw artifacts remain local"
+    },
+    {
+      "source": "results/v56/fixed_union_rank/s7_f4/outer_metrics.json",
+      "published_archive": "artifacts/history_utama/results/v56/fixed_union_rank/s7_f4/outer_metrics.json",
+      "sha256": "94161180ccea9b2e6e2f2e0f08b13a0c39f313623f4ba69f1ad13857be7a2aaf",
+      "reason": "Compact experiment summary or actual submission receipt; raw artifacts remain local"
+    },
+    {
+      "source": "results/v56/fixed_union_rank/s2026_f0/manifest.json",
+      "published_archive": "artifacts/history_utama/results/v56/fixed_union_rank/s2026_f0/manifest.json",
+      "sha256": "57cad3acde2bf5c057938138439a621f1a4ea84f3e7d62275bd734cc27df9cc2",
+      "reason": "Compact experiment summary or actual submission receipt; raw artifacts remain local"
+    },
+    {
+      "source": "results/v56/fixed_union_rank/s2026_f0/outer_metrics.json",
+      "published_archive": "artifacts/history_utama/results/v56/fixed_union_rank/s2026_f0/outer_metrics.json",
+      "sha256": "c9478d3c34e38950e1fd8a5f280aa5ab7f21476665160c65c11a15190823db2f",
+      "reason": "Compact experiment summary or actual submission receipt; raw artifacts remain local"
+    },
+    {
+      "source": "results/v56/fixed_union_rank/s2026_f1/manifest.json",
+      "published_archive": "artifacts/history_utama/results/v56/fixed_union_rank/s2026_f1/manifest.json",
+      "sha256": "ea1325e9bbb26d77c111169aa31d97a84fbe24ebe034584396fa5d421b836029",
+      "reason": "Compact experiment summary or actual submission receipt; raw artifacts remain local"
+    },
+    {
+      "source": "results/v57/cpu_union_ssl/s42_f0/manifest.json",
+      "published_archive": "artifacts/history_utama/results/v57/cpu_union_ssl/s42_f0/manifest.json",
+      "sha256": "014a17e7d6934d739dd3babef7bbc551491e9d1ebf3776061ddcfa807fd3017c",
+      "reason": "Compact experiment summary or actual submission receipt; raw artifacts remain local"
+    },
+    {
+      "source": "results/v58/cpu_capped_union_ssl/s42_f0/manifest.json",
+      "published_archive": "artifacts/history_utama/results/v58/cpu_capped_union_ssl/s42_f0/manifest.json",
+      "sha256": "b71b8351fd2a714e2d8f4d557a609ba6c9baaabbb928de2c3c3a4835fd6120b5",
+      "reason": "Compact experiment summary or actual submission receipt; raw artifacts remain local"
+    },
+    {
+      "source": "results/v59/v41_lowvar_today/reproduction.json",
+      "published_archive": "artifacts/history_utama/results/v59/v41_lowvar_today/reproduction.json",
+      "sha256": "a8ef5bfe4e019bd2710cb60ce61d029dd830a4edfd50e708afc894c74a46f174",
+      "reason": "Compact experiment summary or actual submission receipt; raw artifacts remain local"
+    },
+    {
+      "source": "results/v59/v41_lowvar_today/notebook_verification.json",
+      "published_archive": "artifacts/history_utama/results/v59/v41_lowvar_today/notebook_verification.json",
+      "sha256": "22a6d6271f7a7549f0822d44143a270e0e8e3dcb9bef26d6ddb1efa50bb3d92d",
+      "reason": "Compact experiment summary or actual submission receipt; raw artifacts remain local"
+    },
+    {
+      "source": "results/v59/v41_lowvar_today/submission_preflight.json",
+      "published_archive": "artifacts/history_utama/results/v59/v41_lowvar_today/submission_preflight.json",
+      "sha256": "11b98fd99a4ee959ecad48ef0178e176b000b323dc8d92534cad63239241b737",
+      "reason": "Compact experiment summary or actual submission receipt; raw artifacts remain local"
+    },
+    {
+      "source": "results/v59/v41_lowvar_today/submission_receipt.json",
+      "published_archive": "artifacts/history_utama/results/v59/v41_lowvar_today/submission_receipt.json",
+      "sha256": "930c3167ce3e97be3a5b4bd8e92428cec7d57b9e5e03b126c18a2441a6f952ce",
+      "reason": "Compact experiment summary or actual submission receipt; raw artifacts remain local"
+    },
+    {
+      "source": "results/v59/v41_lowvar_today/post_submission_analysis.json",
+      "published_archive": "artifacts/history_utama/results/v59/v41_lowvar_today/post_submission_analysis.json",
+      "sha256": "8a511f9ba5b6bfaef3f0287315af1148c70409a32d6f88fd40ef9108824b2ebd",
+      "reason": "Compact experiment summary or actual submission receipt; raw artifacts remain local"
+    }
+  ],
+  "original_local_files_preserved": true
+}

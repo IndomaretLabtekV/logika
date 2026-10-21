@@ -1,4 +1,13 @@
-# Audit setup Kumo-Tabular kita (belum dijalankan)
+# Audit setup Kumo-Tabular kita (snapshot19Okt)
+
+Pembaruan21Okt: audit153/157 selesai; native/gain100 dan pool teman telah diuji
+dalam173/177, belum lolos gate. Log-uang181 lolossearch+0,003385 tetapi
+confirmation−0,002713. Full232OOM padaallocator0,7;f154/198 juga nullhistoris.
+VIPfeature152 tau0,5 turunouter−0,006096. Retrieval183 bestblend+0,002458,
+belum>0,003. Same-class augmentation185 sedang diuji. Angka/protokol di bawah
+merefleksikan rencana19Okt; status terkini ada di
+[status aktif](../00_mulai_di_sini/status_sekarang.md) dan
+[jurnal21](../04_riwayat_versi/jurnal_21okt_integrasi.md).
 
 ## Petunjuk dari user (19 Okt malam)
 Teman user di public **0,57065** (#8 leaderboard 19 Okt, kemungkinan tim "BCC mau ke kopdes depok") memakai

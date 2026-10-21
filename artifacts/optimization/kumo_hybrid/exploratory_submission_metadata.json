@@ -1,0 +1,46 @@
+{
+  "file": "submission_kumo_spline_exploratory.csv",
+  "sha256": "3de98287976a7137ad63c946e9932b6ac3ba3a7ee6df607d74cde1aa6a8fc417",
+  "rows": 30000,
+  "recipe": "75% frozen Kumo + 25% latent-feature spline",
+  "stage": "cv5_seed31027",
+  "validation": {
+    "name": "kumo75_spline25",
+    "ks": 0.5285099762252743,
+    "auc": 0.8473211411419717,
+    "mean_fold_ks": 0.5309545883623841,
+    "fold_ks": [
+      0.526691703841345,
+      0.5348103292497599,
+      0.5394277675597503,
+      0.5268633360329826,
+      0.5269798051280821
+    ],
+    "fold_deltas": [
+      0.0038912272019907546,
+      -0.00252319556017766,
+      -0.0036997071199252884,
+      -0.0009376631327857599,
+      -0.0018768038585690316
+    ],
+    "delta_ks": 0.0012871918844186148,
+    "delta_mean_fold_ks": -0.0010292284938933972,
+    "fold_wins": 1
+  },
+  "source_prediction_sha256": {
+    "artifacts/optimization/kumo_improvement/cv5_seed31027/baseline_e8/fold0_test.parquet": "bbac2c8990b2c5080166d28c520013c168f23ec302be2455b87b2376d2df11da",
+    "artifacts/optimization/kumo_improvement/cv5_seed31027/baseline_e8/fold1_test.parquet": "d926bb3272f794a1010c4cf299b882333c764fb626121602f06abc061078ff18",
+    "artifacts/optimization/kumo_improvement/cv5_seed31027/baseline_e8/fold2_test.parquet": "adce18ab94ea86878ecfcb54b5aa2b8748f403caa0a5510267d29e54cab790ab",
+    "artifacts/optimization/kumo_improvement/cv5_seed31027/baseline_e8/fold3_test.parquet": "04c75d9326e2efcb619bb8bca73d7be47fe823ec0cf8f99fd98328b0c0ae80c7",
+    "artifacts/optimization/kumo_improvement/cv5_seed31027/baseline_e8/fold4_test.parquet": "527ce8613e979759d02b7423a27b68052dedc0993fc0d8281158315cea45968c",
+    "artifacts/optimization/kumo_hybrid/cv5_seed31027/reverse_spline/fold0_test.parquet": "b863f1f387aa64c5a10fc015ee609a723ffc096ecc3d00e3f7cdb1746b63d246",
+    "artifacts/optimization/kumo_hybrid/cv5_seed31027/reverse_spline/fold1_test.parquet": "1105a18885495e7303931ae69e2e3600f1c2ec355803f066105d3463ebfaa36d",
+    "artifacts/optimization/kumo_hybrid/cv5_seed31027/reverse_spline/fold2_test.parquet": "882503d9d1b3dbec92a77bd72f4ed0623a804ba4cb838f1221ddde5014aa3152",
+    "artifacts/optimization/kumo_hybrid/cv5_seed31027/reverse_spline/fold3_test.parquet": "17d55852aafeb8bbd8c42d4a1fd8190167e7a098b5b44d7179f20e2919dad5bb",
+    "artifacts/optimization/kumo_hybrid/cv5_seed31027/reverse_spline/fold4_test.parquet": "eedd8db157b6dd2160940868d23c34db53494b182ec05f34ce28ca54303ae934"
+  },
+  "public_score": null,
+  "checkpoint_056262_preserved": true,
+  "promotion_passed": false,
+  "export_mode": "exploratory"
+}

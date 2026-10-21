@@ -1,0 +1,119 @@
+{
+  "passed": true,
+  "comparisons": [
+    {
+      "dtype": "torch.float32",
+      "hops": 0,
+      "mode": "uncached",
+      "max_abs_difference": 0.0
+    },
+    {
+      "dtype": "torch.float32",
+      "hops": 0,
+      "mode": "record",
+      "max_abs_difference": 0.0
+    },
+    {
+      "dtype": "torch.float32",
+      "hops": 0,
+      "mode": "replay",
+      "max_abs_difference": 0.0
+    },
+    {
+      "dtype": "torch.float32",
+      "hops": 1,
+      "mode": "uncached",
+      "max_abs_difference": 5.21540641784668e-07
+    },
+    {
+      "dtype": "torch.float32",
+      "hops": 1,
+      "mode": "record",
+      "max_abs_difference": 5.21540641784668e-07
+    },
+    {
+      "dtype": "torch.float32",
+      "hops": 1,
+      "mode": "replay",
+      "max_abs_difference": 5.21540641784668e-07
+    },
+    {
+      "dtype": "torch.float32",
+      "hops": 2,
+      "mode": "uncached",
+      "max_abs_difference": 0.0
+    },
+    {
+      "dtype": "torch.float32",
+      "hops": 2,
+      "mode": "record",
+      "max_abs_difference": 0.0
+    },
+    {
+      "dtype": "torch.float32",
+      "hops": 2,
+      "mode": "replay",
+      "max_abs_difference": 0.0
+    },
+    {
+      "dtype": "torch.float16",
+      "hops": 0,
+      "mode": "uncached",
+      "max_abs_difference": 0.0
+    },
+    {
+      "dtype": "torch.float16",
+      "hops": 0,
+      "mode": "record",
+      "max_abs_difference": 0.0
+    },
+    {
+      "dtype": "torch.float16",
+      "hops": 0,
+      "mode": "replay",
+      "max_abs_difference": 0.0
+    },
+    {
+      "dtype": "torch.float16",
+      "hops": 1,
+      "mode": "uncached",
+      "max_abs_difference": 0.0
+    },
+    {
+      "dtype": "torch.float16",
+      "hops": 1,
+      "mode": "record",
+      "max_abs_difference": 0.0
+    },
+    {
+      "dtype": "torch.float16",
+      "hops": 1,
+      "mode": "replay",
+      "max_abs_difference": 0.0
+    },
+    {
+      "dtype": "torch.float16",
+      "hops": 2,
+      "mode": "uncached",
+      "max_abs_difference": 0.0
+    },
+    {
+      "dtype": "torch.float16",
+      "hops": 2,
+      "mode": "record",
+      "max_abs_difference": 0.0
+    },
+    {
+      "dtype": "torch.float16",
+      "hops": 2,
+      "mode": "replay",
+      "max_abs_difference": 0.0
+    }
+  ],
+  "nonzero_readout_offset_tested": true,
+  "duplicate_and_reordered_readout_indices_tested": true,
+  "cache_record_and_replay_tested": true,
+  "labels_used": false,
+  "caveat": "Algebraically equivalent one-hop readout; FP16 GEMM rounding may differ with matrix row count.",
+  "backend_sha256": "bac503746c4e26b311332f565438d7c89fac3b701ed405d5fdc526d31c8cc7c6"
+}

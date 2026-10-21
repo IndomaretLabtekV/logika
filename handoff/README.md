@@ -1,5 +1,24 @@
 # Handoff DSC LOGIKA UI 2026
 
+**Status utama:** [status sekarang](00_mulai_di_sini/status_sekarang.md).
+Riset dipause atas permintaan user. Repository sedang dirapikan untuk GitHub;
+tidak ada training, submission atau push yang dijalankan oleh pekerjaan cleanup.
+
+Dua sumber sudah menjadi satu root. Kode ada di `eda/` dan `scripts/`, notebook
+pada `notebook/`, laporan pada `artifacts/`, data tunggal di `data/`.
+Prediksi/model/cache tetap lokal; snapshot kode dan konfigurasi penting dipublikasikan
+terpisah. Lihat [panduan GitHub](../docs/github.md) dan [audit integrasi](../docs/integration/perbandingan_repository.md).
+
+Public terbaik tetapv31 **0,56405**. Submission terakhirv59 **0,56296**, ID57486639,
+21Okt21.48WIB. Belum ada breakthrough baru. Notebook aktif mereproduksiv59 dalam
+mode replay yang sudah diuji; training fresh GPU belum diulang.
+SSL diizinkan kembali dengan validasi nested. Gunakan status terbaru sebelum
+membaca catatan historis berikut; aturan/angka/posisi run lama bukan kondisi aktif.
+
+---
+
+Catatan handoff historis sebelum konsolidasi:
+
 Rangkuman semua chat: 12–16 Okt 2026 (v1–v21, probe S3–S5), sesi `/goal` 17–18 Okt (validation_v2, v22–v36, Kumo-Tabular,
 6 submission, notebook submission), dan sesi `/goal` 18 Okt sore – 19 Okt (35 siklus riset, bug Kumo, 3 probe keluarga,
 run lokal notebook, ide VIP-COP). Tujuannya supaya chat baru bisa langsung lanjut tanpa mengulang apa pun.

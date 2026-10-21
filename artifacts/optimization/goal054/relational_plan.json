@@ -1,0 +1,52 @@
+{
+  "date": "2026-10-18",
+  "family": "KumoRelational",
+  "weights": "nvidia/Kumo-Relational",
+  "weights_tag": "v1.0.1",
+  "weights_commit": "2bd603d3d8f25f67a7aaa8579908595e20567e22",
+  "package": "structured-data-models==0.2.1",
+  "source": "https://huggingface.co/nvidia/Kumo-Relational",
+  "motivation": "Process multiple related histories directly instead of relying entirely on fixed aggregations. Official model exposes relational message passing and cached fit/predict.",
+  "primary_protocol": {
+    "n_splits": 5,
+    "seed": 31027,
+    "context_limit": 50000,
+    "estimators": 8,
+    "estimator_batch_size": 1
+  },
+  "initial_graph": {
+    "task": "Selected application and existing 90 V5 features, with customer_id typed as an ID link and decision time as a timestamp",
+    "readout_table": "users/customer profiles",
+    "children": [
+      "account months",
+      "bureau observations",
+      "ecommerce item events",
+      "past-due repayment snapshots"
+    ],
+    "relationships": "Each child connects to its owning customer. Context and query customer subgraphs are disjoint.",
+    "num_hops": 1,
+    "initial_per_customer_caps": {
+      "account_months": 12,
+      "bureau_observations": 12,
+      "ecommerce_item_events": 20,
+      "repayment_snapshots": 16
+    },
+    "sampling": "Predeclare deterministic past-only sampling; latest rows plus history-spanning rows where useful. Never sample based on target labels."
+  },
+  "safety_of_validation": "Target exists only in y_context for outer-training customers. Related tables never contain target, split, or numeric ID predictors. Raw IDs are used only for graph links. Every observation must be available before that customer's decision cutoff.",
+  "preflight": "First use a tiny synthetic graph to verify ID links, categorical/missing data, cached inference and disjoint context/query subgraphs. Then check a real-data subset for throughput before full five-fold evaluation.",
+  "limitations": "OOF model and feature selection reuse previously used training labels and splits. New candidate public scores are unknown.",
+  "technical_update_2026_10_19": {
+    "gnn_backend": "Destination-only final-hop statistics; all source messages retained",
+    "query_batch_size": 8192,
+    "reason": "Avoid repeated CPU join and context-cache overhead measured with 1024-query batches",
+    "unchanged": [
+      "50000 context rows",
+      "8 estimators",
+      "all graph tables and selected rows",
+      "frozen model weights",
+      "five folds and seed31027"
+    ],
+    "selection_used_validation_scores": false
+  }
+}

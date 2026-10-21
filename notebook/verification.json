@@ -1,0 +1,89 @@
+{
+  "generated_at_utc": "2026-10-13T03:53:37.669578+00:00",
+  "notebooks": [
+    {
+      "notebook": "01_baseline_xgboost.ipynb",
+      "code_cells": 20,
+      "all_code_cells_executed": true,
+      "error_outputs": 0,
+      "export_rows": 30000,
+      "output_file": "artifacts/notebook_runs/01_baseline/submission.csv",
+      "exact_historical_sha256_match": true,
+      "sha256": "60c12b5e13ba0bf14645fbd9d1247a4d6570892fd6ef833ac2e51b83cbeca940",
+      "maximum_probability_difference": 0.0
+    },
+    {
+      "notebook": "02_tuning_ks_v2.ipynb",
+      "code_cells": 32,
+      "all_code_cells_executed": true,
+      "error_outputs": 0,
+      "export_rows": 30000,
+      "output_file": "artifacts/notebook_runs/02_v2/submission.csv",
+      "exact_historical_sha256_match": true,
+      "sha256": "12c28ca24cce695a107a78b948aa48d47e0053f0993e4a3809006d6a8ba97d00",
+      "maximum_probability_difference": 0.0
+    },
+    {
+      "notebook": "03_ensemble_ks.ipynb",
+      "code_cells": 31,
+      "all_code_cells_executed": true,
+      "error_outputs": 0,
+      "export_rows": 30000,
+      "output_file": "artifacts/notebook_runs/03_ks/submission.csv",
+      "exact_historical_sha256_match": true,
+      "sha256": "a7240b5f276a80301012db7b98dd2c1caee214a79eb7a190c64b48930dc5d08a",
+      "maximum_probability_difference": 0.0
+    },
+    {
+      "notebook": "04_submission_v3.ipynb",
+      "code_cells": 44,
+      "all_code_cells_executed": true,
+      "error_outputs": 0,
+      "export_rows": 30000,
+      "output_file": "artifacts/notebook_runs/04_v3/submission.csv",
+      "exact_historical_sha256_match": true,
+      "sha256": "bfd1b620ddaa85cd45ea2e8ce2c4f2ce3bcab660f09657dfbaae74aaa59525db",
+      "maximum_probability_difference": 0.0
+    },
+    {
+      "notebook": "05_submission_v4.ipynb",
+      "code_cells": 55,
+      "all_code_cells_executed": true,
+      "error_outputs": 0,
+      "export_rows": 30000,
+      "output_file": "artifacts/notebook_runs/05_v4/submission.csv",
+      "exact_historical_sha256_match": true,
+      "sha256": "890e05a3f0b09500142395d5498e939928328b2770c509ca035f760a8dea8344",
+      "maximum_probability_difference": 0.0
+    }
+  ],
+  "features_rebuilt_from_raw_in_isolated_directory": {
+    "application_features": {
+      "rows": 100000,
+      "columns": 122,
+      "exact_dataframe_match": true
+    },
+    "application_features_extended": {
+      "rows": 100000,
+      "columns": 683,
+      "exact_dataframe_match": true
+    },
+    "application_features_v3": {
+      "rows": 100000,
+      "columns": 871,
+      "exact_dataframe_match": true
+    },
+    "application_features_v4": {
+      "rows": 100000,
+      "columns": 984,
+      "exact_dataframe_match": true
+    },
+    "bureau_latest": {
+      "rows": 288348,
+      "columns": 16,
+      "exact_dataframe_match": true
+    }
+  },
+  "execution_mode": "Feature/model caches reused for final predictions; test probabilities recomputed from models. Separate isolated run rebuilt all four feature levels from raw.",
+  "training_code_origin": "Model construction uses the same code and parameters as the previously executed scripts; fresh model training was not repeated in this notebook validation."
+}

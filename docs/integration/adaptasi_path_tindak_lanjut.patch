@@ -1,0 +1,19 @@
+--- scripts/reporting.py
++++ scripts/reporting.py
+@@ -460,4 +460,4 @@
+     notebook = {"cells": cells, "metadata": {"kernelspec": {"display_name": "Python 3", "language": "python", "name": "python3"}, "language_info": {"name": "python", "version": "3"}}, "nbformat": 4, "nbformat_minor": 5}
+     for i, item in enumerate(cells):
+         item["id"] = f"logika-{i:02d}"
+-    (ROOT / "analisis_logika.ipynb").write_text(json.dumps(notebook, indent=2, ensure_ascii=False))
++    (ROOT / "notebook/analisis_logika.ipynb").write_text(json.dumps(notebook, indent=2, ensure_ascii=False))
+--- docs/integration/riset_teman.md
++++ docs/integration/riset_teman.md
+@@ -17,7 +17,7 @@
+ - [Laporan bergrafik](../../artifacts/laporan_analisis.html), satu berkas HTML dengan grafik tertanam
+ - [Laporan Markdown](../../artifacts/laporan_analisis.md)
+ - [Notebook analisis](../../notebook/analisis_logika.ipynb)
+-- [Tabel hasil lengkap](artifacts/tables/)
++- [Tabel hasil lengkap](../../artifacts/tables/)
+ - [Audit kualitas dan waktu](../../artifacts/quality_audit.json)
+ - [Ringkasan JSON](../../artifacts/summary.json)
+ 

@@ -1,0 +1,15 @@
+{
+  "counts": {
+    "utama": 2391,
+    "teman": 508
+  },
+  "bytes": {
+    "utama": 2382149227,
+    "teman": 19499369
+  },
+  "duplicate_groups": 68,
+  "cross_source_groups": 0,
+  "friend_git_directory": false,
+  "friend_prediction_parquets": 0,
+  "friend_raw_csvs": []
+}

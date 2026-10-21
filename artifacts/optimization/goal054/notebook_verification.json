@@ -1,0 +1,20 @@
+{
+  "notebook": "notebooks/12_goal054_research.ipynb",
+  "notebook_sha256": "1023dc6507ee480a9877f76e0e6166aaefe5f2436edad7b3ae581dc2606b4b4a",
+  "executed_code_cells": 137,
+  "errors": 0,
+  "existing_files_preserved": {
+    "analisis_logika.ipynb": "556f22c757857c4b5a97d2ca3989a8526af480af2e80acbfb5b4d831295f4e7a",
+    "submission.csv": "890e05a3f0b09500142395d5498e939928328b2770c509ca035f760a8dea8344",
+    "submission_kumo.csv": "85ac74d1b4325eba4830fd1d31bb1c21b9b9a3a6fb180d48c0c9d4b921d59d40",
+    "submission_ks.csv": "a7240b5f276a80301012db7b98dd2c1caee214a79eb7a190c64b48930dc5d08a",
+    "submission_v2.csv": "12c28ca24cce695a107a78b948aa48d47e0053f0993e4a3809006d6a8ba97d00",
+    "submission_kumo_spline_exploratory.csv": "3de98287976a7137ad63c946e9932b6ac3ba3a7ee6df607d74cde1aa6a8fc417",
+    "submission_v4.csv": "890e05a3f0b09500142395d5498e939928328b2770c509ca035f760a8dea8344",
+    "submission_v3.csv": "bfd1b620ddaa85cd45ea2e8ce2c4f2ce3bcab660f09657dfbaae74aaa59525db",
+    "submission_goal054_kumo_offset_l20p003_unweighted_d0p5_w1.csv": "5d4d8b81e781354a3d1302aadfe93a1534e42e35279ba4867a7b4d0e1990dd33",
+    "submission_kumo_blend.csv": "056245bc9ac8fb1cc272c72b30335ad1500cee99a941302b62a84377d309f28b",
+    "submission_v5.csv": "2b97dcdc26f38cabc6ab1a3f3053903975b488a5480df8ff739415a7bc750526"
+  },
+  "mode": "Review cached research; training flags remain explicit in notebook"
+}

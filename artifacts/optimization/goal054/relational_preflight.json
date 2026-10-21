@@ -1,0 +1,22 @@
+{
+  "passed": true,
+  "weights": "nvidia/Kumo-Relational",
+  "weights_revision": "2bd603d3d8f25f67a7aaa8579908595e20567e22",
+  "weights_sha256": "0c2e35cc18303f0d3ddeaf04e9cab6ca3a8bd6ea17195ac0e42d47af4bcb2a2d",
+  "context_rows": 16,
+  "query_rows": 8,
+  "estimators": 1,
+  "num_hops": 1,
+  "tables": {
+    "users": 24,
+    "accounts": 46,
+    "bureau": 48,
+    "ecommerce": 48,
+    "repayment": 48
+  },
+  "ids_used_only_as_links": true,
+  "context_and_query_customers_disjoint": true,
+  "missing_account_history_tested": true,
+  "numeric_missing_values_tested": true,
+  "note": "Synthetic API test only; this is not a LOGIKA validation score."
+}

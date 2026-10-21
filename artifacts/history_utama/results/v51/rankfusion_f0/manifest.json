@@ -1,0 +1,25 @@
+{
+  "source_run_sha256": "5cdddd08cea190dd4f48d8616da00d405f9754cb51769e366bdebf36a20c181e",
+  "baseline_run_sha256": "86a37df2a878da65e8f4310457b3947ddb8236b2447be006eb4b7a52d67b7e0f",
+  "inputs": {
+    "utama_raw": {
+      "fit_sha256": "f4bf32772820529f95e6bd511e166cfde6c643d5aecd4fa509a618f8b473bf29",
+      "predictions_sha256": "d3e688f1420e6177d3d84613810a650f0e7fd99665e07cdf34d9518d84434004"
+    },
+    "union_gain": {
+      "fit_sha256": "5e865566b920b8e4a4114098e92881b5a8a6ca696f83e3586d19d792a7eeccaf",
+      "predictions_sha256": "550542f120228756a3085d6a366c9bfafb558c94f03cb25b9b6dac67a9146866"
+    }
+  },
+  "weights": [
+    0.0,
+    0.1,
+    0.2,
+    0.3,
+    0.4,
+    0.5
+  ],
+  "min_inner_gain": 0.003,
+  "source_sha256": "a4690dae777840372415d536384f7a8c8e63d1dd2d7064dffb4712152536c2cf",
+  "protocol_sha256": "30b5239d1940c28982a7e83ca245aa66178abc5c7f1b3e5bbb4ede677f7fdfef"
+}

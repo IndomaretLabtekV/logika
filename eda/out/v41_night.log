@@ -1,3 +1,0 @@
-context 70000, test rows 30000, 6362 s, peak VRAM 5.0 GB
-context 70000, test rows 30000, 6212 s, peak VRAM 5.0 GB
-causilo: OOF KS 0.52397 on 70000 rows
