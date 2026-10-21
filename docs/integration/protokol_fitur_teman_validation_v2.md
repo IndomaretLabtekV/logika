@@ -17,6 +17,13 @@ Pembanding utama: Kumo large cached, fitur legacy yang dipilih bersarang,
 generator100×seed+fold, chunk500. Prediksi baseline dihitung pada baris dan
 anggaran yang sama dengan kandidat. Referensi historis v31 dilaporkan terpisah.
 
+Amendemen eksekusi setelah laptop hang21Okt, sebelum run kualitas input:
+chunk **128** dan allocatorGPU **0,7** untuk semua policy, mengikuti bukti
+preflight170 dan amendemenSSLf142e08. Context/e4/split/gerbang tidak berubah.
+Nilai chunk500 di paragraf atas merekam rancangan awal; baseline baru dihitung
+dengan konfigurasi yang sama dengan kandidat. Ini bukan penyesuaian dari skor
+native/fiturteman, karena skor tersebut belum tersedia.
+
 Calon policy yang ditentukan sebelum run:
 
 | Policy | Pool numerik | Empat kategori aplikasi | Maksud perbandingan |
