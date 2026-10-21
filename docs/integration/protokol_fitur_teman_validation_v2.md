@@ -54,6 +54,16 @@ tetap eksperimen terpisah bila diperlukan untuk menjelaskan perbedaan.
 - Numerik 100 dipilih dari kolom numerik saja; jangan memaksa kategori histori
   menjadi float atau memasukkannya ke v.fm_select yang mengasumsikan empat
   kategori. Seleksi KS/Spearman mengikuti kebijakan baseline, pada fitting rows.
+- Amendemen struktural sebelum skor model: prepare-only173 pertama berhenti
+  karena shortlist200 selektor asli menghasilkan hanya71 numerik teman (+4
+  kategori), dibanding100 numerik utama. Belum ada inferensi/KS keluarga input.
+  Aturan bersama kini: mulai dari selektor asli n=100; bila kurang100, gandakan
+  shortlist dengan panggilan selektor asli n=200,400,... sampai seluruh pool;
+  ambil100 numerik pertama dengan ranking KS dan filter |Spearman|<0,95 yang
+  sama. Gagal eksplisit bila pool penuh tidak mencukupi. Terapkan pada kedua
+  keluarga dan outer refit. Pool yang sudah menghasilkan100 tetap persis sama.
+  Ini menjaga jumlah kolom104 pada perbandingan, bukan memilih shortlist dari
+  skor query. Simpan jumlah kolom legacy dan kesamaan baseline dalam input_audit.
 - Daftar 90 historis hanya pemeriksaan reproduksi dan metadata. Daftar itu pernah
   dipilih dari label global; jangan menjadikannya seleksi bersarang baru.
 - Audit100kID/customer unik, cakupanID terhadap data utama, contoh kedua kelas,
