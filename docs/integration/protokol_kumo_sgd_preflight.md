@@ -18,7 +18,9 @@ Konfigurasi engineering yang ditetapkan:
   dipakai dua langkah supaya perubahan loss dapat diperiksa tanpa mengubah episode.
   Num_estimators1 untuk gradient episode. Generator4200 direset pada tiaplangkah.
 - Semua parameter classification Kumo large trainable. SGD lr0,01,momentum0,
-  weight_decay0;AMPfloat16/GradScaler,clipnorm1. Tidak membuat Adam optimizer.
+  weight_decay0,foreachFalse;AMPfloat16/GradScaler initialscale128,clipnorm1.
+  Tidak membuat Adam optimizer. Episode1024/128 lebih kecil daripada run AdamW
+  historis2048/512; jika muat, jangan mengatribusikan perbedaan hanya ke optimizer.
 - Catat loss,finitegrad,parametercount/gradcount/norm menurut rowembedding dan
   ICL,perubahan setidaknya satu parameter rowembedding,optimizerstatecount,
   allocated/reserved/RSS/waktu. Positive probability wajib dicocokkan nama kelas1,
