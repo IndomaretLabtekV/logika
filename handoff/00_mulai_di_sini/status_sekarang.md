@@ -1,4 +1,6 @@
-> **Mulai dari `serah_terima_25okt/00_mulai_di_sini/README.md`** — serah terima lengkap sesi 24 Okt (posisi, eksperimen,
+> Checkpoint historis konsolidasi 21 Oktober. Untuk perkembangan sesudahnya, baca [jurnal merge 25 Oktober](../04_riwayat_versi/jurnal_25okt_merge.md) dan [indeks handoff](../README.md).
+
+> **Mulai dari `handoff/2026-10-25/00_mulai_di_sini/README.md`** — serah terima lengkap sesi 24 Okt (posisi, eksperimen,
 > kesalahan, rencana merge). Dokumen ini tetap sebagai status historis.
 
 # Status sekarang — 24 Oktober 2026 (malam)

@@ -2,7 +2,7 @@
 Lanjutkan lomba DSC LOGIKA UI 2026 di /home/veinsan/Projects/logika (credit risk, metrik KS). Deadline notebook 30 Okt 2026 23:59 WIB. Bahasa Indonesia, jujur, klaim + angka. Jangan sebut "final". Kalau gua bertanya, jawab dulu, jangan langsung jalankan.
 
 Baca dulu:
-1. serah_terima_25okt/ (mulai 00_mulai_di_sini/README.md; wajib 06_kesalahan_dan_pelajaran/ dan 07_langkah_berikutnya/rencana_merge.md)
+1. handoff/2026-10-25/ (mulai 00_mulai_di_sini/README.md; wajib 06_kesalahan_dan_pelajaran/ dan 07_langkah_berikutnya/rencana_merge.md)
 2. docs/dsc0152/README.md dan scripts/dsc0152/README.md
 3. docs/integration/indeks_eksperimen.md (jangan ulang yang null tanpa alasan baru)
 

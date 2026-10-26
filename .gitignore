@@ -1,80 +1,25 @@
-# environments
+# Local environments and Python tooling
 .venv/
-.venv-rel/
-.venv-zoo/
-__pycache__/
-*.pyc
-.ipynb_checkpoints/
-
-# competition data (not redistributable) and local caches rebuilt by eda/common.py
-data/
-data_pq/
-
-# local dry-run outputs
-output/
-output_v*/
-catboost_info/
-
-# large derived artefacts, regenerable by the scripts that wrote them
-eda/deep/out/relational/
-eda/deep/out/preprocessed/
-eda/*/out/*.parquet
-eda/out/*.parquet
-results/**/features.parquet
-eda/*/out/*.npz
-!eda/v8_review/out/*.parquet
-results/v4/v4/features_*.parquet
-
-# baseline DuckDB EDA outputs (only the risk exploration tables/figures are kept)
-outputs/*
-!outputs/04_risk_exploration/
-outputs/04_risk_exploration/*.parquet
-
-# research PDFs, re-download with research/download_papers.py
-research/papers/
-
-# model weights
-*.pt
-*.pkl
-*.cbm
-*.ubj
-
-# training checkpoints / logs written by pytorch-lightning (pytabkit TabR, TabM) and local runners
-checkpoints/
-lightning_logs/
-*.ckpt
-
-# credentials (shared by both research sources)
-.env
-.env.*
-secrets.env
-*kaggle*.json
-.kaggle/
-
-# additional local model formats and isolated environments
 .venv-*/
-*.joblib
-*.safetensors
-*.onnx
+venv/
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+*.egg-info/
+/build/
+/dist/
 
-# teammate pipeline: retain reports, tables, figures and provenance, exclude caches
-artifacts/**
-!artifacts/**/
-!artifacts/**/*.md
-!artifacts/**/*.html
-!artifacts/**/*.json
-!artifacts/figures/*.png
-!artifacts/tables/*.csv
-artifacts/notebook_runs/
-eda/out/integration_build_smoke/
-
-# GitHub contains source, compact reports and archived recipes. Keep the large
-# local experiment store and submissions on disk without publishing predictions.
+# Competition data and derived experiment artifacts stay on the local machine.
+/data/
+/data_pq/
 /results/
-/submissions/**/*.csv
-/submissions/*.csv
 /log/
-*.log
+/research/papers/
+/submissions/*.csv
+/submissions/**/*.csv
 *.parquet
 *.npy
 *.npz
@@ -84,46 +29,74 @@ eda/out/integration_build_smoke/
 *.duckdb.wal
 *.sqlite
 *.sqlite3
-*.zip
-*.tar
-*.tar.gz
-*.tmp
-*.swp
-*~
-.pytest_cache/
-.ruff_cache/
-.mypy_cache/
+
+# Generated outputs: existing committed aggregate reports remain as history.
+# Select new reports deliberately with git add -f, after review.
+/eda/**/out/
+/outputs/
+output/
+output_v*/
+catboost_info/
+mpl_cache/
+.cache/
 .repo-checks/
+*.log
 
-# Compact migrated training summaries are publication artifacts, not caches.
-!artifacts/history_utama/**/*.csv
+# Model weights and training state
+*.pt
+*.pth
+*.pkl
+*.pickle
+*.cbm
+*.ubj
+*.ckpt
+*.joblib
+*.safetensors
+*.onnx
+*.h5
+*.hdf5
+*.model
+checkpoints/
+lightning_logs/
+wandb/
 
-# Local row-level diagnostics and hardware telemetry are reproducible outputs.
-/eda/out/*_examples.csv
-/eda/out/*_telemetry.csv
-/eda/out/gpu_watch_probe.csv
+# Keep selected, compact research evidence under artifacts/.
+/artifacts/**
+!/artifacts/**/
+!/artifacts/**/*.md
+!/artifacts/**/*.html
+!/artifacts/**/*.json
+!/artifacts/figures/*.png
+!/artifacts/tables/*.csv
+!/artifacts/history_utama/**/*.csv
+/artifacts/notebook_runs/
 
-# Private keys / service credentials must never be staged.
+# Credentials and machine-specific agent configuration
+.env
+.env.*
+secrets.env
+*kaggle*.json
+.kaggle/
+.aws/
+.codex/
+.agents/
 *.pem
 *.key
 credentials.json
 service-account*.json
 
-# Diagnostics containing row identifiers (kept locally).
-/eda/deep/out/00_do_not_deduplicate_items_examples.csv
-/eda/deep/out/04_class_samples_before_after.csv
-/eda/out/153_kumo_input_audit_examples.csv
-/eda/out/175_inner_s42_f0.csv
-/eda/out/66b_class_samples_d2.csv
-/eda/out/66b_class_samples_d3.csv
-/eda/out/81_class_samples.csv
-/eda/v5_review/out/01_transformed_samples.csv
-/eda/v6_review/out/00_error_examples.csv
-/eda/v6_review/out/01_class_samples.csv
-/eda/v6_review/out/02_class_samples.csv
-/eda/v6_review/out/03_class_samples.csv
-/eda/v7_review/out/01_error_examples.csv
-/eda/v7_review/out/02_class_samples.csv
-/eda/v7_review/out/03_class_samples.csv
-/eda/v8_review/out/01_ambiguous_examples.csv
-/eda/v8_review/out/03_class_samples.csv
+# Archives, exports and editor/OS leftovers
+/exports/
+*.zip
+*.tar
+*.tar.gz
+*.tgz
+*.7z
+*.tmp
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

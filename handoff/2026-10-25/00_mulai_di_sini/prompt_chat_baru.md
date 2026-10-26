@@ -8,11 +8,11 @@ Deadline notebook 30 Okt 2026 23:59 WIB. Jangan sebut apa pun "final". Bahasa In
 Kalau gua bertanya, jawab dulu, jangan langsung jalankan apa pun.
 
 Baca dulu, urut:
-1. serah_terima_25okt/00_mulai_di_sini/README.md
-2. serah_terima_25okt/01_konteks_lomba_dan_aturan/ (aturan_user.md wajib)
-3. serah_terima_25okt/03_posisi_sekarang/ dan 07_langkah_berikutnya/rencana_merge.md
-4. serah_terima_25okt/06_kesalahan_dan_pelajaran/ (jangan ulang yang null tanpa alasan baru)
-5. serah_terima_25okt/08_kode_dan_infrastruktur/cara_menjalankan.md
+1. handoff/2026-10-25/00_mulai_di_sini/README.md
+2. handoff/2026-10-25/01_konteks_lomba_dan_aturan/ (aturan_user.md wajib)
+3. handoff/2026-10-25/03_posisi_sekarang/ dan 07_langkah_berikutnya/rencana_merge.md
+4. handoff/2026-10-25/06_kesalahan_dan_pelajaran/ (jangan ulang yang null tanpa alasan baru)
+5. handoff/2026-10-25/08_kode_dan_infrastruktur/cara_menjalankan.md
 
 Fakta kunci:
 * Public terbaik 0,56470 (goal054 kumo_offset teman, results/v70/goal054_kumo_offset/). Sebelumnya v31 0,56405.

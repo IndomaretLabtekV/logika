@@ -1,0 +1,345 @@
+{
+  "date": "2026-10-26",
+  "backup_directory": ".repo-checks/cleanup_26okt",
+  "notebooks": [
+    {
+      "path": "notebook/0-initial-iteration/catboost-result.ipynb",
+      "bytes_before": 359487,
+      "bytes_after": 73774,
+      "source_preserved": true
+    },
+    {
+      "path": "notebook/0-initial-iteration/lightgbm-result.ipynb",
+      "bytes_before": 361237,
+      "bytes_after": 73846,
+      "source_preserved": true
+    },
+    {
+      "path": "notebook/0-initial-iteration/xgboost-result.ipynb",
+      "bytes_before": 354360,
+      "bytes_after": 74412,
+      "source_preserved": true
+    },
+    {
+      "path": "notebook/01_baseline_xgboost.ipynb",
+      "bytes_before": 138814,
+      "bytes_after": 54868,
+      "source_preserved": true
+    },
+    {
+      "path": "notebook/02_tuning_ks_v2.ipynb",
+      "bytes_before": 197991,
+      "bytes_after": 104768,
+      "source_preserved": true
+    },
+    {
+      "path": "notebook/03_ensemble_ks.ipynb",
+      "bytes_before": 191647,
+      "bytes_after": 103757,
+      "source_preserved": true
+    },
+    {
+      "path": "notebook/04_submission_v3.ipynb",
+      "bytes_before": 232138,
+      "bytes_after": 130159,
+      "source_preserved": true
+    },
+    {
+      "path": "notebook/05_submission_v4.ipynb",
+      "bytes_before": 263712,
+      "bytes_after": 154190,
+      "source_preserved": true
+    },
+    {
+      "path": "notebook/06_submission_v5.ipynb",
+      "bytes_before": 343154,
+      "bytes_after": 182550,
+      "source_preserved": true
+    },
+    {
+      "path": "notebook/07_reverse_engineering_rng.ipynb",
+      "bytes_before": 223711,
+      "bytes_after": 82047,
+      "source_preserved": true
+    },
+    {
+      "path": "notebook/08_kumo_tabular.ipynb",
+      "bytes_before": 218463,
+      "bytes_after": 129065,
+      "source_preserved": true
+    },
+    {
+      "path": "notebook/09_kumo_improvement.ipynb",
+      "bytes_before": 273428,
+      "bytes_after": 167998,
+      "source_preserved": true
+    },
+    {
+      "path": "notebook/10_kumo_spline.ipynb",
+      "bytes_before": 260518,
+      "bytes_after": 161230,
+      "source_preserved": true
+    },
+    {
+      "path": "notebook/11_kumo_finetune_pilot.ipynb",
+      "bytes_before": 207097,
+      "bytes_after": 130260,
+      "source_preserved": true
+    },
+    {
+      "path": "notebook/12_goal054_research.ipynb",
+      "bytes_before": 403129,
+      "bytes_after": 277731,
+      "source_preserved": true
+    },
+    {
+      "path": "notebook/analisis_logika.ipynb",
+      "bytes_before": 581112,
+      "bytes_after": 7913,
+      "source_preserved": true
+    },
+    {
+      "path": "notebook/dsc0152/DSC0152_kali ini beneran deh_Notebook.ipynb",
+      "bytes_before": 75870,
+      "bytes_after": 51330,
+      "source_preserved": true
+    },
+    {
+      "path": "notebook/dsc0152/dimaz_test.ipynb",
+      "bytes_before": 221877,
+      "bytes_after": 52612,
+      "source_preserved": true
+    },
+    {
+      "path": "notebook/dsc0152/runs/run1/notebook_v1.ipynb",
+      "bytes_before": 59430,
+      "bytes_after": 38573,
+      "source_preserved": true
+    },
+    {
+      "path": "notebook/dsc0152/runs/run10/notebook10.ipynb",
+      "bytes_before": 63131,
+      "bytes_after": 40840,
+      "source_preserved": true
+    },
+    {
+      "path": "notebook/dsc0152/runs/run_fac/notebook_fac.ipynb",
+      "bytes_before": 70776,
+      "bytes_after": 47618,
+      "source_preserved": true
+    },
+    {
+      "path": "notebook/dsc0152/runs/run_s13/notebook_s13.ipynb",
+      "bytes_before": 70139,
+      "bytes_after": 47851,
+      "source_preserved": true
+    },
+    {
+      "path": "notebook/dsc0152/runs/run_s21/notebook_s21.ipynb",
+      "bytes_before": 70487,
+      "bytes_after": 47851,
+      "source_preserved": true
+    },
+    {
+      "path": "notebook/dsc0152/runs/run_s7/notebook_s7.ipynb",
+      "bytes_before": 70312,
+      "bytes_after": 47850,
+      "source_preserved": true
+    },
+    {
+      "path": "notebook/dsc0152/runs/run_seeds/notebook_seeds.ipynb",
+      "bytes_before": 70688,
+      "bytes_after": 47851,
+      "source_preserved": true
+    },
+    {
+      "path": "notebook/dsc0152/runs/run_v4_lr005/notebook.ipynb",
+      "bytes_before": 73424,
+      "bytes_after": 50443,
+      "source_preserved": true
+    },
+    {
+      "path": "notebook/dsc0152/runs/run_v4_s13/notebook.ipynb",
+      "bytes_before": 73249,
+      "bytes_after": 50442,
+      "source_preserved": true
+    },
+    {
+      "path": "notebook/dsc0152/runs/run_v4_s42/notebook.ipynb",
+      "bytes_before": 73075,
+      "bytes_after": 50442,
+      "source_preserved": true
+    },
+    {
+      "path": "notebook/dsc0152/runs/run_v4_s7/notebook.ipynb",
+      "bytes_before": 73248,
+      "bytes_after": 50441,
+      "source_preserved": true
+    },
+    {
+      "path": "notebook/v1.ipynb",
+      "bytes_before": 519097,
+      "bytes_after": 90560,
+      "source_preserved": true
+    },
+    {
+      "path": "notebook/v2.ipynb",
+      "bytes_before": 751076,
+      "bytes_after": 111503,
+      "source_preserved": true
+    },
+    {
+      "path": "notebook/v3.ipynb",
+      "bytes_before": 636388,
+      "bytes_after": 123413,
+      "source_preserved": true
+    },
+    {
+      "path": "notebook/v4.ipynb",
+      "bytes_before": 1365543,
+      "bytes_after": 117391,
+      "source_preserved": true
+    },
+    {
+      "path": "notebook/v5.ipynb",
+      "bytes_before": 732437,
+      "bytes_after": 145090,
+      "source_preserved": true
+    },
+    {
+      "path": "notebook/v6.ipynb",
+      "bytes_before": 727561,
+      "bytes_after": 138337,
+      "source_preserved": true
+    },
+    {
+      "path": "notebook/v7.ipynb",
+      "bytes_before": 881696,
+      "bytes_after": 163188,
+      "source_preserved": true
+    },
+    {
+      "path": "notebook/v9.ipynb",
+      "bytes_before": 920840,
+      "bytes_after": 158623,
+      "source_preserved": true
+    },
+    {
+      "path": "scripts/dsc0152/agas/OtherTries/dsc_logikaui_ks_v2.ipynb",
+      "bytes_before": 189595,
+      "bytes_after": 79238,
+      "source_preserved": true
+    },
+    {
+      "path": "scripts/dsc0152/agas/OtherTries/dsc_logikaui_ks_v3.ipynb",
+      "bytes_before": 197255,
+      "bytes_after": 86718,
+      "source_preserved": true
+    },
+    {
+      "path": "scripts/dsc0152/agas/OtherTries/dsc_logikaui_submission.ipynb",
+      "bytes_before": 340069,
+      "bytes_after": 57246,
+      "source_preserved": true
+    },
+    {
+      "path": "scripts/dsc0152/agas/v61/notebook/notebook_v61.ipynb",
+      "bytes_before": 33380,
+      "bytes_after": 10458,
+      "source_preserved": true
+    },
+    {
+      "path": "scripts/dsc0152/agas/v62/notebook/notebook_v62.ipynb",
+      "bytes_before": 46109,
+      "bytes_after": 14767,
+      "source_preserved": true
+    },
+    {
+      "path": "scripts/dsc0152/agas/v63/notebook/notebook_v63.ipynb",
+      "bytes_before": 48245,
+      "bytes_after": 13560,
+      "source_preserved": true
+    },
+    {
+      "path": "scripts/dsc0152/agas/v64/notebook/notebook_v64.ipynb",
+      "bytes_before": 34086,
+      "bytes_after": 11851,
+      "source_preserved": true
+    },
+    {
+      "path": "scripts/dsc0152/agas/v65/notebook/notebook_v65.ipynb",
+      "bytes_before": 35720,
+      "bytes_after": 16375,
+      "source_preserved": true
+    },
+    {
+      "path": "scripts/dsc0152/agas/v66/notebook/notebook_v66.ipynb",
+      "bytes_before": 39146,
+      "bytes_after": 13233,
+      "source_preserved": true
+    },
+    {
+      "path": "scripts/dsc0152/agas/v67/notebook/notebook_v67.ipynb",
+      "bytes_before": 3475,
+      "bytes_after": 1731,
+      "source_preserved": true
+    },
+    {
+      "path": "scripts/dsc0152/agas/v68/notebook/notebook_v68.ipynb",
+      "bytes_before": 17258,
+      "bytes_after": 11122,
+      "source_preserved": true
+    },
+    {
+      "path": "scripts/dsc0152/agas/v69/notebook/notebook_v69.ipynb",
+      "bytes_before": 27961,
+      "bytes_after": 9896,
+      "source_preserved": true
+    },
+    {
+      "path": "scripts/dsc0152/agas/v70/notebook/notebook_v70.ipynb",
+      "bytes_before": 58383,
+      "bytes_after": 13931,
+      "source_preserved": true
+    },
+    {
+      "path": "scripts/dsc0152/agas/v71/notebook/notebook_v71.ipynb",
+      "bytes_before": 56629,
+      "bytes_after": 16096,
+      "source_preserved": true
+    }
+  ],
+  "caches": [
+    {
+      "path": "eda/deep/out/mpl_cache/fontlist-v3.11.0.json",
+      "bytes": 466883,
+      "sha256": "ca853fe84b8ba814f5ad49d52d214319af94e42872631aaaaf22c1012eb269e6"
+    },
+    {
+      "path": "eda/v5_review/out/mpl_cache/fontlist-v3.11.0.json",
+      "bytes": 466883,
+      "sha256": "3c898a863440d4987cff6a3a911d4495f457e5039043ae27e9bc8e30335ce846"
+    },
+    {
+      "path": "eda/v6_review/out/mpl_cache/fontlist-v3.11.0.json",
+      "bytes": 466883,
+      "sha256": "33732d3c67fa2957b44276df48bbc7c9cc3e0dc372d1612aba20a4605e211c9c"
+    },
+    {
+      "path": "eda/v7_review/out/mpl_cache/fontlist-v3.11.0.json",
+      "bytes": 466883,
+      "sha256": "22d4b4ada0365a97355105660fb4016982845efb38ed15bb31658e7ec2f7af97"
+    },
+    {
+      "path": "eda/v8_review/out/mpl_cache/fontlist-v3.11.0.json",
+      "bytes": 466883,
+      "sha256": "ad785f2272444fbf46f817c9abf2ec5d56c1d9a1a1e9c2c449ab01748c232f8f"
+    }
+  ],
+  "moves": [
+    {
+      "from": "serah_terima_25okt/",
+      "to": "handoff/2026-10-25/"
+    }
+  ]
+}

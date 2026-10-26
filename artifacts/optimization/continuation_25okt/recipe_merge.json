@@ -170,7 +170,7 @@
    "what": "DSC0152 v66 ext0.5|tm30|lgb_lean, 5-fold seed 42, inner early stop + refit",
    "steps": [
     {
-     "cmd": "../results/run_dsc_s42.sh",
+     "cmd": "bash ../scripts/run_dsc_s42.sh",
      "outputs": [
       "results/dsc0152/agas/v66/output/preds_v66s42.npz"
      ]

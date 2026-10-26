@@ -54,4 +54,4 @@ min_child/feature_fraction, model khusus nasabah baru, 44 fitur ecommerce baru (
 ## Relevansi untuk merge
 - Tersedia **OOF + test asli per kaki** (`results/dsc0152/agas/v6x/output/preds_*.npz`, by ID) → bisa langsung di-blend
   dengan OOF pipeline utama (fold berbeda, tetapi tiap baris tetap OOF).
-- Lihat `serah_terima_25okt/07_langkah_berikutnya/rencana_merge.md` (diperbarui).
+- Lihat `handoff/2026-10-25/07_langkah_berikutnya/rencana_merge.md` (diperbarui).

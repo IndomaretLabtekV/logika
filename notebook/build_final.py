@@ -24,6 +24,7 @@ RECIPE=os.environ.get('LOGIKA_NOTEBOOK_RECIPE','v59')  # 'merge' = three-pipelin
 if RECIPE=='merge':
     MERGE_MODULES=['260_merge_pipeline.py','250_merge_blend_existing.py','221_evaluate_recipe_candidates.py','251_teammate_recipe_s42.py','254_kumo_dsc_features.py','valid2.py','common.py']
     MERGE_FILES={f'eda/{n}':(ROOT/'eda'/n).read_text() for n in MERGE_MODULES}
+    MERGE_FILES['scripts/run_dsc_s42.sh']=(ROOT/'scripts/run_dsc_s42.sh').read_text()
     MERGE_FILES['artifacts/optimization/continuation_25okt/recipe_merge.json']=(ROOT/'artifacts/optimization/continuation_25okt/recipe_merge.json').read_text()
     MERGE_HASHES={k:hashlib.sha256(v.encode()).hexdigest() for k,v in MERGE_FILES.items()}
     recipe=json.loads(MERGE_FILES['artifacts/optimization/continuation_25okt/recipe_merge.json'])
