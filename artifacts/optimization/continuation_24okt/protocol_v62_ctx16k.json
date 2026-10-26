@@ -1,0 +1,13 @@
+{
+  "status": "written 03:00 WIB 24 Okt after inner screening C2 (16384 vs 8192: +0.0094 inner-stop KS); before any outer score of this variant",
+  "outer_seed": 42,
+  "model_seeds": [2026, 2027],
+  "internal_estimators": 8,
+  "candidate_views": [
+    {"name": "cap500_ctx16k", "columns": "all", "column_cap": 500, "max_context": 16384, "memory_fraction": 0.85},
+    {"name": "main_small", "columns": "main_small", "column_cap": 500, "max_context": null, "memory_fraction": 0.7}
+  ],
+  "deviation_from_23okt_protocol": "wide view context 8192 -> 16384 (largest that fits 8 GB at memory fraction 0.85 with expandable segments); compact view uses main232-only selection (the protocol baseline columns) because union-selected nested_small lost 5/5 folds to legacy; e8 for both",
+  "aggregation": "same as 23okt: per-cohort average-tie ranks, equal mean of members, test per fold then mean over folds",
+  "selection_rule": "views fixed before outer scoring; no weights from outer OOF"
+}

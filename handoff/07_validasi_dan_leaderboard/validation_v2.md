@@ -1,5 +1,39 @@
 # validation_v2 (dibangun 17 Okt; dipakai untuk semua kandidat sejak v22)
 
+## Audit lanjutan 23 Oktober: estimand dan batas bukti
+
+Tetap gunakan lima outer fold stratified sebagai estimasi utama kompetisi:
+train/test sama-sama mencakup Januari–Desember2025 dan tidak beririsan customer.
+Audit lokal `eda/215_distribution_cv_audit.py` pada pool strict menemukan
+PSI marginal maksimum0,001599 dan KS distribusi observed maksimum0,016740
+(48k fitting versus30k test). Ini mendukung kesamaan distribusi terukur,
+bukan bukti exchangeability, tidak adanya hidden groups, atau kestabilan label.
+GroupKFold berdasarkan customer unik tidak menambah proteksi substantif.
+
+Temporal CV adalah stress test retrospektif terpisah, bukan pengganti primary CV
+untuk test yang interleaved. Target horizon12bulan memerlukan tanggal maturity
+label agar forward validation dapat disebut simulasi deployment; tanggal itu
+tidak tersedia dalam schema aplikasi. Jangan menyebut split waktu lama sebagai
+simulasi deployment point-in-time yang sudah lengkap.
+
+Bootstrap tidak menghapus bias dari penggunaan ulang hasil outer/confirmation
+untuk memilih eksperimen. Inner8k/fold0 sudah dilihat dalam EDA dan eksperimen;
+pembagian ulang menjadi search/confirmation bukan holdout baru yang pristine.
+Seed baru juga bukan data berlabel baru. Catat exposure dan bekukan resep
+sebelum menilai outer, lalu laporkan seluruh70k OOF, bukan fold terbaik.
+
+Bobot blend cross-fit pada OOF biasa belum membuktikan isolasi nested end-to-end:
+base model pembentuk meta-training OOF dapat memakai label meta-validation.
+Untuk klaim ketat, gunakan bobot tetap yang dipraregistrasikan atau bangun
+inner-OOF seluruh base model di dalam masing-masing outer-train.
+Pipeline lama juga memakai vocabulary kategori seluruh train; pipeline strict
+baru memfit vocabulary/reference pada fitting partition. Jangan campur cache.
+
+Gerbang submission historis di bawah bukan instruksi aktif: user menggantinya
+dengan pooled OOF≥0,53000 plus evaluasi lengkap/audit bersih. Scope terakhir
+mengizinkan EDA/preprocessing dan inferensi TFM beku; tidak melatih bobot.
+
+
 **Koreksi21Okt:** user mengonfirmasi public9k/private21k (30%/70%test),rubrik45/45.
 Analisis131 lama memakai21k sebagai proxypublic;167 menghitung ulang ukuran9k:
 ZKumo−pohon−1,16,Causilo−pohon−2,10,bukan−1,7/−3,3. Bukti penaltiICL lebihlemah
@@ -32,9 +66,9 @@ Kode: `eda/valid2.py` (protokol), `eda/run_valid2.py` (driver), `eda/blend2.py` 
 8. Jangan memilih skema karena skornya lebih tinggi. Angka utama selalu **pooled OOF KS** (mean fold KS ~+0,003 lebih tinggi).
 
 ## Validasi skema itu sendiri (`eda/104`)
-- 5-fold vs 10-fold: 0,52074 vs 0,52067 (Δ +0,0004, P 0,59) → 5-fold cukup.
-- Maju-waktu vs acak: −0,0024, sd per bulan ~0,02 → tidak ada drift, split acak tidak menyembunyikan apa pun.
-- Adversarial AUC 0,4987 → train/test interleaved acak; StratifiedKFold tepat.
+- 5-fold vs10-fold pooled:0,52074 vs0,52067 (selisih observed−0,00007). Mean bootstrap delta+0,00044,P>0=0,59 bukan selisih observed; tidak ada bukti keuntungan10-fold.
+- Maju-waktu vsacak:mean delta−0,0024,sd perbulan sekitar0,02. Tidak terlihat degradasi rata-rata besar pada pemeriksaan ini; bukan bukti tidak ada drift.
+- Adversarial AUC0,4987 konsisten dengan distribusi train/test serupa pada model pembeda yang diuji. Bersama overlap kalender/customer unik, ini mendukung StratifiedKFold untuk kompetisi, bukan membuktikan mekanisme split panitia.
 
 ## Batas resolusi
 - sd selisih KS dua blend berkorelasi tinggi di 70k baris ≈ 0,0015 → untuk P>0 ≥ 0,9 butuh gain ≥ ~0,002.

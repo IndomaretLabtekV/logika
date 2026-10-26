@@ -5,6 +5,7 @@ Fresh mode contains the full sequential feature/model pipeline.
 """
 import hashlib
 import json
+import os
 from pathlib import Path
 from uuid import uuid4
 
@@ -19,6 +20,31 @@ def code(s):
     compile(s,'notebook-cell','exec')
     cells.append({'cell_type':'code','id':uuid4().hex[:8],'metadata':{},'source':s,'execution_count':None,'outputs':[]})
 
+RECIPE=os.environ.get('LOGIKA_NOTEBOOK_RECIPE','v59')  # 'merge' = three-pipeline merge (eda/260), written to final_merge.ipynb
+if RECIPE=='merge':
+    MERGE_MODULES=['260_merge_pipeline.py','250_merge_blend_existing.py','221_evaluate_recipe_candidates.py','251_teammate_recipe_s42.py','254_kumo_dsc_features.py','valid2.py','common.py']
+    MERGE_FILES={f'eda/{n}':(ROOT/'eda'/n).read_text() for n in MERGE_MODULES}
+    MERGE_FILES['artifacts/optimization/continuation_25okt/recipe_merge.json']=(ROOT/'artifacts/optimization/continuation_25okt/recipe_merge.json').read_text()
+    MERGE_HASHES={k:hashlib.sha256(v.encode()).hexdigest() for k,v in MERGE_FILES.items()}
+    recipe=json.loads(MERGE_FILES['artifacts/optimization/continuation_25okt/recipe_merge.json'])
+    ref=json.loads((ROOT/recipe['output_dir']/'manifest.json').read_text())
+    rep=ref['report']
+    md('# DSCxxxx — lagi cape lomba asli\n\n**Anggota (akun Kaggle):** athillazaidan, nicholaswisee, riantamaputra\n\n_Nomor peserta DSCxxxx masih placeholder; nama file wajib `ParticipantNumber_TeamName_Notebook`._')
+    md('# Credit risk: merged team pipeline\n\nDSC LOGIKA UI 2026. Equal-weight rank blend of the three team pipelines, all validated on one fold scheme: '+', '.join(f"**{m}** ({recipe['families'][m]['what']})" for m in rep['members'])+'. Organizer data only; public pretrained Kumo-Tabular v1.0.1 weights.')
+    md('## 1. Validation evidence\n\nStratifiedKFold 5, shuffle, seed 42 (`eda/valid2.outer`); every family is out-of-fold on these folds; feature references, early stopping and corrections are fit inside the outer-training partition. Blend weights were locked in protocol JSON files before the outer scores were read. Pooled OOF KS (70,000 rows, rank per outer cohort) **%.5f**, AUC %.5f, fold KS %s. These are validation estimates, not leaderboard claims.'%(rep['pooled_ks'],rep['auc'],', '.join('%.4f'%x for x in rep['fold_ks'])))
+    md('## 2. Settings\n\nRun from the repository (or set LOGIKA_REPOSITORY). Default `replay` checks the embedded sources against the repository, re-blends the cached family predictions and checks the CSV hash against the reference manifest. `LOGIKA_PIPELINE_MODE=fresh` first runs every missing family build command of the recipe (hours of GPU/CPU, one process at a time).')
+    code("import os,sys,json,hashlib,subprocess\nfrom pathlib import Path\nimport numpy as np\nimport polars as pl\nMODE=os.environ.get('LOGIKA_PIPELINE_MODE','replay')\nassert MODE in ('replay','fresh')\nREPOSITORY=Path(os.environ.get('LOGIKA_REPOSITORY',str(Path.cwd()))).resolve()\nif not (REPOSITORY/'data').exists() and (REPOSITORY.parent/'data').exists(): REPOSITORY=REPOSITORY.parent\nOUTPUT_DIR=Path(os.environ.get('LOGIKA_OUTPUT_DIR',str(REPOSITORY/'results/v71/merge_pipeline/notebook_replay'))).resolve()\nOUTPUT_DIR.mkdir(parents=True,exist_ok=True)\nfor name in ('OMP_NUM_THREADS','OPENBLAS_NUM_THREADS','MKL_NUM_THREADS','POLARS_MAX_THREADS'): os.environ[name]='4'\nprint('mode',MODE,'output',OUTPUT_DIR)")
+    md('## 3. Source\n\nThe blend, the recipe and the family runners are embedded below with SHA256 and must equal the repository copies that are executed.')
+    code('FILES='+repr(MERGE_FILES)+'\nFILE_SHA256='+repr(MERGE_HASHES)+"\nfor name,source in FILES.items():\n    assert hashlib.sha256(source.encode()).hexdigest()==FILE_SHA256[name]\n    assert (REPOSITORY/name).read_text()==source,name\nprint('Embedded files match repository',len(FILES))")
+    md('## 4. Families and blend\n\nEach family is rank-transformed inside each outer cohort (OOF) or over the 30,000 test rows (submission) and averaged with equal weight.')
+    code("eda=REPOSITORY/'eda'\nif MODE=='fresh': subprocess.run([sys.executable,str(eda/'260_merge_pipeline.py'),'--stage','build'],cwd=eda,check=True,env=os.environ.copy())\nsubprocess.run([sys.executable,str(eda/'260_merge_pipeline.py'),'--stage','blend','--out',str(OUTPUT_DIR)],cwd=eda,check=True,env=os.environ.copy())")
+    md('## 5. CSV validation')
+    code("submission=pl.read_csv(OUTPUT_DIR/'submission.csv')\nsample=pl.read_csv(REPOSITORY/'data/sample_submission.csv')\nassert submission.columns==['application_id','default_probability']\nassert submission.height==sample.height==30000 and submission['application_id'].n_unique()==30000\nassert submission['application_id'].to_list()==sample['application_id'].to_list()\np=submission['default_probability'].to_numpy()\nassert np.isfinite(p).all() and ((p>=0)&(p<=1)).all()\nref=json.loads((REPOSITORY/'"+recipe['output_dir']+"/manifest.json').read_text())\ndigest=hashlib.sha256((OUTPUT_DIR/'submission.csv').read_bytes()).hexdigest()\nprint('submission',digest,'reference',ref['outputs']['submission.csv'],'identical',digest==ref['outputs']['submission.csv'])\nif MODE=='replay': assert digest==ref['outputs']['submission.csv']")
+    nb={'nbformat':4,'nbformat_minor':5,'metadata':{'kernelspec':{'display_name':'Python3','language':'python','name':'python3'},'language_info':{'name':'python','version':'3.13.16'},'logika_recipe':recipe['name'],'source_sha256':MERGE_HASHES},'cells':cells}
+    (ROOT/'notebook/final_merge.ipynb').write_text(json.dumps(nb,indent=1,ensure_ascii=False))
+    print('Wrote',len(cells),'cells to',ROOT/'notebook/final_merge.ipynb')
+    raise SystemExit
+md('# DSCxxxx — lagi cape lomba asli\n\n**Anggota (akun Kaggle):** athillazaidan, nicholaswisee, riantamaputra\n\n_Nomor peserta DSCxxxx masih placeholder; nama file wajib `ParticipantNumber_TeamName_Notebook`._')
 md('# Credit risk: fixed low-variance ensemble\n\nDSC LOGIKA UI2026. Six GBDT, Causilo5outer seeds, and Kumo large3estimator draws. No upload or external training data.')
 md('## 1. Aim and metric\n\nPredict30,000official test applications. KS is the maximum distance between class score distributions. The recipe was specified on18October; no weights are selected from the public leaderboard. Kaggle uses30%public/70%private rows; competition grading assigns45%to each leaderboard.')
 md('## 2. Validation evidence\n\nThe October21 local re-audit gives OOF analogue KS0.526220 versus v31 0.526126. Paired bootstrap P(delta>0)=0.365,2/5fold wins: this is **not a demonstrated breakthrough**. The forecast before submission is0.563621 ±0.002229. Kumo OOF uses56k training contexts and outer-seed averaging; deployment uses70k contexts and estimator-draw averaging. These differ. Historical aggregated files do not prove every modern per-fit provenance invariant.\n\nReplay below reconstructs the CSV from hash-checked real predictions. It does not claim GPU models were retrained today. Fresh mode supplies all feature and model steps; its full training was not repeated during this hardware-unstable session.')

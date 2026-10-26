@@ -1,0 +1,12 @@
+{
+  "status": "written 16:05 WIB 24 Okt before any seed-2028 score",
+  "outer_seed": 42,
+  "model_seeds": [2028],
+  "internal_estimators": 8,
+  "candidate_views": [
+    {"name": "cap300_ctx28k", "columns": "all", "column_cap": 300, "max_context": 28672, "memory_fraction": 0.85},
+    {"name": "main_small", "columns": "main_small", "column_cap": 500, "max_context": null, "memory_fraction": 0.7}
+  ],
+  "locked_candidates": {"K64_3seed": "equal rank mean of cap300_ctx28k s2026/s2027/s2028 + main_small s2026/s2027/s2028 (per cohort; test per fold then mean)"},
+  "motivation": "external hint: 0.57065 team used a 3-seed Kumo ensemble; our K64 has 2 seeds"
+}

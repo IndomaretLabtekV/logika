@@ -2,7 +2,24 @@
 
 Satu repository untuk fitur, model, validasi, notebook, dan riwayat riset dari dua sumber proyek DSC LOGIKA UI 2026. Targetnya risiko DPD ≥ 90 hari dalam 12 bulan; metrik utama **KS**.
 
-## Status terakhir — 21 Oktober 2026
+## Pembaruan 25 Oktober 2026 — mulai dari `serah_terima_25okt/`
+
+- **Public terbaik tim: 0,56470** (goal054 kumo_offset teman; `results/v70/goal054_kumo_offset/`). Sebelumnya v31 0,56405.
+- Sesi 24 Okt menguji >30 eksperimen (resep acuan Kumo, context, SSL, teknik juara AmEx/Home Credit, CoLES, GRU-NN,
+  mekanisme generator); OOF terbaik user K64 2-seed 0,52740 (public 0,56168). Target OOF 0,53 belum tercapai.
+- Rekomendasi berikutnya: **merge pipeline teman (Kumo V5 + spline + offset laten) dengan pohon/Causilo user**.
+- Dokumentasi lengkap & terbagi: [serah_terima_25okt/00_mulai_di_sini/README.md](serah_terima_25okt/00_mulai_di_sini/README.md).
+- Sumber ketiga **DSC0152** (root + Agas + Dimaz; public terbaik 0,56424) diintegrasikan 25 Okt: `scripts/dsc0152/`,
+  `notebook/dsc0152/`, `results/dsc0152/`, [docs/dsc0152/README.md](docs/dsc0152/README.md).
+
+## Pembaruan 23 Oktober 2026
+
+Arahan terbaru: **EDA dan preprocessing saja, tanpa training/inferensi model**.
+Pool fit-only896 prediktor sudah diaudit dan diekspor menjadi792 setelah
+penghapusan102 duplikat fitting dan2 konstanta. Tidak ada skor OOF model baru
+atau submission. [Laporan dan batas bukti](artifacts/optimization/continuation_23okt/laporan_riset.md).
+
+## Status historis — 21 Oktober 2026
 
 - **Riset dipause atas permintaan user.** Tidak ada eksperimen atau job GPU yang berjalan.
 - Public terbaik repository: **0,56405**, resep **v31**.

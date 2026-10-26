@@ -1,0 +1,8 @@
+{
+  "instruction": "User supersedes modelling continuation: focus only on EDA and preprocessing; no model training needed.",
+  "scope": "No new training, pretrained-model inference, or submission. CPU-only raw/feature EDA and preprocessing permitted.",
+  "state_at_change": {"managed_jobs": 0, "gpu_compute_processes": 0},
+  "prior_engineering": {"capped500_8192_context_e8": "completed technical preflight, no score", "uncapped_8192_context_e8": "OOM during fitting, no score; no retry launched"},
+  "goal_interpretation": "KS0.53-0.54 is research direction, not a demonstrated effect of untested preprocessing. Complete model OOF evaluation is deferred by latest user instruction.",
+  "current_entrypoint": "eda/214_preprocessing_eda.py"
+}

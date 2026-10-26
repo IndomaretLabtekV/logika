@@ -1,0 +1,28 @@
+{
+  "written": "2026-10-24T00:45+07:00, before any outer score of the protocol members",
+  "base_protocol": "artifacts/optimization/continuation_23okt/protocol.json (unchanged recipe: 3 views x seeds 2026/2027, e8, equal rank mean)",
+  "engineering_deviations": {
+    "pool_cap500 / nested_small": "none (memory_fraction 0.7, chunk 128)",
+    "pool_uncapped": "memory_fraction 0.85 + PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True because 0.7 OOMed at 5.22 GiB allocated; context 8192 and columns unchanged. If this still OOMs, the member is reported unavailable and a separately recorded 6144-context variant is the next engineering try.",
+    "cache": "212 writes now fsync before rename; pool builder followed by os.sync",
+    "thermal": "eda/thermal_guard.py SIGSTOPs the job above GPU 85C / CPU zone 95C, resumes below 78/85"
+  },
+  "run_order": "member-major: pool_cap500_s2026 f0..f4, nested_small_s2026 f0..f4, pool_uncapped_s2026 f0..f4, then the three s2027 members, then protocol baseline strict_primary100",
+  "interim_candidates_locked": {
+    "K": "equal rank mean (per outer validation cohort / per test cohort, then mean over 5 test folds) of every protocol member complete on all 5 folds at the time of evaluation; member list reported. If fewer than 6 members this is a declared partial recipe, not the protocol candidate.",
+    "KT": "0.5*rank(K) + 0.5*rank(trees6), trees6 = mean of ranks of v22 lgb,lgb_s,xgb,xgb_s,cat,cat_s (OOF averaged over outer seeds 42/7/2026, test as in v59)",
+    "KTC": "thirds: rank(trees6), rank(Causilo family as in v59: v22 fm + v37 + v41 s12), rank(K) -- v59 structure with the legacy Kumo family replaced by K",
+    "weights": "fixed above; no weight chosen on OOF or public",
+    "references": "v59 OOF analogue (trees6/Causilo/legacy Kumo-70k) 0.52622 public 0.56296; v31 public 0.56405"
+  },
+  "public_forecast_rule": "public ~ OOF_pooled + offset; offset = +0.0373 for blends containing trees (mean of v31 +0.0379, v59 +0.0367), +0.0339 for Kumo-only (v31c); sd = sqrt(0.0022^2 + 0.0015^2) from 9k-row public sampling and seed variance",
+  "submission_order": "highest pooled OOF first; OOF>=0.53 prioritized; <0.53 only if clearly different from previous submissions, with reason stated",
+  "run_order_change_0134": "After cap500_s2026 complete (pooled 0.51885, seen), order changed to nested_small_s2026 -> 222 C2/S3 inner screens -> uncapped_s2026 -> s2027 members. Interim candidates K/KT/KTC definitions unchanged.",
+  "candidates_v62_locked_0310": {
+    "K62": "equal rank mean of v62 members cap500_ctx16k_s2026 + main_small_s2026 (per cohort; test per fold then mean)",
+    "KT62": "0.5 rank(K62) + 0.5 rank(trees6)",
+    "KTC62": "thirds rank(trees6), rank(Causilo v59 family), rank(K62)",
+    "ranking": "all candidates (K/KT/KTC strict-recipe and v62) ranked by pooled OOF KS; ties to fewer components",
+    "written_before_v62_outer_scores": true
+  }
+}

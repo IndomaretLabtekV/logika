@@ -1,5 +1,20 @@
 # Protokol berikutnya: normalisasi harga yang bersarang
 
+## Kelanjutan 23 Oktober 2026
+
+Instruksi baru mengharuskan reference populasi dipasang pada fitting partition.
+Gerbang submission sekarang pooled KS OOF lengkap 70.000 baris >=0,53000 dengan
+audit bersih; syarat breakthrough/public forecast historis bukan gerbang aktif.
+
+`features.v5_features(..., reference_customers=fit_customer_ids)` kini memfilter
+populasi reference tanpa menghapus event milik query dari agregasi query sendiri.
+Default tanpa argumen hanya untuk reproduksi resep historis, bukan run induktif
+baru. Smoke sintetis membuktikan perubahan harga query tidak lagi mengubah fitur
+context, sementara fitur query sendiri tetap berubah. Default historis tetap
+menghasilkan angka yang sama pada fixture. Integrasi runner dan audit data nyata
+belum selesai; perubahan ini belum menghasilkan skor model baru.
+
+
 Pembaruan user setelah protokol ditulis: SSL/pseudo-label data panitia kembali
 diizinkan. Train-only reference tetap menjadi kontrol untuk eksperimen
 transduktif. Bukan prasyarat untuk melarang semua penggunaan covariate tak berlabel;

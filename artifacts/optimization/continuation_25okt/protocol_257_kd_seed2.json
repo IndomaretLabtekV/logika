@@ -1,0 +1,8 @@
+{
+  "id": "257_kd_second_seed",
+  "written": "2026-10-25T06:55+07:00",
+  "written_before_scores": "before any KD seed-2027 or R seed-2027 score",
+  "change": "254 KD with model/context seed 2027+fold; KD2 = per-row mean of KD s2026 and s2027",
+  "candidates_equal_weight_rank": {"KD2": ["KD2"], "RDK_KD2": ["R", "D", "K64", "KD2"], "R2DK_KD2": ["R2", "D", "K64", "KD2"]},
+  "no_tuning": true
+}

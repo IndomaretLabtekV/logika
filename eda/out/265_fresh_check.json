@@ -1,0 +1,32 @@
+{
+ "reverse_re_price_log_posterior": {
+  "rows": 100000,
+  "bytes_identical": true,
+  "max_abs_diff": 0.0,
+  "spearman": 1.0
+ },
+ "kumo_v5": {
+  "rows": 50000,
+  "bytes_identical": true,
+  "max_abs_diff": 0.0,
+  "spearman": 1.0,
+  "fold0_ks_new": 0.5315692703354435,
+  "fold0_ks_old": 0.5315692703354435
+ },
+ "recipe_R": {
+  "rows": 44000,
+  "bytes_identical": true,
+  "max_abs_diff": 0.0,
+  "spearman": 1.0,
+  "fold0_ks_new": 0.5278576937529975,
+  "fold0_ks_old": 0.5278576937529975
+ },
+ "k64_cap300_s2026": {
+  "rows": 44000,
+  "bytes_identical": true,
+  "max_abs_diff": 0.0,
+  "spearman": 1.0,
+  "fold0_ks_new": 0.5320073969794783,
+  "fold0_ks_old": 0.5320073969794783
+ }
+}

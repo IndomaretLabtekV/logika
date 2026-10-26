@@ -1,0 +1,525 @@
+{
+ "name": "merge_R2DK",
+ "fold_scheme": "StratifiedKFold(5, shuffle, 42) over id-sorted train (eda/valid2.outer)",
+ "dsc_npz": "results/dsc0152/agas/v66/output/preds_v66s42.npz",
+ "output_dir": "results/v71/merge_pipeline_R2DK",
+ "families": {
+  "K64": {
+   "what": "Kumo strict (utama): cap300@28k + main_small, 2 seeds, pools fit on outer-train",
+   "steps": [
+    {
+     "cmd": "OMP_NUM_THREADS=4 taskset -c 0-11 nice -n 10 ../.venv/bin/python 219_build_outer_pools.py 0",
+     "outputs": [
+      "results/v60/strict_tfm/pool_outer_f0/manifest.json"
+     ]
+    },
+    {
+     "cmd": "OMP_NUM_THREADS=4 taskset -c 0-11 nice -n 10 ../.venv/bin/python 219_build_outer_pools.py 1",
+     "outputs": [
+      "results/v60/strict_tfm/pool_outer_f1/manifest.json"
+     ]
+    },
+    {
+     "cmd": "OMP_NUM_THREADS=4 taskset -c 0-11 nice -n 10 ../.venv/bin/python 219_build_outer_pools.py 2",
+     "outputs": [
+      "results/v60/strict_tfm/pool_outer_f2/manifest.json"
+     ]
+    },
+    {
+     "cmd": "OMP_NUM_THREADS=4 taskset -c 0-11 nice -n 10 ../.venv/bin/python 219_build_outer_pools.py 3",
+     "outputs": [
+      "results/v60/strict_tfm/pool_outer_f3/manifest.json"
+     ]
+    },
+    {
+     "cmd": "OMP_NUM_THREADS=4 taskset -c 0-11 nice -n 10 ../.venv/bin/python 219_build_outer_pools.py 4",
+     "outputs": [
+      "results/v60/strict_tfm/pool_outer_f4/manifest.json"
+     ]
+    },
+    {
+     "cmd": "PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True OMP_NUM_THREADS=4 taskset -c 0-11 nice -n 10 ../.venv/bin/python 224_strict_tfm_variant.py --protocol ../artifacts/optimization/continuation_24okt/protocol_v64_cap300_ctx28k.json --out ../results/v64/strict_variant --pool-root ../results/v60/strict_tfm --stage outer --fold 0 --member cap300_ctx28k_s2026",
+     "outputs": [
+      "results/v64/strict_variant/outer_f0/cap300_ctx28k_s2026.parquet"
+     ]
+    },
+    {
+     "cmd": "PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True OMP_NUM_THREADS=4 taskset -c 0-11 nice -n 10 ../.venv/bin/python 224_strict_tfm_variant.py --protocol ../artifacts/optimization/continuation_24okt/protocol_v64_cap300_ctx28k.json --out ../results/v64/strict_variant --pool-root ../results/v60/strict_tfm --stage outer --fold 1 --member cap300_ctx28k_s2026",
+     "outputs": [
+      "results/v64/strict_variant/outer_f1/cap300_ctx28k_s2026.parquet"
+     ]
+    },
+    {
+     "cmd": "PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True OMP_NUM_THREADS=4 taskset -c 0-11 nice -n 10 ../.venv/bin/python 224_strict_tfm_variant.py --protocol ../artifacts/optimization/continuation_24okt/protocol_v64_cap300_ctx28k.json --out ../results/v64/strict_variant --pool-root ../results/v60/strict_tfm --stage outer --fold 2 --member cap300_ctx28k_s2026",
+     "outputs": [
+      "results/v64/strict_variant/outer_f2/cap300_ctx28k_s2026.parquet"
+     ]
+    },
+    {
+     "cmd": "PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True OMP_NUM_THREADS=4 taskset -c 0-11 nice -n 10 ../.venv/bin/python 224_strict_tfm_variant.py --protocol ../artifacts/optimization/continuation_24okt/protocol_v64_cap300_ctx28k.json --out ../results/v64/strict_variant --pool-root ../results/v60/strict_tfm --stage outer --fold 3 --member cap300_ctx28k_s2026",
+     "outputs": [
+      "results/v64/strict_variant/outer_f3/cap300_ctx28k_s2026.parquet"
+     ]
+    },
+    {
+     "cmd": "PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True OMP_NUM_THREADS=4 taskset -c 0-11 nice -n 10 ../.venv/bin/python 224_strict_tfm_variant.py --protocol ../artifacts/optimization/continuation_24okt/protocol_v64_cap300_ctx28k.json --out ../results/v64/strict_variant --pool-root ../results/v60/strict_tfm --stage outer --fold 4 --member cap300_ctx28k_s2026",
+     "outputs": [
+      "results/v64/strict_variant/outer_f4/cap300_ctx28k_s2026.parquet"
+     ]
+    },
+    {
+     "cmd": "PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True OMP_NUM_THREADS=4 taskset -c 0-11 nice -n 10 ../.venv/bin/python 224_strict_tfm_variant.py --protocol ../artifacts/optimization/continuation_24okt/protocol_v64_cap300_ctx28k.json --out ../results/v64/strict_variant --pool-root ../results/v60/strict_tfm --stage outer --fold 0 --member cap300_ctx28k_s2027",
+     "outputs": [
+      "results/v64/strict_variant/outer_f0/cap300_ctx28k_s2027.parquet"
+     ]
+    },
+    {
+     "cmd": "PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True OMP_NUM_THREADS=4 taskset -c 0-11 nice -n 10 ../.venv/bin/python 224_strict_tfm_variant.py --protocol ../artifacts/optimization/continuation_24okt/protocol_v64_cap300_ctx28k.json --out ../results/v64/strict_variant --pool-root ../results/v60/strict_tfm --stage outer --fold 1 --member cap300_ctx28k_s2027",
+     "outputs": [
+      "results/v64/strict_variant/outer_f1/cap300_ctx28k_s2027.parquet"
+     ]
+    },
+    {
+     "cmd": "PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True OMP_NUM_THREADS=4 taskset -c 0-11 nice -n 10 ../.venv/bin/python 224_strict_tfm_variant.py --protocol ../artifacts/optimization/continuation_24okt/protocol_v64_cap300_ctx28k.json --out ../results/v64/strict_variant --pool-root ../results/v60/strict_tfm --stage outer --fold 2 --member cap300_ctx28k_s2027",
+     "outputs": [
+      "results/v64/strict_variant/outer_f2/cap300_ctx28k_s2027.parquet"
+     ]
+    },
+    {
+     "cmd": "PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True OMP_NUM_THREADS=4 taskset -c 0-11 nice -n 10 ../.venv/bin/python 224_strict_tfm_variant.py --protocol ../artifacts/optimization/continuation_24okt/protocol_v64_cap300_ctx28k.json --out ../results/v64/strict_variant --pool-root ../results/v60/strict_tfm --stage outer --fold 3 --member cap300_ctx28k_s2027",
+     "outputs": [
+      "results/v64/strict_variant/outer_f3/cap300_ctx28k_s2027.parquet"
+     ]
+    },
+    {
+     "cmd": "PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True OMP_NUM_THREADS=4 taskset -c 0-11 nice -n 10 ../.venv/bin/python 224_strict_tfm_variant.py --protocol ../artifacts/optimization/continuation_24okt/protocol_v64_cap300_ctx28k.json --out ../results/v64/strict_variant --pool-root ../results/v60/strict_tfm --stage outer --fold 4 --member cap300_ctx28k_s2027",
+     "outputs": [
+      "results/v64/strict_variant/outer_f4/cap300_ctx28k_s2027.parquet"
+     ]
+    },
+    {
+     "cmd": "PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True OMP_NUM_THREADS=4 taskset -c 0-11 nice -n 10 ../.venv/bin/python 224_strict_tfm_variant.py --protocol ../artifacts/optimization/continuation_24okt/protocol_v62_ctx16k.json --out ../results/v62/strict_variant --pool-root ../results/v60/strict_tfm --stage outer --fold 0 --member main_small_s2026",
+     "outputs": [
+      "results/v62/strict_variant/outer_f0/main_small_s2026.parquet"
+     ]
+    },
+    {
+     "cmd": "PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True OMP_NUM_THREADS=4 taskset -c 0-11 nice -n 10 ../.venv/bin/python 224_strict_tfm_variant.py --protocol ../artifacts/optimization/continuation_24okt/protocol_v62_ctx16k.json --out ../results/v62/strict_variant --pool-root ../results/v60/strict_tfm --stage outer --fold 1 --member main_small_s2026",
+     "outputs": [
+      "results/v62/strict_variant/outer_f1/main_small_s2026.parquet"
+     ]
+    },
+    {
+     "cmd": "PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True OMP_NUM_THREADS=4 taskset -c 0-11 nice -n 10 ../.venv/bin/python 224_strict_tfm_variant.py --protocol ../artifacts/optimization/continuation_24okt/protocol_v62_ctx16k.json --out ../results/v62/strict_variant --pool-root ../results/v60/strict_tfm --stage outer --fold 2 --member main_small_s2026",
+     "outputs": [
+      "results/v62/strict_variant/outer_f2/main_small_s2026.parquet"
+     ]
+    },
+    {
+     "cmd": "PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True OMP_NUM_THREADS=4 taskset -c 0-11 nice -n 10 ../.venv/bin/python 224_strict_tfm_variant.py --protocol ../artifacts/optimization/continuation_24okt/protocol_v62_ctx16k.json --out ../results/v62/strict_variant --pool-root ../results/v60/strict_tfm --stage outer --fold 3 --member main_small_s2026",
+     "outputs": [
+      "results/v62/strict_variant/outer_f3/main_small_s2026.parquet"
+     ]
+    },
+    {
+     "cmd": "PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True OMP_NUM_THREADS=4 taskset -c 0-11 nice -n 10 ../.venv/bin/python 224_strict_tfm_variant.py --protocol ../artifacts/optimization/continuation_24okt/protocol_v62_ctx16k.json --out ../results/v62/strict_variant --pool-root ../results/v60/strict_tfm --stage outer --fold 4 --member main_small_s2026",
+     "outputs": [
+      "results/v62/strict_variant/outer_f4/main_small_s2026.parquet"
+     ]
+    },
+    {
+     "cmd": "PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True OMP_NUM_THREADS=4 taskset -c 0-11 nice -n 10 ../.venv/bin/python 224_strict_tfm_variant.py --protocol ../artifacts/optimization/continuation_24okt/protocol_v62_ctx16k.json --out ../results/v62/strict_variant --pool-root ../results/v60/strict_tfm --stage outer --fold 0 --member main_small_s2027",
+     "outputs": [
+      "results/v62/strict_variant/outer_f0/main_small_s2027.parquet"
+     ]
+    },
+    {
+     "cmd": "PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True OMP_NUM_THREADS=4 taskset -c 0-11 nice -n 10 ../.venv/bin/python 224_strict_tfm_variant.py --protocol ../artifacts/optimization/continuation_24okt/protocol_v62_ctx16k.json --out ../results/v62/strict_variant --pool-root ../results/v60/strict_tfm --stage outer --fold 1 --member main_small_s2027",
+     "outputs": [
+      "results/v62/strict_variant/outer_f1/main_small_s2027.parquet"
+     ]
+    },
+    {
+     "cmd": "PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True OMP_NUM_THREADS=4 taskset -c 0-11 nice -n 10 ../.venv/bin/python 224_strict_tfm_variant.py --protocol ../artifacts/optimization/continuation_24okt/protocol_v62_ctx16k.json --out ../results/v62/strict_variant --pool-root ../results/v60/strict_tfm --stage outer --fold 2 --member main_small_s2027",
+     "outputs": [
+      "results/v62/strict_variant/outer_f2/main_small_s2027.parquet"
+     ]
+    },
+    {
+     "cmd": "PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True OMP_NUM_THREADS=4 taskset -c 0-11 nice -n 10 ../.venv/bin/python 224_strict_tfm_variant.py --protocol ../artifacts/optimization/continuation_24okt/protocol_v62_ctx16k.json --out ../results/v62/strict_variant --pool-root ../results/v60/strict_tfm --stage outer --fold 3 --member main_small_s2027",
+     "outputs": [
+      "results/v62/strict_variant/outer_f3/main_small_s2027.parquet"
+     ]
+    },
+    {
+     "cmd": "PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True OMP_NUM_THREADS=4 taskset -c 0-11 nice -n 10 ../.venv/bin/python 224_strict_tfm_variant.py --protocol ../artifacts/optimization/continuation_24okt/protocol_v62_ctx16k.json --out ../results/v62/strict_variant --pool-root ../results/v60/strict_tfm --stage outer --fold 4 --member main_small_s2027",
+     "outputs": [
+      "results/v62/strict_variant/outer_f4/main_small_s2027.parquet"
+     ]
+    },
+    {
+     "cmd": "OMP_NUM_THREADS=4 taskset -c 0-11 nice -n 10 ../.venv/bin/python 221_evaluate_recipe_candidates.py results/v64/strict_variant::cap300_ctx28k_s2026 results/v64/strict_variant::cap300_ctx28k_s2027 results/v62/strict_variant::main_small_s2026 results/v62/strict_variant::main_small_s2027 --tag K64_2seed",
+     "outputs": [
+      "results/v60/candidates/K__K64_2seed/oof.parquet",
+      "results/v60/candidates/K__K64_2seed/submission.csv"
+     ]
+    }
+   ]
+  },
+  "D": {
+   "what": "DSC0152 v66 ext0.5|tm30|lgb_lean, 5-fold seed 42, inner early stop + refit",
+   "steps": [
+    {
+     "cmd": "../results/run_dsc_s42.sh",
+     "outputs": [
+      "results/dsc0152/agas/v66/output/preds_v66s42.npz"
+     ]
+    }
+   ]
+  },
+  "KF": {
+   "what": "Kumo V5 + DSC0152 factor features (253)",
+   "steps": [
+    {
+     "cmd": "OMP_NUM_THREADS=4 taskset -c 0-11 nice -n 10 ../.venv/bin/python 253_kumo_v5_factor.py --stage factor",
+     "outputs": [
+      "results/v71/teammate_s42/f0/factor.parquet",
+      "results/v71/teammate_s42/f1/factor.parquet",
+      "results/v71/teammate_s42/f2/factor.parquet",
+      "results/v71/teammate_s42/f3/factor.parquet",
+      "results/v71/teammate_s42/f4/factor.parquet"
+     ]
+    },
+    {
+     "cmd": "PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True OMP_NUM_THREADS=4 taskset -c 0-11 nice -n 10 ../.venv/bin/python 253_kumo_v5_factor.py --stage kumo --fold 0",
+     "outputs": [
+      "results/v71/teammate_s42/f0/kumo_fac.parquet"
+     ]
+    },
+    {
+     "cmd": "PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True OMP_NUM_THREADS=4 taskset -c 0-11 nice -n 10 ../.venv/bin/python 253_kumo_v5_factor.py --stage kumo --fold 1",
+     "outputs": [
+      "results/v71/teammate_s42/f1/kumo_fac.parquet"
+     ]
+    },
+    {
+     "cmd": "PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True OMP_NUM_THREADS=4 taskset -c 0-11 nice -n 10 ../.venv/bin/python 253_kumo_v5_factor.py --stage kumo --fold 2",
+     "outputs": [
+      "results/v71/teammate_s42/f2/kumo_fac.parquet"
+     ]
+    },
+    {
+     "cmd": "PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True OMP_NUM_THREADS=4 taskset -c 0-11 nice -n 10 ../.venv/bin/python 253_kumo_v5_factor.py --stage kumo --fold 3",
+     "outputs": [
+      "results/v71/teammate_s42/f3/kumo_fac.parquet"
+     ]
+    },
+    {
+     "cmd": "PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True OMP_NUM_THREADS=4 taskset -c 0-11 nice -n 10 ../.venv/bin/python 253_kumo_v5_factor.py --stage kumo --fold 4",
+     "outputs": [
+      "results/v71/teammate_s42/f4/kumo_fac.parquet"
+     ]
+    },
+    {
+     "cmd": "OMP_NUM_THREADS=4 taskset -c 0-11 nice -n 10 ../.venv/bin/python 253_kumo_v5_factor.py --stage eval",
+     "outputs": [
+      "results/v71/teammate_s42/oof_kf.parquet",
+      "results/v71/teammate_s42/test_kf.parquet"
+     ]
+    }
+   ]
+  },
+  "KD": {
+   "what": "Kumo on DSC0152 features cap300@28k (254); needs D cache + KF factor",
+   "steps": [
+    {
+     "cmd": "PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True OMP_NUM_THREADS=4 taskset -c 0-11 nice -n 10 ../.venv/bin/python 254_kumo_dsc_features.py --stage kumo --fold 0",
+     "outputs": [
+      "results/v71/teammate_s42/f0/kumo_dsc.parquet"
+     ]
+    },
+    {
+     "cmd": "PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True OMP_NUM_THREADS=4 taskset -c 0-11 nice -n 10 ../.venv/bin/python 254_kumo_dsc_features.py --stage kumo --fold 1",
+     "outputs": [
+      "results/v71/teammate_s42/f1/kumo_dsc.parquet"
+     ]
+    },
+    {
+     "cmd": "PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True OMP_NUM_THREADS=4 taskset -c 0-11 nice -n 10 ../.venv/bin/python 254_kumo_dsc_features.py --stage kumo --fold 2",
+     "outputs": [
+      "results/v71/teammate_s42/f2/kumo_dsc.parquet"
+     ]
+    },
+    {
+     "cmd": "PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True OMP_NUM_THREADS=4 taskset -c 0-11 nice -n 10 ../.venv/bin/python 254_kumo_dsc_features.py --stage kumo --fold 3",
+     "outputs": [
+      "results/v71/teammate_s42/f3/kumo_dsc.parquet"
+     ]
+    },
+    {
+     "cmd": "PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True OMP_NUM_THREADS=4 taskset -c 0-11 nice -n 10 ../.venv/bin/python 254_kumo_dsc_features.py --stage kumo --fold 4",
+     "outputs": [
+      "results/v71/teammate_s42/f4/kumo_dsc.parquet"
+     ]
+    },
+    {
+     "cmd": "OMP_NUM_THREADS=4 taskset -c 0-11 nice -n 10 ../.venv/bin/python 254_kumo_dsc_features.py --stage eval",
+     "outputs": [
+      "results/v71/teammate_s42/oof_kd.parquet",
+      "results/v71/teammate_s42/test_kd.parquet"
+     ]
+    },
+    {
+     "cmd": "PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True OMP_NUM_THREADS=4 taskset -c 0-11 nice -n 10 ../.venv/bin/python 254_kumo_dsc_features.py --stage kumo --fold 0 --seed 2027",
+     "outputs": [
+      "results/v71/teammate_s42/f0/kumo_dsc_s2027.parquet"
+     ]
+    },
+    {
+     "cmd": "PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True OMP_NUM_THREADS=4 taskset -c 0-11 nice -n 10 ../.venv/bin/python 254_kumo_dsc_features.py --stage kumo --fold 1 --seed 2027",
+     "outputs": [
+      "results/v71/teammate_s42/f1/kumo_dsc_s2027.parquet"
+     ]
+    },
+    {
+     "cmd": "PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True OMP_NUM_THREADS=4 taskset -c 0-11 nice -n 10 ../.venv/bin/python 254_kumo_dsc_features.py --stage kumo --fold 2 --seed 2027",
+     "outputs": [
+      "results/v71/teammate_s42/f2/kumo_dsc_s2027.parquet"
+     ]
+    },
+    {
+     "cmd": "PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True OMP_NUM_THREADS=4 taskset -c 0-11 nice -n 10 ../.venv/bin/python 254_kumo_dsc_features.py --stage kumo --fold 3 --seed 2027",
+     "outputs": [
+      "results/v71/teammate_s42/f3/kumo_dsc_s2027.parquet"
+     ]
+    },
+    {
+     "cmd": "PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True OMP_NUM_THREADS=4 taskset -c 0-11 nice -n 10 ../.venv/bin/python 254_kumo_dsc_features.py --stage kumo --fold 4 --seed 2027",
+     "outputs": [
+      "results/v71/teammate_s42/f4/kumo_dsc_s2027.parquet"
+     ]
+    },
+    {
+     "cmd": "OMP_NUM_THREADS=4 taskset -c 0-11 nice -n 10 ../.venv/bin/python 254_kumo_dsc_features.py --stage eval --seed 2027",
+     "outputs": [
+      "results/v71/teammate_s42/oof_kd_s2027.parquet",
+      "results/v71/teammate_s42/test_kd_s2027.parquet"
+     ]
+    }
+   ]
+  },
+  "R2": {
+   "what": "teman goal054: Kumo V5 ctx50k e8 + offset re_* + spline 25%, model seeds 2026 and 2027 averaged (R2)",
+   "steps": [
+    {
+     "cmd": "OMP_NUM_THREADS=4 taskset -c 0-11 nice -n 10 ../.venv/bin/python 166_teammate_nested_features.py --out ../results/v56/teammate_features/outer_s42_f0 --partition outer --seed 42 --fold 0",
+     "outputs": [
+      "results/v56/teammate_features/outer_s42_f0/data/processed/application_features_v5.parquet"
+     ]
+    },
+    {
+     "cmd": "OMP_NUM_THREADS=4 taskset -c 0-11 nice -n 10 ../.venv/bin/python 166_teammate_nested_features.py --out ../results/v56/teammate_features/outer_s42_f1 --partition outer --seed 42 --fold 1",
+     "outputs": [
+      "results/v56/teammate_features/outer_s42_f1/data/processed/application_features_v5.parquet"
+     ]
+    },
+    {
+     "cmd": "OMP_NUM_THREADS=4 taskset -c 0-11 nice -n 10 ../.venv/bin/python 166_teammate_nested_features.py --out ../results/v56/teammate_features/outer_s42_f2 --partition outer --seed 42 --fold 2",
+     "outputs": [
+      "results/v56/teammate_features/outer_s42_f2/data/processed/application_features_v5.parquet"
+     ]
+    },
+    {
+     "cmd": "OMP_NUM_THREADS=4 taskset -c 0-11 nice -n 10 ../.venv/bin/python 166_teammate_nested_features.py --out ../results/v56/teammate_features/outer_s42_f3 --partition outer --seed 42 --fold 3",
+     "outputs": [
+      "results/v56/teammate_features/outer_s42_f3/data/processed/application_features_v5.parquet"
+     ]
+    },
+    {
+     "cmd": "OMP_NUM_THREADS=4 taskset -c 0-11 nice -n 10 ../.venv/bin/python 166_teammate_nested_features.py --out ../results/v56/teammate_features/outer_s42_f4 --partition outer --seed 42 --fold 4",
+     "outputs": [
+      "results/v56/teammate_features/outer_s42_f4/data/processed/application_features_v5.parquet"
+     ]
+    },
+    {
+     "cmd": "OMP_NUM_THREADS=4 taskset -c 0-11 nice -n 10 ../.venv/bin/python 251_teammate_recipe_s42.py --stage reverse --fold 0",
+     "outputs": [
+      "results/v71/teammate_s42/f0/reverse.parquet"
+     ]
+    },
+    {
+     "cmd": "OMP_NUM_THREADS=4 taskset -c 0-11 nice -n 10 ../.venv/bin/python 251_teammate_recipe_s42.py --stage reverse --fold 1",
+     "outputs": [
+      "results/v71/teammate_s42/f1/reverse.parquet"
+     ]
+    },
+    {
+     "cmd": "OMP_NUM_THREADS=4 taskset -c 0-11 nice -n 10 ../.venv/bin/python 251_teammate_recipe_s42.py --stage reverse --fold 2",
+     "outputs": [
+      "results/v71/teammate_s42/f2/reverse.parquet"
+     ]
+    },
+    {
+     "cmd": "OMP_NUM_THREADS=4 taskset -c 0-11 nice -n 10 ../.venv/bin/python 251_teammate_recipe_s42.py --stage reverse --fold 3",
+     "outputs": [
+      "results/v71/teammate_s42/f3/reverse.parquet"
+     ]
+    },
+    {
+     "cmd": "OMP_NUM_THREADS=4 taskset -c 0-11 nice -n 10 ../.venv/bin/python 251_teammate_recipe_s42.py --stage reverse --fold 4",
+     "outputs": [
+      "results/v71/teammate_s42/f4/reverse.parquet"
+     ]
+    },
+    {
+     "cmd": "PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True OMP_NUM_THREADS=4 taskset -c 0-11 nice -n 10 ../.venv/bin/python 251_teammate_recipe_s42.py --stage kumo --fold 0",
+     "outputs": [
+      "results/v71/teammate_s42/f0/kumo.parquet"
+     ]
+    },
+    {
+     "cmd": "OMP_NUM_THREADS=4 taskset -c 0-11 nice -n 10 ../.venv/bin/python 251_teammate_recipe_s42.py --stage post --fold 0",
+     "outputs": [
+      "results/v71/teammate_s42/f0/post.parquet"
+     ]
+    },
+    {
+     "cmd": "PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True OMP_NUM_THREADS=4 taskset -c 0-11 nice -n 10 ../.venv/bin/python 251_teammate_recipe_s42.py --stage kumo --fold 1",
+     "outputs": [
+      "results/v71/teammate_s42/f1/kumo.parquet"
+     ]
+    },
+    {
+     "cmd": "OMP_NUM_THREADS=4 taskset -c 0-11 nice -n 10 ../.venv/bin/python 251_teammate_recipe_s42.py --stage post --fold 1",
+     "outputs": [
+      "results/v71/teammate_s42/f1/post.parquet"
+     ]
+    },
+    {
+     "cmd": "PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True OMP_NUM_THREADS=4 taskset -c 0-11 nice -n 10 ../.venv/bin/python 251_teammate_recipe_s42.py --stage kumo --fold 2",
+     "outputs": [
+      "results/v71/teammate_s42/f2/kumo.parquet"
+     ]
+    },
+    {
+     "cmd": "OMP_NUM_THREADS=4 taskset -c 0-11 nice -n 10 ../.venv/bin/python 251_teammate_recipe_s42.py --stage post --fold 2",
+     "outputs": [
+      "results/v71/teammate_s42/f2/post.parquet"
+     ]
+    },
+    {
+     "cmd": "PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True OMP_NUM_THREADS=4 taskset -c 0-11 nice -n 10 ../.venv/bin/python 251_teammate_recipe_s42.py --stage kumo --fold 3",
+     "outputs": [
+      "results/v71/teammate_s42/f3/kumo.parquet"
+     ]
+    },
+    {
+     "cmd": "OMP_NUM_THREADS=4 taskset -c 0-11 nice -n 10 ../.venv/bin/python 251_teammate_recipe_s42.py --stage post --fold 3",
+     "outputs": [
+      "results/v71/teammate_s42/f3/post.parquet"
+     ]
+    },
+    {
+     "cmd": "PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True OMP_NUM_THREADS=4 taskset -c 0-11 nice -n 10 ../.venv/bin/python 251_teammate_recipe_s42.py --stage kumo --fold 4",
+     "outputs": [
+      "results/v71/teammate_s42/f4/kumo.parquet"
+     ]
+    },
+    {
+     "cmd": "OMP_NUM_THREADS=4 taskset -c 0-11 nice -n 10 ../.venv/bin/python 251_teammate_recipe_s42.py --stage post --fold 4",
+     "outputs": [
+      "results/v71/teammate_s42/f4/post.parquet"
+     ]
+    },
+    {
+     "cmd": "OMP_NUM_THREADS=4 taskset -c 0-11 nice -n 10 ../.venv/bin/python 251_teammate_recipe_s42.py --stage eval",
+     "outputs": [
+      "results/v71/teammate_s42/oof.parquet",
+      "results/v71/teammate_s42/test.parquet"
+     ]
+    },
+    {
+     "cmd": "PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True OMP_NUM_THREADS=4 taskset -c 0-11 nice -n 10 ../.venv/bin/python 251_teammate_recipe_s42.py --stage kumo --fold 0 --seed 2027",
+     "outputs": [
+      "results/v71/teammate_s42/f0/kumo_s2027.parquet"
+     ]
+    },
+    {
+     "cmd": "OMP_NUM_THREADS=4 taskset -c 0-11 nice -n 10 ../.venv/bin/python 251_teammate_recipe_s42.py --stage post --fold 0 --seed 2027",
+     "outputs": [
+      "results/v71/teammate_s42/f0/post_s2027.parquet"
+     ]
+    },
+    {
+     "cmd": "PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True OMP_NUM_THREADS=4 taskset -c 0-11 nice -n 10 ../.venv/bin/python 251_teammate_recipe_s42.py --stage kumo --fold 1 --seed 2027",
+     "outputs": [
+      "results/v71/teammate_s42/f1/kumo_s2027.parquet"
+     ]
+    },
+    {
+     "cmd": "OMP_NUM_THREADS=4 taskset -c 0-11 nice -n 10 ../.venv/bin/python 251_teammate_recipe_s42.py --stage post --fold 1 --seed 2027",
+     "outputs": [
+      "results/v71/teammate_s42/f1/post_s2027.parquet"
+     ]
+    },
+    {
+     "cmd": "PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True OMP_NUM_THREADS=4 taskset -c 0-11 nice -n 10 ../.venv/bin/python 251_teammate_recipe_s42.py --stage kumo --fold 2 --seed 2027",
+     "outputs": [
+      "results/v71/teammate_s42/f2/kumo_s2027.parquet"
+     ]
+    },
+    {
+     "cmd": "OMP_NUM_THREADS=4 taskset -c 0-11 nice -n 10 ../.venv/bin/python 251_teammate_recipe_s42.py --stage post --fold 2 --seed 2027",
+     "outputs": [
+      "results/v71/teammate_s42/f2/post_s2027.parquet"
+     ]
+    },
+    {
+     "cmd": "PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True OMP_NUM_THREADS=4 taskset -c 0-11 nice -n 10 ../.venv/bin/python 251_teammate_recipe_s42.py --stage kumo --fold 3 --seed 2027",
+     "outputs": [
+      "results/v71/teammate_s42/f3/kumo_s2027.parquet"
+     ]
+    },
+    {
+     "cmd": "OMP_NUM_THREADS=4 taskset -c 0-11 nice -n 10 ../.venv/bin/python 251_teammate_recipe_s42.py --stage post --fold 3 --seed 2027",
+     "outputs": [
+      "results/v71/teammate_s42/f3/post_s2027.parquet"
+     ]
+    },
+    {
+     "cmd": "PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True OMP_NUM_THREADS=4 taskset -c 0-11 nice -n 10 ../.venv/bin/python 251_teammate_recipe_s42.py --stage kumo --fold 4 --seed 2027",
+     "outputs": [
+      "results/v71/teammate_s42/f4/kumo_s2027.parquet"
+     ]
+    },
+    {
+     "cmd": "OMP_NUM_THREADS=4 taskset -c 0-11 nice -n 10 ../.venv/bin/python 251_teammate_recipe_s42.py --stage post --fold 4 --seed 2027",
+     "outputs": [
+      "results/v71/teammate_s42/f4/post_s2027.parquet"
+     ]
+    },
+    {
+     "cmd": "OMP_NUM_THREADS=4 taskset -c 0-11 nice -n 10 ../.venv/bin/python 251_teammate_recipe_s42.py --stage eval --seed 2027",
+     "outputs": [
+      "results/v71/teammate_s42/oof_s2027.parquet",
+      "results/v71/teammate_s42/test_s2027.parquet"
+     ]
+    }
+   ]
+  }
+ },
+ "blend": {
+  "members": [
+   "R2",
+   "D",
+   "K64"
+  ],
+  "weights": "equal, rank per outer cohort (OOF) / rank over test (submission); structure locked in protocol_252_merge.json (RDK primary), second Kumo seed in protocol_256_r_seed2.json (R2DK)",
+  "input_prefixes": [
+   "results/v71/teammate_s42/oof",
+   "results/v71/teammate_s42/test",
+   "results/dsc0152/agas/v66/output/preds_v66s42",
+   "results/v60/candidates/K__K64_2seed/"
+  ]
+ }
+}

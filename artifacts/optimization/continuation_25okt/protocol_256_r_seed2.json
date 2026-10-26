@@ -1,0 +1,30 @@
+{
+  "id": "256_r_second_seed",
+  "written": "2026-10-25T05:52+07:00",
+  "written_before_scores": true,
+  "change": "251 recipe with model/context seed 2027+fold instead of 2026+fold (context sampler, Kumo generator); offset + spline refit on the new holdout; everything else identical",
+  "family": "R2 = per-row mean of R(s2026) and R(s2027) probabilities (validation and test)",
+  "candidates_equal_weight_rank": {
+    "R2": [
+      "R2"
+    ],
+    "R2DK": [
+      "R2",
+      "D",
+      "K64"
+    ],
+    "R2D": [
+      "R2",
+      "D"
+    ],
+    "R2DK_KD": [
+      "R2",
+      "D",
+      "K64",
+      "KD"
+    ]
+  },
+  "compare_to": "RDK 0.52846, RD 0.52852",
+  "no_tuning": true,
+  "amendment_06:52": "added R2DK_KD after 254 scores (KD family), before any R seed-2027 score"
+}

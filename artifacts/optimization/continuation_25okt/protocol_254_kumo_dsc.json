@@ -1,0 +1,10 @@
+{
+  "id": "254_kumo_dsc_features",
+  "written": "2026-10-25T04:59+07:00",
+  "written_before_scores": true,
+  "hypothesis": "a third Kumo view on DSC0152 feature engineering (598 cols + fold factor features) is less correlated with K64 (user pool) and R (V5) and adds to the merge",
+  "kumo": "DSC0152 full 598 cols (features_cache + extra_cache, label-free population references) + 6 factor columns fitted on outer-train labels (253 factor.parquet); view cap300_ctx28k exactly as K64 member: column_cap 300, max_context 28672 (engine class-proportional sample, seed 2026+fold), e8, memory_fraction 0.85; one seed 2026",
+  "candidates_equal_weight_rank": {"KD": ["KD"], "RDK_KD": ["R", "D", "K64", "KD"], "RD_KD": ["R", "D", "KD"]},
+  "deviation": "DSC0152 label-free references are population-level (train+test), not per partition; factor loadings are per outer fold",
+  "no_tuning": true
+}

@@ -1,0 +1,14 @@
+{
+  "status": "written 08:50 WIB 24 Okt after inner screen 229 (main150 0.52092 vs main100 0.51750, delta +0.0034, P>0 0.63); before any outer score of this view",
+  "outer_seed": 42,
+  "model_seeds": [2026, 2027],
+  "internal_estimators": 8,
+  "candidate_views": [
+    {"name": "main150", "columns": "main_150", "column_cap": 500, "max_context": null, "memory_fraction": 0.85}
+  ],
+  "locked_candidates": {
+    "K65": "equal rank mean of cap300_ctx28k_s2026, cap300_ctx28k_s2027 (v64), main150_s2026, main150_s2027 -- K64 2-seed with main_small replaced by main150",
+    "K65_s2026": "cap300_ctx28k_s2026 + main150_s2026 if seed 2027 is not complete"
+  },
+  "note": "wide pool with full 48k context OOMs even at 128 columns (229); infeasible on 8 GB"
+}

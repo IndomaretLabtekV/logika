@@ -1,4 +1,49 @@
-# Status sekarang — 21 Oktober 2026
+> **Mulai dari `serah_terima_25okt/00_mulai_di_sini/README.md`** — serah terima lengkap sesi 24 Okt (posisi, eksperimen,
+> kesalahan, rencana merge). Dokumen ini tetap sebagai status historis.
+
+# Status sekarang — 24 Oktober 2026 (malam)
+
+**Public terbaik baru: 0,56470** — goal054 kumo_offset teman (`results/v70/goal054_kumo_offset/`, ref 57600249),
+mengalahkan v31 0,56405. K64 2-seed public 0,56168. Notebook masih me-replay v59 (perlu diputuskan user).
+
+
+Detail: [jurnal 24 Okt](../04_riwayat_versi/jurnal_24okt_resep_lokal.md). Semua run lokal, satu job GPU,
+`eda/thermal_guard.py` aktif (pause GPU>85 °C / CPU>95 °C 15 dtk).
+
+- Resep acuan strict (protocol 23 Okt) 5-fold s2026: cap500@8k 0,51885, nested_small(union) 0,50936,
+  K 0,51960 — di bawah REF v59-analog 0,52625. Penyebab: seleksi 104 kolom dari pool union (fitur teman)
+  dan context 8k pada view lebar; reference harga strict terbukti identik dengan legacy.
+- Context lebih besar membantu: cap500@16k 0,52426 (+0,0054, 5/5 fold). Kandidat v62: K62 0,52662,
+  KT62 0,52654, KTC62 0,52634 (semua <0,53). **K62 disubmit: public 0,56203** (Kumo-only legacy 0,56056).
+- Null hari ini: median impute (±0), SSL pseudo-label tersampel (−0,0022 vs tanpa SSL, inner).
+- cap300@28k (context dari menukar kolom) 0,52549 s2026 / 0,52387 s2027; **K64 2-seed 0,52740** = OOF
+  terbaik (tidak disubmit: Spearman 0,9993 vs K62). Null: dedup 777, main150, e16/cap128@48k OOM.
+  Context penuh kini muat lewat 8×e1 berurutan (231), tapi AUC inner semua varian lebar 0,8407–0,8416:
+  plateau. Anchored union (232) −0,0086. 24 Okt: 0 submit (gerbang user: breakthrough/OOF ≥0,53 belum).
+  Siang: teknik write-up juara (AmEx/Home Credit) dan CoLES SSL diuji 5-fold → semua null (detail jurnal).
+  Hang laptop ke-3 saat job CPU 8 thread tanpa guard → job CPU kini 4 thread + guard 1-sampel >95 °C.
+  Best public tetap v31 0,56405; batas top-8 public ~0,5713 (24 Okt 15:00).
+
+## Status 23 Oktober 2026
+
+Arahan terbaru user: lanjutkan **EDA dan preprocessing saja**, tidak perlu
+training model. Jangan menjalankan inferensi TFM atau submission sebagai
+kelanjutan otomatis. Semua pekerjaan tetap lokal; tidak ada git push.
+
+- Audit v56 memverifikasi11 checkpoint; tidak di-resume. Dua seed lengkap masih
+  pooledKS0,527810/0,527437 dan memakai reference utama legacy.
+- Reference utama sekarang mendukung fitting-customer-only; pool baru896 fitur
+  berisi main232+prefix customer-local664, bukan referenceV3/V4/V5 teman.
+- EDA214 selesai:48.000 fit,8.000 inner-confirmation,14.000 outer tidak dinilai.
+  Preprocessing menjadi792 fitur setelah102 duplikat+2 konstanta dihapus.
+- Ekspor100.000 baris,ID unik,targetnonfit52.000null,nolInfinity. Refitting
+  preprocessing wajib di setiap partition; jangan gunakan satu cache global
+  sebagai bukti validasi nested.
+- Tidak ada skor model baru atau submission. Target0,53–0,54 belum dibuktikan.
+- [Laporan23Okt](../../artifacts/optimization/continuation_23okt/laporan_riset.md);
+  kode`eda/214_preprocessing_eda.py`;output`results/eda_23okt/preprocessing/`.
+
+## Status historis 21 Oktober 2026
 
 **Riset dipause atas permintaan user.** Pekerjaan terakhir sesudah pause hanya
 merapikan repository untuk GitHub. Jangan otomatis menjalankan model, melanjutkan
@@ -224,3 +269,11 @@ Ringkasan satu halaman. Log mentah: `04_riwayat_versi/jurnal_17_18okt.md` (17–
 | `results/v37`, `v38`, `screen/seeds/` | Causilo / Kumo / LGB multi-seed |
 | `results/v42/` | kandidat probe yang sudah dipra-registrasi |
 | `eda/valid2.py`, `eda/run_valid2.py`, `eda/blend2.py`, `eda/screen2.py`, `eda/120`, `eda/124` | protokol, driver, blend, evaluator |
+
+## Pembaruan 25 Okt 08:53 WIB — merge tiga pipeline (jurnal: `handoff/04_riwayat_versi/jurnal_25okt_merge.md`)
+- Pipeline gabungan bersih: **`eda/260_merge_pipeline.py`** + `artifacts/optimization/continuation_25okt/recipe_merge.json`
+  (satu skema fold seed 42). Resep dipromosikan **merge_R2DK** = R2 (resep teman goal054, 2 seed) + D (DSC0152 v66,
+  inner-stop) + K64 (Kumo strict utama): OOF **0,52886** / AUC 0,84861 (REF 0,52625). Belum 0,53 → tidak disubmit.
+- Notebook: `LOGIKA_NOTEBOOK_RECIPE=merge python notebook/build_final.py` → `final_merge.ipynb`, replay byte-identik.
+  Default `final.ipynb` tetap v59.
+- Perkiraan public R2DK 0,5663 ± 0,0020 (ρ 0,9954 vs goal054) — perlu izin eksplisit user bila mau disubmit.

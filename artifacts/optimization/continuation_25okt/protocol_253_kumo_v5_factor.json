@@ -1,0 +1,11 @@
+{
+  "id": "253_kumo_v5_factor",
+  "written": "2026-10-25T02:18+07:00",
+  "written_before_scores": true,
+  "hypothesis": "DSC0152 factor model (12 risk sources -> one shrunken score, loadings from outer-train labels) adds signal Kumo cannot build from 90 V5 columns",
+  "kumo": "identical to 251 K5 (V5 90 cols, context 50k teammate sampler seed 2026+fold, e8, seed 2026+fold) + 6 columns factor_z, factor_sd, fs_price, fs_late, fs_ldpd, fs_bu_z",
+  "factor": "scripts/dsc0152/features.factor_inputs (label-free, population item effects) + factor_features(M, E, y, outer-train rows only)",
+  "candidates": {"KF": ["KF"], "KF_DK": ["KF", "D", "K64"], "R_KF_DK": ["R", "KF", "D", "K64"]},
+  "compare_to": "K5 0.52698 (251), RDK (252)",
+  "no_tuning": true
+}

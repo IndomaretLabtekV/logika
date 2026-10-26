@@ -1,0 +1,24 @@
+{
+  "status": "preregistered before any new model scores",
+  "primary_protocol": "validation_v2 outer seed42, five StratifiedKFold folds; canonical sorted application IDs",
+  "outer_seed": 42,
+  "model_seeds": [2026, 2027],
+  "feature_pool": "Main232 with fit-customer expanding-month price reference plus verified teammate per-customer pre-reference numeric features. No teammate V3/V4/V5 population references. Actual width recorded by builder, not assumed880.",
+  "reference_and_selection": "For inner experiments use48000 inner-fit IDs; for outer inference use56000 outer-train IDs. Selectors use only fitting labels. No outer labels in context, preprocessing, selector, or recipe choice.",
+  "model": "NVIDIA Kumo-Tabular large, pinned local v1.0.1 checkpoint",
+  "categorical_preprocessing": "Four application categories passed natively to SDM; vocabulary fitted only on actual labelled context, unknown query categories become missing. All other pool predictors numeric. Same rule for baseline and all members; internal numeric transformations fitted by the cached recipe.",
+  "candidate_views": [
+    {"name": "pool_cap500", "columns": "all union columns", "column_cap": 500, "max_context": 8192},
+    {"name": "pool_uncapped", "columns": "all union columns", "column_cap": null, "max_context": 8192},
+    {"name": "nested_small", "columns": "100 numeric selected by existing KS/Spearman selector on fitting partition plus4 application categories", "column_cap": 500, "max_context": null}
+  ],
+  "internal_estimators": 8,
+  "members": "three views x two independent model seeds, sequential fits",
+  "context_qualification": "Wide views explicitly use stratified8192 context for8GB feasibility. Compact view retains all fitting rows. This is a resource-constrained candidate, not a claim of reproducing any external recipe with full context on every view.",
+  "baseline": {"name": "strict_primary100", "columns": "main100 KS/Spearman plus4 categories", "model_seed": 2026, "estimators": 4, "max_context": null, "column_cap": 500},
+  "aggregation": "Within each outer validation cohort and corresponding test cohort, rank each member with average ties divided by cohort size, equal mean over six members. Assign fold OOF once; equal mean of five corresponding test-fold ensemble scores. Baseline ranked by same cohort convention. No weights optimized using outer OOF.",
+  "engineering": {"gpu_memory_fraction": 0.7, "query_chunk": 128, "one_heavy_job": true, "threads": 4, "local_only": true, "preflight": "real fitting context and exact columns, small query, no KS or recipe selection. Any failure retained as engineering evidence; no automatic retry."},
+  "quality_policy": "No score claim until measured. Screening is inner only. Full gate is all70000 aligned OOF with pooled KS>=0.53000 and clean audit; report fold KS,mean,AUC,paired delta and bootstrap uncertainty. If engineering rejects a view, this exact candidate is unavailable and a separately preregistered alternative is required, not a silent member substitution.",
+  "legacy_artifacts": "Historical v56 and legacy main predictions are diagnostic only, not eligible strict baseline/candidate components.",
+  "submission": "CSV only, after complete eligible evaluation; no Kaggle kernels or git push. No public forecast or0.003 gain requirement."
+}

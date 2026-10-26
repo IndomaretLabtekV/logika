@@ -329,15 +329,25 @@ def v2_features(apps: pl.DataFrame, tables: dict) -> pl.DataFrame:
 PP_CATS = ["groceries", "fashion", "electronics", "home", "health", "education", "personal_care"]
 
 
-def v5_features(apps: pl.DataFrame, tables: dict) -> pl.DataFrame:
-    """v5 additions (eda/40-45): unit-price premium within category, basket quantity, decision month.
-    Category reference (mean and sd of log unit price, eda/50): an expanding window over item rows of all customers
-    (no labels) dated before the first day of the application's decision month, so every application is normalised
-    only with prices that were already observed when it was decided."""
+def v5_features(apps: pl.DataFrame, tables: dict, *, reference_customers=None) -> pl.DataFrame:
+    """Price features with an expanding reference before each decision month.
+
+    New inductive runs must supply fitting-partition customer IDs. None preserves
+    the historical transductive recipe for reproducing existing artifacts.
+    Query events remain available only for their own customer aggregates.
+    """
     cut = apps.select("customer_id", cutoff=pl.col("decision_datetime"), dm=pl.col("decision_datetime").dt.truncate("1mo"))
     raw = tables["ecommerce_transactions"].with_columns(lu=(pl.col("item_total") / pl.col("quantity")).log(),
                                                         ym=pl.col("transaction_datetime").dt.truncate("1mo"))
-    ms = raw.group_by("product_category", "ym").agg(n=pl.len(), s=pl.col("lu").sum(), ss=(pl.col("lu") ** 2).sum())
+    reference = raw
+    if reference_customers is not None:
+        customers = list(reference_customers)
+        if not customers or len(customers) != len(set(customers)):
+            raise ValueError("Reference customer IDs must be nonempty and unique")
+        if not set(customers) <= set(apps["customer_id"].to_list()):
+            raise ValueError("Reference customers must belong to the application frame")
+        reference = raw.filter(pl.col("customer_id").is_in(customers))
+    ms = reference.group_by("product_category", "ym").agg(n=pl.len(), s=pl.col("lu").sum(), ss=(pl.col("lu") ** 2).sum())
     ref = (cut.select("dm").unique().join(ms, how="cross").filter(pl.col("ym") < pl.col("dm"))
            .group_by("product_category", "dm").agg(pl.col("n", "s", "ss").sum())
            .with_columns(mu=pl.col("s") / pl.col("n"),

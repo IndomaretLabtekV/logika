@@ -1,0 +1,24 @@
+{
+  "id": "250_blend_existing",
+  "written": "2026-10-25T01:13+07:00",
+  "written_before_scores": true,
+  "status": "exploratory: DSC0152 legs are OOF from 10-fold x 6 fold-seed averages (not seed-42 5-fold); claims only after seed-42 reproduction",
+  "eval": "StratifiedKFold 5 seed 42 (valid2.outer), per-cohort rank inside each outer fold, pooled KS 70k + per fold, paired stratified bootstrap 1000 (rng 250) vs REF and vs best component",
+  "families": {
+    "T": "rank mean of 6 v22 GBDT (results/v22/v22/gbdt)",
+    "C": "Causilo weighted 1/2/2 (v22, v37, v41) as in eda/221",
+    "KL": "Kumo legacy v28m",
+    "K64": "results/v60/candidates/K__K64_2seed/oof.parquet",
+    "D": "DSC0152 v66 recipe ext0.5|tm30|lgb_lean rebuilt from preds_v66.npz (formula make_submission_v66.py)"
+  },
+  "candidates_equal_weight_rank": {
+    "REF": ["T", "C", "KL"],
+    "D": ["D"],
+    "TD": ["T", "D"],
+    "DK": ["D", "K64"],
+    "TDK": ["T", "D", "K64"],
+    "DCK": ["D", "C", "K64"],
+    "TDCK": ["T", "D", "C", "K64"]
+  },
+  "no_weight_search": true
+}

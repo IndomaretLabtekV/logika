@@ -1,0 +1,15 @@
+{
+  "status": "written 06:10 WIB 24 Okt after inner screen 226 (cap300@28672 0.52533 vs cap500@16384 0.51436 vs cap200@40960 0.51831); before any outer score of this view",
+  "outer_seed": 42,
+  "model_seeds": [2026, 2027],
+  "internal_estimators": 8,
+  "candidate_views": [
+    {"name": "cap300_ctx28k", "columns": "all", "column_cap": 300, "max_context": 28672, "memory_fraction": 0.85}
+  ],
+  "aggregation": "same as 23okt protocol",
+  "locked_candidates": {
+    "K64": "equal rank mean of cap300_ctx28k_s2026 + main_small_s2026 (v62)",
+    "K64w": "equal rank mean of cap300_ctx28k_s2026 + cap500_ctx16k_s2026 + main_small_s2026",
+    "KT64": "0.5 rank(K64) + 0.5 rank(trees6)"
+  }
+}

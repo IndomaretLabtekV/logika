@@ -1,0 +1,8 @@
+{
+  "id": "259_crossfit_ks_weights",
+  "written": "2026-10-25T08:55+07:00",
+  "written_before_scores": "before any KS-criterion cross-fit result",
+  "method": "255 procedure with selection criterion = pooled KS of per-cohort ranks on the other 4 folds (instead of AUC); families R2, D, K64, KD2; simplex step 0.1, D >= 0.2",
+  "compare_to": "R2DK equal weights 0.52886",
+  "no_other_change": true
+}

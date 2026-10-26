@@ -1,0 +1,21 @@
+{
+  "id": "252_merge_three_pipelines",
+  "written": "2026-10-25T01:2x+07:00 (before the 01:31 fold-0 sanity look at 251)",
+  "written_before_scores": "yes: before any 251 (teammate s42) or DSC0152-s42 score is seen",
+  "eval": "StratifiedKFold 5 seed 42, rank per outer cohort, pooled KS 70k + per fold, paired stratified bootstrap 1000 vs REF and vs best component; test = rank mean of family test vectors",
+  "families": {
+    "R": "teammate goal054 recipe on seed 42 (eda/251 variant R = 0.75 K5o + 0.25 S)",
+    "K64": "Kumo strict K64 2-seed (results/v60/candidates/K__K64_2seed)",
+    "D": "DSC0152 v66 ext0.5|tm30|lgb_lean; primary = seed-42 5-fold inner-stop reproduction (results/dsc0152/agas/v66/output/preds_v66s42.npz); fallback/exploratory = preds_v66.npz",
+    "T": "v22 trees6", "C": "Causilo"
+  },
+  "candidates_equal_weight_rank": {
+    "RK": ["R", "K64"],
+    "RD": ["R", "D"],
+    "RDK": ["R", "D", "K64"],
+    "RDKC": ["R", "D", "K64", "C"],
+    "RDKT": ["R", "D", "K64", "T"]
+  },
+  "primary": "RDK (each pipeline 1/3; trees share 1/3 as the public-transfer rule of thumb)",
+  "no_weight_search": true
+}

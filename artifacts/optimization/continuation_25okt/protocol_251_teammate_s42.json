@@ -1,0 +1,13 @@
+{
+  "id": "251_teammate_recipe_s42",
+  "written": "2026-10-25T01:16+07:00",
+  "written_before_scores": true,
+  "goal": "reproduce teammate goal054 kumo_offset_l20p003_unweighted_d0p5 (public 0.56470, OOF 0.52930 @ fold seed 31027) on StratifiedKFold 5 seed 42",
+  "features": "teammate V5 per outer fold (results/v56/teammate_features/outer_s42_f{k}; references fit on outer-train customers) + re_* latent features rebuilt per fold by scripts/reverse_synthetic_patterns.py functions with split=='train' == outer-train customers (label-free, events before decision_datetime asserted)",
+  "kumo": {"columns": "90 context_columns of goal054 definition.json", "context": "50000 rows = kumo_tabular.context_indices(outer-train, y, 50000, 2026+fold)", "holdout": "remaining 6000 outer-train rows", "estimators": 8, "seed": "2026+fold", "engine": "eda/strict_kumo_engine.predict (Kumo large v1.0.1, fp16, column_cap 500 = default recipe, estimator_batch_size 1, chunk 128)", "query": "14000 val + 6000 holdout + 30000 test"},
+  "correction": "research_context_correction054.fit_correction/predict_correction, penalty 0.003, unweighted, strength 0.5, fit on 6000 holdout only",
+  "spline": "hybrid_kumo.fit_spline with reverse_spline spec (77 cols), fit on 56000 outer-train",
+  "variants": {"K5": "kumo raw", "K5o": "kumo + offset", "S": "spline", "R0": "0.75 K5 + 0.25 S (public 0.56393 recipe)", "R": "0.75 K5o + 0.25 S (goal054 recipe)"},
+  "expected": "R pooled OOF ~0.528-0.530 if recipe transfers across fold seeds",
+  "no_tuning": true
+}

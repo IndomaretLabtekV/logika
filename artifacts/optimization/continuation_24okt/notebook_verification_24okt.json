@@ -1,0 +1,12 @@
+{
+  "timestamp": "2026-10-24T17:54:23.790451",
+  "notebook_sha256": "8b96fdc339fe50bd9d2ef0b7f2b3aa1ab62c686d33cfc4873d3ed95313329c18",
+  "builder_sha256": "dcde14f0a8a13a3daae9828ae349d930adc64faf6cdd18dbd9cbdcba0f2b556e",
+  "mode": "replay",
+  "code_cells_passed": 5,
+  "csv_sha256": "d7e17b079e5ccf235e7ae60a537cb54b01529e41990da0370b1d6a39c9627d92",
+  "matches_v59_submission": true,
+  "banner": "DSCxxxx placeholder; team 'lagi cape lomba asli'",
+  "fresh_training_repeated": false,
+  "note": "features.py change (reference_customers=None default) does not alter the historical recipe"
+}
