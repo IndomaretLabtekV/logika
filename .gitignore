@@ -100,3 +100,6 @@ service-account*.json
 Thumbs.db
 .idea/
 .vscode/
+
+# local copy of the competition data (not redistributable)
+dataset/
