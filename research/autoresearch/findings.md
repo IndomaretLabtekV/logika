@@ -94,8 +94,5 @@ end to end.
 ## Open Questions
 
 - Why public sits ~0.04 above OOF for every model family is still unexplained (not a split shift, not label noise).
-
-
-- Does a model that sees raw event sequences (not aggregates) make different, useful errors?
-- Does a structural simulation of the new loan's 12 installments add what trees cannot compose?
-- Do the blend weights differ by segment?
+- Answered in outer loop 1: raw event sequences (no new information), new-loan simulation (inputs already seen),
+  segment-specific blend weights (unstable, negative).
