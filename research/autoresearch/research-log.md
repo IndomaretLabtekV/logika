@@ -17,3 +17,12 @@
   on OOF ≈ 0.527: features (residual booster 1-2 trees), representation (raw-sequence model), and blending
   (segment-wise and weights). H3 (new-loan simulation) dropped: the hybrid model already sees every installment
   and the new loan's amount/rate/installment and found nothing.
+- 2026-10-30 10:20 WIB: REOPENED by the user's 4-member recipe (LightGBM per segment, XGBoost per segment, MLP,
+  LightGBM v10 nested). Plain MLP on engineered features (291 mlp, 5 seeds): 0.52186; next to eight_seg it is neutral
+  (+0.00002). recipe3 = equal rank mean of lgb_seg + xgb_seg + mlp: OOF 0.52890, +0.00209 vs eight_seg, bootstrap
+  P 0.89, 10/15 folds.
+  - All 10 three-of-five MLP seed subsets stay positive (+0.0007 to +0.0021 mean fold delta), and weight 1/3 sits near
+    the best weight.
+  - The two segment models alone lose (−0.00083); the gain comes from MLP + segment trees together, not from either
+    one. CONFIRMATORY (recipe fixed before seeing OOF).
+  - Written: submissions/v75/v75_recipe3.csv. Waiting for lgb_nested (293) for recipe4.

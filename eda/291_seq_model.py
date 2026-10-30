@@ -5,6 +5,7 @@ Five tables + static MLP -> head MLP -> logit. BCE, AdamW, early stopping on the
 Folds = valid2.outer(y, seed); test = mean over folds. Then: KS alone, Spearman with eight_seg, rank blend with
 eight_seg at several weights judged per fold over 3 split seeds and by paired bootstrap.
 Usage: cd eda && ../.venv/bin/python 291_seq_model.py [seed] [epochs] [full]
+"mlp": plain MLP, no event encoders, static input = application fields + engineered features (as "full").
 "full" (H2b): the static input also gets every engineered feature (features + f251), rank-gauss over train + test
 (label-free) with a missing flag per column that has missing values.
 """
@@ -54,12 +55,13 @@ class Net(nn.Module):
     def __init__(self, dims, d_static):
         super().__init__()
         self.enc = nn.ModuleDict({t: TableEnc(d) for t, d in dims.items()})
-        self.st = nn.Sequential(nn.Linear(d_static, 64), nn.GELU())
-        d = sum(e.out for e in self.enc.values()) + 64
+        w = 64 if dims else 256  # plain MLP: all information goes through the static path
+        self.st = nn.Sequential(nn.Linear(d_static, w), nn.GELU(), nn.Dropout(0.1))
+        d = sum(e.out for e in self.enc.values()) + w
         self.head = nn.Sequential(nn.Linear(d, 256), nn.GELU(), nn.Dropout(0.2), nn.Linear(256, 64), nn.GELU(), nn.Linear(64, 1))
 
     def forward(self, batch):
-        z = [self.enc[t](batch[t], batch[t + "_m"]) for t in TABLES] + [self.st(batch["st"])]
+        z = [self.enc[t](batch[t], batch[t + "_m"]) for t in self.enc] + [self.st(batch["st"])]
         return self.head(torch.cat(z, -1)).squeeze(-1)
 
 
@@ -131,16 +133,17 @@ def fit_fold(data, y_t, tr_idx, st_idx, seed, epochs, dims, d_static):
 def main():
     seed = int(sys.argv[1]) if len(sys.argv) > 1 else 42
     epochs = int(sys.argv[2]) if len(sys.argv) > 2 else 30
-    full = len(sys.argv) > 3 and sys.argv[3] == "full"
+    mode = sys.argv[3] if len(sys.argv) > 3 else ""
+    full = mode in ("full", "mlp")
     z = np.load(R / "results/v73/seq_cache/seq.npz")
     is_tr = z["is_train"]
     data_np = {k: z[k] for k in TABLES + [t + "_m" for t in TABLES] + ["st"]}
     if full:
         data_np["st"] = np.hstack([data_np["st"], engineered(z["application_id"])])
         print("static input with engineered features:", data_np["st"].shape, flush=True)
-    tag = "seqfull" if full else "seq"
+    tag = {"full": "seqfull", "mlp": "mlp"}.get(mode, "seq")
     data = {k: torch.from_numpy(val).to(DEV) for k, val in data_np.items()}
-    dims = {t: data_np[t].shape[2] for t in TABLES}
+    dims = {} if mode == "mlp" else {t: data_np[t].shape[2] for t in TABLES}
     tr_rows, te_rows = np.where(is_tr)[0], np.where(~is_tr)[0]
     ids = z["application_id"][tr_rows]
     yd = pl.read_parquet(R / "results/v72k_out/v72/preds/oof_lgb.parquet")
