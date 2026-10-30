@@ -43,3 +43,16 @@
   lowers the blend: B 0.52745 (+0.0007, P 0.70) < A, and D 0.52843 (+0.0014, P 0.82) < C. Best locked candidate:
   C = 4 segment trees (2/3) + MLP 10 seeds & MLP-per-segment 5 seeds (1/3), OOF 0.52861, +0.0016 vs eight_seg,
   P 0.85, 10/15. File submissions/v75/v75_recipe_C.csv (Spearman 0.9957 vs v72). Nothing else running.
+- 2026-10-30 11:10 WIB: submitted v75_recipe_C (OOF 0.52861) → public 0.56374. Every file that moved away from v72
+  scored lower on public, and the order is the reverse of OOF:
+
+  | File | OOF | Public |
+  |---|---|---|
+  | v72 | 0.5258 | 0.56822 |
+  | v73 | 0.5258 | 0.56719 |
+  | eight_seg | 0.5271 | 0.56533 |
+  | C | 0.5286 | 0.56374 |
+  | xgb_seg16 | 0.5278 | 0.56225 |
+
+  The files share members (segment trees), so these are not independent draws. Either the public 9k favours
+  v72-like ranking by chance, or the segment/MLP gains do not transfer to test. Decision: final stays v72.
