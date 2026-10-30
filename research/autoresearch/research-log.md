@@ -39,3 +39,7 @@
   Lesson: the exploratory +0.0021..+0.0025 was partly the luck of the 5 MLP seeds; the MLP alone did not change
   (0.52186 → 0.52192). The real pairing effect is ~+0.001 to +0.0016 OOF, the same size as earlier gains that did
   not show on public. Waiting for lgb_v10 (B, D).
+- 2026-10-30 11:05 WIB: lgb_v10 (nested-tuned LightGBM, 3 seeds, eda/293) OOF 0.52368. Adding it to the tree part
+  lowers the blend: B 0.52745 (+0.0007, P 0.70) < A, and D 0.52843 (+0.0014, P 0.82) < C. Best locked candidate:
+  C = 4 segment trees (2/3) + MLP 10 seeds & MLP-per-segment 5 seeds (1/3), OOF 0.52861, +0.0016 vs eight_seg,
+  P 0.85, 10/15. File submissions/v75/v75_recipe_C.csv (Spearman 0.9957 vs v72). Nothing else running.
