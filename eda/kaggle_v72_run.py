@@ -1,6 +1,7 @@
 """v72 Kaggle run: 9 GBDT (6 v22 family + lgb_x, xgb_d8, cat_d8) on main features + f251 Markov, seeds 42/7/2026.
 One process per device group so LightGBM (CPU), XGBoost (GPU 0) and CatBoost (GPU 1) run side by side.
-Usage: python kaggle_v72_run.py lgb|xgb|cat   (features.parquet and f251 must already exist in data_pq/)
+Usage: python kaggle_v72_run.py lgb|xgb|cat [seed,seed,...] [model,model,...]
+(features.parquet and f251 must already exist in data_pq/; defaults: valid2 seeds, all models in the group)
 """
 import sys
 
@@ -23,8 +24,11 @@ def main():
         pl.read_parquet(PQ / "f251_repayment_markov.parquet"), on="application_id", how="left")
     X, Xt, y, ids, test_ids = v.frames(feats)
     print(f"{X.shape[1]} features, {len(y)} train rows, {len(Xt)} test rows", flush=True)
+    seeds = [int(s) for s in sys.argv[2].split(",")] if len(sys.argv) > 2 else v.SEEDS
+    keep = sys.argv[3].split(",") if len(sys.argv) > 3 else None
     for name, make in GROUPS[sys.argv[1]].items():
-        v.run(name, make(), X, Xt, y, ids, test_ids, OUT)
+        if keep is None or name in keep:
+            v.run(name, make(), X, Xt, y, ids, test_ids, OUT, seeds=seeds)
 
 
 if __name__ == "__main__":

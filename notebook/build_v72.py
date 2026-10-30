@@ -1,14 +1,24 @@
 """Builds notebook/v72.ipynb: Kaggle kernel for 9 GBDT + repayment Markov chain, 3 seeds, GPU T4 x2.
 Repo files are embedded as strings, written to /kaggle/working/code/eda and run there, so Kaggle runs the local code.
-Usage: .venv/bin/python notebook/build_v72.py  ->  notebook/v72.ipynb and results/v72k/
+Usage: .venv/bin/python notebook/build_v72.py [v73]  ->  notebook/<tag>.ipynb and results/<tag>k/
+v73 = the same 6 GBDT family only, over 5 new seeds, to be rank-averaged with the v72 test predictions.
 """
 import json
+import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 EDA = ROOT / "eda"
 FILES = ["common.py", "features.py", "valid2.py", "251_repayment_markov.py", "kaggle_v72_run.py"]
-SLUG = "logika-v72-trees-markov"
+SIX = ["lgb", "lgb_s", "xgb", "xgb_s", "cat", "cat_s"]
+VARIANTS = {
+    "v72": dict(slug="logika-v72-trees-markov", title="Logika v72 trees markov", seeds=None, models=None,
+                intro="9 gradient boosting models (LightGBM, XGBoost, CatBoost, three depths each) with validation_v2 "
+                      "over seeds 42, 7 and 2026"),
+    "v73": dict(slug="logika-v73-trees-markov-seeds", title="Logika v73 trees markov seeds", seeds=[1, 11, 101, 777, 31337],
+                models=SIX, intro="the 6 gradient boosting models of the v22 family with validation_v2 over seeds "
+                                  "1, 11, 101, 777 and 31337"),
+}
 
 
 def md(s):
@@ -20,11 +30,17 @@ def code(s):
     return {"cell_type": "code", "metadata": {}, "execution_count": None, "outputs": [], "source": s}
 
 
-def main():
+def main(tag):
+    cfg = VARIANTS[tag]
+    slug = cfg["slug"]
+    extra = []
+    if cfg["seeds"]:
+        extra.append(",".join(map(str, cfg["seeds"])))
+    if cfg["models"]:
+        extra.append(",".join(cfg["models"]))
     cells = [
-        md("# LOGIKA v72: 9 GBDT + repayment Markov chain\n\n"
-           "Main features plus a per-customer repayment Markov chain (f251), then 9 gradient boosting models "
-           "(LightGBM, XGBoost, CatBoost, three depths each) with validation_v2 over seeds 42, 7 and 2026. "
+        md(f"# LOGIKA {tag}: GBDT + repayment Markov chain\n\n"
+           f"Main features plus a per-customer repayment Markov chain (f251), then {cfg['intro']}. "
            "Submissions are equal-weight rank means."),
         code("%pip install -q polars==2.0.0 lightgbm==4.7.0 xgboost==3.4.1 catboost==1.2.10"),
     ]
@@ -51,7 +67,7 @@ def main():
     cells.append(code("import time\nenv = dict(os.environ)\nprocs = {}\n"
                       "for g, gpu in (('lgb', ''), ('xgb', '0'), ('cat', '1')):\n"
                       "    e = dict(env, CUDA_VISIBLE_DEVICES=gpu)\n"
-                      "    procs[g] = subprocess.Popen([sys.executable, 'kaggle_v72_run.py', g], cwd=CODE, env=e,\n"
+                      f"    procs[g] = subprocess.Popen([sys.executable, 'kaggle_v72_run.py', g] + {extra!r}, cwd=CODE, env=e,\n"
                       "                                stdout=open(f'/kaggle/working/v72/run_{g}.log', 'w'), stderr=subprocess.STDOUT)\n"
                       "t0 = time.time()\n"
                       "while any(p.poll() is None for p in procs.values()):\n"
@@ -73,16 +89,17 @@ def main():
                       "    t.select('application_id').with_columns(default_probability=pl.Series(r)).write_csv(f'/kaggle/working/{fname}')\n"
                       "    print(fname, 'OOF KS', round(ks, 5), [round(ks_2samp(d[m].to_numpy()[y == 1], d[m].to_numpy()[y == 0]).statistic, 5) for d, m in zip(oof, models)])\n"
                       "six = ['lgb', 'lgb_s', 'xgb', 'xgb_s', 'cat', 'cat_s']\n"
-                      "blend(six, 'submission_six.csv')\nblend(six + ['lgb_x', 'xgb_d8', 'cat_d8'], 'submission_nine.csv')\n"
+                      "blend(six, 'submission_six.csv')\n"
+                      + ("" if cfg["models"] else "blend(six + ['lgb_x', 'xgb_d8', 'cat_d8'], 'submission_nine.csv')\n") +
                       "import shutil\nshutil.copytree(OUT, '/kaggle/working/v72/preds', dirs_exist_ok=True)"))
     nb = {"cells": cells, "metadata": {"kernelspec": {"display_name": "Python 3", "language": "python", "name": "python3"},
                                        "language_info": {"name": "python"}}, "nbformat": 4, "nbformat_minor": 5}
-    (ROOT / "notebook/v72.ipynb").write_text(json.dumps(nb, indent=1))
-    k = ROOT / "results/v72k"
+    (ROOT / f"notebook/{tag}.ipynb").write_text(json.dumps(nb, indent=1))
+    k = ROOT / f"results/{tag}k"
     k.mkdir(parents=True, exist_ok=True)
-    (k / f"{SLUG}.ipynb").write_text(json.dumps(nb, indent=1))
+    (k / f"{slug}.ipynb").write_text(json.dumps(nb, indent=1))
     (k / "kernel-metadata.json").write_text(json.dumps({
-        "id": f"athillazaidan/{SLUG}", "title": "Logika v72 trees markov", "code_file": f"{SLUG}.ipynb",
+        "id": f"athillazaidan/{slug}", "title": cfg["title"], "code_file": f"{slug}.ipynb",
         "language": "python", "kernel_type": "notebook", "is_private": True, "enable_gpu": True, "enable_tpu": False,
         "enable_internet": True, "keywords": [], "dataset_sources": [], "kernel_sources": [],
         "competition_sources": ["data-science-competition-logika-ui-2026"], "model_sources": [],
@@ -91,4 +108,4 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    main(sys.argv[1] if len(sys.argv) > 1 else "v72")
