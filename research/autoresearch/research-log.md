@@ -26,3 +26,9 @@
   - The two segment models alone lose (−0.00083); the gain comes from MLP + segment trees together, not from either
     one. CONFIRMATORY (recipe fixed before seeing OOF).
   - Written: submissions/v75/v75_recipe3.csv. Waiting for lgb_nested (293) for recipe4.
+- 2026-10-30 10:35 WIB: recipe variants on existing OOF (exploratory, ~9 compared, expect some winner's curse):
+  - 4 segment trees + MLP at weight 1/3: 0.52953 (+0.0025, P 0.94).
+  - Control "six + MLP 1/3": −0.0003. The pairing with segment trees is what matters.
+  - The seqfull hybrid is a worse partner than the plain MLP.
+  RULE LOCKED for the final (eda/295) before mlpseg, extra MLP seeds and lgb_v10 finish: tree part 2/3 =
+  mean of the segment trees [+ lgb_v10], smooth part 1/3 = MLP seeds [+ mlpseg]. Candidates A-D.

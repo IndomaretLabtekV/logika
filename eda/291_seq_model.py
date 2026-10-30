@@ -5,6 +5,7 @@ Five tables + static MLP -> head MLP -> logit. BCE, AdamW, early stopping on the
 Folds = valid2.outer(y, seed); test = mean over folds. Then: KS alone, Spearman with eight_seg, rank blend with
 eight_seg at several weights judged per fold over 3 split seeds and by paired bootstrap.
 Usage: cd eda && ../.venv/bin/python 291_seq_model.py [seed] [epochs] [full]
+"mlpseg": plain MLP trained separately on each has_history segment (like the segment trees).
 "mlp": plain MLP, no event encoders, static input = application fields + engineered features (as "full").
 "full" (H2b): the static input also gets every engineered feature (features + f251), rank-gauss over train + test
 (label-free) with a missing flag per column that has missing values.
@@ -134,16 +135,18 @@ def main():
     seed = int(sys.argv[1]) if len(sys.argv) > 1 else 42
     epochs = int(sys.argv[2]) if len(sys.argv) > 2 else 30
     mode = sys.argv[3] if len(sys.argv) > 3 else ""
-    full = mode in ("full", "mlp")
+    full = mode in ("full", "mlp", "mlpseg")
     z = np.load(R / "results/v73/seq_cache/seq.npz")
     is_tr = z["is_train"]
     data_np = {k: z[k] for k in TABLES + [t + "_m" for t in TABLES] + ["st"]}
     if full:
         data_np["st"] = np.hstack([data_np["st"], engineered(z["application_id"])])
         print("static input with engineered features:", data_np["st"].shape, flush=True)
-    tag = {"full": "seqfull", "mlp": "mlp"}.get(mode, "seq")
+    tag = {"full": "seqfull", "mlp": "mlp", "mlpseg": "mlpseg"}.get(mode, "seq")
     data = {k: torch.from_numpy(val).to(DEV) for k, val in data_np.items()}
-    dims = {} if mode == "mlp" else {t: data_np[t].shape[2] for t in TABLES}
+    dims = {} if mode in ("mlp", "mlpseg") else {t: data_np[t].shape[2] for t in TABLES}
+    import common as c
+    seg_all = c.features().sort("application_id")["has_history"].to_numpy()
     tr_rows, te_rows = np.where(is_tr)[0], np.where(~is_tr)[0]
     ids = z["application_id"][tr_rows]
     yd = pl.read_parquet(R / "results/v72k_out/v72/preds/oof_lgb.parquet")
@@ -156,9 +159,21 @@ def main():
     for k, (tr, va) in enumerate(v.outer(y, seed)):
         t0 = time.time()
         fi, st = v.inner(y[tr], seed, k)
-        net, auc, ep = fit_fold(data, y_t, tr_rows[tr[fi]], tr_rows[tr[st]], seed * 10 + k, epochs, dims, data_np["st"].shape[1])
-        oof[va] = predict(net, data, tr_rows[va])
-        test += rankdata(predict(net, data, te_rows)) / len(te_rows) / 5
+        if mode == "mlpseg":
+            pt = np.zeros(len(te_rows))
+            for g in (0, 1):
+                a, b = tr_rows[tr[fi]], tr_rows[tr[st]]
+                net, auc, ep = fit_fold(data, y_t, a[seg_all[a] == g], b[seg_all[b] == g], seed * 10 + k + 100 * g, epochs, dims,
+                                        data_np["st"].shape[1])
+                mv = seg_all[tr_rows[va]] == g
+                oof[va[mv]] = torch.sigmoid(torch.from_numpy(predict(net, data, tr_rows[va][mv]))).numpy()
+                mt = seg_all[te_rows] == g
+                pt[mt] = torch.sigmoid(torch.from_numpy(predict(net, data, te_rows[mt]))).numpy()
+            test += rankdata(pt) / len(te_rows) / 5
+        else:
+            net, auc, ep = fit_fold(data, y_t, tr_rows[tr[fi]], tr_rows[tr[st]], seed * 10 + k, epochs, dims, data_np["st"].shape[1])
+            oof[va] = predict(net, data, tr_rows[va])
+            test += rankdata(predict(net, data, te_rows)) / len(te_rows) / 5
         print(f"fold {k}: inner AUC {auc:.4f} epochs {ep} KS {v.ks(y[va], oof[va]):.5f} ({time.time() - t0:.0f}s)", flush=True)
     OUT.mkdir(parents=True, exist_ok=True)
     pl.DataFrame({"application_id": ids, "target": y, tag: oof}).write_parquet(OUT / f"oof_{tag}_s{seed}.parquet")
