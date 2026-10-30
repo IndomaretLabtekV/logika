@@ -1,0 +1,51 @@
+project:
+  title: "LOGIKA UI 2026 — beyond saturated features"
+  question: "What can still raise the KS of the trees + repayment-Markov ensemble (OOF 0.527, public 0.56822)?"
+  status: active
+  started: "2026-10-30"
+  domain: "tabular credit risk, synthetic data"
+
+hypotheses:
+  - id: H1
+    statement: >
+      A segment-specific rank blend (separate member weights for has_history 0/1, merged through cross-fitted
+      isotonic probabilities) beats the global equal blend, because the members that work best differ by segment
+      (segment models win in the no-history segment). Prediction: >= +0.0008 OOF vs eight_seg on 3 split seeds.
+    status: pending
+    priority: high
+    cost: minutes
+  - id: H2
+    statement: >
+      A sequence encoder over raw events (repayment installments, e-commerce orders, bureau pulls, account months,
+      previous applications) plus application fields learns ordering and cross-table timing that aggregates lose,
+      so its errors differ from the trees'. Prediction: alone OOF >= 0.50, Spearman with eight_seg < 0.96, and a
+      rank blend at weight 0.1-0.25 >= +0.001 OOF on 3 split seeds with bootstrap P >= 0.8.
+    status: pending
+    priority: high
+    cost: hours (MPS)
+  - id: H3
+    statement: >
+      A structural simulation of the new loan (transition model conditioned on installment / income and the customer's
+      Markov posterior, run for 12 installments) gives P(90+) for the actual new loan; trees cannot compose this
+      absorbing-chain computation. Prediction: LR chi2 > 15 and single LGB >= +0.001 on 3 seeds.
+    status: pending
+    priority: medium
+    cost: ~1 hour
+
+experiments:
+  proxy_metric: "OOF KS on 70k train rows (validation_v2 folds), blends judged by paired bootstrap and per-fold over 3 split seeds"
+  baseline_value: 0.52706   # eight_seg
+  best_value: 0.52706
+  total_runs: 0
+  trajectory: []
+
+outer_loop:
+  cycle: 0
+  last_direction: broaden
+  last_reflection: "features saturated; remaining levers are representation diversity (H2), structure (H3), blend by segment (H1)"
+
+workspace:
+  findings: "research/autoresearch/findings.md"
+  log: "research/autoresearch/research-log.md"
+  experiments_dir: "research/autoresearch/experiments/"
+  code: "eda/ (numbered scripts)"
