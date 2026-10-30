@@ -1,7 +1,7 @@
 project:
   title: "LOGIKA UI 2026 — beyond saturated features"
   question: "What can still raise the KS of the trees + repayment-Markov ensemble (OOF 0.527, public 0.56822)?"
-  status: active
+  status: concluded
   started: "2026-10-30"
   domain: "tabular credit risk, synthetic data"
 
@@ -11,7 +11,7 @@ hypotheses:
       A segment-specific rank blend (separate member weights for has_history 0/1, merged through cross-fitted
       isotonic probabilities) beats the global equal blend, because the members that work best differ by segment
       (segment models win in the no-history segment). Prediction: >= +0.0008 OOF vs eight_seg on 3 split seeds.
-    status: pending
+    status: refuted
     priority: high
     cost: minutes
   - id: H2
@@ -20,7 +20,7 @@ hypotheses:
       previous applications) plus application fields learns ordering and cross-table timing that aggregates lose,
       so its errors differ from the trees'. Prediction: alone OOF >= 0.50, Spearman with eight_seg < 0.96, and a
       rank blend at weight 0.1-0.25 >= +0.001 OOF on 3 split seeds with bootstrap P >= 0.8.
-    status: pending
+    status: refuted
     priority: high
     cost: hours (MPS)
   - id: H3
@@ -28,7 +28,7 @@ hypotheses:
       A structural simulation of the new loan (transition model conditioned on installment / income and the customer's
       Markov posterior, run for 12 installments) gives P(90+) for the actual new loan; trees cannot compose this
       absorbing-chain computation. Prediction: LR chi2 > 15 and single LGB >= +0.001 on 3 seeds.
-    status: pending
+    status: inconclusive  # dropped, inputs already seen by the H2 hybrid
     priority: medium
     cost: ~1 hour
 
@@ -36,13 +36,18 @@ experiments:
   proxy_metric: "OOF KS on 70k train rows (validation_v2 folds), blends judged by paired bootstrap and per-fold over 3 split seeds"
   baseline_value: 0.52706   # eight_seg
   best_value: 0.52706
-  total_runs: 0
-  trajectory: []
+  total_runs: 8
+  trajectory:
+    - {run_id: run_001, hypothesis: H1, metric_value: 0.52651, delta: -0.00055, change_summary: "nested segment-specific blend"}
+    - {run_id: run_002, hypothesis: H2, metric_value: 0.51266, delta: null, change_summary: "raw-event model alone, seed 42"}
+    - {run_id: run_003, hypothesis: H2, metric_value: 0.52607, delta: -0.00048, change_summary: "eight_seg + raw-event model w 0.1"}
+    - {run_id: run_004, hypothesis: H2, metric_value: 0.52328, delta: null, change_summary: "hybrid model alone, 5 seeds"}
+    - {run_id: run_005, hypothesis: H2, metric_value: 0.52689, delta: +0.00006, change_summary: "eight_seg + hybrid w 0.1 (bootstrap)"}
 
 outer_loop:
-  cycle: 0
-  last_direction: broaden
-  last_reflection: "features saturated; remaining levers are representation diversity (H2), structure (H3), blend by segment (H1)"
+  cycle: 1
+  last_direction: conclude
+  last_reflection: "features, representation and blending all converge at OOF 0.527; coherent negative result"
 
 workspace:
   findings: "research/autoresearch/findings.md"

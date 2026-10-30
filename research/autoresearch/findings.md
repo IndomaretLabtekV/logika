@@ -64,6 +64,25 @@ Negative (single LGB or LR screen, controls where noted):
   - GAM blend (269);
   - TabM/NN blends (team history).
 
+## Outer loop 1 (30 Oct 10:40): conclusion
+
+- H1, segment-specific blend: refuted. Nested selection loses (−0.00055/fold) and the chosen sets are unstable.
+- H2, raw-event model: refuted.
+  - Alone it is strong for a model that sees no engineered feature: 0.5127.
+  - With the engineered features (5-seed hybrid) it reaches 0.5233.
+  - Its rank blend with eight_seg is neutral (+0.00006).
+- H3 (new-loan simulation) was dropped because the hybrid model already had its inputs.
+
+Conclusion: every route converges at OOF ≈ 0.527:
+
+- features (a residual booster stops at 1-2 trees);
+- representation (raw sequences);
+- blending (weights, segments).
+
+The remaining gap to the top-8 public scores (~0.004) is within public noise for 9k rows (sd ~0.011). The best use of
+the score budget is the submission with the highest locked-in public (v72, 0.56822), whose kernel already reproduces
+end to end.
+
 ## Lessons and Constraints
 
 - Single-seed single-LGB deltas have per-fold sd ~0.003; require ≥ 3 seeds before believing |Δ| < 0.003.
@@ -73,6 +92,9 @@ Negative (single LGB or LR screen, controls where noted):
 - Do not spend submissions to rank near-identical files; the public noise is larger than the OOF differences.
 
 ## Open Questions
+
+- Why public sits ~0.04 above OOF for every model family is still unexplained (not a split shift, not label noise).
+
 
 - Does a model that sees raw event sequences (not aggregates) make different, useful errors?
 - Does a structural simulation of the new loan's 12 installments add what trees cannot compose?

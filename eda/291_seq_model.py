@@ -4,7 +4,9 @@ Per table: event MLP (d -> 64 -> 64), pooled by masked mean, masked max and atte
 Five tables + static MLP -> head MLP -> logit. BCE, AdamW, early stopping on the valid2 inner split (AUC), no refit.
 Folds = valid2.outer(y, seed); test = mean over folds. Then: KS alone, Spearman with eight_seg, rank blend with
 eight_seg at several weights judged per fold over 3 split seeds and by paired bootstrap.
-Usage: cd eda && ../.venv/bin/python 291_seq_model.py [seed] [epochs]
+Usage: cd eda && ../.venv/bin/python 291_seq_model.py [seed] [epochs] [full]
+"full" (H2b): the static input also gets every engineered feature (features + f251), rank-gauss over train + test
+(label-free) with a missing flag per column that has missing values.
 """
 import importlib
 import sys
@@ -61,6 +63,27 @@ class Net(nn.Module):
         return self.head(torch.cat(z, -1)).squeeze(-1)
 
 
+def engineered(app_ids):
+    from scipy.special import erfinv
+    import common as c
+    f = (c.features().join(pl.read_parquet(c.PQ / "f251_repayment_markov.parquet"), on="application_id", how="left")
+         .sort("application_id"))
+    assert (f["application_id"].to_numpy().astype(str) == app_ids).all()
+    cols = [k for k, d in f.schema.items() if d.is_numeric() and k not in v.ID_COLS]
+    out = []
+    for k in cols:
+        x = f[k].cast(pl.Float64).to_numpy()
+        ok = np.isfinite(x)
+        if ok.sum() < 100 or np.unique(x[ok]).size < 2:
+            continue
+        g = np.zeros(len(x))
+        g[ok] = np.sqrt(2) * erfinv(2 * (rankdata(x[ok]) - 0.5) / ok.sum() - 1)
+        out.append(g)
+        if not ok.all():
+            out.append((~ok).astype(float))
+    return np.column_stack(out).astype(np.float32)
+
+
 def take(data, idx):
     return {k: val[idx] for k, val in data.items()}
 
@@ -108,9 +131,14 @@ def fit_fold(data, y_t, tr_idx, st_idx, seed, epochs, dims, d_static):
 def main():
     seed = int(sys.argv[1]) if len(sys.argv) > 1 else 42
     epochs = int(sys.argv[2]) if len(sys.argv) > 2 else 30
+    full = len(sys.argv) > 3 and sys.argv[3] == "full"
     z = np.load(R / "results/v73/seq_cache/seq.npz")
     is_tr = z["is_train"]
     data_np = {k: z[k] for k in TABLES + [t + "_m" for t in TABLES] + ["st"]}
+    if full:
+        data_np["st"] = np.hstack([data_np["st"], engineered(z["application_id"])])
+        print("static input with engineered features:", data_np["st"].shape, flush=True)
+    tag = "seqfull" if full else "seq"
     data = {k: torch.from_numpy(val).to(DEV) for k, val in data_np.items()}
     dims = {t: data_np[t].shape[2] for t in TABLES}
     tr_rows, te_rows = np.where(is_tr)[0], np.where(~is_tr)[0]
@@ -130,9 +158,9 @@ def main():
         test += rankdata(predict(net, data, te_rows)) / len(te_rows) / 5
         print(f"fold {k}: inner AUC {auc:.4f} epochs {ep} KS {v.ks(y[va], oof[va]):.5f} ({time.time() - t0:.0f}s)", flush=True)
     OUT.mkdir(parents=True, exist_ok=True)
-    pl.DataFrame({"application_id": ids, "target": y, "seq": oof}).write_parquet(OUT / f"oof_seq_s{seed}.parquet")
-    pl.DataFrame({"application_id": z["application_id"][te_rows], "seq": test}).write_parquet(OUT / f"test_seq_s{seed}.parquet")
-    print(f"seq model seed {seed}: OOF KS {v.ks(y, oof):.5f}")
+    pl.DataFrame({"application_id": ids, "target": y, tag: oof}).write_parquet(OUT / f"oof_{tag}_s{seed}.parquet")
+    pl.DataFrame({"application_id": z["application_id"][te_rows], tag: test}).write_parquet(OUT / f"test_{tag}_s{seed}.parquet")
+    print(f"{tag} model seed {seed}: OOF KS {v.ks(y, oof):.5f}")
 
     fb = importlib.import_module("281_final_blend")
     bs = importlib.import_module("275_blend_scheme")
