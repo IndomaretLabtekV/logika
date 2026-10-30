@@ -32,3 +32,10 @@
   - The seqfull hybrid is a worse partner than the plain MLP.
   RULE LOCKED for the final (eda/295) before mlpseg, extra MLP seeds and lgb_v10 finish: tree part 2/3 =
   mean of the segment trees [+ lgb_v10], smooth part 1/3 = MLP seeds [+ mlpseg]. Candidates A-D.
+- 2026-10-30 10:52 WIB: LOCKED-RULE RESULTS (295) with the 10-seed MLP:
+  - A (4 segment trees 2/3 + MLP 1/3): 0.52766, +0.0011 vs eight_seg, P 0.78, 7/15.
+  - C (A + MLP-per-segment in the smooth part): 0.52861, +0.0016, P 0.85, 10/15.
+  - recipe3 re-run with the 10-seed MLP: +0.0010, P 0.75, 7/15 (was +0.0021 with 5 seeds).
+  Lesson: the exploratory +0.0021..+0.0025 was partly the luck of the 5 MLP seeds; the MLP alone did not change
+  (0.52186 → 0.52192). The real pairing effect is ~+0.001 to +0.0016 OOF, the same size as earlier gains that did
+  not show on public. Waiting for lgb_v10 (B, D).

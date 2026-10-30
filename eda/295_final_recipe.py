@@ -44,11 +44,14 @@ def main():
         oof[tag], test[tag] = o, t
         print(f"member {tag:8s} {k} seeds OOF KS {v.ks(y, o):.5f}")
     nd = R / "results/v73/lgb_nested"
-    a = pl.read_parquet(nd / "oof_lgb_nested.parquet")
-    assert pl.read_csv(nd / "log_lgb_nested.csv").height == 15 and (a["application_id"] == ids).all()
-    b = ss.join(pl.read_parquet(nd / "test_lgb_nested.parquet"), on="application_id", how="left", maintain_order="left")
-    oof["lgb_v10"], test["lgb_v10"] = rankdata(a["lgb_nested"].to_numpy()) / len(y), rankdata(b["lgb_nested"].to_numpy()) / b.height
-    print(f"member lgb_v10  OOF KS {v.ks(y, oof['lgb_v10']):.5f}")
+    if pl.read_csv(nd / "log_lgb_nested.csv").height == 15:
+        a = pl.read_parquet(nd / "oof_lgb_nested.parquet")
+        assert (a["application_id"] == ids).all()
+        b = ss.join(pl.read_parquet(nd / "test_lgb_nested.parquet"), on="application_id", how="left", maintain_order="left")
+        oof["lgb_v10"], test["lgb_v10"] = rankdata(a["lgb_nested"].to_numpy()) / len(y), rankdata(b["lgb_nested"].to_numpy()) / b.height
+        print(f"member lgb_v10  OOF KS {v.ks(y, oof['lgb_v10']):.5f}")
+    else:
+        print("lgb_v10 not finished: B and D skipped")
 
     def mix(src, trees, smooth):
         return 2 / 3 * np.mean([src[m] for m in trees], 0) + 1 / 3 * np.mean([src[m] for m in smooth], 0)
@@ -58,6 +61,8 @@ def main():
     base = np.mean([oof[m] for m in fb.SIX + ["lgb_x", "xgb_d8", "lgb_seg", "xgb_seg"]], 0)
     v72 = pl.read_csv(R / "submissions/v72/v72_six_markov_3seed.csv")["default_probability"].to_numpy()
     for name, (trees, smooth) in cands.items():
+        if not all(m in oof for m in trees + smooth):
+            continue
         s = mix(oof, trees, smooth)
         mu, pp = bs.boot(y, s, base, n=1000, seed=7)
         d = [v.ks(y[va], s[va]) - v.ks(y[va], base[va]) for sd in (1, 2, 3) for _, va in v.outer(y, sd)]
